@@ -1,0 +1,27 @@
+#! /bin/bash
+
+# $1 : absolute path to the team directory
+# $2 : host name of the client machine 1
+# $3 : host name of the client machine 2
+# $4 : host name of the client machine 3
+# $5 : host name of the server machine
+# $6 : login name for the team
+
+trap kill_team INT
+
+kill_team()
+{
+    echo "Killing Team"
+    ssh -l $6 $2 -f $1/kill1
+    ssh -l $6 $3 -f $1/kill2
+    ssh -l $6 $4 -f $1/kill3
+    exit 0
+}
+
+ssh -l $6 $2 -f $1/start1 $5
+sleep 3
+ssh -l $6 $3 -f $1/start2 $5
+sleep 3
+ssh -l $6 $4 -f $1/start3 $5
+
+wait

@@ -1,0 +1,49 @@
+============
+INTRODUCTION
+============
+The agent2d is the sample client package that uses librcsc.
+All client programs can work with rcssserver-14.x.
+
+- RoboCup Soccer Simulator Homepage: http://sserver.sf.net/
+- RoboCup Official Homepage: http://www.robocup.org/
+
+- librcsc Homepage: http://rctools.sourceforge.jp/
+
+===========
+REQUIREMENT
+===========
+The agent2d-3.0.0 requires the following libraries:
+ - boost-1.32 or later
+ - librcsc-4.0.x
+
+=====
+BUILD
+=====
+From the agent2d directory execute:
+
+./configure
+make
+
+If you did not install the librcsc into the system directory, you will
+need to set the configure's `--with-librcsc=DIR' option as follows:
+
+./configure --with-librcsc=/path/to/librcsc/prefix
+
+In this case, you will also need to set the environment variable
+LD_LIBRARY_PATH.
+
+===========
+CONFIGURING
+===========
+Before you build the agent2d, you must run the `configure' script
+located in the root of the distribution directory. See `configure
+--help' for more details.
+
+==============
+START THE TEAM
+==============
+To start the agent2d team type
+
+`./start.sh'
+
+from the directory containing the executable.

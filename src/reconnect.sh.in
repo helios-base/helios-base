@@ -1,0 +1,125 @@
+#!/bin/sh
+
+LIBPATH=@LIBRCSCLIB@
+if [ x"$LIBPATH" != x ]; then
+  if [ x"$LD_LIBRARY_PATH" = x ]; then
+    LD_LIBRARY_PATH=$LIBPATH
+  else
+    LD_LIBRARY_PATH=$LIBPATH:$LD_LIBRARY_PATH
+  fi
+  export LD_LIBRARY_PATH
+fi
+
+DIR=`dirname $0`
+
+player="${DIR}/helios_player"
+coach="${DIR}/helios_coach"
+teamname="HELIOS"
+host="localhost"
+
+config="${DIR}/player.conf"
+config_dir="${DIR}/formations-433"
+
+coach_config="${DIR}/coach.conf"
+
+number=0
+goalie=
+
+debugopt=""
+coachdebug=""
+
+usage()
+{
+  (echo "Usage: $0 [options]"
+   echo "Possible options are:"
+   echo "      --help                print this"
+   echo "  -h, --host HOST           specifies server host"
+   echo "  -t, --teamname TEAMNAME   specifies team name"
+   echo "  -n, --number NUMBER       specifies the reconnect player number"
+   echo "  -g, --goalie              reconnect as a goalie"
+   echo "  --debug                   create debug log"
+   echo "  --debug-connect           connect to Soccer Viewer"
+   echo "  --debug-write             create Soccer Viewer log") 1>&2
+}
+
+while [ $# -gt 0 ]
+	do
+	case $1 in
+
+    --help)
+      usage
+      exit 0
+      ;;
+
+    -h|--host)
+      if [ $# -lt 2 ]; then
+        usage
+        exit 1
+      fi
+      host=$2
+      shift 1
+      ;;
+
+    -t|--teamname)
+      if [ $# -lt 2 ]; then
+        usage
+        exit 1
+      fi
+      teamname=$2
+      shift 1
+      ;;
+
+    -n|--number)
+      if [ $# -lt 2 ]; then
+        usage
+        exit 1
+      fi
+      number=$2
+      shift 1
+      ;;
+
+    -g|--goalie)
+      goalie="-g"
+      ;;
+
+    --uva)
+      config_dir="${DIR}/formations-uva"
+      ;;
+
+    --bpn)
+      config_dir="${DIR}/formations-bpn"
+      ;;
+
+    --debug)
+      debugopt="${debugopt} --debug"
+      ;;
+
+    --debug-connect)
+      debugopt="${debugopt} --debug_connect"
+      ;;
+
+    --debug-write)
+      debugopt="${debugopt} --debug_write"
+      ;;
+
+    *)
+      usage
+      exit 1
+      ;;
+  esac
+
+  shift 1
+done
+
+if [ $number -eq 0 ]; then
+  echo "ERROR: The reconnect player number is a mandatory option."
+  echo ""
+  usage
+  exit 1
+fi
+
+OPT="-h ${host} -t ${teamname} -r ${number} ${goalie}"
+OPT="${OPT} --player-config ${config} --config_dir ${config_dir}"
+OPT="${OPT} ${debugopt}"
+
+$player ${OPT} &

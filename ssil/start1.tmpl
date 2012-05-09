@@ -1,0 +1,33 @@
+#! /bin/bash
+echo -n "TEAMNAME Start agents at "
+hostname
+
+host=$1
+
+DIR=/home/ssil/2d/TEAMNAME
+
+player=${DIR}/sample_player
+coach=${DIR}/sample_coach
+
+teamname="TEAMNAME"
+config="${DIR}/player.conf"
+config_dir="${DIR}/formations-dt"
+
+OPT="-h ${host} -t ${teamname}"
+OPT="${OPT} --player-config ${config} --config_dir ${config_dir}"
+
+##------------------------------------
+
+echo "Start : ${player} ${OPT} -g"
+${player} ${OPT} -g &
+
+sleep 3
+
+echo "Start : ${player} ${OPT}"
+${player} ${OPT} &
+
+echo "Start : ${player} ${OPT}"
+${player} ${OPT} &
+
+echo "Start : ${player} ${OPT}"
+${player} ${OPT} &

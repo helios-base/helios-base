@@ -1,0 +1,12 @@
+#! /bin/bash
+echo -n "Kill agents at "
+hostname
+
+player=sample_player
+coachs=sample_coach
+
+killall ${player}
+killall ${coach}
+
+killall -KILL ${player}
+killall -KILL ${coach}
