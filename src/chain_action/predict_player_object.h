@@ -110,7 +110,7 @@ public:
       \brief initialize member variables
     */
     PredictPlayerObject()
-        : AbstractPlayerObject(),
+        : AbstractPlayerObject( -1 ),
           M_valid( false ),
           M_is_self( false ),
           M_is_ghost( false ),
@@ -122,6 +122,7 @@ public:
       \param player base player information
     */
     PredictPlayerObject( const rcsc::AbstractPlayerObject & player )
+        : AbstractPlayerObject( player.id() )
       {
           copyPlayerInfo( player );
       }
@@ -133,6 +134,7 @@ public:
     */
     PredictPlayerObject( const rcsc::AbstractPlayerObject & player,
                          const rcsc::Vector2D & override_pos )
+        : AbstractPlayerObject( player.id() )
       {
           copyPlayerInfo( player );
 
@@ -147,7 +149,7 @@ public:
                          const bool is_self,
                          const rcsc::Vector2D & pos,
                          const rcsc::AngleDeg body_dir )
-        : AbstractPlayerObject()
+        : AbstractPlayerObject( -1 )
         , M_valid( true ),
           M_is_self( is_self ),
           M_is_ghost( false ),

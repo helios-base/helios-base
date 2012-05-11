@@ -1,3 +1,8 @@
+2012-05-12  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* src/chain_action/predict_player_object.h:
+	- librcscの変更に追従し，AbstractPlayerObjectのIDを設定できるようにした
+
 2012-05-02  Hidehisa Akiyama  <akky@users.sourceforge.jp>
 
 	* src/sample_coach.cpp:
