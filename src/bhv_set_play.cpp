@@ -424,12 +424,6 @@ Bhv_SetPlay::is_kicker( const PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
 
-    //if ( setplayCount() < 1 )
-    //     if ( wm.lastSetPlayStartTime().cycle() > wm.time().cycle() - 2 )
-    //     {
-    //         return false;
-    //     }
-
     if ( wm.gameMode().type() == GameMode::GoalieCatch_
          && wm.gameMode().side() == wm.ourSide()
          && ! wm.self().goalie() )

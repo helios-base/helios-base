@@ -1,3 +1,13 @@
+2012-05-13  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* src/bhv_goalie_free_kick.cpp:
+	* src/bhv_set_play.cpp:
+	* src/bhv_set_play_free_kick.cpp:
+	* src/bhv_set_play_goal_kick.cpp:
+	* src/bhv_set_play_indirect_free_kick.cpp:
+	* src/bhv_set_play_kick_in.cpp:
+	- librcsの変更に追従し，setplayCount()をgetSetPlayCount()へ修正
+
 2012-05-12  Hidehisa Akiyama  <akky@users.sourceforge.jp>
 
 	* src/chain_action/predict_player_object.h:

@@ -171,7 +171,7 @@ Bhv_SetPlayIndirectFreeKick::doKicker( PlayerAgent * agent )
     //
     // wait(2)
     //
-    if ( wm.setplayCount() <= 3 )
+    if ( wm.getSetPlayCount() <= 3 )
     {
         Body_TurnToPoint( Vector2D( 50.0, 0.0 ) ).execute( agent );
         agent->setNeckAction( new Neck_ScanField() );
@@ -288,13 +288,6 @@ Bhv_SetPlayIndirectFreeKick::doKickWait( PlayerAgent * agent )
     const Vector2D face_point( 50.0, 0.0 );
     const AngleDeg face_angle = ( face_point - wm.self().pos() ).th();
 
-    //     if ( wm.setplayCount() <= 3 )
-    //     {
-    //         Body_TurnToPoint( face_point ).execute( agent );
-    //         agent->setNeckAction( new Neck_ScanField() );
-    //         return;
-    //     }
-
     if ( wm.time().stopped() > 0 )
     {
         dlog.addText( Logger::TEAM,
@@ -318,7 +311,7 @@ Bhv_SetPlayIndirectFreeKick::doKickWait( PlayerAgent * agent )
         return true;
     }
 
-    if ( wm.setplayCount() <= 10
+    if ( wm.getSetPlayCount() <= 10
          && wm.teammatesFromSelf().empty() )
     {
         dlog.addText( Logger::TEAM,

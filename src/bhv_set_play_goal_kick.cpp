@@ -246,41 +246,41 @@ Bhv_SetPlayGoalKick::doKickWait( PlayerAgent * agent )
         return true;
     }
 
-    if ( wm.setplayCount() <= 6 )
+    if ( wm.getSetPlayCount() <= 6 )
     {
-        agent->debugClient().addMessage( "GoalKick:Wait%d", wm.setplayCount() );
+        agent->debugClient().addMessage( "GoalKick:Wait%d", wm.getSetPlayCount() );
         Body_TurnToBall().execute( agent );
         agent->setNeckAction( new Neck_ScanField() );
         return true;
     }
 
-    if ( wm.setplayCount() <= 30
+    if ( wm.getSetPlayCount() <= 30
          && wm.teammatesFromSelf().empty() )
     {
-        agent->debugClient().addMessage( "GoalKick:NoTeammate%d", wm.setplayCount() );
+        agent->debugClient().addMessage( "GoalKick:NoTeammate%d", wm.getSetPlayCount() );
         Body_TurnToBall().execute( agent );
         agent->setNeckAction( new Neck_ScanField() );
         return true;
     }
 
-    if ( wm.setplayCount() >= 15
+    if ( wm.getSetPlayCount() >= 15
          && wm.seeTime() == wm.time()
          && wm.self().stamina() > ServerParam::i().staminaMax() * 0.6 )
     {
         dlog.addText( Logger::TEAM,
                       __FILE__": (doKickWait) set play count = %d, force kick mode",
-                      wm.setplayCount() );
+                      wm.getSetPlayCount() );
         return false;
     }
 
-    if ( wm.setplayCount() <= 3
+    if ( wm.getSetPlayCount() <= 3
          || wm.seeTime() != wm.time()
          || wm.self().stamina() < ServerParam::i().staminaMax() * 0.9 )
     {
         Body_TurnToBall().execute( agent );
         agent->setNeckAction( new Neck_ScanField() );
 
-        agent->debugClient().addMessage( "GoalKick:Wait%d", wm.setplayCount() );
+        agent->debugClient().addMessage( "GoalKick:Wait%d", wm.getSetPlayCount() );
         dlog.addText( Logger::TEAM,
                       __FILE__": (doKickWait) no see or recover" );
         return true;
