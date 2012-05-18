@@ -118,7 +118,7 @@ Bhv_BasicMove::execute( PlayerAgent * agent )
     }
     else
     {
-        agent->setNeckAction( new Neck_TurnToBallOrScan() );
+        agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
     }
 
     return true;

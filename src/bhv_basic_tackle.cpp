@@ -163,7 +163,7 @@ Bhv_BasicTackle::executeOld( PlayerAgent * agent )
         agent->debugClient().addMessage( "Tackle+" );
 
         agent->doTackle( tackle_power );
-        agent->setNeckAction( new Neck_TurnToBallOrScan() );
+        agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
         return true;
     }
 
@@ -177,7 +177,7 @@ Bhv_BasicTackle::executeOld( PlayerAgent * agent )
         agent->debugClient().addMessage( "Tackle-" );
 
         agent->doTackle( tackle_power );
-        agent->setNeckAction( new Neck_TurnToBallOrScan() );
+        agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
         return true;
     }
 
@@ -213,7 +213,7 @@ Bhv_BasicTackle::executeV12( PlayerAgent * agent )
 
             double tackle_dir = ( s_best_angle - wm.self().body() ).degree();
             agent->doTackle( tackle_dir );
-            agent->setNeckAction( new Neck_TurnToBallOrScan() );
+            agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
         }
         return s_result;
     }
@@ -374,7 +374,7 @@ Bhv_BasicTackle::executeV12( PlayerAgent * agent )
 
     double tackle_dir = ( best_angle - wm.self().body() ).degree();
     agent->doTackle( tackle_dir );
-    agent->setNeckAction( new Neck_TurnToBallOrScan() );
+    agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
 
     return true;
 }

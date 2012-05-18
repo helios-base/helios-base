@@ -554,7 +554,7 @@ Bhv_SetPlayIndirectFreeKick::doOffenseMove( PlayerAgent * agent )
         }
     }
 
-    agent->setNeckAction( new Neck_TurnToBallOrScan() );
+    agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
 }
 
 /*-------------------------------------------------------------------*/

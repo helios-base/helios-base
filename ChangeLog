@@ -1,5 +1,17 @@
 2012-05-18  Hidehisa Akiyama  <akky@users.sourceforge.jp>
 
+	* src/bhv_basic_move.cpp:
+	* src/bhv_basic_tackle.cpp:
+	* src/bhv_set_play_free_kick.cpp:
+	* src/bhv_set_play_indirect_free_kick.cpp:
+	* src/bhv_set_play_kick_in.cpp:
+	* src/bhv_their_goal_kick_move.cpp:
+	* src/intention_receive.cpp:
+	* src/neck_offensive_intercept_neck.cpp:
+	* src/role_keepaway_keeper.cpp:
+	* src/sample_player.cpp:
+	- librcscの変更に追従し，首振り動作の引数を追加
+
 	* src/chain_action/bhv_chain_action.cpp:
 	- librcscの変更に追従し，Neck_TurnToGoalieOrScanの引数を追加
 

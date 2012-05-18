@@ -70,7 +70,7 @@ Neck_OffensiveInterceptNeck::execute( PlayerAgent * agent )
         const PlayerObject * opp = wm.interceptTable()->fastestOpponent();
         if ( opp )
         {
-            Neck_TurnToBallAndPlayer( opp ).execute( agent );
+            Neck_TurnToBallAndPlayer( opp, 0 ).execute( agent );
             dlog.addText( Logger::TEAM,
                           __FILE__": ball and player" );
             return true;

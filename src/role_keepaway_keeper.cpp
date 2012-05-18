@@ -121,7 +121,7 @@ RoleKeepawayKeeper::doMove( PlayerAgent * agent )
     {
         Vector2D face_point( 0.0, 0.0 );
         Body_Intercept( true, face_point ).execute( agent );
-        agent->setNeckAction( new Neck_TurnToBallOrScan() );
+        agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
         return;
     }
 
@@ -135,5 +135,5 @@ RoleKeepawayKeeper::doMove( PlayerAgent * agent )
         Body_TurnToBall().execute( agent );
     }
 
-    agent->setNeckAction( new Neck_TurnToBallOrScan() );
+    agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
 }

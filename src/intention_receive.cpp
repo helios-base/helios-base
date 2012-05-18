@@ -161,7 +161,7 @@ IntentionReceive::execute( PlayerAgent * agent )
         else
         {
             agent->setNeckAction( new Neck_DefaultInterceptNeck
-                                  ( new Neck_TurnToBallOrScan() ) );
+                                  ( new Neck_TurnToBallOrScan( 0 ) ) );
         }
 
         return true;
@@ -189,7 +189,7 @@ IntentionReceive::execute( PlayerAgent * agent )
                     M_buffer,
                     M_dash_power
                     ).execute( agent );
-    agent->setNeckAction( new Neck_TurnToBallOrScan() );
+    agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
 
     return true;
 }

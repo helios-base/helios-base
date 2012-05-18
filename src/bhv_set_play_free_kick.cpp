@@ -398,5 +398,5 @@ Bhv_SetPlayFreeKick::doMove( PlayerAgent * agent )
         }
     }
 
-    agent->setNeckAction( new Neck_TurnToBallOrScan() );
+    agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
 }

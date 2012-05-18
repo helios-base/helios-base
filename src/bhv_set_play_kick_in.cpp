@@ -439,7 +439,7 @@ Bhv_SetPlayKickIn::doMove( PlayerAgent * agent )
     else if ( wm.ball().distFromSelf() > 10.0
               || kicker_ball_dist > 1.0 )
     {
-        agent->setNeckAction( new Neck_TurnToBallOrScan() );
+        agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
     }
     else
     {

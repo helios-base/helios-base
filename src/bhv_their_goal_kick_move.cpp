@@ -189,7 +189,7 @@ Bhv_TheirGoalKickMove::doNormal( PlayerAgent * agent )
         // already there
         Body_TurnToBall().execute( agent );
     }
-    agent->setNeckAction( new Neck_TurnToBallOrScan() );
+    agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
 }
 
 /*-------------------------------------------------------------------*/
@@ -240,6 +240,6 @@ Bhv_TheirGoalKickMove::doChaseBall( PlayerAgent * agent )
     // can chase !!
     agent->debugClient().addMessage( "GKickGetBall" );
     Body_Intercept().execute( agent );
-    agent->setNeckAction( new Neck_TurnToBallOrScan() );
+    agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
     return true;
 }
