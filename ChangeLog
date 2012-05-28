@@ -1,3 +1,10 @@
+2012-05-28  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* src/bhv_set_play_indirect_free_kick.cpp:
+	* src/bhv_set_play_kick_in.cpp:
+	* src/chain_action/body_force_shoot.cpp:
+	- librcscの変更に追従し，削除されたアクションを使わない実装に変更
+
 2012-05-18  Hidehisa Akiyama  <akky@users.sourceforge.jp>
 
 	* src/bhv_basic_move.cpp:
