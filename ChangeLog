@@ -1,3 +1,11 @@
+2016-09-12  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* src/Makefile.am:
+	- subdir-objectsオプションを追加
+
+	* README:
+	- 説明文を修正
+
 2012-05-28  Hidehisa Akiyama  <akky@users.sourceforge.jp>
 
 	* src/bhv_set_play_indirect_free_kick.cpp:

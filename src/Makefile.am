@@ -1,5 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 
+AUTOMAKE_OPTIONS = subdir-objects
+
 PLAYERSOURCES = \
 	bhv_basic_move.cpp \
 	bhv_basic_offensive_kick.cpp \
