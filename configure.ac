@@ -21,6 +21,10 @@ AC_PROG_RANLIB
 AC_PROG_LN_S
 
 # ----------------------------------------------------------
+# check C++
+AX_CXX_COMPILE_STDCXX_14(noext)
+
+# ----------------------------------------------------------
 # check boost
 AX_BOOST_BASE([1.38.0])
 CPPFLAGS="$CPPFLAGS $BOOST_CPPFLAGS"

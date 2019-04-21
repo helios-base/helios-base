@@ -1,3 +1,11 @@
+2019-04-21  Hidehisa Akiyama  <akky@users.sourceforge.jp>
+
+	* m4/ax_cxx_compile_stdcxx.m4:
+	* m4/ax_cxx_compile_stdcxx_14.m4:
+	* configure.ac:
+	* src/chain_action/tackle_generator.cpp:
+	- C++14ÂÐ±þ
+
 2016-09-12  Hidehisa Akiyama  <akky@users.sourceforge.jp>
 
 	* src/Makefile.am:
