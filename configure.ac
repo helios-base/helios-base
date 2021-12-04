@@ -27,8 +27,10 @@ AX_CXX_COMPILE_STDCXX_14(noext)
 # ----------------------------------------------------------
 # check boost
 AX_BOOST_BASE([1.38.0])
+AX_BOOST_SYSTEM
 CPPFLAGS="$CPPFLAGS $BOOST_CPPFLAGS"
 LDFLAGS="$LDFLAGS $BOOST_LDFLAGS"
+LIBS="$BOOST_SYSTEM_LIB $LIBS"
 
 # check librcsc path
 AC_SUBST(LIBRCSCLIB)
@@ -43,7 +45,7 @@ if test x$librcsc_prefix != x; then
   LDFLAGS="$LDFLAGS -L$librcsc_prefix/lib"
   LIBRCSCLIB="$librcsc_prefix/lib"
 else
-  for librcsc_path_tmp in $HOME $HOME/local $HOME/rcss /opt/robocup /opt /opt/local ; do
+  for librcsc_path_tmp in $HOME/.local $HOME/local $HOME/rcss /opt/robocup /opt /opt/local ; do
     if test -d "$librcsc_path_tmp/include/rcsc" && test -r "$librcsc_path_tmp/include/rcsc/types.h" ; then
       CPPFLAGS="$CPPFLAGS -I$librcsc_path_tmp/include"
       LDFLAGS="$LDFLAGS -L$librcsc_path_tmp/lib"
@@ -61,32 +63,9 @@ AC_CHECK_LIB([m], [cos],
              [AC_MSG_ERROR([*** -lm not found! ***])])
 AC_CHECK_LIB([z], [deflate])
 
-AC_CHECK_LIB([rcsc_geom], [main],
-             [LIBS="-lrcsc_geom $LIBS"],
-             [AC_MSG_ERROR([*** -lrcsc_geom not found! ***])])
-AC_CHECK_LIB([rcsc_rcg], [main],
-             [LIBS="-lrcsc_rcg $LIBS"],
-             [AC_MSG_ERROR([*** -lrcsc_rcg not found! ***])])
-# defined HAVE_LIBRCSC_GZ and set LIBS="-lrcsc_gz $LIBS"
-AC_CHECK_LIB([rcsc_gz], [main])
-AC_CHECK_LIB([rcsc_param], [main],
-             [LIBS="-lrcsc_param $LIBS"],
-             [AC_MSG_ERROR([*** -lrcsc_param not found! ***])])
-AC_CHECK_LIB([rcsc_time], [main],
-             [LIBS="-lrcsc_time $LIBS"],
-             [AC_MSG_ERROR([*** -lrcsc_time not found! ***])])
-AC_CHECK_LIB([rcsc_net], [main],
-             [LIBS="-lrcsc_net $LIBS"],
-             [AC_MSG_ERROR([*** -lrcsc_time not found! ***])])
-AC_CHECK_LIB([rcsc_ann], [main],
-             [LIBS="-lrcsc_ann $LIBS"],
-             [AC_MSG_ERROR([*** -lrcsc_ann not found! ***])])
-AC_CHECK_LIB([rcsc_clang], [main],
-             [LIBS="-lrcsc_clang $LIBS"],
-             [AC_MSG_ERROR([*** -lrcsc_ann not found! ***])])
-AC_CHECK_LIB([rcsc_agent], [main],
-             [LIBS="-lrcsc_agent $LIBS"],
-             [AC_MSG_ERROR([*** -lrcsc_agent not found! ***])])
+AC_CHECK_LIB([rcsc], [main],
+             [LIBS="-lrcsc $LIBS"],
+             [AC_MSG_ERROR([*** -lrcsc not found! ***])])
 
 # --------------------------------------------------------------
 # Checks for header files.
