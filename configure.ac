@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.61)
-AC_INIT([agent2d],[3.1.0],[akky@users.sourceforge.jp])
+AC_INIT([agent2d],[2022.01],[akky@users.sourceforge.jp])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_AUX_DIR([config])
@@ -33,8 +33,8 @@ LDFLAGS="$LDFLAGS $BOOST_LDFLAGS"
 LIBS="$BOOST_SYSTEM_LIB $LIBS"
 
 # check librcsc path
-AC_SUBST(LIBRCSCLIB)
-LIBRCSCLIB="/usr/local/lib"
+AC_SUBST(LIBRCSC_LIBDIR)
+LIBRCSC_LIBDIR="/usr/local/lib"
 librcsc_prefix=""
 AC_ARG_WITH(librcsc,
             [  --with-librcsc=PREFIX prefix where librcsc is installed (optional)],
@@ -43,13 +43,13 @@ AC_ARG_WITH(librcsc,
 if test x$librcsc_prefix != x; then
   CPPFLAGS="$CPPFLAGS -I$librcsc_prefix/include"
   LDFLAGS="$LDFLAGS -L$librcsc_prefix/lib"
-  LIBRCSCLIB="$librcsc_prefix/lib"
+  LIBRCSC_LIBDIR="$librcsc_prefix/lib"
 else
   for librcsc_path_tmp in $HOME/.local $HOME/local $HOME/rcss /opt/robocup /opt /opt/local ; do
     if test -d "$librcsc_path_tmp/include/rcsc" && test -r "$librcsc_path_tmp/include/rcsc/types.h" ; then
       CPPFLAGS="$CPPFLAGS -I$librcsc_path_tmp/include"
       LDFLAGS="$LDFLAGS -L$librcsc_path_tmp/lib"
-      LIBRCSCLIB="$librcsc_path_tmp/lib"
+      LIBRCSC_LIBDIR="$librcsc_path_tmp/lib"
       break;
     fi
   done
