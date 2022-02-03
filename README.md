@@ -25,6 +25,13 @@ To build binaries, execute commands from the root of source directory:
 ./bootstrap
 ./configure
 make
+
+# For CMake
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
 ```
 
 To start the agent2d team, invoke the start script in `src` directory.
