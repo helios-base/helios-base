@@ -252,7 +252,7 @@ TackleGenerator::generate( const WorldModel & wm )
 
 
 #ifdef DEBUG_PROFILE
-    MSecTimer timer;
+    Timer timer;
 #endif
 
     calculate( wm );

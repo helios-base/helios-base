@@ -97,7 +97,7 @@ SamplePlayer::SamplePlayer()
     M_field_evaluator = createFieldEvaluator();
     M_action_generator = createActionGenerator();
 
-    boost::shared_ptr< AudioMemory > audio_memory( new AudioMemory );
+    std::shared_ptr< AudioMemory > audio_memory( new AudioMemory );
 
     M_worldmodel.setAudioMemory( audio_memory );
 

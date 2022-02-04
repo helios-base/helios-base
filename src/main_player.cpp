@@ -42,7 +42,7 @@
 namespace {
 
 SamplePlayer agent;
-boost::shared_ptr< rcsc::AbstractClient > client;
+std::shared_ptr< rcsc::AbstractClient > client;
 
 /*-------------------------------------------------------------------*/
 void
