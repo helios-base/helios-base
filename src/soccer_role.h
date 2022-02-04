@@ -33,7 +33,8 @@
 #define SOCCER_ROLE_H
 
 #include <rcsc/factory.h>
-#include <boost/shared_ptr.hpp>
+
+#include <memory>
 #include <string>
 
 namespace rcsc {
@@ -47,7 +48,7 @@ class WorldModel;
 class SoccerRole {
 public:
 
-    typedef boost::shared_ptr< SoccerRole > Ptr;
+    typedef std::shared_ptr< SoccerRole > Ptr;
     typedef Ptr (*Creator)();
     typedef rcss::Factory< Creator, std::string > Creators;
 

@@ -41,16 +41,15 @@
 #include <rcsc/common/server_param.h>
 #include <rcsc/geom/vector_2d.h>
 
-#include <boost/shared_ptr.hpp>
-
+#include <memory>
 #include <algorithm>
 
 class PredictState {
 public:
     static const int VALID_PLAYER_THRESHOLD;
 
-    typedef boost::shared_ptr< PredictState > Ptr; //!< pointer type alias
-    typedef boost::shared_ptr< const PredictState > ConstPtr; //!< const pointer type alias
+    typedef std::shared_ptr< PredictState > Ptr; //!< pointer type alias
+    typedef std::shared_ptr< const PredictState > ConstPtr; //!< const pointer type alias
 
 private:
     const rcsc::WorldModel * M_world;

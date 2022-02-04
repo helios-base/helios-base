@@ -32,8 +32,7 @@
 #ifndef ACTION_GENERATOR_H
 #define ACTION_GENERATOR_H
 
-#include <boost/shared_ptr.hpp>
-
+#include <memory>
 #include <vector>
 
 class ActionStatePair;
@@ -49,8 +48,8 @@ class WorldModel;
 class ActionGenerator {
 public:
 
-    typedef boost::shared_ptr< ActionGenerator > Ptr;
-    typedef boost::shared_ptr< const ActionGenerator > ConstPtr;
+    typedef std::shared_ptr< ActionGenerator > Ptr;
+    typedef std::shared_ptr< const ActionGenerator > ConstPtr;
 
 private:
 

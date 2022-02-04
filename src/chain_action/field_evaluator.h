@@ -33,8 +33,7 @@
 
 #include <rcsc/player/world_model.h>
 
-#include <boost/shared_ptr.hpp>
-
+#include <memory>
 #include <vector>
 
 /*!
@@ -44,8 +43,8 @@
 class FieldEvaluator {
 public:
 
-    typedef boost::shared_ptr< FieldEvaluator > Ptr; //!< pointer type alias
-    typedef boost::shared_ptr< const FieldEvaluator > ConstPtr; //!< const pointer type alias
+    typedef std::shared_ptr< FieldEvaluator > Ptr; //!< pointer type alias
+    typedef std::shared_ptr< const FieldEvaluator > ConstPtr; //!< const pointer type alias
 
 protected:
     /*!
