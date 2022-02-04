@@ -138,7 +138,7 @@ ShootGenerator::generate( const WorldModel & wm )
                          : wm.ball().pos() + wm.ball().vel() );
 
 #ifdef DEBUG_PROFILE
-    MSecTimer timer;
+    Timer timer;
 #endif
 
     Vector2D goal_l( SP.pitchHalfLength(), -SP.goalHalfWidth() );

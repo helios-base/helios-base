@@ -88,7 +88,7 @@ SampleCoach::SampleCoach()
     // register audio memory & say message parsers
     //
 
-    boost::shared_ptr< AudioMemory > audio_memory( new AudioMemory );
+    std::shared_ptr< AudioMemory > audio_memory( new AudioMemory );
 
     M_worldmodel.setAudioMemory( audio_memory );
 
@@ -691,17 +691,17 @@ SampleCoach::sayPlayerTypes()
         return;
     }
 
-    boost::shared_ptr< FreeformMessage > ptr( new OpponentPlayerTypeMessage( M_opponent_player_types[0],
-                                                                             M_opponent_player_types[1],
-                                                                             M_opponent_player_types[2],
-                                                                             M_opponent_player_types[3],
-                                                                             M_opponent_player_types[4],
-                                                                             M_opponent_player_types[5],
-                                                                             M_opponent_player_types[6],
-                                                                             M_opponent_player_types[7],
-                                                                             M_opponent_player_types[8],
-                                                                             M_opponent_player_types[9],
-                                                                             M_opponent_player_types[10] ) );
+    std::shared_ptr< FreeformMessage > ptr( new OpponentPlayerTypeMessage( M_opponent_player_types[0],
+                                                                           M_opponent_player_types[1],
+                                                                           M_opponent_player_types[2],
+                                                                           M_opponent_player_types[3],
+                                                                           M_opponent_player_types[4],
+                                                                           M_opponent_player_types[5],
+                                                                           M_opponent_player_types[6],
+                                                                           M_opponent_player_types[7],
+                                                                           M_opponent_player_types[8],
+                                                                           M_opponent_player_types[9],
+                                                                           M_opponent_player_types[10] ) );
 
     this->addFreeformMessage( ptr );
 
