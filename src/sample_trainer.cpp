@@ -284,7 +284,7 @@ SampleTrainer::doSubstitute()
 
         if ( ! world().teamNameLeft().empty() )
         {
-            UniformSmallInt uni( 0, PlayerParam::i().ptMax() );
+            UniformInt uni( 0, PlayerParam::i().ptMax() );
             doChangePlayerType( world().teamNameLeft(),
                                 1,
                                 uni() );

@@ -29,8 +29,7 @@
 
 #include "predict_state.h"
 
-#include <boost/shared_ptr.hpp>
-
+#include <memory>
 #include <vector>
 
 class CooperativeAction;
@@ -41,8 +40,8 @@ class CooperativeAction;
 */
 class ActionStatePair {
 public:
-    boost::shared_ptr< const CooperativeAction > M_action;
-    boost::shared_ptr< const PredictState > M_state;
+    std::shared_ptr< const CooperativeAction > M_action;
+    std::shared_ptr< const PredictState > M_state;
 
     // not used
     ActionStatePair();
@@ -79,20 +78,20 @@ public:
           M_state( state )
       { }
 
-    ActionStatePair( const boost::shared_ptr< const CooperativeAction > & action,
+    ActionStatePair( const std::shared_ptr< const CooperativeAction > & action,
                      const PredictState * state )
         : M_action( action ),
           M_state( state )
       { }
 
     ActionStatePair( const CooperativeAction * action,
-                     const boost::shared_ptr< const PredictState > & state )
+                     const std::shared_ptr< const PredictState > & state )
         : M_action( action ),
           M_state( state )
       { }
 
-    ActionStatePair( const boost::shared_ptr< const CooperativeAction > & action,
-                     const boost::shared_ptr< const PredictState > & state )
+    ActionStatePair( const std::shared_ptr< const CooperativeAction > & action,
+                     const std::shared_ptr< const PredictState > & state )
         : M_action( action ),
           M_state( state )
       { }
@@ -107,12 +106,12 @@ public:
           return *M_state;
       }
 
-    const boost::shared_ptr< const CooperativeAction > & actionPtr() const
+    const std::shared_ptr< const CooperativeAction > & actionPtr() const
       {
           return M_action;
       }
 
-    const boost::shared_ptr< const PredictState > & statePtr() const
+    const std::shared_ptr< const PredictState > & statePtr() const
       {
           return M_state;
       }

@@ -36,7 +36,7 @@
 #include <rcsc/game_time.h>
 #include <rcsc/types.h>
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 /*!
   \class CooperativeAction
@@ -45,8 +45,8 @@
 class CooperativeAction {
 public:
 
-    typedef boost::shared_ptr< CooperativeAction > Ptr; //!< pointer type
-    typedef boost::shared_ptr< const CooperativeAction > ConstPtr; //!< const pointer type
+    typedef std::shared_ptr< CooperativeAction > Ptr; //!< pointer type
+    typedef std::shared_ptr< const CooperativeAction > ConstPtr; //!< const pointer type
 
     /*!
       \enum ActionCategory
