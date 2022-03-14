@@ -57,16 +57,14 @@
 #include <rcsc/player/intercept_table.h>
 #include <rcsc/player/world_model.h>
 
+#include <rcsc/formation/formation_parser.h>
 #include <rcsc/common/logger.h>
 #include <rcsc/common/server_param.h>
 #include <rcsc/param/cmd_line_parser.h>
 #include <rcsc/param/param_map.h>
 #include <rcsc/game_mode.h>
 
-#include <set>
-#include <fstream>
 #include <iostream>
-#include <cstdio>
 
 using namespace rcsc;
 
@@ -291,45 +289,27 @@ Strategy::read( const std::string & formation_dir )
 Formation::Ptr
 Strategy::createFormation( const std::string & filepath )
 {
-    Formation::Ptr f;
-
-    std::ifstream fin( filepath.c_str() );
-    if ( ! fin.is_open() )
+    FormationParser::Ptr parser = FormationParser::create( filepath );
+    if ( ! parser )
     {
-        std::cerr << __FILE__ << ':' << __LINE__ << ':'
-                  << " ***ERROR*** failed to open file [" << filepath << "]"
-                  << std::endl;
-        return f;
+        std::cerr << "(Strategy::createFormation) Could not create a formation parser for " << filepath << std::endl;
+        return Formation::Ptr();
     }
 
-    f = Formation::create( fin );
+    Formation::Ptr f = parser->parse( filepath );
+
     if ( ! f )
     {
-        std::cerr << __FILE__ << ':' << __LINE__ << ':'
-                  << " ***ERROR*** failed to create formation [" << filepath << "]"
-                  << std::endl;
-        return f;
+        std::cerr << "(Strategy::createFormation) Could not create a formation from " << filepath << std::endl;
+        return Formation::Ptr();
     }
-
-    //
-    // read data from file
-    //
-    if ( ! f->read( fin ) )
-    {
-        std::cerr << __FILE__ << ':' << __LINE__ << ':'
-                  << " ***ERROR*** failed to read formation [" << filepath << "]"
-                  << std::endl;
-        f.reset();
-        return f;
-    }
-
 
     //
     // check role names
     //
     for ( int unum = 1; unum <= 11; ++unum )
     {
-        const std::string role_name = f->getRoleName( unum );
+        const std::string role_name = f->roleName( unum );
         if ( role_name == "Savior"
              || role_name == "Goalie" )
         {
@@ -490,7 +470,7 @@ Strategy::createRole( const int unum,
         return role;
     }
 
-    const std::string role_name = f->getRoleName( number );
+    const std::string role_name = f->roleName( number );
 
 #ifdef USE_GENERIC_FACTORY
     role = SoccerRole::create( role_name );
@@ -649,11 +629,13 @@ Strategy::updatePosition( const WorldModel & wm )
     for ( int unum = 1; unum <= 11; ++unum )
     {
         PositionType type = Position_Center;
-        if ( f->isSideType( unum ) )
+
+        const RoleType role_type = f->roleType( unum );
+        if ( role_type.side() == RoleType::Left )
         {
             type = Position_Left;
         }
-        else if ( f->isSymmetryType( unum ) )
+        else if ( role_type.side() == RoleType::Right )
         {
             type = Position_Right;
         }
