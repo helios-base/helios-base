@@ -34,9 +34,9 @@
 #include "bhv_goalie_chase_ball.h"
 #include "bhv_goalie_free_kick.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/neck_scan_field.h>
-#include <rcsc/action/body_clear_ball.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/neck_scan_field.h"
+#include "basic_actions/body_clear_ball.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>

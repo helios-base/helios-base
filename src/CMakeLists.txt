@@ -1,4 +1,6 @@
 
+add_subdirectory(basic_actions)
+
 # player
 add_executable(sample_player
   chain_action/actgen_cross.cpp
@@ -88,9 +90,11 @@ target_include_directories(sample_player
 
 target_link_libraries(sample_player
   PUBLIC
-  ${LIBRCSC_LIB}
-  Boost::system
-  ZLIB::ZLIB
+    ${LIBRCSC_LIB}
+    Boost::system
+    ZLIB::ZLIB
+  PRIVATE
+    basic_actions
   )
 
 set_target_properties(sample_player

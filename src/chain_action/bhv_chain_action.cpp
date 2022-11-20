@@ -41,15 +41,15 @@
 
 #include "neck_turn_to_receiver.h"
 
-#include <rcsc/action/bhv_scan_field.h>
-#include <rcsc/action/body_clear_ball.h>
-#include <rcsc/action/body_go_to_point.h>
-#include <rcsc/action/body_hold_ball.h>
-#include <rcsc/action/body_turn_to_point.h>
-#include <rcsc/action/neck_scan_field.h>
-#include <rcsc/action/neck_turn_to_goalie_or_scan.h>
+#include "basic_actions/bhv_scan_field.h"
+#include "basic_actions/body_clear_ball.h"
+#include "basic_actions/body_go_to_point.h"
+#include "basic_actions/body_hold_ball.h"
+#include "basic_actions/body_turn_to_point.h"
+#include "basic_actions/neck_scan_field.h"
+#include "basic_actions/neck_turn_to_goalie_or_scan.h"
 
-#include <rcsc/action/kick_table.h>
+#include "basic_actions/kick_table.h"
 
 #include <rcsc/player/intercept_table.h>
 #include <rcsc/player/soccer_intention.h>

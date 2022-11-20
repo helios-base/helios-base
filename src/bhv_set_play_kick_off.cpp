@@ -36,12 +36,12 @@
 #include "bhv_set_play.h"
 #include "bhv_prepare_set_play_kick.h"
 
-#include <rcsc/action/body_smart_kick.h>
+#include "basic_actions/body_smart_kick.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/body_go_to_point.h>
-//#include <rcsc/action/body_kick_one_step.h>
-#include <rcsc/action/neck_scan_field.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/body_go_to_point.h"
+//#include "basic_actions/body_kick_one_step.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/common/logger.h>

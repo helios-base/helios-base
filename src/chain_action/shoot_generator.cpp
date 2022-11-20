@@ -37,7 +37,7 @@
 
 #include "field_analyzer.h"
 
-#include <rcsc/action/kick_table.h>
+#include "basic_actions/kick_table.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/intercept_table.h>

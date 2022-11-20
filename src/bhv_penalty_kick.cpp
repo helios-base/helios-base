@@ -36,18 +36,18 @@
 #include "bhv_goalie_basic_move.h"
 #include "bhv_go_to_static_ball.h"
 
-#include <rcsc/action/body_clear_ball.h>
-#include <rcsc/action/body_dribble2008.h>
-#include <rcsc/action/body_intercept.h>
-#include <rcsc/action/body_smart_kick.h>
+#include "basic_actions/body_clear_ball.h"
+#include "basic_actions/body_dribble2008.h"
+#include "basic_actions/body_intercept.h"
+#include "basic_actions/body_smart_kick.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/bhv_go_to_point_look_ball.h>
-#include <rcsc/action/body_go_to_point.h>
-#include <rcsc/action/body_kick_one_step.h>
-#include <rcsc/action/body_stop_dash.h>
-#include <rcsc/action/body_stop_ball.h>
-#include <rcsc/action/neck_scan_field.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/bhv_go_to_point_look_ball.h"
+#include "basic_actions/body_go_to_point.h"
+#include "basic_actions/body_kick_one_step.h"
+#include "basic_actions/body_stop_dash.h"
+#include "basic_actions/body_stop_ball.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/intercept_table.h>
