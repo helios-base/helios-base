@@ -30,8 +30,8 @@
 
 #include "neck_goalie_turn_neck.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/neck_scan_field.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/player/player_agent.h>
 

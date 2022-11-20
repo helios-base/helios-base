@@ -54,17 +54,17 @@
 
 #include "intention_receive.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/bhv_emergency.h>
-#include <rcsc/action/body_go_to_point.h>
-#include <rcsc/action/body_intercept.h>
-#include <rcsc/action/body_kick_one_step.h>
-#include <rcsc/action/neck_scan_field.h>
-#include <rcsc/action/neck_turn_to_ball_or_scan.h>
-#include <rcsc/action/view_synch.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/bhv_emergency.h"
+#include "basic_actions/body_go_to_point.h"
+#include "basic_actions/body_intercept.h"
+#include "basic_actions/body_kick_one_step.h"
+#include "basic_actions/neck_scan_field.h"
+#include "basic_actions/neck_turn_to_ball_or_scan.h"
+#include "basic_actions/view_synch.h"
+#include "basic_actions/kick_table.h"
 
 #include <rcsc/formation/formation.h>
-#include <rcsc/action/kick_table.h>
 #include <rcsc/player/intercept_table.h>
 #include <rcsc/player/say_message_builder.h>
 #include <rcsc/player/audio_sensor.h>
@@ -451,7 +451,11 @@ SamplePlayer::handleActionEnd()
 void
 SamplePlayer::handleInitMessage()
 {
-
+    {
+        // Initializing the order of penalty kickers
+        std::vector< int > unum_order_pk_kickers = { 10, 9, 2, 11, 3, 4, 1, 5, 6, 7, 8 };
+        M_worldmodel.setPenaltyKickTakerOrder( unum_order_pk_kickers );
+    }
 }
 
 /*-------------------------------------------------------------------*/

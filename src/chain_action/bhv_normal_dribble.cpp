@@ -42,10 +42,10 @@
 #include "dribble.h"
 #include "short_dribble_generator.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/neck_scan_field.h>
-#include <rcsc/action/neck_turn_to_ball_or_scan.h>
-#include <rcsc/action/view_synch.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/neck_scan_field.h"
+#include "basic_actions/neck_turn_to_ball_or_scan.h"
+#include "basic_actions/view_synch.h"
 
 #include <rcsc/player/intercept_table.h>
 #include <rcsc/player/player_agent.h>

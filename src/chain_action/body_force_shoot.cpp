@@ -35,17 +35,19 @@
 
 #include "body_force_shoot.h"
 
+#include "basic_actions/body_smart_kick.h"
+#include "basic_actions/body_kick_one_step.h"
+
 #include <rcsc/player/player_agent.h>
 #include <rcsc/common/server_param.h>
 #include <rcsc/common/logger.h>
 
-#include <rcsc/action/body_smart_kick.h>
-#include <rcsc/action/body_kick_one_step.h>
+using namespace rcsc;
 
 /*-------------------------------------------------------------------*/
 /*!
 
-*/
+ */
 Body_ForceShoot::Body_ForceShoot()
 {
 
@@ -54,40 +56,40 @@ Body_ForceShoot::Body_ForceShoot()
 /*-------------------------------------------------------------------*/
 /*!
 
-*/
+ */
 bool
-Body_ForceShoot::execute( rcsc::PlayerAgent * agent )
+Body_ForceShoot::execute( PlayerAgent * agent )
 {
-    rcsc::dlog.addText( rcsc::Logger::ACTION,
-                        __FILE__": execute()" );
+    dlog.addText( Logger::ACTION,
+                  __FILE__": execute()" );
     agent->debugClient().addMessage( "ForceShoot" );
 
-    const rcsc::ServerParam & param = rcsc::ServerParam::i();
+    const ServerParam & param = ServerParam::i();
 
-    const rcsc::Vector2D target = param.theirTeamGoalPos();
+    const Vector2D target = param.theirTeamGoalPos();
 
-    rcsc::dlog.addText( rcsc::Logger::ACTION,
-                        __FILE__": no course, force kick" );
+    dlog.addText( Logger::ACTION,
+                  __FILE__": no course, force kick" );
     agent->debugClient().setTarget( target );
 
     if ( agent->world().kickableOpponent() )
     {
-        if ( rcsc::Body_KickOneStep( target, param.ballSpeedMax() )
+        if ( Body_KickOneStep( target, param.ballSpeedMax() )
              .execute( agent ) )
         {
             return true;
         }
     }
 
-    if ( rcsc::Body_SmartKick( target,
-                               param.ballSpeedMax(),
-                               param.ballSpeedMax() * 0.96,
-                               3 ).execute( agent ) )
+    if ( Body_SmartKick( target,
+                         param.ballSpeedMax(),
+                         param.ballSpeedMax() * 0.96,
+                         3 ).execute( agent ) )
     {
         return true;
     }
 
-    if ( rcsc::Body_KickOneStep( target, param.ballSpeedMax() )
+    if ( Body_KickOneStep( target, param.ballSpeedMax() )
          .execute( agent ) )
     {
         return true;

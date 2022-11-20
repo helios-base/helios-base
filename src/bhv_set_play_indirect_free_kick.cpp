@@ -39,12 +39,12 @@
 
 #include "intention_wait_after_set_play_kick.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/body_go_to_point.h>
-#include <rcsc/action/body_kick_one_step.h>
-#include <rcsc/action/body_pass.h>
-#include <rcsc/action/neck_scan_field.h>
-#include <rcsc/action/neck_turn_to_ball_or_scan.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/body_go_to_point.h"
+#include "basic_actions/body_kick_one_step.h"
+#include "basic_actions/body_pass.h"
+#include "basic_actions/neck_scan_field.h"
+#include "basic_actions/neck_turn_to_ball_or_scan.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>

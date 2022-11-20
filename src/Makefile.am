@@ -1,5 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 
+SUBDIRS = basic_actions .
+
 AUTOMAKE_OPTIONS = subdir-objects
 
 PLAYERSOURCES = \
@@ -235,7 +237,8 @@ sample_player_SOURCES = \
 	$(PLAYERSOURCES)
 sample_player_CXXFLAGS = -W -Wall
 sample_player_LDFLAGS =
-sample_player_LDADD =
+sample_player_LDADD = \
+	$(top_builddir)/src/basic_actions/libbasic_actions.a
 
 sample_coach_SOURCES = \
 	$(COACHSOURCES)
@@ -254,7 +257,7 @@ noinst_HEADERS = \
 	$(COACHHEADERS) \
 	$(TRAINERHEADERS)
 
-AM_CPPFLAGS = -I$(top_srcdir)/src  -I$(top_srcdir)/src/chain_action
+AM_CPPFLAGS = -I$(top_srcdir)/src -I$(top_srcdir)/src/chain_action
 AM_CFLAGS = -W -Wall
 AM_CXXFLAGS = -W -Wall
 AM_LDLAGS =

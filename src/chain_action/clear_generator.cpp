@@ -38,7 +38,8 @@
 #include "field_analyzer.h"
 #include "clear_ball.h"
 
-#include <rcsc/action/kick_table.h>
+#include "basic_actions/kick_table.h"
+
 #include <rcsc/player/world_model.h>
 #include <rcsc/common/server_param.h>
 #include <rcsc/common/logger.h>

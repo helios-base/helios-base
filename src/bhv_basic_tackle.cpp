@@ -32,8 +32,8 @@
 
 #include "tackle_generator.h"
 
-#include <rcsc/action/neck_turn_to_ball_or_scan.h>
-#include <rcsc/action/neck_turn_to_point.h>
+#include "basic_actions/neck_turn_to_ball_or_scan.h"
+#include "basic_actions/neck_turn_to_point.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>

@@ -31,7 +31,7 @@
 #include "intention_wait_after_set_play_kick.h"
 
 
-#include <rcsc/action/bhv_neck_body_to_ball.h>
+#include "basic_actions/bhv_neck_body_to_ball.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>

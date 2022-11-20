@@ -34,12 +34,12 @@
 
 #include "bhv_chain_action.h"
 
-#include <rcsc/action/body_go_to_point.h>
-#include <rcsc/action/body_intercept.h>
-#include <rcsc/action/body_turn_to_ball.h>
+#include "basic_actions/body_go_to_point.h"
+#include "basic_actions/body_intercept.h"
+#include "basic_actions/body_turn_to_ball.h"
 
-#include <rcsc/action/neck_turn_to_ball_or_scan.h>
-#include <rcsc/action/neck_scan_field.h>
+#include "basic_actions/neck_turn_to_ball_or_scan.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/intercept_table.h>

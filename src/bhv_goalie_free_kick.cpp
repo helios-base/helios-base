@@ -32,12 +32,12 @@
 
 #include "bhv_goalie_basic_move.h"
 
-#include <rcsc/action/body_clear_ball.h>
-#include <rcsc/action/body_pass.h>
+#include "basic_actions/body_clear_ball.h"
+#include "basic_actions/body_pass.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/body_kick_one_step.h>
-#include <rcsc/action/neck_scan_field.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/body_kick_one_step.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>

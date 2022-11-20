@@ -30,8 +30,8 @@
 
 #include "view_tactical.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/view_synch.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/view_synch.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/intercept_table.h>

@@ -37,7 +37,8 @@
 #include "predict_state.h"
 #include "pass_checker.h"
 
-#include <rcsc/action/kick_table.h>
+#include "basic_actions/kick_table.h"
+
 #include <rcsc/player/world_model.h>
 #include <rcsc/player/player_predicate.h>
 #include <rcsc/player/world_model.h>

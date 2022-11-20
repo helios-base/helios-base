@@ -30,8 +30,8 @@
 
 #include "bhv_custom_before_kick_off.h"
 
-#include <rcsc/action/bhv_scan_field.h>
-#include <rcsc/action/neck_turn_to_relative.h>
+#include "basic_actions/bhv_scan_field.h"
+#include "basic_actions/neck_turn_to_relative.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/common/server_param.h>

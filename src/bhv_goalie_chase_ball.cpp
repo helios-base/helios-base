@@ -33,10 +33,10 @@
 #include "bhv_goalie_basic_move.h"
 #include "bhv_basic_tackle.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/body_go_to_point.h>
-#include <rcsc/action/body_stop_dash.h>
-#include <rcsc/action/body_intercept.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/body_go_to_point.h"
+#include "basic_actions/body_stop_dash.h"
+#include "basic_actions/body_intercept.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/intercept_table.h>

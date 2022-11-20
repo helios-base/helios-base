@@ -33,9 +33,9 @@
 #include "bhv_go_to_static_ball.h"
 #include "bhv_set_play.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/neck_scan_field.h>
-#include <rcsc/action/body_go_to_point.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/neck_scan_field.h"
+#include "basic_actions/body_go_to_point.h"
 
 #include <rcsc/player/player_agent.h>
 

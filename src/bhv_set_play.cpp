@@ -40,12 +40,12 @@
 #include "bhv_set_play_indirect_free_kick.h"
 #include "bhv_their_goal_kick_move.h"
 
-#include <rcsc/action/basic_actions.h>
-#include <rcsc/action/bhv_before_kick_off.h>
-#include <rcsc/action/bhv_scan_field.h>
-#include <rcsc/action/body_go_to_point.h>
-#include <rcsc/action/neck_scan_field.h>
-#include <rcsc/action/neck_turn_to_ball_or_scan.h>
+#include "basic_actions/basic_actions.h"
+#include "basic_actions/bhv_before_kick_off.h"
+#include "basic_actions/bhv_scan_field.h"
+#include "basic_actions/body_go_to_point.h"
+#include "basic_actions/neck_scan_field.h"
+#include "basic_actions/neck_turn_to_ball_or_scan.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>

@@ -31,11 +31,11 @@
 #include "role_keepaway_taker.h"
 
 
-#include <rcsc/action/body_intercept.h>
-#include <rcsc/action/body_clear_ball.h>
+#include "basic_actions/body_intercept.h"
+#include "basic_actions/body_clear_ball.h"
 
-#include <rcsc/action/neck_scan_field.h>
-#include <rcsc/action/neck_turn_to_ball.h>
+#include "basic_actions/neck_scan_field.h"
+#include "basic_actions/neck_turn_to_ball.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/intercept_table.h>
