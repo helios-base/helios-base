@@ -2,7 +2,83 @@
 
 AUTOMAKE_OPTIONS = subdir-objects
 
-PLAYERSOURCES = \
+noinst_PROGRAMS = sample_player sample_coach sample_trainer
+
+sample_player_CPPFLAGS = -I$(top_srcdir)/src/chain_action -I$(top_srcdir)/src/setplay
+sample_player_CXXFLAGS = -W -Wall
+sample_player_LDFLAGS =
+sample_player_LDADD =
+
+sample_player_SOURCES = \
+	basic_actions/basic_actions.cpp \
+	basic_actions/bhv_before_kick_off.cpp \
+	basic_actions/bhv_emergency.cpp \
+	basic_actions/bhv_go_to_point_look_ball.cpp \
+	basic_actions/bhv_scan_field.cpp \
+	basic_actions/body_advance_ball2009.cpp \
+	basic_actions/body_clear_ball2009.cpp \
+	basic_actions/body_dribble2008.cpp \
+	basic_actions/body_go_to_point.cpp \
+	basic_actions/body_go_to_point_dodge.cpp \
+	basic_actions/body_hold_ball2008.cpp \
+	basic_actions/body_intercept2009.cpp \
+	basic_actions/body_kick_one_step.cpp \
+	basic_actions/body_kick_to_relative.cpp \
+	basic_actions/body_pass.cpp \
+	basic_actions/body_smart_kick.cpp \
+	basic_actions/body_stop_ball.cpp \
+	basic_actions/body_stop_dash.cpp \
+	basic_actions/intention_dribble2008.cpp \
+	basic_actions/intention_time_limit_action.cpp \
+	basic_actions/kick_table.cpp \
+	basic_actions/neck_scan_field.cpp \
+	basic_actions/neck_scan_players.cpp \
+	basic_actions/neck_turn_to_ball_and_player.cpp \
+	basic_actions/neck_turn_to_ball_or_scan.cpp \
+	basic_actions/neck_turn_to_goalie_or_scan.cpp \
+	basic_actions/neck_turn_to_player_or_scan.cpp \
+	basic_actions/neck_turn_to_low_conf_teammate.cpp \
+	basic_actions/view_synch.cpp \
+	chain_action/actgen_cross.cpp \
+	chain_action/actgen_direct_pass.cpp \
+	chain_action/actgen_self_pass.cpp \
+	chain_action/actgen_shoot.cpp \
+	chain_action/actgen_short_dribble.cpp \
+	chain_action/actgen_simple_dribble.cpp \
+	chain_action/actgen_strict_check_pass.cpp \
+	chain_action/action_chain_graph.cpp \
+	chain_action/action_chain_holder.cpp \
+	chain_action/bhv_chain_action.cpp \
+	chain_action/bhv_normal_dribble.cpp \
+	chain_action/bhv_pass_kick_find_receiver.cpp \
+	chain_action/bhv_strict_check_shoot.cpp \
+	chain_action/body_force_shoot.cpp \
+	chain_action/clear_ball.cpp \
+	chain_action/clear_generator.cpp \
+	chain_action/cooperative_action.cpp \
+	chain_action/cross_generator.cpp \
+	chain_action/dribble.cpp \
+	chain_action/field_analyzer.cpp \
+	chain_action/hold_ball.cpp \
+	chain_action/neck_turn_to_receiver.cpp \
+	chain_action/pass.cpp \
+	chain_action/predict_state.cpp \
+	chain_action/self_pass_generator.cpp \
+	chain_action/shoot.cpp \
+	chain_action/shoot_generator.cpp \
+	chain_action/short_dribble_generator.cpp \
+	chain_action/simple_pass_checker.cpp \
+	chain_action/strict_check_pass_generator.cpp \
+	chain_action/tackle_generator.cpp \
+	setplay/bhv_prepare_set_play_kick.cpp \
+	setplay/bhv_set_play.cpp \
+	setplay/bhv_set_play_free_kick.cpp \
+	setplay/bhv_set_play_goal_kick.cpp \
+	setplay/bhv_set_play_indirect_free_kick.cpp \
+	setplay/bhv_set_play_kick_in.cpp \
+	setplay/bhv_set_play_kick_off.cpp \
+	setplay/bhv_their_goal_kick_move.cpp \
+	setplay/intention_wait_after_set_play_kick.cpp \
 	bhv_basic_move.cpp \
 	bhv_basic_offensive_kick.cpp \
 	bhv_basic_tackle.cpp \
@@ -11,21 +87,12 @@ PLAYERSOURCES = \
 	bhv_goalie_basic_move.cpp \
 	bhv_goalie_chase_ball.cpp \
 	bhv_goalie_free_kick.cpp \
-	bhv_prepare_set_play_kick.cpp \
-	bhv_set_play.cpp \
-	bhv_set_play_free_kick.cpp \
-	bhv_set_play_goal_kick.cpp \
-	bhv_set_play_indirect_free_kick.cpp \
-	bhv_set_play_kick_in.cpp \
-	bhv_set_play_kick_off.cpp \
-	bhv_their_goal_kick_move.cpp \
 	bhv_penalty_kick.cpp \
 	neck_default_intercept_neck.cpp \
 	neck_goalie_turn_neck.cpp \
 	neck_offensive_intercept_neck.cpp \
 	view_tactical.cpp \
 	intention_receive.cpp \
-	intention_wait_after_set_play_kick.cpp \
 	soccer_role.cpp \
 	role_center_back.cpp \
 	role_center_forward.cpp \
@@ -55,21 +122,21 @@ PLAYERHEADERS = \
 	bhv_goalie_basic_move.h \
 	bhv_goalie_chase_ball.h \
 	bhv_goalie_free_kick.h \
-	bhv_prepare_set_play_kick.h \
-	bhv_set_play.h \
-	bhv_set_play_free_kick.h \
-	bhv_set_play_goal_kick.h \
-	bhv_set_play_indirect_free_kick.h \
-	bhv_set_play_kick_in.h \
-	bhv_set_play_kick_off.h \
-	bhv_their_goal_kick_move.h \
+	setplay/bhv_prepare_set_play_kick.h \
+	setplay/bhv_set_play.h \
+	setplay/bhv_set_play_free_kick.h \
+	setplay/bhv_set_play_goal_kick.h \
+	setplay/bhv_set_play_indirect_free_kick.h \
+	setplay/bhv_set_play_kick_in.h \
+	setplay/bhv_set_play_kick_off.h \
+	setplay/bhv_their_goal_kick_move.h \
+	setplay/intention_wait_after_set_play_kick.h \
 	bhv_penalty_kick.h \
 	neck_default_intercept_neck.h \
 	neck_goalie_turn_neck.h \
 	neck_offensive_intercept_neck.h \
 	view_tactical.h \
 	intention_receive.h \
-	intention_wait_after_set_play_kick.h \
 	soccer_role.h \
 	role_center_back.h \
 	role_center_forward.h \
@@ -89,37 +156,6 @@ PLAYERHEADERS = \
 	sample_freeform_message_parser.h \
 	sample_player.h \
 	strategy.h
-
-BASICACTIONSOURCES = \
-	basic_actions/basic_actions.cpp \
-	basic_actions/bhv_before_kick_off.cpp \
-	basic_actions/bhv_emergency.cpp \
-	basic_actions/bhv_go_to_point_look_ball.cpp \
-	basic_actions/bhv_scan_field.cpp \
-	basic_actions/body_advance_ball2009.cpp \
-	basic_actions/body_clear_ball2009.cpp \
-	basic_actions/body_dribble2008.cpp \
-	basic_actions/body_go_to_point.cpp \
-	basic_actions/body_go_to_point_dodge.cpp \
-	basic_actions/body_hold_ball2008.cpp \
-	basic_actions/body_intercept2009.cpp \
-	basic_actions/body_kick_one_step.cpp \
-	basic_actions/body_kick_to_relative.cpp \
-	basic_actions/body_pass.cpp \
-	basic_actions/body_smart_kick.cpp \
-	basic_actions/body_stop_ball.cpp \
-	basic_actions/body_stop_dash.cpp \
-	basic_actions/intention_dribble2008.cpp \
-	basic_actions/intention_time_limit_action.cpp \
-	basic_actions/kick_table.cpp \
-	basic_actions/neck_scan_field.cpp \
-	basic_actions/neck_scan_players.cpp \
-	basic_actions/neck_turn_to_ball_and_player.cpp \
-	basic_actions/neck_turn_to_ball_or_scan.cpp \
-	basic_actions/neck_turn_to_goalie_or_scan.cpp \
-	basic_actions/neck_turn_to_player_or_scan.cpp \
-	basic_actions/neck_turn_to_low_conf_teammate.cpp \
-	basic_actions/view_synch.cpp
 
 BASICACTIONHEADERS = \
 	basic_actions/basic_actions.h \
@@ -172,39 +208,6 @@ BASICACTIONHEADERS = \
 	basic_actions/view_normal.h \
 	basic_actions/view_synch.h \
 	basic_actions/view_wide.h
-
-CHAINACTIONSOURCES = \
-	chain_action/actgen_cross.cpp \
-	chain_action/actgen_direct_pass.cpp \
-	chain_action/actgen_self_pass.cpp \
-	chain_action/actgen_shoot.cpp \
-	chain_action/actgen_short_dribble.cpp \
-	chain_action/actgen_simple_dribble.cpp \
-	chain_action/actgen_strict_check_pass.cpp \
-	chain_action/action_chain_graph.cpp \
-	chain_action/action_chain_holder.cpp \
-	chain_action/bhv_chain_action.cpp \
-	chain_action/bhv_normal_dribble.cpp \
-	chain_action/bhv_pass_kick_find_receiver.cpp \
-	chain_action/bhv_strict_check_shoot.cpp \
-	chain_action/body_force_shoot.cpp \
-	chain_action/clear_ball.cpp \
-	chain_action/clear_generator.cpp \
-	chain_action/cooperative_action.cpp \
-	chain_action/cross_generator.cpp \
-	chain_action/dribble.cpp \
-	chain_action/field_analyzer.cpp \
-	chain_action/hold_ball.cpp \
-	chain_action/neck_turn_to_receiver.cpp \
-	chain_action/pass.cpp \
-	chain_action/predict_state.cpp \
-	chain_action/self_pass_generator.cpp \
-	chain_action/shoot.cpp \
-	chain_action/shoot_generator.cpp \
-	chain_action/short_dribble_generator.cpp \
-	chain_action/simple_pass_checker.cpp \
-	chain_action/strict_check_pass_generator.cpp \
-	chain_action/tackle_generator.cpp
 
 CHAINACTIONHEADERS = \
 	chain_action/actgen_action_chain_length_filter.h \
@@ -263,8 +266,6 @@ TRAINERHEADERS = \
 	sample_trainer.h
 
 
-noinst_PROGRAMS = sample_player sample_coach sample_trainer
-
 noinst_DATA = \
 	start.sh.in \
 	keepaway.sh.in \
@@ -315,14 +316,6 @@ noinst_DATA = \
 	formations-taker/setplay-opp-formation.conf \
 	formations-taker/setplay-our-formation.conf
 
-sample_player_SOURCES = \
-	$(BASICACTIONSOURCES) \
-	$(CHAINACTIONSOURCES) \
-	$(PLAYERSOURCES)
-sample_player_CXXFLAGS = -W -Wall
-sample_player_LDFLAGS =
-sample_player_LDADD =
-
 sample_coach_SOURCES = \
 	$(COACHSOURCES)
 sample_coach_CXXFLAGS = -W -Wall
@@ -342,7 +335,7 @@ noinst_HEADERS = \
 	$(COACHHEADERS) \
 	$(TRAINERHEADERS)
 
-AM_CPPFLAGS = -I$(top_srcdir)/src -I$(top_srcdir)/src/chain_action
+AM_CPPFLAGS = -I$(top_srcdir)/src
 AM_CFLAGS = -W -Wall
 AM_CXXFLAGS = -W -Wall
 AM_LDLAGS =
