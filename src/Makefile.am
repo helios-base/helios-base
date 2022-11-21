@@ -4,7 +4,7 @@ AUTOMAKE_OPTIONS = subdir-objects
 
 noinst_PROGRAMS = sample_player sample_coach sample_trainer
 
-sample_player_CPPFLAGS = -I$(top_srcdir)/src/chain_action -I$(top_srcdir)/src/setplay
+sample_player_CPPFLAGS = -I$(top_srcdir)/src/planner -I$(top_srcdir)/src/setplay
 sample_player_CXXFLAGS = -W -Wall
 sample_player_LDFLAGS =
 sample_player_LDADD =
@@ -39,37 +39,37 @@ sample_player_SOURCES = \
 	basic_actions/neck_turn_to_player_or_scan.cpp \
 	basic_actions/neck_turn_to_low_conf_teammate.cpp \
 	basic_actions/view_synch.cpp \
-	chain_action/actgen_cross.cpp \
-	chain_action/actgen_direct_pass.cpp \
-	chain_action/actgen_self_pass.cpp \
-	chain_action/actgen_shoot.cpp \
-	chain_action/actgen_short_dribble.cpp \
-	chain_action/actgen_simple_dribble.cpp \
-	chain_action/actgen_strict_check_pass.cpp \
-	chain_action/action_chain_graph.cpp \
-	chain_action/action_chain_holder.cpp \
-	chain_action/bhv_chain_action.cpp \
-	chain_action/bhv_normal_dribble.cpp \
-	chain_action/bhv_pass_kick_find_receiver.cpp \
-	chain_action/bhv_strict_check_shoot.cpp \
-	chain_action/body_force_shoot.cpp \
-	chain_action/clear_ball.cpp \
-	chain_action/clear_generator.cpp \
-	chain_action/cooperative_action.cpp \
-	chain_action/cross_generator.cpp \
-	chain_action/dribble.cpp \
-	chain_action/field_analyzer.cpp \
-	chain_action/hold_ball.cpp \
-	chain_action/neck_turn_to_receiver.cpp \
-	chain_action/pass.cpp \
-	chain_action/predict_state.cpp \
-	chain_action/self_pass_generator.cpp \
-	chain_action/shoot.cpp \
-	chain_action/shoot_generator.cpp \
-	chain_action/short_dribble_generator.cpp \
-	chain_action/simple_pass_checker.cpp \
-	chain_action/strict_check_pass_generator.cpp \
-	chain_action/tackle_generator.cpp \
+	planner/actgen_cross.cpp \
+	planner/actgen_direct_pass.cpp \
+	planner/actgen_self_pass.cpp \
+	planner/actgen_shoot.cpp \
+	planner/actgen_short_dribble.cpp \
+	planner/actgen_simple_dribble.cpp \
+	planner/actgen_strict_check_pass.cpp \
+	planner/action_chain_graph.cpp \
+	planner/action_chain_holder.cpp \
+	planner/bhv_chain_action.cpp \
+	planner/bhv_normal_dribble.cpp \
+	planner/bhv_pass_kick_find_receiver.cpp \
+	planner/bhv_strict_check_shoot.cpp \
+	planner/body_force_shoot.cpp \
+	planner/clear_ball.cpp \
+	planner/clear_generator.cpp \
+	planner/cooperative_action.cpp \
+	planner/cross_generator.cpp \
+	planner/dribble.cpp \
+	planner/field_analyzer.cpp \
+	planner/hold_ball.cpp \
+	planner/neck_turn_to_receiver.cpp \
+	planner/pass.cpp \
+	planner/predict_state.cpp \
+	planner/self_pass_generator.cpp \
+	planner/shoot.cpp \
+	planner/shoot_generator.cpp \
+	planner/short_dribble_generator.cpp \
+	planner/simple_pass_checker.cpp \
+	planner/strict_check_pass_generator.cpp \
+	planner/tackle_generator.cpp \
 	setplay/bhv_go_to_placed_ball.cpp \
 	setplay/bhv_prepare_set_play_kick.cpp \
 	setplay/bhv_set_play.cpp \
@@ -208,44 +208,44 @@ BASICACTIONHEADERS = \
 	basic_actions/view_wide.h
 
 CHAINACTIONHEADERS = \
-	chain_action/actgen_action_chain_length_filter.h \
-	chain_action/actgen_cross.h \
-	chain_action/actgen_direct_pass.h \
-	chain_action/actgen_self_pass.h \
-	chain_action/actgen_shoot.h \
-	chain_action/actgen_short_dribble.h \
-	chain_action/actgen_simple_dribble.h \
-	chain_action/actgen_strict_check_pass.h \
-	chain_action/action_chain_graph.h \
-	chain_action/action_chain_holder.h \
-	chain_action/action_generator.h \
-	chain_action/action_state_pair.h \
-	chain_action/bhv_chain_action.h \
-	chain_action/bhv_normal_dribble.h \
-	chain_action/bhv_pass_kick_find_receiver.h \
-	chain_action/bhv_strict_check_shoot.h \
-	chain_action/body_force_shoot.h \
-	chain_action/clear_ball.h \
-	chain_action/clear_generator.h \
-	chain_action/cooperative_action.h \
-	chain_action/cross_generator.h \
-	chain_action/dribble.h \
-	chain_action/field_analyzer.h \
-	chain_action/field_evaluator.h \
-	chain_action/hold_ball.h \
-	chain_action/neck_turn_to_receiver.h \
-	chain_action/pass.h \
-	chain_action/pass_checker.h \
-	chain_action/predict_ball_object.h \
-	chain_action/predict_player_object.h \
-	chain_action/predict_state.h \
-	chain_action/self_pass_generator.h \
-	chain_action/shoot.h \
-	chain_action/shoot_generator.h \
-	chain_action/short_dribble_generator.h \
-	chain_action/simple_pass_checker.h \
-	chain_action/strict_check_pass_generator.h \
-	chain_action/tackle_generator.h
+	planner/actgen_action_chain_length_filter.h \
+	planner/actgen_cross.h \
+	planner/actgen_direct_pass.h \
+	planner/actgen_self_pass.h \
+	planner/actgen_shoot.h \
+	planner/actgen_short_dribble.h \
+	planner/actgen_simple_dribble.h \
+	planner/actgen_strict_check_pass.h \
+	planner/action_chain_graph.h \
+	planner/action_chain_holder.h \
+	planner/action_generator.h \
+	planner/action_state_pair.h \
+	planner/bhv_chain_action.h \
+	planner/bhv_normal_dribble.h \
+	planner/bhv_pass_kick_find_receiver.h \
+	planner/bhv_strict_check_shoot.h \
+	planner/body_force_shoot.h \
+	planner/clear_ball.h \
+	planner/clear_generator.h \
+	planner/cooperative_action.h \
+	planner/cross_generator.h \
+	planner/dribble.h \
+	planner/field_analyzer.h \
+	planner/field_evaluator.h \
+	planner/hold_ball.h \
+	planner/neck_turn_to_receiver.h \
+	planner/pass.h \
+	planner/pass_checker.h \
+	planner/predict_ball_object.h \
+	planner/predict_player_object.h \
+	planner/predict_state.h \
+	planner/self_pass_generator.h \
+	planner/shoot.h \
+	planner/shoot_generator.h \
+	planner/short_dribble_generator.h \
+	planner/simple_pass_checker.h \
+	planner/strict_check_pass_generator.h \
+	planner/tackle_generator.h
 
 COACHSOURCES = \
 	sample_freeform_message.cpp \
