@@ -28,7 +28,7 @@
 #include <config.h>
 #endif
 
-#include "bhv_chain_action.h"
+#include "bhv_planned_action.h"
 
 #include "action_chain_holder.h"
 #include "action_chain_graph.h"
@@ -180,7 +180,7 @@ IntentionTurnTo::execute( PlayerAgent * agent )
 /*!
 
  */
-Bhv_ChainAction::Bhv_ChainAction( const ActionChainGraph & chain_graph )
+Bhv_PlannedAction::Bhv_PlannedAction( const ActionChainGraph & chain_graph )
     : M_chain_graph( chain_graph )
 {
 
@@ -190,7 +190,7 @@ Bhv_ChainAction::Bhv_ChainAction( const ActionChainGraph & chain_graph )
 /*!
 
  */
-Bhv_ChainAction::Bhv_ChainAction()
+Bhv_PlannedAction::Bhv_PlannedAction()
     : M_chain_graph( ActionChainHolder::i().graph() )
 {
 
@@ -201,10 +201,10 @@ Bhv_ChainAction::Bhv_ChainAction()
 
  */
 bool
-Bhv_ChainAction::execute( PlayerAgent * agent )
+Bhv_PlannedAction::execute( PlayerAgent * agent )
 {
     dlog.addText( Logger::TEAM,
-                  __FILE__": Bhv_ChainAction" );
+                  __FILE__": Bhv_PlannedAction" );
 
     if ( doTurnToForward( agent ) )
     {
@@ -225,7 +225,7 @@ Bhv_ChainAction::execute( PlayerAgent * agent )
     case CooperativeAction::Shoot:
         {
             dlog.addText( Logger::TEAM,
-                          __FILE__" (Bhv_ChainAction) shoot" );
+                          __FILE__" (Bhv_PlannedAction) shoot" );
             if ( Body_ForceShoot().execute( agent ) )
             {
                 agent->setNeckAction( new Neck_TurnToGoalieOrScan( 2 ) );
@@ -242,14 +242,14 @@ Bhv_ChainAction::execute( PlayerAgent * agent )
             {
                 agent->debugClient().addMessage( "CancelChainDribble" );
                 dlog.addText( Logger::TEAM,
-                              __FILE__" (Bhv_ChainAction) cancel dribble" );
+                              __FILE__" (Bhv_PlannedAction) cancel dribble" );
                 return false;
             }
 
             const Vector2D & dribble_target = first_action.targetPoint();
 
             dlog.addText( Logger::TEAM,
-                          __FILE__" (Bhv_ChainAction) dribble target=(%.1f %.1f)",
+                          __FILE__" (Bhv_PlannedAction) dribble target=(%.1f %.1f)",
                           dribble_target.x, dribble_target.y );
 
             NeckAction::Ptr neck;
@@ -278,7 +278,7 @@ Bhv_ChainAction::execute( PlayerAgent * agent )
             {
                 agent->debugClient().addMessage( "CancelChainHold" );
                 dlog.addText( Logger::TEAM,
-                              __FILE__" (Bhv_ChainAction) cancel hold" );
+                              __FILE__" (Bhv_PlannedAction) cancel hold" );
                 return false;
             }
 
@@ -287,7 +287,7 @@ Bhv_ChainAction::execute( PlayerAgent * agent )
             {
                 agent->debugClient().addMessage( "ChainHold:Clear" );
                 dlog.addText( Logger::TEAM,
-                              __FILE__" (Bhv_ChainAction) cancel hold. clear ball" );
+                              __FILE__" (Bhv_PlannedAction) cancel hold. clear ball" );
                 Body_ClearBall().execute( agent );
                 agent->setNeckAction( new Neck_ScanField() );
                 return true;
@@ -295,7 +295,7 @@ Bhv_ChainAction::execute( PlayerAgent * agent )
 
             agent->debugClient().addMessage( "hold" );
             dlog.addText( Logger::TEAM,
-                          __FILE__" (Bhv_ChainAction) hold" );
+                          __FILE__" (Bhv_PlannedAction) hold" );
 
             Body_HoldBall().execute( agent );
             agent->setNeckAction( new Neck_ScanField() );
@@ -306,7 +306,7 @@ Bhv_ChainAction::execute( PlayerAgent * agent )
     case CooperativeAction::Pass:
         {
             dlog.addText( Logger::TEAM,
-                          __FILE__" (Bhv_ChainAction) pass" );
+                          __FILE__" (Bhv_PlannedAction) pass" );
             Bhv_PassKickFindReceiver( M_chain_graph ).execute( agent );
             return true;
             break;
@@ -315,7 +315,7 @@ Bhv_ChainAction::execute( PlayerAgent * agent )
     case CooperativeAction::Move:
         {
             dlog.addText( Logger::TEAM,
-                          __FILE__" (Bhv_ChainAction) move" );
+                          __FILE__" (Bhv_PlannedAction) move" );
 
             if ( Body_GoToPoint( first_action.targetPoint(),
                                  1.0,
@@ -331,7 +331,7 @@ Bhv_ChainAction::execute( PlayerAgent * agent )
     case CooperativeAction::NoAction:
         {
             dlog.addText( Logger::TEAM,
-                          __FILE__" (Bhv_ChainAction) no action" );
+                          __FILE__" (Bhv_PlannedAction) no action" );
 
             return true;
             break;
@@ -339,7 +339,7 @@ Bhv_ChainAction::execute( PlayerAgent * agent )
 
     default:
         dlog.addText( Logger::TEAM,
-                      __FILE__" (Bhv_ChainAction) invalid category" );
+                      __FILE__" (Bhv_PlannedAction) invalid category" );
         break;
     }
 
@@ -352,7 +352,7 @@ Bhv_ChainAction::execute( PlayerAgent * agent )
 
  */
 bool
-Bhv_ChainAction::doTurnToForward( PlayerAgent * agent )
+Bhv_PlannedAction::doTurnToForward( PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
 
@@ -482,7 +482,7 @@ Bhv_ChainAction::doTurnToForward( PlayerAgent * agent )
 
  */
 Vector2D
-Bhv_ChainAction::getKeepBallVel( const WorldModel & wm )
+Bhv_PlannedAction::getKeepBallVel( const WorldModel & wm )
 {
     static GameTime s_update_time( 0, 0 );
     static Vector2D s_best_ball_vel( 0.0, 0.0 );

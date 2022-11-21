@@ -48,7 +48,7 @@ sample_player_SOURCES = \
 	planner/actgen_strict_check_pass.cpp \
 	planner/action_chain_graph.cpp \
 	planner/action_chain_holder.cpp \
-	planner/bhv_chain_action.cpp \
+	planner/bhv_planned_action.cpp \
 	planner/bhv_normal_dribble.cpp \
 	planner/bhv_pass_kick_find_receiver.cpp \
 	planner/bhv_strict_check_shoot.cpp \
@@ -220,7 +220,7 @@ CHAINACTIONHEADERS = \
 	planner/action_chain_holder.h \
 	planner/action_generator.h \
 	planner/action_state_pair.h \
-	planner/bhv_chain_action.h \
+	planner/bhv_planned_action.h \
 	planner/bhv_normal_dribble.h \
 	planner/bhv_pass_kick_find_receiver.h \
 	planner/bhv_strict_check_shoot.h \

@@ -32,12 +32,13 @@
 
 #include "strategy.h"
 
-#include "bhv_chain_action.h"
 #include "bhv_set_play.h"
 #include "bhv_prepare_set_play_kick.h"
 #include "bhv_go_to_placed_ball.h"
 
 #include "intention_wait_after_set_play_kick.h"
+
+#include "planner/bhv_planned_action.h"
 
 #include "basic_actions/body_clear_ball.h"
 #include "basic_actions/body_stop_ball.h"
@@ -296,7 +297,7 @@ Bhv_SetPlayGoalKick::doKickWait( PlayerAgent * agent )
 bool
 Bhv_SetPlayGoalKick::doPass( PlayerAgent * agent )
 {
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
         agent->setIntention( new IntentionWaitAfterSetPlayKick() );
         return true;

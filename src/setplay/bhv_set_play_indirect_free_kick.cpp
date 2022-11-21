@@ -35,7 +35,7 @@
 #include "bhv_set_play.h"
 #include "bhv_prepare_set_play_kick.h"
 #include "bhv_go_to_placed_ball.h"
-#include "bhv_chain_action.h"
+#include "bhv_planned_action.h"
 
 #include "intention_wait_after_set_play_kick.h"
 
@@ -139,7 +139,7 @@ Bhv_SetPlayIndirectFreeKick::doKicker( PlayerAgent * agent )
     //
     // pass
     //
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
         agent->setIntention( new IntentionWaitAfterSetPlayKick() );
         return;

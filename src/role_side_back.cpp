@@ -30,9 +30,9 @@
 
 #include "role_side_back.h"
 
-#include "bhv_chain_action.h"
 #include "bhv_basic_move.h"
 
+#include "planner/bhv_planned_action.h"
 #include "basic_actions/body_hold_ball.h"
 #include "basic_actions/neck_scan_field.h"
 
@@ -88,14 +88,13 @@ RoleSideBack::execute( PlayerAgent * agent )
 void
 RoleSideBack::doKick( PlayerAgent * agent )
 {
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
         dlog.addText( Logger::TEAM,
-                      __FILE__": (execute) do chain action" );
-        agent->debugClient().addMessage( "ChainAction" );
+                      __FILE__": (execute) do planned action" );
+        agent->debugClient().addMessage( "PlannedAction" );
         return;
     }
-
 
     Body_HoldBall().execute( agent );
     agent->setNeckAction( new Neck_ScanField() );

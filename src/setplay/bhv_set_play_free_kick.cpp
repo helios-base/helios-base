@@ -35,9 +35,10 @@
 #include "bhv_set_play.h"
 #include "bhv_prepare_set_play_kick.h"
 #include "bhv_go_to_placed_ball.h"
-#include "bhv_chain_action.h"
 
 #include "intention_wait_after_set_play_kick.h"
+
+#include "planner/bhv_planned_action.h"
 
 #include "basic_actions/basic_actions.h"
 #include "basic_actions/body_go_to_point.h"
@@ -116,9 +117,9 @@ Bhv_SetPlayFreeKick::doKick( PlayerAgent * agent )
     //
     // pass
     //
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
-        agent->debugClient().addMessage( "FreeKick:Chain" );
+        agent->debugClient().addMessage( "FreeKick:Plan" );
         agent->setIntention( new IntentionWaitAfterSetPlayKick() );
         return;
     }

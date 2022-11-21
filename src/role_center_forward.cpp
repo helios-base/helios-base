@@ -31,9 +31,9 @@
 #include "role_center_forward.h"
 
 
-#include "bhv_chain_action.h"
 #include "bhv_basic_move.h"
 
+#include "planner/bhv_planned_action.h"
 #include "basic_actions/body_hold_ball.h"
 #include "basic_actions/neck_scan_field.h"
 
@@ -89,11 +89,11 @@ RoleCenterForward::execute( PlayerAgent * agent )
 void
 RoleCenterForward::doKick( PlayerAgent * agent )
 {
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
         dlog.addText( Logger::TEAM,
-                      __FILE__": (execute) do chain action" );
-        agent->debugClient().addMessage( "ChainAction" );
+                      __FILE__": (execute) do planned action" );
+        agent->debugClient().addMessage( "PlannedAction" );
         return;
     }
 
