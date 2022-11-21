@@ -1,8 +1,35 @@
 
-add_subdirectory(basic_actions)
-
 # player
 add_executable(sample_player
+  basic_actions/basic_actions.cpp
+  basic_actions/bhv_before_kick_off.cpp
+  basic_actions/bhv_emergency.cpp
+  basic_actions/bhv_go_to_point_look_ball.cpp
+  basic_actions/bhv_scan_field.cpp
+  basic_actions/body_advance_ball2009.cpp
+  basic_actions/body_clear_ball2009.cpp
+  basic_actions/body_dribble2008.cpp
+  basic_actions/body_go_to_point.cpp
+  basic_actions/body_go_to_point_dodge.cpp
+  basic_actions/body_hold_ball2008.cpp
+  basic_actions/body_intercept2009.cpp
+  basic_actions/body_kick_one_step.cpp
+  basic_actions/body_kick_to_relative.cpp
+  basic_actions/body_pass.cpp
+  basic_actions/body_smart_kick.cpp
+  basic_actions/body_stop_ball.cpp
+  basic_actions/body_stop_dash.cpp
+  basic_actions/intention_dribble2008.cpp
+  basic_actions/intention_time_limit_action.cpp
+  basic_actions/kick_table.cpp
+  basic_actions/neck_scan_field.cpp
+  basic_actions/neck_scan_players.cpp
+  basic_actions/neck_turn_to_ball_and_player.cpp
+  basic_actions/neck_turn_to_ball_or_scan.cpp
+  basic_actions/neck_turn_to_goalie_or_scan.cpp
+  basic_actions/neck_turn_to_player_or_scan.cpp
+  basic_actions/neck_turn_to_low_conf_teammate.cpp
+  basic_actions/view_synch.cpp
   chain_action/actgen_cross.cpp
   chain_action/actgen_direct_pass.cpp
   chain_action/actgen_self_pass.cpp
@@ -94,7 +121,6 @@ target_link_libraries(sample_player
     Boost::system
     ZLIB::ZLIB
   PRIVATE
-    basic_actions
   )
 
 set_target_properties(sample_player
