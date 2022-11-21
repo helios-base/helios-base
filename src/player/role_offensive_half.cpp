@@ -28,11 +28,13 @@
 #include <config.h>
 #endif
 
-#include "role_defensive_half.h"
+#include "role_offensive_half.h"
 
-#include "bhv_chain_action.h"
-#include "bhv_basic_offensive_kick.h"
 #include "bhv_basic_move.h"
+
+#include "planner/bhv_planned_action.h"
+#include "basic_actions/body_hold_ball.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>
@@ -41,15 +43,15 @@
 
 using namespace rcsc;
 
-const std::string RoleDefensiveHalf::NAME( "DefensiveHalf" );
+const std::string RoleOffensiveHalf::NAME( "OffensiveHalf" );
 
 /*-------------------------------------------------------------------*/
 /*!
 
  */
 namespace {
-rcss::RegHolder role = SoccerRole::creators().autoReg( &RoleDefensiveHalf::create,
-                                                       RoleDefensiveHalf::NAME );
+rcss::RegHolder role = SoccerRole::creators().autoReg( &RoleOffensiveHalf::create,
+                                                       RoleOffensiveHalf::NAME );
 }
 
 /*-------------------------------------------------------------------*/
@@ -57,7 +59,7 @@ rcss::RegHolder role = SoccerRole::creators().autoReg( &RoleDefensiveHalf::creat
 
  */
 bool
-RoleDefensiveHalf::execute( PlayerAgent * agent )
+RoleOffensiveHalf::execute( PlayerAgent * agent )
 {
     bool kickable = agent->world().self().isKickable();
     if ( agent->world().kickableTeammate()
@@ -84,17 +86,18 @@ RoleDefensiveHalf::execute( PlayerAgent * agent )
 
  */
 void
-RoleDefensiveHalf::doKick( PlayerAgent * agent )
+RoleOffensiveHalf::doKick( PlayerAgent * agent )
 {
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
         dlog.addText( Logger::TEAM,
-                      __FILE__": (execute) do chain action" );
-        agent->debugClient().addMessage( "ChainAction" );
+                      __FILE__": (execute) do planned action" );
+        agent->debugClient().addMessage( "PlannedAction" );
         return;
     }
 
-    Bhv_BasicOffensiveKick().execute( agent );
+    Body_HoldBall().execute( agent );
+    agent->setNeckAction( new Neck_ScanField() );
 }
 
 /*-------------------------------------------------------------------*/
@@ -102,7 +105,7 @@ RoleDefensiveHalf::doKick( PlayerAgent * agent )
 
  */
 void
-RoleDefensiveHalf::doMove( PlayerAgent * agent )
+RoleOffensiveHalf::doMove( PlayerAgent * agent )
 {
     Bhv_BasicMove().execute( agent );
 }

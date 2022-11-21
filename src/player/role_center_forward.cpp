@@ -28,11 +28,14 @@
 #include <config.h>
 #endif
 
-#include "role_side_forward.h"
+#include "role_center_forward.h"
 
-#include "bhv_chain_action.h"
-#include "bhv_basic_offensive_kick.h"
+
 #include "bhv_basic_move.h"
+
+#include "planner/bhv_planned_action.h"
+#include "basic_actions/body_hold_ball.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>
@@ -41,15 +44,15 @@
 
 using namespace rcsc;
 
-const std::string RoleSideForward::NAME( "SideForward" );
+const std::string RoleCenterForward::NAME( "CenterForward" );
 
 /*-------------------------------------------------------------------*/
 /*!
 
  */
 namespace {
-rcss::RegHolder role = SoccerRole::creators().autoReg( &RoleSideForward::create,
-                                                       RoleSideForward::NAME );
+rcss::RegHolder role = SoccerRole::creators().autoReg( &RoleCenterForward::create,
+                                                       RoleCenterForward::NAME );
 }
 
 /*-------------------------------------------------------------------*/
@@ -57,7 +60,7 @@ rcss::RegHolder role = SoccerRole::creators().autoReg( &RoleSideForward::create,
 
  */
 bool
-RoleSideForward::execute( PlayerAgent * agent )
+RoleCenterForward::execute( PlayerAgent * agent )
 {
     bool kickable = agent->world().self().isKickable();
     if ( agent->world().kickableTeammate()
@@ -84,17 +87,18 @@ RoleSideForward::execute( PlayerAgent * agent )
 
  */
 void
-RoleSideForward::doKick( PlayerAgent * agent )
+RoleCenterForward::doKick( PlayerAgent * agent )
 {
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
         dlog.addText( Logger::TEAM,
-                      __FILE__": (execute) do chain action" );
-        agent->debugClient().addMessage( "ChainAction" );
+                      __FILE__": (execute) do planned action" );
+        agent->debugClient().addMessage( "PlannedAction" );
         return;
     }
 
-    Bhv_BasicOffensiveKick().execute( agent );
+    Body_HoldBall().execute( agent );
+    agent->setNeckAction( new Neck_ScanField() );
 }
 
 /*-------------------------------------------------------------------*/
@@ -102,7 +106,7 @@ RoleSideForward::doKick( PlayerAgent * agent )
 
  */
 void
-RoleSideForward::doMove( PlayerAgent * agent )
+RoleCenterForward::doMove( PlayerAgent * agent )
 {
     Bhv_BasicMove().execute( agent );
 }

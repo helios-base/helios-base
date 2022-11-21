@@ -30,7 +30,7 @@
 
 #include "bhv_prepare_set_play_kick.h"
 
-#include "bhv_go_to_static_ball.h"
+#include "bhv_go_to_placed_ball.h"
 #include "bhv_set_play.h"
 
 #include "basic_actions/basic_actions.h"
@@ -54,7 +54,7 @@ Bhv_PrepareSetPlayKick::execute( PlayerAgent * agent )
     static int s_rest_wait_cycle = -1;
 
     // not reach the ball side
-    if ( Bhv_GoToStaticBall( M_ball_place_angle ).execute( agent ) )
+    if ( Bhv_GoToPlacedBall( M_ball_place_angle ).execute( agent ) )
     {
         return true;
     }

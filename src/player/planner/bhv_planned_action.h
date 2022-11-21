@@ -24,8 +24,8 @@
 
 /////////////////////////////////////////////////////////////////////
 
-#ifndef BHV_CHAIN_ACTION_H
-#define BHV_CHAIN_ACTION_H
+#ifndef BHV_PLANNED_ACTION_H
+#define BHV_PLANNED_ACTION_H
 
 #include <rcsc/player/soccer_action.h>
 #include <rcsc/geom/vector_2d.h>
@@ -39,15 +39,15 @@ class WorldModel;
 class ActionStatePair;
 class ActionChainGraph;
 
-class Bhv_ChainAction
+class Bhv_PlannedAction
     : public rcsc::SoccerBehavior {
 
 private:
     const ActionChainGraph & M_chain_graph;
 
 public:
-    Bhv_ChainAction( const ActionChainGraph & chain_graph );
-    Bhv_ChainAction();
+    Bhv_PlannedAction( const ActionChainGraph & chain_graph );
+    Bhv_PlannedAction();
 
     bool execute( rcsc::PlayerAgent * agent );
 

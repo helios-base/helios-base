@@ -34,7 +34,8 @@
 
 #include "bhv_goalie_chase_ball.h"
 #include "bhv_goalie_basic_move.h"
-#include "bhv_go_to_static_ball.h"
+
+#include "setplay/bhv_go_to_placed_ball.h"
 
 #include "basic_actions/body_clear_ball.h"
 #include "basic_actions/body_dribble2008.h"
@@ -255,7 +256,7 @@ Bhv_PenaltyKick::doKickerSetup( PlayerAgent * agent )
     AngleDeg place_angle = 0.0;
 
     // ball is close enoughly.
-    if ( ! Bhv_GoToStaticBall( place_angle ).execute( agent ) )
+    if ( ! Bhv_GoToPlacedBall( place_angle ).execute( agent ) )
     {
         Body_TurnToPoint( goal_c ).execute( agent );
         if ( opp_goalie )

@@ -28,7 +28,7 @@
 #include <config.h>
 #endif
 
-#include "bhv_go_to_static_ball.h"
+#include "bhv_go_to_placed_ball.h"
 
 #include "bhv_set_play.h"
 
@@ -49,7 +49,7 @@ using namespace rcsc;
 
 */
 bool
-Bhv_GoToStaticBall::execute( PlayerAgent * agent )
+Bhv_GoToPlacedBall::execute( PlayerAgent * agent )
 {
     const double dir_margin = 15.0;
 

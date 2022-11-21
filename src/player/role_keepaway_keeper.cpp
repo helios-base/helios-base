@@ -32,7 +32,7 @@
 
 #include "strategy.h"
 
-#include "bhv_chain_action.h"
+#include "planner/bhv_planned_action.h"
 
 #include "basic_actions/body_go_to_point.h"
 #include "basic_actions/body_intercept.h"
@@ -96,11 +96,11 @@ RoleKeepawayKeeper::execute( PlayerAgent * agent )
 void
 RoleKeepawayKeeper::doKick( PlayerAgent * agent )
 {
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
         dlog.addText( Logger::TEAM,
-                      __FILE__": (execute) do chain action" );
-        agent->debugClient().addMessage( "ChainAction" );
+                      __FILE__": (execute) do planned action" );
+        agent->debugClient().addMessage( "PlannedAction" );
     }
 }
 

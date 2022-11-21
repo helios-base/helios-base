@@ -28,21 +28,20 @@
 #include <config.h>
 #endif
 
-#include "bhv_set_play_free_kick.h"
+#include "bhv_set_play_kick_in.h"
 
 #include "strategy.h"
 
 #include "bhv_set_play.h"
-#include "bhv_prepare_set_play_kick.h"
-#include "bhv_go_to_static_ball.h"
-#include "bhv_chain_action.h"
+#include "bhv_go_to_placed_ball.h"
+#include "bhv_planned_action.h"
 
 #include "intention_wait_after_set_play_kick.h"
 
 #include "basic_actions/basic_actions.h"
 #include "basic_actions/body_go_to_point.h"
 #include "basic_actions/body_kick_one_step.h"
-#include "basic_actions/body_clear_ball.h"
+#include "basic_actions/body_advance_ball.h"
 #include "basic_actions/body_pass.h"
 #include "basic_actions/neck_scan_field.h"
 #include "basic_actions/neck_turn_to_ball_or_scan.h"
@@ -53,8 +52,11 @@
 
 #include <rcsc/common/logger.h>
 #include <rcsc/common/server_param.h>
-#include <rcsc/geom/circle_2d.h>
+
 #include <rcsc/math_util.h>
+
+#include <algorithm>
+#include <limits>
 
 using namespace rcsc;
 
@@ -63,11 +65,11 @@ using namespace rcsc;
   execute action
 */
 bool
-Bhv_SetPlayFreeKick::execute( PlayerAgent * agent )
+Bhv_SetPlayKickIn::execute( PlayerAgent * agent )
 {
     dlog.addText( Logger::TEAM,
-                  __FILE__": Bhv_SetPlayFreeKick" );
-    //---------------------------------------------------
+                  __FILE__": Bhv_SetPlayKickIn" );
+
     if ( Bhv_SetPlay::is_kicker( agent ) )
     {
         doKick( agent );
@@ -85,14 +87,17 @@ Bhv_SetPlayFreeKick::execute( PlayerAgent * agent )
 
  */
 void
-Bhv_SetPlayFreeKick::doKick( PlayerAgent * agent )
+Bhv_SetPlayKickIn::doKick( PlayerAgent * agent )
 {
-    dlog.addText( Logger::TEAM,
-                  __FILE__": (doKick)" );
+    const WorldModel & wm = agent->world();
+
     //
-    // go to the ball position
+    // go to the kick position
     //
-    if ( Bhv_GoToStaticBall( 0.0 ).execute( agent ) )
+    AngleDeg ball_place_angle = ( wm.ball().pos().y > 0.0
+                                  ? -90.0
+                                  : 90.0 );
+    if ( Bhv_GoToPlacedBall( ball_place_angle ).execute( agent ) )
     {
         return;
     }
@@ -110,37 +115,37 @@ Bhv_SetPlayFreeKick::doKick( PlayerAgent * agent )
     // kick
     //
 
-    const WorldModel & wm = agent->world();
     const double max_ball_speed = wm.self().kickRate() * ServerParam::i().maxPower();
 
     //
     // pass
     //
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
-        agent->debugClient().addMessage( "FreeKick:Chain" );
         agent->setIntention( new IntentionWaitAfterSetPlayKick() );
+        agent->debugClient().addMessage( "KickIn:Plan" );
         return;
     }
     // {
     //     Vector2D target_point;
     //     double ball_speed = 0.0;
-    //     if ( Body_Pass::get_best_pass( wm,
-    //                                    &target_point,
-    //                                    &ball_speed,
-    //                                    NULL )
-    //          && ( target_point.x > -25.0
-    //               || target_point.x > wm.ball().pos().x + 10.0 )
-    //          && ball_speed < max_ball_speed * 1.1 )
+    //     if  ( Body_Pass::get_best_pass( wm,
+    //                                     &target_point,
+    //                                     &ball_speed,
+    //                                     NULL )
+    //           && target_point.x > -35.0
+    //           && target_point.x < 50.0 )
     //     {
+    //         agent->debugClient().addMessage( "KickIn:Pass" );
+    //         // enforce one step kick
     //         ball_speed = std::min( ball_speed, max_ball_speed );
-    //         agent->debugClient().addMessage( "FreeKick:Pass%.3f", ball_speed );
-    //         agent->debugClient().setTarget( target_point );
     //         dlog.addText( Logger::TEAM,
-    //                       __FILE__":  pass target=(%.1f %.1f) speed=%.2f",
+    //                       __FILE__": pass to (%.1f, %.1f) ball_speed+%.1f",
     //                       target_point.x, target_point.y,
     //                       ball_speed );
-    //         Body_KickOneStep( target_point, ball_speed ).execute( agent );
+    //         Body_KickOneStep( target_point,
+    //                           ball_speed
+    //                           ).execute( agent );
     //         agent->setNeckAction( new Neck_ScanField() );
     //         return;
     //     }
@@ -150,13 +155,13 @@ Bhv_SetPlayFreeKick::doKick( PlayerAgent * agent )
     // kick to the nearest teammate
     //
     {
-        const PlayerObject * nearest_teammate = wm.getTeammateNearestToSelf( 10, false ); // without goalie
-        if ( nearest_teammate
-             && nearest_teammate->distFromSelf() < 20.0
-             && ( nearest_teammate->pos().x > -30.0
-                  || nearest_teammate->distFromSelf() < 10.0 ) )
+        const PlayerObject * receiver = wm.getTeammateNearestToBall( 10 );
+        if ( receiver
+             && receiver->distFromBall() < 10.0
+             && receiver->pos().absX() < ServerParam::i().pitchHalfLength()
+             && receiver->pos().absY() < ServerParam::i().pitchHalfWidth() )
         {
-            Vector2D target_point = nearest_teammate->inertiaFinalPoint();
+            Vector2D target_point = receiver->inertiaFinalPoint();
             target_point.x += 0.5;
 
             double ball_move_dist = wm.ball().pos().dist( target_point );
@@ -184,14 +189,16 @@ Bhv_SetPlayFreeKick::doKick( PlayerAgent * agent )
 
             ball_speed = std::min( ball_speed, max_ball_speed );
 
-            agent->debugClient().addMessage( "FreeKick:ForcePass%.3f", ball_speed );
+            agent->debugClient().addMessage( "KickIn:ForcePass%.3f", ball_speed );
             agent->debugClient().setTarget( target_point );
-            dlog.addText( Logger::TEAM,
-                          __FILE__":  force pass. target=(%.1f %.1f) speed=%.2f reach_step=%d",
-                          target_point.x, target_point.y,
-                          ball_speed, ball_reach_step );
 
-            Body_KickOneStep( target_point, ball_speed ).execute( agent );
+            dlog.addText( Logger::TEAM,
+                          __FILE__":  kick to nearest teammate (%.1f %.1f) speed=%.2f",
+                          target_point.x, target_point.y,
+                          ball_speed );
+            Body_KickOneStep( target_point,
+                              ball_speed
+                              ).execute( agent );
             agent->setNeckAction( new Neck_ScanField() );
             return;
         }
@@ -201,9 +208,13 @@ Bhv_SetPlayFreeKick::doKick( PlayerAgent * agent )
     // clear
     //
 
+    //
+    // turn to ball
+    //
+
     if ( ( wm.ball().angleFromSelf() - wm.self().body() ).abs() > 1.5 )
     {
-        agent->debugClient().addMessage( "FreeKick:Clear:TurnToBall" );
+        agent->debugClient().addMessage( "KickIn:Advance:TurnToBall" );
         dlog.addText( Logger::TEAM,
                       __FILE__":  clear. turn to ball" );
 
@@ -212,12 +223,44 @@ Bhv_SetPlayFreeKick::doKick( PlayerAgent * agent )
         return;
     }
 
-    agent->debugClient().addMessage( "FreeKick:Clear" );
-    dlog.addText( Logger::TEAM,
-                  __FILE__":  clear" );
+    //
+    // advance ball
+    //
 
-    Body_ClearBall().execute( agent );
-    agent->setNeckAction( new Neck_ScanField() );
+    if ( wm.self().pos().x < 20.0 )
+    {
+        agent->debugClient().addMessage( "KickIn:Advance" );
+
+        dlog.addText( Logger::TEAM,
+                      __FILE__": advance(1)" );
+        Body_AdvanceBall().execute( agent );
+        agent->setNeckAction( new Neck_ScanField() );
+        return;
+    }
+
+    //
+    // kick to the opponent side corner
+    //
+    {
+        agent->debugClient().addMessage( "KickIn:ForceAdvance" );
+
+        Vector2D target_point( ServerParam::i().pitchHalfLength() - 2.0,
+                               ( ServerParam::i().pitchHalfWidth() - 5.0 )
+                               * ( 1.0 - ( wm.self().pos().x
+                                           / ServerParam::i().pitchHalfLength() ) ) );
+        if ( wm.self().pos().y < 0.0 )
+        {
+            target_point.y *= -1.0;
+        }
+        // enforce one step kick
+        dlog.addText( Logger::TEAM,
+                      __FILE__": advance(2) to (%.1f, %.1f)",
+                      target_point.x, target_point.y );
+        Body_KickOneStep( target_point,
+                          ServerParam::i().ballSpeedMax()
+                          ).execute( agent );
+        agent->setNeckAction( new Neck_ScanField() );
+    }
 }
 
 /*-------------------------------------------------------------------*/
@@ -225,13 +268,9 @@ Bhv_SetPlayFreeKick::doKick( PlayerAgent * agent )
 
  */
 bool
-Bhv_SetPlayFreeKick::doKickWait( PlayerAgent * agent )
+Bhv_SetPlayKickIn::doKickWait( PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
-
-    dlog.addText( Logger::TEAM,
-                  __FILE__": (doKickWait)" );
-
 
     const int real_set_play_count
         = static_cast< int >( wm.time().cycle() - wm.lastSetPlayStartTime().cycle() );
@@ -244,43 +283,35 @@ Bhv_SetPlayFreeKick::doKickWait( PlayerAgent * agent )
         return false;
     }
 
-    const Vector2D face_point( 40.0, 0.0 );
-    const AngleDeg face_angle = ( face_point - wm.self().pos() ).th();
-
-    if ( wm.time().stopped() != 0 )
-    {
-        Body_TurnToPoint( face_point ).execute( agent );
-        agent->setNeckAction( new Neck_ScanField() );
-        return true;
-    }
-
     if ( Bhv_SetPlay::is_delaying_tactics_situation( agent ) )
     {
-        agent->debugClient().addMessage( "FreeKick:Delaying" );
+        agent->debugClient().addMessage( "KickIn:Delaying" );
         dlog.addText( Logger::TEAM,
                       __FILE__": (doKickWait) delaying" );
 
-        Body_TurnToPoint( face_point ).execute( agent );
+        Body_TurnToPoint( Vector2D( 0.0, 0.0 ) ).execute( agent );
         agent->setNeckAction( new Neck_ScanField() );
         return true;
     }
 
     if ( wm.teammatesFromBall().empty() )
     {
-        agent->debugClient().addMessage( "FreeKick:NoTeammate" );
+        agent->debugClient().addMessage( "KickIn:NoTeammate" );
         dlog.addText( Logger::TEAM,
                       __FILE__": (doKickWait) no teammate" );
 
-        Body_TurnToPoint( face_point ).execute( agent );
+        Body_TurnToPoint( Vector2D( 0.0, 0.0 ) ).execute( agent );
         agent->setNeckAction( new Neck_ScanField() );
         return true;
     }
 
     if ( wm.getSetPlayCount() <= 3 )
     {
-        agent->debugClient().addMessage( "FreeKick:Wait%d", wm.getSetPlayCount() );
+        agent->debugClient().addMessage( "KickIn:Wait%d", wm.getSetPlayCount() );
+        dlog.addText( Logger::TEAM,
+                      __FILE__": (doKickWait) wait teammates" );
 
-        Body_TurnToPoint( face_point ).execute( agent );
+        Body_TurnToBall().execute( agent );
         agent->setNeckAction( new Neck_ScanField() );
         return true;
     }
@@ -295,22 +326,13 @@ Bhv_SetPlayFreeKick::doKickWait( PlayerAgent * agent )
         return false;
     }
 
-    if ( ( face_angle - wm.self().body() ).abs() > 5.0 )
-    {
-        agent->debugClient().addMessage( "FreeKick:Turn" );
-
-        Body_TurnToPoint( face_point ).execute( agent );
-        agent->setNeckAction( new Neck_ScanField() );
-        return true;
-    }
-
     if ( wm.seeTime() != wm.time()
          || wm.self().stamina() < ServerParam::i().staminaMax() * 0.9 )
     {
         Body_TurnToBall().execute( agent );
         agent->setNeckAction( new Neck_ScanField() );
 
-        agent->debugClient().addMessage( "FreeKick:Wait%d", wm.getSetPlayCount() );
+        agent->debugClient().addMessage( "KickIn:Wait%d", wm.getSetPlayCount() );
         dlog.addText( Logger::TEAM,
                       __FILE__": (doKickWait) no see or recover" );
         return true;
@@ -324,26 +346,24 @@ Bhv_SetPlayFreeKick::doKickWait( PlayerAgent * agent )
 
  */
 void
-Bhv_SetPlayFreeKick::doMove( PlayerAgent * agent )
+Bhv_SetPlayKickIn::doMove( PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
 
-    dlog.addText( Logger::TEAM,
-                  __FILE__": (doMove)" );
-
     Vector2D target_point = Strategy::i().getPosition( wm.self().unum() );
 
-    if ( wm.getSetPlayCount() > 0
-         && wm.self().stamina() > ServerParam::i().staminaMax() * 0.9 )
+    bool avoid_opponent = false;
+    if ( wm.self().stamina() > ServerParam::i().staminaMax() * 0.9 )
     {
-        const PlayerObject * nearest_opp = agent->world().getOpponentNearestToSelf( 5 );
+        const PlayerObject * nearest_opp = wm.getOpponentNearestToSelf( 5 );
 
-        if ( nearest_opp && nearest_opp->distFromSelf() < 3.0 )
+        if ( nearest_opp
+             && nearest_opp->pos().dist( target_point ) < 3.0 )
         {
             Vector2D add_vec = ( wm.ball().pos() - target_point );
             add_vec.setLength( 3.0 );
 
-            long time_val = agent->world().time().cycle() % 60;
+            long time_val = wm.time().cycle() % 60;
             if ( time_val < 20 )
             {
 
@@ -363,20 +383,21 @@ Bhv_SetPlayFreeKick::doMove( PlayerAgent * agent )
             target_point.y = min_max( - ServerParam::i().pitchHalfWidth(),
                                       target_point.y,
                                       + ServerParam::i().pitchHalfWidth() );
+            avoid_opponent = true;
         }
     }
 
-    target_point.x = std::min( target_point.x,
-                               agent->world().offsideLineX() - 0.5 );
-
-    double dash_power
-        = Bhv_SetPlay::get_set_play_dash_power( agent );
+    double dash_power = Bhv_SetPlay::get_set_play_dash_power( agent );
     double dist_thr = wm.ball().distFromSelf() * 0.07;
     if ( dist_thr < 1.0 ) dist_thr = 1.0;
 
-    agent->debugClient().addMessage( "SetPlayMove" );
+    agent->debugClient().addMessage( "KickInMove" );
     agent->debugClient().setTarget( target_point );
-    agent->debugClient().addCircle( target_point, dist_thr );
+
+    double kicker_ball_dist = ( ! wm.teammatesFromBall().empty()
+                                ? wm.teammatesFromBall().front()->distFromBall()
+                                : 1000.0 );
+
 
     if ( ! Body_GoToPoint( target_point,
                            dist_thr,
@@ -384,12 +405,23 @@ Bhv_SetPlayFreeKick::doMove( PlayerAgent * agent )
                            ).execute( agent ) )
     {
         // already there
-        Body_TurnToBall().execute( agent );
+        if ( kicker_ball_dist > 1.0 )
+        {
+            agent->doTurn( 120.0 );
+        }
+        else
+        {
+            Body_TurnToBall().execute( agent );
+        }
     }
 
-    if ( wm.self().pos().dist( target_point )
-         > std::max( wm.ball().pos().dist( target_point ) * 0.2, dist_thr ) + 6.0
-         || wm.self().stamina() < ServerParam::i().staminaMax() * 0.7 )
+    Vector2D my_inertia = wm.self().inertiaFinalPoint();
+    double wait_dist_buf = ( avoid_opponent
+                             ? 10.0
+                             : wm.ball().pos().dist( target_point ) * 0.2 + 6.0 );
+
+    if ( my_inertia.dist( target_point ) > wait_dist_buf
+         || wm.self().stamina() < rcsc::ServerParam::i().staminaMax() * 0.7 )
     {
         if ( ! wm.self().staminaModel().capacityIsEmpty() )
         {
@@ -398,5 +430,18 @@ Bhv_SetPlayFreeKick::doMove( PlayerAgent * agent )
         }
     }
 
-    agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
+    if ( kicker_ball_dist > 3.0 )
+    {
+        agent->setViewAction( new View_Wide() );
+        agent->setNeckAction( new Neck_ScanField() );
+    }
+    else if ( wm.ball().distFromSelf() > 10.0
+              || kicker_ball_dist > 1.0 )
+    {
+        agent->setNeckAction( new Neck_TurnToBallOrScan( 0 ) );
+    }
+    else
+    {
+        agent->setNeckAction( new Neck_TurnToBall() );
+    }
 }

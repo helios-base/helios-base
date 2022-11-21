@@ -98,7 +98,9 @@ AC_CHECK_FUNCS([floor pow sqrt strerror])
 
 AC_CONFIG_FILES([Makefile
                  src/Makefile
-                 src/basic_actions/Makefile
+                 src/player/Makefile
+                 src/coach/Makefile
+                 src/trainer/Makefile
                  src/start.sh
                  src/keepaway.sh
                  src/train.sh],

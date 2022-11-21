@@ -30,9 +30,11 @@
 
 #include "role_center_back.h"
 
-#include "bhv_chain_action.h"
-#include "bhv_basic_offensive_kick.h"
 #include "bhv_basic_move.h"
+
+#include "planner/bhv_planned_action.h"
+#include "basic_actions/body_hold_ball.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>
@@ -86,15 +88,16 @@ RoleCenterBack::execute( PlayerAgent * agent )
 void
 RoleCenterBack::doKick( PlayerAgent * agent )
 {
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
         dlog.addText( Logger::TEAM,
-                      __FILE__": (execute) do chain action" );
-        agent->debugClient().addMessage( "ChainAction" );
+                      __FILE__": (execute) do planned action" );
+        agent->debugClient().addMessage( "PlannedAction" );
         return;
     }
 
-    Bhv_BasicOffensiveKick().execute( agent );
+    Body_HoldBall().execute( agent );
+    agent->setNeckAction( new Neck_ScanField() );
 }
 
 /*-------------------------------------------------------------------*/

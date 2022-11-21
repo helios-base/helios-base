@@ -28,12 +28,13 @@
 #include <config.h>
 #endif
 
-#include "role_center_forward.h"
+#include "role_side_back.h"
 
-
-#include "bhv_chain_action.h"
-#include "bhv_basic_offensive_kick.h"
 #include "bhv_basic_move.h"
+
+#include "planner/bhv_planned_action.h"
+#include "basic_actions/body_hold_ball.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>
@@ -42,23 +43,23 @@
 
 using namespace rcsc;
 
-const std::string RoleCenterForward::NAME( "CenterForward" );
+const std::string RoleSideBack::NAME( "SideBack" );
 
 /*-------------------------------------------------------------------*/
 /*!
 
  */
 namespace {
-rcss::RegHolder role = SoccerRole::creators().autoReg( &RoleCenterForward::create,
-                                                       RoleCenterForward::NAME );
+rcss::RegHolder role = SoccerRole::creators().autoReg( &RoleSideBack::create,
+                                                       RoleSideBack::NAME );
 }
 
 /*-------------------------------------------------------------------*/
 /*!
 
- */
+*/
 bool
-RoleCenterForward::execute( PlayerAgent * agent )
+RoleSideBack::execute( PlayerAgent * agent )
 {
     bool kickable = agent->world().self().isKickable();
     if ( agent->world().kickableTeammate()
@@ -83,27 +84,28 @@ RoleCenterForward::execute( PlayerAgent * agent )
 /*-------------------------------------------------------------------*/
 /*!
 
- */
+*/
 void
-RoleCenterForward::doKick( PlayerAgent * agent )
+RoleSideBack::doKick( PlayerAgent * agent )
 {
-    if ( Bhv_ChainAction().execute( agent ) )
+    if ( Bhv_PlannedAction().execute( agent ) )
     {
         dlog.addText( Logger::TEAM,
-                      __FILE__": (execute) do chain action" );
-        agent->debugClient().addMessage( "ChainAction" );
+                      __FILE__": (execute) do planned action" );
+        agent->debugClient().addMessage( "PlannedAction" );
         return;
     }
 
-    Bhv_BasicOffensiveKick().execute( agent );
+    Body_HoldBall().execute( agent );
+    agent->setNeckAction( new Neck_ScanField() );
 }
 
 /*-------------------------------------------------------------------*/
 /*!
 
- */
+*/
 void
-RoleCenterForward::doMove( PlayerAgent * agent )
+RoleSideBack::doMove( PlayerAgent * agent )
 {
     Bhv_BasicMove().execute( agent );
 }

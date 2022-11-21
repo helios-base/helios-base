@@ -28,41 +28,38 @@
 #include <config.h>
 #endif
 
-#include "role_sample.h"
+#include "role_side_forward.h"
 
-#include "strategy.h"
-
-#include "bhv_basic_offensive_kick.h"
 #include "bhv_basic_move.h"
 
-#include <rcsc/formation/formation.h>
+#include "planner/bhv_planned_action.h"
+#include "basic_actions/body_hold_ball.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/player/player_agent.h>
-#include <rcsc/player/intercept_table.h>
 #include <rcsc/player/debug_client.h>
 
 #include <rcsc/common/logger.h>
-#include <rcsc/common/server_param.h>
 
 using namespace rcsc;
 
-const std::string RoleSample::NAME( "Sample" );
+const std::string RoleSideForward::NAME( "SideForward" );
 
 /*-------------------------------------------------------------------*/
 /*!
 
  */
 namespace {
-rcss::RegHolder role = SoccerRole::creators().autoReg( &RoleSample::create,
-                                                       RoleSample::NAME );
+rcss::RegHolder role = SoccerRole::creators().autoReg( &RoleSideForward::create,
+                                                       RoleSideForward::NAME );
 }
 
 /*-------------------------------------------------------------------*/
 /*!
 
-*/
+ */
 bool
-RoleSample::execute( PlayerAgent * agent )
+RoleSideForward::execute( PlayerAgent * agent )
 {
     bool kickable = agent->world().self().isKickable();
     if ( agent->world().kickableTeammate()
@@ -87,45 +84,28 @@ RoleSample::execute( PlayerAgent * agent )
 /*-------------------------------------------------------------------*/
 /*!
 
-*/
+ */
 void
-RoleSample::doKick( PlayerAgent * agent )
+RoleSideForward::doKick( PlayerAgent * agent )
 {
-    switch ( Strategy::get_ball_area( agent->world().ball().pos() ) ) {
-    case Strategy::BA_CrossBlock:
-    case Strategy::BA_Stopper:
-    case Strategy::BA_Danger:
-    case Strategy::BA_DribbleBlock:
-    case Strategy::BA_DefMidField:
-    case Strategy::BA_DribbleAttack:
-    case Strategy::BA_OffMidField:
-    case Strategy::BA_Cross:
-    case Strategy::BA_ShootChance:
-    default:
-        Bhv_BasicOffensiveKick().execute( agent );
-        break;
+    if ( Bhv_PlannedAction().execute( agent ) )
+    {
+        dlog.addText( Logger::TEAM,
+                      __FILE__": (execute) do planned action" );
+        agent->debugClient().addMessage( "PlannedAction" );
+        return;
     }
+
+    Body_HoldBall().execute( agent );
+    agent->setNeckAction( new Neck_ScanField() );
 }
 
 /*-------------------------------------------------------------------*/
 /*!
 
-*/
+ */
 void
-RoleSample::doMove( PlayerAgent * agent )
+RoleSideForward::doMove( PlayerAgent * agent )
 {
-    switch ( Strategy::get_ball_area( agent->world() ) ) {
-    case Strategy::BA_CrossBlock:
-    case Strategy::BA_Stopper:
-    case Strategy::BA_Danger:
-    case Strategy::BA_DribbleBlock:
-    case Strategy::BA_DefMidField:
-    case Strategy::BA_DribbleAttack:
-    case Strategy::BA_OffMidField:
-    case Strategy::BA_Cross:
-    case Strategy::BA_ShootChance:
-    default:
-        Bhv_BasicMove().execute( agent );
-        break;
-    }
+    Bhv_BasicMove().execute( agent );
 }
