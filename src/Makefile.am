@@ -80,7 +80,6 @@ sample_player_SOURCES = \
 	setplay/bhv_their_goal_kick_move.cpp \
 	setplay/intention_wait_after_set_play_kick.cpp \
 	bhv_basic_move.cpp \
-	bhv_basic_offensive_kick.cpp \
 	bhv_basic_tackle.cpp \
 	bhv_custom_before_kick_off.cpp \
 	bhv_go_to_static_ball.cpp \
@@ -115,7 +114,6 @@ sample_player_SOURCES = \
 
 PLAYERHEADERS = \
 	bhv_basic_move.h \
-	bhv_basic_offensive_kick.h \
 	bhv_basic_tackle.h \
 	bhv_custom_before_kick_off.h \
 	bhv_go_to_static_ball.h \

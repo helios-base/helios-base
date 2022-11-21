@@ -32,8 +32,11 @@
 
 #include "strategy.h"
 
-#include "bhv_basic_offensive_kick.h"
+#include "bhv_chain_action.h"
 #include "bhv_basic_move.h"
+
+#include "basic_actions/body_hold_ball.h"
+#include "basic_actions/neck_scan_field.h"
 
 #include <rcsc/formation/formation.h>
 
@@ -91,20 +94,16 @@ RoleSample::execute( PlayerAgent * agent )
 void
 RoleSample::doKick( PlayerAgent * agent )
 {
-    switch ( Strategy::get_ball_area( agent->world().ball().pos() ) ) {
-    case Strategy::BA_CrossBlock:
-    case Strategy::BA_Stopper:
-    case Strategy::BA_Danger:
-    case Strategy::BA_DribbleBlock:
-    case Strategy::BA_DefMidField:
-    case Strategy::BA_DribbleAttack:
-    case Strategy::BA_OffMidField:
-    case Strategy::BA_Cross:
-    case Strategy::BA_ShootChance:
-    default:
-        Bhv_BasicOffensiveKick().execute( agent );
-        break;
+    if ( Bhv_ChainAction().execute( agent ) )
+    {
+        dlog.addText( Logger::TEAM,
+                      __FILE__": (execute) do chain action" );
+        agent->debugClient().addMessage( "ChainAction" );
+        return;
     }
+
+    Body_HoldBall().execute( agent );
+    agent->setNeckAction( new Neck_ScanField() );
 }
 
 /*-------------------------------------------------------------------*/
@@ -114,18 +113,5 @@ RoleSample::doKick( PlayerAgent * agent )
 void
 RoleSample::doMove( PlayerAgent * agent )
 {
-    switch ( Strategy::get_ball_area( agent->world() ) ) {
-    case Strategy::BA_CrossBlock:
-    case Strategy::BA_Stopper:
-    case Strategy::BA_Danger:
-    case Strategy::BA_DribbleBlock:
-    case Strategy::BA_DefMidField:
-    case Strategy::BA_DribbleAttack:
-    case Strategy::BA_OffMidField:
-    case Strategy::BA_Cross:
-    case Strategy::BA_ShootChance:
-    default:
-        Bhv_BasicMove().execute( agent );
-        break;
-    }
+    Bhv_BasicMove().execute( agent );
 }
