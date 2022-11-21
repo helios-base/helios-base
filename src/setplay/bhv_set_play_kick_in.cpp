@@ -33,7 +33,7 @@
 #include "strategy.h"
 
 #include "bhv_set_play.h"
-#include "bhv_go_to_static_ball.h"
+#include "bhv_go_to_placed_ball.h"
 #include "bhv_chain_action.h"
 
 #include "intention_wait_after_set_play_kick.h"
@@ -97,7 +97,7 @@ Bhv_SetPlayKickIn::doKick( PlayerAgent * agent )
     AngleDeg ball_place_angle = ( wm.ball().pos().y > 0.0
                                   ? -90.0
                                   : 90.0 );
-    if ( Bhv_GoToStaticBall( ball_place_angle ).execute( agent ) )
+    if ( Bhv_GoToPlacedBall( ball_place_angle ).execute( agent ) )
     {
         return;
     }

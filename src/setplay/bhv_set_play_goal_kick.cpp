@@ -35,7 +35,7 @@
 #include "bhv_chain_action.h"
 #include "bhv_set_play.h"
 #include "bhv_prepare_set_play_kick.h"
-#include "bhv_go_to_static_ball.h"
+#include "bhv_go_to_placed_ball.h"
 
 #include "intention_wait_after_set_play_kick.h"
 
@@ -98,7 +98,7 @@ Bhv_SetPlayGoalKick::doKick( PlayerAgent * agent )
     }
 
     // go to ball
-    if ( Bhv_GoToStaticBall( 0.0 ).execute( agent ) )
+    if ( Bhv_GoToPlacedBall( 0.0 ).execute( agent ) )
     {
         dlog.addText( Logger::TEAM,
                       __FILE__": (doKick) go to ball" );

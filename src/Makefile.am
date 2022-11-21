@@ -70,6 +70,7 @@ sample_player_SOURCES = \
 	chain_action/simple_pass_checker.cpp \
 	chain_action/strict_check_pass_generator.cpp \
 	chain_action/tackle_generator.cpp \
+	setplay/bhv_go_to_placed_ball.cpp \
 	setplay/bhv_prepare_set_play_kick.cpp \
 	setplay/bhv_set_play.cpp \
 	setplay/bhv_set_play_free_kick.cpp \
@@ -82,7 +83,6 @@ sample_player_SOURCES = \
 	bhv_basic_move.cpp \
 	bhv_basic_tackle.cpp \
 	bhv_custom_before_kick_off.cpp \
-	bhv_go_to_static_ball.cpp \
 	bhv_goalie_basic_move.cpp \
 	bhv_goalie_chase_ball.cpp \
 	bhv_goalie_free_kick.cpp \
@@ -116,10 +116,10 @@ PLAYERHEADERS = \
 	bhv_basic_move.h \
 	bhv_basic_tackle.h \
 	bhv_custom_before_kick_off.h \
-	bhv_go_to_static_ball.h \
 	bhv_goalie_basic_move.h \
 	bhv_goalie_chase_ball.h \
 	bhv_goalie_free_kick.h \
+	setplay/bhv_go_to_placed_ball.h \
 	setplay/bhv_prepare_set_play_kick.h \
 	setplay/bhv_set_play.h \
 	setplay/bhv_set_play_free_kick.h \

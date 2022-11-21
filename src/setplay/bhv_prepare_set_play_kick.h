@@ -47,7 +47,7 @@ public:
 
 
 private:
-    bool doGoToStaticBall( rcsc::PlayerAgent * agent );
+    bool doGoToPlacedBall( rcsc::PlayerAgent * agent );
 
 };
 

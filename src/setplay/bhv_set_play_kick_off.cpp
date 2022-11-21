@@ -32,7 +32,7 @@
 
 #include "strategy.h"
 
-#include "bhv_go_to_static_ball.h"
+#include "bhv_go_to_placed_ball.h"
 #include "bhv_set_play.h"
 #include "bhv_prepare_set_play_kick.h"
 
@@ -82,7 +82,7 @@ Bhv_SetPlayKickOff::doKick( PlayerAgent * agent )
 {
     //
     // go to the ball position
-    if ( Bhv_GoToStaticBall( 0.0 ).execute( agent ) )
+    if ( Bhv_GoToPlacedBall( 0.0 ).execute( agent ) )
     {
         return;
     }
