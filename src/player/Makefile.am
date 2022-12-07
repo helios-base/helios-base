@@ -31,7 +31,6 @@ sample_player_SOURCES = \
 	basic_actions/intention_dribble2008.cpp \
 	basic_actions/intention_time_limit_action.cpp \
 	basic_actions/intercept_evaluator.cpp \
-	basic_actions/intercept_evaluator_factory.cpp \
 	basic_actions/kick_table.cpp \
 	basic_actions/neck_scan_field.cpp \
 	basic_actions/neck_scan_players.cpp \
@@ -152,7 +151,6 @@ noinst_HEADERS = \
 	basic_actions/intention_dribble2008.h \
 	basic_actions/intention_time_limit_action.h \
 	basic_actions/intercept_evaluator.h \
-	basic_actions/intercept_evaluator_factory.h \
 	basic_actions/kick_table.h \
 	basic_actions/neck_scan_field.h \
 	basic_actions/neck_scan_players.h \

@@ -31,7 +31,6 @@
 #include "body_intercept2018.h"
 
 #include "intercept_evaluator.h"
-#include "intercept_evaluator_sample.h"
 
 #include "basic_actions/basic_actions.h"
 #include "basic_actions/body_go_to_point.h"
@@ -131,22 +130,6 @@ Body_Intercept2018::execute( PlayerAgent * agent )
     return true;
 }
 
-/*-------------------------------------------------------------------*/
-InterceptEvaluator::Ptr
-Body_Intercept2018::create_evaluator( const WorldModel & /*wm*/ )
-{
-    InterceptEvaluator::Ptr ptr;
-    ptr = InterceptEvaluator::Ptr( new InterceptEvaluatorSample() );
-
-    if ( ptr
-         && ! ptr->isValid() )
-    {
-        std::cerr << "ERROR: invalid InterceptEvaluator" << std::endl;
-        return InterceptEvaluator::Ptr();
-    }
-
-    return ptr;
-}
 /*-------------------------------------------------------------------*/
 /*!
 
@@ -466,7 +449,7 @@ Body_Intercept2018::get_best_intercept_player( const WorldModel & wm,
     }
     s_time = wm.time();
 
-    InterceptEvaluator::Ptr intercept_evaluator = create_evaluator( wm );
+    InterceptEvaluator::Ptr intercept_evaluator = InterceptEvaluator::create( "Default" );
 
     if ( ! intercept_evaluator )
     {

@@ -44,11 +44,18 @@
 using namespace rcsc;
 
 namespace {
-rcss::RegHolder role = InterceptEvaluator::creators()
+rcss::RegHolder sample = InterceptEvaluator::creators()
     .autoReg( [](){
                   return InterceptEvaluator::Ptr( new InterceptEvaluatorSample() );
               },
         "Sample" );
+
+rcss::RegHolder def = InterceptEvaluator::creators()
+    .autoReg( [](){
+                  return InterceptEvaluator::Ptr( new InterceptEvaluatorSample() );
+              },
+        "Default" );
+
 }
 
 
