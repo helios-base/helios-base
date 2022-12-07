@@ -72,6 +72,25 @@ type_char( const InterceptInfo::ActionType t )
 }
 #endif
 
+
+struct InterceptCandidate {
+    const rcsc::Intercept * info_;
+    double value_;
+    int num_;
+    int label_;
+
+    explicit
+    InterceptCandidate( const rcsc::Intercept * info,
+                        const double value,
+                        const int num,
+                        const int label )
+        : info_( info ),
+          value_( value ),
+          num_( num ),
+          label_( label )
+    { }
+};
+
 }
 
 /*-------------------------------------------------------------------*/
@@ -515,7 +534,7 @@ Body_Intercept2018::get_best_intercept_player( const WorldModel & wm,
                                                                                {
                                                                                    return lhs.value_ > rhs.value_;
                                                                                } );
-    //InterceptCandidateValueSorter() );
+
     if ( best != candidates.end() )
     {
 #ifdef DEBUG_PRINT
@@ -720,7 +739,11 @@ Body_Intercept2018::get_best_intercept_goalie( const WorldModel & wm )
 
     std::vector< InterceptCandidate >::const_iterator best = std::min_element( candidates.begin(),
                                                                                candidates.end(),
-                                                                               InterceptCandidateValueSorter() );
+                                                                               []( const InterceptCandidate & lhs,
+                                                                                   const InterceptCandidate & rhs )
+                                                                               {
+                                                                                   return lhs.value_ > rhs.value_;
+                                                                               } );
     if ( best != candidates.end() )
     {
 #ifdef DEBUG_PRINT

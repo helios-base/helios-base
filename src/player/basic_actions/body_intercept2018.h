@@ -34,39 +34,6 @@
 #include <rcsc/common/player_type.h>
 #include <rcsc/geom/vector_2d.h>
 
-struct InterceptCandidate {
-    const rcsc::Intercept * info_;
-    double value_;
-    int num_;
-    int label_;
-
-    explicit
-    InterceptCandidate( const rcsc::Intercept * info,
-                        const double value,
-                        const int num,
-                        const int label )
-        : info_( info ),
-          value_( value ),
-          num_( num ),
-          label_( label )
-    { }
-};
-
-struct InterceptCandidateValueSorter {
-    bool operator()( const InterceptCandidate & lhs,
-                     const InterceptCandidate & rhs ) const
-    {
-        return lhs.value_ > rhs.value_;
-    }
-};
-
-struct InterceptCandidateNumSorter {
-    bool operator()( const InterceptCandidate & lhs,
-                     const InterceptCandidate & rhs ) const
-    {
-        return lhs.num_ < rhs.num_;
-    }
-};
 /*!
   \class Body_Intercept2018
   \brief ball chasing action including smart planning.
@@ -88,8 +55,8 @@ public:
     explicit
     Body_Intercept2018( const bool save_recovery = true,
                         const rcsc::Vector2D & face_point = rcsc::Vector2D::INVALIDATED )
-        : M_save_recovery( save_recovery )
-        , M_face_point( face_point )
+        : M_save_recovery( save_recovery ),
+          M_face_point( face_point )
     { }
 
     /*!
@@ -110,8 +77,6 @@ public:
                                         const bool save_recovery );
 
 private:
-    static
-    InterceptEvaluator::Ptr create_evaluator( const rcsc::WorldModel & wm );
 
     bool doGoToFinalPoint( rcsc::PlayerAgent * agent );
 

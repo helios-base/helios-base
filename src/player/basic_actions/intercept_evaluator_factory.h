@@ -35,21 +35,22 @@ namespace rcsc {
 class WorldModel;
 }
 
+/*!
+  \class InterceptEvaluatorFactory
+  \breif abstract factory
+*/
 class InterceptEvaluatorFactory {
-private:
-
-    //std::unordered_map< std::string, InterceptEvaluator::Creator > M_creators;
-    std::unordered_map< std::string, InterceptEvaluator::Ptr > M_evaluators;
-
+protected:
     InterceptEvaluatorFactory();
 
 public:
 
-    static InterceptEvaluatorFactory & instance();
+    virtual
+    ~InterceptevaluatorFactory()
+      { }
 
-    bool init();
-
-    InterceptEvaluator::Ptr create( const rcsc::WorldModel & wm ) const;
+    virtual
+    InterceptEvaluator::Ptr create( const rcsc::WorldModel & wm ) const = 0;
 
 };
 
