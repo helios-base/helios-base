@@ -105,9 +105,9 @@ View_Tactical::doDefault( PlayerAgent * agent )
         return agent->doChangeView( ViewWidth::WIDE );
     }
 
-    int self_min = wm.interceptTable()->selfReachCycle();
-    int mate_min = wm.interceptTable()->teammateReachCycle();
-    int opp_min = wm.interceptTable()->opponentReachCycle();
+    int self_min = wm.interceptTable().selfStep();
+    int mate_min = wm.interceptTable().teammateStep();
+    int opp_min = wm.interceptTable().opponentStep();
     int ball_reach_cycle = std::min( self_min, std::min( mate_min, opp_min ) );
 
     const Vector2D ball_pos = wm.ball().inertiaPoint( ball_reach_cycle );

@@ -107,10 +107,10 @@ KeepawayCommunication::attentiontoSomeone( PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
 
-    const PlayerObject * fastest_teammate = wm.interceptTable()->fastestTeammate();
-    const int self_min = wm.interceptTable()->selfReachCycle();
-    const int mate_min = wm.interceptTable()->teammateReachCycle();
-    const int opp_min = wm.interceptTable()->opponentReachCycle();
+    const PlayerObject * fastest_teammate = wm.interceptTable().firstTeammate();
+    const int self_min = wm.interceptTable().selfStep();
+    const int mate_min = wm.interceptTable().teammateStep();
+    const int opp_min = wm.interceptTable().opponentStep();
 
     if ( fastest_teammate
          && fastest_teammate->unum() != Unum_Unknown )

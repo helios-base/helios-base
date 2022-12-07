@@ -117,7 +117,7 @@ Neck_DefaultInterceptNeck::doTurnToReceiver( PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
 
-    if ( wm.interceptTable()->selfReachCycle() >= 2 )
+    if ( wm.interceptTable().selfStep() >= 2 )
     {
         dlog.addText( Logger::TEAM,
                             __FILE__": (doTurnToReceiver) self reach cycle >= 2 " );

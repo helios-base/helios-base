@@ -304,7 +304,7 @@ ShortDribbleGenerator::createCourses( const WorldModel & wm )
 void
 ShortDribbleGenerator::simulateDashes( const WorldModel & wm )
 {
-    const int opponent_reach_step = wm.interceptTable()->opponentReachCycle();
+    const int opponent_reach_step = wm.interceptTable().opponentStep();
     if ( opponent_reach_step <= 1 )
     {
 #ifdef DEBUG_PRINT_SIMULATE_DASHES

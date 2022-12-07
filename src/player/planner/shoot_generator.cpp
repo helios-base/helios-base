@@ -109,7 +109,7 @@ ShootGenerator::generate( const WorldModel & wm )
     clear();
 
     if ( ! wm.self().isKickable()
-         && wm.interceptTable()->selfReachCycle() > 1 )
+         && wm.interceptTable().selfStep() > 1 )
     {
         return;
     }

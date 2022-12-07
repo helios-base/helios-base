@@ -242,9 +242,9 @@ Neck_ScanPlayers::calculate_score( const WorldModel & wm,
     double score = 0.0;
     double view_buffer = 90.0;
 
-    const int our_min = std::min( wm.interceptTable()->selfReachCycle(),
-                                  wm.interceptTable()->teammateReachCycle() );
-    const int opp_min = wm.interceptTable()->opponentReachCycle();
+    const int our_min = std::min( wm.interceptTable().selfStep(),
+                                  wm.interceptTable().teammateStep() );
+    const int opp_min = wm.interceptTable().opponentStep();
     const bool our_ball = ( our_min <= opp_min );
 
     const AngleDeg reduced_left_angle = left_angle + 5.0;

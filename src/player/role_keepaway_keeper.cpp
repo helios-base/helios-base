@@ -113,8 +113,8 @@ RoleKeepawayKeeper::doMove( PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
 
-    const int self_min = wm.interceptTable()->selfReachCycle();
-    const int mate_min = wm.interceptTable()->teammateReachCycle();
+    const int self_min = wm.interceptTable().selfStep();
+    const int mate_min = wm.interceptTable().teammateStep();
 
     if ( ! wm.kickableTeammate()
          && self_min <= mate_min + 1 )

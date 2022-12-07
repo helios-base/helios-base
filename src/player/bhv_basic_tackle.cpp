@@ -79,9 +79,9 @@ Bhv_BasicTackle::execute( PlayerAgent * agent )
         return false;
     }
 
-    const int self_min = wm.interceptTable()->selfReachCycle();
-    const int mate_min = wm.interceptTable()->teammateReachCycle();
-    const int opp_min = wm.interceptTable()->opponentReachCycle();
+    const int self_min = wm.interceptTable().selfStep();
+    const int mate_min = wm.interceptTable().teammateStep();
+    const int opp_min = wm.interceptTable().opponentStep();
 
     const Vector2D self_reach_point = wm.ball().inertiaPoint( self_min );
 

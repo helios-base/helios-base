@@ -166,7 +166,7 @@ IntentionPassKickFindReceiver::finished( const PlayerAgent * agent )
         return true;
     }
 
-    if ( wm.interceptTable()->opponentReachCycle() <= 1 )
+    if ( wm.interceptTable().opponentStep() <= 1 )
     {
         dlog.addText( Logger::TEAM,
                       __FILE__": (finished) opponent may be kickable" );

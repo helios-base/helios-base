@@ -315,7 +315,7 @@ Neck_TurnToBall::execute( PlayerAgent * agent )
         return true;
     }
 
-    if ( wm.interceptTable()->opponentReachStep() <= 1 )
+    if ( wm.interceptTable().opponentStep() <= 1 )
     {
         AngleDeg neck_moment = ball_rel_angle_next - wm.self().neck();
         dlog.addText( Logger::ACTION,

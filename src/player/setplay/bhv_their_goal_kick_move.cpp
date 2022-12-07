@@ -206,7 +206,7 @@ Bhv_TheirGoalKickMove::doChaseBall( PlayerAgent * agent )
         return false;
     }
 
-    int self_min = wm.interceptTable()->selfReachCycle();
+    int self_min = wm.interceptTable().selfStep();
 
     if ( self_min > 10 )
     {

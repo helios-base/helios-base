@@ -1,10 +1,5 @@
 // -*-c++-*-
 
-/*!
-  \file body_intercept.h
-  \brief ball chasing action including smart planning.
-*/
-
 /*
  *Copyright:
 
@@ -29,13 +24,33 @@
 
 /////////////////////////////////////////////////////////////////////
 
-#ifndef RCSC_ACTION_BODY_INTERCEPT_H
-#define RCSC_ACTION_BODY_INTERCEPT_H
+#ifndef INTERCEPT_EVALUATOR_FACTORY_H
+#define INTERCEPT_EVALUATOR_FACTORY_H
 
-//#include "basic_actions/body_intercept2009.h"
-#include "basic_actions/body_intercept2018.h"
+#include "intercept_evaluator.h"
 
-//! alias of the default action.
-using Body_Intercept = Body_Intercept2018;
+#include <unordered_map>
+
+namespace rcsc {
+class WorldModel;
+}
+
+class InterceptEvaluatorFactory {
+private:
+
+    //std::unordered_map< std::string, InterceptEvaluator::Creator > M_creators;
+    std::unordered_map< std::string, InterceptEvaluator::Ptr > M_evaluators;
+
+    InterceptEvaluatorFactory();
+
+public:
+
+    static InterceptEvaluatorFactory & instance();
+
+    bool init();
+
+    InterceptEvaluator::Ptr create( const rcsc::WorldModel & wm ) const;
+
+};
 
 #endif
