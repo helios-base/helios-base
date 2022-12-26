@@ -148,12 +148,12 @@ ActGen_DirectPass::generate( std::vector< ActionStatePair > * result,
 
         if ( c == 0 )
         {
-            int self_min = current_wm.interceptTable()->selfReachCycle();
-            int teammate_min = current_wm.interceptTable()->teammateReachCycle();
+            int self_min = current_wm.interceptTable().selfStep();
+            int teammate_min = current_wm.interceptTable().teammateStep();
 
             if ( teammate_min < self_min )
             {
-                const PlayerObject * teammate = current_wm.interceptTable()->fastestTeammate();
+                const PlayerObject * teammate = current_wm.interceptTable().firstTeammate();
                 if ( teammate )
                 {
                     ball_holder_unum = teammate->unum();

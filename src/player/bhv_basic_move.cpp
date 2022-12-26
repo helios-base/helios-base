@@ -71,9 +71,9 @@ Bhv_BasicMove::execute( PlayerAgent * agent )
     const WorldModel & wm = agent->world();
     /*--------------------------------------------------------*/
     // chase ball
-    const int self_min = wm.interceptTable()->selfReachCycle();
-    const int mate_min = wm.interceptTable()->teammateReachCycle();
-    const int opp_min = wm.interceptTable()->opponentReachCycle();
+    const int self_min = wm.interceptTable().selfStep();
+    const int mate_min = wm.interceptTable().teammateStep();
+    const int opp_min = wm.interceptTable().opponentStep();
 
     if ( ! wm.kickableTeammate()
          && ( self_min <= 3

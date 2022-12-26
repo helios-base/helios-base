@@ -67,7 +67,7 @@ Neck_OffensiveInterceptNeck::execute( PlayerAgent * agent )
 
     if ( wm.kickableOpponent() )
     {
-        const PlayerObject * opp = wm.interceptTable()->fastestOpponent();
+        const PlayerObject * opp = wm.interceptTable().firstOpponent();
         if ( opp )
         {
             Neck_TurnToBallAndPlayer( opp, 0 ).execute( agent );
@@ -77,9 +77,9 @@ Neck_OffensiveInterceptNeck::execute( PlayerAgent * agent )
         }
     }
 
-    const int self_min = wm.interceptTable()->selfReachCycle();
-    //const int mate_min = wm.interceptTable()->teammateReachCycle();
-    const int opp_min = wm.interceptTable()->opponentReachCycle();
+    const int self_min = wm.interceptTable().selfStep();
+    //const int mate_min = wm.interceptTable().teammateStep();
+    const int opp_min = wm.interceptTable().opponentStep();
 
     const ViewWidth next_view_width = agent->effector().queuedNextViewWidth();
 
@@ -277,7 +277,7 @@ bool
 Neck_OffensiveInterceptNeck::doTurnNeckToShootPoint( PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
-    const int self_min = wm.interceptTable()->selfReachCycle();
+    const int self_min = wm.interceptTable().selfStep();
 
     if ( self_min > 1 )
     {

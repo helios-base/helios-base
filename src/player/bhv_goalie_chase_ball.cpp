@@ -73,7 +73,7 @@ Bhv_GoalieChaseBall::execute( PlayerAgent * agent )
     ////////////////////////////////////////////////////////////////////////
     // get active interception catch point
 
-    Vector2D my_int_pos = wm.ball().inertiaPoint( wm.interceptTable()->selfReachCycle() );
+    Vector2D my_int_pos = wm.ball().inertiaPoint( wm.interceptTable().selfStep() );
     dlog.addText( Logger::TEAM,
                   __FILE__": execute. intercept point=(%.2f %.2f)",
                   my_int_pos.x, my_int_pos.y );
@@ -103,8 +103,8 @@ Bhv_GoalieChaseBall::execute( PlayerAgent * agent )
         return true;
     }
 
-    int self_goalie_min = wm.interceptTable()->selfReachCycle();
-    int opp_min_cyc = wm.interceptTable()->opponentReachCycle();
+    int self_goalie_min = wm.interceptTable().selfStep();
+    int opp_min_cyc = wm.interceptTable().opponentStep();
 
     Vector2D intersection = ball_line.intersection( defend_line );
     if ( ! intersection.isValid()
@@ -310,8 +310,8 @@ Bhv_GoalieChaseBall::is_ball_chase_situation( const PlayerAgent  * agent )
 
     const ServerParam & SP = ServerParam::i();
 
-    int self_min = wm.interceptTable()->selfReachCycle();
-    int opp_min = wm.interceptTable()->opponentReachCycle();
+    int self_min = wm.interceptTable().selfStep();
+    int opp_min = wm.interceptTable().opponentStep();
 
     ////////////////////////////////////////////////////////////////////////
     // ball is in very dangerous area
@@ -362,7 +362,7 @@ Bhv_GoalieChaseBall::is_ball_chase_situation( const PlayerAgent  * agent )
     ////////////////////////////////////////////////////////////////////////
     // get active interception catch point
 
-    const Vector2D my_int_pos = wm.ball().inertiaPoint( wm.interceptTable()->selfReachCycle() );
+    const Vector2D my_int_pos = wm.ball().inertiaPoint( wm.interceptTable().selfStep() );
 
     double pen_thr = wm.ball().distFromSelf() * 0.1 + 1.0;
     if ( pen_thr < 1.0 ) pen_thr = 1.0;

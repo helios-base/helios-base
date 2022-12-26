@@ -144,8 +144,8 @@ IntentionReceive::execute( PlayerAgent * agent )
     dlog.addText( Logger::TEAM,
                   __FILE__": execute. try to receive" );
 
-    int self_min = wm.interceptTable()->selfReachCycle();
-    int opp_min = wm.interceptTable()->opponentReachCycle();
+    int self_min = wm.interceptTable().selfStep();
+    int opp_min = wm.interceptTable().opponentStep();
 
     if ( self_min < 6 )
     {

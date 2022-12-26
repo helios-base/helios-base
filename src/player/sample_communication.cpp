@@ -463,9 +463,9 @@ SampleCommunication::shouldSayBall( const PlayerAgent * agent )
         }
     }
 
-    int our_min = std::min( wm.interceptTable()->selfReachCycle(),
-                            wm.interceptTable()->teammateReachCycle() );
-    int opp_min = wm.interceptTable()->opponentReachCycle();
+    int our_min = std::min( wm.interceptTable().selfStep(),
+                            wm.interceptTable().teammateStep() );
+    int opp_min = wm.interceptTable().opponentStep();
 
     //
     // I am the nearest player to ball
@@ -730,9 +730,9 @@ SampleCommunication::sayBallAndPlayers( PlayerAgent * agent )
         const double x_rate = 1.0; // Magic Number
         const double y_rate = 0.5; // Magic Number
 
-        const int min_step = std::min( std::min( wm.interceptTable()->opponentReachCycle(),
-                                                 wm.interceptTable()->teammateReachCycle() ),
-                                       wm.interceptTable()->selfReachCycle() );
+        const int min_step = std::min( std::min( wm.interceptTable().opponentStep(),
+                                                 wm.interceptTable().teammateStep() ),
+                                       wm.interceptTable().selfStep() );
 
         const Vector2D ball_pos = wm.ball().inertiaPoint( min_step );
 
@@ -1171,10 +1171,10 @@ SampleCommunication::sayBall( PlayerAgent * agent )
         }
     }
 
-    int self_min = wm.interceptTable()->selfReachCycle();
-    int mate_min = wm.interceptTable()->teammateReachCycle();
+    int self_min = wm.interceptTable().selfStep();
+    int mate_min = wm.interceptTable().teammateStep();
     int our_min = std::min( self_min, mate_min );
-    int opp_min = wm.interceptTable()->opponentReachCycle();
+    int opp_min = wm.interceptTable().opponentStep();
 
 
     bool send_ball = false;
@@ -1382,9 +1382,9 @@ SampleCommunication::sayIntercept( PlayerAgent * agent )
         return false;
     }
 
-    int self_min = wm.interceptTable()->selfReachCycle();
-    int mate_min = wm.interceptTable()->teammateReachCycle();
-    int opp_min = wm.interceptTable()->opponentReachCycle();
+    int self_min = wm.interceptTable().selfStep();
+    int mate_min = wm.interceptTable().teammateStep();
+    int opp_min = wm.interceptTable().opponentStep();
 
     if ( wm.self().isKickable() )
     {
@@ -1450,9 +1450,9 @@ SampleCommunication::sayOffsideLine( PlayerAgent * agent )
         return false;
     }
 
-    int s_min = wm.interceptTable()->selfReachCycle();
-    int t_min = wm.interceptTable()->teammateReachCycle();
-    int o_min = wm.interceptTable()->opponentReachCycle();
+    int s_min = wm.interceptTable().selfStep();
+    int t_min = wm.interceptTable().teammateStep();
+    int o_min = wm.interceptTable().opponentStep();
 
     if ( o_min < t_min
          && o_min < s_min )
@@ -1507,7 +1507,7 @@ SampleCommunication::sayDefenseLine( PlayerAgent * agent )
         return false;
     }
 
-    int opp_min = wm.interceptTable()->opponentReachCycle();
+    int opp_min = wm.interceptTable().opponentStep();
 
     Vector2D opp_trap_pos = wm.ball().inertiaPoint( opp_min );
 
@@ -1557,9 +1557,9 @@ SampleCommunication::sayPlayers( PlayerAgent * agent )
 
     bool opponent_attack = false;
 
-    int opp_min = wm.interceptTable()->opponentReachCycle();
-    int mate_min = wm.interceptTable()->opponentReachCycle();
-    int self_min = wm.interceptTable()->opponentReachCycle();
+    int opp_min = wm.interceptTable().opponentStep();
+    int mate_min = wm.interceptTable().opponentStep();
+    int self_min = wm.interceptTable().opponentStep();
 
     Vector2D opp_trap_pos = wm.ball().inertiaPoint( opp_min );
 
@@ -1825,9 +1825,9 @@ SampleCommunication::sayOpponents( PlayerAgent * agent )
         return false;
     }
 
-    int self_min = wm.interceptTable()->selfReachCycle();
-    int mate_min = wm.interceptTable()->teammateReachCycle();
-    int opp_min = wm.interceptTable()->opponentReachCycle();
+    int self_min = wm.interceptTable().selfStep();
+    int mate_min = wm.interceptTable().teammateStep();
+    int opp_min = wm.interceptTable().opponentStep();
 
     if ( opp_min > self_min + 10
          && opp_min > mate_min + 10 )
@@ -1835,7 +1835,7 @@ SampleCommunication::sayOpponents( PlayerAgent * agent )
         return false;
     }
 
-    const PlayerObject * fastest_opponent = wm.interceptTable()->fastestOpponent();
+    const PlayerObject * fastest_opponent = wm.interceptTable().firstOpponent();
     if ( fastest_opponent
          && fastest_opponent->unum() != Unum_Unknown
          && fastest_opponent->unumCount() == 0
@@ -2006,9 +2006,9 @@ SampleCommunication::saySelf( PlayerAgent * agent )
         return false;
     }
 
-    int self_min = wm.interceptTable()->selfReachCycle();
-    int mate_min = wm.interceptTable()->teammateReachCycle();
-    int opp_min = wm.interceptTable()->opponentReachCycle();
+    int self_min = wm.interceptTable().selfStep();
+    int mate_min = wm.interceptTable().teammateStep();
+    int opp_min = wm.interceptTable().opponentStep();
 
     if ( opp_min < self_min
          && opp_min < mate_min )
@@ -2142,7 +2142,7 @@ SampleCommunication::attentiontoSomeone( PlayerAgent * agent )
     const WorldModel & wm = agent->world();
 
     if ( wm.self().pos().x > wm.offsideLineX() - 15.0
-         && wm.interceptTable()->selfReachCycle() <= 3 )
+         && wm.interceptTable().selfStep() <= 3 )
     {
         if ( currentSenderUnum() != wm.self().unum()
              && currentSenderUnum() != Unum_Unknown )
@@ -2210,10 +2210,10 @@ SampleCommunication::attentiontoSomeone( PlayerAgent * agent )
         return;
     }
 
-    const PlayerObject * fastest_teammate = wm.interceptTable()->fastestTeammate();
-    const int self_min = wm.interceptTable()->selfReachCycle();
-    const int mate_min = wm.interceptTable()->teammateReachCycle();
-    const int opp_min = wm.interceptTable()->opponentReachCycle();
+    const PlayerObject * fastest_teammate = wm.interceptTable().firstTeammate();
+    const int self_min = wm.interceptTable().selfStep();
+    const int mate_min = wm.interceptTable().teammateStep();
+    const int opp_min = wm.interceptTable().opponentStep();
 
     if ( fastest_teammate
          && fastest_teammate->unum() != Unum_Unknown

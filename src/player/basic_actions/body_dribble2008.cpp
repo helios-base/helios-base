@@ -268,7 +268,7 @@ Body_Dribble2008::doTurnOnly( PlayerAgent * agent,
 
     //---------------------------------------------------------//
     // check opponent
-    if ( wm.interceptTable()->opponentReachCycle() <= 1 )
+    if ( wm.interceptTable().opponentStep() <= 1 )
     {
         dlog.addText( Logger::DRIBBLE,
                       __FILE__": doTurnOnly()  exist near opponent" );
@@ -1916,7 +1916,7 @@ Body_Dribble2008::canKickAfterDash( const PlayerAgent * agent,
 
     const WorldModel & wm = agent->world();
 
-    if ( wm.interceptTable()->opponentReachCycle() <= 1 )
+    if ( wm.interceptTable().opponentStep() <= 1 )
     {
         dlog.addText( Logger::DRIBBLE,
                       __FILE__": canKickAfterDash..exist reachable opponent" );

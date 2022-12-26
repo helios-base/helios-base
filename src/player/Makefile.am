@@ -21,7 +21,7 @@ sample_player_SOURCES = \
 	basic_actions/body_go_to_point.cpp \
 	basic_actions/body_go_to_point_dodge.cpp \
 	basic_actions/body_hold_ball2008.cpp \
-	basic_actions/body_intercept2009.cpp \
+	basic_actions/body_intercept2018.cpp \
 	basic_actions/body_kick_one_step.cpp \
 	basic_actions/body_kick_to_relative.cpp \
 	basic_actions/body_pass.cpp \
@@ -30,6 +30,7 @@ sample_player_SOURCES = \
 	basic_actions/body_stop_dash.cpp \
 	basic_actions/intention_dribble2008.cpp \
 	basic_actions/intention_time_limit_action.cpp \
+	basic_actions/intercept_evaluator.cpp \
 	basic_actions/kick_table.cpp \
 	basic_actions/neck_scan_field.cpp \
 	basic_actions/neck_scan_players.cpp \
@@ -92,6 +93,7 @@ sample_player_SOURCES = \
 	neck_offensive_intercept_neck.cpp \
 	view_tactical.cpp \
 	intention_receive.cpp \
+	intercept_evaluator_sample.cpp \
 	soccer_role.cpp \
 	role_center_back.cpp \
 	role_center_forward.cpp \
@@ -135,7 +137,7 @@ noinst_HEADERS = \
 	basic_actions/body_hold_ball.h \
 	basic_actions/body_hold_ball2008.h \
 	basic_actions/body_intercept.h \
-	basic_actions/body_intercept2009.h \
+	basic_actions/body_intercept2018.h \
 	basic_actions/body_kick_one_step.h \
 	basic_actions/body_kick_to_relative.h \
 	basic_actions/body_pass.h \
@@ -148,6 +150,7 @@ noinst_HEADERS = \
 	basic_actions/body_turn_to_point.h \
 	basic_actions/intention_dribble2008.h \
 	basic_actions/intention_time_limit_action.h \
+	basic_actions/intercept_evaluator.h \
 	basic_actions/kick_table.h \
 	basic_actions/neck_scan_field.h \
 	basic_actions/neck_scan_players.h \
@@ -162,7 +165,7 @@ noinst_HEADERS = \
 	basic_actions/view_change_width.h \
 	basic_actions/view_normal.h \
 	basic_actions/view_synch.h \
-	basic_actions/view_wide.h
+	basic_actions/view_wide.h \
 	planner/actgen_action_chain_length_filter.h \
 	planner/actgen_cross.h \
 	planner/actgen_direct_pass.h \
@@ -200,7 +203,7 @@ noinst_HEADERS = \
 	planner/short_dribble_generator.h \
 	planner/simple_pass_checker.h \
 	planner/strict_check_pass_generator.h \
-	planner/tackle_generator.h
+	planner/tackle_generator.h \
 	setplay/bhv_go_to_placed_ball.h \
 	setplay/bhv_prepare_set_play_kick.h \
 	setplay/bhv_set_play.h \
@@ -223,6 +226,7 @@ noinst_HEADERS = \
 	neck_offensive_intercept_neck.h \
 	view_tactical.h \
 	intention_receive.h \
+	intercept_evaluator_sample.h \
 	soccer_role.h \
 	role_center_back.h \
 	role_center_forward.h \

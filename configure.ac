@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.61)
-AC_INIT([agent2d],[2022.01],[akky@users.sourceforge.jp])
+AC_INIT([helios-base],[2022],[hidehisaakiyama@users.noreply.github.com])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_AUX_DIR([config])

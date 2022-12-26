@@ -989,7 +989,7 @@ Bhv_PenaltyKick::doGoalieBasicMove( PlayerAgent * agent )
 
     ////////////////////////////////////////////////////////////////////////
     // get active interception catch point
-    const int self_min = wm.interceptTable()->selfReachCycle();
+    const int self_min = wm.interceptTable().selfStep();
     Vector2D move_pos = wm.ball().inertiaPoint( self_min );
 
     if ( our_penalty.contains( move_pos ) )
@@ -997,8 +997,8 @@ Bhv_PenaltyKick::doGoalieBasicMove( PlayerAgent * agent )
         dlog.addText( Logger::TEAM,
                       __FILE__": goalieBasicMove. exist intercept point " );
         agent->debugClient().addMessage( "ExistIntPoint" );
-        if ( wm.interceptTable()->opponentReachCycle() < wm.interceptTable()-> selfReachCycle()
-             || wm.interceptTable()-> selfReachCycle() <=4 )
+        if ( wm.interceptTable().opponentStep() < wm.interceptTable().selfStep()
+             || wm.interceptTable().selfStep() <=4 )
         {
             if ( Body_Intercept( false ).execute( agent ) )
             {

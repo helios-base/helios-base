@@ -149,8 +149,8 @@ Bhv_GoalieBasicMove::getTargetPoint( PlayerAgent * agent )
          && ! wm.kickableOpponent() )
     {
         ball_reach_step
-            = std::min( wm.interceptTable()->teammateReachCycle(),
-                        wm.interceptTable()->opponentReachCycle() );
+            = std::min( wm.interceptTable().teammateStep(),
+                        wm.interceptTable().opponentStep() );
     }
     const Vector2D base_pos = wm.ball().inertiaPoint( ball_reach_step );
 
@@ -217,7 +217,7 @@ Bhv_GoalieBasicMove::getTargetPoint( PlayerAgent * agent )
         }
         else
         {
-            int opp_min = wm.interceptTable()->opponentReachCycle();
+            int opp_min = wm.interceptTable().opponentStep();
             if ( opp_min < ball_pred_cycle )
             {
                 ball_pred_cycle = opp_min;
@@ -297,7 +297,7 @@ Bhv_GoalieBasicMove::getBasicDashPower( PlayerAgent * agent,
             return my_inc * 0.5;
         }
 
-        int opp_min = wm.interceptTable()->opponentReachCycle();
+        int opp_min = wm.interceptTable().opponentStep();
         if ( opp_min <= 3 )
         {
             agent->debugClient().addMessage( "P2.3" );
@@ -531,7 +531,7 @@ Bhv_GoalieBasicMove::doCorrectX( PlayerAgent * agent,
         return false;
     }
 
-    int opp_min_cyc = wm.interceptTable()->opponentReachCycle();
+    int opp_min_cyc = wm.interceptTable().opponentStep();
     if ( ( ! wm.kickableOpponent() && opp_min_cyc >= 4 )
          || wm.ball().distFromSelf() > 18.0 )
     {

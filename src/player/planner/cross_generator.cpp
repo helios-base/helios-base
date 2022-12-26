@@ -195,9 +195,9 @@ CrossGenerator::updatePasser( const WorldModel & wm )
         return;
     }
 
-    int s_min = wm.interceptTable()->selfReachCycle();
-    int t_min = wm.interceptTable()->teammateReachCycle();
-    int o_min = wm.interceptTable()->opponentReachCycle();
+    int s_min = wm.interceptTable().selfStep();
+    int t_min = wm.interceptTable().teammateStep();
+    int o_min = wm.interceptTable().opponentStep();
 
     int our_min = std::min( s_min, t_min );
     if ( o_min < std::min( our_min - 4, (int)rint( our_min * 0.9 ) ) )
@@ -221,7 +221,7 @@ CrossGenerator::updatePasser( const WorldModel & wm )
     {
         if ( t_min <= 2 )
         {
-            M_passer = wm.interceptTable()->fastestTeammate();
+            M_passer = wm.interceptTable().firstTeammate();
             M_first_point = wm.ball().inertiaPoint( t_min );
         }
     }

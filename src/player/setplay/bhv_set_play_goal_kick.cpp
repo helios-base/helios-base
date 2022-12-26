@@ -374,8 +374,8 @@ Bhv_SetPlayGoalKick::doIntercept( PlayerAgent * agent )
         return false;
     }
 
-    int self_min = wm.interceptTable()->selfReachCycle();
-    int mate_min = wm.interceptTable()->teammateReachCycle();
+    int self_min = wm.interceptTable().selfStep();
+    int mate_min = wm.interceptTable().teammateStep();
     if ( self_min > mate_min )
     {
         dlog.addText( Logger::TEAM,
