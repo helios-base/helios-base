@@ -289,14 +289,7 @@ Strategy::read( const std::string & formation_dir )
 Formation::Ptr
 Strategy::createFormation( const std::string & filepath )
 {
-    FormationParser::Ptr parser = FormationParser::create( filepath );
-    if ( ! parser )
-    {
-        std::cerr << "(Strategy::createFormation) Could not create a formation parser for " << filepath << std::endl;
-        return Formation::Ptr();
-    }
-
-    Formation::Ptr f = parser->parse( filepath );
+    Formation::Ptr f = FormationParser::parse( filepath );
 
     if ( ! f )
     {
