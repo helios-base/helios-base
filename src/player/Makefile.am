@@ -28,6 +28,8 @@ sample_player_SOURCES = \
 	basic_actions/body_smart_kick.cpp \
 	basic_actions/body_stop_ball.cpp \
 	basic_actions/body_stop_dash.cpp \
+	basic_actions/focus_move_to_point.cpp \
+	basic_actions/focus_reset.cpp \
 	basic_actions/intention_dribble2008.cpp \
 	basic_actions/intention_time_limit_action.cpp \
 	basic_actions/intercept_evaluator.cpp \
@@ -148,6 +150,8 @@ noinst_HEADERS = \
 	basic_actions/body_turn_to_angle.h \
 	basic_actions/body_turn_to_ball.h \
 	basic_actions/body_turn_to_point.h \
+	basic_actions/focus_move_to_point.h \
+	basic_actions/focus_reset.h \
 	basic_actions/intention_dribble2008.h \
 	basic_actions/intention_time_limit_action.h \
 	basic_actions/intercept_evaluator.h \
