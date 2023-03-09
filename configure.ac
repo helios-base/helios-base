@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.61)
-AC_INIT([helios-base],[2022],[hidehisaakiyama@users.noreply.github.com])
+AC_INIT([helios-base],[2023.03],[hidehisaakiyama@users.noreply.github.com])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_AUX_DIR([config])
@@ -22,7 +22,7 @@ AC_PROG_LN_S
 
 # ----------------------------------------------------------
 # check C++
-AX_CXX_COMPILE_STDCXX_14(noext)
+AX_CXX_COMPILE_STDCXX_17(noext)
 
 # ----------------------------------------------------------
 # check boost
