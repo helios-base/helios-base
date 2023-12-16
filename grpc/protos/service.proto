@@ -1,0 +1,333 @@
+syntax = "proto3";
+
+package protos;
+
+enum ViewWidth {
+  NARROW = 0;
+  NORMAL = 1;
+  WIDE = 2;
+}
+
+message Vector2D {
+  float x = 1;
+  float y = 2;
+  float dist = 3;
+  float angle = 4;
+}
+
+message Ball {
+  Vector2D position = 1;
+  Vector2D relative_position = 2;
+  Vector2D seen_position = 3;
+  Vector2D heard_position = 4;
+  Vector2D velocity = 5;
+  Vector2D seen_velocity = 6;
+  Vector2D heard_velocity = 7;
+  int32 pos_count = 8;
+  int32 seen_pos_count = 9;
+  int32 heard_pos_count = 10;
+  int32 vel_count = 11;
+  int32 seen_vel_count = 12;
+  int32 heard_vel_count = 13;
+  int32 lost_count = 14;
+  int32 ghost_count = 15;
+  float dist_from_self = 16;
+  float angle_from_self = 17;
+}
+
+enum Side {
+  UNKNOWN = 0;
+  LEFT = 1;
+  RIGHT = 2;
+}
+
+message Player {
+  Vector2D position = 1;
+  Vector2D seen_position = 2;
+  Vector2D heard_position = 3;
+  Vector2D velocity = 4;
+  Vector2D seen_velocity = 5;
+  int32 pos_count = 6;
+  int32 seen_pos_count = 7;
+  int32 heard_pos_count = 8;
+  int32 vel_count = 9;
+  int32 seen_vel_count = 10;
+  int32 ghost_count = 11;
+  float dist_from_self = 12;
+  float angle_from_self = 13;
+  int32 id = 14;
+  Side side = 15;
+  int32 uniform_number = 16;
+  int32 uniform_number_count = 17;
+  bool is_goalie = 18;
+  float body_direction = 19;
+  int32 body_direction_count = 20;
+  float face_direction = 21;
+  int32 face_direction_count = 22;
+  float point_to_direction = 23;
+  int32 point_to_direction_count = 24;
+  bool is_kicking = 25;
+  float dist_from_ball = 26;
+  float angle_from_ball = 27;
+  int32 ball_reach_steps = 28;
+  bool is_tackling = 29;
+}
+
+message Self {
+  Vector2D position = 1;
+  Vector2D seen_position = 2;
+  Vector2D heard_position = 3;
+  Vector2D velocity = 4;
+  Vector2D seen_velocity = 5;
+  int32 pos_count = 6;
+  int32 seen_pos_count = 7;
+  int32 heard_pos_count = 8;
+  int32 vel_count = 9;
+  int32 seen_vel_count = 10;
+  int32 ghost_count = 11;
+  int32 id = 12;
+  Side side = 13;
+  int32 uniform_number = 14;
+  int32 uniform_number_count = 15;
+  bool is_goalie = 16;
+  float body_direction = 17;
+  int32 body_direction_count = 18;
+  float face_direction = 19;
+  int32 face_direction_count = 20;
+  float point_to_direction = 21;
+  int32 point_to_direction_count = 22;
+  bool is_kicking = 23;
+  float dist_from_ball = 24;
+  float angle_from_ball = 25;
+  int32 ball_reach_steps = 26;
+  bool is_tackling = 27;
+  float relative_neck_direction = 28;
+  float stamina = 29;
+  bool is_kickable = 30;
+  float catch_probability = 31;
+  float tackle_probability = 32;
+  float foul_probability = 33;
+  ViewWidth view_width = 34;
+}
+
+enum InterceptActionType {
+  UNKNOWN_Intercept_Action_Type = 0;
+  OMNI_DASH = 1;
+  TURN_FORWARD_DASH = 2;
+  TURN_BACKWARD_DASH = 3;
+}
+
+message InterceptInfo {
+  InterceptActionType action_type = 1;
+  int32 turn_steps = 2;
+  float turn_angle = 3;
+  int32 dash_steps = 4;
+  float dash_power = 5;
+  float dash_dir = 6;
+  Vector2D final_self_position = 7;
+  float final_ball_dist = 8;
+  float final_stamina = 9;
+  float value = 10;
+}
+
+message InterceptTable {
+  int32 self_reach_steps = 1;
+  int32 first_teammate_reach_steps = 2;
+  int32 second_teammate_reach_steps = 3;
+  int32 first_opponent_reach_steps = 4;
+  int32 second_opponent_reach_steps = 5;
+  int32 first_teammate_id = 6;
+  int32 second_teammate_id = 7;
+  int32 first_opponent_id = 8;
+  int32 second_opponent_id = 9;
+  repeated InterceptInfo self_intercept_info = 10;
+}
+
+enum GameModeType {
+  BeforeKickOff = 0;
+  TimeOver = 1;
+  PlayOn = 2;
+  KickOff_Left = 3;
+  KickOff_Right = 4;
+  KickIn_Left = 5;
+  KickIn_Right = 6;
+  FreeKick_Left = 7;
+  FreeKick_Right = 8;
+  CornerKick_Left = 9;
+  CornerKick_Right = 10;
+  GoalKick_Left = 11;
+  GoalKick_Right = 12;
+  AfterGoal_Left = 13;
+  AfterGoal_Right = 14;
+  OffSide_Left = 15;
+  OffSide_Right = 16;
+  PenaltyKick_Left = 17;
+  PenaltyKick_Right = 18;
+  FirstHalfOver = 19;
+  Pause = 20;
+  Human = 21;
+  FoulCharge_Left = 22;
+  FoulCharge_Right = 23;
+  FoulPush_Left = 24;
+  FoulPush_Right = 25;
+  FoulMultipleAttacker_Left = 26;
+  FoulMultipleAttacker_Right = 27;
+  FoulBallOut_Left = 28;
+  FoulBallOut_Right = 29;
+  BackPass_Left = 30;
+  BackPass_Right = 31;
+  FreeKickFault_Left = 32;
+  FreeKickFault_Right = 33;
+  CatchFault_Left = 34;
+  CatchFault_Right = 35;
+  IndFreeKick_Left = 36;
+  IndFreeKick_Right = 37;
+  PenaltySetup_Left = 38;
+  PenaltySetup_Right = 39;
+  PenaltyReady_Left = 40;
+  PenaltyReady_Right = 41;
+  PenaltyTaken_Left = 42;
+  PenaltyTaken_Right = 43;
+  PenaltyMiss_Left = 44;
+  PenaltyMiss_Right = 45;
+  PenaltyScore_Left = 46;
+  PenaltyScore_Right = 47;
+  IllegalDefense_Left = 48;
+  IllegalDefense_Right = 49;
+  PenaltyOnfield = 50;
+  PenaltyFoul = 51;
+  GoalieCatch_Left = 52;
+  GoalieCatch_Right = 53;
+  ExtendHalf = 54;
+  MODE_MAX = 55;
+}
+
+message WorldModel {
+  InterceptTable intercept_table = 1;
+  string our_team_name = 2;
+  string their_team_name = 3;
+  Side our_side = 4;
+  int32 last_set_play_start_time = 5;
+  Self self = 6;
+  Ball ball = 7;
+  repeated Player teammates = 8;
+  repeated Player opponents = 9;
+  repeated Player unknowns = 10;
+  map<int32, Player> our_players_dict = 11;
+  map<int32, Player> their_players_dict = 12;
+  int32 our_goalie_uniform_number = 13;
+  int32 their_goalie_uniform_number = 14;
+  float offside_line_x = 15;
+  int32 ofside_line_x_count = 16;
+  int32 kickable_teammate_id = 17;
+  int32 kickable_opponent_id = 18;
+  Side last_kick_side = 19;
+  int32 last_kicker_uniform_number = 20;
+  int32 cycle = 21;
+  GameModeType game_mode_type = 22;
+  int32 left_team_score = 23;
+  int32 right_team_score = 24;
+  bool is_our_set_play = 25;
+  bool is_their_set_play = 26;
+  int32 stoped_cycle = 27;
+  int32 our_team_score = 28;
+  int32 their_team_score = 29;
+}
+
+message State {
+  WorldModel world_model = 1;
+  WorldModel full_world_model = 2;
+}
+
+message Dash {
+  float power = 1;
+  float relative_direction = 2;
+}
+
+message Turn {
+  float relative_direction = 1;
+}
+
+message Kick {
+  float power = 1;
+  float relative_direction = 2;
+}
+
+message Tackle {
+  float power_or_dir = 1;
+  bool foul = 2;
+}
+
+message Catch {
+
+}
+
+message Move {
+  float x = 1;
+  float y = 2;
+}
+
+message TurnNeck {
+  float moment = 1;
+}
+
+message ChangeView {
+  ViewWidth view_width = 1;
+}
+
+message Say {
+  string message = 1;
+}
+
+message PointTo {
+  float x = 1;
+  float y = 2;
+}
+
+message PointToOf {
+
+}
+
+message AttentionTo {
+  int32 unum = 1;
+}
+
+message AttentionToOf {
+
+}
+
+message Log {
+  string message = 1;
+}
+
+message DebugClient {
+  string message = 1;
+}
+
+message Action {
+  oneof action {
+      Dash dash = 1;
+      Turn turn = 2;
+      Kick kick = 3;
+      Tackle tackle = 4;
+      Catch catch = 5;
+      Move move = 6;
+      TurnNeck turn_neck = 7;
+      ChangeView change_view = 8;
+      Say say = 9;
+      PointTo point_to = 10;
+      PointToOf point_to_of = 11;
+      AttentionTo attention_to = 12;
+      AttentionToOf attention_to_of = 13;
+      Log log = 14;
+      DebugClient debug_client = 15;
+  }
+}
+
+message Actions {
+  repeated Action actions = 1;
+}
+
+service Game {
+  rpc GetActions(State) returns (Actions) {}
+}
