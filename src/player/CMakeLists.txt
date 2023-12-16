@@ -1,4 +1,8 @@
 add_executable(sample_player
+  ../grpc/state_generator.cpp
+  ../grpc/service.pb.cc
+  ../grpc/service.grpc.pb.cc
+  ../grpc/grpc_agent.cpp
   basic_actions/basic_actions.cpp
   basic_actions/bhv_before_kick_off.cpp
   basic_actions/bhv_emergency.cpp
@@ -108,6 +112,7 @@ add_executable(sample_player
 
 target_include_directories(sample_player
   PRIVATE
+    ${PROJECT_SOURCE_DIR}/../grpc/
     ${PROJECT_SOURCE_DIR}/src/
     ${PROJECT_SOURCE_DIR}/src/player
     ${PROJECT_SOURCE_DIR}/src/player/planner
@@ -119,11 +124,18 @@ target_include_directories(sample_player
   )
 
 target_link_libraries(sample_player
+  PRIVATE
+    service_grpc_proto
+    absl::flags
+    absl::flags_parse
+    ${_REFLECTION}
+    ${_GRPC_GRPCPP}
+    ${_PROTOBUF_LIBPROTOBUF}
   PUBLIC
     ${LIBRCSC_LIB}
     Boost::system
     ZLIB::ZLIB
-  PRIVATE
+    Threads::Threads
   )
 
 set_target_properties(sample_player

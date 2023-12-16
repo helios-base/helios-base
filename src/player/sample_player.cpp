@@ -162,6 +162,7 @@ SamplePlayer::~SamplePlayer()
 bool
 SamplePlayer::initImpl( CmdLineParser & cmd_parser )
 {
+    M_grpc_agent.init();
     bool result = PlayerAgent::initImpl( cmd_parser );
 
     // read additional options
@@ -252,7 +253,8 @@ SamplePlayer::actionImpl()
                       __FILE__": preprocess done" );
         return;
     }
-
+    M_grpc_agent.getAction(this);
+    return;
     //
     // update action chain
     //

@@ -30,6 +30,7 @@
 #include "action_generator.h"
 #include "field_evaluator.h"
 #include "communication.h"
+#include "grpc/grpc_agent.h"
 
 #include <rcsc/player/player_agent.h>
 #include <vector>
@@ -42,7 +43,7 @@ private:
 
     FieldEvaluator::ConstPtr M_field_evaluator;
     ActionGenerator::ConstPtr M_action_generator;
-
+    GrpcAgent M_grpc_agent;
 public:
 
     SamplePlayer();
