@@ -3,7 +3,7 @@ import service_pb2 as pb2
 import google.protobuf
 from concurrent import futures
 import grpc
-
+from src.SamplePlayerAgent import SamplePlayerAgent
 from threading import RLock
 
 lock = RLock()
@@ -11,13 +11,12 @@ lock = RLock()
 
 class Game(pb2_grpc.GameServicer):
     def __init__(self):
-        pass
+        self.agent = SamplePlayerAgent()
     
     def GetActions(self, request:pb2.State, context):
-        with lock:
-            actions = pb2.Actions()
-            actions.actions.append(pb2.Action(dash=pb2.Dash(power=100, relative_direction=30)))
-            return actions
+        # with lock:
+        actions = self.agent.getActions(request.world_model)
+        return actions
 
 
 def serve():
