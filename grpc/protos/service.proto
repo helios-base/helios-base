@@ -41,6 +41,33 @@ enum Side {
   RIGHT = 2;
 }
 
+enum LoggerLevel{
+  None = 0;
+  SYSTEM = 0x00000001;
+  SENSOR = 0x00000002;
+  WORLD = 0x00000004;
+  ACTION = 0x00000008;
+  INTERCEPT = 0x00000010;
+  KICK = 0x00000020;
+  HOLD = 0x00000040;
+  DRIBBLE = 0x00000080;
+  PASS = 0x00000100;
+  CROSS = 0x00000200;
+  SHOOT = 0x00000400;
+  CLEAR = 0x00000800;
+  BLOCK = 0x00001000;
+  MARK = 0x00002000;
+  POSITIONING = 0x00004000;
+  ROLE = 0x00008000;
+  TEAM = 0x00010000;
+  COMMUNICATION = 0x00020000;
+  ANALYZER = 0x00040000;
+  ACTION_CHAIN = 0x00080000;
+  PLAN = 0x00100000;
+  // TRAINING = 0x80000000;
+  // LEVEL_ANY = 0xffffffff;
+}
+
 message Player {
   Vector2D position = 1;
   Vector2D seen_position = 2;
@@ -275,8 +302,159 @@ message ChangeView {
   ViewWidth view_width = 1;
 }
 
+message BallMessage {
+  Vector2D ball_position = 1;
+  Vector2D ball_velocity = 2;
+}
+
+message PassMessage {
+  int32 receiver_uniform_number = 1;
+  Vector2D receiver_point = 2;
+  Vector2D ball_position = 3;
+  Vector2D ball_velocity = 4;
+}
+
+message InterceptMessage {
+  bool our = 1;
+  int32 uniform_number = 2;
+  int32 cycle = 3;
+}
+
+message GoalieMessage {
+  int32 goalie_uniform_number = 1;
+  Vector2D goalie_position = 2;
+  float goalie_body_direction = 3;
+}
+
+message GoalieAndPlayerMessage {
+  int32 goalie_uniform_number = 1;
+  Vector2D goalie_position = 2;
+  float goalie_body_direction = 3;
+
+  int32 player_uniform_number = 4;
+  Vector2D player_position = 5;
+}
+
+message OffsideLineMessage {
+  float offside_line_x = 1;
+}
+
+message DefenseLineMessage {
+  float defense_line_x = 1;
+}
+
+message WaitRequestMessage {
+}
+
+message SetplayMessage {
+  int32 wait_step = 1;
+}
+
+message PassRequestMessage {
+  Vector2D target_point = 1;
+}
+
+message StaminaMessage {
+  float stamina = 1;
+}
+
+message RecoveryMessage {
+  float recovery = 1;
+}
+
+message StaminaCapacityMessage {
+  float stamina_capacity = 1;
+}
+
+message DribbleMessage {
+  Vector2D target_point = 1;
+  int32 queue_count = 2;
+}
+
+message BallGoalieMessage {
+  Vector2D ball_position = 1;
+  Vector2D ball_velocity = 2;
+  
+  Vector2D goalie_position = 3;
+  float goalie_body_direction = 4;
+}
+
+message OnePlayerMessage {
+  int32 uniform_number = 1;
+  Vector2D position = 2;
+}
+
+message TwoPlayerMessage {
+  int32 first_uniform_number = 1;
+  Vector2D first_position = 2;
+  
+  int32 second_uniform_number = 3;
+  Vector2D second_position = 4;
+}
+
+message ThreePlayerMessage {
+  int32 first_uniform_number = 1;
+  Vector2D first_position = 2;
+  
+  int32 second_uniform_number = 3;
+  Vector2D second_position = 4;
+
+  int32 third_uniform_number = 5;
+  Vector2D third_position = 6;
+}
+
+message SelfMessage {
+  Vector2D self_position = 1;
+  float self_body_direction = 2;
+  float self_stamina = 3;
+}
+
+message TeammateMessage {
+  int32 uniform_number = 1;
+  Vector2D position = 2;
+  float body_direction = 3;
+}
+
+message OpponentMessage {
+  int32 uniform_number = 1;
+  Vector2D position = 2;
+  float body_direction = 3;
+}
+
+message BallPlayerMessage {
+  Vector2D ball_position = 1;
+  Vector2D ball_velocity = 2;
+
+  int32 uniform_number = 3;
+  Vector2D player_position = 4;
+  float body_direction = 5;
+}
+
 message Say {
-  string message = 1;
+  oneof message {
+    BallMessage ball_message = 1;
+    PassMessage pass_message = 2;
+    InterceptMessage intercept_message = 3;
+    GoalieMessage goalie_message = 4;
+    GoalieAndPlayerMessage goalie_and_player_message = 5;
+    OffsideLineMessage offside_line_message = 6;
+    DefenseLineMessage defense_line_message = 7;
+    WaitRequestMessage wait_request_message = 8;
+    SetplayMessage setplay_message = 9;
+    PassRequestMessage pass_request_message = 10;
+    StaminaMessage stamina_message = 11;
+    RecoveryMessage recovery_message = 12;
+    StaminaCapacityMessage stamina_capacity_message = 13;
+    DribbleMessage dribble_message = 14;
+    BallGoalieMessage ball_goalie_message = 15;
+    OnePlayerMessage one_player_message = 16;
+    TwoPlayerMessage two_player_message = 17;
+    ThreePlayerMessage three_player_message = 18;
+    SelfMessage self_message = 19;
+    TeammateMessage teammate_message = 20;
+    OpponentMessage opponent_message = 21;
+    BallPlayerMessage ball_player_message = 22;
+  }  
 }
 
 message PointTo {
@@ -289,15 +467,98 @@ message PointToOf {
 }
 
 message AttentionTo {
-  int32 unum = 1;
+  Side side = 1;
+  int32 unum = 2;
 }
 
 message AttentionToOf {
 
 }
 
+message AddText{
+  LoggerLevel level = 1;
+  string message = 2;
+}
+
+message AddPoint{
+  LoggerLevel level = 1;
+  Vector2D point = 2;
+  string color = 3;
+}
+
+message AddLine{
+  LoggerLevel level = 1;
+  Vector2D start = 2;
+  Vector2D end = 3;
+  string color = 4;
+}
+
+message AddArc{
+  LoggerLevel level = 1;
+  Vector2D center = 2;
+  float radius = 3;
+  float start_angle = 4;
+  float span_angel = 5;
+  string color = 6;
+}
+
+message AddCircle{
+  LoggerLevel level = 1;
+  Vector2D center = 2;
+  float radius = 3;
+  string color = 4;
+  bool fill = 5;
+}
+
+message AddTriangle{
+  LoggerLevel level = 1;
+  Vector2D point1 = 2;
+  Vector2D point2 = 3;
+  Vector2D point3 = 4;
+  string color = 5;
+  bool fill = 6;
+}
+
+message AddRectangle{
+  LoggerLevel level = 1;
+  float left = 2;
+  float top = 3;
+  float length = 4;
+  float width = 5;
+  string color = 6;
+  bool fill = 7;
+}
+
+message AddSector{
+  LoggerLevel level = 1;
+  Vector2D center = 2;
+  float min_radius = 3;
+  float max_radius = 4;
+  float start_angle = 5;
+  float span_angel = 6;
+  string color = 7;
+  bool fill = 8;
+}
+
+message AddMessage{
+  LoggerLevel level = 1;
+  Vector2D position = 2;
+  string message = 3;
+  string color = 4;
+}
+
 message Log {
-  string message = 1;
+  oneof log {
+    AddText add_text = 1;
+    AddPoint add_point = 2;
+    AddLine add_line = 3;
+    AddArc add_arc = 4;
+    AddCircle add_circle = 5;
+    AddTriangle add_triangle = 6;
+    AddRectangle add_rectangle = 7;
+    AddSector add_sector = 8;
+    AddMessage add_message = 9;
+  }
 }
 
 message DebugClient {

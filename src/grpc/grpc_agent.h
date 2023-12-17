@@ -26,4 +26,11 @@ public:
 
     ~GrpcAgent() {}
     void getAction(rcsc::PlayerAgent *agent) const;
+    void addSayMessage(rcsc::PlayerAgent *agent, protos::Say sayMessage) const;
+    void addDlog(protos::Log log) const;
+
+private:
+    static rcsc::ViewWidth convertViewWidth(protos::ViewWidth view_width);
+    static rcsc::SideID convertSideID(protos::Side side_id);
+    static rcsc::Vector2D convertVector2D(protos::Vector2D vector2d);
 };
