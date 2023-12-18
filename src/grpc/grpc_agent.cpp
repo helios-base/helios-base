@@ -50,7 +50,19 @@ using std::chrono::duration_cast;
 using std::chrono::duration;
 using std::chrono::milliseconds;
 
+#define DEBUG
+
+#ifdef DEBUG
+#define LOG(x) std::cout << x << std::endl
+#define LOGV(x) std::cout << #x << ": " << x << std::endl
+#else
+#define LOG(x)
+#define LOGV(x)
+#endif
+
 void GrpcAgent::getAction(rcsc::PlayerAgent * agent) const{
+    LOG("getAction Started");
+    LOGV(agent->world().time().cycle());
     State state = StateGenerator::generateState(agent);
     protos::Actions actions;
     ClientContext context;
@@ -70,7 +82,7 @@ void GrpcAgent::getAction(rcsc::PlayerAgent * agent) const{
         return;
     } 
 
-
+    LOG("getAction apply actions on agent");
     int body_action_done = 0;
     for(int i = 0; i < actions.actions_size(); i++){
         auto action = actions.actions(i);
@@ -156,8 +168,10 @@ void GrpcAgent::getAction(rcsc::PlayerAgent * agent) const{
         // todo debugClient
         case Action::kBodyGoToPoint:
         {
+            LOG("body go to point");
             const auto& bodyGoToPoint = action.body_go_to_point();
             const auto& targetPoint = GrpcAgent::convertVector2D(bodyGoToPoint.target_point());
+            LOGV(targetPoint);
             Body_GoToPoint(targetPoint, bodyGoToPoint.distance_threshold(), bodyGoToPoint.max_dash_power()).execute(agent);
             body_action_done++;
             break;
@@ -479,10 +493,11 @@ void GrpcAgent::getAction(rcsc::PlayerAgent * agent) const{
         }
         default:
         {
+            LOG("unknown action");
             break;
         }
-
         }
+        LOG("getAction done");
     }
 }
 

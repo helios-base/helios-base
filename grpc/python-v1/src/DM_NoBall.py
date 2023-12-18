@@ -24,11 +24,15 @@ class NoBallDecisionMaker(IDecisionMaker):
         opponent_reach_steps = wm.intercept_table.first_opponent_reach_steps
         
         if our_reach_steps < opponent_reach_steps and self_reach_steps < teammate_reach_steps:
-            pb2.Body_Intercept(False, pb2.Vector2D( 44.0, wm.self.position.y * 0.75 ))
+            agent.addAction(pb2.Action(body_intercept=pb2.Body_Intercept(save_recovery=False,
+                                               face_point=pb2.Vector2D( x=44.0,
+                                                                       y=wm.self.position.y * 0.75 ))))
             return
         
         pos = agent.getStrategy().getPosition(wm.self.uniform_number)
-        self.bodyGoToPoint(agent, wm, pos)
+        agent.addAction(pb2.Action(body_go_to_point=pb2.Body_GoToPoint(target_point=pb2.Vector2D(x=pos.x(), y=pos.y()), 
+                                           distance_threshold=1,
+                                           max_dash_power=100)))
         if our_reach_steps < opponent_reach_steps:
             pass
         else:

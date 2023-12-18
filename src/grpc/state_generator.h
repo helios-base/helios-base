@@ -227,7 +227,7 @@ public:
         res->set_our_side(convertSide(wm.ourSide()));
         res->set_last_set_play_start_time(wm.lastSetPlayStartTime().cycle());
         res->set_allocated_self(convertSelf(wm.self()));
-//        res->set_allocated_ball(convertBall(wm.ball()));
+        res->set_allocated_ball(convertBall(wm.ball()));
         for(auto player : wm.teammates()){
             auto p = res->add_teammates();
             updatePlayerObject(p, player);
