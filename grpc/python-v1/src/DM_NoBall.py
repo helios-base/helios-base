@@ -22,19 +22,14 @@ class NoBallDecisionMaker(IDecisionMaker):
         self_reach_steps = wm.intercept_table.self_reach_steps
         our_reach_steps = min(teammate_reach_steps, self_reach_steps)
         opponent_reach_steps = wm.intercept_table.first_opponent_reach_steps
+        
         if our_reach_steps < opponent_reach_steps and self_reach_steps < teammate_reach_steps:
-            # Todo: call intercept
-            intercept_info = wm.intercept_table.self_intercept_info
-            pos = wm.ball.position
-            if len(intercept_info) > 0:
-                pos = intercept_info[0].final_self_position
-            posVec = Vector2D(pos.x, pos.y)
-            self.bodyGoToPoint(agent, wm, posVec)
+            pb2.Body_Intercept(False, pb2.Vector2D( 44.0, wm.self.position.y * 0.75 ))
+            return
+        
+        pos = agent.getStrategy().getPosition(wm.self.uniform_number)
+        self.bodyGoToPoint(agent, wm, pos)
+        if our_reach_steps < opponent_reach_steps:
+            pass
         else:
-            pos = agent.getStrategy().getPosition(wm.self.uniform_number)
-            self.bodyGoToPoint(agent, wm, pos)
-            if our_reach_steps < opponent_reach_steps:
-                pass
-            else:
-                pass
-                
+            pass
