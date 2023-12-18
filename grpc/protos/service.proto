@@ -41,6 +41,33 @@ enum Side {
   RIGHT = 2;
 }
 
+enum LoggerLevel{
+  None = 0;
+  SYSTEM = 0x00000001;
+  SENSOR = 0x00000002;
+  WORLD = 0x00000004;
+  ACTION = 0x00000008;
+  INTERCEPT = 0x00000010;
+  KICK = 0x00000020;
+  HOLD = 0x00000040;
+  DRIBBLE = 0x00000080;
+  PASS = 0x00000100;
+  CROSS = 0x00000200;
+  SHOOT = 0x00000400;
+  CLEAR = 0x00000800;
+  BLOCK = 0x00001000;
+  MARK = 0x00002000;
+  POSITIONING = 0x00004000;
+  ROLE = 0x00008000;
+  TEAM = 0x00010000;
+  COMMUNICATION = 0x00020000;
+  ANALYZER = 0x00040000;
+  ACTION_CHAIN = 0x00080000;
+  PLAN = 0x00100000;
+  // TRAINING = 0x80000000;
+  // LEVEL_ANY = 0xffffffff;
+}
+
 message Player {
   Vector2D position = 1;
   Vector2D seen_position = 2;
@@ -275,8 +302,159 @@ message ChangeView {
   ViewWidth view_width = 1;
 }
 
+message BallMessage {
+  Vector2D ball_position = 1;
+  Vector2D ball_velocity = 2;
+}
+
+message PassMessage {
+  int32 receiver_uniform_number = 1;
+  Vector2D receiver_point = 2;
+  Vector2D ball_position = 3;
+  Vector2D ball_velocity = 4;
+}
+
+message InterceptMessage {
+  bool our = 1;
+  int32 uniform_number = 2;
+  int32 cycle = 3;
+}
+
+message GoalieMessage {
+  int32 goalie_uniform_number = 1;
+  Vector2D goalie_position = 2;
+  float goalie_body_direction = 3;
+}
+
+message GoalieAndPlayerMessage {
+  int32 goalie_uniform_number = 1;
+  Vector2D goalie_position = 2;
+  float goalie_body_direction = 3;
+
+  int32 player_uniform_number = 4;
+  Vector2D player_position = 5;
+}
+
+message OffsideLineMessage {
+  float offside_line_x = 1;
+}
+
+message DefenseLineMessage {
+  float defense_line_x = 1;
+}
+
+message WaitRequestMessage {
+}
+
+message SetplayMessage {
+  int32 wait_step = 1;
+}
+
+message PassRequestMessage {
+  Vector2D target_point = 1;
+}
+
+message StaminaMessage {
+  float stamina = 1;
+}
+
+message RecoveryMessage {
+  float recovery = 1;
+}
+
+message StaminaCapacityMessage {
+  float stamina_capacity = 1;
+}
+
+message DribbleMessage {
+  Vector2D target_point = 1;
+  int32 queue_count = 2;
+}
+
+message BallGoalieMessage {
+  Vector2D ball_position = 1;
+  Vector2D ball_velocity = 2;
+  
+  Vector2D goalie_position = 3;
+  float goalie_body_direction = 4;
+}
+
+message OnePlayerMessage {
+  int32 uniform_number = 1;
+  Vector2D position = 2;
+}
+
+message TwoPlayerMessage {
+  int32 first_uniform_number = 1;
+  Vector2D first_position = 2;
+  
+  int32 second_uniform_number = 3;
+  Vector2D second_position = 4;
+}
+
+message ThreePlayerMessage {
+  int32 first_uniform_number = 1;
+  Vector2D first_position = 2;
+  
+  int32 second_uniform_number = 3;
+  Vector2D second_position = 4;
+
+  int32 third_uniform_number = 5;
+  Vector2D third_position = 6;
+}
+
+message SelfMessage {
+  Vector2D self_position = 1;
+  float self_body_direction = 2;
+  float self_stamina = 3;
+}
+
+message TeammateMessage {
+  int32 uniform_number = 1;
+  Vector2D position = 2;
+  float body_direction = 3;
+}
+
+message OpponentMessage {
+  int32 uniform_number = 1;
+  Vector2D position = 2;
+  float body_direction = 3;
+}
+
+message BallPlayerMessage {
+  Vector2D ball_position = 1;
+  Vector2D ball_velocity = 2;
+
+  int32 uniform_number = 3;
+  Vector2D player_position = 4;
+  float body_direction = 5;
+}
+
 message Say {
-  string message = 1;
+  oneof message {
+    BallMessage ball_message = 1;
+    PassMessage pass_message = 2;
+    InterceptMessage intercept_message = 3;
+    GoalieMessage goalie_message = 4;
+    GoalieAndPlayerMessage goalie_and_player_message = 5;
+    OffsideLineMessage offside_line_message = 6;
+    DefenseLineMessage defense_line_message = 7;
+    WaitRequestMessage wait_request_message = 8;
+    SetplayMessage setplay_message = 9;
+    PassRequestMessage pass_request_message = 10;
+    StaminaMessage stamina_message = 11;
+    RecoveryMessage recovery_message = 12;
+    StaminaCapacityMessage stamina_capacity_message = 13;
+    DribbleMessage dribble_message = 14;
+    BallGoalieMessage ball_goalie_message = 15;
+    OnePlayerMessage one_player_message = 16;
+    TwoPlayerMessage two_player_message = 17;
+    ThreePlayerMessage three_player_message = 18;
+    SelfMessage self_message = 19;
+    TeammateMessage teammate_message = 20;
+    OpponentMessage opponent_message = 21;
+    BallPlayerMessage ball_player_message = 22;
+  }  
 }
 
 message PointTo {
@@ -289,19 +467,269 @@ message PointToOf {
 }
 
 message AttentionTo {
-  int32 unum = 1;
+  Side side = 1;
+  int32 unum = 2;
 }
 
 message AttentionToOf {
 
 }
 
+message AddText{
+  LoggerLevel level = 1;
+  string message = 2;
+}
+
+message AddPoint{
+  LoggerLevel level = 1;
+  Vector2D point = 2;
+  string color = 3;
+}
+
+message AddLine{
+  LoggerLevel level = 1;
+  Vector2D start = 2;
+  Vector2D end = 3;
+  string color = 4;
+}
+
+message AddArc{
+  LoggerLevel level = 1;
+  Vector2D center = 2;
+  float radius = 3;
+  float start_angle = 4;
+  float span_angel = 5;
+  string color = 6;
+}
+
+message AddCircle{
+  LoggerLevel level = 1;
+  Vector2D center = 2;
+  float radius = 3;
+  string color = 4;
+  bool fill = 5;
+}
+
+message AddTriangle{
+  LoggerLevel level = 1;
+  Vector2D point1 = 2;
+  Vector2D point2 = 3;
+  Vector2D point3 = 4;
+  string color = 5;
+  bool fill = 6;
+}
+
+message AddRectangle{
+  LoggerLevel level = 1;
+  float left = 2;
+  float top = 3;
+  float length = 4;
+  float width = 5;
+  string color = 6;
+  bool fill = 7;
+}
+
+message AddSector{
+  LoggerLevel level = 1;
+  Vector2D center = 2;
+  float min_radius = 3;
+  float max_radius = 4;
+  float start_angle = 5;
+  float span_angel = 6;
+  string color = 7;
+  bool fill = 8;
+}
+
+message AddMessage{
+  LoggerLevel level = 1;
+  Vector2D position = 2;
+  string message = 3;
+  string color = 4;
+}
+
 message Log {
-  string message = 1;
+  oneof log {
+    AddText add_text = 1;
+    AddPoint add_point = 2;
+    AddLine add_line = 3;
+    AddArc add_arc = 4;
+    AddCircle add_circle = 5;
+    AddTriangle add_triangle = 6;
+    AddRectangle add_rectangle = 7;
+    AddSector add_sector = 8;
+    AddMessage add_message = 9;
+  }
 }
 
 message DebugClient {
   string message = 1;
+}
+
+message Body_GoToPoint { // todo more variables
+  Vector2D target_point = 1;
+  float distance_threshold = 2;
+  float max_dash_power = 3;
+}
+
+message Body_SmartKick { // todo more variables
+  Vector2D target_point = 1;
+  float first_speed = 2;
+  float first_speed_threshold = 3;
+  int32 max_steps = 4;
+}
+
+message Bhv_BeforeKickOff {
+  Vector2D point = 1;
+}
+
+message Bhv_BodyNeckToBall {
+}
+
+message Bhv_BodyNeckToPoint {
+  Vector2D point = 1;
+}
+
+message Bhv_Emergency {
+}
+
+message Bhv_GoToPointLookBall {
+  Vector2D target_point = 1;
+  float distance_threshold = 2;
+  float max_dash_power = 3;
+}
+
+message Bhv_NeckBodyToBall {
+  float angle_buf = 1;
+}
+
+message Bhv_NeckBodyToPoint {
+  Vector2D point = 1;
+  float angle_buf = 2;
+}
+
+message Bhv_ScanField {
+}
+
+message Body_AdvanceBall {
+}
+
+message Body_ClearBall {
+}
+
+message Body_Dribble {
+  Vector2D target_point = 1;
+  float distance_threshold = 2;
+  float dash_power = 3;
+  int32 dash_count = 4;
+  bool dodge = 5;
+}
+
+message Body_GoToPointDodge {
+  Vector2D target_point = 1;
+  float dash_power = 2;
+}
+
+message Body_HoldBall {
+  bool do_turn = 1;
+  Vector2D turn_target_point = 2;
+  Vector2D kick_target_point = 3;
+}
+
+message Body_Intercept {
+  bool save_recovery = 1;
+  Vector2D face_point = 2;
+}
+
+message Body_KickOneStep {
+  Vector2D target_point = 1;
+  float first_speed = 2;
+  bool force_mode = 3;
+}
+
+message Body_StopBall {
+}
+
+message Body_StopDash {
+  bool save_recovery = 1;
+}
+
+message Body_TackleToPoint {
+  Vector2D target_point = 1;
+  float min_probability = 2;
+  float min_speed = 3;
+}
+
+message Body_TurnToAngle {
+  float angle = 1;
+}
+
+message Body_TurnToBall {
+  int32 cycle = 1;
+}
+
+message Body_TurnToPoint {
+  Vector2D target_point = 1;
+  int32 cycle = 2;
+}
+
+message Focus_MoveToPoint {
+  Vector2D target_point = 1;
+}
+
+message Focus_Reset {
+}
+
+message Neck_ScanField {
+}
+
+message Neck_ScanPlayers { // todo min/max_angle
+}
+
+message Neck_TurnToBallAndPlayer {
+  Side side = 1;
+  int32 uniform_number = 2;
+  int32 count_threshold = 3;
+}
+
+message Neck_TurnToBallOrScan {
+  int32 count_threshold = 1;
+}
+
+message Neck_TurnToBall {
+}
+
+message Neck_TurnToGoalieOrScan {
+  int32 count_threshold = 1;
+}
+
+message Neck_TurnToLowConfTeammate {
+}
+
+message Neck_TurnToPlayerOrScan {
+  Side side = 1;
+  int32 uniform_number = 2;
+  int32 count_threshold = 3;
+}
+
+message Neck_TurnToPoint {
+  Vector2D target_point = 1;
+}
+
+message Neck_TurnToRelative {
+  float angle = 1;
+}
+
+message View_ChangeWidth {
+  ViewWidth view_width = 1;
+}
+
+message View_Normal {
+}
+
+message View_Synch {
+}
+
+message View_Wide {
 }
 
 message Action {
@@ -321,6 +749,45 @@ message Action {
       AttentionToOf attention_to_of = 13;
       Log log = 14;
       DebugClient debug_client = 15;
+      Body_GoToPoint  body_go_to_point = 16;
+      Body_SmartKick body_smart_kick = 17;
+      Bhv_BeforeKickOff bhv_before_kick_off = 18;
+      Bhv_BodyNeckToBall bhv_body_neck_to_ball = 19;
+      Bhv_BodyNeckToPoint bhv_body_neck_to_point = 20;
+      Bhv_Emergency bhv_emergency = 21;
+      Bhv_GoToPointLookBall bhv_go_to_point_look_ball = 22;
+      Bhv_NeckBodyToBall bhv_neck_body_to_ball = 23;
+      Bhv_NeckBodyToPoint bhv_neck_body_to_point = 24;
+      Bhv_ScanField bhv_scan_field = 25;
+      Body_AdvanceBall body_advance_ball = 26;
+      Body_ClearBall body_clear_ball = 27;
+      Body_Dribble body_dribble = 28;
+      Body_GoToPointDodge body_go_to_point_dodge = 29;
+      Body_HoldBall body_hold_ball = 30;
+      Body_Intercept body_intercept = 31;
+      Body_KickOneStep body_kick_one_step = 32;
+      Body_StopBall body_stop_ball = 33;
+      Body_StopDash body_stop_dash = 34;
+      Body_TackleToPoint body_tackle_to_point = 35;
+      Body_TurnToAngle body_turn_to_angle = 36;
+      Body_TurnToBall body_turn_to_ball = 37;
+      Body_TurnToPoint body_turn_to_point = 38;
+      Focus_MoveToPoint focus_move_to_point = 39;
+      Focus_Reset focus_reset = 40;
+      Neck_ScanField neck_scan_field = 41;
+      Neck_ScanPlayers neck_scan_players = 42;
+      Neck_TurnToBallAndPlayer neck_turn_to_ball_and_player = 43;
+      Neck_TurnToBallOrScan neck_turn_to_ball_or_scan = 44;
+      Neck_TurnToBall neck_turn_to_ball = 45;
+      Neck_TurnToGoalieOrScan neck_turn_to_goalie_or_scan = 46;
+      Neck_TurnToLowConfTeammate neck_turn_to_low_conf_teammate = 47;
+      Neck_TurnToPlayerOrScan neck_turn_to_player_or_scan = 48;
+      Neck_TurnToPoint neck_turn_to_point = 49;
+      Neck_TurnToRelative neck_turn_to_relative = 50;
+      View_ChangeWidth view_change_width = 51;
+      View_Normal view_normal = 52;
+      View_Synch view_synch = 53;
+      View_Wide view_wide = 54;
   }
 }
 

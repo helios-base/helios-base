@@ -267,7 +267,7 @@ public:
             res->set_kickable_opponent_id(wm.kickableOpponent()->id());
         res->set_last_kick_side(convertSide(wm.lastKickerSide()));
         res->set_last_kicker_uniform_number(wm.lastKickerUnum());
-        res->set_cycle(wm.gameMode().time().cycle());
+        res->set_cycle(wm.time().cycle());
         //game mode type
         res->set_left_team_score(wm.gameMode().scoreLeft());
         res->set_right_team_score(wm.gameMode().scoreRight());
