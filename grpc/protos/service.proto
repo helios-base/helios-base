@@ -1013,10 +1013,80 @@ message ServerParam {
   float real_speed_max = 215; 
 }
 
+message PlayerParam {
+  int32 player_types = 1;
+  int32 subs_max = 2;
+  int32 pt_max = 3;
+  bool allow_mult_default_type = 4;
+  float player_speed_max_delta_min = 5;
+  float player_speed_max_delta_max = 6;
+  float stamina_inc_max_delta_factor = 7;
+  float player_decay_delta_min = 8;
+  float player_decay_delta_max = 9;
+  float inertia_moment_delta_factor = 10;
+  float dash_power_rate_delta_min = 11;
+  float dash_power_rate_delta_max = 12;
+  float player_size_delta_factor = 13;
+  float kickable_margin_delta_min = 14;
+  float kickable_margin_delta_max = 15;
+  float kick_rand_delta_factor = 16;
+  float extra_stamina_delta_min = 17;
+  float extra_stamina_delta_max = 18;
+  float effort_max_delta_factor = 19;
+  float effort_min_delta_factor = 20;
+  int32 random_seed = 21;
+  float new_dash_power_rate_delta_min = 22;
+  float new_dash_power_rate_delta_max = 23;
+  float new_stamina_inc_max_delta_factor = 24;
+  float kick_power_rate_delta_min = 25;
+  float kick_power_rate_delta_max = 26;
+  float foul_detect_probability_delta_factor = 27;
+  float catchable_area_l_stretch_min = 28;
+  float catchable_area_l_stretch_max = 29;
+}
+
+message PlayerType {
+  int32 id = 1;
+  float player_speed_max = 2;
+  float stamina_inc_max = 3;
+  float player_decay = 4;
+  float inertia_moment = 5;
+  float dash_power_rate = 6;
+  float player_size = 7;
+  float kickable_margin = 8;
+  float kick_rand = 9;
+  float extra_stamina = 10;
+  float effort_max = 11;
+  float effort_min = 12;
+  float kick_power_rate = 13;
+  float foul_detect_probability = 14;
+  float catchable_area_l_stretch = 15;
+  float unum_far_length = 16;
+  float unum_too_far_length = 17;
+  float team_far_length = 18;
+  float team_too_far_length = 19;
+  float player_max_observation_length = 20;
+  float ball_vel_far_length = 21;
+  float ball_vel_too_far_length = 22;
+  float ball_max_observation_length = 23;
+  float flag_chg_far_length = 24;
+  float flag_chg_too_far_length = 25;
+  float flag_max_observation_length = 26;
+  float kickable_area = 27;
+  float reliable_catchable_dist = 28;
+  float max_catchable_dist = 29;
+  float real_speed_max = 30;
+  float player_speed_max2 = 31;
+  float real_speed_max2 = 32;
+  int32 cycles_to_reach_max_speed = 33;
+}
+
 message Empty {
 }
 
 service Game {
   rpc GetActions(State) returns (Actions) {}
   rpc SendServerParams(ServerParam) returns (Empty) {}
+  rpc SendPlayerParams(PlayerParam) returns (Empty) {}
+  rpc SendPlayerType(PlayerType) returns (Empty) {}
 }

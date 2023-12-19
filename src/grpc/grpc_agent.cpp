@@ -42,6 +42,7 @@
 #include "player/basic_actions/view_synch.h"
 
 #include <rcsc/player/say_message_builder.h>
+#include <rcsc/common/player_param.h>
 
 #include <chrono>
 #include <rcsc/common/logger.h>
@@ -297,6 +298,112 @@ void GrpcAgent::sendServerParam() const {
     serverParam.set_max_monitors(SP.maxMonitors());
     serverParam.set_catchable_area(SP.catchableArea());
     serverParam.set_real_speed_max(SP.defaultRealSpeedMax());
+
+    ClientContext context;
+    protos::Empty empty;
+    Status status = stub_->SendServerParams(&context, serverParam, &empty);
+    if (!status.ok()) {
+        std::cout << "SendServerParams rpc failed." << std::endl
+                  << status.error_code() << ": " << status.error_message()
+                  << std::endl;
+    }
+}
+
+void GrpcAgent::sendPlayerParams() const {
+    protos::PlayerParam playerParam;
+    const rcsc::PlayerParam& PP = rcsc::PlayerParam::i();
+
+    playerParam.set_player_types(PP.playerTypes());
+    playerParam.set_subs_max(PP.subsMax());
+    playerParam.set_pt_max(PP.ptMax());
+    playerParam.set_allow_mult_default_type(PP.allowMultDefaultType());
+    playerParam.set_player_speed_max_delta_min(PP.playerSpeedMaxDeltaMin());
+    playerParam.set_player_speed_max_delta_max(PP.playerSpeedMaxDeltaMax());
+    playerParam.set_stamina_inc_max_delta_factor(PP.staminaIncMaxDeltaFactor());
+    playerParam.set_player_decay_delta_min(PP.playerDecayDeltaMin());
+    playerParam.set_player_decay_delta_max(PP.playerDecayDeltaMax());
+    playerParam.set_inertia_moment_delta_factor(PP.inertiaMomentDeltaFactor());
+    playerParam.set_dash_power_rate_delta_min(PP.dashPowerRateDeltaMin());
+    playerParam.set_dash_power_rate_delta_max(PP.dashPowerRateDeltaMax());
+    playerParam.set_player_size_delta_factor(PP.playerSizeDeltaFactor());
+    playerParam.set_kickable_margin_delta_min(PP.kickableMarginDeltaMin());
+    playerParam.set_kickable_margin_delta_max(PP.kickableMarginDeltaMax());
+    playerParam.set_kick_rand_delta_factor(PP.kickRandDeltaFactor());
+    playerParam.set_extra_stamina_delta_min(PP.extraStaminaDeltaMin());
+    playerParam.set_extra_stamina_delta_max(PP.extraStaminaDeltaMax());
+    playerParam.set_effort_max_delta_factor(PP.effortMaxDeltaFactor());
+    playerParam.set_effort_min_delta_factor(PP.effortMinDeltaFactor());
+    playerParam.set_random_seed(PP.randomSeed());
+    playerParam.set_new_dash_power_rate_delta_min(PP.newDashPowerRateDeltaMin());
+    playerParam.set_new_dash_power_rate_delta_max(PP.newDashPowerRateDeltaMax());
+    playerParam.set_new_stamina_inc_max_delta_factor(PP.newStaminaIncMaxDeltaFactor());
+    playerParam.set_kick_power_rate_delta_min(PP.kickPowerRateDeltaMin());
+    playerParam.set_kick_power_rate_delta_max(PP.kickPowerRateDeltaMax());
+    playerParam.set_foul_detect_probability_delta_factor(PP.foulDetectProbabilityDeltaFactor());
+    playerParam.set_catchable_area_l_stretch_min(PP.catchAreaLengthStretchMin());
+    playerParam.set_catchable_area_l_stretch_max(PP.catchAreaLengthStretchMax());    
+
+    ClientContext context;
+    protos::Empty empty;
+    Status status = stub_->SendPlayerParams(&context, playerParam, &empty);
+    if (!status.ok()) {
+        std::cout << "SendPlayerParams rpc failed." << std::endl
+                  << status.error_code() << ": " << status.error_message()
+                  << std::endl;
+    }
+}
+
+void GrpcAgent::sendPlayerType() const {
+    const rcsc::PlayerParam& PP = rcsc::PlayerParam::i();
+    const rcsc::PlayerTypeSet& PT = rcsc::PlayerTypeSet::i();
+
+    for (int i = 0; i < PP.ptMax(); i++) {
+        protos::PlayerType playerTypeGrpc;
+        const rcsc::PlayerType* playerType = PT.get(i);
+
+        playerTypeGrpc.set_id(playerType->id());
+        playerTypeGrpc.set_player_speed_max(playerType->playerSpeedMax());
+        playerTypeGrpc.set_stamina_inc_max(playerType->staminaIncMax());
+        playerTypeGrpc.set_player_decay(playerType->playerDecay());
+        playerTypeGrpc.set_inertia_moment(playerType->inertiaMoment());
+        playerTypeGrpc.set_dash_power_rate(playerType->dashPowerRate());
+        playerTypeGrpc.set_player_size(playerType->playerSize());
+        playerTypeGrpc.set_kickable_margin(playerType->kickableMargin());
+        playerTypeGrpc.set_kick_rand(playerType->kickRand());
+        playerTypeGrpc.set_extra_stamina(playerType->extraStamina());
+        playerTypeGrpc.set_effort_max(playerType->effortMax());
+        playerTypeGrpc.set_effort_min(playerType->effortMin());
+        playerTypeGrpc.set_kick_power_rate(playerType->kickPowerRate());
+        playerTypeGrpc.set_foul_detect_probability(playerType->foulDetectProbability());
+        playerTypeGrpc.set_catchable_area_l_stretch(playerType->catchAreaLengthStretch());
+        playerTypeGrpc.set_unum_far_length(playerType->unumFarLength());
+        playerTypeGrpc.set_unum_too_far_length(playerType->unumTooFarLength());
+        playerTypeGrpc.set_team_far_length(playerType->teamFarLength());
+        playerTypeGrpc.set_team_too_far_length(playerType->teamTooFarLength());
+        playerTypeGrpc.set_player_max_observation_length(playerType->playerMaxObservationLength());
+        playerTypeGrpc.set_ball_vel_far_length(playerType->ballVelFarLength());
+        playerTypeGrpc.set_ball_vel_too_far_length(playerType->ballVelTooFarLength());
+        playerTypeGrpc.set_ball_max_observation_length(playerType->ballMaxObservationLength());
+        playerTypeGrpc.set_flag_chg_far_length(playerType->flagChgFarLength());
+        playerTypeGrpc.set_flag_chg_too_far_length(playerType->flagChgTooFarLength());
+        playerTypeGrpc.set_flag_max_observation_length(playerType->flagMaxObservationLength());
+        playerTypeGrpc.set_kickable_area(playerType->kickableArea());
+        playerTypeGrpc.set_reliable_catchable_dist(playerType->reliableCatchableDist());
+        playerTypeGrpc.set_max_catchable_dist(playerType->maxCatchableDist());
+        playerTypeGrpc.set_real_speed_max(playerType->realSpeedMax());
+        playerTypeGrpc.set_player_speed_max2(playerType->playerSpeedMax2());
+        playerTypeGrpc.set_real_speed_max2(playerType->realSpeedMax2());
+        playerTypeGrpc.set_cycles_to_reach_max_speed(playerType->cyclesToReachMaxSpeed());
+
+        ClientContext context;
+        protos::Empty empty;
+        Status status = stub_->SendPlayerType(&context, playerTypeGrpc, &empty);
+        if (!status.ok()) {
+            std::cout << "SendPlayerType rpc failed. id=" << i << std::endl
+                      << status.error_code() << ": " << status.error_message()
+                      << std::endl;
+        }
+    }
 }
 
 void GrpcAgent::getAction(rcsc::PlayerAgent * agent) const{

@@ -29,6 +29,8 @@ public:
     void addSayMessage(rcsc::PlayerAgent *agent, protos::Say sayMessage) const;
     void addDlog(protos::Log log) const;
     void sendServerParam() const;
+    void sendPlayerParams() const;
+    void sendPlayerType() const;
 
 private:
     static rcsc::ViewWidth convertViewWidth(protos::ViewWidth view_width);

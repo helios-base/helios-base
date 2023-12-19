@@ -2431,6 +2431,158 @@ struct ServerParamDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ServerParamDefaultTypeInternal _ServerParam_default_instance_;
 template <typename>
+PROTOBUF_CONSTEXPR PlayerParam::PlayerParam(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.player_types_)*/ 0
+
+  , /*decltype(_impl_.subs_max_)*/ 0
+
+  , /*decltype(_impl_.pt_max_)*/ 0
+
+  , /*decltype(_impl_.allow_mult_default_type_)*/ false
+
+  , /*decltype(_impl_.player_speed_max_delta_min_)*/ 0
+
+  , /*decltype(_impl_.player_speed_max_delta_max_)*/ 0
+
+  , /*decltype(_impl_.stamina_inc_max_delta_factor_)*/ 0
+
+  , /*decltype(_impl_.player_decay_delta_min_)*/ 0
+
+  , /*decltype(_impl_.player_decay_delta_max_)*/ 0
+
+  , /*decltype(_impl_.inertia_moment_delta_factor_)*/ 0
+
+  , /*decltype(_impl_.dash_power_rate_delta_min_)*/ 0
+
+  , /*decltype(_impl_.dash_power_rate_delta_max_)*/ 0
+
+  , /*decltype(_impl_.player_size_delta_factor_)*/ 0
+
+  , /*decltype(_impl_.kickable_margin_delta_min_)*/ 0
+
+  , /*decltype(_impl_.kickable_margin_delta_max_)*/ 0
+
+  , /*decltype(_impl_.kick_rand_delta_factor_)*/ 0
+
+  , /*decltype(_impl_.extra_stamina_delta_min_)*/ 0
+
+  , /*decltype(_impl_.extra_stamina_delta_max_)*/ 0
+
+  , /*decltype(_impl_.effort_max_delta_factor_)*/ 0
+
+  , /*decltype(_impl_.effort_min_delta_factor_)*/ 0
+
+  , /*decltype(_impl_.random_seed_)*/ 0
+
+  , /*decltype(_impl_.new_dash_power_rate_delta_min_)*/ 0
+
+  , /*decltype(_impl_.new_dash_power_rate_delta_max_)*/ 0
+
+  , /*decltype(_impl_.new_stamina_inc_max_delta_factor_)*/ 0
+
+  , /*decltype(_impl_.kick_power_rate_delta_min_)*/ 0
+
+  , /*decltype(_impl_.kick_power_rate_delta_max_)*/ 0
+
+  , /*decltype(_impl_.foul_detect_probability_delta_factor_)*/ 0
+
+  , /*decltype(_impl_.catchable_area_l_stretch_min_)*/ 0
+
+  , /*decltype(_impl_.catchable_area_l_stretch_max_)*/ 0
+
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct PlayerParamDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR PlayerParamDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~PlayerParamDefaultTypeInternal() {}
+  union {
+    PlayerParam _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PlayerParamDefaultTypeInternal _PlayerParam_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR PlayerType::PlayerType(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.id_)*/ 0
+
+  , /*decltype(_impl_.player_speed_max_)*/ 0
+
+  , /*decltype(_impl_.stamina_inc_max_)*/ 0
+
+  , /*decltype(_impl_.player_decay_)*/ 0
+
+  , /*decltype(_impl_.inertia_moment_)*/ 0
+
+  , /*decltype(_impl_.dash_power_rate_)*/ 0
+
+  , /*decltype(_impl_.player_size_)*/ 0
+
+  , /*decltype(_impl_.kickable_margin_)*/ 0
+
+  , /*decltype(_impl_.kick_rand_)*/ 0
+
+  , /*decltype(_impl_.extra_stamina_)*/ 0
+
+  , /*decltype(_impl_.effort_max_)*/ 0
+
+  , /*decltype(_impl_.effort_min_)*/ 0
+
+  , /*decltype(_impl_.kick_power_rate_)*/ 0
+
+  , /*decltype(_impl_.foul_detect_probability_)*/ 0
+
+  , /*decltype(_impl_.catchable_area_l_stretch_)*/ 0
+
+  , /*decltype(_impl_.unum_far_length_)*/ 0
+
+  , /*decltype(_impl_.unum_too_far_length_)*/ 0
+
+  , /*decltype(_impl_.team_far_length_)*/ 0
+
+  , /*decltype(_impl_.team_too_far_length_)*/ 0
+
+  , /*decltype(_impl_.player_max_observation_length_)*/ 0
+
+  , /*decltype(_impl_.ball_vel_far_length_)*/ 0
+
+  , /*decltype(_impl_.ball_vel_too_far_length_)*/ 0
+
+  , /*decltype(_impl_.ball_max_observation_length_)*/ 0
+
+  , /*decltype(_impl_.flag_chg_far_length_)*/ 0
+
+  , /*decltype(_impl_.flag_chg_too_far_length_)*/ 0
+
+  , /*decltype(_impl_.flag_max_observation_length_)*/ 0
+
+  , /*decltype(_impl_.kickable_area_)*/ 0
+
+  , /*decltype(_impl_.reliable_catchable_dist_)*/ 0
+
+  , /*decltype(_impl_.max_catchable_dist_)*/ 0
+
+  , /*decltype(_impl_.real_speed_max_)*/ 0
+
+  , /*decltype(_impl_.player_speed_max2_)*/ 0
+
+  , /*decltype(_impl_.real_speed_max2_)*/ 0
+
+  , /*decltype(_impl_.cycles_to_reach_max_speed_)*/ 0
+
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct PlayerTypeDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR PlayerTypeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~PlayerTypeDefaultTypeInternal() {}
+  union {
+    PlayerType _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PlayerTypeDefaultTypeInternal _PlayerType_default_instance_;
+template <typename>
 PROTOBUF_CONSTEXPR Empty::Empty(
     ::_pbi::ConstantInitialized) {}
 struct EmptyDefaultTypeInternal {
@@ -2444,7 +2596,7 @@ struct EmptyDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EmptyDefaultTypeInternal _Empty_default_instance_;
 }  // namespace protos
-static ::_pb::Metadata file_level_metadata_service_2eproto[99];
+static ::_pb::Metadata file_level_metadata_service_2eproto[101];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_service_2eproto[5];
 static constexpr const ::_pb::ServiceDescriptor**
     file_level_service_descriptors_service_2eproto = nullptr;
@@ -4089,6 +4241,84 @@ const ::uint32_t TableStruct_service_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
     PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.catchable_area_),
     PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.real_speed_max_),
     ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.player_types_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.subs_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.pt_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.allow_mult_default_type_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.player_speed_max_delta_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.player_speed_max_delta_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.stamina_inc_max_delta_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.player_decay_delta_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.player_decay_delta_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.inertia_moment_delta_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.dash_power_rate_delta_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.dash_power_rate_delta_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.player_size_delta_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.kickable_margin_delta_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.kickable_margin_delta_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.kick_rand_delta_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.extra_stamina_delta_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.extra_stamina_delta_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.effort_max_delta_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.effort_min_delta_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.random_seed_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.new_dash_power_rate_delta_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.new_dash_power_rate_delta_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.new_stamina_inc_max_delta_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.kick_power_rate_delta_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.kick_power_rate_delta_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.foul_detect_probability_delta_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.catchable_area_l_stretch_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerParam, _impl_.catchable_area_l_stretch_max_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.id_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.player_speed_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.stamina_inc_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.player_decay_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.inertia_moment_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.dash_power_rate_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.player_size_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.kickable_margin_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.kick_rand_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.extra_stamina_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.effort_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.effort_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.kick_power_rate_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.foul_detect_probability_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.catchable_area_l_stretch_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.unum_far_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.unum_too_far_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.team_far_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.team_too_far_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.player_max_observation_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.ball_vel_far_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.ball_vel_too_far_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.ball_max_observation_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.flag_chg_far_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.flag_chg_too_far_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.flag_max_observation_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.kickable_area_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.reliable_catchable_dist_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.max_catchable_dist_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.real_speed_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.player_speed_max2_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.real_speed_max2_),
+    PROTOBUF_FIELD_OFFSET(::protos::PlayerType, _impl_.cycles_to_reach_max_speed_),
+    ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::protos::Empty, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
@@ -4198,7 +4428,9 @@ static const ::_pbi::MigrationSchema
         { 1343, -1, -1, sizeof(::protos::Action)},
         { 1406, -1, -1, sizeof(::protos::Actions)},
         { 1415, -1, -1, sizeof(::protos::ServerParam)},
-        { 1638, -1, -1, sizeof(::protos::Empty)},
+        { 1638, -1, -1, sizeof(::protos::PlayerParam)},
+        { 1675, -1, -1, sizeof(::protos::PlayerType)},
+        { 1716, -1, -1, sizeof(::protos::Empty)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -4300,6 +4532,8 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::protos::_Action_default_instance_._instance,
     &::protos::_Actions_default_instance_._instance,
     &::protos::_ServerParam_default_instance_._instance,
+    &::protos::_PlayerParam_default_instance_._instance,
+    &::protos::_PlayerType_default_instance_._instance,
     &::protos::_Empty_default_instance_._instance,
 };
 const char descriptor_table_protodef_service_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -4806,65 +5040,115 @@ const char descriptor_table_protodef_service_2eproto[] PROTOBUF_SECTION_VARIABLE
     " \001(\002\022\024\n\013random_seed\030\322\001 \001(\005\022\037\n\026long_kick_"
     "power_factor\030\323\001 \001(\002\022\030\n\017long_kick_delay\030\324"
     "\001 \001(\005\022\025\n\014max_monitors\030\325\001 \001(\005\022\027\n\016catchabl"
-    "e_area\030\326\001 \001(\002\022\027\n\016real_speed_max\030\327\001 \001(\002\"\007"
-    "\n\005Empty*-\n\tViewWidth\022\n\n\006NARROW\020\000\022\n\n\006NORM"
-    "AL\020\001\022\010\n\004WIDE\020\002*(\n\004Side\022\013\n\007UNKNOWN\020\000\022\010\n\004L"
-    "EFT\020\001\022\t\n\005RIGHT\020\002*\255\002\n\013LoggerLevel\022\010\n\004None"
-    "\020\000\022\n\n\006SYSTEM\020\001\022\n\n\006SENSOR\020\002\022\t\n\005WORLD\020\004\022\n\n"
-    "\006ACTION\020\010\022\r\n\tINTERCEPT\020\020\022\010\n\004KICK\020 \022\010\n\004HO"
-    "LD\020@\022\014\n\007DRIBBLE\020\200\001\022\t\n\004PASS\020\200\002\022\n\n\005CROSS\020\200"
-    "\004\022\n\n\005SHOOT\020\200\010\022\n\n\005CLEAR\020\200\020\022\n\n\005BLOCK\020\200 \022\t\n"
-    "\004MARK\020\200@\022\021\n\013POSITIONING\020\200\200\001\022\n\n\004ROLE\020\200\200\002\022"
-    "\n\n\004TEAM\020\200\200\004\022\023\n\rCOMMUNICATION\020\200\200\010\022\016\n\010ANAL"
-    "YZER\020\200\200\020\022\022\n\014ACTION_CHAIN\020\200\200 \022\n\n\004PLAN\020\200\200@"
-    "*v\n\023InterceptActionType\022!\n\035UNKNOWN_Inter"
-    "cept_Action_Type\020\000\022\r\n\tOMNI_DASH\020\001\022\025\n\021TUR"
-    "N_FORWARD_DASH\020\002\022\026\n\022TURN_BACKWARD_DASH\020\003"
-    "*\232\t\n\014GameModeType\022\021\n\rBeforeKickOff\020\000\022\014\n\010"
-    "TimeOver\020\001\022\n\n\006PlayOn\020\002\022\020\n\014KickOff_Left\020\003"
-    "\022\021\n\rKickOff_Right\020\004\022\017\n\013KickIn_Left\020\005\022\020\n\014"
-    "KickIn_Right\020\006\022\021\n\rFreeKick_Left\020\007\022\022\n\016Fre"
-    "eKick_Right\020\010\022\023\n\017CornerKick_Left\020\t\022\024\n\020Co"
-    "rnerKick_Right\020\n\022\021\n\rGoalKick_Left\020\013\022\022\n\016G"
-    "oalKick_Right\020\014\022\022\n\016AfterGoal_Left\020\r\022\023\n\017A"
-    "fterGoal_Right\020\016\022\020\n\014OffSide_Left\020\017\022\021\n\rOf"
-    "fSide_Right\020\020\022\024\n\020PenaltyKick_Left\020\021\022\025\n\021P"
-    "enaltyKick_Right\020\022\022\021\n\rFirstHalfOver\020\023\022\t\n"
-    "\005Pause\020\024\022\t\n\005Human\020\025\022\023\n\017FoulCharge_Left\020\026"
-    "\022\024\n\020FoulCharge_Right\020\027\022\021\n\rFoulPush_Left\020"
-    "\030\022\022\n\016FoulPush_Right\020\031\022\035\n\031FoulMultipleAtt"
-    "acker_Left\020\032\022\036\n\032FoulMultipleAttacker_Rig"
-    "ht\020\033\022\024\n\020FoulBallOut_Left\020\034\022\025\n\021FoulBallOu"
-    "t_Right\020\035\022\021\n\rBackPass_Left\020\036\022\022\n\016BackPass"
-    "_Right\020\037\022\026\n\022FreeKickFault_Left\020 \022\027\n\023Free"
-    "KickFault_Right\020!\022\023\n\017CatchFault_Left\020\"\022\024"
-    "\n\020CatchFault_Right\020#\022\024\n\020IndFreeKick_Left"
-    "\020$\022\025\n\021IndFreeKick_Right\020%\022\025\n\021PenaltySetu"
-    "p_Left\020&\022\026\n\022PenaltySetup_Right\020\'\022\025\n\021Pena"
-    "ltyReady_Left\020(\022\026\n\022PenaltyReady_Right\020)\022"
-    "\025\n\021PenaltyTaken_Left\020*\022\026\n\022PenaltyTaken_R"
-    "ight\020+\022\024\n\020PenaltyMiss_Left\020,\022\025\n\021PenaltyM"
-    "iss_Right\020-\022\025\n\021PenaltyScore_Left\020.\022\026\n\022Pe"
-    "naltyScore_Right\020/\022\027\n\023IllegalDefense_Lef"
-    "t\0200\022\030\n\024IllegalDefense_Right\0201\022\022\n\016Penalty"
-    "Onfield\0202\022\017\n\013PenaltyFoul\0203\022\024\n\020GoalieCatc"
-    "h_Left\0204\022\025\n\021GoalieCatch_Right\0205\022\016\n\nExten"
-    "dHalf\0206\022\014\n\010MODE_MAX\02072p\n\004Game\022.\n\nGetActi"
-    "ons\022\r.protos.State\032\017.protos.Actions\"\000\0228\n"
-    "\020SendServerParams\022\023.protos.ServerParam\032\r"
-    ".protos.Empty\"\000b\006proto3"
+    "e_area\030\326\001 \001(\002\022\027\n\016real_speed_max\030\327\001 \001(\002\"\330"
+    "\007\n\013PlayerParam\022\024\n\014player_types\030\001 \001(\005\022\020\n\010"
+    "subs_max\030\002 \001(\005\022\016\n\006pt_max\030\003 \001(\005\022\037\n\027allow_"
+    "mult_default_type\030\004 \001(\010\022\"\n\032player_speed_"
+    "max_delta_min\030\005 \001(\002\022\"\n\032player_speed_max_"
+    "delta_max\030\006 \001(\002\022$\n\034stamina_inc_max_delta"
+    "_factor\030\007 \001(\002\022\036\n\026player_decay_delta_min\030"
+    "\010 \001(\002\022\036\n\026player_decay_delta_max\030\t \001(\002\022#\n"
+    "\033inertia_moment_delta_factor\030\n \001(\002\022!\n\031da"
+    "sh_power_rate_delta_min\030\013 \001(\002\022!\n\031dash_po"
+    "wer_rate_delta_max\030\014 \001(\002\022 \n\030player_size_"
+    "delta_factor\030\r \001(\002\022!\n\031kickable_margin_de"
+    "lta_min\030\016 \001(\002\022!\n\031kickable_margin_delta_m"
+    "ax\030\017 \001(\002\022\036\n\026kick_rand_delta_factor\030\020 \001(\002"
+    "\022\037\n\027extra_stamina_delta_min\030\021 \001(\002\022\037\n\027ext"
+    "ra_stamina_delta_max\030\022 \001(\002\022\037\n\027effort_max"
+    "_delta_factor\030\023 \001(\002\022\037\n\027effort_min_delta_"
+    "factor\030\024 \001(\002\022\023\n\013random_seed\030\025 \001(\005\022%\n\035new"
+    "_dash_power_rate_delta_min\030\026 \001(\002\022%\n\035new_"
+    "dash_power_rate_delta_max\030\027 \001(\002\022(\n new_s"
+    "tamina_inc_max_delta_factor\030\030 \001(\002\022!\n\031kic"
+    "k_power_rate_delta_min\030\031 \001(\002\022!\n\031kick_pow"
+    "er_rate_delta_max\030\032 \001(\002\022,\n$foul_detect_p"
+    "robability_delta_factor\030\033 \001(\002\022$\n\034catchab"
+    "le_area_l_stretch_min\030\034 \001(\002\022$\n\034catchable"
+    "_area_l_stretch_max\030\035 \001(\002\"\212\007\n\nPlayerType"
+    "\022\n\n\002id\030\001 \001(\005\022\030\n\020player_speed_max\030\002 \001(\002\022\027"
+    "\n\017stamina_inc_max\030\003 \001(\002\022\024\n\014player_decay\030"
+    "\004 \001(\002\022\026\n\016inertia_moment\030\005 \001(\002\022\027\n\017dash_po"
+    "wer_rate\030\006 \001(\002\022\023\n\013player_size\030\007 \001(\002\022\027\n\017k"
+    "ickable_margin\030\010 \001(\002\022\021\n\tkick_rand\030\t \001(\002\022"
+    "\025\n\rextra_stamina\030\n \001(\002\022\022\n\neffort_max\030\013 \001"
+    "(\002\022\022\n\neffort_min\030\014 \001(\002\022\027\n\017kick_power_rat"
+    "e\030\r \001(\002\022\037\n\027foul_detect_probability\030\016 \001(\002"
+    "\022 \n\030catchable_area_l_stretch\030\017 \001(\002\022\027\n\017un"
+    "um_far_length\030\020 \001(\002\022\033\n\023unum_too_far_leng"
+    "th\030\021 \001(\002\022\027\n\017team_far_length\030\022 \001(\002\022\033\n\023tea"
+    "m_too_far_length\030\023 \001(\002\022%\n\035player_max_obs"
+    "ervation_length\030\024 \001(\002\022\033\n\023ball_vel_far_le"
+    "ngth\030\025 \001(\002\022\037\n\027ball_vel_too_far_length\030\026 "
+    "\001(\002\022#\n\033ball_max_observation_length\030\027 \001(\002"
+    "\022\033\n\023flag_chg_far_length\030\030 \001(\002\022\037\n\027flag_ch"
+    "g_too_far_length\030\031 \001(\002\022#\n\033flag_max_obser"
+    "vation_length\030\032 \001(\002\022\025\n\rkickable_area\030\033 \001"
+    "(\002\022\037\n\027reliable_catchable_dist\030\034 \001(\002\022\032\n\022m"
+    "ax_catchable_dist\030\035 \001(\002\022\026\n\016real_speed_ma"
+    "x\030\036 \001(\002\022\031\n\021player_speed_max2\030\037 \001(\002\022\027\n\017re"
+    "al_speed_max2\030  \001(\002\022!\n\031cycles_to_reach_m"
+    "ax_speed\030! \001(\005\"\007\n\005Empty*-\n\tViewWidth\022\n\n\006"
+    "NARROW\020\000\022\n\n\006NORMAL\020\001\022\010\n\004WIDE\020\002*(\n\004Side\022\013"
+    "\n\007UNKNOWN\020\000\022\010\n\004LEFT\020\001\022\t\n\005RIGHT\020\002*\255\002\n\013Log"
+    "gerLevel\022\010\n\004None\020\000\022\n\n\006SYSTEM\020\001\022\n\n\006SENSOR"
+    "\020\002\022\t\n\005WORLD\020\004\022\n\n\006ACTION\020\010\022\r\n\tINTERCEPT\020\020"
+    "\022\010\n\004KICK\020 \022\010\n\004HOLD\020@\022\014\n\007DRIBBLE\020\200\001\022\t\n\004PA"
+    "SS\020\200\002\022\n\n\005CROSS\020\200\004\022\n\n\005SHOOT\020\200\010\022\n\n\005CLEAR\020\200"
+    "\020\022\n\n\005BLOCK\020\200 \022\t\n\004MARK\020\200@\022\021\n\013POSITIONING\020"
+    "\200\200\001\022\n\n\004ROLE\020\200\200\002\022\n\n\004TEAM\020\200\200\004\022\023\n\rCOMMUNICA"
+    "TION\020\200\200\010\022\016\n\010ANALYZER\020\200\200\020\022\022\n\014ACTION_CHAIN"
+    "\020\200\200 \022\n\n\004PLAN\020\200\200@*v\n\023InterceptActionType\022"
+    "!\n\035UNKNOWN_Intercept_Action_Type\020\000\022\r\n\tOM"
+    "NI_DASH\020\001\022\025\n\021TURN_FORWARD_DASH\020\002\022\026\n\022TURN"
+    "_BACKWARD_DASH\020\003*\232\t\n\014GameModeType\022\021\n\rBef"
+    "oreKickOff\020\000\022\014\n\010TimeOver\020\001\022\n\n\006PlayOn\020\002\022\020"
+    "\n\014KickOff_Left\020\003\022\021\n\rKickOff_Right\020\004\022\017\n\013K"
+    "ickIn_Left\020\005\022\020\n\014KickIn_Right\020\006\022\021\n\rFreeKi"
+    "ck_Left\020\007\022\022\n\016FreeKick_Right\020\010\022\023\n\017CornerK"
+    "ick_Left\020\t\022\024\n\020CornerKick_Right\020\n\022\021\n\rGoal"
+    "Kick_Left\020\013\022\022\n\016GoalKick_Right\020\014\022\022\n\016After"
+    "Goal_Left\020\r\022\023\n\017AfterGoal_Right\020\016\022\020\n\014OffS"
+    "ide_Left\020\017\022\021\n\rOffSide_Right\020\020\022\024\n\020Penalty"
+    "Kick_Left\020\021\022\025\n\021PenaltyKick_Right\020\022\022\021\n\rFi"
+    "rstHalfOver\020\023\022\t\n\005Pause\020\024\022\t\n\005Human\020\025\022\023\n\017F"
+    "oulCharge_Left\020\026\022\024\n\020FoulCharge_Right\020\027\022\021"
+    "\n\rFoulPush_Left\020\030\022\022\n\016FoulPush_Right\020\031\022\035\n"
+    "\031FoulMultipleAttacker_Left\020\032\022\036\n\032FoulMult"
+    "ipleAttacker_Right\020\033\022\024\n\020FoulBallOut_Left"
+    "\020\034\022\025\n\021FoulBallOut_Right\020\035\022\021\n\rBackPass_Le"
+    "ft\020\036\022\022\n\016BackPass_Right\020\037\022\026\n\022FreeKickFaul"
+    "t_Left\020 \022\027\n\023FreeKickFault_Right\020!\022\023\n\017Cat"
+    "chFault_Left\020\"\022\024\n\020CatchFault_Right\020#\022\024\n\020"
+    "IndFreeKick_Left\020$\022\025\n\021IndFreeKick_Right\020"
+    "%\022\025\n\021PenaltySetup_Left\020&\022\026\n\022PenaltySetup"
+    "_Right\020\'\022\025\n\021PenaltyReady_Left\020(\022\026\n\022Penal"
+    "tyReady_Right\020)\022\025\n\021PenaltyTaken_Left\020*\022\026"
+    "\n\022PenaltyTaken_Right\020+\022\024\n\020PenaltyMiss_Le"
+    "ft\020,\022\025\n\021PenaltyMiss_Right\020-\022\025\n\021PenaltySc"
+    "ore_Left\020.\022\026\n\022PenaltyScore_Right\020/\022\027\n\023Il"
+    "legalDefense_Left\0200\022\030\n\024IllegalDefense_Ri"
+    "ght\0201\022\022\n\016PenaltyOnfield\0202\022\017\n\013PenaltyFoul"
+    "\0203\022\024\n\020GoalieCatch_Left\0204\022\025\n\021GoalieCatch_"
+    "Right\0205\022\016\n\nExtendHalf\0206\022\014\n\010MODE_MAX\02072\341\001"
+    "\n\004Game\022.\n\nGetActions\022\r.protos.State\032\017.pr"
+    "otos.Actions\"\000\0228\n\020SendServerParams\022\023.pro"
+    "tos.ServerParam\032\r.protos.Empty\"\000\0228\n\020Send"
+    "PlayerParams\022\023.protos.PlayerParam\032\r.prot"
+    "os.Empty\"\000\0225\n\016SendPlayerType\022\022.protos.Pl"
+    "ayerType\032\r.protos.Empty\"\000b\006proto3"
 };
 static ::absl::once_flag descriptor_table_service_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_service_2eproto = {
     false,
     false,
-    21983,
+    23993,
     descriptor_table_protodef_service_2eproto,
     "service.proto",
     &descriptor_table_service_2eproto_once,
     nullptr,
     0,
-    99,
+    101,
     schemas,
     file_default_instances,
     TableStruct_service_2eproto::offsets,
@@ -42083,6 +42367,2590 @@ void ServerParam::InternalSwap(ServerParam* other) {
 }
 // ===================================================================
 
+class PlayerParam::_Internal {
+ public:
+};
+
+PlayerParam::PlayerParam(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:protos.PlayerParam)
+}
+PlayerParam::PlayerParam(const PlayerParam& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
+      from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:protos.PlayerParam)
+}
+
+inline void PlayerParam::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_.player_types_) { 0 }
+
+    , decltype(_impl_.subs_max_) { 0 }
+
+    , decltype(_impl_.pt_max_) { 0 }
+
+    , decltype(_impl_.allow_mult_default_type_) { false }
+
+    , decltype(_impl_.player_speed_max_delta_min_) { 0 }
+
+    , decltype(_impl_.player_speed_max_delta_max_) { 0 }
+
+    , decltype(_impl_.stamina_inc_max_delta_factor_) { 0 }
+
+    , decltype(_impl_.player_decay_delta_min_) { 0 }
+
+    , decltype(_impl_.player_decay_delta_max_) { 0 }
+
+    , decltype(_impl_.inertia_moment_delta_factor_) { 0 }
+
+    , decltype(_impl_.dash_power_rate_delta_min_) { 0 }
+
+    , decltype(_impl_.dash_power_rate_delta_max_) { 0 }
+
+    , decltype(_impl_.player_size_delta_factor_) { 0 }
+
+    , decltype(_impl_.kickable_margin_delta_min_) { 0 }
+
+    , decltype(_impl_.kickable_margin_delta_max_) { 0 }
+
+    , decltype(_impl_.kick_rand_delta_factor_) { 0 }
+
+    , decltype(_impl_.extra_stamina_delta_min_) { 0 }
+
+    , decltype(_impl_.extra_stamina_delta_max_) { 0 }
+
+    , decltype(_impl_.effort_max_delta_factor_) { 0 }
+
+    , decltype(_impl_.effort_min_delta_factor_) { 0 }
+
+    , decltype(_impl_.random_seed_) { 0 }
+
+    , decltype(_impl_.new_dash_power_rate_delta_min_) { 0 }
+
+    , decltype(_impl_.new_dash_power_rate_delta_max_) { 0 }
+
+    , decltype(_impl_.new_stamina_inc_max_delta_factor_) { 0 }
+
+    , decltype(_impl_.kick_power_rate_delta_min_) { 0 }
+
+    , decltype(_impl_.kick_power_rate_delta_max_) { 0 }
+
+    , decltype(_impl_.foul_detect_probability_delta_factor_) { 0 }
+
+    , decltype(_impl_.catchable_area_l_stretch_min_) { 0 }
+
+    , decltype(_impl_.catchable_area_l_stretch_max_) { 0 }
+
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+PlayerParam::~PlayerParam() {
+  // @@protoc_insertion_point(destructor:protos.PlayerParam)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void PlayerParam::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void PlayerParam::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void PlayerParam::Clear() {
+// @@protoc_insertion_point(message_clear_start:protos.PlayerParam)
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.player_types_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.catchable_area_l_stretch_max_) -
+      reinterpret_cast<char*>(&_impl_.player_types_)) + sizeof(_impl_.catchable_area_l_stretch_max_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* PlayerParam::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 player_types = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+          _impl_.player_types_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 subs_max = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 16)) {
+          _impl_.subs_max_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 pt_max = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 24)) {
+          _impl_.pt_max_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool allow_mult_default_type = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 32)) {
+          _impl_.allow_mult_default_type_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_speed_max_delta_min = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 45)) {
+          _impl_.player_speed_max_delta_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_speed_max_delta_max = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 53)) {
+          _impl_.player_speed_max_delta_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float stamina_inc_max_delta_factor = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 61)) {
+          _impl_.stamina_inc_max_delta_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_decay_delta_min = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 69)) {
+          _impl_.player_decay_delta_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_decay_delta_max = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 77)) {
+          _impl_.player_decay_delta_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float inertia_moment_delta_factor = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 85)) {
+          _impl_.inertia_moment_delta_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dash_power_rate_delta_min = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 93)) {
+          _impl_.dash_power_rate_delta_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dash_power_rate_delta_max = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 101)) {
+          _impl_.dash_power_rate_delta_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_size_delta_factor = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 109)) {
+          _impl_.player_size_delta_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kickable_margin_delta_min = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 117)) {
+          _impl_.kickable_margin_delta_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kickable_margin_delta_max = 15;
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 125)) {
+          _impl_.kickable_margin_delta_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kick_rand_delta_factor = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 133)) {
+          _impl_.kick_rand_delta_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float extra_stamina_delta_min = 17;
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 141)) {
+          _impl_.extra_stamina_delta_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float extra_stamina_delta_max = 18;
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 149)) {
+          _impl_.extra_stamina_delta_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float effort_max_delta_factor = 19;
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 157)) {
+          _impl_.effort_max_delta_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float effort_min_delta_factor = 20;
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 165)) {
+          _impl_.effort_min_delta_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 random_seed = 21;
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 168)) {
+          _impl_.random_seed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float new_dash_power_rate_delta_min = 22;
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 181)) {
+          _impl_.new_dash_power_rate_delta_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float new_dash_power_rate_delta_max = 23;
+      case 23:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 189)) {
+          _impl_.new_dash_power_rate_delta_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float new_stamina_inc_max_delta_factor = 24;
+      case 24:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 197)) {
+          _impl_.new_stamina_inc_max_delta_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kick_power_rate_delta_min = 25;
+      case 25:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 205)) {
+          _impl_.kick_power_rate_delta_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kick_power_rate_delta_max = 26;
+      case 26:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 213)) {
+          _impl_.kick_power_rate_delta_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float foul_detect_probability_delta_factor = 27;
+      case 27:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 221)) {
+          _impl_.foul_detect_probability_delta_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float catchable_area_l_stretch_min = 28;
+      case 28:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 229)) {
+          _impl_.catchable_area_l_stretch_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float catchable_area_l_stretch_max = 29;
+      case 29:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 237)) {
+          _impl_.catchable_area_l_stretch_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+::uint8_t* PlayerParam::_InternalSerialize(
+    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:protos.PlayerParam)
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 player_types = 1;
+  if (this->_internal_player_types() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        1, this->_internal_player_types(), target);
+  }
+
+  // int32 subs_max = 2;
+  if (this->_internal_subs_max() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        2, this->_internal_subs_max(), target);
+  }
+
+  // int32 pt_max = 3;
+  if (this->_internal_pt_max() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        3, this->_internal_pt_max(), target);
+  }
+
+  // bool allow_mult_default_type = 4;
+  if (this->_internal_allow_mult_default_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        4, this->_internal_allow_mult_default_type(), target);
+  }
+
+  // float player_speed_max_delta_min = 5;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max_delta_min = this->_internal_player_speed_max_delta_min();
+  ::uint32_t raw_player_speed_max_delta_min;
+  memcpy(&raw_player_speed_max_delta_min, &tmp_player_speed_max_delta_min, sizeof(tmp_player_speed_max_delta_min));
+  if (raw_player_speed_max_delta_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        5, this->_internal_player_speed_max_delta_min(), target);
+  }
+
+  // float player_speed_max_delta_max = 6;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max_delta_max = this->_internal_player_speed_max_delta_max();
+  ::uint32_t raw_player_speed_max_delta_max;
+  memcpy(&raw_player_speed_max_delta_max, &tmp_player_speed_max_delta_max, sizeof(tmp_player_speed_max_delta_max));
+  if (raw_player_speed_max_delta_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        6, this->_internal_player_speed_max_delta_max(), target);
+  }
+
+  // float stamina_inc_max_delta_factor = 7;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_inc_max_delta_factor = this->_internal_stamina_inc_max_delta_factor();
+  ::uint32_t raw_stamina_inc_max_delta_factor;
+  memcpy(&raw_stamina_inc_max_delta_factor, &tmp_stamina_inc_max_delta_factor, sizeof(tmp_stamina_inc_max_delta_factor));
+  if (raw_stamina_inc_max_delta_factor != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        7, this->_internal_stamina_inc_max_delta_factor(), target);
+  }
+
+  // float player_decay_delta_min = 8;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay_delta_min = this->_internal_player_decay_delta_min();
+  ::uint32_t raw_player_decay_delta_min;
+  memcpy(&raw_player_decay_delta_min, &tmp_player_decay_delta_min, sizeof(tmp_player_decay_delta_min));
+  if (raw_player_decay_delta_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        8, this->_internal_player_decay_delta_min(), target);
+  }
+
+  // float player_decay_delta_max = 9;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay_delta_max = this->_internal_player_decay_delta_max();
+  ::uint32_t raw_player_decay_delta_max;
+  memcpy(&raw_player_decay_delta_max, &tmp_player_decay_delta_max, sizeof(tmp_player_decay_delta_max));
+  if (raw_player_decay_delta_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        9, this->_internal_player_decay_delta_max(), target);
+  }
+
+  // float inertia_moment_delta_factor = 10;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_inertia_moment_delta_factor = this->_internal_inertia_moment_delta_factor();
+  ::uint32_t raw_inertia_moment_delta_factor;
+  memcpy(&raw_inertia_moment_delta_factor, &tmp_inertia_moment_delta_factor, sizeof(tmp_inertia_moment_delta_factor));
+  if (raw_inertia_moment_delta_factor != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        10, this->_internal_inertia_moment_delta_factor(), target);
+  }
+
+  // float dash_power_rate_delta_min = 11;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate_delta_min = this->_internal_dash_power_rate_delta_min();
+  ::uint32_t raw_dash_power_rate_delta_min;
+  memcpy(&raw_dash_power_rate_delta_min, &tmp_dash_power_rate_delta_min, sizeof(tmp_dash_power_rate_delta_min));
+  if (raw_dash_power_rate_delta_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        11, this->_internal_dash_power_rate_delta_min(), target);
+  }
+
+  // float dash_power_rate_delta_max = 12;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate_delta_max = this->_internal_dash_power_rate_delta_max();
+  ::uint32_t raw_dash_power_rate_delta_max;
+  memcpy(&raw_dash_power_rate_delta_max, &tmp_dash_power_rate_delta_max, sizeof(tmp_dash_power_rate_delta_max));
+  if (raw_dash_power_rate_delta_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        12, this->_internal_dash_power_rate_delta_max(), target);
+  }
+
+  // float player_size_delta_factor = 13;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_size_delta_factor = this->_internal_player_size_delta_factor();
+  ::uint32_t raw_player_size_delta_factor;
+  memcpy(&raw_player_size_delta_factor, &tmp_player_size_delta_factor, sizeof(tmp_player_size_delta_factor));
+  if (raw_player_size_delta_factor != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        13, this->_internal_player_size_delta_factor(), target);
+  }
+
+  // float kickable_margin_delta_min = 14;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin_delta_min = this->_internal_kickable_margin_delta_min();
+  ::uint32_t raw_kickable_margin_delta_min;
+  memcpy(&raw_kickable_margin_delta_min, &tmp_kickable_margin_delta_min, sizeof(tmp_kickable_margin_delta_min));
+  if (raw_kickable_margin_delta_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        14, this->_internal_kickable_margin_delta_min(), target);
+  }
+
+  // float kickable_margin_delta_max = 15;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin_delta_max = this->_internal_kickable_margin_delta_max();
+  ::uint32_t raw_kickable_margin_delta_max;
+  memcpy(&raw_kickable_margin_delta_max, &tmp_kickable_margin_delta_max, sizeof(tmp_kickable_margin_delta_max));
+  if (raw_kickable_margin_delta_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        15, this->_internal_kickable_margin_delta_max(), target);
+  }
+
+  // float kick_rand_delta_factor = 16;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand_delta_factor = this->_internal_kick_rand_delta_factor();
+  ::uint32_t raw_kick_rand_delta_factor;
+  memcpy(&raw_kick_rand_delta_factor, &tmp_kick_rand_delta_factor, sizeof(tmp_kick_rand_delta_factor));
+  if (raw_kick_rand_delta_factor != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        16, this->_internal_kick_rand_delta_factor(), target);
+  }
+
+  // float extra_stamina_delta_min = 17;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina_delta_min = this->_internal_extra_stamina_delta_min();
+  ::uint32_t raw_extra_stamina_delta_min;
+  memcpy(&raw_extra_stamina_delta_min, &tmp_extra_stamina_delta_min, sizeof(tmp_extra_stamina_delta_min));
+  if (raw_extra_stamina_delta_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        17, this->_internal_extra_stamina_delta_min(), target);
+  }
+
+  // float extra_stamina_delta_max = 18;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina_delta_max = this->_internal_extra_stamina_delta_max();
+  ::uint32_t raw_extra_stamina_delta_max;
+  memcpy(&raw_extra_stamina_delta_max, &tmp_extra_stamina_delta_max, sizeof(tmp_extra_stamina_delta_max));
+  if (raw_extra_stamina_delta_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        18, this->_internal_extra_stamina_delta_max(), target);
+  }
+
+  // float effort_max_delta_factor = 19;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_max_delta_factor = this->_internal_effort_max_delta_factor();
+  ::uint32_t raw_effort_max_delta_factor;
+  memcpy(&raw_effort_max_delta_factor, &tmp_effort_max_delta_factor, sizeof(tmp_effort_max_delta_factor));
+  if (raw_effort_max_delta_factor != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        19, this->_internal_effort_max_delta_factor(), target);
+  }
+
+  // float effort_min_delta_factor = 20;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_min_delta_factor = this->_internal_effort_min_delta_factor();
+  ::uint32_t raw_effort_min_delta_factor;
+  memcpy(&raw_effort_min_delta_factor, &tmp_effort_min_delta_factor, sizeof(tmp_effort_min_delta_factor));
+  if (raw_effort_min_delta_factor != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        20, this->_internal_effort_min_delta_factor(), target);
+  }
+
+  // int32 random_seed = 21;
+  if (this->_internal_random_seed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        21, this->_internal_random_seed(), target);
+  }
+
+  // float new_dash_power_rate_delta_min = 22;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_new_dash_power_rate_delta_min = this->_internal_new_dash_power_rate_delta_min();
+  ::uint32_t raw_new_dash_power_rate_delta_min;
+  memcpy(&raw_new_dash_power_rate_delta_min, &tmp_new_dash_power_rate_delta_min, sizeof(tmp_new_dash_power_rate_delta_min));
+  if (raw_new_dash_power_rate_delta_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        22, this->_internal_new_dash_power_rate_delta_min(), target);
+  }
+
+  // float new_dash_power_rate_delta_max = 23;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_new_dash_power_rate_delta_max = this->_internal_new_dash_power_rate_delta_max();
+  ::uint32_t raw_new_dash_power_rate_delta_max;
+  memcpy(&raw_new_dash_power_rate_delta_max, &tmp_new_dash_power_rate_delta_max, sizeof(tmp_new_dash_power_rate_delta_max));
+  if (raw_new_dash_power_rate_delta_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        23, this->_internal_new_dash_power_rate_delta_max(), target);
+  }
+
+  // float new_stamina_inc_max_delta_factor = 24;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_new_stamina_inc_max_delta_factor = this->_internal_new_stamina_inc_max_delta_factor();
+  ::uint32_t raw_new_stamina_inc_max_delta_factor;
+  memcpy(&raw_new_stamina_inc_max_delta_factor, &tmp_new_stamina_inc_max_delta_factor, sizeof(tmp_new_stamina_inc_max_delta_factor));
+  if (raw_new_stamina_inc_max_delta_factor != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        24, this->_internal_new_stamina_inc_max_delta_factor(), target);
+  }
+
+  // float kick_power_rate_delta_min = 25;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate_delta_min = this->_internal_kick_power_rate_delta_min();
+  ::uint32_t raw_kick_power_rate_delta_min;
+  memcpy(&raw_kick_power_rate_delta_min, &tmp_kick_power_rate_delta_min, sizeof(tmp_kick_power_rate_delta_min));
+  if (raw_kick_power_rate_delta_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        25, this->_internal_kick_power_rate_delta_min(), target);
+  }
+
+  // float kick_power_rate_delta_max = 26;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate_delta_max = this->_internal_kick_power_rate_delta_max();
+  ::uint32_t raw_kick_power_rate_delta_max;
+  memcpy(&raw_kick_power_rate_delta_max, &tmp_kick_power_rate_delta_max, sizeof(tmp_kick_power_rate_delta_max));
+  if (raw_kick_power_rate_delta_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        26, this->_internal_kick_power_rate_delta_max(), target);
+  }
+
+  // float foul_detect_probability_delta_factor = 27;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_detect_probability_delta_factor = this->_internal_foul_detect_probability_delta_factor();
+  ::uint32_t raw_foul_detect_probability_delta_factor;
+  memcpy(&raw_foul_detect_probability_delta_factor, &tmp_foul_detect_probability_delta_factor, sizeof(tmp_foul_detect_probability_delta_factor));
+  if (raw_foul_detect_probability_delta_factor != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        27, this->_internal_foul_detect_probability_delta_factor(), target);
+  }
+
+  // float catchable_area_l_stretch_min = 28;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area_l_stretch_min = this->_internal_catchable_area_l_stretch_min();
+  ::uint32_t raw_catchable_area_l_stretch_min;
+  memcpy(&raw_catchable_area_l_stretch_min, &tmp_catchable_area_l_stretch_min, sizeof(tmp_catchable_area_l_stretch_min));
+  if (raw_catchable_area_l_stretch_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        28, this->_internal_catchable_area_l_stretch_min(), target);
+  }
+
+  // float catchable_area_l_stretch_max = 29;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area_l_stretch_max = this->_internal_catchable_area_l_stretch_max();
+  ::uint32_t raw_catchable_area_l_stretch_max;
+  memcpy(&raw_catchable_area_l_stretch_max, &tmp_catchable_area_l_stretch_max, sizeof(tmp_catchable_area_l_stretch_max));
+  if (raw_catchable_area_l_stretch_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        29, this->_internal_catchable_area_l_stretch_max(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:protos.PlayerParam)
+  return target;
+}
+
+::size_t PlayerParam::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:protos.PlayerParam)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 player_types = 1;
+  if (this->_internal_player_types() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_player_types());
+  }
+
+  // int32 subs_max = 2;
+  if (this->_internal_subs_max() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_subs_max());
+  }
+
+  // int32 pt_max = 3;
+  if (this->_internal_pt_max() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_pt_max());
+  }
+
+  // bool allow_mult_default_type = 4;
+  if (this->_internal_allow_mult_default_type() != 0) {
+    total_size += 2;
+  }
+
+  // float player_speed_max_delta_min = 5;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max_delta_min = this->_internal_player_speed_max_delta_min();
+  ::uint32_t raw_player_speed_max_delta_min;
+  memcpy(&raw_player_speed_max_delta_min, &tmp_player_speed_max_delta_min, sizeof(tmp_player_speed_max_delta_min));
+  if (raw_player_speed_max_delta_min != 0) {
+    total_size += 5;
+  }
+
+  // float player_speed_max_delta_max = 6;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max_delta_max = this->_internal_player_speed_max_delta_max();
+  ::uint32_t raw_player_speed_max_delta_max;
+  memcpy(&raw_player_speed_max_delta_max, &tmp_player_speed_max_delta_max, sizeof(tmp_player_speed_max_delta_max));
+  if (raw_player_speed_max_delta_max != 0) {
+    total_size += 5;
+  }
+
+  // float stamina_inc_max_delta_factor = 7;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_inc_max_delta_factor = this->_internal_stamina_inc_max_delta_factor();
+  ::uint32_t raw_stamina_inc_max_delta_factor;
+  memcpy(&raw_stamina_inc_max_delta_factor, &tmp_stamina_inc_max_delta_factor, sizeof(tmp_stamina_inc_max_delta_factor));
+  if (raw_stamina_inc_max_delta_factor != 0) {
+    total_size += 5;
+  }
+
+  // float player_decay_delta_min = 8;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay_delta_min = this->_internal_player_decay_delta_min();
+  ::uint32_t raw_player_decay_delta_min;
+  memcpy(&raw_player_decay_delta_min, &tmp_player_decay_delta_min, sizeof(tmp_player_decay_delta_min));
+  if (raw_player_decay_delta_min != 0) {
+    total_size += 5;
+  }
+
+  // float player_decay_delta_max = 9;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay_delta_max = this->_internal_player_decay_delta_max();
+  ::uint32_t raw_player_decay_delta_max;
+  memcpy(&raw_player_decay_delta_max, &tmp_player_decay_delta_max, sizeof(tmp_player_decay_delta_max));
+  if (raw_player_decay_delta_max != 0) {
+    total_size += 5;
+  }
+
+  // float inertia_moment_delta_factor = 10;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_inertia_moment_delta_factor = this->_internal_inertia_moment_delta_factor();
+  ::uint32_t raw_inertia_moment_delta_factor;
+  memcpy(&raw_inertia_moment_delta_factor, &tmp_inertia_moment_delta_factor, sizeof(tmp_inertia_moment_delta_factor));
+  if (raw_inertia_moment_delta_factor != 0) {
+    total_size += 5;
+  }
+
+  // float dash_power_rate_delta_min = 11;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate_delta_min = this->_internal_dash_power_rate_delta_min();
+  ::uint32_t raw_dash_power_rate_delta_min;
+  memcpy(&raw_dash_power_rate_delta_min, &tmp_dash_power_rate_delta_min, sizeof(tmp_dash_power_rate_delta_min));
+  if (raw_dash_power_rate_delta_min != 0) {
+    total_size += 5;
+  }
+
+  // float dash_power_rate_delta_max = 12;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate_delta_max = this->_internal_dash_power_rate_delta_max();
+  ::uint32_t raw_dash_power_rate_delta_max;
+  memcpy(&raw_dash_power_rate_delta_max, &tmp_dash_power_rate_delta_max, sizeof(tmp_dash_power_rate_delta_max));
+  if (raw_dash_power_rate_delta_max != 0) {
+    total_size += 5;
+  }
+
+  // float player_size_delta_factor = 13;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_size_delta_factor = this->_internal_player_size_delta_factor();
+  ::uint32_t raw_player_size_delta_factor;
+  memcpy(&raw_player_size_delta_factor, &tmp_player_size_delta_factor, sizeof(tmp_player_size_delta_factor));
+  if (raw_player_size_delta_factor != 0) {
+    total_size += 5;
+  }
+
+  // float kickable_margin_delta_min = 14;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin_delta_min = this->_internal_kickable_margin_delta_min();
+  ::uint32_t raw_kickable_margin_delta_min;
+  memcpy(&raw_kickable_margin_delta_min, &tmp_kickable_margin_delta_min, sizeof(tmp_kickable_margin_delta_min));
+  if (raw_kickable_margin_delta_min != 0) {
+    total_size += 5;
+  }
+
+  // float kickable_margin_delta_max = 15;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin_delta_max = this->_internal_kickable_margin_delta_max();
+  ::uint32_t raw_kickable_margin_delta_max;
+  memcpy(&raw_kickable_margin_delta_max, &tmp_kickable_margin_delta_max, sizeof(tmp_kickable_margin_delta_max));
+  if (raw_kickable_margin_delta_max != 0) {
+    total_size += 5;
+  }
+
+  // float kick_rand_delta_factor = 16;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand_delta_factor = this->_internal_kick_rand_delta_factor();
+  ::uint32_t raw_kick_rand_delta_factor;
+  memcpy(&raw_kick_rand_delta_factor, &tmp_kick_rand_delta_factor, sizeof(tmp_kick_rand_delta_factor));
+  if (raw_kick_rand_delta_factor != 0) {
+    total_size += 6;
+  }
+
+  // float extra_stamina_delta_min = 17;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina_delta_min = this->_internal_extra_stamina_delta_min();
+  ::uint32_t raw_extra_stamina_delta_min;
+  memcpy(&raw_extra_stamina_delta_min, &tmp_extra_stamina_delta_min, sizeof(tmp_extra_stamina_delta_min));
+  if (raw_extra_stamina_delta_min != 0) {
+    total_size += 6;
+  }
+
+  // float extra_stamina_delta_max = 18;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina_delta_max = this->_internal_extra_stamina_delta_max();
+  ::uint32_t raw_extra_stamina_delta_max;
+  memcpy(&raw_extra_stamina_delta_max, &tmp_extra_stamina_delta_max, sizeof(tmp_extra_stamina_delta_max));
+  if (raw_extra_stamina_delta_max != 0) {
+    total_size += 6;
+  }
+
+  // float effort_max_delta_factor = 19;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_max_delta_factor = this->_internal_effort_max_delta_factor();
+  ::uint32_t raw_effort_max_delta_factor;
+  memcpy(&raw_effort_max_delta_factor, &tmp_effort_max_delta_factor, sizeof(tmp_effort_max_delta_factor));
+  if (raw_effort_max_delta_factor != 0) {
+    total_size += 6;
+  }
+
+  // float effort_min_delta_factor = 20;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_min_delta_factor = this->_internal_effort_min_delta_factor();
+  ::uint32_t raw_effort_min_delta_factor;
+  memcpy(&raw_effort_min_delta_factor, &tmp_effort_min_delta_factor, sizeof(tmp_effort_min_delta_factor));
+  if (raw_effort_min_delta_factor != 0) {
+    total_size += 6;
+  }
+
+  // int32 random_seed = 21;
+  if (this->_internal_random_seed() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_random_seed());
+  }
+
+  // float new_dash_power_rate_delta_min = 22;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_new_dash_power_rate_delta_min = this->_internal_new_dash_power_rate_delta_min();
+  ::uint32_t raw_new_dash_power_rate_delta_min;
+  memcpy(&raw_new_dash_power_rate_delta_min, &tmp_new_dash_power_rate_delta_min, sizeof(tmp_new_dash_power_rate_delta_min));
+  if (raw_new_dash_power_rate_delta_min != 0) {
+    total_size += 6;
+  }
+
+  // float new_dash_power_rate_delta_max = 23;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_new_dash_power_rate_delta_max = this->_internal_new_dash_power_rate_delta_max();
+  ::uint32_t raw_new_dash_power_rate_delta_max;
+  memcpy(&raw_new_dash_power_rate_delta_max, &tmp_new_dash_power_rate_delta_max, sizeof(tmp_new_dash_power_rate_delta_max));
+  if (raw_new_dash_power_rate_delta_max != 0) {
+    total_size += 6;
+  }
+
+  // float new_stamina_inc_max_delta_factor = 24;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_new_stamina_inc_max_delta_factor = this->_internal_new_stamina_inc_max_delta_factor();
+  ::uint32_t raw_new_stamina_inc_max_delta_factor;
+  memcpy(&raw_new_stamina_inc_max_delta_factor, &tmp_new_stamina_inc_max_delta_factor, sizeof(tmp_new_stamina_inc_max_delta_factor));
+  if (raw_new_stamina_inc_max_delta_factor != 0) {
+    total_size += 6;
+  }
+
+  // float kick_power_rate_delta_min = 25;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate_delta_min = this->_internal_kick_power_rate_delta_min();
+  ::uint32_t raw_kick_power_rate_delta_min;
+  memcpy(&raw_kick_power_rate_delta_min, &tmp_kick_power_rate_delta_min, sizeof(tmp_kick_power_rate_delta_min));
+  if (raw_kick_power_rate_delta_min != 0) {
+    total_size += 6;
+  }
+
+  // float kick_power_rate_delta_max = 26;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate_delta_max = this->_internal_kick_power_rate_delta_max();
+  ::uint32_t raw_kick_power_rate_delta_max;
+  memcpy(&raw_kick_power_rate_delta_max, &tmp_kick_power_rate_delta_max, sizeof(tmp_kick_power_rate_delta_max));
+  if (raw_kick_power_rate_delta_max != 0) {
+    total_size += 6;
+  }
+
+  // float foul_detect_probability_delta_factor = 27;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_detect_probability_delta_factor = this->_internal_foul_detect_probability_delta_factor();
+  ::uint32_t raw_foul_detect_probability_delta_factor;
+  memcpy(&raw_foul_detect_probability_delta_factor, &tmp_foul_detect_probability_delta_factor, sizeof(tmp_foul_detect_probability_delta_factor));
+  if (raw_foul_detect_probability_delta_factor != 0) {
+    total_size += 6;
+  }
+
+  // float catchable_area_l_stretch_min = 28;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area_l_stretch_min = this->_internal_catchable_area_l_stretch_min();
+  ::uint32_t raw_catchable_area_l_stretch_min;
+  memcpy(&raw_catchable_area_l_stretch_min, &tmp_catchable_area_l_stretch_min, sizeof(tmp_catchable_area_l_stretch_min));
+  if (raw_catchable_area_l_stretch_min != 0) {
+    total_size += 6;
+  }
+
+  // float catchable_area_l_stretch_max = 29;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area_l_stretch_max = this->_internal_catchable_area_l_stretch_max();
+  ::uint32_t raw_catchable_area_l_stretch_max;
+  memcpy(&raw_catchable_area_l_stretch_max, &tmp_catchable_area_l_stretch_max, sizeof(tmp_catchable_area_l_stretch_max));
+  if (raw_catchable_area_l_stretch_max != 0) {
+    total_size += 6;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PlayerParam::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    PlayerParam::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PlayerParam::GetClassData() const { return &_class_data_; }
+
+
+void PlayerParam::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PlayerParam*>(&to_msg);
+  auto& from = static_cast<const PlayerParam&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:protos.PlayerParam)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_player_types() != 0) {
+    _this->_internal_set_player_types(from._internal_player_types());
+  }
+  if (from._internal_subs_max() != 0) {
+    _this->_internal_set_subs_max(from._internal_subs_max());
+  }
+  if (from._internal_pt_max() != 0) {
+    _this->_internal_set_pt_max(from._internal_pt_max());
+  }
+  if (from._internal_allow_mult_default_type() != 0) {
+    _this->_internal_set_allow_mult_default_type(from._internal_allow_mult_default_type());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max_delta_min = from._internal_player_speed_max_delta_min();
+  ::uint32_t raw_player_speed_max_delta_min;
+  memcpy(&raw_player_speed_max_delta_min, &tmp_player_speed_max_delta_min, sizeof(tmp_player_speed_max_delta_min));
+  if (raw_player_speed_max_delta_min != 0) {
+    _this->_internal_set_player_speed_max_delta_min(from._internal_player_speed_max_delta_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max_delta_max = from._internal_player_speed_max_delta_max();
+  ::uint32_t raw_player_speed_max_delta_max;
+  memcpy(&raw_player_speed_max_delta_max, &tmp_player_speed_max_delta_max, sizeof(tmp_player_speed_max_delta_max));
+  if (raw_player_speed_max_delta_max != 0) {
+    _this->_internal_set_player_speed_max_delta_max(from._internal_player_speed_max_delta_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_inc_max_delta_factor = from._internal_stamina_inc_max_delta_factor();
+  ::uint32_t raw_stamina_inc_max_delta_factor;
+  memcpy(&raw_stamina_inc_max_delta_factor, &tmp_stamina_inc_max_delta_factor, sizeof(tmp_stamina_inc_max_delta_factor));
+  if (raw_stamina_inc_max_delta_factor != 0) {
+    _this->_internal_set_stamina_inc_max_delta_factor(from._internal_stamina_inc_max_delta_factor());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay_delta_min = from._internal_player_decay_delta_min();
+  ::uint32_t raw_player_decay_delta_min;
+  memcpy(&raw_player_decay_delta_min, &tmp_player_decay_delta_min, sizeof(tmp_player_decay_delta_min));
+  if (raw_player_decay_delta_min != 0) {
+    _this->_internal_set_player_decay_delta_min(from._internal_player_decay_delta_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay_delta_max = from._internal_player_decay_delta_max();
+  ::uint32_t raw_player_decay_delta_max;
+  memcpy(&raw_player_decay_delta_max, &tmp_player_decay_delta_max, sizeof(tmp_player_decay_delta_max));
+  if (raw_player_decay_delta_max != 0) {
+    _this->_internal_set_player_decay_delta_max(from._internal_player_decay_delta_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_inertia_moment_delta_factor = from._internal_inertia_moment_delta_factor();
+  ::uint32_t raw_inertia_moment_delta_factor;
+  memcpy(&raw_inertia_moment_delta_factor, &tmp_inertia_moment_delta_factor, sizeof(tmp_inertia_moment_delta_factor));
+  if (raw_inertia_moment_delta_factor != 0) {
+    _this->_internal_set_inertia_moment_delta_factor(from._internal_inertia_moment_delta_factor());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate_delta_min = from._internal_dash_power_rate_delta_min();
+  ::uint32_t raw_dash_power_rate_delta_min;
+  memcpy(&raw_dash_power_rate_delta_min, &tmp_dash_power_rate_delta_min, sizeof(tmp_dash_power_rate_delta_min));
+  if (raw_dash_power_rate_delta_min != 0) {
+    _this->_internal_set_dash_power_rate_delta_min(from._internal_dash_power_rate_delta_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate_delta_max = from._internal_dash_power_rate_delta_max();
+  ::uint32_t raw_dash_power_rate_delta_max;
+  memcpy(&raw_dash_power_rate_delta_max, &tmp_dash_power_rate_delta_max, sizeof(tmp_dash_power_rate_delta_max));
+  if (raw_dash_power_rate_delta_max != 0) {
+    _this->_internal_set_dash_power_rate_delta_max(from._internal_dash_power_rate_delta_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_size_delta_factor = from._internal_player_size_delta_factor();
+  ::uint32_t raw_player_size_delta_factor;
+  memcpy(&raw_player_size_delta_factor, &tmp_player_size_delta_factor, sizeof(tmp_player_size_delta_factor));
+  if (raw_player_size_delta_factor != 0) {
+    _this->_internal_set_player_size_delta_factor(from._internal_player_size_delta_factor());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin_delta_min = from._internal_kickable_margin_delta_min();
+  ::uint32_t raw_kickable_margin_delta_min;
+  memcpy(&raw_kickable_margin_delta_min, &tmp_kickable_margin_delta_min, sizeof(tmp_kickable_margin_delta_min));
+  if (raw_kickable_margin_delta_min != 0) {
+    _this->_internal_set_kickable_margin_delta_min(from._internal_kickable_margin_delta_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin_delta_max = from._internal_kickable_margin_delta_max();
+  ::uint32_t raw_kickable_margin_delta_max;
+  memcpy(&raw_kickable_margin_delta_max, &tmp_kickable_margin_delta_max, sizeof(tmp_kickable_margin_delta_max));
+  if (raw_kickable_margin_delta_max != 0) {
+    _this->_internal_set_kickable_margin_delta_max(from._internal_kickable_margin_delta_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand_delta_factor = from._internal_kick_rand_delta_factor();
+  ::uint32_t raw_kick_rand_delta_factor;
+  memcpy(&raw_kick_rand_delta_factor, &tmp_kick_rand_delta_factor, sizeof(tmp_kick_rand_delta_factor));
+  if (raw_kick_rand_delta_factor != 0) {
+    _this->_internal_set_kick_rand_delta_factor(from._internal_kick_rand_delta_factor());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina_delta_min = from._internal_extra_stamina_delta_min();
+  ::uint32_t raw_extra_stamina_delta_min;
+  memcpy(&raw_extra_stamina_delta_min, &tmp_extra_stamina_delta_min, sizeof(tmp_extra_stamina_delta_min));
+  if (raw_extra_stamina_delta_min != 0) {
+    _this->_internal_set_extra_stamina_delta_min(from._internal_extra_stamina_delta_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina_delta_max = from._internal_extra_stamina_delta_max();
+  ::uint32_t raw_extra_stamina_delta_max;
+  memcpy(&raw_extra_stamina_delta_max, &tmp_extra_stamina_delta_max, sizeof(tmp_extra_stamina_delta_max));
+  if (raw_extra_stamina_delta_max != 0) {
+    _this->_internal_set_extra_stamina_delta_max(from._internal_extra_stamina_delta_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_max_delta_factor = from._internal_effort_max_delta_factor();
+  ::uint32_t raw_effort_max_delta_factor;
+  memcpy(&raw_effort_max_delta_factor, &tmp_effort_max_delta_factor, sizeof(tmp_effort_max_delta_factor));
+  if (raw_effort_max_delta_factor != 0) {
+    _this->_internal_set_effort_max_delta_factor(from._internal_effort_max_delta_factor());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_min_delta_factor = from._internal_effort_min_delta_factor();
+  ::uint32_t raw_effort_min_delta_factor;
+  memcpy(&raw_effort_min_delta_factor, &tmp_effort_min_delta_factor, sizeof(tmp_effort_min_delta_factor));
+  if (raw_effort_min_delta_factor != 0) {
+    _this->_internal_set_effort_min_delta_factor(from._internal_effort_min_delta_factor());
+  }
+  if (from._internal_random_seed() != 0) {
+    _this->_internal_set_random_seed(from._internal_random_seed());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_new_dash_power_rate_delta_min = from._internal_new_dash_power_rate_delta_min();
+  ::uint32_t raw_new_dash_power_rate_delta_min;
+  memcpy(&raw_new_dash_power_rate_delta_min, &tmp_new_dash_power_rate_delta_min, sizeof(tmp_new_dash_power_rate_delta_min));
+  if (raw_new_dash_power_rate_delta_min != 0) {
+    _this->_internal_set_new_dash_power_rate_delta_min(from._internal_new_dash_power_rate_delta_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_new_dash_power_rate_delta_max = from._internal_new_dash_power_rate_delta_max();
+  ::uint32_t raw_new_dash_power_rate_delta_max;
+  memcpy(&raw_new_dash_power_rate_delta_max, &tmp_new_dash_power_rate_delta_max, sizeof(tmp_new_dash_power_rate_delta_max));
+  if (raw_new_dash_power_rate_delta_max != 0) {
+    _this->_internal_set_new_dash_power_rate_delta_max(from._internal_new_dash_power_rate_delta_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_new_stamina_inc_max_delta_factor = from._internal_new_stamina_inc_max_delta_factor();
+  ::uint32_t raw_new_stamina_inc_max_delta_factor;
+  memcpy(&raw_new_stamina_inc_max_delta_factor, &tmp_new_stamina_inc_max_delta_factor, sizeof(tmp_new_stamina_inc_max_delta_factor));
+  if (raw_new_stamina_inc_max_delta_factor != 0) {
+    _this->_internal_set_new_stamina_inc_max_delta_factor(from._internal_new_stamina_inc_max_delta_factor());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate_delta_min = from._internal_kick_power_rate_delta_min();
+  ::uint32_t raw_kick_power_rate_delta_min;
+  memcpy(&raw_kick_power_rate_delta_min, &tmp_kick_power_rate_delta_min, sizeof(tmp_kick_power_rate_delta_min));
+  if (raw_kick_power_rate_delta_min != 0) {
+    _this->_internal_set_kick_power_rate_delta_min(from._internal_kick_power_rate_delta_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate_delta_max = from._internal_kick_power_rate_delta_max();
+  ::uint32_t raw_kick_power_rate_delta_max;
+  memcpy(&raw_kick_power_rate_delta_max, &tmp_kick_power_rate_delta_max, sizeof(tmp_kick_power_rate_delta_max));
+  if (raw_kick_power_rate_delta_max != 0) {
+    _this->_internal_set_kick_power_rate_delta_max(from._internal_kick_power_rate_delta_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_detect_probability_delta_factor = from._internal_foul_detect_probability_delta_factor();
+  ::uint32_t raw_foul_detect_probability_delta_factor;
+  memcpy(&raw_foul_detect_probability_delta_factor, &tmp_foul_detect_probability_delta_factor, sizeof(tmp_foul_detect_probability_delta_factor));
+  if (raw_foul_detect_probability_delta_factor != 0) {
+    _this->_internal_set_foul_detect_probability_delta_factor(from._internal_foul_detect_probability_delta_factor());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area_l_stretch_min = from._internal_catchable_area_l_stretch_min();
+  ::uint32_t raw_catchable_area_l_stretch_min;
+  memcpy(&raw_catchable_area_l_stretch_min, &tmp_catchable_area_l_stretch_min, sizeof(tmp_catchable_area_l_stretch_min));
+  if (raw_catchable_area_l_stretch_min != 0) {
+    _this->_internal_set_catchable_area_l_stretch_min(from._internal_catchable_area_l_stretch_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area_l_stretch_max = from._internal_catchable_area_l_stretch_max();
+  ::uint32_t raw_catchable_area_l_stretch_max;
+  memcpy(&raw_catchable_area_l_stretch_max, &tmp_catchable_area_l_stretch_max, sizeof(tmp_catchable_area_l_stretch_max));
+  if (raw_catchable_area_l_stretch_max != 0) {
+    _this->_internal_set_catchable_area_l_stretch_max(from._internal_catchable_area_l_stretch_max());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void PlayerParam::CopyFrom(const PlayerParam& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:protos.PlayerParam)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PlayerParam::IsInitialized() const {
+  return true;
+}
+
+void PlayerParam::InternalSwap(PlayerParam* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PlayerParam, _impl_.catchable_area_l_stretch_max_)
+      + sizeof(PlayerParam::_impl_.catchable_area_l_stretch_max_)
+      - PROTOBUF_FIELD_OFFSET(PlayerParam, _impl_.player_types_)>(
+          reinterpret_cast<char*>(&_impl_.player_types_),
+          reinterpret_cast<char*>(&other->_impl_.player_types_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PlayerParam::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_service_2eproto_getter, &descriptor_table_service_2eproto_once,
+      file_level_metadata_service_2eproto[98]);
+}
+// ===================================================================
+
+class PlayerType::_Internal {
+ public:
+};
+
+PlayerType::PlayerType(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:protos.PlayerType)
+}
+PlayerType::PlayerType(const PlayerType& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(
+      from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:protos.PlayerType)
+}
+
+inline void PlayerType::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_.id_) { 0 }
+
+    , decltype(_impl_.player_speed_max_) { 0 }
+
+    , decltype(_impl_.stamina_inc_max_) { 0 }
+
+    , decltype(_impl_.player_decay_) { 0 }
+
+    , decltype(_impl_.inertia_moment_) { 0 }
+
+    , decltype(_impl_.dash_power_rate_) { 0 }
+
+    , decltype(_impl_.player_size_) { 0 }
+
+    , decltype(_impl_.kickable_margin_) { 0 }
+
+    , decltype(_impl_.kick_rand_) { 0 }
+
+    , decltype(_impl_.extra_stamina_) { 0 }
+
+    , decltype(_impl_.effort_max_) { 0 }
+
+    , decltype(_impl_.effort_min_) { 0 }
+
+    , decltype(_impl_.kick_power_rate_) { 0 }
+
+    , decltype(_impl_.foul_detect_probability_) { 0 }
+
+    , decltype(_impl_.catchable_area_l_stretch_) { 0 }
+
+    , decltype(_impl_.unum_far_length_) { 0 }
+
+    , decltype(_impl_.unum_too_far_length_) { 0 }
+
+    , decltype(_impl_.team_far_length_) { 0 }
+
+    , decltype(_impl_.team_too_far_length_) { 0 }
+
+    , decltype(_impl_.player_max_observation_length_) { 0 }
+
+    , decltype(_impl_.ball_vel_far_length_) { 0 }
+
+    , decltype(_impl_.ball_vel_too_far_length_) { 0 }
+
+    , decltype(_impl_.ball_max_observation_length_) { 0 }
+
+    , decltype(_impl_.flag_chg_far_length_) { 0 }
+
+    , decltype(_impl_.flag_chg_too_far_length_) { 0 }
+
+    , decltype(_impl_.flag_max_observation_length_) { 0 }
+
+    , decltype(_impl_.kickable_area_) { 0 }
+
+    , decltype(_impl_.reliable_catchable_dist_) { 0 }
+
+    , decltype(_impl_.max_catchable_dist_) { 0 }
+
+    , decltype(_impl_.real_speed_max_) { 0 }
+
+    , decltype(_impl_.player_speed_max2_) { 0 }
+
+    , decltype(_impl_.real_speed_max2_) { 0 }
+
+    , decltype(_impl_.cycles_to_reach_max_speed_) { 0 }
+
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+PlayerType::~PlayerType() {
+  // @@protoc_insertion_point(destructor:protos.PlayerType)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void PlayerType::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void PlayerType::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void PlayerType::Clear() {
+// @@protoc_insertion_point(message_clear_start:protos.PlayerType)
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.id_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.cycles_to_reach_max_speed_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.cycles_to_reach_max_speed_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* PlayerType::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_speed_max = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 21)) {
+          _impl_.player_speed_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float stamina_inc_max = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 29)) {
+          _impl_.stamina_inc_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_decay = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 37)) {
+          _impl_.player_decay_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float inertia_moment = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 45)) {
+          _impl_.inertia_moment_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dash_power_rate = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 53)) {
+          _impl_.dash_power_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_size = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 61)) {
+          _impl_.player_size_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kickable_margin = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 69)) {
+          _impl_.kickable_margin_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kick_rand = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 77)) {
+          _impl_.kick_rand_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float extra_stamina = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 85)) {
+          _impl_.extra_stamina_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float effort_max = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 93)) {
+          _impl_.effort_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float effort_min = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 101)) {
+          _impl_.effort_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kick_power_rate = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 109)) {
+          _impl_.kick_power_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float foul_detect_probability = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 117)) {
+          _impl_.foul_detect_probability_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float catchable_area_l_stretch = 15;
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 125)) {
+          _impl_.catchable_area_l_stretch_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float unum_far_length = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 133)) {
+          _impl_.unum_far_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float unum_too_far_length = 17;
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 141)) {
+          _impl_.unum_too_far_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float team_far_length = 18;
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 149)) {
+          _impl_.team_far_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float team_too_far_length = 19;
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 157)) {
+          _impl_.team_too_far_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_max_observation_length = 20;
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 165)) {
+          _impl_.player_max_observation_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float ball_vel_far_length = 21;
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 173)) {
+          _impl_.ball_vel_far_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float ball_vel_too_far_length = 22;
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 181)) {
+          _impl_.ball_vel_too_far_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float ball_max_observation_length = 23;
+      case 23:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 189)) {
+          _impl_.ball_max_observation_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float flag_chg_far_length = 24;
+      case 24:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 197)) {
+          _impl_.flag_chg_far_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float flag_chg_too_far_length = 25;
+      case 25:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 205)) {
+          _impl_.flag_chg_too_far_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float flag_max_observation_length = 26;
+      case 26:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 213)) {
+          _impl_.flag_max_observation_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kickable_area = 27;
+      case 27:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 221)) {
+          _impl_.kickable_area_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float reliable_catchable_dist = 28;
+      case 28:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 229)) {
+          _impl_.reliable_catchable_dist_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float max_catchable_dist = 29;
+      case 29:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 237)) {
+          _impl_.max_catchable_dist_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float real_speed_max = 30;
+      case 30:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 245)) {
+          _impl_.real_speed_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_speed_max2 = 31;
+      case 31:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 253)) {
+          _impl_.player_speed_max2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float real_speed_max2 = 32;
+      case 32:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 5)) {
+          _impl_.real_speed_max2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 cycles_to_reach_max_speed = 33;
+      case 33:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+          _impl_.cycles_to_reach_max_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+::uint8_t* PlayerType::_InternalSerialize(
+    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:protos.PlayerType)
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 id = 1;
+  if (this->_internal_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        1, this->_internal_id(), target);
+  }
+
+  // float player_speed_max = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max = this->_internal_player_speed_max();
+  ::uint32_t raw_player_speed_max;
+  memcpy(&raw_player_speed_max, &tmp_player_speed_max, sizeof(tmp_player_speed_max));
+  if (raw_player_speed_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_player_speed_max(), target);
+  }
+
+  // float stamina_inc_max = 3;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_inc_max = this->_internal_stamina_inc_max();
+  ::uint32_t raw_stamina_inc_max;
+  memcpy(&raw_stamina_inc_max, &tmp_stamina_inc_max, sizeof(tmp_stamina_inc_max));
+  if (raw_stamina_inc_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_stamina_inc_max(), target);
+  }
+
+  // float player_decay = 4;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay = this->_internal_player_decay();
+  ::uint32_t raw_player_decay;
+  memcpy(&raw_player_decay, &tmp_player_decay, sizeof(tmp_player_decay));
+  if (raw_player_decay != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_player_decay(), target);
+  }
+
+  // float inertia_moment = 5;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_inertia_moment = this->_internal_inertia_moment();
+  ::uint32_t raw_inertia_moment;
+  memcpy(&raw_inertia_moment, &tmp_inertia_moment, sizeof(tmp_inertia_moment));
+  if (raw_inertia_moment != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        5, this->_internal_inertia_moment(), target);
+  }
+
+  // float dash_power_rate = 6;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate = this->_internal_dash_power_rate();
+  ::uint32_t raw_dash_power_rate;
+  memcpy(&raw_dash_power_rate, &tmp_dash_power_rate, sizeof(tmp_dash_power_rate));
+  if (raw_dash_power_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        6, this->_internal_dash_power_rate(), target);
+  }
+
+  // float player_size = 7;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_size = this->_internal_player_size();
+  ::uint32_t raw_player_size;
+  memcpy(&raw_player_size, &tmp_player_size, sizeof(tmp_player_size));
+  if (raw_player_size != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        7, this->_internal_player_size(), target);
+  }
+
+  // float kickable_margin = 8;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin = this->_internal_kickable_margin();
+  ::uint32_t raw_kickable_margin;
+  memcpy(&raw_kickable_margin, &tmp_kickable_margin, sizeof(tmp_kickable_margin));
+  if (raw_kickable_margin != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        8, this->_internal_kickable_margin(), target);
+  }
+
+  // float kick_rand = 9;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand = this->_internal_kick_rand();
+  ::uint32_t raw_kick_rand;
+  memcpy(&raw_kick_rand, &tmp_kick_rand, sizeof(tmp_kick_rand));
+  if (raw_kick_rand != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        9, this->_internal_kick_rand(), target);
+  }
+
+  // float extra_stamina = 10;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina = this->_internal_extra_stamina();
+  ::uint32_t raw_extra_stamina;
+  memcpy(&raw_extra_stamina, &tmp_extra_stamina, sizeof(tmp_extra_stamina));
+  if (raw_extra_stamina != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        10, this->_internal_extra_stamina(), target);
+  }
+
+  // float effort_max = 11;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_max = this->_internal_effort_max();
+  ::uint32_t raw_effort_max;
+  memcpy(&raw_effort_max, &tmp_effort_max, sizeof(tmp_effort_max));
+  if (raw_effort_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        11, this->_internal_effort_max(), target);
+  }
+
+  // float effort_min = 12;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_min = this->_internal_effort_min();
+  ::uint32_t raw_effort_min;
+  memcpy(&raw_effort_min, &tmp_effort_min, sizeof(tmp_effort_min));
+  if (raw_effort_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        12, this->_internal_effort_min(), target);
+  }
+
+  // float kick_power_rate = 13;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate = this->_internal_kick_power_rate();
+  ::uint32_t raw_kick_power_rate;
+  memcpy(&raw_kick_power_rate, &tmp_kick_power_rate, sizeof(tmp_kick_power_rate));
+  if (raw_kick_power_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        13, this->_internal_kick_power_rate(), target);
+  }
+
+  // float foul_detect_probability = 14;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_detect_probability = this->_internal_foul_detect_probability();
+  ::uint32_t raw_foul_detect_probability;
+  memcpy(&raw_foul_detect_probability, &tmp_foul_detect_probability, sizeof(tmp_foul_detect_probability));
+  if (raw_foul_detect_probability != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        14, this->_internal_foul_detect_probability(), target);
+  }
+
+  // float catchable_area_l_stretch = 15;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area_l_stretch = this->_internal_catchable_area_l_stretch();
+  ::uint32_t raw_catchable_area_l_stretch;
+  memcpy(&raw_catchable_area_l_stretch, &tmp_catchable_area_l_stretch, sizeof(tmp_catchable_area_l_stretch));
+  if (raw_catchable_area_l_stretch != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        15, this->_internal_catchable_area_l_stretch(), target);
+  }
+
+  // float unum_far_length = 16;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_unum_far_length = this->_internal_unum_far_length();
+  ::uint32_t raw_unum_far_length;
+  memcpy(&raw_unum_far_length, &tmp_unum_far_length, sizeof(tmp_unum_far_length));
+  if (raw_unum_far_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        16, this->_internal_unum_far_length(), target);
+  }
+
+  // float unum_too_far_length = 17;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_unum_too_far_length = this->_internal_unum_too_far_length();
+  ::uint32_t raw_unum_too_far_length;
+  memcpy(&raw_unum_too_far_length, &tmp_unum_too_far_length, sizeof(tmp_unum_too_far_length));
+  if (raw_unum_too_far_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        17, this->_internal_unum_too_far_length(), target);
+  }
+
+  // float team_far_length = 18;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_team_far_length = this->_internal_team_far_length();
+  ::uint32_t raw_team_far_length;
+  memcpy(&raw_team_far_length, &tmp_team_far_length, sizeof(tmp_team_far_length));
+  if (raw_team_far_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        18, this->_internal_team_far_length(), target);
+  }
+
+  // float team_too_far_length = 19;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_team_too_far_length = this->_internal_team_too_far_length();
+  ::uint32_t raw_team_too_far_length;
+  memcpy(&raw_team_too_far_length, &tmp_team_too_far_length, sizeof(tmp_team_too_far_length));
+  if (raw_team_too_far_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        19, this->_internal_team_too_far_length(), target);
+  }
+
+  // float player_max_observation_length = 20;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_max_observation_length = this->_internal_player_max_observation_length();
+  ::uint32_t raw_player_max_observation_length;
+  memcpy(&raw_player_max_observation_length, &tmp_player_max_observation_length, sizeof(tmp_player_max_observation_length));
+  if (raw_player_max_observation_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        20, this->_internal_player_max_observation_length(), target);
+  }
+
+  // float ball_vel_far_length = 21;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_vel_far_length = this->_internal_ball_vel_far_length();
+  ::uint32_t raw_ball_vel_far_length;
+  memcpy(&raw_ball_vel_far_length, &tmp_ball_vel_far_length, sizeof(tmp_ball_vel_far_length));
+  if (raw_ball_vel_far_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        21, this->_internal_ball_vel_far_length(), target);
+  }
+
+  // float ball_vel_too_far_length = 22;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_vel_too_far_length = this->_internal_ball_vel_too_far_length();
+  ::uint32_t raw_ball_vel_too_far_length;
+  memcpy(&raw_ball_vel_too_far_length, &tmp_ball_vel_too_far_length, sizeof(tmp_ball_vel_too_far_length));
+  if (raw_ball_vel_too_far_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        22, this->_internal_ball_vel_too_far_length(), target);
+  }
+
+  // float ball_max_observation_length = 23;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_max_observation_length = this->_internal_ball_max_observation_length();
+  ::uint32_t raw_ball_max_observation_length;
+  memcpy(&raw_ball_max_observation_length, &tmp_ball_max_observation_length, sizeof(tmp_ball_max_observation_length));
+  if (raw_ball_max_observation_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        23, this->_internal_ball_max_observation_length(), target);
+  }
+
+  // float flag_chg_far_length = 24;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_flag_chg_far_length = this->_internal_flag_chg_far_length();
+  ::uint32_t raw_flag_chg_far_length;
+  memcpy(&raw_flag_chg_far_length, &tmp_flag_chg_far_length, sizeof(tmp_flag_chg_far_length));
+  if (raw_flag_chg_far_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        24, this->_internal_flag_chg_far_length(), target);
+  }
+
+  // float flag_chg_too_far_length = 25;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_flag_chg_too_far_length = this->_internal_flag_chg_too_far_length();
+  ::uint32_t raw_flag_chg_too_far_length;
+  memcpy(&raw_flag_chg_too_far_length, &tmp_flag_chg_too_far_length, sizeof(tmp_flag_chg_too_far_length));
+  if (raw_flag_chg_too_far_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        25, this->_internal_flag_chg_too_far_length(), target);
+  }
+
+  // float flag_max_observation_length = 26;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_flag_max_observation_length = this->_internal_flag_max_observation_length();
+  ::uint32_t raw_flag_max_observation_length;
+  memcpy(&raw_flag_max_observation_length, &tmp_flag_max_observation_length, sizeof(tmp_flag_max_observation_length));
+  if (raw_flag_max_observation_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        26, this->_internal_flag_max_observation_length(), target);
+  }
+
+  // float kickable_area = 27;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_area = this->_internal_kickable_area();
+  ::uint32_t raw_kickable_area;
+  memcpy(&raw_kickable_area, &tmp_kickable_area, sizeof(tmp_kickable_area));
+  if (raw_kickable_area != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        27, this->_internal_kickable_area(), target);
+  }
+
+  // float reliable_catchable_dist = 28;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_reliable_catchable_dist = this->_internal_reliable_catchable_dist();
+  ::uint32_t raw_reliable_catchable_dist;
+  memcpy(&raw_reliable_catchable_dist, &tmp_reliable_catchable_dist, sizeof(tmp_reliable_catchable_dist));
+  if (raw_reliable_catchable_dist != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        28, this->_internal_reliable_catchable_dist(), target);
+  }
+
+  // float max_catchable_dist = 29;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_catchable_dist = this->_internal_max_catchable_dist();
+  ::uint32_t raw_max_catchable_dist;
+  memcpy(&raw_max_catchable_dist, &tmp_max_catchable_dist, sizeof(tmp_max_catchable_dist));
+  if (raw_max_catchable_dist != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        29, this->_internal_max_catchable_dist(), target);
+  }
+
+  // float real_speed_max = 30;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_real_speed_max = this->_internal_real_speed_max();
+  ::uint32_t raw_real_speed_max;
+  memcpy(&raw_real_speed_max, &tmp_real_speed_max, sizeof(tmp_real_speed_max));
+  if (raw_real_speed_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        30, this->_internal_real_speed_max(), target);
+  }
+
+  // float player_speed_max2 = 31;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max2 = this->_internal_player_speed_max2();
+  ::uint32_t raw_player_speed_max2;
+  memcpy(&raw_player_speed_max2, &tmp_player_speed_max2, sizeof(tmp_player_speed_max2));
+  if (raw_player_speed_max2 != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        31, this->_internal_player_speed_max2(), target);
+  }
+
+  // float real_speed_max2 = 32;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_real_speed_max2 = this->_internal_real_speed_max2();
+  ::uint32_t raw_real_speed_max2;
+  memcpy(&raw_real_speed_max2, &tmp_real_speed_max2, sizeof(tmp_real_speed_max2));
+  if (raw_real_speed_max2 != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        32, this->_internal_real_speed_max2(), target);
+  }
+
+  // int32 cycles_to_reach_max_speed = 33;
+  if (this->_internal_cycles_to_reach_max_speed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        33, this->_internal_cycles_to_reach_max_speed(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:protos.PlayerType)
+  return target;
+}
+
+::size_t PlayerType::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:protos.PlayerType)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 id = 1;
+  if (this->_internal_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_id());
+  }
+
+  // float player_speed_max = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max = this->_internal_player_speed_max();
+  ::uint32_t raw_player_speed_max;
+  memcpy(&raw_player_speed_max, &tmp_player_speed_max, sizeof(tmp_player_speed_max));
+  if (raw_player_speed_max != 0) {
+    total_size += 5;
+  }
+
+  // float stamina_inc_max = 3;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_inc_max = this->_internal_stamina_inc_max();
+  ::uint32_t raw_stamina_inc_max;
+  memcpy(&raw_stamina_inc_max, &tmp_stamina_inc_max, sizeof(tmp_stamina_inc_max));
+  if (raw_stamina_inc_max != 0) {
+    total_size += 5;
+  }
+
+  // float player_decay = 4;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay = this->_internal_player_decay();
+  ::uint32_t raw_player_decay;
+  memcpy(&raw_player_decay, &tmp_player_decay, sizeof(tmp_player_decay));
+  if (raw_player_decay != 0) {
+    total_size += 5;
+  }
+
+  // float inertia_moment = 5;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_inertia_moment = this->_internal_inertia_moment();
+  ::uint32_t raw_inertia_moment;
+  memcpy(&raw_inertia_moment, &tmp_inertia_moment, sizeof(tmp_inertia_moment));
+  if (raw_inertia_moment != 0) {
+    total_size += 5;
+  }
+
+  // float dash_power_rate = 6;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate = this->_internal_dash_power_rate();
+  ::uint32_t raw_dash_power_rate;
+  memcpy(&raw_dash_power_rate, &tmp_dash_power_rate, sizeof(tmp_dash_power_rate));
+  if (raw_dash_power_rate != 0) {
+    total_size += 5;
+  }
+
+  // float player_size = 7;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_size = this->_internal_player_size();
+  ::uint32_t raw_player_size;
+  memcpy(&raw_player_size, &tmp_player_size, sizeof(tmp_player_size));
+  if (raw_player_size != 0) {
+    total_size += 5;
+  }
+
+  // float kickable_margin = 8;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin = this->_internal_kickable_margin();
+  ::uint32_t raw_kickable_margin;
+  memcpy(&raw_kickable_margin, &tmp_kickable_margin, sizeof(tmp_kickable_margin));
+  if (raw_kickable_margin != 0) {
+    total_size += 5;
+  }
+
+  // float kick_rand = 9;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand = this->_internal_kick_rand();
+  ::uint32_t raw_kick_rand;
+  memcpy(&raw_kick_rand, &tmp_kick_rand, sizeof(tmp_kick_rand));
+  if (raw_kick_rand != 0) {
+    total_size += 5;
+  }
+
+  // float extra_stamina = 10;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina = this->_internal_extra_stamina();
+  ::uint32_t raw_extra_stamina;
+  memcpy(&raw_extra_stamina, &tmp_extra_stamina, sizeof(tmp_extra_stamina));
+  if (raw_extra_stamina != 0) {
+    total_size += 5;
+  }
+
+  // float effort_max = 11;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_max = this->_internal_effort_max();
+  ::uint32_t raw_effort_max;
+  memcpy(&raw_effort_max, &tmp_effort_max, sizeof(tmp_effort_max));
+  if (raw_effort_max != 0) {
+    total_size += 5;
+  }
+
+  // float effort_min = 12;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_min = this->_internal_effort_min();
+  ::uint32_t raw_effort_min;
+  memcpy(&raw_effort_min, &tmp_effort_min, sizeof(tmp_effort_min));
+  if (raw_effort_min != 0) {
+    total_size += 5;
+  }
+
+  // float kick_power_rate = 13;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate = this->_internal_kick_power_rate();
+  ::uint32_t raw_kick_power_rate;
+  memcpy(&raw_kick_power_rate, &tmp_kick_power_rate, sizeof(tmp_kick_power_rate));
+  if (raw_kick_power_rate != 0) {
+    total_size += 5;
+  }
+
+  // float foul_detect_probability = 14;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_detect_probability = this->_internal_foul_detect_probability();
+  ::uint32_t raw_foul_detect_probability;
+  memcpy(&raw_foul_detect_probability, &tmp_foul_detect_probability, sizeof(tmp_foul_detect_probability));
+  if (raw_foul_detect_probability != 0) {
+    total_size += 5;
+  }
+
+  // float catchable_area_l_stretch = 15;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area_l_stretch = this->_internal_catchable_area_l_stretch();
+  ::uint32_t raw_catchable_area_l_stretch;
+  memcpy(&raw_catchable_area_l_stretch, &tmp_catchable_area_l_stretch, sizeof(tmp_catchable_area_l_stretch));
+  if (raw_catchable_area_l_stretch != 0) {
+    total_size += 5;
+  }
+
+  // float unum_far_length = 16;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_unum_far_length = this->_internal_unum_far_length();
+  ::uint32_t raw_unum_far_length;
+  memcpy(&raw_unum_far_length, &tmp_unum_far_length, sizeof(tmp_unum_far_length));
+  if (raw_unum_far_length != 0) {
+    total_size += 6;
+  }
+
+  // float unum_too_far_length = 17;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_unum_too_far_length = this->_internal_unum_too_far_length();
+  ::uint32_t raw_unum_too_far_length;
+  memcpy(&raw_unum_too_far_length, &tmp_unum_too_far_length, sizeof(tmp_unum_too_far_length));
+  if (raw_unum_too_far_length != 0) {
+    total_size += 6;
+  }
+
+  // float team_far_length = 18;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_team_far_length = this->_internal_team_far_length();
+  ::uint32_t raw_team_far_length;
+  memcpy(&raw_team_far_length, &tmp_team_far_length, sizeof(tmp_team_far_length));
+  if (raw_team_far_length != 0) {
+    total_size += 6;
+  }
+
+  // float team_too_far_length = 19;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_team_too_far_length = this->_internal_team_too_far_length();
+  ::uint32_t raw_team_too_far_length;
+  memcpy(&raw_team_too_far_length, &tmp_team_too_far_length, sizeof(tmp_team_too_far_length));
+  if (raw_team_too_far_length != 0) {
+    total_size += 6;
+  }
+
+  // float player_max_observation_length = 20;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_max_observation_length = this->_internal_player_max_observation_length();
+  ::uint32_t raw_player_max_observation_length;
+  memcpy(&raw_player_max_observation_length, &tmp_player_max_observation_length, sizeof(tmp_player_max_observation_length));
+  if (raw_player_max_observation_length != 0) {
+    total_size += 6;
+  }
+
+  // float ball_vel_far_length = 21;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_vel_far_length = this->_internal_ball_vel_far_length();
+  ::uint32_t raw_ball_vel_far_length;
+  memcpy(&raw_ball_vel_far_length, &tmp_ball_vel_far_length, sizeof(tmp_ball_vel_far_length));
+  if (raw_ball_vel_far_length != 0) {
+    total_size += 6;
+  }
+
+  // float ball_vel_too_far_length = 22;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_vel_too_far_length = this->_internal_ball_vel_too_far_length();
+  ::uint32_t raw_ball_vel_too_far_length;
+  memcpy(&raw_ball_vel_too_far_length, &tmp_ball_vel_too_far_length, sizeof(tmp_ball_vel_too_far_length));
+  if (raw_ball_vel_too_far_length != 0) {
+    total_size += 6;
+  }
+
+  // float ball_max_observation_length = 23;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_max_observation_length = this->_internal_ball_max_observation_length();
+  ::uint32_t raw_ball_max_observation_length;
+  memcpy(&raw_ball_max_observation_length, &tmp_ball_max_observation_length, sizeof(tmp_ball_max_observation_length));
+  if (raw_ball_max_observation_length != 0) {
+    total_size += 6;
+  }
+
+  // float flag_chg_far_length = 24;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_flag_chg_far_length = this->_internal_flag_chg_far_length();
+  ::uint32_t raw_flag_chg_far_length;
+  memcpy(&raw_flag_chg_far_length, &tmp_flag_chg_far_length, sizeof(tmp_flag_chg_far_length));
+  if (raw_flag_chg_far_length != 0) {
+    total_size += 6;
+  }
+
+  // float flag_chg_too_far_length = 25;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_flag_chg_too_far_length = this->_internal_flag_chg_too_far_length();
+  ::uint32_t raw_flag_chg_too_far_length;
+  memcpy(&raw_flag_chg_too_far_length, &tmp_flag_chg_too_far_length, sizeof(tmp_flag_chg_too_far_length));
+  if (raw_flag_chg_too_far_length != 0) {
+    total_size += 6;
+  }
+
+  // float flag_max_observation_length = 26;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_flag_max_observation_length = this->_internal_flag_max_observation_length();
+  ::uint32_t raw_flag_max_observation_length;
+  memcpy(&raw_flag_max_observation_length, &tmp_flag_max_observation_length, sizeof(tmp_flag_max_observation_length));
+  if (raw_flag_max_observation_length != 0) {
+    total_size += 6;
+  }
+
+  // float kickable_area = 27;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_area = this->_internal_kickable_area();
+  ::uint32_t raw_kickable_area;
+  memcpy(&raw_kickable_area, &tmp_kickable_area, sizeof(tmp_kickable_area));
+  if (raw_kickable_area != 0) {
+    total_size += 6;
+  }
+
+  // float reliable_catchable_dist = 28;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_reliable_catchable_dist = this->_internal_reliable_catchable_dist();
+  ::uint32_t raw_reliable_catchable_dist;
+  memcpy(&raw_reliable_catchable_dist, &tmp_reliable_catchable_dist, sizeof(tmp_reliable_catchable_dist));
+  if (raw_reliable_catchable_dist != 0) {
+    total_size += 6;
+  }
+
+  // float max_catchable_dist = 29;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_catchable_dist = this->_internal_max_catchable_dist();
+  ::uint32_t raw_max_catchable_dist;
+  memcpy(&raw_max_catchable_dist, &tmp_max_catchable_dist, sizeof(tmp_max_catchable_dist));
+  if (raw_max_catchable_dist != 0) {
+    total_size += 6;
+  }
+
+  // float real_speed_max = 30;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_real_speed_max = this->_internal_real_speed_max();
+  ::uint32_t raw_real_speed_max;
+  memcpy(&raw_real_speed_max, &tmp_real_speed_max, sizeof(tmp_real_speed_max));
+  if (raw_real_speed_max != 0) {
+    total_size += 6;
+  }
+
+  // float player_speed_max2 = 31;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max2 = this->_internal_player_speed_max2();
+  ::uint32_t raw_player_speed_max2;
+  memcpy(&raw_player_speed_max2, &tmp_player_speed_max2, sizeof(tmp_player_speed_max2));
+  if (raw_player_speed_max2 != 0) {
+    total_size += 6;
+  }
+
+  // float real_speed_max2 = 32;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_real_speed_max2 = this->_internal_real_speed_max2();
+  ::uint32_t raw_real_speed_max2;
+  memcpy(&raw_real_speed_max2, &tmp_real_speed_max2, sizeof(tmp_real_speed_max2));
+  if (raw_real_speed_max2 != 0) {
+    total_size += 6;
+  }
+
+  // int32 cycles_to_reach_max_speed = 33;
+  if (this->_internal_cycles_to_reach_max_speed() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_cycles_to_reach_max_speed());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PlayerType::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    PlayerType::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PlayerType::GetClassData() const { return &_class_data_; }
+
+
+void PlayerType::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PlayerType*>(&to_msg);
+  auto& from = static_cast<const PlayerType&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:protos.PlayerType)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_id() != 0) {
+    _this->_internal_set_id(from._internal_id());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max = from._internal_player_speed_max();
+  ::uint32_t raw_player_speed_max;
+  memcpy(&raw_player_speed_max, &tmp_player_speed_max, sizeof(tmp_player_speed_max));
+  if (raw_player_speed_max != 0) {
+    _this->_internal_set_player_speed_max(from._internal_player_speed_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_inc_max = from._internal_stamina_inc_max();
+  ::uint32_t raw_stamina_inc_max;
+  memcpy(&raw_stamina_inc_max, &tmp_stamina_inc_max, sizeof(tmp_stamina_inc_max));
+  if (raw_stamina_inc_max != 0) {
+    _this->_internal_set_stamina_inc_max(from._internal_stamina_inc_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay = from._internal_player_decay();
+  ::uint32_t raw_player_decay;
+  memcpy(&raw_player_decay, &tmp_player_decay, sizeof(tmp_player_decay));
+  if (raw_player_decay != 0) {
+    _this->_internal_set_player_decay(from._internal_player_decay());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_inertia_moment = from._internal_inertia_moment();
+  ::uint32_t raw_inertia_moment;
+  memcpy(&raw_inertia_moment, &tmp_inertia_moment, sizeof(tmp_inertia_moment));
+  if (raw_inertia_moment != 0) {
+    _this->_internal_set_inertia_moment(from._internal_inertia_moment());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate = from._internal_dash_power_rate();
+  ::uint32_t raw_dash_power_rate;
+  memcpy(&raw_dash_power_rate, &tmp_dash_power_rate, sizeof(tmp_dash_power_rate));
+  if (raw_dash_power_rate != 0) {
+    _this->_internal_set_dash_power_rate(from._internal_dash_power_rate());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_size = from._internal_player_size();
+  ::uint32_t raw_player_size;
+  memcpy(&raw_player_size, &tmp_player_size, sizeof(tmp_player_size));
+  if (raw_player_size != 0) {
+    _this->_internal_set_player_size(from._internal_player_size());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin = from._internal_kickable_margin();
+  ::uint32_t raw_kickable_margin;
+  memcpy(&raw_kickable_margin, &tmp_kickable_margin, sizeof(tmp_kickable_margin));
+  if (raw_kickable_margin != 0) {
+    _this->_internal_set_kickable_margin(from._internal_kickable_margin());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand = from._internal_kick_rand();
+  ::uint32_t raw_kick_rand;
+  memcpy(&raw_kick_rand, &tmp_kick_rand, sizeof(tmp_kick_rand));
+  if (raw_kick_rand != 0) {
+    _this->_internal_set_kick_rand(from._internal_kick_rand());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina = from._internal_extra_stamina();
+  ::uint32_t raw_extra_stamina;
+  memcpy(&raw_extra_stamina, &tmp_extra_stamina, sizeof(tmp_extra_stamina));
+  if (raw_extra_stamina != 0) {
+    _this->_internal_set_extra_stamina(from._internal_extra_stamina());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_max = from._internal_effort_max();
+  ::uint32_t raw_effort_max;
+  memcpy(&raw_effort_max, &tmp_effort_max, sizeof(tmp_effort_max));
+  if (raw_effort_max != 0) {
+    _this->_internal_set_effort_max(from._internal_effort_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_min = from._internal_effort_min();
+  ::uint32_t raw_effort_min;
+  memcpy(&raw_effort_min, &tmp_effort_min, sizeof(tmp_effort_min));
+  if (raw_effort_min != 0) {
+    _this->_internal_set_effort_min(from._internal_effort_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate = from._internal_kick_power_rate();
+  ::uint32_t raw_kick_power_rate;
+  memcpy(&raw_kick_power_rate, &tmp_kick_power_rate, sizeof(tmp_kick_power_rate));
+  if (raw_kick_power_rate != 0) {
+    _this->_internal_set_kick_power_rate(from._internal_kick_power_rate());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_detect_probability = from._internal_foul_detect_probability();
+  ::uint32_t raw_foul_detect_probability;
+  memcpy(&raw_foul_detect_probability, &tmp_foul_detect_probability, sizeof(tmp_foul_detect_probability));
+  if (raw_foul_detect_probability != 0) {
+    _this->_internal_set_foul_detect_probability(from._internal_foul_detect_probability());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area_l_stretch = from._internal_catchable_area_l_stretch();
+  ::uint32_t raw_catchable_area_l_stretch;
+  memcpy(&raw_catchable_area_l_stretch, &tmp_catchable_area_l_stretch, sizeof(tmp_catchable_area_l_stretch));
+  if (raw_catchable_area_l_stretch != 0) {
+    _this->_internal_set_catchable_area_l_stretch(from._internal_catchable_area_l_stretch());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_unum_far_length = from._internal_unum_far_length();
+  ::uint32_t raw_unum_far_length;
+  memcpy(&raw_unum_far_length, &tmp_unum_far_length, sizeof(tmp_unum_far_length));
+  if (raw_unum_far_length != 0) {
+    _this->_internal_set_unum_far_length(from._internal_unum_far_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_unum_too_far_length = from._internal_unum_too_far_length();
+  ::uint32_t raw_unum_too_far_length;
+  memcpy(&raw_unum_too_far_length, &tmp_unum_too_far_length, sizeof(tmp_unum_too_far_length));
+  if (raw_unum_too_far_length != 0) {
+    _this->_internal_set_unum_too_far_length(from._internal_unum_too_far_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_team_far_length = from._internal_team_far_length();
+  ::uint32_t raw_team_far_length;
+  memcpy(&raw_team_far_length, &tmp_team_far_length, sizeof(tmp_team_far_length));
+  if (raw_team_far_length != 0) {
+    _this->_internal_set_team_far_length(from._internal_team_far_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_team_too_far_length = from._internal_team_too_far_length();
+  ::uint32_t raw_team_too_far_length;
+  memcpy(&raw_team_too_far_length, &tmp_team_too_far_length, sizeof(tmp_team_too_far_length));
+  if (raw_team_too_far_length != 0) {
+    _this->_internal_set_team_too_far_length(from._internal_team_too_far_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_max_observation_length = from._internal_player_max_observation_length();
+  ::uint32_t raw_player_max_observation_length;
+  memcpy(&raw_player_max_observation_length, &tmp_player_max_observation_length, sizeof(tmp_player_max_observation_length));
+  if (raw_player_max_observation_length != 0) {
+    _this->_internal_set_player_max_observation_length(from._internal_player_max_observation_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_vel_far_length = from._internal_ball_vel_far_length();
+  ::uint32_t raw_ball_vel_far_length;
+  memcpy(&raw_ball_vel_far_length, &tmp_ball_vel_far_length, sizeof(tmp_ball_vel_far_length));
+  if (raw_ball_vel_far_length != 0) {
+    _this->_internal_set_ball_vel_far_length(from._internal_ball_vel_far_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_vel_too_far_length = from._internal_ball_vel_too_far_length();
+  ::uint32_t raw_ball_vel_too_far_length;
+  memcpy(&raw_ball_vel_too_far_length, &tmp_ball_vel_too_far_length, sizeof(tmp_ball_vel_too_far_length));
+  if (raw_ball_vel_too_far_length != 0) {
+    _this->_internal_set_ball_vel_too_far_length(from._internal_ball_vel_too_far_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_max_observation_length = from._internal_ball_max_observation_length();
+  ::uint32_t raw_ball_max_observation_length;
+  memcpy(&raw_ball_max_observation_length, &tmp_ball_max_observation_length, sizeof(tmp_ball_max_observation_length));
+  if (raw_ball_max_observation_length != 0) {
+    _this->_internal_set_ball_max_observation_length(from._internal_ball_max_observation_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_flag_chg_far_length = from._internal_flag_chg_far_length();
+  ::uint32_t raw_flag_chg_far_length;
+  memcpy(&raw_flag_chg_far_length, &tmp_flag_chg_far_length, sizeof(tmp_flag_chg_far_length));
+  if (raw_flag_chg_far_length != 0) {
+    _this->_internal_set_flag_chg_far_length(from._internal_flag_chg_far_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_flag_chg_too_far_length = from._internal_flag_chg_too_far_length();
+  ::uint32_t raw_flag_chg_too_far_length;
+  memcpy(&raw_flag_chg_too_far_length, &tmp_flag_chg_too_far_length, sizeof(tmp_flag_chg_too_far_length));
+  if (raw_flag_chg_too_far_length != 0) {
+    _this->_internal_set_flag_chg_too_far_length(from._internal_flag_chg_too_far_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_flag_max_observation_length = from._internal_flag_max_observation_length();
+  ::uint32_t raw_flag_max_observation_length;
+  memcpy(&raw_flag_max_observation_length, &tmp_flag_max_observation_length, sizeof(tmp_flag_max_observation_length));
+  if (raw_flag_max_observation_length != 0) {
+    _this->_internal_set_flag_max_observation_length(from._internal_flag_max_observation_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_area = from._internal_kickable_area();
+  ::uint32_t raw_kickable_area;
+  memcpy(&raw_kickable_area, &tmp_kickable_area, sizeof(tmp_kickable_area));
+  if (raw_kickable_area != 0) {
+    _this->_internal_set_kickable_area(from._internal_kickable_area());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_reliable_catchable_dist = from._internal_reliable_catchable_dist();
+  ::uint32_t raw_reliable_catchable_dist;
+  memcpy(&raw_reliable_catchable_dist, &tmp_reliable_catchable_dist, sizeof(tmp_reliable_catchable_dist));
+  if (raw_reliable_catchable_dist != 0) {
+    _this->_internal_set_reliable_catchable_dist(from._internal_reliable_catchable_dist());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_catchable_dist = from._internal_max_catchable_dist();
+  ::uint32_t raw_max_catchable_dist;
+  memcpy(&raw_max_catchable_dist, &tmp_max_catchable_dist, sizeof(tmp_max_catchable_dist));
+  if (raw_max_catchable_dist != 0) {
+    _this->_internal_set_max_catchable_dist(from._internal_max_catchable_dist());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_real_speed_max = from._internal_real_speed_max();
+  ::uint32_t raw_real_speed_max;
+  memcpy(&raw_real_speed_max, &tmp_real_speed_max, sizeof(tmp_real_speed_max));
+  if (raw_real_speed_max != 0) {
+    _this->_internal_set_real_speed_max(from._internal_real_speed_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max2 = from._internal_player_speed_max2();
+  ::uint32_t raw_player_speed_max2;
+  memcpy(&raw_player_speed_max2, &tmp_player_speed_max2, sizeof(tmp_player_speed_max2));
+  if (raw_player_speed_max2 != 0) {
+    _this->_internal_set_player_speed_max2(from._internal_player_speed_max2());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_real_speed_max2 = from._internal_real_speed_max2();
+  ::uint32_t raw_real_speed_max2;
+  memcpy(&raw_real_speed_max2, &tmp_real_speed_max2, sizeof(tmp_real_speed_max2));
+  if (raw_real_speed_max2 != 0) {
+    _this->_internal_set_real_speed_max2(from._internal_real_speed_max2());
+  }
+  if (from._internal_cycles_to_reach_max_speed() != 0) {
+    _this->_internal_set_cycles_to_reach_max_speed(from._internal_cycles_to_reach_max_speed());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void PlayerType::CopyFrom(const PlayerType& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:protos.PlayerType)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PlayerType::IsInitialized() const {
+  return true;
+}
+
+void PlayerType::InternalSwap(PlayerType* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PlayerType, _impl_.cycles_to_reach_max_speed_)
+      + sizeof(PlayerType::_impl_.cycles_to_reach_max_speed_)
+      - PROTOBUF_FIELD_OFFSET(PlayerType, _impl_.id_)>(
+          reinterpret_cast<char*>(&_impl_.id_),
+          reinterpret_cast<char*>(&other->_impl_.id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PlayerType::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_service_2eproto_getter, &descriptor_table_service_2eproto_once,
+      file_level_metadata_service_2eproto[99]);
+}
+// ===================================================================
+
 class Empty::_Internal {
  public:
 };
@@ -42117,7 +44985,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Empty::GetClassData() const { 
 ::PROTOBUF_NAMESPACE_ID::Metadata Empty::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_service_2eproto_getter, &descriptor_table_service_2eproto_once,
-      file_level_metadata_service_2eproto[98]);
+      file_level_metadata_service_2eproto[100]);
 }
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace protos
@@ -42513,6 +45381,14 @@ Arena::CreateMaybeMessage< ::protos::Actions >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::protos::ServerParam*
 Arena::CreateMaybeMessage< ::protos::ServerParam >(Arena* arena) {
   return Arena::CreateMessageInternal< ::protos::ServerParam >(arena);
+}
+template<> PROTOBUF_NOINLINE ::protos::PlayerParam*
+Arena::CreateMaybeMessage< ::protos::PlayerParam >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::protos::PlayerParam >(arena);
+}
+template<> PROTOBUF_NOINLINE ::protos::PlayerType*
+Arena::CreateMaybeMessage< ::protos::PlayerType >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::protos::PlayerType >(arena);
 }
 template<> PROTOBUF_NOINLINE ::protos::Empty*
 Arena::CreateMaybeMessage< ::protos::Empty >(Arena* arena) {
