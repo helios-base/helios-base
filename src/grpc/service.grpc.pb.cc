@@ -23,6 +23,7 @@ namespace protos {
 
 static const char* Game_method_names[] = {
   "/protos.Game/GetActions",
+  "/protos.Game/SendServerParams",
 };
 
 std::unique_ptr< Game::Stub> Game::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -33,6 +34,7 @@ std::unique_ptr< Game::Stub> Game::NewStub(const std::shared_ptr< ::grpc::Channe
 
 Game::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_GetActions_(Game_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendServerParams_(Game_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Game::Stub::GetActions(::grpc::ClientContext* context, const ::protos::State& request, ::protos::Actions* response) {
@@ -58,6 +60,29 @@ void Game::Stub::async::GetActions(::grpc::ClientContext* context, const ::proto
   return result;
 }
 
+::grpc::Status Game::Stub::SendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::protos::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::protos::ServerParam, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SendServerParams_, context, request, response);
+}
+
+void Game::Stub::async::SendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam* request, ::protos::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::protos::ServerParam, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendServerParams_, context, request, response, std::move(f));
+}
+
+void Game::Stub::async::SendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam* request, ::protos::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendServerParams_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::protos::Empty>* Game::Stub::PrepareAsyncSendServerParamsRaw(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::protos::Empty, ::protos::ServerParam, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SendServerParams_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::protos::Empty>* Game::Stub::AsyncSendServerParamsRaw(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSendServerParamsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 Game::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Game_method_names[0],
@@ -69,12 +94,29 @@ Game::Service::Service() {
              ::protos::Actions* resp) {
                return service->GetActions(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Game_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::ServerParam, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Game::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::protos::ServerParam* req,
+             ::protos::Empty* resp) {
+               return service->SendServerParams(ctx, req, resp);
+             }, this)));
 }
 
 Game::Service::~Service() {
 }
 
 ::grpc::Status Game::Service::GetActions(::grpc::ServerContext* context, const ::protos::State* request, ::protos::Actions* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Game::Service::SendServerParams(::grpc::ServerContext* context, const ::protos::ServerParam* request, ::protos::Empty* response) {
   (void) context;
   (void) request;
   (void) response;

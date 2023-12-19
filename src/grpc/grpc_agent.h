@@ -28,6 +28,7 @@ public:
     void getAction(rcsc::PlayerAgent *agent) const;
     void addSayMessage(rcsc::PlayerAgent *agent, protos::Say sayMessage) const;
     void addDlog(protos::Log log) const;
+    void sendServerParam() const;
 
 private:
     static rcsc::ViewWidth convertViewWidth(protos::ViewWidth view_width);

@@ -1956,8 +1956,495 @@ struct ActionsDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ActionsDefaultTypeInternal _Actions_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ServerParam::ServerParam(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.replay_file_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.landmark_file_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.text_log_dir_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.game_log_dir_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.text_log_fixed_name_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.game_log_fixed_name_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.log_date_format_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.team_l_start_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.team_r_start_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.keepaway_log_dir_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.keepaway_log_fixed_name_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.module_dir_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.coach_msg_file_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.fixed_teamname_l_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.fixed_teamname_r_)*/ {
+    &::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized {}
+  }
+
+  , /*decltype(_impl_.goal_width_)*/ 0
+
+  , /*decltype(_impl_.inertia_moment_)*/ 0
+
+  , /*decltype(_impl_.player_size_)*/ 0
+
+  , /*decltype(_impl_.player_decay_)*/ 0
+
+  , /*decltype(_impl_.player_rand_)*/ 0
+
+  , /*decltype(_impl_.player_weight_)*/ 0
+
+  , /*decltype(_impl_.player_speed_max_)*/ 0
+
+  , /*decltype(_impl_.player_accel_max_)*/ 0
+
+  , /*decltype(_impl_.stamina_max_)*/ 0
+
+  , /*decltype(_impl_.stamina_inc_max_)*/ 0
+
+  , /*decltype(_impl_.recover_init_)*/ 0
+
+  , /*decltype(_impl_.recover_dec_thr_)*/ 0
+
+  , /*decltype(_impl_.recover_min_)*/ 0
+
+  , /*decltype(_impl_.recover_dec_)*/ 0
+
+  , /*decltype(_impl_.effort_init_)*/ 0
+
+  , /*decltype(_impl_.effort_dec_thr_)*/ 0
+
+  , /*decltype(_impl_.effort_min_)*/ 0
+
+  , /*decltype(_impl_.effort_dec_)*/ 0
+
+  , /*decltype(_impl_.effort_inc_thr_)*/ 0
+
+  , /*decltype(_impl_.effort_inc_)*/ 0
+
+  , /*decltype(_impl_.kick_rand_)*/ 0
+
+  , /*decltype(_impl_.player_rand_factor_l_)*/ 0
+
+  , /*decltype(_impl_.player_rand_factor_r_)*/ 0
+
+  , /*decltype(_impl_.kick_rand_factor_l_)*/ 0
+
+  , /*decltype(_impl_.kick_rand_factor_r_)*/ 0
+
+  , /*decltype(_impl_.ball_size_)*/ 0
+
+  , /*decltype(_impl_.ball_decay_)*/ 0
+
+  , /*decltype(_impl_.ball_rand_)*/ 0
+
+  , /*decltype(_impl_.ball_weight_)*/ 0
+
+  , /*decltype(_impl_.ball_speed_max_)*/ 0
+
+  , /*decltype(_impl_.ball_accel_max_)*/ 0
+
+  , /*decltype(_impl_.dash_power_rate_)*/ 0
+
+  , /*decltype(_impl_.kick_power_rate_)*/ 0
+
+  , /*decltype(_impl_.kickable_margin_)*/ 0
+
+  , /*decltype(_impl_.control_radius_)*/ 0
+
+  , /*decltype(_impl_.control_radius_width_)*/ 0
+
+  , /*decltype(_impl_.max_power_)*/ 0
+
+  , /*decltype(_impl_.min_power_)*/ 0
+
+  , /*decltype(_impl_.max_moment_)*/ 0
+
+  , /*decltype(_impl_.min_moment_)*/ 0
+
+  , /*decltype(_impl_.max_neck_moment_)*/ 0
+
+  , /*decltype(_impl_.min_neck_moment_)*/ 0
+
+  , /*decltype(_impl_.max_neck_angle_)*/ 0
+
+  , /*decltype(_impl_.min_neck_angle_)*/ 0
+
+  , /*decltype(_impl_.visible_angle_)*/ 0
+
+  , /*decltype(_impl_.visible_distance_)*/ 0
+
+  , /*decltype(_impl_.wind_dir_)*/ 0
+
+  , /*decltype(_impl_.wind_force_)*/ 0
+
+  , /*decltype(_impl_.wind_angle_)*/ 0
+
+  , /*decltype(_impl_.wind_rand_)*/ 0
+
+  , /*decltype(_impl_.kickable_area_)*/ 0
+
+  , /*decltype(_impl_.catch_area_l_)*/ 0
+
+  , /*decltype(_impl_.catch_area_w_)*/ 0
+
+  , /*decltype(_impl_.catch_probability_)*/ 0
+
+  , /*decltype(_impl_.team_actuator_noise_)*/ false
+
+  , /*decltype(_impl_.wind_none_)*/ false
+
+  , /*decltype(_impl_.use_wind_random_)*/ false
+
+  , /*decltype(_impl_.use_offside_)*/ false
+
+  , /*decltype(_impl_.goalie_max_moves_)*/ 0
+
+  , /*decltype(_impl_.corner_kick_margin_)*/ 0
+
+  , /*decltype(_impl_.offside_active_area_size_)*/ 0
+
+  , /*decltype(_impl_.coach_say_count_max_)*/ 0
+
+  , /*decltype(_impl_.coach_say_msg_size_)*/ 0
+
+  , /*decltype(_impl_.clang_win_size_)*/ 0
+
+  , /*decltype(_impl_.clang_define_win_)*/ 0
+
+  , /*decltype(_impl_.clang_meta_win_)*/ 0
+
+  , /*decltype(_impl_.clang_advice_win_)*/ 0
+
+  , /*decltype(_impl_.clang_info_win_)*/ 0
+
+  , /*decltype(_impl_.clang_mess_delay_)*/ 0
+
+  , /*decltype(_impl_.clang_mess_per_cycle_)*/ 0
+
+  , /*decltype(_impl_.half_time_)*/ 0
+
+  , /*decltype(_impl_.simulator_step_)*/ 0
+
+  , /*decltype(_impl_.send_step_)*/ 0
+
+  , /*decltype(_impl_.recv_step_)*/ 0
+
+  , /*decltype(_impl_.sense_body_step_)*/ 0
+
+  , /*decltype(_impl_.lcm_step_)*/ 0
+
+  , /*decltype(_impl_.player_say_msg_size_)*/ 0
+
+  , /*decltype(_impl_.player_hear_max_)*/ 0
+
+  , /*decltype(_impl_.player_hear_inc_)*/ 0
+
+  , /*decltype(_impl_.player_hear_decay_)*/ 0
+
+  , /*decltype(_impl_.catch_ban_cycle_)*/ 0
+
+  , /*decltype(_impl_.slow_down_factor_)*/ 0
+
+  , /*decltype(_impl_.offside_kick_margin_)*/ 0
+
+  , /*decltype(_impl_.audio_cut_dist_)*/ 0
+
+  , /*decltype(_impl_.dist_quantize_step_)*/ 0
+
+  , /*decltype(_impl_.landmark_dist_quantize_step_)*/ 0
+
+  , /*decltype(_impl_.dir_quantize_step_)*/ 0
+
+  , /*decltype(_impl_.dist_quantize_step_l_)*/ 0
+
+  , /*decltype(_impl_.dist_quantize_step_r_)*/ 0
+
+  , /*decltype(_impl_.landmark_dist_quantize_step_l_)*/ 0
+
+  , /*decltype(_impl_.landmark_dist_quantize_step_r_)*/ 0
+
+  , /*decltype(_impl_.kickoff_offside_)*/ false
+
+  , /*decltype(_impl_.coach_mode_)*/ false
+
+  , /*decltype(_impl_.coach_with_referee_mode_)*/ false
+
+  , /*decltype(_impl_.use_old_coach_hear_)*/ false
+
+  , /*decltype(_impl_.dir_quantize_step_l_)*/ 0
+
+  , /*decltype(_impl_.dir_quantize_step_r_)*/ 0
+
+  , /*decltype(_impl_.slowness_on_top_for_left_team_)*/ 0
+
+  , /*decltype(_impl_.slowness_on_top_for_right_team_)*/ 0
+
+  , /*decltype(_impl_.start_goal_l_)*/ 0
+
+  , /*decltype(_impl_.start_goal_r_)*/ 0
+
+  , /*decltype(_impl_.drop_ball_time_)*/ 0
+
+  , /*decltype(_impl_.fullstate_l_)*/ false
+
+  , /*decltype(_impl_.fullstate_r_)*/ false
+
+  , /*decltype(_impl_.synch_mode_)*/ false
+
+  , /*decltype(_impl_.verbose_mode_)*/ false
+
+  , /*decltype(_impl_.synch_offset_)*/ 0
+
+  , /*decltype(_impl_.synch_micro_sleep_)*/ 0
+
+  , /*decltype(_impl_.point_to_ban_)*/ 0
+
+  , /*decltype(_impl_.point_to_duration_)*/ 0
+
+  , /*decltype(_impl_.player_port_)*/ 0
+
+  , /*decltype(_impl_.trainer_port_)*/ 0
+
+  , /*decltype(_impl_.online_coach_port_)*/ 0
+
+  , /*decltype(_impl_.coach_send_vi_step_)*/ 0
+
+  , /*decltype(_impl_.send_comms_)*/ false
+
+  , /*decltype(_impl_.text_logging_)*/ false
+
+  , /*decltype(_impl_.game_logging_)*/ false
+
+  , /*decltype(_impl_.use_text_log_fixed_)*/ false
+
+  , /*decltype(_impl_.game_log_version_)*/ 0
+
+  , /*decltype(_impl_.use_game_log_fixed_)*/ false
+
+  , /*decltype(_impl_.use_text_log_dated_)*/ false
+
+  , /*decltype(_impl_.use_game_log_dated_)*/ false
+
+  , /*decltype(_impl_.log_times_)*/ false
+
+  , /*decltype(_impl_.text_log_compression_)*/ 0
+
+  , /*decltype(_impl_.game_log_compression_)*/ 0
+
+  , /*decltype(_impl_.tackle_dist_)*/ 0
+
+  , /*decltype(_impl_.tackle_back_dist_)*/ 0
+
+  , /*decltype(_impl_.tackle_width_)*/ 0
+
+  , /*decltype(_impl_.tackle_exponent_)*/ 0
+
+  , /*decltype(_impl_.record_message_)*/ false
+
+  , /*decltype(_impl_.use_profile_)*/ false
+
+  , /*decltype(_impl_.free_kick_faults_)*/ false
+
+  , /*decltype(_impl_.back_passes_)*/ false
+
+  , /*decltype(_impl_.tackle_cycles_)*/ 0
+
+  , /*decltype(_impl_.tackle_power_rate_)*/ 0
+
+  , /*decltype(_impl_.freeform_wait_period_)*/ 0
+
+  , /*decltype(_impl_.freeform_send_period_)*/ 0
+
+  , /*decltype(_impl_.stopped_ball_vel_)*/ 0
+
+  , /*decltype(_impl_.max_goal_kicks_)*/ 0
+
+  , /*decltype(_impl_.clang_del_win_)*/ 0
+
+  , /*decltype(_impl_.clang_rule_win_)*/ 0
+
+  , /*decltype(_impl_.kick_off_wait_)*/ 0
+
+  , /*decltype(_impl_.connect_wait_)*/ 0
+
+  , /*decltype(_impl_.proper_goal_kicks_)*/ false
+
+  , /*decltype(_impl_.auto_mode_)*/ false
+
+  , /*decltype(_impl_.keepaway_mode_)*/ false
+
+  , /*decltype(_impl_.keepaway_logging_)*/ false
+
+  , /*decltype(_impl_.game_over_wait_)*/ 0
+
+  , /*decltype(_impl_.keepaway_length_)*/ 0
+
+  , /*decltype(_impl_.keepaway_width_)*/ 0
+
+  , /*decltype(_impl_.keepaway_start_)*/ 0
+
+  , /*decltype(_impl_.nr_normal_halfs_)*/ 0
+
+  , /*decltype(_impl_.nr_extra_halfs_)*/ 0
+
+  , /*decltype(_impl_.keepaway_log_fixed_)*/ false
+
+  , /*decltype(_impl_.keepaway_log_dated_)*/ false
+
+  , /*decltype(_impl_.penalty_shoot_outs_)*/ false
+
+  , /*decltype(_impl_.pen_random_winner_)*/ false
+
+  , /*decltype(_impl_.pen_before_setup_wait_)*/ 0
+
+  , /*decltype(_impl_.pen_setup_wait_)*/ 0
+
+  , /*decltype(_impl_.pen_ready_wait_)*/ 0
+
+  , /*decltype(_impl_.pen_taken_wait_)*/ 0
+
+  , /*decltype(_impl_.pen_nr_kicks_)*/ 0
+
+  , /*decltype(_impl_.pen_max_extra_kicks_)*/ 0
+
+  , /*decltype(_impl_.pen_dist_x_)*/ 0
+
+  , /*decltype(_impl_.pen_max_goalie_dist_x_)*/ 0
+
+  , /*decltype(_impl_.ball_stuck_area_)*/ 0
+
+  , /*decltype(_impl_.max_tackle_power_)*/ 0
+
+  , /*decltype(_impl_.max_back_tackle_power_)*/ 0
+
+  , /*decltype(_impl_.player_speed_max_min_)*/ 0
+
+  , /*decltype(_impl_.pen_allow_mult_kicks_)*/ false
+
+  , /*decltype(_impl_.pen_coach_moves_players_)*/ false
+
+  , /*decltype(_impl_.golden_goal_)*/ false
+
+  , /*decltype(_impl_.extra_stamina_)*/ 0
+
+  , /*decltype(_impl_.synch_see_offset_)*/ 0
+
+  , /*decltype(_impl_.extra_half_time_)*/ 0
+
+  , /*decltype(_impl_.stamina_capacity_)*/ 0
+
+  , /*decltype(_impl_.max_dash_angle_)*/ 0
+
+  , /*decltype(_impl_.min_dash_angle_)*/ 0
+
+  , /*decltype(_impl_.dash_angle_step_)*/ 0
+
+  , /*decltype(_impl_.side_dash_rate_)*/ 0
+
+  , /*decltype(_impl_.back_dash_rate_)*/ 0
+
+  , /*decltype(_impl_.max_dash_power_)*/ 0
+
+  , /*decltype(_impl_.min_dash_power_)*/ 0
+
+  , /*decltype(_impl_.tackle_rand_factor_)*/ 0
+
+  , /*decltype(_impl_.foul_detect_probability_)*/ 0
+
+  , /*decltype(_impl_.foul_exponent_)*/ 0
+
+  , /*decltype(_impl_.foul_cycles_)*/ 0
+
+  , /*decltype(_impl_.red_card_probability_)*/ 0
+
+  , /*decltype(_impl_.illegal_defense_duration_)*/ 0
+
+  , /*decltype(_impl_.illegal_defense_number_)*/ 0
+
+  , /*decltype(_impl_.illegal_defense_dist_x_)*/ 0
+
+  , /*decltype(_impl_.illegal_defense_width_)*/ 0
+
+  , /*decltype(_impl_.max_catch_angle_)*/ 0
+
+  , /*decltype(_impl_.min_catch_angle_)*/ 0
+
+  , /*decltype(_impl_.random_seed_)*/ 0
+
+  , /*decltype(_impl_.long_kick_power_factor_)*/ 0
+
+  , /*decltype(_impl_.long_kick_delay_)*/ 0
+
+  , /*decltype(_impl_.max_monitors_)*/ 0
+
+  , /*decltype(_impl_.catchable_area_)*/ 0
+
+  , /*decltype(_impl_.real_speed_max_)*/ 0
+
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ServerParamDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ServerParamDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ServerParamDefaultTypeInternal() {}
+  union {
+    ServerParam _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ServerParamDefaultTypeInternal _ServerParam_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR Empty::Empty(
+    ::_pbi::ConstantInitialized) {}
+struct EmptyDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR EmptyDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~EmptyDefaultTypeInternal() {}
+  union {
+    Empty _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EmptyDefaultTypeInternal _Empty_default_instance_;
 }  // namespace protos
-static ::_pb::Metadata file_level_metadata_service_2eproto[97];
+static ::_pb::Metadata file_level_metadata_service_2eproto[99];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_service_2eproto[5];
 static constexpr const ::_pb::ServiceDescriptor**
     file_level_service_descriptors_service_2eproto = nullptr;
@@ -3378,6 +3865,237 @@ const ::uint32_t TableStruct_service_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::protos::Actions, _impl_.actions_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.goal_width_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.inertia_moment_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_size_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_decay_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_rand_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_weight_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_speed_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_accel_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.stamina_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.stamina_inc_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.recover_init_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.recover_dec_thr_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.recover_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.recover_dec_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.effort_init_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.effort_dec_thr_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.effort_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.effort_dec_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.effort_inc_thr_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.effort_inc_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.kick_rand_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.team_actuator_noise_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_rand_factor_l_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_rand_factor_r_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.kick_rand_factor_l_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.kick_rand_factor_r_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.ball_size_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.ball_decay_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.ball_rand_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.ball_weight_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.ball_speed_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.ball_accel_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.dash_power_rate_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.kick_power_rate_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.kickable_margin_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.control_radius_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.control_radius_width_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_power_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.min_power_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_moment_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.min_moment_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_neck_moment_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.min_neck_moment_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_neck_angle_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.min_neck_angle_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.visible_angle_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.visible_distance_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.wind_dir_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.wind_force_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.wind_angle_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.wind_rand_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.kickable_area_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.catch_area_l_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.catch_area_w_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.catch_probability_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.goalie_max_moves_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.corner_kick_margin_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.offside_active_area_size_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.wind_none_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.use_wind_random_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.coach_say_count_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.coach_say_msg_size_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.clang_win_size_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.clang_define_win_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.clang_meta_win_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.clang_advice_win_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.clang_info_win_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.clang_mess_delay_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.clang_mess_per_cycle_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.half_time_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.simulator_step_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.send_step_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.recv_step_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.sense_body_step_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.lcm_step_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_say_msg_size_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_hear_max_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_hear_inc_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_hear_decay_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.catch_ban_cycle_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.slow_down_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.use_offside_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.kickoff_offside_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.offside_kick_margin_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.audio_cut_dist_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.dist_quantize_step_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.landmark_dist_quantize_step_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.dir_quantize_step_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.dist_quantize_step_l_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.dist_quantize_step_r_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.landmark_dist_quantize_step_l_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.landmark_dist_quantize_step_r_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.dir_quantize_step_l_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.dir_quantize_step_r_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.coach_mode_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.coach_with_referee_mode_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.use_old_coach_hear_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.slowness_on_top_for_left_team_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.slowness_on_top_for_right_team_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.start_goal_l_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.start_goal_r_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.fullstate_l_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.fullstate_r_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.drop_ball_time_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.synch_mode_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.synch_offset_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.synch_micro_sleep_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.point_to_ban_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.point_to_duration_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_port_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.trainer_port_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.online_coach_port_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.verbose_mode_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.coach_send_vi_step_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.replay_file_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.landmark_file_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.send_comms_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.text_logging_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.game_logging_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.game_log_version_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.text_log_dir_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.game_log_dir_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.text_log_fixed_name_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.game_log_fixed_name_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.use_text_log_fixed_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.use_game_log_fixed_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.use_text_log_dated_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.use_game_log_dated_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.log_date_format_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.log_times_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.record_message_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.text_log_compression_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.game_log_compression_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.use_profile_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.tackle_dist_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.tackle_back_dist_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.tackle_width_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.tackle_exponent_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.tackle_cycles_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.tackle_power_rate_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.freeform_wait_period_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.freeform_send_period_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.free_kick_faults_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.back_passes_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.proper_goal_kicks_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.stopped_ball_vel_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_goal_kicks_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.clang_del_win_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.clang_rule_win_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.auto_mode_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.kick_off_wait_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.connect_wait_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.game_over_wait_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.team_l_start_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.team_r_start_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.keepaway_mode_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.keepaway_length_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.keepaway_width_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.keepaway_logging_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.keepaway_log_dir_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.keepaway_log_fixed_name_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.keepaway_log_fixed_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.keepaway_log_dated_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.keepaway_start_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.nr_normal_halfs_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.nr_extra_halfs_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.penalty_shoot_outs_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_before_setup_wait_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_setup_wait_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_ready_wait_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_taken_wait_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_nr_kicks_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_max_extra_kicks_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_dist_x_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_random_winner_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_allow_mult_kicks_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_max_goalie_dist_x_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.pen_coach_moves_players_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.module_dir_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.ball_stuck_area_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.coach_msg_file_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_tackle_power_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_back_tackle_power_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.player_speed_max_min_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.extra_stamina_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.synch_see_offset_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.extra_half_time_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.stamina_capacity_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_dash_angle_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.min_dash_angle_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.dash_angle_step_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.side_dash_rate_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.back_dash_rate_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_dash_power_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.min_dash_power_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.tackle_rand_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.foul_detect_probability_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.foul_exponent_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.foul_cycles_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.golden_goal_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.red_card_probability_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.illegal_defense_duration_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.illegal_defense_number_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.illegal_defense_dist_x_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.illegal_defense_width_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.fixed_teamname_l_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.fixed_teamname_r_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_catch_angle_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.min_catch_angle_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.random_seed_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.long_kick_power_factor_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.long_kick_delay_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.max_monitors_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.catchable_area_),
+    PROTOBUF_FIELD_OFFSET(::protos::ServerParam, _impl_.real_speed_max_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::protos::Empty, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
 };
 
 static const ::_pbi::MigrationSchema
@@ -3479,6 +4197,8 @@ static const ::_pbi::MigrationSchema
         { 1335, -1, -1, sizeof(::protos::View_Wide)},
         { 1343, -1, -1, sizeof(::protos::Action)},
         { 1406, -1, -1, sizeof(::protos::Actions)},
+        { 1415, -1, -1, sizeof(::protos::ServerParam)},
+        { 1638, -1, -1, sizeof(::protos::Empty)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -3579,6 +4299,8 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::protos::_View_Wide_default_instance_._instance,
     &::protos::_Action_default_instance_._instance,
     &::protos::_Actions_default_instance_._instance,
+    &::protos::_ServerParam_default_instance_._instance,
+    &::protos::_Empty_default_instance_._instance,
 };
 const char descriptor_table_protodef_service_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\rservice.proto\022\006protos\"=\n\010Vector2D\022\t\n\001x"
@@ -3947,63 +4669,202 @@ const char descriptor_table_protodef_service_2eproto[] PROTOBUF_SECTION_VARIABLE
     "tos.View_NormalH\000\022(\n\nview_synch\0305 \001(\0132\022."
     "protos.View_SynchH\000\022&\n\tview_wide\0306 \001(\0132\021"
     ".protos.View_WideH\000B\010\n\006action\"*\n\007Actions"
-    "\022\037\n\007actions\030\001 \003(\0132\016.protos.Action*-\n\tVie"
-    "wWidth\022\n\n\006NARROW\020\000\022\n\n\006NORMAL\020\001\022\010\n\004WIDE\020\002"
-    "*(\n\004Side\022\013\n\007UNKNOWN\020\000\022\010\n\004LEFT\020\001\022\t\n\005RIGHT"
-    "\020\002*\255\002\n\013LoggerLevel\022\010\n\004None\020\000\022\n\n\006SYSTEM\020\001"
-    "\022\n\n\006SENSOR\020\002\022\t\n\005WORLD\020\004\022\n\n\006ACTION\020\010\022\r\n\tI"
-    "NTERCEPT\020\020\022\010\n\004KICK\020 \022\010\n\004HOLD\020@\022\014\n\007DRIBBL"
-    "E\020\200\001\022\t\n\004PASS\020\200\002\022\n\n\005CROSS\020\200\004\022\n\n\005SHOOT\020\200\010\022"
-    "\n\n\005CLEAR\020\200\020\022\n\n\005BLOCK\020\200 \022\t\n\004MARK\020\200@\022\021\n\013PO"
-    "SITIONING\020\200\200\001\022\n\n\004ROLE\020\200\200\002\022\n\n\004TEAM\020\200\200\004\022\023\n"
-    "\rCOMMUNICATION\020\200\200\010\022\016\n\010ANALYZER\020\200\200\020\022\022\n\014AC"
-    "TION_CHAIN\020\200\200 \022\n\n\004PLAN\020\200\200@*v\n\023InterceptA"
-    "ctionType\022!\n\035UNKNOWN_Intercept_Action_Ty"
-    "pe\020\000\022\r\n\tOMNI_DASH\020\001\022\025\n\021TURN_FORWARD_DASH"
-    "\020\002\022\026\n\022TURN_BACKWARD_DASH\020\003*\232\t\n\014GameModeT"
-    "ype\022\021\n\rBeforeKickOff\020\000\022\014\n\010TimeOver\020\001\022\n\n\006"
-    "PlayOn\020\002\022\020\n\014KickOff_Left\020\003\022\021\n\rKickOff_Ri"
-    "ght\020\004\022\017\n\013KickIn_Left\020\005\022\020\n\014KickIn_Right\020\006"
-    "\022\021\n\rFreeKick_Left\020\007\022\022\n\016FreeKick_Right\020\010\022"
-    "\023\n\017CornerKick_Left\020\t\022\024\n\020CornerKick_Right"
-    "\020\n\022\021\n\rGoalKick_Left\020\013\022\022\n\016GoalKick_Right\020"
-    "\014\022\022\n\016AfterGoal_Left\020\r\022\023\n\017AfterGoal_Right"
-    "\020\016\022\020\n\014OffSide_Left\020\017\022\021\n\rOffSide_Right\020\020\022"
-    "\024\n\020PenaltyKick_Left\020\021\022\025\n\021PenaltyKick_Rig"
-    "ht\020\022\022\021\n\rFirstHalfOver\020\023\022\t\n\005Pause\020\024\022\t\n\005Hu"
-    "man\020\025\022\023\n\017FoulCharge_Left\020\026\022\024\n\020FoulCharge"
-    "_Right\020\027\022\021\n\rFoulPush_Left\020\030\022\022\n\016FoulPush_"
-    "Right\020\031\022\035\n\031FoulMultipleAttacker_Left\020\032\022\036"
-    "\n\032FoulMultipleAttacker_Right\020\033\022\024\n\020FoulBa"
-    "llOut_Left\020\034\022\025\n\021FoulBallOut_Right\020\035\022\021\n\rB"
-    "ackPass_Left\020\036\022\022\n\016BackPass_Right\020\037\022\026\n\022Fr"
-    "eeKickFault_Left\020 \022\027\n\023FreeKickFault_Righ"
-    "t\020!\022\023\n\017CatchFault_Left\020\"\022\024\n\020CatchFault_R"
-    "ight\020#\022\024\n\020IndFreeKick_Left\020$\022\025\n\021IndFreeK"
-    "ick_Right\020%\022\025\n\021PenaltySetup_Left\020&\022\026\n\022Pe"
-    "naltySetup_Right\020\'\022\025\n\021PenaltyReady_Left\020"
-    "(\022\026\n\022PenaltyReady_Right\020)\022\025\n\021PenaltyTake"
-    "n_Left\020*\022\026\n\022PenaltyTaken_Right\020+\022\024\n\020Pena"
-    "ltyMiss_Left\020,\022\025\n\021PenaltyMiss_Right\020-\022\025\n"
-    "\021PenaltyScore_Left\020.\022\026\n\022PenaltyScore_Rig"
-    "ht\020/\022\027\n\023IllegalDefense_Left\0200\022\030\n\024Illegal"
-    "Defense_Right\0201\022\022\n\016PenaltyOnfield\0202\022\017\n\013P"
-    "enaltyFoul\0203\022\024\n\020GoalieCatch_Left\0204\022\025\n\021Go"
-    "alieCatch_Right\0205\022\016\n\nExtendHalf\0206\022\014\n\010MOD"
-    "E_MAX\020726\n\004Game\022.\n\nGetActions\022\r.protos.S"
-    "tate\032\017.protos.Actions\"\000b\006proto3"
+    "\022\037\n\007actions\030\001 \003(\0132\016.protos.Action\"\352*\n\013Se"
+    "rverParam\022\022\n\ngoal_width\030\001 \001(\002\022\026\n\016inertia"
+    "_moment\030\002 \001(\002\022\023\n\013player_size\030\003 \001(\002\022\024\n\014pl"
+    "ayer_decay\030\004 \001(\002\022\023\n\013player_rand\030\005 \001(\002\022\025\n"
+    "\rplayer_weight\030\006 \001(\002\022\030\n\020player_speed_max"
+    "\030\007 \001(\002\022\030\n\020player_accel_max\030\010 \001(\002\022\023\n\013stam"
+    "ina_max\030\t \001(\002\022\027\n\017stamina_inc_max\030\n \001(\002\022\024"
+    "\n\014recover_init\030\013 \001(\002\022\027\n\017recover_dec_thr\030"
+    "\014 \001(\002\022\023\n\013recover_min\030\r \001(\002\022\023\n\013recover_de"
+    "c\030\016 \001(\002\022\023\n\013effort_init\030\017 \001(\002\022\026\n\016effort_d"
+    "ec_thr\030\020 \001(\002\022\022\n\neffort_min\030\021 \001(\002\022\022\n\neffo"
+    "rt_dec\030\022 \001(\002\022\026\n\016effort_inc_thr\030\023 \001(\002\022\022\n\n"
+    "effort_inc\030\024 \001(\002\022\021\n\tkick_rand\030\025 \001(\002\022\033\n\023t"
+    "eam_actuator_noise\030\026 \001(\010\022\034\n\024player_rand_"
+    "factor_l\030\027 \001(\002\022\034\n\024player_rand_factor_r\030\030"
+    " \001(\002\022\032\n\022kick_rand_factor_l\030\031 \001(\002\022\032\n\022kick"
+    "_rand_factor_r\030\032 \001(\002\022\021\n\tball_size\030\033 \001(\002\022"
+    "\022\n\nball_decay\030\034 \001(\002\022\021\n\tball_rand\030\035 \001(\002\022\023"
+    "\n\013ball_weight\030\036 \001(\002\022\026\n\016ball_speed_max\030\037 "
+    "\001(\002\022\026\n\016ball_accel_max\030  \001(\002\022\027\n\017dash_powe"
+    "r_rate\030! \001(\002\022\027\n\017kick_power_rate\030\" \001(\002\022\027\n"
+    "\017kickable_margin\030# \001(\002\022\026\n\016control_radius"
+    "\030$ \001(\002\022\034\n\024control_radius_width\030% \001(\002\022\021\n\t"
+    "max_power\030& \001(\002\022\021\n\tmin_power\030\' \001(\002\022\022\n\nma"
+    "x_moment\030( \001(\002\022\022\n\nmin_moment\030) \001(\002\022\027\n\017ma"
+    "x_neck_moment\030* \001(\002\022\027\n\017min_neck_moment\030+"
+    " \001(\002\022\026\n\016max_neck_angle\030, \001(\002\022\026\n\016min_neck"
+    "_angle\030- \001(\002\022\025\n\rvisible_angle\030. \001(\002\022\030\n\020v"
+    "isible_distance\030/ \001(\002\022\020\n\010wind_dir\0300 \001(\002\022"
+    "\022\n\nwind_force\0301 \001(\002\022\022\n\nwind_angle\0302 \001(\002\022"
+    "\021\n\twind_rand\0303 \001(\002\022\025\n\rkickable_area\0304 \001("
+    "\002\022\024\n\014catch_area_l\0305 \001(\002\022\024\n\014catch_area_w\030"
+    "6 \001(\002\022\031\n\021catch_probability\0307 \001(\002\022\030\n\020goal"
+    "ie_max_moves\0308 \001(\005\022\032\n\022corner_kick_margin"
+    "\0309 \001(\002\022 \n\030offside_active_area_size\030: \001(\002"
+    "\022\021\n\twind_none\030; \001(\010\022\027\n\017use_wind_random\030<"
+    " \001(\010\022\033\n\023coach_say_count_max\030= \001(\005\022\032\n\022coa"
+    "ch_say_msg_size\030> \001(\005\022\026\n\016clang_win_size\030"
+    "\? \001(\005\022\030\n\020clang_define_win\030@ \001(\005\022\026\n\016clang"
+    "_meta_win\030A \001(\005\022\030\n\020clang_advice_win\030B \001("
+    "\005\022\026\n\016clang_info_win\030C \001(\005\022\030\n\020clang_mess_"
+    "delay\030D \001(\005\022\034\n\024clang_mess_per_cycle\030E \001("
+    "\005\022\021\n\thalf_time\030F \001(\005\022\026\n\016simulator_step\030G"
+    " \001(\005\022\021\n\tsend_step\030H \001(\005\022\021\n\trecv_step\030I \001"
+    "(\005\022\027\n\017sense_body_step\030J \001(\005\022\020\n\010lcm_step\030"
+    "K \001(\005\022\033\n\023player_say_msg_size\030L \001(\005\022\027\n\017pl"
+    "ayer_hear_max\030M \001(\005\022\027\n\017player_hear_inc\030N"
+    " \001(\005\022\031\n\021player_hear_decay\030O \001(\005\022\027\n\017catch"
+    "_ban_cycle\030P \001(\005\022\030\n\020slow_down_factor\030Q \001"
+    "(\005\022\023\n\013use_offside\030R \001(\010\022\027\n\017kickoff_offsi"
+    "de\030S \001(\010\022\033\n\023offside_kick_margin\030T \001(\002\022\026\n"
+    "\016audio_cut_dist\030U \001(\002\022\032\n\022dist_quantize_s"
+    "tep\030V \001(\002\022#\n\033landmark_dist_quantize_step"
+    "\030W \001(\002\022\031\n\021dir_quantize_step\030X \001(\002\022\034\n\024dis"
+    "t_quantize_step_l\030Y \001(\002\022\034\n\024dist_quantize"
+    "_step_r\030Z \001(\002\022%\n\035landmark_dist_quantize_"
+    "step_l\030[ \001(\002\022%\n\035landmark_dist_quantize_s"
+    "tep_r\030\\ \001(\002\022\033\n\023dir_quantize_step_l\030] \001(\002"
+    "\022\033\n\023dir_quantize_step_r\030^ \001(\002\022\022\n\ncoach_m"
+    "ode\030_ \001(\010\022\037\n\027coach_with_referee_mode\030` \001"
+    "(\010\022\032\n\022use_old_coach_hear\030a \001(\010\022%\n\035slowne"
+    "ss_on_top_for_left_team\030b \001(\002\022&\n\036slownes"
+    "s_on_top_for_right_team\030c \001(\002\022\024\n\014start_g"
+    "oal_l\030d \001(\005\022\024\n\014start_goal_r\030e \001(\005\022\023\n\013ful"
+    "lstate_l\030f \001(\010\022\023\n\013fullstate_r\030g \001(\010\022\026\n\016d"
+    "rop_ball_time\030h \001(\005\022\022\n\nsynch_mode\030i \001(\010\022"
+    "\024\n\014synch_offset\030j \001(\005\022\031\n\021synch_micro_sle"
+    "ep\030k \001(\005\022\024\n\014point_to_ban\030l \001(\005\022\031\n\021point_"
+    "to_duration\030m \001(\005\022\023\n\013player_port\030n \001(\005\022\024"
+    "\n\014trainer_port\030o \001(\005\022\031\n\021online_coach_por"
+    "t\030p \001(\005\022\024\n\014verbose_mode\030q \001(\010\022\032\n\022coach_s"
+    "end_vi_step\030r \001(\005\022\023\n\013replay_file\030s \001(\t\022\025"
+    "\n\rlandmark_file\030t \001(\t\022\022\n\nsend_comms\030u \001("
+    "\010\022\024\n\014text_logging\030v \001(\010\022\024\n\014game_logging\030"
+    "w \001(\010\022\030\n\020game_log_version\030x \001(\005\022\024\n\014text_"
+    "log_dir\030y \001(\t\022\024\n\014game_log_dir\030z \001(\t\022\033\n\023t"
+    "ext_log_fixed_name\030{ \001(\t\022\033\n\023game_log_fix"
+    "ed_name\030| \001(\t\022\032\n\022use_text_log_fixed\030} \001("
+    "\010\022\032\n\022use_game_log_fixed\030~ \001(\010\022\032\n\022use_tex"
+    "t_log_dated\030\177 \001(\010\022\033\n\022use_game_log_dated\030"
+    "\200\001 \001(\010\022\030\n\017log_date_format\030\201\001 \001(\t\022\022\n\tlog_"
+    "times\030\202\001 \001(\010\022\027\n\016record_message\030\203\001 \001(\010\022\035\n"
+    "\024text_log_compression\030\204\001 \001(\005\022\035\n\024game_log"
+    "_compression\030\205\001 \001(\005\022\024\n\013use_profile\030\206\001 \001("
+    "\010\022\024\n\013tackle_dist\030\207\001 \001(\002\022\031\n\020tackle_back_d"
+    "ist\030\210\001 \001(\002\022\025\n\014tackle_width\030\211\001 \001(\002\022\030\n\017tac"
+    "kle_exponent\030\212\001 \001(\002\022\026\n\rtackle_cycles\030\213\001 "
+    "\001(\005\022\032\n\021tackle_power_rate\030\214\001 \001(\002\022\035\n\024freef"
+    "orm_wait_period\030\215\001 \001(\005\022\035\n\024freeform_send_"
+    "period\030\216\001 \001(\005\022\031\n\020free_kick_faults\030\217\001 \001(\010"
+    "\022\024\n\013back_passes\030\220\001 \001(\010\022\032\n\021proper_goal_ki"
+    "cks\030\221\001 \001(\010\022\031\n\020stopped_ball_vel\030\222\001 \001(\002\022\027\n"
+    "\016max_goal_kicks\030\223\001 \001(\005\022\026\n\rclang_del_win\030"
+    "\224\001 \001(\005\022\027\n\016clang_rule_win\030\225\001 \001(\005\022\022\n\tauto_"
+    "mode\030\226\001 \001(\010\022\026\n\rkick_off_wait\030\227\001 \001(\005\022\025\n\014c"
+    "onnect_wait\030\230\001 \001(\005\022\027\n\016game_over_wait\030\231\001 "
+    "\001(\005\022\025\n\014team_l_start\030\232\001 \001(\t\022\025\n\014team_r_sta"
+    "rt\030\233\001 \001(\t\022\026\n\rkeepaway_mode\030\234\001 \001(\010\022\030\n\017kee"
+    "paway_length\030\235\001 \001(\002\022\027\n\016keepaway_width\030\236\001"
+    " \001(\002\022\031\n\020keepaway_logging\030\237\001 \001(\010\022\031\n\020keepa"
+    "way_log_dir\030\240\001 \001(\t\022 \n\027keepaway_log_fixed"
+    "_name\030\241\001 \001(\t\022\033\n\022keepaway_log_fixed\030\242\001 \001("
+    "\010\022\033\n\022keepaway_log_dated\030\243\001 \001(\010\022\027\n\016keepaw"
+    "ay_start\030\244\001 \001(\005\022\030\n\017nr_normal_halfs\030\245\001 \001("
+    "\005\022\027\n\016nr_extra_halfs\030\246\001 \001(\005\022\033\n\022penalty_sh"
+    "oot_outs\030\247\001 \001(\010\022\036\n\025pen_before_setup_wait"
+    "\030\250\001 \001(\005\022\027\n\016pen_setup_wait\030\251\001 \001(\005\022\027\n\016pen_"
+    "ready_wait\030\252\001 \001(\005\022\027\n\016pen_taken_wait\030\253\001 \001"
+    "(\005\022\025\n\014pen_nr_kicks\030\254\001 \001(\005\022\034\n\023pen_max_ext"
+    "ra_kicks\030\255\001 \001(\005\022\023\n\npen_dist_x\030\256\001 \001(\002\022\032\n\021"
+    "pen_random_winner\030\257\001 \001(\010\022\035\n\024pen_allow_mu"
+    "lt_kicks\030\260\001 \001(\010\022\036\n\025pen_max_goalie_dist_x"
+    "\030\261\001 \001(\002\022 \n\027pen_coach_moves_players\030\262\001 \001("
+    "\010\022\023\n\nmodule_dir\030\263\001 \001(\t\022\030\n\017ball_stuck_are"
+    "a\030\264\001 \001(\002\022\027\n\016coach_msg_file\030\265\001 \001(\t\022\031\n\020max"
+    "_tackle_power\030\266\001 \001(\002\022\036\n\025max_back_tackle_"
+    "power\030\267\001 \001(\002\022\035\n\024player_speed_max_min\030\270\001 "
+    "\001(\002\022\026\n\rextra_stamina\030\271\001 \001(\002\022\031\n\020synch_see"
+    "_offset\030\272\001 \001(\005\022\030\n\017extra_half_time\030\273\001 \001(\005"
+    "\022\031\n\020stamina_capacity\030\274\001 \001(\002\022\027\n\016max_dash_"
+    "angle\030\275\001 \001(\002\022\027\n\016min_dash_angle\030\276\001 \001(\002\022\030\n"
+    "\017dash_angle_step\030\277\001 \001(\002\022\027\n\016side_dash_rat"
+    "e\030\300\001 \001(\002\022\027\n\016back_dash_rate\030\301\001 \001(\002\022\027\n\016max"
+    "_dash_power\030\302\001 \001(\002\022\027\n\016min_dash_power\030\303\001 "
+    "\001(\002\022\033\n\022tackle_rand_factor\030\304\001 \001(\002\022 \n\027foul"
+    "_detect_probability\030\305\001 \001(\002\022\026\n\rfoul_expon"
+    "ent\030\306\001 \001(\002\022\024\n\013foul_cycles\030\307\001 \001(\005\022\024\n\013gold"
+    "en_goal\030\310\001 \001(\010\022\035\n\024red_card_probability\030\311"
+    "\001 \001(\002\022!\n\030illegal_defense_duration\030\312\001 \001(\005"
+    "\022\037\n\026illegal_defense_number\030\313\001 \001(\005\022\037\n\026ill"
+    "egal_defense_dist_x\030\314\001 \001(\002\022\036\n\025illegal_de"
+    "fense_width\030\315\001 \001(\002\022\031\n\020fixed_teamname_l\030\316"
+    "\001 \001(\t\022\031\n\020fixed_teamname_r\030\317\001 \001(\t\022\030\n\017max_"
+    "catch_angle\030\320\001 \001(\002\022\030\n\017min_catch_angle\030\321\001"
+    " \001(\002\022\024\n\013random_seed\030\322\001 \001(\005\022\037\n\026long_kick_"
+    "power_factor\030\323\001 \001(\002\022\030\n\017long_kick_delay\030\324"
+    "\001 \001(\005\022\025\n\014max_monitors\030\325\001 \001(\005\022\027\n\016catchabl"
+    "e_area\030\326\001 \001(\002\022\027\n\016real_speed_max\030\327\001 \001(\002\"\007"
+    "\n\005Empty*-\n\tViewWidth\022\n\n\006NARROW\020\000\022\n\n\006NORM"
+    "AL\020\001\022\010\n\004WIDE\020\002*(\n\004Side\022\013\n\007UNKNOWN\020\000\022\010\n\004L"
+    "EFT\020\001\022\t\n\005RIGHT\020\002*\255\002\n\013LoggerLevel\022\010\n\004None"
+    "\020\000\022\n\n\006SYSTEM\020\001\022\n\n\006SENSOR\020\002\022\t\n\005WORLD\020\004\022\n\n"
+    "\006ACTION\020\010\022\r\n\tINTERCEPT\020\020\022\010\n\004KICK\020 \022\010\n\004HO"
+    "LD\020@\022\014\n\007DRIBBLE\020\200\001\022\t\n\004PASS\020\200\002\022\n\n\005CROSS\020\200"
+    "\004\022\n\n\005SHOOT\020\200\010\022\n\n\005CLEAR\020\200\020\022\n\n\005BLOCK\020\200 \022\t\n"
+    "\004MARK\020\200@\022\021\n\013POSITIONING\020\200\200\001\022\n\n\004ROLE\020\200\200\002\022"
+    "\n\n\004TEAM\020\200\200\004\022\023\n\rCOMMUNICATION\020\200\200\010\022\016\n\010ANAL"
+    "YZER\020\200\200\020\022\022\n\014ACTION_CHAIN\020\200\200 \022\n\n\004PLAN\020\200\200@"
+    "*v\n\023InterceptActionType\022!\n\035UNKNOWN_Inter"
+    "cept_Action_Type\020\000\022\r\n\tOMNI_DASH\020\001\022\025\n\021TUR"
+    "N_FORWARD_DASH\020\002\022\026\n\022TURN_BACKWARD_DASH\020\003"
+    "*\232\t\n\014GameModeType\022\021\n\rBeforeKickOff\020\000\022\014\n\010"
+    "TimeOver\020\001\022\n\n\006PlayOn\020\002\022\020\n\014KickOff_Left\020\003"
+    "\022\021\n\rKickOff_Right\020\004\022\017\n\013KickIn_Left\020\005\022\020\n\014"
+    "KickIn_Right\020\006\022\021\n\rFreeKick_Left\020\007\022\022\n\016Fre"
+    "eKick_Right\020\010\022\023\n\017CornerKick_Left\020\t\022\024\n\020Co"
+    "rnerKick_Right\020\n\022\021\n\rGoalKick_Left\020\013\022\022\n\016G"
+    "oalKick_Right\020\014\022\022\n\016AfterGoal_Left\020\r\022\023\n\017A"
+    "fterGoal_Right\020\016\022\020\n\014OffSide_Left\020\017\022\021\n\rOf"
+    "fSide_Right\020\020\022\024\n\020PenaltyKick_Left\020\021\022\025\n\021P"
+    "enaltyKick_Right\020\022\022\021\n\rFirstHalfOver\020\023\022\t\n"
+    "\005Pause\020\024\022\t\n\005Human\020\025\022\023\n\017FoulCharge_Left\020\026"
+    "\022\024\n\020FoulCharge_Right\020\027\022\021\n\rFoulPush_Left\020"
+    "\030\022\022\n\016FoulPush_Right\020\031\022\035\n\031FoulMultipleAtt"
+    "acker_Left\020\032\022\036\n\032FoulMultipleAttacker_Rig"
+    "ht\020\033\022\024\n\020FoulBallOut_Left\020\034\022\025\n\021FoulBallOu"
+    "t_Right\020\035\022\021\n\rBackPass_Left\020\036\022\022\n\016BackPass"
+    "_Right\020\037\022\026\n\022FreeKickFault_Left\020 \022\027\n\023Free"
+    "KickFault_Right\020!\022\023\n\017CatchFault_Left\020\"\022\024"
+    "\n\020CatchFault_Right\020#\022\024\n\020IndFreeKick_Left"
+    "\020$\022\025\n\021IndFreeKick_Right\020%\022\025\n\021PenaltySetu"
+    "p_Left\020&\022\026\n\022PenaltySetup_Right\020\'\022\025\n\021Pena"
+    "ltyReady_Left\020(\022\026\n\022PenaltyReady_Right\020)\022"
+    "\025\n\021PenaltyTaken_Left\020*\022\026\n\022PenaltyTaken_R"
+    "ight\020+\022\024\n\020PenaltyMiss_Left\020,\022\025\n\021PenaltyM"
+    "iss_Right\020-\022\025\n\021PenaltyScore_Left\020.\022\026\n\022Pe"
+    "naltyScore_Right\020/\022\027\n\023IllegalDefense_Lef"
+    "t\0200\022\030\n\024IllegalDefense_Right\0201\022\022\n\016Penalty"
+    "Onfield\0202\022\017\n\013PenaltyFoul\0203\022\024\n\020GoalieCatc"
+    "h_Left\0204\022\025\n\021GoalieCatch_Right\0205\022\016\n\nExten"
+    "dHalf\0206\022\014\n\010MODE_MAX\02072p\n\004Game\022.\n\nGetActi"
+    "ons\022\r.protos.State\032\017.protos.Actions\"\000\0228\n"
+    "\020SendServerParams\022\023.protos.ServerParam\032\r"
+    ".protos.Empty\"\000b\006proto3"
 };
 static ::absl::once_flag descriptor_table_service_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_service_2eproto = {
     false,
     false,
-    16431,
+    21983,
     descriptor_table_protodef_service_2eproto,
     "service.proto",
     &descriptor_table_service_2eproto_once,
     nullptr,
     0,
-    97,
+    99,
     schemas,
     file_default_instances,
     TableStruct_service_2eproto::offsets,
@@ -33456,6 +34317,7808 @@ void Actions::InternalSwap(Actions* other) {
       &descriptor_table_service_2eproto_getter, &descriptor_table_service_2eproto_once,
       file_level_metadata_service_2eproto[96]);
 }
+// ===================================================================
+
+class ServerParam::_Internal {
+ public:
+};
+
+ServerParam::ServerParam(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:protos.ServerParam)
+}
+ServerParam::ServerParam(const ServerParam& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ServerParam* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.replay_file_) {}
+
+    , decltype(_impl_.landmark_file_) {}
+
+    , decltype(_impl_.text_log_dir_) {}
+
+    , decltype(_impl_.game_log_dir_) {}
+
+    , decltype(_impl_.text_log_fixed_name_) {}
+
+    , decltype(_impl_.game_log_fixed_name_) {}
+
+    , decltype(_impl_.log_date_format_) {}
+
+    , decltype(_impl_.team_l_start_) {}
+
+    , decltype(_impl_.team_r_start_) {}
+
+    , decltype(_impl_.keepaway_log_dir_) {}
+
+    , decltype(_impl_.keepaway_log_fixed_name_) {}
+
+    , decltype(_impl_.module_dir_) {}
+
+    , decltype(_impl_.coach_msg_file_) {}
+
+    , decltype(_impl_.fixed_teamname_l_) {}
+
+    , decltype(_impl_.fixed_teamname_r_) {}
+
+    , decltype(_impl_.goal_width_) {}
+
+    , decltype(_impl_.inertia_moment_) {}
+
+    , decltype(_impl_.player_size_) {}
+
+    , decltype(_impl_.player_decay_) {}
+
+    , decltype(_impl_.player_rand_) {}
+
+    , decltype(_impl_.player_weight_) {}
+
+    , decltype(_impl_.player_speed_max_) {}
+
+    , decltype(_impl_.player_accel_max_) {}
+
+    , decltype(_impl_.stamina_max_) {}
+
+    , decltype(_impl_.stamina_inc_max_) {}
+
+    , decltype(_impl_.recover_init_) {}
+
+    , decltype(_impl_.recover_dec_thr_) {}
+
+    , decltype(_impl_.recover_min_) {}
+
+    , decltype(_impl_.recover_dec_) {}
+
+    , decltype(_impl_.effort_init_) {}
+
+    , decltype(_impl_.effort_dec_thr_) {}
+
+    , decltype(_impl_.effort_min_) {}
+
+    , decltype(_impl_.effort_dec_) {}
+
+    , decltype(_impl_.effort_inc_thr_) {}
+
+    , decltype(_impl_.effort_inc_) {}
+
+    , decltype(_impl_.kick_rand_) {}
+
+    , decltype(_impl_.player_rand_factor_l_) {}
+
+    , decltype(_impl_.player_rand_factor_r_) {}
+
+    , decltype(_impl_.kick_rand_factor_l_) {}
+
+    , decltype(_impl_.kick_rand_factor_r_) {}
+
+    , decltype(_impl_.ball_size_) {}
+
+    , decltype(_impl_.ball_decay_) {}
+
+    , decltype(_impl_.ball_rand_) {}
+
+    , decltype(_impl_.ball_weight_) {}
+
+    , decltype(_impl_.ball_speed_max_) {}
+
+    , decltype(_impl_.ball_accel_max_) {}
+
+    , decltype(_impl_.dash_power_rate_) {}
+
+    , decltype(_impl_.kick_power_rate_) {}
+
+    , decltype(_impl_.kickable_margin_) {}
+
+    , decltype(_impl_.control_radius_) {}
+
+    , decltype(_impl_.control_radius_width_) {}
+
+    , decltype(_impl_.max_power_) {}
+
+    , decltype(_impl_.min_power_) {}
+
+    , decltype(_impl_.max_moment_) {}
+
+    , decltype(_impl_.min_moment_) {}
+
+    , decltype(_impl_.max_neck_moment_) {}
+
+    , decltype(_impl_.min_neck_moment_) {}
+
+    , decltype(_impl_.max_neck_angle_) {}
+
+    , decltype(_impl_.min_neck_angle_) {}
+
+    , decltype(_impl_.visible_angle_) {}
+
+    , decltype(_impl_.visible_distance_) {}
+
+    , decltype(_impl_.wind_dir_) {}
+
+    , decltype(_impl_.wind_force_) {}
+
+    , decltype(_impl_.wind_angle_) {}
+
+    , decltype(_impl_.wind_rand_) {}
+
+    , decltype(_impl_.kickable_area_) {}
+
+    , decltype(_impl_.catch_area_l_) {}
+
+    , decltype(_impl_.catch_area_w_) {}
+
+    , decltype(_impl_.catch_probability_) {}
+
+    , decltype(_impl_.team_actuator_noise_) {}
+
+    , decltype(_impl_.wind_none_) {}
+
+    , decltype(_impl_.use_wind_random_) {}
+
+    , decltype(_impl_.use_offside_) {}
+
+    , decltype(_impl_.goalie_max_moves_) {}
+
+    , decltype(_impl_.corner_kick_margin_) {}
+
+    , decltype(_impl_.offside_active_area_size_) {}
+
+    , decltype(_impl_.coach_say_count_max_) {}
+
+    , decltype(_impl_.coach_say_msg_size_) {}
+
+    , decltype(_impl_.clang_win_size_) {}
+
+    , decltype(_impl_.clang_define_win_) {}
+
+    , decltype(_impl_.clang_meta_win_) {}
+
+    , decltype(_impl_.clang_advice_win_) {}
+
+    , decltype(_impl_.clang_info_win_) {}
+
+    , decltype(_impl_.clang_mess_delay_) {}
+
+    , decltype(_impl_.clang_mess_per_cycle_) {}
+
+    , decltype(_impl_.half_time_) {}
+
+    , decltype(_impl_.simulator_step_) {}
+
+    , decltype(_impl_.send_step_) {}
+
+    , decltype(_impl_.recv_step_) {}
+
+    , decltype(_impl_.sense_body_step_) {}
+
+    , decltype(_impl_.lcm_step_) {}
+
+    , decltype(_impl_.player_say_msg_size_) {}
+
+    , decltype(_impl_.player_hear_max_) {}
+
+    , decltype(_impl_.player_hear_inc_) {}
+
+    , decltype(_impl_.player_hear_decay_) {}
+
+    , decltype(_impl_.catch_ban_cycle_) {}
+
+    , decltype(_impl_.slow_down_factor_) {}
+
+    , decltype(_impl_.offside_kick_margin_) {}
+
+    , decltype(_impl_.audio_cut_dist_) {}
+
+    , decltype(_impl_.dist_quantize_step_) {}
+
+    , decltype(_impl_.landmark_dist_quantize_step_) {}
+
+    , decltype(_impl_.dir_quantize_step_) {}
+
+    , decltype(_impl_.dist_quantize_step_l_) {}
+
+    , decltype(_impl_.dist_quantize_step_r_) {}
+
+    , decltype(_impl_.landmark_dist_quantize_step_l_) {}
+
+    , decltype(_impl_.landmark_dist_quantize_step_r_) {}
+
+    , decltype(_impl_.kickoff_offside_) {}
+
+    , decltype(_impl_.coach_mode_) {}
+
+    , decltype(_impl_.coach_with_referee_mode_) {}
+
+    , decltype(_impl_.use_old_coach_hear_) {}
+
+    , decltype(_impl_.dir_quantize_step_l_) {}
+
+    , decltype(_impl_.dir_quantize_step_r_) {}
+
+    , decltype(_impl_.slowness_on_top_for_left_team_) {}
+
+    , decltype(_impl_.slowness_on_top_for_right_team_) {}
+
+    , decltype(_impl_.start_goal_l_) {}
+
+    , decltype(_impl_.start_goal_r_) {}
+
+    , decltype(_impl_.drop_ball_time_) {}
+
+    , decltype(_impl_.fullstate_l_) {}
+
+    , decltype(_impl_.fullstate_r_) {}
+
+    , decltype(_impl_.synch_mode_) {}
+
+    , decltype(_impl_.verbose_mode_) {}
+
+    , decltype(_impl_.synch_offset_) {}
+
+    , decltype(_impl_.synch_micro_sleep_) {}
+
+    , decltype(_impl_.point_to_ban_) {}
+
+    , decltype(_impl_.point_to_duration_) {}
+
+    , decltype(_impl_.player_port_) {}
+
+    , decltype(_impl_.trainer_port_) {}
+
+    , decltype(_impl_.online_coach_port_) {}
+
+    , decltype(_impl_.coach_send_vi_step_) {}
+
+    , decltype(_impl_.send_comms_) {}
+
+    , decltype(_impl_.text_logging_) {}
+
+    , decltype(_impl_.game_logging_) {}
+
+    , decltype(_impl_.use_text_log_fixed_) {}
+
+    , decltype(_impl_.game_log_version_) {}
+
+    , decltype(_impl_.use_game_log_fixed_) {}
+
+    , decltype(_impl_.use_text_log_dated_) {}
+
+    , decltype(_impl_.use_game_log_dated_) {}
+
+    , decltype(_impl_.log_times_) {}
+
+    , decltype(_impl_.text_log_compression_) {}
+
+    , decltype(_impl_.game_log_compression_) {}
+
+    , decltype(_impl_.tackle_dist_) {}
+
+    , decltype(_impl_.tackle_back_dist_) {}
+
+    , decltype(_impl_.tackle_width_) {}
+
+    , decltype(_impl_.tackle_exponent_) {}
+
+    , decltype(_impl_.record_message_) {}
+
+    , decltype(_impl_.use_profile_) {}
+
+    , decltype(_impl_.free_kick_faults_) {}
+
+    , decltype(_impl_.back_passes_) {}
+
+    , decltype(_impl_.tackle_cycles_) {}
+
+    , decltype(_impl_.tackle_power_rate_) {}
+
+    , decltype(_impl_.freeform_wait_period_) {}
+
+    , decltype(_impl_.freeform_send_period_) {}
+
+    , decltype(_impl_.stopped_ball_vel_) {}
+
+    , decltype(_impl_.max_goal_kicks_) {}
+
+    , decltype(_impl_.clang_del_win_) {}
+
+    , decltype(_impl_.clang_rule_win_) {}
+
+    , decltype(_impl_.kick_off_wait_) {}
+
+    , decltype(_impl_.connect_wait_) {}
+
+    , decltype(_impl_.proper_goal_kicks_) {}
+
+    , decltype(_impl_.auto_mode_) {}
+
+    , decltype(_impl_.keepaway_mode_) {}
+
+    , decltype(_impl_.keepaway_logging_) {}
+
+    , decltype(_impl_.game_over_wait_) {}
+
+    , decltype(_impl_.keepaway_length_) {}
+
+    , decltype(_impl_.keepaway_width_) {}
+
+    , decltype(_impl_.keepaway_start_) {}
+
+    , decltype(_impl_.nr_normal_halfs_) {}
+
+    , decltype(_impl_.nr_extra_halfs_) {}
+
+    , decltype(_impl_.keepaway_log_fixed_) {}
+
+    , decltype(_impl_.keepaway_log_dated_) {}
+
+    , decltype(_impl_.penalty_shoot_outs_) {}
+
+    , decltype(_impl_.pen_random_winner_) {}
+
+    , decltype(_impl_.pen_before_setup_wait_) {}
+
+    , decltype(_impl_.pen_setup_wait_) {}
+
+    , decltype(_impl_.pen_ready_wait_) {}
+
+    , decltype(_impl_.pen_taken_wait_) {}
+
+    , decltype(_impl_.pen_nr_kicks_) {}
+
+    , decltype(_impl_.pen_max_extra_kicks_) {}
+
+    , decltype(_impl_.pen_dist_x_) {}
+
+    , decltype(_impl_.pen_max_goalie_dist_x_) {}
+
+    , decltype(_impl_.ball_stuck_area_) {}
+
+    , decltype(_impl_.max_tackle_power_) {}
+
+    , decltype(_impl_.max_back_tackle_power_) {}
+
+    , decltype(_impl_.player_speed_max_min_) {}
+
+    , decltype(_impl_.pen_allow_mult_kicks_) {}
+
+    , decltype(_impl_.pen_coach_moves_players_) {}
+
+    , decltype(_impl_.golden_goal_) {}
+
+    , decltype(_impl_.extra_stamina_) {}
+
+    , decltype(_impl_.synch_see_offset_) {}
+
+    , decltype(_impl_.extra_half_time_) {}
+
+    , decltype(_impl_.stamina_capacity_) {}
+
+    , decltype(_impl_.max_dash_angle_) {}
+
+    , decltype(_impl_.min_dash_angle_) {}
+
+    , decltype(_impl_.dash_angle_step_) {}
+
+    , decltype(_impl_.side_dash_rate_) {}
+
+    , decltype(_impl_.back_dash_rate_) {}
+
+    , decltype(_impl_.max_dash_power_) {}
+
+    , decltype(_impl_.min_dash_power_) {}
+
+    , decltype(_impl_.tackle_rand_factor_) {}
+
+    , decltype(_impl_.foul_detect_probability_) {}
+
+    , decltype(_impl_.foul_exponent_) {}
+
+    , decltype(_impl_.foul_cycles_) {}
+
+    , decltype(_impl_.red_card_probability_) {}
+
+    , decltype(_impl_.illegal_defense_duration_) {}
+
+    , decltype(_impl_.illegal_defense_number_) {}
+
+    , decltype(_impl_.illegal_defense_dist_x_) {}
+
+    , decltype(_impl_.illegal_defense_width_) {}
+
+    , decltype(_impl_.max_catch_angle_) {}
+
+    , decltype(_impl_.min_catch_angle_) {}
+
+    , decltype(_impl_.random_seed_) {}
+
+    , decltype(_impl_.long_kick_power_factor_) {}
+
+    , decltype(_impl_.long_kick_delay_) {}
+
+    , decltype(_impl_.max_monitors_) {}
+
+    , decltype(_impl_.catchable_area_) {}
+
+    , decltype(_impl_.real_speed_max_) {}
+
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.replay_file_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.replay_file_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_replay_file().empty()) {
+    _this->_impl_.replay_file_.Set(from._internal_replay_file(), _this->GetArenaForAllocation());
+  }
+  _impl_.landmark_file_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.landmark_file_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_landmark_file().empty()) {
+    _this->_impl_.landmark_file_.Set(from._internal_landmark_file(), _this->GetArenaForAllocation());
+  }
+  _impl_.text_log_dir_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.text_log_dir_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_text_log_dir().empty()) {
+    _this->_impl_.text_log_dir_.Set(from._internal_text_log_dir(), _this->GetArenaForAllocation());
+  }
+  _impl_.game_log_dir_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.game_log_dir_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_game_log_dir().empty()) {
+    _this->_impl_.game_log_dir_.Set(from._internal_game_log_dir(), _this->GetArenaForAllocation());
+  }
+  _impl_.text_log_fixed_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.text_log_fixed_name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_text_log_fixed_name().empty()) {
+    _this->_impl_.text_log_fixed_name_.Set(from._internal_text_log_fixed_name(), _this->GetArenaForAllocation());
+  }
+  _impl_.game_log_fixed_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.game_log_fixed_name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_game_log_fixed_name().empty()) {
+    _this->_impl_.game_log_fixed_name_.Set(from._internal_game_log_fixed_name(), _this->GetArenaForAllocation());
+  }
+  _impl_.log_date_format_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.log_date_format_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_log_date_format().empty()) {
+    _this->_impl_.log_date_format_.Set(from._internal_log_date_format(), _this->GetArenaForAllocation());
+  }
+  _impl_.team_l_start_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.team_l_start_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_team_l_start().empty()) {
+    _this->_impl_.team_l_start_.Set(from._internal_team_l_start(), _this->GetArenaForAllocation());
+  }
+  _impl_.team_r_start_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.team_r_start_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_team_r_start().empty()) {
+    _this->_impl_.team_r_start_.Set(from._internal_team_r_start(), _this->GetArenaForAllocation());
+  }
+  _impl_.keepaway_log_dir_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.keepaway_log_dir_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_keepaway_log_dir().empty()) {
+    _this->_impl_.keepaway_log_dir_.Set(from._internal_keepaway_log_dir(), _this->GetArenaForAllocation());
+  }
+  _impl_.keepaway_log_fixed_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.keepaway_log_fixed_name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_keepaway_log_fixed_name().empty()) {
+    _this->_impl_.keepaway_log_fixed_name_.Set(from._internal_keepaway_log_fixed_name(), _this->GetArenaForAllocation());
+  }
+  _impl_.module_dir_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.module_dir_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_module_dir().empty()) {
+    _this->_impl_.module_dir_.Set(from._internal_module_dir(), _this->GetArenaForAllocation());
+  }
+  _impl_.coach_msg_file_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.coach_msg_file_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_coach_msg_file().empty()) {
+    _this->_impl_.coach_msg_file_.Set(from._internal_coach_msg_file(), _this->GetArenaForAllocation());
+  }
+  _impl_.fixed_teamname_l_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.fixed_teamname_l_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_fixed_teamname_l().empty()) {
+    _this->_impl_.fixed_teamname_l_.Set(from._internal_fixed_teamname_l(), _this->GetArenaForAllocation());
+  }
+  _impl_.fixed_teamname_r_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.fixed_teamname_r_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_fixed_teamname_r().empty()) {
+    _this->_impl_.fixed_teamname_r_.Set(from._internal_fixed_teamname_r(), _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.goal_width_, &from._impl_.goal_width_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.real_speed_max_) -
+    reinterpret_cast<char*>(&_impl_.goal_width_)) + sizeof(_impl_.real_speed_max_));
+  // @@protoc_insertion_point(copy_constructor:protos.ServerParam)
+}
+
+inline void ServerParam::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_.replay_file_) {}
+
+    , decltype(_impl_.landmark_file_) {}
+
+    , decltype(_impl_.text_log_dir_) {}
+
+    , decltype(_impl_.game_log_dir_) {}
+
+    , decltype(_impl_.text_log_fixed_name_) {}
+
+    , decltype(_impl_.game_log_fixed_name_) {}
+
+    , decltype(_impl_.log_date_format_) {}
+
+    , decltype(_impl_.team_l_start_) {}
+
+    , decltype(_impl_.team_r_start_) {}
+
+    , decltype(_impl_.keepaway_log_dir_) {}
+
+    , decltype(_impl_.keepaway_log_fixed_name_) {}
+
+    , decltype(_impl_.module_dir_) {}
+
+    , decltype(_impl_.coach_msg_file_) {}
+
+    , decltype(_impl_.fixed_teamname_l_) {}
+
+    , decltype(_impl_.fixed_teamname_r_) {}
+
+    , decltype(_impl_.goal_width_) { 0 }
+
+    , decltype(_impl_.inertia_moment_) { 0 }
+
+    , decltype(_impl_.player_size_) { 0 }
+
+    , decltype(_impl_.player_decay_) { 0 }
+
+    , decltype(_impl_.player_rand_) { 0 }
+
+    , decltype(_impl_.player_weight_) { 0 }
+
+    , decltype(_impl_.player_speed_max_) { 0 }
+
+    , decltype(_impl_.player_accel_max_) { 0 }
+
+    , decltype(_impl_.stamina_max_) { 0 }
+
+    , decltype(_impl_.stamina_inc_max_) { 0 }
+
+    , decltype(_impl_.recover_init_) { 0 }
+
+    , decltype(_impl_.recover_dec_thr_) { 0 }
+
+    , decltype(_impl_.recover_min_) { 0 }
+
+    , decltype(_impl_.recover_dec_) { 0 }
+
+    , decltype(_impl_.effort_init_) { 0 }
+
+    , decltype(_impl_.effort_dec_thr_) { 0 }
+
+    , decltype(_impl_.effort_min_) { 0 }
+
+    , decltype(_impl_.effort_dec_) { 0 }
+
+    , decltype(_impl_.effort_inc_thr_) { 0 }
+
+    , decltype(_impl_.effort_inc_) { 0 }
+
+    , decltype(_impl_.kick_rand_) { 0 }
+
+    , decltype(_impl_.player_rand_factor_l_) { 0 }
+
+    , decltype(_impl_.player_rand_factor_r_) { 0 }
+
+    , decltype(_impl_.kick_rand_factor_l_) { 0 }
+
+    , decltype(_impl_.kick_rand_factor_r_) { 0 }
+
+    , decltype(_impl_.ball_size_) { 0 }
+
+    , decltype(_impl_.ball_decay_) { 0 }
+
+    , decltype(_impl_.ball_rand_) { 0 }
+
+    , decltype(_impl_.ball_weight_) { 0 }
+
+    , decltype(_impl_.ball_speed_max_) { 0 }
+
+    , decltype(_impl_.ball_accel_max_) { 0 }
+
+    , decltype(_impl_.dash_power_rate_) { 0 }
+
+    , decltype(_impl_.kick_power_rate_) { 0 }
+
+    , decltype(_impl_.kickable_margin_) { 0 }
+
+    , decltype(_impl_.control_radius_) { 0 }
+
+    , decltype(_impl_.control_radius_width_) { 0 }
+
+    , decltype(_impl_.max_power_) { 0 }
+
+    , decltype(_impl_.min_power_) { 0 }
+
+    , decltype(_impl_.max_moment_) { 0 }
+
+    , decltype(_impl_.min_moment_) { 0 }
+
+    , decltype(_impl_.max_neck_moment_) { 0 }
+
+    , decltype(_impl_.min_neck_moment_) { 0 }
+
+    , decltype(_impl_.max_neck_angle_) { 0 }
+
+    , decltype(_impl_.min_neck_angle_) { 0 }
+
+    , decltype(_impl_.visible_angle_) { 0 }
+
+    , decltype(_impl_.visible_distance_) { 0 }
+
+    , decltype(_impl_.wind_dir_) { 0 }
+
+    , decltype(_impl_.wind_force_) { 0 }
+
+    , decltype(_impl_.wind_angle_) { 0 }
+
+    , decltype(_impl_.wind_rand_) { 0 }
+
+    , decltype(_impl_.kickable_area_) { 0 }
+
+    , decltype(_impl_.catch_area_l_) { 0 }
+
+    , decltype(_impl_.catch_area_w_) { 0 }
+
+    , decltype(_impl_.catch_probability_) { 0 }
+
+    , decltype(_impl_.team_actuator_noise_) { false }
+
+    , decltype(_impl_.wind_none_) { false }
+
+    , decltype(_impl_.use_wind_random_) { false }
+
+    , decltype(_impl_.use_offside_) { false }
+
+    , decltype(_impl_.goalie_max_moves_) { 0 }
+
+    , decltype(_impl_.corner_kick_margin_) { 0 }
+
+    , decltype(_impl_.offside_active_area_size_) { 0 }
+
+    , decltype(_impl_.coach_say_count_max_) { 0 }
+
+    , decltype(_impl_.coach_say_msg_size_) { 0 }
+
+    , decltype(_impl_.clang_win_size_) { 0 }
+
+    , decltype(_impl_.clang_define_win_) { 0 }
+
+    , decltype(_impl_.clang_meta_win_) { 0 }
+
+    , decltype(_impl_.clang_advice_win_) { 0 }
+
+    , decltype(_impl_.clang_info_win_) { 0 }
+
+    , decltype(_impl_.clang_mess_delay_) { 0 }
+
+    , decltype(_impl_.clang_mess_per_cycle_) { 0 }
+
+    , decltype(_impl_.half_time_) { 0 }
+
+    , decltype(_impl_.simulator_step_) { 0 }
+
+    , decltype(_impl_.send_step_) { 0 }
+
+    , decltype(_impl_.recv_step_) { 0 }
+
+    , decltype(_impl_.sense_body_step_) { 0 }
+
+    , decltype(_impl_.lcm_step_) { 0 }
+
+    , decltype(_impl_.player_say_msg_size_) { 0 }
+
+    , decltype(_impl_.player_hear_max_) { 0 }
+
+    , decltype(_impl_.player_hear_inc_) { 0 }
+
+    , decltype(_impl_.player_hear_decay_) { 0 }
+
+    , decltype(_impl_.catch_ban_cycle_) { 0 }
+
+    , decltype(_impl_.slow_down_factor_) { 0 }
+
+    , decltype(_impl_.offside_kick_margin_) { 0 }
+
+    , decltype(_impl_.audio_cut_dist_) { 0 }
+
+    , decltype(_impl_.dist_quantize_step_) { 0 }
+
+    , decltype(_impl_.landmark_dist_quantize_step_) { 0 }
+
+    , decltype(_impl_.dir_quantize_step_) { 0 }
+
+    , decltype(_impl_.dist_quantize_step_l_) { 0 }
+
+    , decltype(_impl_.dist_quantize_step_r_) { 0 }
+
+    , decltype(_impl_.landmark_dist_quantize_step_l_) { 0 }
+
+    , decltype(_impl_.landmark_dist_quantize_step_r_) { 0 }
+
+    , decltype(_impl_.kickoff_offside_) { false }
+
+    , decltype(_impl_.coach_mode_) { false }
+
+    , decltype(_impl_.coach_with_referee_mode_) { false }
+
+    , decltype(_impl_.use_old_coach_hear_) { false }
+
+    , decltype(_impl_.dir_quantize_step_l_) { 0 }
+
+    , decltype(_impl_.dir_quantize_step_r_) { 0 }
+
+    , decltype(_impl_.slowness_on_top_for_left_team_) { 0 }
+
+    , decltype(_impl_.slowness_on_top_for_right_team_) { 0 }
+
+    , decltype(_impl_.start_goal_l_) { 0 }
+
+    , decltype(_impl_.start_goal_r_) { 0 }
+
+    , decltype(_impl_.drop_ball_time_) { 0 }
+
+    , decltype(_impl_.fullstate_l_) { false }
+
+    , decltype(_impl_.fullstate_r_) { false }
+
+    , decltype(_impl_.synch_mode_) { false }
+
+    , decltype(_impl_.verbose_mode_) { false }
+
+    , decltype(_impl_.synch_offset_) { 0 }
+
+    , decltype(_impl_.synch_micro_sleep_) { 0 }
+
+    , decltype(_impl_.point_to_ban_) { 0 }
+
+    , decltype(_impl_.point_to_duration_) { 0 }
+
+    , decltype(_impl_.player_port_) { 0 }
+
+    , decltype(_impl_.trainer_port_) { 0 }
+
+    , decltype(_impl_.online_coach_port_) { 0 }
+
+    , decltype(_impl_.coach_send_vi_step_) { 0 }
+
+    , decltype(_impl_.send_comms_) { false }
+
+    , decltype(_impl_.text_logging_) { false }
+
+    , decltype(_impl_.game_logging_) { false }
+
+    , decltype(_impl_.use_text_log_fixed_) { false }
+
+    , decltype(_impl_.game_log_version_) { 0 }
+
+    , decltype(_impl_.use_game_log_fixed_) { false }
+
+    , decltype(_impl_.use_text_log_dated_) { false }
+
+    , decltype(_impl_.use_game_log_dated_) { false }
+
+    , decltype(_impl_.log_times_) { false }
+
+    , decltype(_impl_.text_log_compression_) { 0 }
+
+    , decltype(_impl_.game_log_compression_) { 0 }
+
+    , decltype(_impl_.tackle_dist_) { 0 }
+
+    , decltype(_impl_.tackle_back_dist_) { 0 }
+
+    , decltype(_impl_.tackle_width_) { 0 }
+
+    , decltype(_impl_.tackle_exponent_) { 0 }
+
+    , decltype(_impl_.record_message_) { false }
+
+    , decltype(_impl_.use_profile_) { false }
+
+    , decltype(_impl_.free_kick_faults_) { false }
+
+    , decltype(_impl_.back_passes_) { false }
+
+    , decltype(_impl_.tackle_cycles_) { 0 }
+
+    , decltype(_impl_.tackle_power_rate_) { 0 }
+
+    , decltype(_impl_.freeform_wait_period_) { 0 }
+
+    , decltype(_impl_.freeform_send_period_) { 0 }
+
+    , decltype(_impl_.stopped_ball_vel_) { 0 }
+
+    , decltype(_impl_.max_goal_kicks_) { 0 }
+
+    , decltype(_impl_.clang_del_win_) { 0 }
+
+    , decltype(_impl_.clang_rule_win_) { 0 }
+
+    , decltype(_impl_.kick_off_wait_) { 0 }
+
+    , decltype(_impl_.connect_wait_) { 0 }
+
+    , decltype(_impl_.proper_goal_kicks_) { false }
+
+    , decltype(_impl_.auto_mode_) { false }
+
+    , decltype(_impl_.keepaway_mode_) { false }
+
+    , decltype(_impl_.keepaway_logging_) { false }
+
+    , decltype(_impl_.game_over_wait_) { 0 }
+
+    , decltype(_impl_.keepaway_length_) { 0 }
+
+    , decltype(_impl_.keepaway_width_) { 0 }
+
+    , decltype(_impl_.keepaway_start_) { 0 }
+
+    , decltype(_impl_.nr_normal_halfs_) { 0 }
+
+    , decltype(_impl_.nr_extra_halfs_) { 0 }
+
+    , decltype(_impl_.keepaway_log_fixed_) { false }
+
+    , decltype(_impl_.keepaway_log_dated_) { false }
+
+    , decltype(_impl_.penalty_shoot_outs_) { false }
+
+    , decltype(_impl_.pen_random_winner_) { false }
+
+    , decltype(_impl_.pen_before_setup_wait_) { 0 }
+
+    , decltype(_impl_.pen_setup_wait_) { 0 }
+
+    , decltype(_impl_.pen_ready_wait_) { 0 }
+
+    , decltype(_impl_.pen_taken_wait_) { 0 }
+
+    , decltype(_impl_.pen_nr_kicks_) { 0 }
+
+    , decltype(_impl_.pen_max_extra_kicks_) { 0 }
+
+    , decltype(_impl_.pen_dist_x_) { 0 }
+
+    , decltype(_impl_.pen_max_goalie_dist_x_) { 0 }
+
+    , decltype(_impl_.ball_stuck_area_) { 0 }
+
+    , decltype(_impl_.max_tackle_power_) { 0 }
+
+    , decltype(_impl_.max_back_tackle_power_) { 0 }
+
+    , decltype(_impl_.player_speed_max_min_) { 0 }
+
+    , decltype(_impl_.pen_allow_mult_kicks_) { false }
+
+    , decltype(_impl_.pen_coach_moves_players_) { false }
+
+    , decltype(_impl_.golden_goal_) { false }
+
+    , decltype(_impl_.extra_stamina_) { 0 }
+
+    , decltype(_impl_.synch_see_offset_) { 0 }
+
+    , decltype(_impl_.extra_half_time_) { 0 }
+
+    , decltype(_impl_.stamina_capacity_) { 0 }
+
+    , decltype(_impl_.max_dash_angle_) { 0 }
+
+    , decltype(_impl_.min_dash_angle_) { 0 }
+
+    , decltype(_impl_.dash_angle_step_) { 0 }
+
+    , decltype(_impl_.side_dash_rate_) { 0 }
+
+    , decltype(_impl_.back_dash_rate_) { 0 }
+
+    , decltype(_impl_.max_dash_power_) { 0 }
+
+    , decltype(_impl_.min_dash_power_) { 0 }
+
+    , decltype(_impl_.tackle_rand_factor_) { 0 }
+
+    , decltype(_impl_.foul_detect_probability_) { 0 }
+
+    , decltype(_impl_.foul_exponent_) { 0 }
+
+    , decltype(_impl_.foul_cycles_) { 0 }
+
+    , decltype(_impl_.red_card_probability_) { 0 }
+
+    , decltype(_impl_.illegal_defense_duration_) { 0 }
+
+    , decltype(_impl_.illegal_defense_number_) { 0 }
+
+    , decltype(_impl_.illegal_defense_dist_x_) { 0 }
+
+    , decltype(_impl_.illegal_defense_width_) { 0 }
+
+    , decltype(_impl_.max_catch_angle_) { 0 }
+
+    , decltype(_impl_.min_catch_angle_) { 0 }
+
+    , decltype(_impl_.random_seed_) { 0 }
+
+    , decltype(_impl_.long_kick_power_factor_) { 0 }
+
+    , decltype(_impl_.long_kick_delay_) { 0 }
+
+    , decltype(_impl_.max_monitors_) { 0 }
+
+    , decltype(_impl_.catchable_area_) { 0 }
+
+    , decltype(_impl_.real_speed_max_) { 0 }
+
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.replay_file_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.replay_file_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.landmark_file_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.landmark_file_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.text_log_dir_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.text_log_dir_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.game_log_dir_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.game_log_dir_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.text_log_fixed_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.text_log_fixed_name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.game_log_fixed_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.game_log_fixed_name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.log_date_format_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.log_date_format_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.team_l_start_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.team_l_start_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.team_r_start_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.team_r_start_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.keepaway_log_dir_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.keepaway_log_dir_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.keepaway_log_fixed_name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.keepaway_log_fixed_name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.module_dir_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.module_dir_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.coach_msg_file_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.coach_msg_file_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.fixed_teamname_l_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.fixed_teamname_l_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.fixed_teamname_r_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.fixed_teamname_r_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+ServerParam::~ServerParam() {
+  // @@protoc_insertion_point(destructor:protos.ServerParam)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ServerParam::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.replay_file_.Destroy();
+  _impl_.landmark_file_.Destroy();
+  _impl_.text_log_dir_.Destroy();
+  _impl_.game_log_dir_.Destroy();
+  _impl_.text_log_fixed_name_.Destroy();
+  _impl_.game_log_fixed_name_.Destroy();
+  _impl_.log_date_format_.Destroy();
+  _impl_.team_l_start_.Destroy();
+  _impl_.team_r_start_.Destroy();
+  _impl_.keepaway_log_dir_.Destroy();
+  _impl_.keepaway_log_fixed_name_.Destroy();
+  _impl_.module_dir_.Destroy();
+  _impl_.coach_msg_file_.Destroy();
+  _impl_.fixed_teamname_l_.Destroy();
+  _impl_.fixed_teamname_r_.Destroy();
+}
+
+void ServerParam::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ServerParam::Clear() {
+// @@protoc_insertion_point(message_clear_start:protos.ServerParam)
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.replay_file_.ClearToEmpty();
+  _impl_.landmark_file_.ClearToEmpty();
+  _impl_.text_log_dir_.ClearToEmpty();
+  _impl_.game_log_dir_.ClearToEmpty();
+  _impl_.text_log_fixed_name_.ClearToEmpty();
+  _impl_.game_log_fixed_name_.ClearToEmpty();
+  _impl_.log_date_format_.ClearToEmpty();
+  _impl_.team_l_start_.ClearToEmpty();
+  _impl_.team_r_start_.ClearToEmpty();
+  _impl_.keepaway_log_dir_.ClearToEmpty();
+  _impl_.keepaway_log_fixed_name_.ClearToEmpty();
+  _impl_.module_dir_.ClearToEmpty();
+  _impl_.coach_msg_file_.ClearToEmpty();
+  _impl_.fixed_teamname_l_.ClearToEmpty();
+  _impl_.fixed_teamname_r_.ClearToEmpty();
+  ::memset(&_impl_.goal_width_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.real_speed_max_) -
+      reinterpret_cast<char*>(&_impl_.goal_width_)) + sizeof(_impl_.real_speed_max_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ServerParam::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // float goal_width = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 13)) {
+          _impl_.goal_width_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float inertia_moment = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 21)) {
+          _impl_.inertia_moment_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_size = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 29)) {
+          _impl_.player_size_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_decay = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 37)) {
+          _impl_.player_decay_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_rand = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 45)) {
+          _impl_.player_rand_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_weight = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 53)) {
+          _impl_.player_weight_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_speed_max = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 61)) {
+          _impl_.player_speed_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_accel_max = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 69)) {
+          _impl_.player_accel_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float stamina_max = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 77)) {
+          _impl_.stamina_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float stamina_inc_max = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 85)) {
+          _impl_.stamina_inc_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float recover_init = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 93)) {
+          _impl_.recover_init_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float recover_dec_thr = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 101)) {
+          _impl_.recover_dec_thr_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float recover_min = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 109)) {
+          _impl_.recover_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float recover_dec = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 117)) {
+          _impl_.recover_dec_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float effort_init = 15;
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 125)) {
+          _impl_.effort_init_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float effort_dec_thr = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 133)) {
+          _impl_.effort_dec_thr_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float effort_min = 17;
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 141)) {
+          _impl_.effort_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float effort_dec = 18;
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 149)) {
+          _impl_.effort_dec_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float effort_inc_thr = 19;
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 157)) {
+          _impl_.effort_inc_thr_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float effort_inc = 20;
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 165)) {
+          _impl_.effort_inc_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kick_rand = 21;
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 173)) {
+          _impl_.kick_rand_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool team_actuator_noise = 22;
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 176)) {
+          _impl_.team_actuator_noise_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_rand_factor_l = 23;
+      case 23:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 189)) {
+          _impl_.player_rand_factor_l_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_rand_factor_r = 24;
+      case 24:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 197)) {
+          _impl_.player_rand_factor_r_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kick_rand_factor_l = 25;
+      case 25:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 205)) {
+          _impl_.kick_rand_factor_l_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kick_rand_factor_r = 26;
+      case 26:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 213)) {
+          _impl_.kick_rand_factor_r_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float ball_size = 27;
+      case 27:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 221)) {
+          _impl_.ball_size_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float ball_decay = 28;
+      case 28:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 229)) {
+          _impl_.ball_decay_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float ball_rand = 29;
+      case 29:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 237)) {
+          _impl_.ball_rand_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float ball_weight = 30;
+      case 30:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 245)) {
+          _impl_.ball_weight_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float ball_speed_max = 31;
+      case 31:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 253)) {
+          _impl_.ball_speed_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float ball_accel_max = 32;
+      case 32:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 5)) {
+          _impl_.ball_accel_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dash_power_rate = 33;
+      case 33:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 13)) {
+          _impl_.dash_power_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kick_power_rate = 34;
+      case 34:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 21)) {
+          _impl_.kick_power_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kickable_margin = 35;
+      case 35:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 29)) {
+          _impl_.kickable_margin_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float control_radius = 36;
+      case 36:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 37)) {
+          _impl_.control_radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float control_radius_width = 37;
+      case 37:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 45)) {
+          _impl_.control_radius_width_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float max_power = 38;
+      case 38:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 53)) {
+          _impl_.max_power_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float min_power = 39;
+      case 39:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 61)) {
+          _impl_.min_power_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float max_moment = 40;
+      case 40:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 69)) {
+          _impl_.max_moment_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float min_moment = 41;
+      case 41:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 77)) {
+          _impl_.min_moment_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float max_neck_moment = 42;
+      case 42:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 85)) {
+          _impl_.max_neck_moment_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float min_neck_moment = 43;
+      case 43:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 93)) {
+          _impl_.min_neck_moment_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float max_neck_angle = 44;
+      case 44:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 101)) {
+          _impl_.max_neck_angle_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float min_neck_angle = 45;
+      case 45:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 109)) {
+          _impl_.min_neck_angle_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float visible_angle = 46;
+      case 46:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 117)) {
+          _impl_.visible_angle_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float visible_distance = 47;
+      case 47:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 125)) {
+          _impl_.visible_distance_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float wind_dir = 48;
+      case 48:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 133)) {
+          _impl_.wind_dir_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float wind_force = 49;
+      case 49:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 141)) {
+          _impl_.wind_force_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float wind_angle = 50;
+      case 50:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 149)) {
+          _impl_.wind_angle_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float wind_rand = 51;
+      case 51:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 157)) {
+          _impl_.wind_rand_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float kickable_area = 52;
+      case 52:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 165)) {
+          _impl_.kickable_area_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float catch_area_l = 53;
+      case 53:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 173)) {
+          _impl_.catch_area_l_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float catch_area_w = 54;
+      case 54:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 181)) {
+          _impl_.catch_area_w_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float catch_probability = 55;
+      case 55:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 189)) {
+          _impl_.catch_probability_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 goalie_max_moves = 56;
+      case 56:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 192)) {
+          _impl_.goalie_max_moves_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float corner_kick_margin = 57;
+      case 57:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 205)) {
+          _impl_.corner_kick_margin_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float offside_active_area_size = 58;
+      case 58:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 213)) {
+          _impl_.offside_active_area_size_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool wind_none = 59;
+      case 59:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 216)) {
+          _impl_.wind_none_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool use_wind_random = 60;
+      case 60:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 224)) {
+          _impl_.use_wind_random_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 coach_say_count_max = 61;
+      case 61:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 232)) {
+          _impl_.coach_say_count_max_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 coach_say_msg_size = 62;
+      case 62:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 240)) {
+          _impl_.coach_say_msg_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 clang_win_size = 63;
+      case 63:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 248)) {
+          _impl_.clang_win_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 clang_define_win = 64;
+      case 64:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 0)) {
+          _impl_.clang_define_win_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 clang_meta_win = 65;
+      case 65:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+          _impl_.clang_meta_win_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 clang_advice_win = 66;
+      case 66:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 16)) {
+          _impl_.clang_advice_win_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 clang_info_win = 67;
+      case 67:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 24)) {
+          _impl_.clang_info_win_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 clang_mess_delay = 68;
+      case 68:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 32)) {
+          _impl_.clang_mess_delay_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 clang_mess_per_cycle = 69;
+      case 69:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 40)) {
+          _impl_.clang_mess_per_cycle_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 half_time = 70;
+      case 70:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 48)) {
+          _impl_.half_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 simulator_step = 71;
+      case 71:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 56)) {
+          _impl_.simulator_step_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 send_step = 72;
+      case 72:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 64)) {
+          _impl_.send_step_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 recv_step = 73;
+      case 73:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 72)) {
+          _impl_.recv_step_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 sense_body_step = 74;
+      case 74:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 80)) {
+          _impl_.sense_body_step_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 lcm_step = 75;
+      case 75:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 88)) {
+          _impl_.lcm_step_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 player_say_msg_size = 76;
+      case 76:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 96)) {
+          _impl_.player_say_msg_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 player_hear_max = 77;
+      case 77:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 104)) {
+          _impl_.player_hear_max_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 player_hear_inc = 78;
+      case 78:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 112)) {
+          _impl_.player_hear_inc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 player_hear_decay = 79;
+      case 79:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 120)) {
+          _impl_.player_hear_decay_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 catch_ban_cycle = 80;
+      case 80:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 128)) {
+          _impl_.catch_ban_cycle_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 slow_down_factor = 81;
+      case 81:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 136)) {
+          _impl_.slow_down_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool use_offside = 82;
+      case 82:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 144)) {
+          _impl_.use_offside_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool kickoff_offside = 83;
+      case 83:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 152)) {
+          _impl_.kickoff_offside_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float offside_kick_margin = 84;
+      case 84:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 165)) {
+          _impl_.offside_kick_margin_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float audio_cut_dist = 85;
+      case 85:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 173)) {
+          _impl_.audio_cut_dist_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dist_quantize_step = 86;
+      case 86:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 181)) {
+          _impl_.dist_quantize_step_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float landmark_dist_quantize_step = 87;
+      case 87:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 189)) {
+          _impl_.landmark_dist_quantize_step_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dir_quantize_step = 88;
+      case 88:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 197)) {
+          _impl_.dir_quantize_step_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dist_quantize_step_l = 89;
+      case 89:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 205)) {
+          _impl_.dist_quantize_step_l_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dist_quantize_step_r = 90;
+      case 90:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 213)) {
+          _impl_.dist_quantize_step_r_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float landmark_dist_quantize_step_l = 91;
+      case 91:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 221)) {
+          _impl_.landmark_dist_quantize_step_l_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float landmark_dist_quantize_step_r = 92;
+      case 92:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 229)) {
+          _impl_.landmark_dist_quantize_step_r_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dir_quantize_step_l = 93;
+      case 93:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 237)) {
+          _impl_.dir_quantize_step_l_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dir_quantize_step_r = 94;
+      case 94:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 245)) {
+          _impl_.dir_quantize_step_r_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool coach_mode = 95;
+      case 95:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 248)) {
+          _impl_.coach_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool coach_with_referee_mode = 96;
+      case 96:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 0)) {
+          _impl_.coach_with_referee_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool use_old_coach_hear = 97;
+      case 97:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 8)) {
+          _impl_.use_old_coach_hear_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float slowness_on_top_for_left_team = 98;
+      case 98:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 21)) {
+          _impl_.slowness_on_top_for_left_team_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float slowness_on_top_for_right_team = 99;
+      case 99:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 29)) {
+          _impl_.slowness_on_top_for_right_team_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 start_goal_l = 100;
+      case 100:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 32)) {
+          _impl_.start_goal_l_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 start_goal_r = 101;
+      case 101:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 40)) {
+          _impl_.start_goal_r_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool fullstate_l = 102;
+      case 102:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 48)) {
+          _impl_.fullstate_l_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool fullstate_r = 103;
+      case 103:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 56)) {
+          _impl_.fullstate_r_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 drop_ball_time = 104;
+      case 104:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 64)) {
+          _impl_.drop_ball_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool synch_mode = 105;
+      case 105:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 72)) {
+          _impl_.synch_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 synch_offset = 106;
+      case 106:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 80)) {
+          _impl_.synch_offset_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 synch_micro_sleep = 107;
+      case 107:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 88)) {
+          _impl_.synch_micro_sleep_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 point_to_ban = 108;
+      case 108:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 96)) {
+          _impl_.point_to_ban_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 point_to_duration = 109;
+      case 109:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 104)) {
+          _impl_.point_to_duration_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 player_port = 110;
+      case 110:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 112)) {
+          _impl_.player_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 trainer_port = 111;
+      case 111:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 120)) {
+          _impl_.trainer_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 online_coach_port = 112;
+      case 112:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 128)) {
+          _impl_.online_coach_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool verbose_mode = 113;
+      case 113:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 136)) {
+          _impl_.verbose_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 coach_send_vi_step = 114;
+      case 114:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 144)) {
+          _impl_.coach_send_vi_step_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string replay_file = 115;
+      case 115:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 154)) {
+          auto str = _internal_mutable_replay_file();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.replay_file"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string landmark_file = 116;
+      case 116:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 162)) {
+          auto str = _internal_mutable_landmark_file();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.landmark_file"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool send_comms = 117;
+      case 117:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 168)) {
+          _impl_.send_comms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool text_logging = 118;
+      case 118:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 176)) {
+          _impl_.text_logging_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool game_logging = 119;
+      case 119:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 184)) {
+          _impl_.game_logging_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 game_log_version = 120;
+      case 120:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 192)) {
+          _impl_.game_log_version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string text_log_dir = 121;
+      case 121:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 202)) {
+          auto str = _internal_mutable_text_log_dir();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.text_log_dir"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string game_log_dir = 122;
+      case 122:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 210)) {
+          auto str = _internal_mutable_game_log_dir();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.game_log_dir"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string text_log_fixed_name = 123;
+      case 123:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 218)) {
+          auto str = _internal_mutable_text_log_fixed_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.text_log_fixed_name"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string game_log_fixed_name = 124;
+      case 124:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 226)) {
+          auto str = _internal_mutable_game_log_fixed_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.game_log_fixed_name"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool use_text_log_fixed = 125;
+      case 125:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 232)) {
+          _impl_.use_text_log_fixed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool use_game_log_fixed = 126;
+      case 126:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 240)) {
+          _impl_.use_game_log_fixed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool use_text_log_dated = 127;
+      case 127:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 248)) {
+          _impl_.use_text_log_dated_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool use_game_log_dated = 128;
+      case 128:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 0)) {
+          _impl_.use_game_log_dated_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string log_date_format = 129;
+      case 129:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_log_date_format();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.log_date_format"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool log_times = 130;
+      case 130:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 16)) {
+          _impl_.log_times_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool record_message = 131;
+      case 131:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 24)) {
+          _impl_.record_message_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 text_log_compression = 132;
+      case 132:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 32)) {
+          _impl_.text_log_compression_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 game_log_compression = 133;
+      case 133:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 40)) {
+          _impl_.game_log_compression_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool use_profile = 134;
+      case 134:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 48)) {
+          _impl_.use_profile_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float tackle_dist = 135;
+      case 135:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 61)) {
+          _impl_.tackle_dist_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float tackle_back_dist = 136;
+      case 136:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 69)) {
+          _impl_.tackle_back_dist_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float tackle_width = 137;
+      case 137:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 77)) {
+          _impl_.tackle_width_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float tackle_exponent = 138;
+      case 138:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 85)) {
+          _impl_.tackle_exponent_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 tackle_cycles = 139;
+      case 139:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 88)) {
+          _impl_.tackle_cycles_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float tackle_power_rate = 140;
+      case 140:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 101)) {
+          _impl_.tackle_power_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 freeform_wait_period = 141;
+      case 141:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 104)) {
+          _impl_.freeform_wait_period_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 freeform_send_period = 142;
+      case 142:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 112)) {
+          _impl_.freeform_send_period_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool free_kick_faults = 143;
+      case 143:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 120)) {
+          _impl_.free_kick_faults_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool back_passes = 144;
+      case 144:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 128)) {
+          _impl_.back_passes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool proper_goal_kicks = 145;
+      case 145:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 136)) {
+          _impl_.proper_goal_kicks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float stopped_ball_vel = 146;
+      case 146:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 149)) {
+          _impl_.stopped_ball_vel_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 max_goal_kicks = 147;
+      case 147:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 152)) {
+          _impl_.max_goal_kicks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 clang_del_win = 148;
+      case 148:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 160)) {
+          _impl_.clang_del_win_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 clang_rule_win = 149;
+      case 149:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 168)) {
+          _impl_.clang_rule_win_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool auto_mode = 150;
+      case 150:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 176)) {
+          _impl_.auto_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 kick_off_wait = 151;
+      case 151:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 184)) {
+          _impl_.kick_off_wait_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 connect_wait = 152;
+      case 152:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 192)) {
+          _impl_.connect_wait_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 game_over_wait = 153;
+      case 153:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 200)) {
+          _impl_.game_over_wait_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string team_l_start = 154;
+      case 154:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 210)) {
+          auto str = _internal_mutable_team_l_start();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.team_l_start"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string team_r_start = 155;
+      case 155:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 218)) {
+          auto str = _internal_mutable_team_r_start();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.team_r_start"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool keepaway_mode = 156;
+      case 156:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 224)) {
+          _impl_.keepaway_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float keepaway_length = 157;
+      case 157:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 237)) {
+          _impl_.keepaway_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float keepaway_width = 158;
+      case 158:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 245)) {
+          _impl_.keepaway_width_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool keepaway_logging = 159;
+      case 159:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 248)) {
+          _impl_.keepaway_logging_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string keepaway_log_dir = 160;
+      case 160:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 2)) {
+          auto str = _internal_mutable_keepaway_log_dir();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.keepaway_log_dir"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string keepaway_log_fixed_name = 161;
+      case 161:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_keepaway_log_fixed_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.keepaway_log_fixed_name"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool keepaway_log_fixed = 162;
+      case 162:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 16)) {
+          _impl_.keepaway_log_fixed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool keepaway_log_dated = 163;
+      case 163:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 24)) {
+          _impl_.keepaway_log_dated_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 keepaway_start = 164;
+      case 164:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 32)) {
+          _impl_.keepaway_start_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 nr_normal_halfs = 165;
+      case 165:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 40)) {
+          _impl_.nr_normal_halfs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 nr_extra_halfs = 166;
+      case 166:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 48)) {
+          _impl_.nr_extra_halfs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool penalty_shoot_outs = 167;
+      case 167:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 56)) {
+          _impl_.penalty_shoot_outs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 pen_before_setup_wait = 168;
+      case 168:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 64)) {
+          _impl_.pen_before_setup_wait_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 pen_setup_wait = 169;
+      case 169:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 72)) {
+          _impl_.pen_setup_wait_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 pen_ready_wait = 170;
+      case 170:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 80)) {
+          _impl_.pen_ready_wait_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 pen_taken_wait = 171;
+      case 171:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 88)) {
+          _impl_.pen_taken_wait_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 pen_nr_kicks = 172;
+      case 172:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 96)) {
+          _impl_.pen_nr_kicks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 pen_max_extra_kicks = 173;
+      case 173:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 104)) {
+          _impl_.pen_max_extra_kicks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float pen_dist_x = 174;
+      case 174:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 117)) {
+          _impl_.pen_dist_x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool pen_random_winner = 175;
+      case 175:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 120)) {
+          _impl_.pen_random_winner_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool pen_allow_mult_kicks = 176;
+      case 176:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 128)) {
+          _impl_.pen_allow_mult_kicks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float pen_max_goalie_dist_x = 177;
+      case 177:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 141)) {
+          _impl_.pen_max_goalie_dist_x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool pen_coach_moves_players = 178;
+      case 178:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 144)) {
+          _impl_.pen_coach_moves_players_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string module_dir = 179;
+      case 179:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 154)) {
+          auto str = _internal_mutable_module_dir();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.module_dir"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float ball_stuck_area = 180;
+      case 180:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 165)) {
+          _impl_.ball_stuck_area_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string coach_msg_file = 181;
+      case 181:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 170)) {
+          auto str = _internal_mutable_coach_msg_file();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.coach_msg_file"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float max_tackle_power = 182;
+      case 182:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 181)) {
+          _impl_.max_tackle_power_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float max_back_tackle_power = 183;
+      case 183:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 189)) {
+          _impl_.max_back_tackle_power_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float player_speed_max_min = 184;
+      case 184:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 197)) {
+          _impl_.player_speed_max_min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float extra_stamina = 185;
+      case 185:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 205)) {
+          _impl_.extra_stamina_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 synch_see_offset = 186;
+      case 186:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 208)) {
+          _impl_.synch_see_offset_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 extra_half_time = 187;
+      case 187:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 216)) {
+          _impl_.extra_half_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float stamina_capacity = 188;
+      case 188:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 229)) {
+          _impl_.stamina_capacity_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float max_dash_angle = 189;
+      case 189:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 237)) {
+          _impl_.max_dash_angle_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float min_dash_angle = 190;
+      case 190:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 245)) {
+          _impl_.min_dash_angle_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float dash_angle_step = 191;
+      case 191:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 253)) {
+          _impl_.dash_angle_step_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float side_dash_rate = 192;
+      case 192:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 5)) {
+          _impl_.side_dash_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float back_dash_rate = 193;
+      case 193:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 13)) {
+          _impl_.back_dash_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float max_dash_power = 194;
+      case 194:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 21)) {
+          _impl_.max_dash_power_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float min_dash_power = 195;
+      case 195:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 29)) {
+          _impl_.min_dash_power_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float tackle_rand_factor = 196;
+      case 196:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 37)) {
+          _impl_.tackle_rand_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float foul_detect_probability = 197;
+      case 197:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 45)) {
+          _impl_.foul_detect_probability_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float foul_exponent = 198;
+      case 198:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 53)) {
+          _impl_.foul_exponent_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 foul_cycles = 199;
+      case 199:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 56)) {
+          _impl_.foul_cycles_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // bool golden_goal = 200;
+      case 200:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 64)) {
+          _impl_.golden_goal_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float red_card_probability = 201;
+      case 201:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 77)) {
+          _impl_.red_card_probability_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 illegal_defense_duration = 202;
+      case 202:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 80)) {
+          _impl_.illegal_defense_duration_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 illegal_defense_number = 203;
+      case 203:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 88)) {
+          _impl_.illegal_defense_number_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float illegal_defense_dist_x = 204;
+      case 204:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 101)) {
+          _impl_.illegal_defense_dist_x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float illegal_defense_width = 205;
+      case 205:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 109)) {
+          _impl_.illegal_defense_width_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string fixed_teamname_l = 206;
+      case 206:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 114)) {
+          auto str = _internal_mutable_fixed_teamname_l();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.fixed_teamname_l"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // string fixed_teamname_r = 207;
+      case 207:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 122)) {
+          auto str = _internal_mutable_fixed_teamname_r();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "protos.ServerParam.fixed_teamname_r"));
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float max_catch_angle = 208;
+      case 208:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 133)) {
+          _impl_.max_catch_angle_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float min_catch_angle = 209;
+      case 209:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 141)) {
+          _impl_.min_catch_angle_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 random_seed = 210;
+      case 210:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 144)) {
+          _impl_.random_seed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float long_kick_power_factor = 211;
+      case 211:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 157)) {
+          _impl_.long_kick_power_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 long_kick_delay = 212;
+      case 212:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 160)) {
+          _impl_.long_kick_delay_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // int32 max_monitors = 213;
+      case 213:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 168)) {
+          _impl_.max_monitors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float catchable_area = 214;
+      case 214:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 181)) {
+          _impl_.catchable_area_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      // float real_speed_max = 215;
+      case 215:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::uint8_t>(tag) == 189)) {
+          _impl_.real_speed_max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else {
+          goto handle_unusual;
+        }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+::uint8_t* ServerParam::_InternalSerialize(
+    ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:protos.ServerParam)
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float goal_width = 1;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_goal_width = this->_internal_goal_width();
+  ::uint32_t raw_goal_width;
+  memcpy(&raw_goal_width, &tmp_goal_width, sizeof(tmp_goal_width));
+  if (raw_goal_width != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        1, this->_internal_goal_width(), target);
+  }
+
+  // float inertia_moment = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_inertia_moment = this->_internal_inertia_moment();
+  ::uint32_t raw_inertia_moment;
+  memcpy(&raw_inertia_moment, &tmp_inertia_moment, sizeof(tmp_inertia_moment));
+  if (raw_inertia_moment != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_inertia_moment(), target);
+  }
+
+  // float player_size = 3;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_size = this->_internal_player_size();
+  ::uint32_t raw_player_size;
+  memcpy(&raw_player_size, &tmp_player_size, sizeof(tmp_player_size));
+  if (raw_player_size != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_player_size(), target);
+  }
+
+  // float player_decay = 4;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay = this->_internal_player_decay();
+  ::uint32_t raw_player_decay;
+  memcpy(&raw_player_decay, &tmp_player_decay, sizeof(tmp_player_decay));
+  if (raw_player_decay != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_player_decay(), target);
+  }
+
+  // float player_rand = 5;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_rand = this->_internal_player_rand();
+  ::uint32_t raw_player_rand;
+  memcpy(&raw_player_rand, &tmp_player_rand, sizeof(tmp_player_rand));
+  if (raw_player_rand != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        5, this->_internal_player_rand(), target);
+  }
+
+  // float player_weight = 6;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_weight = this->_internal_player_weight();
+  ::uint32_t raw_player_weight;
+  memcpy(&raw_player_weight, &tmp_player_weight, sizeof(tmp_player_weight));
+  if (raw_player_weight != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        6, this->_internal_player_weight(), target);
+  }
+
+  // float player_speed_max = 7;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max = this->_internal_player_speed_max();
+  ::uint32_t raw_player_speed_max;
+  memcpy(&raw_player_speed_max, &tmp_player_speed_max, sizeof(tmp_player_speed_max));
+  if (raw_player_speed_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        7, this->_internal_player_speed_max(), target);
+  }
+
+  // float player_accel_max = 8;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_accel_max = this->_internal_player_accel_max();
+  ::uint32_t raw_player_accel_max;
+  memcpy(&raw_player_accel_max, &tmp_player_accel_max, sizeof(tmp_player_accel_max));
+  if (raw_player_accel_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        8, this->_internal_player_accel_max(), target);
+  }
+
+  // float stamina_max = 9;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_max = this->_internal_stamina_max();
+  ::uint32_t raw_stamina_max;
+  memcpy(&raw_stamina_max, &tmp_stamina_max, sizeof(tmp_stamina_max));
+  if (raw_stamina_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        9, this->_internal_stamina_max(), target);
+  }
+
+  // float stamina_inc_max = 10;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_inc_max = this->_internal_stamina_inc_max();
+  ::uint32_t raw_stamina_inc_max;
+  memcpy(&raw_stamina_inc_max, &tmp_stamina_inc_max, sizeof(tmp_stamina_inc_max));
+  if (raw_stamina_inc_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        10, this->_internal_stamina_inc_max(), target);
+  }
+
+  // float recover_init = 11;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_init = this->_internal_recover_init();
+  ::uint32_t raw_recover_init;
+  memcpy(&raw_recover_init, &tmp_recover_init, sizeof(tmp_recover_init));
+  if (raw_recover_init != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        11, this->_internal_recover_init(), target);
+  }
+
+  // float recover_dec_thr = 12;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_dec_thr = this->_internal_recover_dec_thr();
+  ::uint32_t raw_recover_dec_thr;
+  memcpy(&raw_recover_dec_thr, &tmp_recover_dec_thr, sizeof(tmp_recover_dec_thr));
+  if (raw_recover_dec_thr != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        12, this->_internal_recover_dec_thr(), target);
+  }
+
+  // float recover_min = 13;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_min = this->_internal_recover_min();
+  ::uint32_t raw_recover_min;
+  memcpy(&raw_recover_min, &tmp_recover_min, sizeof(tmp_recover_min));
+  if (raw_recover_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        13, this->_internal_recover_min(), target);
+  }
+
+  // float recover_dec = 14;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_dec = this->_internal_recover_dec();
+  ::uint32_t raw_recover_dec;
+  memcpy(&raw_recover_dec, &tmp_recover_dec, sizeof(tmp_recover_dec));
+  if (raw_recover_dec != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        14, this->_internal_recover_dec(), target);
+  }
+
+  // float effort_init = 15;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_init = this->_internal_effort_init();
+  ::uint32_t raw_effort_init;
+  memcpy(&raw_effort_init, &tmp_effort_init, sizeof(tmp_effort_init));
+  if (raw_effort_init != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        15, this->_internal_effort_init(), target);
+  }
+
+  // float effort_dec_thr = 16;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_dec_thr = this->_internal_effort_dec_thr();
+  ::uint32_t raw_effort_dec_thr;
+  memcpy(&raw_effort_dec_thr, &tmp_effort_dec_thr, sizeof(tmp_effort_dec_thr));
+  if (raw_effort_dec_thr != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        16, this->_internal_effort_dec_thr(), target);
+  }
+
+  // float effort_min = 17;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_min = this->_internal_effort_min();
+  ::uint32_t raw_effort_min;
+  memcpy(&raw_effort_min, &tmp_effort_min, sizeof(tmp_effort_min));
+  if (raw_effort_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        17, this->_internal_effort_min(), target);
+  }
+
+  // float effort_dec = 18;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_dec = this->_internal_effort_dec();
+  ::uint32_t raw_effort_dec;
+  memcpy(&raw_effort_dec, &tmp_effort_dec, sizeof(tmp_effort_dec));
+  if (raw_effort_dec != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        18, this->_internal_effort_dec(), target);
+  }
+
+  // float effort_inc_thr = 19;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_inc_thr = this->_internal_effort_inc_thr();
+  ::uint32_t raw_effort_inc_thr;
+  memcpy(&raw_effort_inc_thr, &tmp_effort_inc_thr, sizeof(tmp_effort_inc_thr));
+  if (raw_effort_inc_thr != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        19, this->_internal_effort_inc_thr(), target);
+  }
+
+  // float effort_inc = 20;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_inc = this->_internal_effort_inc();
+  ::uint32_t raw_effort_inc;
+  memcpy(&raw_effort_inc, &tmp_effort_inc, sizeof(tmp_effort_inc));
+  if (raw_effort_inc != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        20, this->_internal_effort_inc(), target);
+  }
+
+  // float kick_rand = 21;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand = this->_internal_kick_rand();
+  ::uint32_t raw_kick_rand;
+  memcpy(&raw_kick_rand, &tmp_kick_rand, sizeof(tmp_kick_rand));
+  if (raw_kick_rand != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        21, this->_internal_kick_rand(), target);
+  }
+
+  // bool team_actuator_noise = 22;
+  if (this->_internal_team_actuator_noise() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        22, this->_internal_team_actuator_noise(), target);
+  }
+
+  // float player_rand_factor_l = 23;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_rand_factor_l = this->_internal_player_rand_factor_l();
+  ::uint32_t raw_player_rand_factor_l;
+  memcpy(&raw_player_rand_factor_l, &tmp_player_rand_factor_l, sizeof(tmp_player_rand_factor_l));
+  if (raw_player_rand_factor_l != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        23, this->_internal_player_rand_factor_l(), target);
+  }
+
+  // float player_rand_factor_r = 24;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_rand_factor_r = this->_internal_player_rand_factor_r();
+  ::uint32_t raw_player_rand_factor_r;
+  memcpy(&raw_player_rand_factor_r, &tmp_player_rand_factor_r, sizeof(tmp_player_rand_factor_r));
+  if (raw_player_rand_factor_r != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        24, this->_internal_player_rand_factor_r(), target);
+  }
+
+  // float kick_rand_factor_l = 25;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand_factor_l = this->_internal_kick_rand_factor_l();
+  ::uint32_t raw_kick_rand_factor_l;
+  memcpy(&raw_kick_rand_factor_l, &tmp_kick_rand_factor_l, sizeof(tmp_kick_rand_factor_l));
+  if (raw_kick_rand_factor_l != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        25, this->_internal_kick_rand_factor_l(), target);
+  }
+
+  // float kick_rand_factor_r = 26;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand_factor_r = this->_internal_kick_rand_factor_r();
+  ::uint32_t raw_kick_rand_factor_r;
+  memcpy(&raw_kick_rand_factor_r, &tmp_kick_rand_factor_r, sizeof(tmp_kick_rand_factor_r));
+  if (raw_kick_rand_factor_r != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        26, this->_internal_kick_rand_factor_r(), target);
+  }
+
+  // float ball_size = 27;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_size = this->_internal_ball_size();
+  ::uint32_t raw_ball_size;
+  memcpy(&raw_ball_size, &tmp_ball_size, sizeof(tmp_ball_size));
+  if (raw_ball_size != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        27, this->_internal_ball_size(), target);
+  }
+
+  // float ball_decay = 28;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_decay = this->_internal_ball_decay();
+  ::uint32_t raw_ball_decay;
+  memcpy(&raw_ball_decay, &tmp_ball_decay, sizeof(tmp_ball_decay));
+  if (raw_ball_decay != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        28, this->_internal_ball_decay(), target);
+  }
+
+  // float ball_rand = 29;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_rand = this->_internal_ball_rand();
+  ::uint32_t raw_ball_rand;
+  memcpy(&raw_ball_rand, &tmp_ball_rand, sizeof(tmp_ball_rand));
+  if (raw_ball_rand != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        29, this->_internal_ball_rand(), target);
+  }
+
+  // float ball_weight = 30;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_weight = this->_internal_ball_weight();
+  ::uint32_t raw_ball_weight;
+  memcpy(&raw_ball_weight, &tmp_ball_weight, sizeof(tmp_ball_weight));
+  if (raw_ball_weight != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        30, this->_internal_ball_weight(), target);
+  }
+
+  // float ball_speed_max = 31;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_speed_max = this->_internal_ball_speed_max();
+  ::uint32_t raw_ball_speed_max;
+  memcpy(&raw_ball_speed_max, &tmp_ball_speed_max, sizeof(tmp_ball_speed_max));
+  if (raw_ball_speed_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        31, this->_internal_ball_speed_max(), target);
+  }
+
+  // float ball_accel_max = 32;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_accel_max = this->_internal_ball_accel_max();
+  ::uint32_t raw_ball_accel_max;
+  memcpy(&raw_ball_accel_max, &tmp_ball_accel_max, sizeof(tmp_ball_accel_max));
+  if (raw_ball_accel_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        32, this->_internal_ball_accel_max(), target);
+  }
+
+  // float dash_power_rate = 33;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate = this->_internal_dash_power_rate();
+  ::uint32_t raw_dash_power_rate;
+  memcpy(&raw_dash_power_rate, &tmp_dash_power_rate, sizeof(tmp_dash_power_rate));
+  if (raw_dash_power_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        33, this->_internal_dash_power_rate(), target);
+  }
+
+  // float kick_power_rate = 34;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate = this->_internal_kick_power_rate();
+  ::uint32_t raw_kick_power_rate;
+  memcpy(&raw_kick_power_rate, &tmp_kick_power_rate, sizeof(tmp_kick_power_rate));
+  if (raw_kick_power_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        34, this->_internal_kick_power_rate(), target);
+  }
+
+  // float kickable_margin = 35;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin = this->_internal_kickable_margin();
+  ::uint32_t raw_kickable_margin;
+  memcpy(&raw_kickable_margin, &tmp_kickable_margin, sizeof(tmp_kickable_margin));
+  if (raw_kickable_margin != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        35, this->_internal_kickable_margin(), target);
+  }
+
+  // float control_radius = 36;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_control_radius = this->_internal_control_radius();
+  ::uint32_t raw_control_radius;
+  memcpy(&raw_control_radius, &tmp_control_radius, sizeof(tmp_control_radius));
+  if (raw_control_radius != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        36, this->_internal_control_radius(), target);
+  }
+
+  // float control_radius_width = 37;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_control_radius_width = this->_internal_control_radius_width();
+  ::uint32_t raw_control_radius_width;
+  memcpy(&raw_control_radius_width, &tmp_control_radius_width, sizeof(tmp_control_radius_width));
+  if (raw_control_radius_width != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        37, this->_internal_control_radius_width(), target);
+  }
+
+  // float max_power = 38;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_power = this->_internal_max_power();
+  ::uint32_t raw_max_power;
+  memcpy(&raw_max_power, &tmp_max_power, sizeof(tmp_max_power));
+  if (raw_max_power != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        38, this->_internal_max_power(), target);
+  }
+
+  // float min_power = 39;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_power = this->_internal_min_power();
+  ::uint32_t raw_min_power;
+  memcpy(&raw_min_power, &tmp_min_power, sizeof(tmp_min_power));
+  if (raw_min_power != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        39, this->_internal_min_power(), target);
+  }
+
+  // float max_moment = 40;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_moment = this->_internal_max_moment();
+  ::uint32_t raw_max_moment;
+  memcpy(&raw_max_moment, &tmp_max_moment, sizeof(tmp_max_moment));
+  if (raw_max_moment != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        40, this->_internal_max_moment(), target);
+  }
+
+  // float min_moment = 41;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_moment = this->_internal_min_moment();
+  ::uint32_t raw_min_moment;
+  memcpy(&raw_min_moment, &tmp_min_moment, sizeof(tmp_min_moment));
+  if (raw_min_moment != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        41, this->_internal_min_moment(), target);
+  }
+
+  // float max_neck_moment = 42;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_neck_moment = this->_internal_max_neck_moment();
+  ::uint32_t raw_max_neck_moment;
+  memcpy(&raw_max_neck_moment, &tmp_max_neck_moment, sizeof(tmp_max_neck_moment));
+  if (raw_max_neck_moment != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        42, this->_internal_max_neck_moment(), target);
+  }
+
+  // float min_neck_moment = 43;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_neck_moment = this->_internal_min_neck_moment();
+  ::uint32_t raw_min_neck_moment;
+  memcpy(&raw_min_neck_moment, &tmp_min_neck_moment, sizeof(tmp_min_neck_moment));
+  if (raw_min_neck_moment != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        43, this->_internal_min_neck_moment(), target);
+  }
+
+  // float max_neck_angle = 44;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_neck_angle = this->_internal_max_neck_angle();
+  ::uint32_t raw_max_neck_angle;
+  memcpy(&raw_max_neck_angle, &tmp_max_neck_angle, sizeof(tmp_max_neck_angle));
+  if (raw_max_neck_angle != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        44, this->_internal_max_neck_angle(), target);
+  }
+
+  // float min_neck_angle = 45;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_neck_angle = this->_internal_min_neck_angle();
+  ::uint32_t raw_min_neck_angle;
+  memcpy(&raw_min_neck_angle, &tmp_min_neck_angle, sizeof(tmp_min_neck_angle));
+  if (raw_min_neck_angle != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        45, this->_internal_min_neck_angle(), target);
+  }
+
+  // float visible_angle = 46;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_visible_angle = this->_internal_visible_angle();
+  ::uint32_t raw_visible_angle;
+  memcpy(&raw_visible_angle, &tmp_visible_angle, sizeof(tmp_visible_angle));
+  if (raw_visible_angle != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        46, this->_internal_visible_angle(), target);
+  }
+
+  // float visible_distance = 47;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_visible_distance = this->_internal_visible_distance();
+  ::uint32_t raw_visible_distance;
+  memcpy(&raw_visible_distance, &tmp_visible_distance, sizeof(tmp_visible_distance));
+  if (raw_visible_distance != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        47, this->_internal_visible_distance(), target);
+  }
+
+  // float wind_dir = 48;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_dir = this->_internal_wind_dir();
+  ::uint32_t raw_wind_dir;
+  memcpy(&raw_wind_dir, &tmp_wind_dir, sizeof(tmp_wind_dir));
+  if (raw_wind_dir != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        48, this->_internal_wind_dir(), target);
+  }
+
+  // float wind_force = 49;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_force = this->_internal_wind_force();
+  ::uint32_t raw_wind_force;
+  memcpy(&raw_wind_force, &tmp_wind_force, sizeof(tmp_wind_force));
+  if (raw_wind_force != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        49, this->_internal_wind_force(), target);
+  }
+
+  // float wind_angle = 50;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_angle = this->_internal_wind_angle();
+  ::uint32_t raw_wind_angle;
+  memcpy(&raw_wind_angle, &tmp_wind_angle, sizeof(tmp_wind_angle));
+  if (raw_wind_angle != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        50, this->_internal_wind_angle(), target);
+  }
+
+  // float wind_rand = 51;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_rand = this->_internal_wind_rand();
+  ::uint32_t raw_wind_rand;
+  memcpy(&raw_wind_rand, &tmp_wind_rand, sizeof(tmp_wind_rand));
+  if (raw_wind_rand != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        51, this->_internal_wind_rand(), target);
+  }
+
+  // float kickable_area = 52;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_area = this->_internal_kickable_area();
+  ::uint32_t raw_kickable_area;
+  memcpy(&raw_kickable_area, &tmp_kickable_area, sizeof(tmp_kickable_area));
+  if (raw_kickable_area != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        52, this->_internal_kickable_area(), target);
+  }
+
+  // float catch_area_l = 53;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catch_area_l = this->_internal_catch_area_l();
+  ::uint32_t raw_catch_area_l;
+  memcpy(&raw_catch_area_l, &tmp_catch_area_l, sizeof(tmp_catch_area_l));
+  if (raw_catch_area_l != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        53, this->_internal_catch_area_l(), target);
+  }
+
+  // float catch_area_w = 54;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catch_area_w = this->_internal_catch_area_w();
+  ::uint32_t raw_catch_area_w;
+  memcpy(&raw_catch_area_w, &tmp_catch_area_w, sizeof(tmp_catch_area_w));
+  if (raw_catch_area_w != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        54, this->_internal_catch_area_w(), target);
+  }
+
+  // float catch_probability = 55;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catch_probability = this->_internal_catch_probability();
+  ::uint32_t raw_catch_probability;
+  memcpy(&raw_catch_probability, &tmp_catch_probability, sizeof(tmp_catch_probability));
+  if (raw_catch_probability != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        55, this->_internal_catch_probability(), target);
+  }
+
+  // int32 goalie_max_moves = 56;
+  if (this->_internal_goalie_max_moves() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        56, this->_internal_goalie_max_moves(), target);
+  }
+
+  // float corner_kick_margin = 57;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_corner_kick_margin = this->_internal_corner_kick_margin();
+  ::uint32_t raw_corner_kick_margin;
+  memcpy(&raw_corner_kick_margin, &tmp_corner_kick_margin, sizeof(tmp_corner_kick_margin));
+  if (raw_corner_kick_margin != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        57, this->_internal_corner_kick_margin(), target);
+  }
+
+  // float offside_active_area_size = 58;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_offside_active_area_size = this->_internal_offside_active_area_size();
+  ::uint32_t raw_offside_active_area_size;
+  memcpy(&raw_offside_active_area_size, &tmp_offside_active_area_size, sizeof(tmp_offside_active_area_size));
+  if (raw_offside_active_area_size != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        58, this->_internal_offside_active_area_size(), target);
+  }
+
+  // bool wind_none = 59;
+  if (this->_internal_wind_none() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        59, this->_internal_wind_none(), target);
+  }
+
+  // bool use_wind_random = 60;
+  if (this->_internal_use_wind_random() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        60, this->_internal_use_wind_random(), target);
+  }
+
+  // int32 coach_say_count_max = 61;
+  if (this->_internal_coach_say_count_max() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        61, this->_internal_coach_say_count_max(), target);
+  }
+
+  // int32 coach_say_msg_size = 62;
+  if (this->_internal_coach_say_msg_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        62, this->_internal_coach_say_msg_size(), target);
+  }
+
+  // int32 clang_win_size = 63;
+  if (this->_internal_clang_win_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        63, this->_internal_clang_win_size(), target);
+  }
+
+  // int32 clang_define_win = 64;
+  if (this->_internal_clang_define_win() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        64, this->_internal_clang_define_win(), target);
+  }
+
+  // int32 clang_meta_win = 65;
+  if (this->_internal_clang_meta_win() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        65, this->_internal_clang_meta_win(), target);
+  }
+
+  // int32 clang_advice_win = 66;
+  if (this->_internal_clang_advice_win() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        66, this->_internal_clang_advice_win(), target);
+  }
+
+  // int32 clang_info_win = 67;
+  if (this->_internal_clang_info_win() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        67, this->_internal_clang_info_win(), target);
+  }
+
+  // int32 clang_mess_delay = 68;
+  if (this->_internal_clang_mess_delay() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        68, this->_internal_clang_mess_delay(), target);
+  }
+
+  // int32 clang_mess_per_cycle = 69;
+  if (this->_internal_clang_mess_per_cycle() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        69, this->_internal_clang_mess_per_cycle(), target);
+  }
+
+  // int32 half_time = 70;
+  if (this->_internal_half_time() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        70, this->_internal_half_time(), target);
+  }
+
+  // int32 simulator_step = 71;
+  if (this->_internal_simulator_step() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        71, this->_internal_simulator_step(), target);
+  }
+
+  // int32 send_step = 72;
+  if (this->_internal_send_step() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        72, this->_internal_send_step(), target);
+  }
+
+  // int32 recv_step = 73;
+  if (this->_internal_recv_step() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        73, this->_internal_recv_step(), target);
+  }
+
+  // int32 sense_body_step = 74;
+  if (this->_internal_sense_body_step() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        74, this->_internal_sense_body_step(), target);
+  }
+
+  // int32 lcm_step = 75;
+  if (this->_internal_lcm_step() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        75, this->_internal_lcm_step(), target);
+  }
+
+  // int32 player_say_msg_size = 76;
+  if (this->_internal_player_say_msg_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        76, this->_internal_player_say_msg_size(), target);
+  }
+
+  // int32 player_hear_max = 77;
+  if (this->_internal_player_hear_max() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        77, this->_internal_player_hear_max(), target);
+  }
+
+  // int32 player_hear_inc = 78;
+  if (this->_internal_player_hear_inc() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        78, this->_internal_player_hear_inc(), target);
+  }
+
+  // int32 player_hear_decay = 79;
+  if (this->_internal_player_hear_decay() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        79, this->_internal_player_hear_decay(), target);
+  }
+
+  // int32 catch_ban_cycle = 80;
+  if (this->_internal_catch_ban_cycle() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        80, this->_internal_catch_ban_cycle(), target);
+  }
+
+  // int32 slow_down_factor = 81;
+  if (this->_internal_slow_down_factor() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        81, this->_internal_slow_down_factor(), target);
+  }
+
+  // bool use_offside = 82;
+  if (this->_internal_use_offside() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        82, this->_internal_use_offside(), target);
+  }
+
+  // bool kickoff_offside = 83;
+  if (this->_internal_kickoff_offside() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        83, this->_internal_kickoff_offside(), target);
+  }
+
+  // float offside_kick_margin = 84;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_offside_kick_margin = this->_internal_offside_kick_margin();
+  ::uint32_t raw_offside_kick_margin;
+  memcpy(&raw_offside_kick_margin, &tmp_offside_kick_margin, sizeof(tmp_offside_kick_margin));
+  if (raw_offside_kick_margin != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        84, this->_internal_offside_kick_margin(), target);
+  }
+
+  // float audio_cut_dist = 85;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_audio_cut_dist = this->_internal_audio_cut_dist();
+  ::uint32_t raw_audio_cut_dist;
+  memcpy(&raw_audio_cut_dist, &tmp_audio_cut_dist, sizeof(tmp_audio_cut_dist));
+  if (raw_audio_cut_dist != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        85, this->_internal_audio_cut_dist(), target);
+  }
+
+  // float dist_quantize_step = 86;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dist_quantize_step = this->_internal_dist_quantize_step();
+  ::uint32_t raw_dist_quantize_step;
+  memcpy(&raw_dist_quantize_step, &tmp_dist_quantize_step, sizeof(tmp_dist_quantize_step));
+  if (raw_dist_quantize_step != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        86, this->_internal_dist_quantize_step(), target);
+  }
+
+  // float landmark_dist_quantize_step = 87;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_landmark_dist_quantize_step = this->_internal_landmark_dist_quantize_step();
+  ::uint32_t raw_landmark_dist_quantize_step;
+  memcpy(&raw_landmark_dist_quantize_step, &tmp_landmark_dist_quantize_step, sizeof(tmp_landmark_dist_quantize_step));
+  if (raw_landmark_dist_quantize_step != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        87, this->_internal_landmark_dist_quantize_step(), target);
+  }
+
+  // float dir_quantize_step = 88;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dir_quantize_step = this->_internal_dir_quantize_step();
+  ::uint32_t raw_dir_quantize_step;
+  memcpy(&raw_dir_quantize_step, &tmp_dir_quantize_step, sizeof(tmp_dir_quantize_step));
+  if (raw_dir_quantize_step != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        88, this->_internal_dir_quantize_step(), target);
+  }
+
+  // float dist_quantize_step_l = 89;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dist_quantize_step_l = this->_internal_dist_quantize_step_l();
+  ::uint32_t raw_dist_quantize_step_l;
+  memcpy(&raw_dist_quantize_step_l, &tmp_dist_quantize_step_l, sizeof(tmp_dist_quantize_step_l));
+  if (raw_dist_quantize_step_l != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        89, this->_internal_dist_quantize_step_l(), target);
+  }
+
+  // float dist_quantize_step_r = 90;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dist_quantize_step_r = this->_internal_dist_quantize_step_r();
+  ::uint32_t raw_dist_quantize_step_r;
+  memcpy(&raw_dist_quantize_step_r, &tmp_dist_quantize_step_r, sizeof(tmp_dist_quantize_step_r));
+  if (raw_dist_quantize_step_r != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        90, this->_internal_dist_quantize_step_r(), target);
+  }
+
+  // float landmark_dist_quantize_step_l = 91;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_landmark_dist_quantize_step_l = this->_internal_landmark_dist_quantize_step_l();
+  ::uint32_t raw_landmark_dist_quantize_step_l;
+  memcpy(&raw_landmark_dist_quantize_step_l, &tmp_landmark_dist_quantize_step_l, sizeof(tmp_landmark_dist_quantize_step_l));
+  if (raw_landmark_dist_quantize_step_l != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        91, this->_internal_landmark_dist_quantize_step_l(), target);
+  }
+
+  // float landmark_dist_quantize_step_r = 92;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_landmark_dist_quantize_step_r = this->_internal_landmark_dist_quantize_step_r();
+  ::uint32_t raw_landmark_dist_quantize_step_r;
+  memcpy(&raw_landmark_dist_quantize_step_r, &tmp_landmark_dist_quantize_step_r, sizeof(tmp_landmark_dist_quantize_step_r));
+  if (raw_landmark_dist_quantize_step_r != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        92, this->_internal_landmark_dist_quantize_step_r(), target);
+  }
+
+  // float dir_quantize_step_l = 93;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dir_quantize_step_l = this->_internal_dir_quantize_step_l();
+  ::uint32_t raw_dir_quantize_step_l;
+  memcpy(&raw_dir_quantize_step_l, &tmp_dir_quantize_step_l, sizeof(tmp_dir_quantize_step_l));
+  if (raw_dir_quantize_step_l != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        93, this->_internal_dir_quantize_step_l(), target);
+  }
+
+  // float dir_quantize_step_r = 94;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dir_quantize_step_r = this->_internal_dir_quantize_step_r();
+  ::uint32_t raw_dir_quantize_step_r;
+  memcpy(&raw_dir_quantize_step_r, &tmp_dir_quantize_step_r, sizeof(tmp_dir_quantize_step_r));
+  if (raw_dir_quantize_step_r != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        94, this->_internal_dir_quantize_step_r(), target);
+  }
+
+  // bool coach_mode = 95;
+  if (this->_internal_coach_mode() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        95, this->_internal_coach_mode(), target);
+  }
+
+  // bool coach_with_referee_mode = 96;
+  if (this->_internal_coach_with_referee_mode() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        96, this->_internal_coach_with_referee_mode(), target);
+  }
+
+  // bool use_old_coach_hear = 97;
+  if (this->_internal_use_old_coach_hear() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        97, this->_internal_use_old_coach_hear(), target);
+  }
+
+  // float slowness_on_top_for_left_team = 98;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_slowness_on_top_for_left_team = this->_internal_slowness_on_top_for_left_team();
+  ::uint32_t raw_slowness_on_top_for_left_team;
+  memcpy(&raw_slowness_on_top_for_left_team, &tmp_slowness_on_top_for_left_team, sizeof(tmp_slowness_on_top_for_left_team));
+  if (raw_slowness_on_top_for_left_team != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        98, this->_internal_slowness_on_top_for_left_team(), target);
+  }
+
+  // float slowness_on_top_for_right_team = 99;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_slowness_on_top_for_right_team = this->_internal_slowness_on_top_for_right_team();
+  ::uint32_t raw_slowness_on_top_for_right_team;
+  memcpy(&raw_slowness_on_top_for_right_team, &tmp_slowness_on_top_for_right_team, sizeof(tmp_slowness_on_top_for_right_team));
+  if (raw_slowness_on_top_for_right_team != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        99, this->_internal_slowness_on_top_for_right_team(), target);
+  }
+
+  // int32 start_goal_l = 100;
+  if (this->_internal_start_goal_l() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        100, this->_internal_start_goal_l(), target);
+  }
+
+  // int32 start_goal_r = 101;
+  if (this->_internal_start_goal_r() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        101, this->_internal_start_goal_r(), target);
+  }
+
+  // bool fullstate_l = 102;
+  if (this->_internal_fullstate_l() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        102, this->_internal_fullstate_l(), target);
+  }
+
+  // bool fullstate_r = 103;
+  if (this->_internal_fullstate_r() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        103, this->_internal_fullstate_r(), target);
+  }
+
+  // int32 drop_ball_time = 104;
+  if (this->_internal_drop_ball_time() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        104, this->_internal_drop_ball_time(), target);
+  }
+
+  // bool synch_mode = 105;
+  if (this->_internal_synch_mode() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        105, this->_internal_synch_mode(), target);
+  }
+
+  // int32 synch_offset = 106;
+  if (this->_internal_synch_offset() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        106, this->_internal_synch_offset(), target);
+  }
+
+  // int32 synch_micro_sleep = 107;
+  if (this->_internal_synch_micro_sleep() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        107, this->_internal_synch_micro_sleep(), target);
+  }
+
+  // int32 point_to_ban = 108;
+  if (this->_internal_point_to_ban() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        108, this->_internal_point_to_ban(), target);
+  }
+
+  // int32 point_to_duration = 109;
+  if (this->_internal_point_to_duration() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        109, this->_internal_point_to_duration(), target);
+  }
+
+  // int32 player_port = 110;
+  if (this->_internal_player_port() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        110, this->_internal_player_port(), target);
+  }
+
+  // int32 trainer_port = 111;
+  if (this->_internal_trainer_port() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        111, this->_internal_trainer_port(), target);
+  }
+
+  // int32 online_coach_port = 112;
+  if (this->_internal_online_coach_port() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        112, this->_internal_online_coach_port(), target);
+  }
+
+  // bool verbose_mode = 113;
+  if (this->_internal_verbose_mode() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        113, this->_internal_verbose_mode(), target);
+  }
+
+  // int32 coach_send_vi_step = 114;
+  if (this->_internal_coach_send_vi_step() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        114, this->_internal_coach_send_vi_step(), target);
+  }
+
+  // string replay_file = 115;
+  if (!this->_internal_replay_file().empty()) {
+    const std::string& _s = this->_internal_replay_file();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.replay_file");
+    target = stream->WriteStringMaybeAliased(115, _s, target);
+  }
+
+  // string landmark_file = 116;
+  if (!this->_internal_landmark_file().empty()) {
+    const std::string& _s = this->_internal_landmark_file();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.landmark_file");
+    target = stream->WriteStringMaybeAliased(116, _s, target);
+  }
+
+  // bool send_comms = 117;
+  if (this->_internal_send_comms() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        117, this->_internal_send_comms(), target);
+  }
+
+  // bool text_logging = 118;
+  if (this->_internal_text_logging() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        118, this->_internal_text_logging(), target);
+  }
+
+  // bool game_logging = 119;
+  if (this->_internal_game_logging() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        119, this->_internal_game_logging(), target);
+  }
+
+  // int32 game_log_version = 120;
+  if (this->_internal_game_log_version() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        120, this->_internal_game_log_version(), target);
+  }
+
+  // string text_log_dir = 121;
+  if (!this->_internal_text_log_dir().empty()) {
+    const std::string& _s = this->_internal_text_log_dir();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.text_log_dir");
+    target = stream->WriteStringMaybeAliased(121, _s, target);
+  }
+
+  // string game_log_dir = 122;
+  if (!this->_internal_game_log_dir().empty()) {
+    const std::string& _s = this->_internal_game_log_dir();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.game_log_dir");
+    target = stream->WriteStringMaybeAliased(122, _s, target);
+  }
+
+  // string text_log_fixed_name = 123;
+  if (!this->_internal_text_log_fixed_name().empty()) {
+    const std::string& _s = this->_internal_text_log_fixed_name();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.text_log_fixed_name");
+    target = stream->WriteStringMaybeAliased(123, _s, target);
+  }
+
+  // string game_log_fixed_name = 124;
+  if (!this->_internal_game_log_fixed_name().empty()) {
+    const std::string& _s = this->_internal_game_log_fixed_name();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.game_log_fixed_name");
+    target = stream->WriteStringMaybeAliased(124, _s, target);
+  }
+
+  // bool use_text_log_fixed = 125;
+  if (this->_internal_use_text_log_fixed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        125, this->_internal_use_text_log_fixed(), target);
+  }
+
+  // bool use_game_log_fixed = 126;
+  if (this->_internal_use_game_log_fixed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        126, this->_internal_use_game_log_fixed(), target);
+  }
+
+  // bool use_text_log_dated = 127;
+  if (this->_internal_use_text_log_dated() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        127, this->_internal_use_text_log_dated(), target);
+  }
+
+  // bool use_game_log_dated = 128;
+  if (this->_internal_use_game_log_dated() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        128, this->_internal_use_game_log_dated(), target);
+  }
+
+  // string log_date_format = 129;
+  if (!this->_internal_log_date_format().empty()) {
+    const std::string& _s = this->_internal_log_date_format();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.log_date_format");
+    target = stream->WriteStringMaybeAliased(129, _s, target);
+  }
+
+  // bool log_times = 130;
+  if (this->_internal_log_times() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        130, this->_internal_log_times(), target);
+  }
+
+  // bool record_message = 131;
+  if (this->_internal_record_message() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        131, this->_internal_record_message(), target);
+  }
+
+  // int32 text_log_compression = 132;
+  if (this->_internal_text_log_compression() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        132, this->_internal_text_log_compression(), target);
+  }
+
+  // int32 game_log_compression = 133;
+  if (this->_internal_game_log_compression() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        133, this->_internal_game_log_compression(), target);
+  }
+
+  // bool use_profile = 134;
+  if (this->_internal_use_profile() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        134, this->_internal_use_profile(), target);
+  }
+
+  // float tackle_dist = 135;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_dist = this->_internal_tackle_dist();
+  ::uint32_t raw_tackle_dist;
+  memcpy(&raw_tackle_dist, &tmp_tackle_dist, sizeof(tmp_tackle_dist));
+  if (raw_tackle_dist != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        135, this->_internal_tackle_dist(), target);
+  }
+
+  // float tackle_back_dist = 136;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_back_dist = this->_internal_tackle_back_dist();
+  ::uint32_t raw_tackle_back_dist;
+  memcpy(&raw_tackle_back_dist, &tmp_tackle_back_dist, sizeof(tmp_tackle_back_dist));
+  if (raw_tackle_back_dist != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        136, this->_internal_tackle_back_dist(), target);
+  }
+
+  // float tackle_width = 137;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_width = this->_internal_tackle_width();
+  ::uint32_t raw_tackle_width;
+  memcpy(&raw_tackle_width, &tmp_tackle_width, sizeof(tmp_tackle_width));
+  if (raw_tackle_width != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        137, this->_internal_tackle_width(), target);
+  }
+
+  // float tackle_exponent = 138;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_exponent = this->_internal_tackle_exponent();
+  ::uint32_t raw_tackle_exponent;
+  memcpy(&raw_tackle_exponent, &tmp_tackle_exponent, sizeof(tmp_tackle_exponent));
+  if (raw_tackle_exponent != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        138, this->_internal_tackle_exponent(), target);
+  }
+
+  // int32 tackle_cycles = 139;
+  if (this->_internal_tackle_cycles() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        139, this->_internal_tackle_cycles(), target);
+  }
+
+  // float tackle_power_rate = 140;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_power_rate = this->_internal_tackle_power_rate();
+  ::uint32_t raw_tackle_power_rate;
+  memcpy(&raw_tackle_power_rate, &tmp_tackle_power_rate, sizeof(tmp_tackle_power_rate));
+  if (raw_tackle_power_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        140, this->_internal_tackle_power_rate(), target);
+  }
+
+  // int32 freeform_wait_period = 141;
+  if (this->_internal_freeform_wait_period() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        141, this->_internal_freeform_wait_period(), target);
+  }
+
+  // int32 freeform_send_period = 142;
+  if (this->_internal_freeform_send_period() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        142, this->_internal_freeform_send_period(), target);
+  }
+
+  // bool free_kick_faults = 143;
+  if (this->_internal_free_kick_faults() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        143, this->_internal_free_kick_faults(), target);
+  }
+
+  // bool back_passes = 144;
+  if (this->_internal_back_passes() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        144, this->_internal_back_passes(), target);
+  }
+
+  // bool proper_goal_kicks = 145;
+  if (this->_internal_proper_goal_kicks() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        145, this->_internal_proper_goal_kicks(), target);
+  }
+
+  // float stopped_ball_vel = 146;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stopped_ball_vel = this->_internal_stopped_ball_vel();
+  ::uint32_t raw_stopped_ball_vel;
+  memcpy(&raw_stopped_ball_vel, &tmp_stopped_ball_vel, sizeof(tmp_stopped_ball_vel));
+  if (raw_stopped_ball_vel != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        146, this->_internal_stopped_ball_vel(), target);
+  }
+
+  // int32 max_goal_kicks = 147;
+  if (this->_internal_max_goal_kicks() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        147, this->_internal_max_goal_kicks(), target);
+  }
+
+  // int32 clang_del_win = 148;
+  if (this->_internal_clang_del_win() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        148, this->_internal_clang_del_win(), target);
+  }
+
+  // int32 clang_rule_win = 149;
+  if (this->_internal_clang_rule_win() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        149, this->_internal_clang_rule_win(), target);
+  }
+
+  // bool auto_mode = 150;
+  if (this->_internal_auto_mode() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        150, this->_internal_auto_mode(), target);
+  }
+
+  // int32 kick_off_wait = 151;
+  if (this->_internal_kick_off_wait() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        151, this->_internal_kick_off_wait(), target);
+  }
+
+  // int32 connect_wait = 152;
+  if (this->_internal_connect_wait() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        152, this->_internal_connect_wait(), target);
+  }
+
+  // int32 game_over_wait = 153;
+  if (this->_internal_game_over_wait() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        153, this->_internal_game_over_wait(), target);
+  }
+
+  // string team_l_start = 154;
+  if (!this->_internal_team_l_start().empty()) {
+    const std::string& _s = this->_internal_team_l_start();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.team_l_start");
+    target = stream->WriteStringMaybeAliased(154, _s, target);
+  }
+
+  // string team_r_start = 155;
+  if (!this->_internal_team_r_start().empty()) {
+    const std::string& _s = this->_internal_team_r_start();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.team_r_start");
+    target = stream->WriteStringMaybeAliased(155, _s, target);
+  }
+
+  // bool keepaway_mode = 156;
+  if (this->_internal_keepaway_mode() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        156, this->_internal_keepaway_mode(), target);
+  }
+
+  // float keepaway_length = 157;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_keepaway_length = this->_internal_keepaway_length();
+  ::uint32_t raw_keepaway_length;
+  memcpy(&raw_keepaway_length, &tmp_keepaway_length, sizeof(tmp_keepaway_length));
+  if (raw_keepaway_length != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        157, this->_internal_keepaway_length(), target);
+  }
+
+  // float keepaway_width = 158;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_keepaway_width = this->_internal_keepaway_width();
+  ::uint32_t raw_keepaway_width;
+  memcpy(&raw_keepaway_width, &tmp_keepaway_width, sizeof(tmp_keepaway_width));
+  if (raw_keepaway_width != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        158, this->_internal_keepaway_width(), target);
+  }
+
+  // bool keepaway_logging = 159;
+  if (this->_internal_keepaway_logging() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        159, this->_internal_keepaway_logging(), target);
+  }
+
+  // string keepaway_log_dir = 160;
+  if (!this->_internal_keepaway_log_dir().empty()) {
+    const std::string& _s = this->_internal_keepaway_log_dir();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.keepaway_log_dir");
+    target = stream->WriteStringMaybeAliased(160, _s, target);
+  }
+
+  // string keepaway_log_fixed_name = 161;
+  if (!this->_internal_keepaway_log_fixed_name().empty()) {
+    const std::string& _s = this->_internal_keepaway_log_fixed_name();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.keepaway_log_fixed_name");
+    target = stream->WriteStringMaybeAliased(161, _s, target);
+  }
+
+  // bool keepaway_log_fixed = 162;
+  if (this->_internal_keepaway_log_fixed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        162, this->_internal_keepaway_log_fixed(), target);
+  }
+
+  // bool keepaway_log_dated = 163;
+  if (this->_internal_keepaway_log_dated() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        163, this->_internal_keepaway_log_dated(), target);
+  }
+
+  // int32 keepaway_start = 164;
+  if (this->_internal_keepaway_start() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        164, this->_internal_keepaway_start(), target);
+  }
+
+  // int32 nr_normal_halfs = 165;
+  if (this->_internal_nr_normal_halfs() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        165, this->_internal_nr_normal_halfs(), target);
+  }
+
+  // int32 nr_extra_halfs = 166;
+  if (this->_internal_nr_extra_halfs() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        166, this->_internal_nr_extra_halfs(), target);
+  }
+
+  // bool penalty_shoot_outs = 167;
+  if (this->_internal_penalty_shoot_outs() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        167, this->_internal_penalty_shoot_outs(), target);
+  }
+
+  // int32 pen_before_setup_wait = 168;
+  if (this->_internal_pen_before_setup_wait() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        168, this->_internal_pen_before_setup_wait(), target);
+  }
+
+  // int32 pen_setup_wait = 169;
+  if (this->_internal_pen_setup_wait() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        169, this->_internal_pen_setup_wait(), target);
+  }
+
+  // int32 pen_ready_wait = 170;
+  if (this->_internal_pen_ready_wait() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        170, this->_internal_pen_ready_wait(), target);
+  }
+
+  // int32 pen_taken_wait = 171;
+  if (this->_internal_pen_taken_wait() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        171, this->_internal_pen_taken_wait(), target);
+  }
+
+  // int32 pen_nr_kicks = 172;
+  if (this->_internal_pen_nr_kicks() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        172, this->_internal_pen_nr_kicks(), target);
+  }
+
+  // int32 pen_max_extra_kicks = 173;
+  if (this->_internal_pen_max_extra_kicks() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        173, this->_internal_pen_max_extra_kicks(), target);
+  }
+
+  // float pen_dist_x = 174;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_pen_dist_x = this->_internal_pen_dist_x();
+  ::uint32_t raw_pen_dist_x;
+  memcpy(&raw_pen_dist_x, &tmp_pen_dist_x, sizeof(tmp_pen_dist_x));
+  if (raw_pen_dist_x != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        174, this->_internal_pen_dist_x(), target);
+  }
+
+  // bool pen_random_winner = 175;
+  if (this->_internal_pen_random_winner() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        175, this->_internal_pen_random_winner(), target);
+  }
+
+  // bool pen_allow_mult_kicks = 176;
+  if (this->_internal_pen_allow_mult_kicks() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        176, this->_internal_pen_allow_mult_kicks(), target);
+  }
+
+  // float pen_max_goalie_dist_x = 177;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_pen_max_goalie_dist_x = this->_internal_pen_max_goalie_dist_x();
+  ::uint32_t raw_pen_max_goalie_dist_x;
+  memcpy(&raw_pen_max_goalie_dist_x, &tmp_pen_max_goalie_dist_x, sizeof(tmp_pen_max_goalie_dist_x));
+  if (raw_pen_max_goalie_dist_x != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        177, this->_internal_pen_max_goalie_dist_x(), target);
+  }
+
+  // bool pen_coach_moves_players = 178;
+  if (this->_internal_pen_coach_moves_players() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        178, this->_internal_pen_coach_moves_players(), target);
+  }
+
+  // string module_dir = 179;
+  if (!this->_internal_module_dir().empty()) {
+    const std::string& _s = this->_internal_module_dir();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.module_dir");
+    target = stream->WriteStringMaybeAliased(179, _s, target);
+  }
+
+  // float ball_stuck_area = 180;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_stuck_area = this->_internal_ball_stuck_area();
+  ::uint32_t raw_ball_stuck_area;
+  memcpy(&raw_ball_stuck_area, &tmp_ball_stuck_area, sizeof(tmp_ball_stuck_area));
+  if (raw_ball_stuck_area != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        180, this->_internal_ball_stuck_area(), target);
+  }
+
+  // string coach_msg_file = 181;
+  if (!this->_internal_coach_msg_file().empty()) {
+    const std::string& _s = this->_internal_coach_msg_file();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.coach_msg_file");
+    target = stream->WriteStringMaybeAliased(181, _s, target);
+  }
+
+  // float max_tackle_power = 182;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_tackle_power = this->_internal_max_tackle_power();
+  ::uint32_t raw_max_tackle_power;
+  memcpy(&raw_max_tackle_power, &tmp_max_tackle_power, sizeof(tmp_max_tackle_power));
+  if (raw_max_tackle_power != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        182, this->_internal_max_tackle_power(), target);
+  }
+
+  // float max_back_tackle_power = 183;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_back_tackle_power = this->_internal_max_back_tackle_power();
+  ::uint32_t raw_max_back_tackle_power;
+  memcpy(&raw_max_back_tackle_power, &tmp_max_back_tackle_power, sizeof(tmp_max_back_tackle_power));
+  if (raw_max_back_tackle_power != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        183, this->_internal_max_back_tackle_power(), target);
+  }
+
+  // float player_speed_max_min = 184;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max_min = this->_internal_player_speed_max_min();
+  ::uint32_t raw_player_speed_max_min;
+  memcpy(&raw_player_speed_max_min, &tmp_player_speed_max_min, sizeof(tmp_player_speed_max_min));
+  if (raw_player_speed_max_min != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        184, this->_internal_player_speed_max_min(), target);
+  }
+
+  // float extra_stamina = 185;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina = this->_internal_extra_stamina();
+  ::uint32_t raw_extra_stamina;
+  memcpy(&raw_extra_stamina, &tmp_extra_stamina, sizeof(tmp_extra_stamina));
+  if (raw_extra_stamina != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        185, this->_internal_extra_stamina(), target);
+  }
+
+  // int32 synch_see_offset = 186;
+  if (this->_internal_synch_see_offset() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        186, this->_internal_synch_see_offset(), target);
+  }
+
+  // int32 extra_half_time = 187;
+  if (this->_internal_extra_half_time() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        187, this->_internal_extra_half_time(), target);
+  }
+
+  // float stamina_capacity = 188;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_capacity = this->_internal_stamina_capacity();
+  ::uint32_t raw_stamina_capacity;
+  memcpy(&raw_stamina_capacity, &tmp_stamina_capacity, sizeof(tmp_stamina_capacity));
+  if (raw_stamina_capacity != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        188, this->_internal_stamina_capacity(), target);
+  }
+
+  // float max_dash_angle = 189;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_dash_angle = this->_internal_max_dash_angle();
+  ::uint32_t raw_max_dash_angle;
+  memcpy(&raw_max_dash_angle, &tmp_max_dash_angle, sizeof(tmp_max_dash_angle));
+  if (raw_max_dash_angle != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        189, this->_internal_max_dash_angle(), target);
+  }
+
+  // float min_dash_angle = 190;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_dash_angle = this->_internal_min_dash_angle();
+  ::uint32_t raw_min_dash_angle;
+  memcpy(&raw_min_dash_angle, &tmp_min_dash_angle, sizeof(tmp_min_dash_angle));
+  if (raw_min_dash_angle != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        190, this->_internal_min_dash_angle(), target);
+  }
+
+  // float dash_angle_step = 191;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_angle_step = this->_internal_dash_angle_step();
+  ::uint32_t raw_dash_angle_step;
+  memcpy(&raw_dash_angle_step, &tmp_dash_angle_step, sizeof(tmp_dash_angle_step));
+  if (raw_dash_angle_step != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        191, this->_internal_dash_angle_step(), target);
+  }
+
+  // float side_dash_rate = 192;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_side_dash_rate = this->_internal_side_dash_rate();
+  ::uint32_t raw_side_dash_rate;
+  memcpy(&raw_side_dash_rate, &tmp_side_dash_rate, sizeof(tmp_side_dash_rate));
+  if (raw_side_dash_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        192, this->_internal_side_dash_rate(), target);
+  }
+
+  // float back_dash_rate = 193;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_back_dash_rate = this->_internal_back_dash_rate();
+  ::uint32_t raw_back_dash_rate;
+  memcpy(&raw_back_dash_rate, &tmp_back_dash_rate, sizeof(tmp_back_dash_rate));
+  if (raw_back_dash_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        193, this->_internal_back_dash_rate(), target);
+  }
+
+  // float max_dash_power = 194;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_dash_power = this->_internal_max_dash_power();
+  ::uint32_t raw_max_dash_power;
+  memcpy(&raw_max_dash_power, &tmp_max_dash_power, sizeof(tmp_max_dash_power));
+  if (raw_max_dash_power != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        194, this->_internal_max_dash_power(), target);
+  }
+
+  // float min_dash_power = 195;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_dash_power = this->_internal_min_dash_power();
+  ::uint32_t raw_min_dash_power;
+  memcpy(&raw_min_dash_power, &tmp_min_dash_power, sizeof(tmp_min_dash_power));
+  if (raw_min_dash_power != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        195, this->_internal_min_dash_power(), target);
+  }
+
+  // float tackle_rand_factor = 196;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_rand_factor = this->_internal_tackle_rand_factor();
+  ::uint32_t raw_tackle_rand_factor;
+  memcpy(&raw_tackle_rand_factor, &tmp_tackle_rand_factor, sizeof(tmp_tackle_rand_factor));
+  if (raw_tackle_rand_factor != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        196, this->_internal_tackle_rand_factor(), target);
+  }
+
+  // float foul_detect_probability = 197;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_detect_probability = this->_internal_foul_detect_probability();
+  ::uint32_t raw_foul_detect_probability;
+  memcpy(&raw_foul_detect_probability, &tmp_foul_detect_probability, sizeof(tmp_foul_detect_probability));
+  if (raw_foul_detect_probability != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        197, this->_internal_foul_detect_probability(), target);
+  }
+
+  // float foul_exponent = 198;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_exponent = this->_internal_foul_exponent();
+  ::uint32_t raw_foul_exponent;
+  memcpy(&raw_foul_exponent, &tmp_foul_exponent, sizeof(tmp_foul_exponent));
+  if (raw_foul_exponent != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        198, this->_internal_foul_exponent(), target);
+  }
+
+  // int32 foul_cycles = 199;
+  if (this->_internal_foul_cycles() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        199, this->_internal_foul_cycles(), target);
+  }
+
+  // bool golden_goal = 200;
+  if (this->_internal_golden_goal() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        200, this->_internal_golden_goal(), target);
+  }
+
+  // float red_card_probability = 201;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_red_card_probability = this->_internal_red_card_probability();
+  ::uint32_t raw_red_card_probability;
+  memcpy(&raw_red_card_probability, &tmp_red_card_probability, sizeof(tmp_red_card_probability));
+  if (raw_red_card_probability != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        201, this->_internal_red_card_probability(), target);
+  }
+
+  // int32 illegal_defense_duration = 202;
+  if (this->_internal_illegal_defense_duration() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        202, this->_internal_illegal_defense_duration(), target);
+  }
+
+  // int32 illegal_defense_number = 203;
+  if (this->_internal_illegal_defense_number() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        203, this->_internal_illegal_defense_number(), target);
+  }
+
+  // float illegal_defense_dist_x = 204;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_illegal_defense_dist_x = this->_internal_illegal_defense_dist_x();
+  ::uint32_t raw_illegal_defense_dist_x;
+  memcpy(&raw_illegal_defense_dist_x, &tmp_illegal_defense_dist_x, sizeof(tmp_illegal_defense_dist_x));
+  if (raw_illegal_defense_dist_x != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        204, this->_internal_illegal_defense_dist_x(), target);
+  }
+
+  // float illegal_defense_width = 205;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_illegal_defense_width = this->_internal_illegal_defense_width();
+  ::uint32_t raw_illegal_defense_width;
+  memcpy(&raw_illegal_defense_width, &tmp_illegal_defense_width, sizeof(tmp_illegal_defense_width));
+  if (raw_illegal_defense_width != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        205, this->_internal_illegal_defense_width(), target);
+  }
+
+  // string fixed_teamname_l = 206;
+  if (!this->_internal_fixed_teamname_l().empty()) {
+    const std::string& _s = this->_internal_fixed_teamname_l();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.fixed_teamname_l");
+    target = stream->WriteStringMaybeAliased(206, _s, target);
+  }
+
+  // string fixed_teamname_r = 207;
+  if (!this->_internal_fixed_teamname_r().empty()) {
+    const std::string& _s = this->_internal_fixed_teamname_r();
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE, "protos.ServerParam.fixed_teamname_r");
+    target = stream->WriteStringMaybeAliased(207, _s, target);
+  }
+
+  // float max_catch_angle = 208;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_catch_angle = this->_internal_max_catch_angle();
+  ::uint32_t raw_max_catch_angle;
+  memcpy(&raw_max_catch_angle, &tmp_max_catch_angle, sizeof(tmp_max_catch_angle));
+  if (raw_max_catch_angle != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        208, this->_internal_max_catch_angle(), target);
+  }
+
+  // float min_catch_angle = 209;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_catch_angle = this->_internal_min_catch_angle();
+  ::uint32_t raw_min_catch_angle;
+  memcpy(&raw_min_catch_angle, &tmp_min_catch_angle, sizeof(tmp_min_catch_angle));
+  if (raw_min_catch_angle != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        209, this->_internal_min_catch_angle(), target);
+  }
+
+  // int32 random_seed = 210;
+  if (this->_internal_random_seed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        210, this->_internal_random_seed(), target);
+  }
+
+  // float long_kick_power_factor = 211;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_long_kick_power_factor = this->_internal_long_kick_power_factor();
+  ::uint32_t raw_long_kick_power_factor;
+  memcpy(&raw_long_kick_power_factor, &tmp_long_kick_power_factor, sizeof(tmp_long_kick_power_factor));
+  if (raw_long_kick_power_factor != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        211, this->_internal_long_kick_power_factor(), target);
+  }
+
+  // int32 long_kick_delay = 212;
+  if (this->_internal_long_kick_delay() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        212, this->_internal_long_kick_delay(), target);
+  }
+
+  // int32 max_monitors = 213;
+  if (this->_internal_max_monitors() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        213, this->_internal_max_monitors(), target);
+  }
+
+  // float catchable_area = 214;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area = this->_internal_catchable_area();
+  ::uint32_t raw_catchable_area;
+  memcpy(&raw_catchable_area, &tmp_catchable_area, sizeof(tmp_catchable_area));
+  if (raw_catchable_area != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        214, this->_internal_catchable_area(), target);
+  }
+
+  // float real_speed_max = 215;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_real_speed_max = this->_internal_real_speed_max();
+  ::uint32_t raw_real_speed_max;
+  memcpy(&raw_real_speed_max, &tmp_real_speed_max, sizeof(tmp_real_speed_max));
+  if (raw_real_speed_max != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        215, this->_internal_real_speed_max(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:protos.ServerParam)
+  return target;
+}
+
+::size_t ServerParam::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:protos.ServerParam)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string replay_file = 115;
+  if (!this->_internal_replay_file().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_replay_file());
+  }
+
+  // string landmark_file = 116;
+  if (!this->_internal_landmark_file().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_landmark_file());
+  }
+
+  // string text_log_dir = 121;
+  if (!this->_internal_text_log_dir().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_text_log_dir());
+  }
+
+  // string game_log_dir = 122;
+  if (!this->_internal_game_log_dir().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_game_log_dir());
+  }
+
+  // string text_log_fixed_name = 123;
+  if (!this->_internal_text_log_fixed_name().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_text_log_fixed_name());
+  }
+
+  // string game_log_fixed_name = 124;
+  if (!this->_internal_game_log_fixed_name().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_game_log_fixed_name());
+  }
+
+  // string log_date_format = 129;
+  if (!this->_internal_log_date_format().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_log_date_format());
+  }
+
+  // string team_l_start = 154;
+  if (!this->_internal_team_l_start().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_team_l_start());
+  }
+
+  // string team_r_start = 155;
+  if (!this->_internal_team_r_start().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_team_r_start());
+  }
+
+  // string keepaway_log_dir = 160;
+  if (!this->_internal_keepaway_log_dir().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_keepaway_log_dir());
+  }
+
+  // string keepaway_log_fixed_name = 161;
+  if (!this->_internal_keepaway_log_fixed_name().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_keepaway_log_fixed_name());
+  }
+
+  // string module_dir = 179;
+  if (!this->_internal_module_dir().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_module_dir());
+  }
+
+  // string coach_msg_file = 181;
+  if (!this->_internal_coach_msg_file().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_coach_msg_file());
+  }
+
+  // string fixed_teamname_l = 206;
+  if (!this->_internal_fixed_teamname_l().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_fixed_teamname_l());
+  }
+
+  // string fixed_teamname_r = 207;
+  if (!this->_internal_fixed_teamname_r().empty()) {
+    total_size += 2 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                                    this->_internal_fixed_teamname_r());
+  }
+
+  // float goal_width = 1;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_goal_width = this->_internal_goal_width();
+  ::uint32_t raw_goal_width;
+  memcpy(&raw_goal_width, &tmp_goal_width, sizeof(tmp_goal_width));
+  if (raw_goal_width != 0) {
+    total_size += 5;
+  }
+
+  // float inertia_moment = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_inertia_moment = this->_internal_inertia_moment();
+  ::uint32_t raw_inertia_moment;
+  memcpy(&raw_inertia_moment, &tmp_inertia_moment, sizeof(tmp_inertia_moment));
+  if (raw_inertia_moment != 0) {
+    total_size += 5;
+  }
+
+  // float player_size = 3;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_size = this->_internal_player_size();
+  ::uint32_t raw_player_size;
+  memcpy(&raw_player_size, &tmp_player_size, sizeof(tmp_player_size));
+  if (raw_player_size != 0) {
+    total_size += 5;
+  }
+
+  // float player_decay = 4;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay = this->_internal_player_decay();
+  ::uint32_t raw_player_decay;
+  memcpy(&raw_player_decay, &tmp_player_decay, sizeof(tmp_player_decay));
+  if (raw_player_decay != 0) {
+    total_size += 5;
+  }
+
+  // float player_rand = 5;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_rand = this->_internal_player_rand();
+  ::uint32_t raw_player_rand;
+  memcpy(&raw_player_rand, &tmp_player_rand, sizeof(tmp_player_rand));
+  if (raw_player_rand != 0) {
+    total_size += 5;
+  }
+
+  // float player_weight = 6;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_weight = this->_internal_player_weight();
+  ::uint32_t raw_player_weight;
+  memcpy(&raw_player_weight, &tmp_player_weight, sizeof(tmp_player_weight));
+  if (raw_player_weight != 0) {
+    total_size += 5;
+  }
+
+  // float player_speed_max = 7;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max = this->_internal_player_speed_max();
+  ::uint32_t raw_player_speed_max;
+  memcpy(&raw_player_speed_max, &tmp_player_speed_max, sizeof(tmp_player_speed_max));
+  if (raw_player_speed_max != 0) {
+    total_size += 5;
+  }
+
+  // float player_accel_max = 8;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_accel_max = this->_internal_player_accel_max();
+  ::uint32_t raw_player_accel_max;
+  memcpy(&raw_player_accel_max, &tmp_player_accel_max, sizeof(tmp_player_accel_max));
+  if (raw_player_accel_max != 0) {
+    total_size += 5;
+  }
+
+  // float stamina_max = 9;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_max = this->_internal_stamina_max();
+  ::uint32_t raw_stamina_max;
+  memcpy(&raw_stamina_max, &tmp_stamina_max, sizeof(tmp_stamina_max));
+  if (raw_stamina_max != 0) {
+    total_size += 5;
+  }
+
+  // float stamina_inc_max = 10;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_inc_max = this->_internal_stamina_inc_max();
+  ::uint32_t raw_stamina_inc_max;
+  memcpy(&raw_stamina_inc_max, &tmp_stamina_inc_max, sizeof(tmp_stamina_inc_max));
+  if (raw_stamina_inc_max != 0) {
+    total_size += 5;
+  }
+
+  // float recover_init = 11;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_init = this->_internal_recover_init();
+  ::uint32_t raw_recover_init;
+  memcpy(&raw_recover_init, &tmp_recover_init, sizeof(tmp_recover_init));
+  if (raw_recover_init != 0) {
+    total_size += 5;
+  }
+
+  // float recover_dec_thr = 12;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_dec_thr = this->_internal_recover_dec_thr();
+  ::uint32_t raw_recover_dec_thr;
+  memcpy(&raw_recover_dec_thr, &tmp_recover_dec_thr, sizeof(tmp_recover_dec_thr));
+  if (raw_recover_dec_thr != 0) {
+    total_size += 5;
+  }
+
+  // float recover_min = 13;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_min = this->_internal_recover_min();
+  ::uint32_t raw_recover_min;
+  memcpy(&raw_recover_min, &tmp_recover_min, sizeof(tmp_recover_min));
+  if (raw_recover_min != 0) {
+    total_size += 5;
+  }
+
+  // float recover_dec = 14;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_dec = this->_internal_recover_dec();
+  ::uint32_t raw_recover_dec;
+  memcpy(&raw_recover_dec, &tmp_recover_dec, sizeof(tmp_recover_dec));
+  if (raw_recover_dec != 0) {
+    total_size += 5;
+  }
+
+  // float effort_init = 15;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_init = this->_internal_effort_init();
+  ::uint32_t raw_effort_init;
+  memcpy(&raw_effort_init, &tmp_effort_init, sizeof(tmp_effort_init));
+  if (raw_effort_init != 0) {
+    total_size += 5;
+  }
+
+  // float effort_dec_thr = 16;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_dec_thr = this->_internal_effort_dec_thr();
+  ::uint32_t raw_effort_dec_thr;
+  memcpy(&raw_effort_dec_thr, &tmp_effort_dec_thr, sizeof(tmp_effort_dec_thr));
+  if (raw_effort_dec_thr != 0) {
+    total_size += 6;
+  }
+
+  // float effort_min = 17;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_min = this->_internal_effort_min();
+  ::uint32_t raw_effort_min;
+  memcpy(&raw_effort_min, &tmp_effort_min, sizeof(tmp_effort_min));
+  if (raw_effort_min != 0) {
+    total_size += 6;
+  }
+
+  // float effort_dec = 18;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_dec = this->_internal_effort_dec();
+  ::uint32_t raw_effort_dec;
+  memcpy(&raw_effort_dec, &tmp_effort_dec, sizeof(tmp_effort_dec));
+  if (raw_effort_dec != 0) {
+    total_size += 6;
+  }
+
+  // float effort_inc_thr = 19;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_inc_thr = this->_internal_effort_inc_thr();
+  ::uint32_t raw_effort_inc_thr;
+  memcpy(&raw_effort_inc_thr, &tmp_effort_inc_thr, sizeof(tmp_effort_inc_thr));
+  if (raw_effort_inc_thr != 0) {
+    total_size += 6;
+  }
+
+  // float effort_inc = 20;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_inc = this->_internal_effort_inc();
+  ::uint32_t raw_effort_inc;
+  memcpy(&raw_effort_inc, &tmp_effort_inc, sizeof(tmp_effort_inc));
+  if (raw_effort_inc != 0) {
+    total_size += 6;
+  }
+
+  // float kick_rand = 21;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand = this->_internal_kick_rand();
+  ::uint32_t raw_kick_rand;
+  memcpy(&raw_kick_rand, &tmp_kick_rand, sizeof(tmp_kick_rand));
+  if (raw_kick_rand != 0) {
+    total_size += 6;
+  }
+
+  // float player_rand_factor_l = 23;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_rand_factor_l = this->_internal_player_rand_factor_l();
+  ::uint32_t raw_player_rand_factor_l;
+  memcpy(&raw_player_rand_factor_l, &tmp_player_rand_factor_l, sizeof(tmp_player_rand_factor_l));
+  if (raw_player_rand_factor_l != 0) {
+    total_size += 6;
+  }
+
+  // float player_rand_factor_r = 24;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_rand_factor_r = this->_internal_player_rand_factor_r();
+  ::uint32_t raw_player_rand_factor_r;
+  memcpy(&raw_player_rand_factor_r, &tmp_player_rand_factor_r, sizeof(tmp_player_rand_factor_r));
+  if (raw_player_rand_factor_r != 0) {
+    total_size += 6;
+  }
+
+  // float kick_rand_factor_l = 25;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand_factor_l = this->_internal_kick_rand_factor_l();
+  ::uint32_t raw_kick_rand_factor_l;
+  memcpy(&raw_kick_rand_factor_l, &tmp_kick_rand_factor_l, sizeof(tmp_kick_rand_factor_l));
+  if (raw_kick_rand_factor_l != 0) {
+    total_size += 6;
+  }
+
+  // float kick_rand_factor_r = 26;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand_factor_r = this->_internal_kick_rand_factor_r();
+  ::uint32_t raw_kick_rand_factor_r;
+  memcpy(&raw_kick_rand_factor_r, &tmp_kick_rand_factor_r, sizeof(tmp_kick_rand_factor_r));
+  if (raw_kick_rand_factor_r != 0) {
+    total_size += 6;
+  }
+
+  // float ball_size = 27;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_size = this->_internal_ball_size();
+  ::uint32_t raw_ball_size;
+  memcpy(&raw_ball_size, &tmp_ball_size, sizeof(tmp_ball_size));
+  if (raw_ball_size != 0) {
+    total_size += 6;
+  }
+
+  // float ball_decay = 28;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_decay = this->_internal_ball_decay();
+  ::uint32_t raw_ball_decay;
+  memcpy(&raw_ball_decay, &tmp_ball_decay, sizeof(tmp_ball_decay));
+  if (raw_ball_decay != 0) {
+    total_size += 6;
+  }
+
+  // float ball_rand = 29;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_rand = this->_internal_ball_rand();
+  ::uint32_t raw_ball_rand;
+  memcpy(&raw_ball_rand, &tmp_ball_rand, sizeof(tmp_ball_rand));
+  if (raw_ball_rand != 0) {
+    total_size += 6;
+  }
+
+  // float ball_weight = 30;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_weight = this->_internal_ball_weight();
+  ::uint32_t raw_ball_weight;
+  memcpy(&raw_ball_weight, &tmp_ball_weight, sizeof(tmp_ball_weight));
+  if (raw_ball_weight != 0) {
+    total_size += 6;
+  }
+
+  // float ball_speed_max = 31;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_speed_max = this->_internal_ball_speed_max();
+  ::uint32_t raw_ball_speed_max;
+  memcpy(&raw_ball_speed_max, &tmp_ball_speed_max, sizeof(tmp_ball_speed_max));
+  if (raw_ball_speed_max != 0) {
+    total_size += 6;
+  }
+
+  // float ball_accel_max = 32;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_accel_max = this->_internal_ball_accel_max();
+  ::uint32_t raw_ball_accel_max;
+  memcpy(&raw_ball_accel_max, &tmp_ball_accel_max, sizeof(tmp_ball_accel_max));
+  if (raw_ball_accel_max != 0) {
+    total_size += 6;
+  }
+
+  // float dash_power_rate = 33;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate = this->_internal_dash_power_rate();
+  ::uint32_t raw_dash_power_rate;
+  memcpy(&raw_dash_power_rate, &tmp_dash_power_rate, sizeof(tmp_dash_power_rate));
+  if (raw_dash_power_rate != 0) {
+    total_size += 6;
+  }
+
+  // float kick_power_rate = 34;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate = this->_internal_kick_power_rate();
+  ::uint32_t raw_kick_power_rate;
+  memcpy(&raw_kick_power_rate, &tmp_kick_power_rate, sizeof(tmp_kick_power_rate));
+  if (raw_kick_power_rate != 0) {
+    total_size += 6;
+  }
+
+  // float kickable_margin = 35;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin = this->_internal_kickable_margin();
+  ::uint32_t raw_kickable_margin;
+  memcpy(&raw_kickable_margin, &tmp_kickable_margin, sizeof(tmp_kickable_margin));
+  if (raw_kickable_margin != 0) {
+    total_size += 6;
+  }
+
+  // float control_radius = 36;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_control_radius = this->_internal_control_radius();
+  ::uint32_t raw_control_radius;
+  memcpy(&raw_control_radius, &tmp_control_radius, sizeof(tmp_control_radius));
+  if (raw_control_radius != 0) {
+    total_size += 6;
+  }
+
+  // float control_radius_width = 37;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_control_radius_width = this->_internal_control_radius_width();
+  ::uint32_t raw_control_radius_width;
+  memcpy(&raw_control_radius_width, &tmp_control_radius_width, sizeof(tmp_control_radius_width));
+  if (raw_control_radius_width != 0) {
+    total_size += 6;
+  }
+
+  // float max_power = 38;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_power = this->_internal_max_power();
+  ::uint32_t raw_max_power;
+  memcpy(&raw_max_power, &tmp_max_power, sizeof(tmp_max_power));
+  if (raw_max_power != 0) {
+    total_size += 6;
+  }
+
+  // float min_power = 39;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_power = this->_internal_min_power();
+  ::uint32_t raw_min_power;
+  memcpy(&raw_min_power, &tmp_min_power, sizeof(tmp_min_power));
+  if (raw_min_power != 0) {
+    total_size += 6;
+  }
+
+  // float max_moment = 40;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_moment = this->_internal_max_moment();
+  ::uint32_t raw_max_moment;
+  memcpy(&raw_max_moment, &tmp_max_moment, sizeof(tmp_max_moment));
+  if (raw_max_moment != 0) {
+    total_size += 6;
+  }
+
+  // float min_moment = 41;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_moment = this->_internal_min_moment();
+  ::uint32_t raw_min_moment;
+  memcpy(&raw_min_moment, &tmp_min_moment, sizeof(tmp_min_moment));
+  if (raw_min_moment != 0) {
+    total_size += 6;
+  }
+
+  // float max_neck_moment = 42;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_neck_moment = this->_internal_max_neck_moment();
+  ::uint32_t raw_max_neck_moment;
+  memcpy(&raw_max_neck_moment, &tmp_max_neck_moment, sizeof(tmp_max_neck_moment));
+  if (raw_max_neck_moment != 0) {
+    total_size += 6;
+  }
+
+  // float min_neck_moment = 43;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_neck_moment = this->_internal_min_neck_moment();
+  ::uint32_t raw_min_neck_moment;
+  memcpy(&raw_min_neck_moment, &tmp_min_neck_moment, sizeof(tmp_min_neck_moment));
+  if (raw_min_neck_moment != 0) {
+    total_size += 6;
+  }
+
+  // float max_neck_angle = 44;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_neck_angle = this->_internal_max_neck_angle();
+  ::uint32_t raw_max_neck_angle;
+  memcpy(&raw_max_neck_angle, &tmp_max_neck_angle, sizeof(tmp_max_neck_angle));
+  if (raw_max_neck_angle != 0) {
+    total_size += 6;
+  }
+
+  // float min_neck_angle = 45;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_neck_angle = this->_internal_min_neck_angle();
+  ::uint32_t raw_min_neck_angle;
+  memcpy(&raw_min_neck_angle, &tmp_min_neck_angle, sizeof(tmp_min_neck_angle));
+  if (raw_min_neck_angle != 0) {
+    total_size += 6;
+  }
+
+  // float visible_angle = 46;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_visible_angle = this->_internal_visible_angle();
+  ::uint32_t raw_visible_angle;
+  memcpy(&raw_visible_angle, &tmp_visible_angle, sizeof(tmp_visible_angle));
+  if (raw_visible_angle != 0) {
+    total_size += 6;
+  }
+
+  // float visible_distance = 47;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_visible_distance = this->_internal_visible_distance();
+  ::uint32_t raw_visible_distance;
+  memcpy(&raw_visible_distance, &tmp_visible_distance, sizeof(tmp_visible_distance));
+  if (raw_visible_distance != 0) {
+    total_size += 6;
+  }
+
+  // float wind_dir = 48;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_dir = this->_internal_wind_dir();
+  ::uint32_t raw_wind_dir;
+  memcpy(&raw_wind_dir, &tmp_wind_dir, sizeof(tmp_wind_dir));
+  if (raw_wind_dir != 0) {
+    total_size += 6;
+  }
+
+  // float wind_force = 49;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_force = this->_internal_wind_force();
+  ::uint32_t raw_wind_force;
+  memcpy(&raw_wind_force, &tmp_wind_force, sizeof(tmp_wind_force));
+  if (raw_wind_force != 0) {
+    total_size += 6;
+  }
+
+  // float wind_angle = 50;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_angle = this->_internal_wind_angle();
+  ::uint32_t raw_wind_angle;
+  memcpy(&raw_wind_angle, &tmp_wind_angle, sizeof(tmp_wind_angle));
+  if (raw_wind_angle != 0) {
+    total_size += 6;
+  }
+
+  // float wind_rand = 51;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_rand = this->_internal_wind_rand();
+  ::uint32_t raw_wind_rand;
+  memcpy(&raw_wind_rand, &tmp_wind_rand, sizeof(tmp_wind_rand));
+  if (raw_wind_rand != 0) {
+    total_size += 6;
+  }
+
+  // float kickable_area = 52;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_area = this->_internal_kickable_area();
+  ::uint32_t raw_kickable_area;
+  memcpy(&raw_kickable_area, &tmp_kickable_area, sizeof(tmp_kickable_area));
+  if (raw_kickable_area != 0) {
+    total_size += 6;
+  }
+
+  // float catch_area_l = 53;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catch_area_l = this->_internal_catch_area_l();
+  ::uint32_t raw_catch_area_l;
+  memcpy(&raw_catch_area_l, &tmp_catch_area_l, sizeof(tmp_catch_area_l));
+  if (raw_catch_area_l != 0) {
+    total_size += 6;
+  }
+
+  // float catch_area_w = 54;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catch_area_w = this->_internal_catch_area_w();
+  ::uint32_t raw_catch_area_w;
+  memcpy(&raw_catch_area_w, &tmp_catch_area_w, sizeof(tmp_catch_area_w));
+  if (raw_catch_area_w != 0) {
+    total_size += 6;
+  }
+
+  // float catch_probability = 55;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catch_probability = this->_internal_catch_probability();
+  ::uint32_t raw_catch_probability;
+  memcpy(&raw_catch_probability, &tmp_catch_probability, sizeof(tmp_catch_probability));
+  if (raw_catch_probability != 0) {
+    total_size += 6;
+  }
+
+  // bool team_actuator_noise = 22;
+  if (this->_internal_team_actuator_noise() != 0) {
+    total_size += 3;
+  }
+
+  // bool wind_none = 59;
+  if (this->_internal_wind_none() != 0) {
+    total_size += 3;
+  }
+
+  // bool use_wind_random = 60;
+  if (this->_internal_use_wind_random() != 0) {
+    total_size += 3;
+  }
+
+  // bool use_offside = 82;
+  if (this->_internal_use_offside() != 0) {
+    total_size += 3;
+  }
+
+  // int32 goalie_max_moves = 56;
+  if (this->_internal_goalie_max_moves() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_goalie_max_moves());
+  }
+
+  // float corner_kick_margin = 57;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_corner_kick_margin = this->_internal_corner_kick_margin();
+  ::uint32_t raw_corner_kick_margin;
+  memcpy(&raw_corner_kick_margin, &tmp_corner_kick_margin, sizeof(tmp_corner_kick_margin));
+  if (raw_corner_kick_margin != 0) {
+    total_size += 6;
+  }
+
+  // float offside_active_area_size = 58;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_offside_active_area_size = this->_internal_offside_active_area_size();
+  ::uint32_t raw_offside_active_area_size;
+  memcpy(&raw_offside_active_area_size, &tmp_offside_active_area_size, sizeof(tmp_offside_active_area_size));
+  if (raw_offside_active_area_size != 0) {
+    total_size += 6;
+  }
+
+  // int32 coach_say_count_max = 61;
+  if (this->_internal_coach_say_count_max() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_coach_say_count_max());
+  }
+
+  // int32 coach_say_msg_size = 62;
+  if (this->_internal_coach_say_msg_size() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_coach_say_msg_size());
+  }
+
+  // int32 clang_win_size = 63;
+  if (this->_internal_clang_win_size() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_clang_win_size());
+  }
+
+  // int32 clang_define_win = 64;
+  if (this->_internal_clang_define_win() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_clang_define_win());
+  }
+
+  // int32 clang_meta_win = 65;
+  if (this->_internal_clang_meta_win() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_clang_meta_win());
+  }
+
+  // int32 clang_advice_win = 66;
+  if (this->_internal_clang_advice_win() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_clang_advice_win());
+  }
+
+  // int32 clang_info_win = 67;
+  if (this->_internal_clang_info_win() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_clang_info_win());
+  }
+
+  // int32 clang_mess_delay = 68;
+  if (this->_internal_clang_mess_delay() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_clang_mess_delay());
+  }
+
+  // int32 clang_mess_per_cycle = 69;
+  if (this->_internal_clang_mess_per_cycle() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_clang_mess_per_cycle());
+  }
+
+  // int32 half_time = 70;
+  if (this->_internal_half_time() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_half_time());
+  }
+
+  // int32 simulator_step = 71;
+  if (this->_internal_simulator_step() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_simulator_step());
+  }
+
+  // int32 send_step = 72;
+  if (this->_internal_send_step() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_send_step());
+  }
+
+  // int32 recv_step = 73;
+  if (this->_internal_recv_step() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_recv_step());
+  }
+
+  // int32 sense_body_step = 74;
+  if (this->_internal_sense_body_step() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_sense_body_step());
+  }
+
+  // int32 lcm_step = 75;
+  if (this->_internal_lcm_step() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_lcm_step());
+  }
+
+  // int32 player_say_msg_size = 76;
+  if (this->_internal_player_say_msg_size() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_player_say_msg_size());
+  }
+
+  // int32 player_hear_max = 77;
+  if (this->_internal_player_hear_max() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_player_hear_max());
+  }
+
+  // int32 player_hear_inc = 78;
+  if (this->_internal_player_hear_inc() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_player_hear_inc());
+  }
+
+  // int32 player_hear_decay = 79;
+  if (this->_internal_player_hear_decay() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_player_hear_decay());
+  }
+
+  // int32 catch_ban_cycle = 80;
+  if (this->_internal_catch_ban_cycle() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_catch_ban_cycle());
+  }
+
+  // int32 slow_down_factor = 81;
+  if (this->_internal_slow_down_factor() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_slow_down_factor());
+  }
+
+  // float offside_kick_margin = 84;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_offside_kick_margin = this->_internal_offside_kick_margin();
+  ::uint32_t raw_offside_kick_margin;
+  memcpy(&raw_offside_kick_margin, &tmp_offside_kick_margin, sizeof(tmp_offside_kick_margin));
+  if (raw_offside_kick_margin != 0) {
+    total_size += 6;
+  }
+
+  // float audio_cut_dist = 85;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_audio_cut_dist = this->_internal_audio_cut_dist();
+  ::uint32_t raw_audio_cut_dist;
+  memcpy(&raw_audio_cut_dist, &tmp_audio_cut_dist, sizeof(tmp_audio_cut_dist));
+  if (raw_audio_cut_dist != 0) {
+    total_size += 6;
+  }
+
+  // float dist_quantize_step = 86;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dist_quantize_step = this->_internal_dist_quantize_step();
+  ::uint32_t raw_dist_quantize_step;
+  memcpy(&raw_dist_quantize_step, &tmp_dist_quantize_step, sizeof(tmp_dist_quantize_step));
+  if (raw_dist_quantize_step != 0) {
+    total_size += 6;
+  }
+
+  // float landmark_dist_quantize_step = 87;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_landmark_dist_quantize_step = this->_internal_landmark_dist_quantize_step();
+  ::uint32_t raw_landmark_dist_quantize_step;
+  memcpy(&raw_landmark_dist_quantize_step, &tmp_landmark_dist_quantize_step, sizeof(tmp_landmark_dist_quantize_step));
+  if (raw_landmark_dist_quantize_step != 0) {
+    total_size += 6;
+  }
+
+  // float dir_quantize_step = 88;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dir_quantize_step = this->_internal_dir_quantize_step();
+  ::uint32_t raw_dir_quantize_step;
+  memcpy(&raw_dir_quantize_step, &tmp_dir_quantize_step, sizeof(tmp_dir_quantize_step));
+  if (raw_dir_quantize_step != 0) {
+    total_size += 6;
+  }
+
+  // float dist_quantize_step_l = 89;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dist_quantize_step_l = this->_internal_dist_quantize_step_l();
+  ::uint32_t raw_dist_quantize_step_l;
+  memcpy(&raw_dist_quantize_step_l, &tmp_dist_quantize_step_l, sizeof(tmp_dist_quantize_step_l));
+  if (raw_dist_quantize_step_l != 0) {
+    total_size += 6;
+  }
+
+  // float dist_quantize_step_r = 90;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dist_quantize_step_r = this->_internal_dist_quantize_step_r();
+  ::uint32_t raw_dist_quantize_step_r;
+  memcpy(&raw_dist_quantize_step_r, &tmp_dist_quantize_step_r, sizeof(tmp_dist_quantize_step_r));
+  if (raw_dist_quantize_step_r != 0) {
+    total_size += 6;
+  }
+
+  // float landmark_dist_quantize_step_l = 91;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_landmark_dist_quantize_step_l = this->_internal_landmark_dist_quantize_step_l();
+  ::uint32_t raw_landmark_dist_quantize_step_l;
+  memcpy(&raw_landmark_dist_quantize_step_l, &tmp_landmark_dist_quantize_step_l, sizeof(tmp_landmark_dist_quantize_step_l));
+  if (raw_landmark_dist_quantize_step_l != 0) {
+    total_size += 6;
+  }
+
+  // float landmark_dist_quantize_step_r = 92;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_landmark_dist_quantize_step_r = this->_internal_landmark_dist_quantize_step_r();
+  ::uint32_t raw_landmark_dist_quantize_step_r;
+  memcpy(&raw_landmark_dist_quantize_step_r, &tmp_landmark_dist_quantize_step_r, sizeof(tmp_landmark_dist_quantize_step_r));
+  if (raw_landmark_dist_quantize_step_r != 0) {
+    total_size += 6;
+  }
+
+  // bool kickoff_offside = 83;
+  if (this->_internal_kickoff_offside() != 0) {
+    total_size += 3;
+  }
+
+  // bool coach_mode = 95;
+  if (this->_internal_coach_mode() != 0) {
+    total_size += 3;
+  }
+
+  // bool coach_with_referee_mode = 96;
+  if (this->_internal_coach_with_referee_mode() != 0) {
+    total_size += 3;
+  }
+
+  // bool use_old_coach_hear = 97;
+  if (this->_internal_use_old_coach_hear() != 0) {
+    total_size += 3;
+  }
+
+  // float dir_quantize_step_l = 93;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dir_quantize_step_l = this->_internal_dir_quantize_step_l();
+  ::uint32_t raw_dir_quantize_step_l;
+  memcpy(&raw_dir_quantize_step_l, &tmp_dir_quantize_step_l, sizeof(tmp_dir_quantize_step_l));
+  if (raw_dir_quantize_step_l != 0) {
+    total_size += 6;
+  }
+
+  // float dir_quantize_step_r = 94;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dir_quantize_step_r = this->_internal_dir_quantize_step_r();
+  ::uint32_t raw_dir_quantize_step_r;
+  memcpy(&raw_dir_quantize_step_r, &tmp_dir_quantize_step_r, sizeof(tmp_dir_quantize_step_r));
+  if (raw_dir_quantize_step_r != 0) {
+    total_size += 6;
+  }
+
+  // float slowness_on_top_for_left_team = 98;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_slowness_on_top_for_left_team = this->_internal_slowness_on_top_for_left_team();
+  ::uint32_t raw_slowness_on_top_for_left_team;
+  memcpy(&raw_slowness_on_top_for_left_team, &tmp_slowness_on_top_for_left_team, sizeof(tmp_slowness_on_top_for_left_team));
+  if (raw_slowness_on_top_for_left_team != 0) {
+    total_size += 6;
+  }
+
+  // float slowness_on_top_for_right_team = 99;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_slowness_on_top_for_right_team = this->_internal_slowness_on_top_for_right_team();
+  ::uint32_t raw_slowness_on_top_for_right_team;
+  memcpy(&raw_slowness_on_top_for_right_team, &tmp_slowness_on_top_for_right_team, sizeof(tmp_slowness_on_top_for_right_team));
+  if (raw_slowness_on_top_for_right_team != 0) {
+    total_size += 6;
+  }
+
+  // int32 start_goal_l = 100;
+  if (this->_internal_start_goal_l() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_start_goal_l());
+  }
+
+  // int32 start_goal_r = 101;
+  if (this->_internal_start_goal_r() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_start_goal_r());
+  }
+
+  // int32 drop_ball_time = 104;
+  if (this->_internal_drop_ball_time() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_drop_ball_time());
+  }
+
+  // bool fullstate_l = 102;
+  if (this->_internal_fullstate_l() != 0) {
+    total_size += 3;
+  }
+
+  // bool fullstate_r = 103;
+  if (this->_internal_fullstate_r() != 0) {
+    total_size += 3;
+  }
+
+  // bool synch_mode = 105;
+  if (this->_internal_synch_mode() != 0) {
+    total_size += 3;
+  }
+
+  // bool verbose_mode = 113;
+  if (this->_internal_verbose_mode() != 0) {
+    total_size += 3;
+  }
+
+  // int32 synch_offset = 106;
+  if (this->_internal_synch_offset() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_synch_offset());
+  }
+
+  // int32 synch_micro_sleep = 107;
+  if (this->_internal_synch_micro_sleep() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_synch_micro_sleep());
+  }
+
+  // int32 point_to_ban = 108;
+  if (this->_internal_point_to_ban() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_point_to_ban());
+  }
+
+  // int32 point_to_duration = 109;
+  if (this->_internal_point_to_duration() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_point_to_duration());
+  }
+
+  // int32 player_port = 110;
+  if (this->_internal_player_port() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_player_port());
+  }
+
+  // int32 trainer_port = 111;
+  if (this->_internal_trainer_port() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_trainer_port());
+  }
+
+  // int32 online_coach_port = 112;
+  if (this->_internal_online_coach_port() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_online_coach_port());
+  }
+
+  // int32 coach_send_vi_step = 114;
+  if (this->_internal_coach_send_vi_step() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_coach_send_vi_step());
+  }
+
+  // bool send_comms = 117;
+  if (this->_internal_send_comms() != 0) {
+    total_size += 3;
+  }
+
+  // bool text_logging = 118;
+  if (this->_internal_text_logging() != 0) {
+    total_size += 3;
+  }
+
+  // bool game_logging = 119;
+  if (this->_internal_game_logging() != 0) {
+    total_size += 3;
+  }
+
+  // bool use_text_log_fixed = 125;
+  if (this->_internal_use_text_log_fixed() != 0) {
+    total_size += 3;
+  }
+
+  // int32 game_log_version = 120;
+  if (this->_internal_game_log_version() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_game_log_version());
+  }
+
+  // bool use_game_log_fixed = 126;
+  if (this->_internal_use_game_log_fixed() != 0) {
+    total_size += 3;
+  }
+
+  // bool use_text_log_dated = 127;
+  if (this->_internal_use_text_log_dated() != 0) {
+    total_size += 3;
+  }
+
+  // bool use_game_log_dated = 128;
+  if (this->_internal_use_game_log_dated() != 0) {
+    total_size += 3;
+  }
+
+  // bool log_times = 130;
+  if (this->_internal_log_times() != 0) {
+    total_size += 3;
+  }
+
+  // int32 text_log_compression = 132;
+  if (this->_internal_text_log_compression() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_text_log_compression());
+  }
+
+  // int32 game_log_compression = 133;
+  if (this->_internal_game_log_compression() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_game_log_compression());
+  }
+
+  // float tackle_dist = 135;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_dist = this->_internal_tackle_dist();
+  ::uint32_t raw_tackle_dist;
+  memcpy(&raw_tackle_dist, &tmp_tackle_dist, sizeof(tmp_tackle_dist));
+  if (raw_tackle_dist != 0) {
+    total_size += 6;
+  }
+
+  // float tackle_back_dist = 136;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_back_dist = this->_internal_tackle_back_dist();
+  ::uint32_t raw_tackle_back_dist;
+  memcpy(&raw_tackle_back_dist, &tmp_tackle_back_dist, sizeof(tmp_tackle_back_dist));
+  if (raw_tackle_back_dist != 0) {
+    total_size += 6;
+  }
+
+  // float tackle_width = 137;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_width = this->_internal_tackle_width();
+  ::uint32_t raw_tackle_width;
+  memcpy(&raw_tackle_width, &tmp_tackle_width, sizeof(tmp_tackle_width));
+  if (raw_tackle_width != 0) {
+    total_size += 6;
+  }
+
+  // float tackle_exponent = 138;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_exponent = this->_internal_tackle_exponent();
+  ::uint32_t raw_tackle_exponent;
+  memcpy(&raw_tackle_exponent, &tmp_tackle_exponent, sizeof(tmp_tackle_exponent));
+  if (raw_tackle_exponent != 0) {
+    total_size += 6;
+  }
+
+  // bool record_message = 131;
+  if (this->_internal_record_message() != 0) {
+    total_size += 3;
+  }
+
+  // bool use_profile = 134;
+  if (this->_internal_use_profile() != 0) {
+    total_size += 3;
+  }
+
+  // bool free_kick_faults = 143;
+  if (this->_internal_free_kick_faults() != 0) {
+    total_size += 3;
+  }
+
+  // bool back_passes = 144;
+  if (this->_internal_back_passes() != 0) {
+    total_size += 3;
+  }
+
+  // int32 tackle_cycles = 139;
+  if (this->_internal_tackle_cycles() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_tackle_cycles());
+  }
+
+  // float tackle_power_rate = 140;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_power_rate = this->_internal_tackle_power_rate();
+  ::uint32_t raw_tackle_power_rate;
+  memcpy(&raw_tackle_power_rate, &tmp_tackle_power_rate, sizeof(tmp_tackle_power_rate));
+  if (raw_tackle_power_rate != 0) {
+    total_size += 6;
+  }
+
+  // int32 freeform_wait_period = 141;
+  if (this->_internal_freeform_wait_period() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_freeform_wait_period());
+  }
+
+  // int32 freeform_send_period = 142;
+  if (this->_internal_freeform_send_period() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_freeform_send_period());
+  }
+
+  // float stopped_ball_vel = 146;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stopped_ball_vel = this->_internal_stopped_ball_vel();
+  ::uint32_t raw_stopped_ball_vel;
+  memcpy(&raw_stopped_ball_vel, &tmp_stopped_ball_vel, sizeof(tmp_stopped_ball_vel));
+  if (raw_stopped_ball_vel != 0) {
+    total_size += 6;
+  }
+
+  // int32 max_goal_kicks = 147;
+  if (this->_internal_max_goal_kicks() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_max_goal_kicks());
+  }
+
+  // int32 clang_del_win = 148;
+  if (this->_internal_clang_del_win() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_clang_del_win());
+  }
+
+  // int32 clang_rule_win = 149;
+  if (this->_internal_clang_rule_win() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_clang_rule_win());
+  }
+
+  // int32 kick_off_wait = 151;
+  if (this->_internal_kick_off_wait() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_kick_off_wait());
+  }
+
+  // int32 connect_wait = 152;
+  if (this->_internal_connect_wait() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_connect_wait());
+  }
+
+  // bool proper_goal_kicks = 145;
+  if (this->_internal_proper_goal_kicks() != 0) {
+    total_size += 3;
+  }
+
+  // bool auto_mode = 150;
+  if (this->_internal_auto_mode() != 0) {
+    total_size += 3;
+  }
+
+  // bool keepaway_mode = 156;
+  if (this->_internal_keepaway_mode() != 0) {
+    total_size += 3;
+  }
+
+  // bool keepaway_logging = 159;
+  if (this->_internal_keepaway_logging() != 0) {
+    total_size += 3;
+  }
+
+  // int32 game_over_wait = 153;
+  if (this->_internal_game_over_wait() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_game_over_wait());
+  }
+
+  // float keepaway_length = 157;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_keepaway_length = this->_internal_keepaway_length();
+  ::uint32_t raw_keepaway_length;
+  memcpy(&raw_keepaway_length, &tmp_keepaway_length, sizeof(tmp_keepaway_length));
+  if (raw_keepaway_length != 0) {
+    total_size += 6;
+  }
+
+  // float keepaway_width = 158;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_keepaway_width = this->_internal_keepaway_width();
+  ::uint32_t raw_keepaway_width;
+  memcpy(&raw_keepaway_width, &tmp_keepaway_width, sizeof(tmp_keepaway_width));
+  if (raw_keepaway_width != 0) {
+    total_size += 6;
+  }
+
+  // int32 keepaway_start = 164;
+  if (this->_internal_keepaway_start() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_keepaway_start());
+  }
+
+  // int32 nr_normal_halfs = 165;
+  if (this->_internal_nr_normal_halfs() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_nr_normal_halfs());
+  }
+
+  // int32 nr_extra_halfs = 166;
+  if (this->_internal_nr_extra_halfs() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_nr_extra_halfs());
+  }
+
+  // bool keepaway_log_fixed = 162;
+  if (this->_internal_keepaway_log_fixed() != 0) {
+    total_size += 3;
+  }
+
+  // bool keepaway_log_dated = 163;
+  if (this->_internal_keepaway_log_dated() != 0) {
+    total_size += 3;
+  }
+
+  // bool penalty_shoot_outs = 167;
+  if (this->_internal_penalty_shoot_outs() != 0) {
+    total_size += 3;
+  }
+
+  // bool pen_random_winner = 175;
+  if (this->_internal_pen_random_winner() != 0) {
+    total_size += 3;
+  }
+
+  // int32 pen_before_setup_wait = 168;
+  if (this->_internal_pen_before_setup_wait() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_pen_before_setup_wait());
+  }
+
+  // int32 pen_setup_wait = 169;
+  if (this->_internal_pen_setup_wait() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_pen_setup_wait());
+  }
+
+  // int32 pen_ready_wait = 170;
+  if (this->_internal_pen_ready_wait() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_pen_ready_wait());
+  }
+
+  // int32 pen_taken_wait = 171;
+  if (this->_internal_pen_taken_wait() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_pen_taken_wait());
+  }
+
+  // int32 pen_nr_kicks = 172;
+  if (this->_internal_pen_nr_kicks() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_pen_nr_kicks());
+  }
+
+  // int32 pen_max_extra_kicks = 173;
+  if (this->_internal_pen_max_extra_kicks() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_pen_max_extra_kicks());
+  }
+
+  // float pen_dist_x = 174;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_pen_dist_x = this->_internal_pen_dist_x();
+  ::uint32_t raw_pen_dist_x;
+  memcpy(&raw_pen_dist_x, &tmp_pen_dist_x, sizeof(tmp_pen_dist_x));
+  if (raw_pen_dist_x != 0) {
+    total_size += 6;
+  }
+
+  // float pen_max_goalie_dist_x = 177;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_pen_max_goalie_dist_x = this->_internal_pen_max_goalie_dist_x();
+  ::uint32_t raw_pen_max_goalie_dist_x;
+  memcpy(&raw_pen_max_goalie_dist_x, &tmp_pen_max_goalie_dist_x, sizeof(tmp_pen_max_goalie_dist_x));
+  if (raw_pen_max_goalie_dist_x != 0) {
+    total_size += 6;
+  }
+
+  // float ball_stuck_area = 180;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_stuck_area = this->_internal_ball_stuck_area();
+  ::uint32_t raw_ball_stuck_area;
+  memcpy(&raw_ball_stuck_area, &tmp_ball_stuck_area, sizeof(tmp_ball_stuck_area));
+  if (raw_ball_stuck_area != 0) {
+    total_size += 6;
+  }
+
+  // float max_tackle_power = 182;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_tackle_power = this->_internal_max_tackle_power();
+  ::uint32_t raw_max_tackle_power;
+  memcpy(&raw_max_tackle_power, &tmp_max_tackle_power, sizeof(tmp_max_tackle_power));
+  if (raw_max_tackle_power != 0) {
+    total_size += 6;
+  }
+
+  // float max_back_tackle_power = 183;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_back_tackle_power = this->_internal_max_back_tackle_power();
+  ::uint32_t raw_max_back_tackle_power;
+  memcpy(&raw_max_back_tackle_power, &tmp_max_back_tackle_power, sizeof(tmp_max_back_tackle_power));
+  if (raw_max_back_tackle_power != 0) {
+    total_size += 6;
+  }
+
+  // float player_speed_max_min = 184;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max_min = this->_internal_player_speed_max_min();
+  ::uint32_t raw_player_speed_max_min;
+  memcpy(&raw_player_speed_max_min, &tmp_player_speed_max_min, sizeof(tmp_player_speed_max_min));
+  if (raw_player_speed_max_min != 0) {
+    total_size += 6;
+  }
+
+  // bool pen_allow_mult_kicks = 176;
+  if (this->_internal_pen_allow_mult_kicks() != 0) {
+    total_size += 3;
+  }
+
+  // bool pen_coach_moves_players = 178;
+  if (this->_internal_pen_coach_moves_players() != 0) {
+    total_size += 3;
+  }
+
+  // bool golden_goal = 200;
+  if (this->_internal_golden_goal() != 0) {
+    total_size += 3;
+  }
+
+  // float extra_stamina = 185;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina = this->_internal_extra_stamina();
+  ::uint32_t raw_extra_stamina;
+  memcpy(&raw_extra_stamina, &tmp_extra_stamina, sizeof(tmp_extra_stamina));
+  if (raw_extra_stamina != 0) {
+    total_size += 6;
+  }
+
+  // int32 synch_see_offset = 186;
+  if (this->_internal_synch_see_offset() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_synch_see_offset());
+  }
+
+  // int32 extra_half_time = 187;
+  if (this->_internal_extra_half_time() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_extra_half_time());
+  }
+
+  // float stamina_capacity = 188;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_capacity = this->_internal_stamina_capacity();
+  ::uint32_t raw_stamina_capacity;
+  memcpy(&raw_stamina_capacity, &tmp_stamina_capacity, sizeof(tmp_stamina_capacity));
+  if (raw_stamina_capacity != 0) {
+    total_size += 6;
+  }
+
+  // float max_dash_angle = 189;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_dash_angle = this->_internal_max_dash_angle();
+  ::uint32_t raw_max_dash_angle;
+  memcpy(&raw_max_dash_angle, &tmp_max_dash_angle, sizeof(tmp_max_dash_angle));
+  if (raw_max_dash_angle != 0) {
+    total_size += 6;
+  }
+
+  // float min_dash_angle = 190;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_dash_angle = this->_internal_min_dash_angle();
+  ::uint32_t raw_min_dash_angle;
+  memcpy(&raw_min_dash_angle, &tmp_min_dash_angle, sizeof(tmp_min_dash_angle));
+  if (raw_min_dash_angle != 0) {
+    total_size += 6;
+  }
+
+  // float dash_angle_step = 191;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_angle_step = this->_internal_dash_angle_step();
+  ::uint32_t raw_dash_angle_step;
+  memcpy(&raw_dash_angle_step, &tmp_dash_angle_step, sizeof(tmp_dash_angle_step));
+  if (raw_dash_angle_step != 0) {
+    total_size += 6;
+  }
+
+  // float side_dash_rate = 192;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_side_dash_rate = this->_internal_side_dash_rate();
+  ::uint32_t raw_side_dash_rate;
+  memcpy(&raw_side_dash_rate, &tmp_side_dash_rate, sizeof(tmp_side_dash_rate));
+  if (raw_side_dash_rate != 0) {
+    total_size += 6;
+  }
+
+  // float back_dash_rate = 193;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_back_dash_rate = this->_internal_back_dash_rate();
+  ::uint32_t raw_back_dash_rate;
+  memcpy(&raw_back_dash_rate, &tmp_back_dash_rate, sizeof(tmp_back_dash_rate));
+  if (raw_back_dash_rate != 0) {
+    total_size += 6;
+  }
+
+  // float max_dash_power = 194;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_dash_power = this->_internal_max_dash_power();
+  ::uint32_t raw_max_dash_power;
+  memcpy(&raw_max_dash_power, &tmp_max_dash_power, sizeof(tmp_max_dash_power));
+  if (raw_max_dash_power != 0) {
+    total_size += 6;
+  }
+
+  // float min_dash_power = 195;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_dash_power = this->_internal_min_dash_power();
+  ::uint32_t raw_min_dash_power;
+  memcpy(&raw_min_dash_power, &tmp_min_dash_power, sizeof(tmp_min_dash_power));
+  if (raw_min_dash_power != 0) {
+    total_size += 6;
+  }
+
+  // float tackle_rand_factor = 196;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_rand_factor = this->_internal_tackle_rand_factor();
+  ::uint32_t raw_tackle_rand_factor;
+  memcpy(&raw_tackle_rand_factor, &tmp_tackle_rand_factor, sizeof(tmp_tackle_rand_factor));
+  if (raw_tackle_rand_factor != 0) {
+    total_size += 6;
+  }
+
+  // float foul_detect_probability = 197;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_detect_probability = this->_internal_foul_detect_probability();
+  ::uint32_t raw_foul_detect_probability;
+  memcpy(&raw_foul_detect_probability, &tmp_foul_detect_probability, sizeof(tmp_foul_detect_probability));
+  if (raw_foul_detect_probability != 0) {
+    total_size += 6;
+  }
+
+  // float foul_exponent = 198;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_exponent = this->_internal_foul_exponent();
+  ::uint32_t raw_foul_exponent;
+  memcpy(&raw_foul_exponent, &tmp_foul_exponent, sizeof(tmp_foul_exponent));
+  if (raw_foul_exponent != 0) {
+    total_size += 6;
+  }
+
+  // int32 foul_cycles = 199;
+  if (this->_internal_foul_cycles() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_foul_cycles());
+  }
+
+  // float red_card_probability = 201;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_red_card_probability = this->_internal_red_card_probability();
+  ::uint32_t raw_red_card_probability;
+  memcpy(&raw_red_card_probability, &tmp_red_card_probability, sizeof(tmp_red_card_probability));
+  if (raw_red_card_probability != 0) {
+    total_size += 6;
+  }
+
+  // int32 illegal_defense_duration = 202;
+  if (this->_internal_illegal_defense_duration() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_illegal_defense_duration());
+  }
+
+  // int32 illegal_defense_number = 203;
+  if (this->_internal_illegal_defense_number() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_illegal_defense_number());
+  }
+
+  // float illegal_defense_dist_x = 204;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_illegal_defense_dist_x = this->_internal_illegal_defense_dist_x();
+  ::uint32_t raw_illegal_defense_dist_x;
+  memcpy(&raw_illegal_defense_dist_x, &tmp_illegal_defense_dist_x, sizeof(tmp_illegal_defense_dist_x));
+  if (raw_illegal_defense_dist_x != 0) {
+    total_size += 6;
+  }
+
+  // float illegal_defense_width = 205;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_illegal_defense_width = this->_internal_illegal_defense_width();
+  ::uint32_t raw_illegal_defense_width;
+  memcpy(&raw_illegal_defense_width, &tmp_illegal_defense_width, sizeof(tmp_illegal_defense_width));
+  if (raw_illegal_defense_width != 0) {
+    total_size += 6;
+  }
+
+  // float max_catch_angle = 208;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_catch_angle = this->_internal_max_catch_angle();
+  ::uint32_t raw_max_catch_angle;
+  memcpy(&raw_max_catch_angle, &tmp_max_catch_angle, sizeof(tmp_max_catch_angle));
+  if (raw_max_catch_angle != 0) {
+    total_size += 6;
+  }
+
+  // float min_catch_angle = 209;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_catch_angle = this->_internal_min_catch_angle();
+  ::uint32_t raw_min_catch_angle;
+  memcpy(&raw_min_catch_angle, &tmp_min_catch_angle, sizeof(tmp_min_catch_angle));
+  if (raw_min_catch_angle != 0) {
+    total_size += 6;
+  }
+
+  // int32 random_seed = 210;
+  if (this->_internal_random_seed() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_random_seed());
+  }
+
+  // float long_kick_power_factor = 211;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_long_kick_power_factor = this->_internal_long_kick_power_factor();
+  ::uint32_t raw_long_kick_power_factor;
+  memcpy(&raw_long_kick_power_factor, &tmp_long_kick_power_factor, sizeof(tmp_long_kick_power_factor));
+  if (raw_long_kick_power_factor != 0) {
+    total_size += 6;
+  }
+
+  // int32 long_kick_delay = 212;
+  if (this->_internal_long_kick_delay() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_long_kick_delay());
+  }
+
+  // int32 max_monitors = 213;
+  if (this->_internal_max_monitors() != 0) {
+    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                    this->_internal_max_monitors());
+  }
+
+  // float catchable_area = 214;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area = this->_internal_catchable_area();
+  ::uint32_t raw_catchable_area;
+  memcpy(&raw_catchable_area, &tmp_catchable_area, sizeof(tmp_catchable_area));
+  if (raw_catchable_area != 0) {
+    total_size += 6;
+  }
+
+  // float real_speed_max = 215;
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_real_speed_max = this->_internal_real_speed_max();
+  ::uint32_t raw_real_speed_max;
+  memcpy(&raw_real_speed_max, &tmp_real_speed_max, sizeof(tmp_real_speed_max));
+  if (raw_real_speed_max != 0) {
+    total_size += 6;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ServerParam::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ServerParam::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ServerParam::GetClassData() const { return &_class_data_; }
+
+
+void ServerParam::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ServerParam*>(&to_msg);
+  auto& from = static_cast<const ServerParam&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:protos.ServerParam)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_replay_file().empty()) {
+    _this->_internal_set_replay_file(from._internal_replay_file());
+  }
+  if (!from._internal_landmark_file().empty()) {
+    _this->_internal_set_landmark_file(from._internal_landmark_file());
+  }
+  if (!from._internal_text_log_dir().empty()) {
+    _this->_internal_set_text_log_dir(from._internal_text_log_dir());
+  }
+  if (!from._internal_game_log_dir().empty()) {
+    _this->_internal_set_game_log_dir(from._internal_game_log_dir());
+  }
+  if (!from._internal_text_log_fixed_name().empty()) {
+    _this->_internal_set_text_log_fixed_name(from._internal_text_log_fixed_name());
+  }
+  if (!from._internal_game_log_fixed_name().empty()) {
+    _this->_internal_set_game_log_fixed_name(from._internal_game_log_fixed_name());
+  }
+  if (!from._internal_log_date_format().empty()) {
+    _this->_internal_set_log_date_format(from._internal_log_date_format());
+  }
+  if (!from._internal_team_l_start().empty()) {
+    _this->_internal_set_team_l_start(from._internal_team_l_start());
+  }
+  if (!from._internal_team_r_start().empty()) {
+    _this->_internal_set_team_r_start(from._internal_team_r_start());
+  }
+  if (!from._internal_keepaway_log_dir().empty()) {
+    _this->_internal_set_keepaway_log_dir(from._internal_keepaway_log_dir());
+  }
+  if (!from._internal_keepaway_log_fixed_name().empty()) {
+    _this->_internal_set_keepaway_log_fixed_name(from._internal_keepaway_log_fixed_name());
+  }
+  if (!from._internal_module_dir().empty()) {
+    _this->_internal_set_module_dir(from._internal_module_dir());
+  }
+  if (!from._internal_coach_msg_file().empty()) {
+    _this->_internal_set_coach_msg_file(from._internal_coach_msg_file());
+  }
+  if (!from._internal_fixed_teamname_l().empty()) {
+    _this->_internal_set_fixed_teamname_l(from._internal_fixed_teamname_l());
+  }
+  if (!from._internal_fixed_teamname_r().empty()) {
+    _this->_internal_set_fixed_teamname_r(from._internal_fixed_teamname_r());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_goal_width = from._internal_goal_width();
+  ::uint32_t raw_goal_width;
+  memcpy(&raw_goal_width, &tmp_goal_width, sizeof(tmp_goal_width));
+  if (raw_goal_width != 0) {
+    _this->_internal_set_goal_width(from._internal_goal_width());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_inertia_moment = from._internal_inertia_moment();
+  ::uint32_t raw_inertia_moment;
+  memcpy(&raw_inertia_moment, &tmp_inertia_moment, sizeof(tmp_inertia_moment));
+  if (raw_inertia_moment != 0) {
+    _this->_internal_set_inertia_moment(from._internal_inertia_moment());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_size = from._internal_player_size();
+  ::uint32_t raw_player_size;
+  memcpy(&raw_player_size, &tmp_player_size, sizeof(tmp_player_size));
+  if (raw_player_size != 0) {
+    _this->_internal_set_player_size(from._internal_player_size());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_decay = from._internal_player_decay();
+  ::uint32_t raw_player_decay;
+  memcpy(&raw_player_decay, &tmp_player_decay, sizeof(tmp_player_decay));
+  if (raw_player_decay != 0) {
+    _this->_internal_set_player_decay(from._internal_player_decay());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_rand = from._internal_player_rand();
+  ::uint32_t raw_player_rand;
+  memcpy(&raw_player_rand, &tmp_player_rand, sizeof(tmp_player_rand));
+  if (raw_player_rand != 0) {
+    _this->_internal_set_player_rand(from._internal_player_rand());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_weight = from._internal_player_weight();
+  ::uint32_t raw_player_weight;
+  memcpy(&raw_player_weight, &tmp_player_weight, sizeof(tmp_player_weight));
+  if (raw_player_weight != 0) {
+    _this->_internal_set_player_weight(from._internal_player_weight());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max = from._internal_player_speed_max();
+  ::uint32_t raw_player_speed_max;
+  memcpy(&raw_player_speed_max, &tmp_player_speed_max, sizeof(tmp_player_speed_max));
+  if (raw_player_speed_max != 0) {
+    _this->_internal_set_player_speed_max(from._internal_player_speed_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_accel_max = from._internal_player_accel_max();
+  ::uint32_t raw_player_accel_max;
+  memcpy(&raw_player_accel_max, &tmp_player_accel_max, sizeof(tmp_player_accel_max));
+  if (raw_player_accel_max != 0) {
+    _this->_internal_set_player_accel_max(from._internal_player_accel_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_max = from._internal_stamina_max();
+  ::uint32_t raw_stamina_max;
+  memcpy(&raw_stamina_max, &tmp_stamina_max, sizeof(tmp_stamina_max));
+  if (raw_stamina_max != 0) {
+    _this->_internal_set_stamina_max(from._internal_stamina_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_inc_max = from._internal_stamina_inc_max();
+  ::uint32_t raw_stamina_inc_max;
+  memcpy(&raw_stamina_inc_max, &tmp_stamina_inc_max, sizeof(tmp_stamina_inc_max));
+  if (raw_stamina_inc_max != 0) {
+    _this->_internal_set_stamina_inc_max(from._internal_stamina_inc_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_init = from._internal_recover_init();
+  ::uint32_t raw_recover_init;
+  memcpy(&raw_recover_init, &tmp_recover_init, sizeof(tmp_recover_init));
+  if (raw_recover_init != 0) {
+    _this->_internal_set_recover_init(from._internal_recover_init());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_dec_thr = from._internal_recover_dec_thr();
+  ::uint32_t raw_recover_dec_thr;
+  memcpy(&raw_recover_dec_thr, &tmp_recover_dec_thr, sizeof(tmp_recover_dec_thr));
+  if (raw_recover_dec_thr != 0) {
+    _this->_internal_set_recover_dec_thr(from._internal_recover_dec_thr());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_min = from._internal_recover_min();
+  ::uint32_t raw_recover_min;
+  memcpy(&raw_recover_min, &tmp_recover_min, sizeof(tmp_recover_min));
+  if (raw_recover_min != 0) {
+    _this->_internal_set_recover_min(from._internal_recover_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_recover_dec = from._internal_recover_dec();
+  ::uint32_t raw_recover_dec;
+  memcpy(&raw_recover_dec, &tmp_recover_dec, sizeof(tmp_recover_dec));
+  if (raw_recover_dec != 0) {
+    _this->_internal_set_recover_dec(from._internal_recover_dec());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_init = from._internal_effort_init();
+  ::uint32_t raw_effort_init;
+  memcpy(&raw_effort_init, &tmp_effort_init, sizeof(tmp_effort_init));
+  if (raw_effort_init != 0) {
+    _this->_internal_set_effort_init(from._internal_effort_init());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_dec_thr = from._internal_effort_dec_thr();
+  ::uint32_t raw_effort_dec_thr;
+  memcpy(&raw_effort_dec_thr, &tmp_effort_dec_thr, sizeof(tmp_effort_dec_thr));
+  if (raw_effort_dec_thr != 0) {
+    _this->_internal_set_effort_dec_thr(from._internal_effort_dec_thr());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_min = from._internal_effort_min();
+  ::uint32_t raw_effort_min;
+  memcpy(&raw_effort_min, &tmp_effort_min, sizeof(tmp_effort_min));
+  if (raw_effort_min != 0) {
+    _this->_internal_set_effort_min(from._internal_effort_min());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_dec = from._internal_effort_dec();
+  ::uint32_t raw_effort_dec;
+  memcpy(&raw_effort_dec, &tmp_effort_dec, sizeof(tmp_effort_dec));
+  if (raw_effort_dec != 0) {
+    _this->_internal_set_effort_dec(from._internal_effort_dec());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_inc_thr = from._internal_effort_inc_thr();
+  ::uint32_t raw_effort_inc_thr;
+  memcpy(&raw_effort_inc_thr, &tmp_effort_inc_thr, sizeof(tmp_effort_inc_thr));
+  if (raw_effort_inc_thr != 0) {
+    _this->_internal_set_effort_inc_thr(from._internal_effort_inc_thr());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_effort_inc = from._internal_effort_inc();
+  ::uint32_t raw_effort_inc;
+  memcpy(&raw_effort_inc, &tmp_effort_inc, sizeof(tmp_effort_inc));
+  if (raw_effort_inc != 0) {
+    _this->_internal_set_effort_inc(from._internal_effort_inc());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand = from._internal_kick_rand();
+  ::uint32_t raw_kick_rand;
+  memcpy(&raw_kick_rand, &tmp_kick_rand, sizeof(tmp_kick_rand));
+  if (raw_kick_rand != 0) {
+    _this->_internal_set_kick_rand(from._internal_kick_rand());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_rand_factor_l = from._internal_player_rand_factor_l();
+  ::uint32_t raw_player_rand_factor_l;
+  memcpy(&raw_player_rand_factor_l, &tmp_player_rand_factor_l, sizeof(tmp_player_rand_factor_l));
+  if (raw_player_rand_factor_l != 0) {
+    _this->_internal_set_player_rand_factor_l(from._internal_player_rand_factor_l());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_rand_factor_r = from._internal_player_rand_factor_r();
+  ::uint32_t raw_player_rand_factor_r;
+  memcpy(&raw_player_rand_factor_r, &tmp_player_rand_factor_r, sizeof(tmp_player_rand_factor_r));
+  if (raw_player_rand_factor_r != 0) {
+    _this->_internal_set_player_rand_factor_r(from._internal_player_rand_factor_r());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand_factor_l = from._internal_kick_rand_factor_l();
+  ::uint32_t raw_kick_rand_factor_l;
+  memcpy(&raw_kick_rand_factor_l, &tmp_kick_rand_factor_l, sizeof(tmp_kick_rand_factor_l));
+  if (raw_kick_rand_factor_l != 0) {
+    _this->_internal_set_kick_rand_factor_l(from._internal_kick_rand_factor_l());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_rand_factor_r = from._internal_kick_rand_factor_r();
+  ::uint32_t raw_kick_rand_factor_r;
+  memcpy(&raw_kick_rand_factor_r, &tmp_kick_rand_factor_r, sizeof(tmp_kick_rand_factor_r));
+  if (raw_kick_rand_factor_r != 0) {
+    _this->_internal_set_kick_rand_factor_r(from._internal_kick_rand_factor_r());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_size = from._internal_ball_size();
+  ::uint32_t raw_ball_size;
+  memcpy(&raw_ball_size, &tmp_ball_size, sizeof(tmp_ball_size));
+  if (raw_ball_size != 0) {
+    _this->_internal_set_ball_size(from._internal_ball_size());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_decay = from._internal_ball_decay();
+  ::uint32_t raw_ball_decay;
+  memcpy(&raw_ball_decay, &tmp_ball_decay, sizeof(tmp_ball_decay));
+  if (raw_ball_decay != 0) {
+    _this->_internal_set_ball_decay(from._internal_ball_decay());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_rand = from._internal_ball_rand();
+  ::uint32_t raw_ball_rand;
+  memcpy(&raw_ball_rand, &tmp_ball_rand, sizeof(tmp_ball_rand));
+  if (raw_ball_rand != 0) {
+    _this->_internal_set_ball_rand(from._internal_ball_rand());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_weight = from._internal_ball_weight();
+  ::uint32_t raw_ball_weight;
+  memcpy(&raw_ball_weight, &tmp_ball_weight, sizeof(tmp_ball_weight));
+  if (raw_ball_weight != 0) {
+    _this->_internal_set_ball_weight(from._internal_ball_weight());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_speed_max = from._internal_ball_speed_max();
+  ::uint32_t raw_ball_speed_max;
+  memcpy(&raw_ball_speed_max, &tmp_ball_speed_max, sizeof(tmp_ball_speed_max));
+  if (raw_ball_speed_max != 0) {
+    _this->_internal_set_ball_speed_max(from._internal_ball_speed_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_accel_max = from._internal_ball_accel_max();
+  ::uint32_t raw_ball_accel_max;
+  memcpy(&raw_ball_accel_max, &tmp_ball_accel_max, sizeof(tmp_ball_accel_max));
+  if (raw_ball_accel_max != 0) {
+    _this->_internal_set_ball_accel_max(from._internal_ball_accel_max());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_power_rate = from._internal_dash_power_rate();
+  ::uint32_t raw_dash_power_rate;
+  memcpy(&raw_dash_power_rate, &tmp_dash_power_rate, sizeof(tmp_dash_power_rate));
+  if (raw_dash_power_rate != 0) {
+    _this->_internal_set_dash_power_rate(from._internal_dash_power_rate());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kick_power_rate = from._internal_kick_power_rate();
+  ::uint32_t raw_kick_power_rate;
+  memcpy(&raw_kick_power_rate, &tmp_kick_power_rate, sizeof(tmp_kick_power_rate));
+  if (raw_kick_power_rate != 0) {
+    _this->_internal_set_kick_power_rate(from._internal_kick_power_rate());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_margin = from._internal_kickable_margin();
+  ::uint32_t raw_kickable_margin;
+  memcpy(&raw_kickable_margin, &tmp_kickable_margin, sizeof(tmp_kickable_margin));
+  if (raw_kickable_margin != 0) {
+    _this->_internal_set_kickable_margin(from._internal_kickable_margin());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_control_radius = from._internal_control_radius();
+  ::uint32_t raw_control_radius;
+  memcpy(&raw_control_radius, &tmp_control_radius, sizeof(tmp_control_radius));
+  if (raw_control_radius != 0) {
+    _this->_internal_set_control_radius(from._internal_control_radius());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_control_radius_width = from._internal_control_radius_width();
+  ::uint32_t raw_control_radius_width;
+  memcpy(&raw_control_radius_width, &tmp_control_radius_width, sizeof(tmp_control_radius_width));
+  if (raw_control_radius_width != 0) {
+    _this->_internal_set_control_radius_width(from._internal_control_radius_width());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_power = from._internal_max_power();
+  ::uint32_t raw_max_power;
+  memcpy(&raw_max_power, &tmp_max_power, sizeof(tmp_max_power));
+  if (raw_max_power != 0) {
+    _this->_internal_set_max_power(from._internal_max_power());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_power = from._internal_min_power();
+  ::uint32_t raw_min_power;
+  memcpy(&raw_min_power, &tmp_min_power, sizeof(tmp_min_power));
+  if (raw_min_power != 0) {
+    _this->_internal_set_min_power(from._internal_min_power());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_moment = from._internal_max_moment();
+  ::uint32_t raw_max_moment;
+  memcpy(&raw_max_moment, &tmp_max_moment, sizeof(tmp_max_moment));
+  if (raw_max_moment != 0) {
+    _this->_internal_set_max_moment(from._internal_max_moment());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_moment = from._internal_min_moment();
+  ::uint32_t raw_min_moment;
+  memcpy(&raw_min_moment, &tmp_min_moment, sizeof(tmp_min_moment));
+  if (raw_min_moment != 0) {
+    _this->_internal_set_min_moment(from._internal_min_moment());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_neck_moment = from._internal_max_neck_moment();
+  ::uint32_t raw_max_neck_moment;
+  memcpy(&raw_max_neck_moment, &tmp_max_neck_moment, sizeof(tmp_max_neck_moment));
+  if (raw_max_neck_moment != 0) {
+    _this->_internal_set_max_neck_moment(from._internal_max_neck_moment());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_neck_moment = from._internal_min_neck_moment();
+  ::uint32_t raw_min_neck_moment;
+  memcpy(&raw_min_neck_moment, &tmp_min_neck_moment, sizeof(tmp_min_neck_moment));
+  if (raw_min_neck_moment != 0) {
+    _this->_internal_set_min_neck_moment(from._internal_min_neck_moment());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_neck_angle = from._internal_max_neck_angle();
+  ::uint32_t raw_max_neck_angle;
+  memcpy(&raw_max_neck_angle, &tmp_max_neck_angle, sizeof(tmp_max_neck_angle));
+  if (raw_max_neck_angle != 0) {
+    _this->_internal_set_max_neck_angle(from._internal_max_neck_angle());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_neck_angle = from._internal_min_neck_angle();
+  ::uint32_t raw_min_neck_angle;
+  memcpy(&raw_min_neck_angle, &tmp_min_neck_angle, sizeof(tmp_min_neck_angle));
+  if (raw_min_neck_angle != 0) {
+    _this->_internal_set_min_neck_angle(from._internal_min_neck_angle());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_visible_angle = from._internal_visible_angle();
+  ::uint32_t raw_visible_angle;
+  memcpy(&raw_visible_angle, &tmp_visible_angle, sizeof(tmp_visible_angle));
+  if (raw_visible_angle != 0) {
+    _this->_internal_set_visible_angle(from._internal_visible_angle());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_visible_distance = from._internal_visible_distance();
+  ::uint32_t raw_visible_distance;
+  memcpy(&raw_visible_distance, &tmp_visible_distance, sizeof(tmp_visible_distance));
+  if (raw_visible_distance != 0) {
+    _this->_internal_set_visible_distance(from._internal_visible_distance());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_dir = from._internal_wind_dir();
+  ::uint32_t raw_wind_dir;
+  memcpy(&raw_wind_dir, &tmp_wind_dir, sizeof(tmp_wind_dir));
+  if (raw_wind_dir != 0) {
+    _this->_internal_set_wind_dir(from._internal_wind_dir());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_force = from._internal_wind_force();
+  ::uint32_t raw_wind_force;
+  memcpy(&raw_wind_force, &tmp_wind_force, sizeof(tmp_wind_force));
+  if (raw_wind_force != 0) {
+    _this->_internal_set_wind_force(from._internal_wind_force());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_angle = from._internal_wind_angle();
+  ::uint32_t raw_wind_angle;
+  memcpy(&raw_wind_angle, &tmp_wind_angle, sizeof(tmp_wind_angle));
+  if (raw_wind_angle != 0) {
+    _this->_internal_set_wind_angle(from._internal_wind_angle());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_wind_rand = from._internal_wind_rand();
+  ::uint32_t raw_wind_rand;
+  memcpy(&raw_wind_rand, &tmp_wind_rand, sizeof(tmp_wind_rand));
+  if (raw_wind_rand != 0) {
+    _this->_internal_set_wind_rand(from._internal_wind_rand());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_kickable_area = from._internal_kickable_area();
+  ::uint32_t raw_kickable_area;
+  memcpy(&raw_kickable_area, &tmp_kickable_area, sizeof(tmp_kickable_area));
+  if (raw_kickable_area != 0) {
+    _this->_internal_set_kickable_area(from._internal_kickable_area());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catch_area_l = from._internal_catch_area_l();
+  ::uint32_t raw_catch_area_l;
+  memcpy(&raw_catch_area_l, &tmp_catch_area_l, sizeof(tmp_catch_area_l));
+  if (raw_catch_area_l != 0) {
+    _this->_internal_set_catch_area_l(from._internal_catch_area_l());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catch_area_w = from._internal_catch_area_w();
+  ::uint32_t raw_catch_area_w;
+  memcpy(&raw_catch_area_w, &tmp_catch_area_w, sizeof(tmp_catch_area_w));
+  if (raw_catch_area_w != 0) {
+    _this->_internal_set_catch_area_w(from._internal_catch_area_w());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catch_probability = from._internal_catch_probability();
+  ::uint32_t raw_catch_probability;
+  memcpy(&raw_catch_probability, &tmp_catch_probability, sizeof(tmp_catch_probability));
+  if (raw_catch_probability != 0) {
+    _this->_internal_set_catch_probability(from._internal_catch_probability());
+  }
+  if (from._internal_team_actuator_noise() != 0) {
+    _this->_internal_set_team_actuator_noise(from._internal_team_actuator_noise());
+  }
+  if (from._internal_wind_none() != 0) {
+    _this->_internal_set_wind_none(from._internal_wind_none());
+  }
+  if (from._internal_use_wind_random() != 0) {
+    _this->_internal_set_use_wind_random(from._internal_use_wind_random());
+  }
+  if (from._internal_use_offside() != 0) {
+    _this->_internal_set_use_offside(from._internal_use_offside());
+  }
+  if (from._internal_goalie_max_moves() != 0) {
+    _this->_internal_set_goalie_max_moves(from._internal_goalie_max_moves());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_corner_kick_margin = from._internal_corner_kick_margin();
+  ::uint32_t raw_corner_kick_margin;
+  memcpy(&raw_corner_kick_margin, &tmp_corner_kick_margin, sizeof(tmp_corner_kick_margin));
+  if (raw_corner_kick_margin != 0) {
+    _this->_internal_set_corner_kick_margin(from._internal_corner_kick_margin());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_offside_active_area_size = from._internal_offside_active_area_size();
+  ::uint32_t raw_offside_active_area_size;
+  memcpy(&raw_offside_active_area_size, &tmp_offside_active_area_size, sizeof(tmp_offside_active_area_size));
+  if (raw_offside_active_area_size != 0) {
+    _this->_internal_set_offside_active_area_size(from._internal_offside_active_area_size());
+  }
+  if (from._internal_coach_say_count_max() != 0) {
+    _this->_internal_set_coach_say_count_max(from._internal_coach_say_count_max());
+  }
+  if (from._internal_coach_say_msg_size() != 0) {
+    _this->_internal_set_coach_say_msg_size(from._internal_coach_say_msg_size());
+  }
+  if (from._internal_clang_win_size() != 0) {
+    _this->_internal_set_clang_win_size(from._internal_clang_win_size());
+  }
+  if (from._internal_clang_define_win() != 0) {
+    _this->_internal_set_clang_define_win(from._internal_clang_define_win());
+  }
+  if (from._internal_clang_meta_win() != 0) {
+    _this->_internal_set_clang_meta_win(from._internal_clang_meta_win());
+  }
+  if (from._internal_clang_advice_win() != 0) {
+    _this->_internal_set_clang_advice_win(from._internal_clang_advice_win());
+  }
+  if (from._internal_clang_info_win() != 0) {
+    _this->_internal_set_clang_info_win(from._internal_clang_info_win());
+  }
+  if (from._internal_clang_mess_delay() != 0) {
+    _this->_internal_set_clang_mess_delay(from._internal_clang_mess_delay());
+  }
+  if (from._internal_clang_mess_per_cycle() != 0) {
+    _this->_internal_set_clang_mess_per_cycle(from._internal_clang_mess_per_cycle());
+  }
+  if (from._internal_half_time() != 0) {
+    _this->_internal_set_half_time(from._internal_half_time());
+  }
+  if (from._internal_simulator_step() != 0) {
+    _this->_internal_set_simulator_step(from._internal_simulator_step());
+  }
+  if (from._internal_send_step() != 0) {
+    _this->_internal_set_send_step(from._internal_send_step());
+  }
+  if (from._internal_recv_step() != 0) {
+    _this->_internal_set_recv_step(from._internal_recv_step());
+  }
+  if (from._internal_sense_body_step() != 0) {
+    _this->_internal_set_sense_body_step(from._internal_sense_body_step());
+  }
+  if (from._internal_lcm_step() != 0) {
+    _this->_internal_set_lcm_step(from._internal_lcm_step());
+  }
+  if (from._internal_player_say_msg_size() != 0) {
+    _this->_internal_set_player_say_msg_size(from._internal_player_say_msg_size());
+  }
+  if (from._internal_player_hear_max() != 0) {
+    _this->_internal_set_player_hear_max(from._internal_player_hear_max());
+  }
+  if (from._internal_player_hear_inc() != 0) {
+    _this->_internal_set_player_hear_inc(from._internal_player_hear_inc());
+  }
+  if (from._internal_player_hear_decay() != 0) {
+    _this->_internal_set_player_hear_decay(from._internal_player_hear_decay());
+  }
+  if (from._internal_catch_ban_cycle() != 0) {
+    _this->_internal_set_catch_ban_cycle(from._internal_catch_ban_cycle());
+  }
+  if (from._internal_slow_down_factor() != 0) {
+    _this->_internal_set_slow_down_factor(from._internal_slow_down_factor());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_offside_kick_margin = from._internal_offside_kick_margin();
+  ::uint32_t raw_offside_kick_margin;
+  memcpy(&raw_offside_kick_margin, &tmp_offside_kick_margin, sizeof(tmp_offside_kick_margin));
+  if (raw_offside_kick_margin != 0) {
+    _this->_internal_set_offside_kick_margin(from._internal_offside_kick_margin());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_audio_cut_dist = from._internal_audio_cut_dist();
+  ::uint32_t raw_audio_cut_dist;
+  memcpy(&raw_audio_cut_dist, &tmp_audio_cut_dist, sizeof(tmp_audio_cut_dist));
+  if (raw_audio_cut_dist != 0) {
+    _this->_internal_set_audio_cut_dist(from._internal_audio_cut_dist());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dist_quantize_step = from._internal_dist_quantize_step();
+  ::uint32_t raw_dist_quantize_step;
+  memcpy(&raw_dist_quantize_step, &tmp_dist_quantize_step, sizeof(tmp_dist_quantize_step));
+  if (raw_dist_quantize_step != 0) {
+    _this->_internal_set_dist_quantize_step(from._internal_dist_quantize_step());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_landmark_dist_quantize_step = from._internal_landmark_dist_quantize_step();
+  ::uint32_t raw_landmark_dist_quantize_step;
+  memcpy(&raw_landmark_dist_quantize_step, &tmp_landmark_dist_quantize_step, sizeof(tmp_landmark_dist_quantize_step));
+  if (raw_landmark_dist_quantize_step != 0) {
+    _this->_internal_set_landmark_dist_quantize_step(from._internal_landmark_dist_quantize_step());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dir_quantize_step = from._internal_dir_quantize_step();
+  ::uint32_t raw_dir_quantize_step;
+  memcpy(&raw_dir_quantize_step, &tmp_dir_quantize_step, sizeof(tmp_dir_quantize_step));
+  if (raw_dir_quantize_step != 0) {
+    _this->_internal_set_dir_quantize_step(from._internal_dir_quantize_step());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dist_quantize_step_l = from._internal_dist_quantize_step_l();
+  ::uint32_t raw_dist_quantize_step_l;
+  memcpy(&raw_dist_quantize_step_l, &tmp_dist_quantize_step_l, sizeof(tmp_dist_quantize_step_l));
+  if (raw_dist_quantize_step_l != 0) {
+    _this->_internal_set_dist_quantize_step_l(from._internal_dist_quantize_step_l());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dist_quantize_step_r = from._internal_dist_quantize_step_r();
+  ::uint32_t raw_dist_quantize_step_r;
+  memcpy(&raw_dist_quantize_step_r, &tmp_dist_quantize_step_r, sizeof(tmp_dist_quantize_step_r));
+  if (raw_dist_quantize_step_r != 0) {
+    _this->_internal_set_dist_quantize_step_r(from._internal_dist_quantize_step_r());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_landmark_dist_quantize_step_l = from._internal_landmark_dist_quantize_step_l();
+  ::uint32_t raw_landmark_dist_quantize_step_l;
+  memcpy(&raw_landmark_dist_quantize_step_l, &tmp_landmark_dist_quantize_step_l, sizeof(tmp_landmark_dist_quantize_step_l));
+  if (raw_landmark_dist_quantize_step_l != 0) {
+    _this->_internal_set_landmark_dist_quantize_step_l(from._internal_landmark_dist_quantize_step_l());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_landmark_dist_quantize_step_r = from._internal_landmark_dist_quantize_step_r();
+  ::uint32_t raw_landmark_dist_quantize_step_r;
+  memcpy(&raw_landmark_dist_quantize_step_r, &tmp_landmark_dist_quantize_step_r, sizeof(tmp_landmark_dist_quantize_step_r));
+  if (raw_landmark_dist_quantize_step_r != 0) {
+    _this->_internal_set_landmark_dist_quantize_step_r(from._internal_landmark_dist_quantize_step_r());
+  }
+  if (from._internal_kickoff_offside() != 0) {
+    _this->_internal_set_kickoff_offside(from._internal_kickoff_offside());
+  }
+  if (from._internal_coach_mode() != 0) {
+    _this->_internal_set_coach_mode(from._internal_coach_mode());
+  }
+  if (from._internal_coach_with_referee_mode() != 0) {
+    _this->_internal_set_coach_with_referee_mode(from._internal_coach_with_referee_mode());
+  }
+  if (from._internal_use_old_coach_hear() != 0) {
+    _this->_internal_set_use_old_coach_hear(from._internal_use_old_coach_hear());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dir_quantize_step_l = from._internal_dir_quantize_step_l();
+  ::uint32_t raw_dir_quantize_step_l;
+  memcpy(&raw_dir_quantize_step_l, &tmp_dir_quantize_step_l, sizeof(tmp_dir_quantize_step_l));
+  if (raw_dir_quantize_step_l != 0) {
+    _this->_internal_set_dir_quantize_step_l(from._internal_dir_quantize_step_l());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dir_quantize_step_r = from._internal_dir_quantize_step_r();
+  ::uint32_t raw_dir_quantize_step_r;
+  memcpy(&raw_dir_quantize_step_r, &tmp_dir_quantize_step_r, sizeof(tmp_dir_quantize_step_r));
+  if (raw_dir_quantize_step_r != 0) {
+    _this->_internal_set_dir_quantize_step_r(from._internal_dir_quantize_step_r());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_slowness_on_top_for_left_team = from._internal_slowness_on_top_for_left_team();
+  ::uint32_t raw_slowness_on_top_for_left_team;
+  memcpy(&raw_slowness_on_top_for_left_team, &tmp_slowness_on_top_for_left_team, sizeof(tmp_slowness_on_top_for_left_team));
+  if (raw_slowness_on_top_for_left_team != 0) {
+    _this->_internal_set_slowness_on_top_for_left_team(from._internal_slowness_on_top_for_left_team());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_slowness_on_top_for_right_team = from._internal_slowness_on_top_for_right_team();
+  ::uint32_t raw_slowness_on_top_for_right_team;
+  memcpy(&raw_slowness_on_top_for_right_team, &tmp_slowness_on_top_for_right_team, sizeof(tmp_slowness_on_top_for_right_team));
+  if (raw_slowness_on_top_for_right_team != 0) {
+    _this->_internal_set_slowness_on_top_for_right_team(from._internal_slowness_on_top_for_right_team());
+  }
+  if (from._internal_start_goal_l() != 0) {
+    _this->_internal_set_start_goal_l(from._internal_start_goal_l());
+  }
+  if (from._internal_start_goal_r() != 0) {
+    _this->_internal_set_start_goal_r(from._internal_start_goal_r());
+  }
+  if (from._internal_drop_ball_time() != 0) {
+    _this->_internal_set_drop_ball_time(from._internal_drop_ball_time());
+  }
+  if (from._internal_fullstate_l() != 0) {
+    _this->_internal_set_fullstate_l(from._internal_fullstate_l());
+  }
+  if (from._internal_fullstate_r() != 0) {
+    _this->_internal_set_fullstate_r(from._internal_fullstate_r());
+  }
+  if (from._internal_synch_mode() != 0) {
+    _this->_internal_set_synch_mode(from._internal_synch_mode());
+  }
+  if (from._internal_verbose_mode() != 0) {
+    _this->_internal_set_verbose_mode(from._internal_verbose_mode());
+  }
+  if (from._internal_synch_offset() != 0) {
+    _this->_internal_set_synch_offset(from._internal_synch_offset());
+  }
+  if (from._internal_synch_micro_sleep() != 0) {
+    _this->_internal_set_synch_micro_sleep(from._internal_synch_micro_sleep());
+  }
+  if (from._internal_point_to_ban() != 0) {
+    _this->_internal_set_point_to_ban(from._internal_point_to_ban());
+  }
+  if (from._internal_point_to_duration() != 0) {
+    _this->_internal_set_point_to_duration(from._internal_point_to_duration());
+  }
+  if (from._internal_player_port() != 0) {
+    _this->_internal_set_player_port(from._internal_player_port());
+  }
+  if (from._internal_trainer_port() != 0) {
+    _this->_internal_set_trainer_port(from._internal_trainer_port());
+  }
+  if (from._internal_online_coach_port() != 0) {
+    _this->_internal_set_online_coach_port(from._internal_online_coach_port());
+  }
+  if (from._internal_coach_send_vi_step() != 0) {
+    _this->_internal_set_coach_send_vi_step(from._internal_coach_send_vi_step());
+  }
+  if (from._internal_send_comms() != 0) {
+    _this->_internal_set_send_comms(from._internal_send_comms());
+  }
+  if (from._internal_text_logging() != 0) {
+    _this->_internal_set_text_logging(from._internal_text_logging());
+  }
+  if (from._internal_game_logging() != 0) {
+    _this->_internal_set_game_logging(from._internal_game_logging());
+  }
+  if (from._internal_use_text_log_fixed() != 0) {
+    _this->_internal_set_use_text_log_fixed(from._internal_use_text_log_fixed());
+  }
+  if (from._internal_game_log_version() != 0) {
+    _this->_internal_set_game_log_version(from._internal_game_log_version());
+  }
+  if (from._internal_use_game_log_fixed() != 0) {
+    _this->_internal_set_use_game_log_fixed(from._internal_use_game_log_fixed());
+  }
+  if (from._internal_use_text_log_dated() != 0) {
+    _this->_internal_set_use_text_log_dated(from._internal_use_text_log_dated());
+  }
+  if (from._internal_use_game_log_dated() != 0) {
+    _this->_internal_set_use_game_log_dated(from._internal_use_game_log_dated());
+  }
+  if (from._internal_log_times() != 0) {
+    _this->_internal_set_log_times(from._internal_log_times());
+  }
+  if (from._internal_text_log_compression() != 0) {
+    _this->_internal_set_text_log_compression(from._internal_text_log_compression());
+  }
+  if (from._internal_game_log_compression() != 0) {
+    _this->_internal_set_game_log_compression(from._internal_game_log_compression());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_dist = from._internal_tackle_dist();
+  ::uint32_t raw_tackle_dist;
+  memcpy(&raw_tackle_dist, &tmp_tackle_dist, sizeof(tmp_tackle_dist));
+  if (raw_tackle_dist != 0) {
+    _this->_internal_set_tackle_dist(from._internal_tackle_dist());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_back_dist = from._internal_tackle_back_dist();
+  ::uint32_t raw_tackle_back_dist;
+  memcpy(&raw_tackle_back_dist, &tmp_tackle_back_dist, sizeof(tmp_tackle_back_dist));
+  if (raw_tackle_back_dist != 0) {
+    _this->_internal_set_tackle_back_dist(from._internal_tackle_back_dist());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_width = from._internal_tackle_width();
+  ::uint32_t raw_tackle_width;
+  memcpy(&raw_tackle_width, &tmp_tackle_width, sizeof(tmp_tackle_width));
+  if (raw_tackle_width != 0) {
+    _this->_internal_set_tackle_width(from._internal_tackle_width());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_exponent = from._internal_tackle_exponent();
+  ::uint32_t raw_tackle_exponent;
+  memcpy(&raw_tackle_exponent, &tmp_tackle_exponent, sizeof(tmp_tackle_exponent));
+  if (raw_tackle_exponent != 0) {
+    _this->_internal_set_tackle_exponent(from._internal_tackle_exponent());
+  }
+  if (from._internal_record_message() != 0) {
+    _this->_internal_set_record_message(from._internal_record_message());
+  }
+  if (from._internal_use_profile() != 0) {
+    _this->_internal_set_use_profile(from._internal_use_profile());
+  }
+  if (from._internal_free_kick_faults() != 0) {
+    _this->_internal_set_free_kick_faults(from._internal_free_kick_faults());
+  }
+  if (from._internal_back_passes() != 0) {
+    _this->_internal_set_back_passes(from._internal_back_passes());
+  }
+  if (from._internal_tackle_cycles() != 0) {
+    _this->_internal_set_tackle_cycles(from._internal_tackle_cycles());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_power_rate = from._internal_tackle_power_rate();
+  ::uint32_t raw_tackle_power_rate;
+  memcpy(&raw_tackle_power_rate, &tmp_tackle_power_rate, sizeof(tmp_tackle_power_rate));
+  if (raw_tackle_power_rate != 0) {
+    _this->_internal_set_tackle_power_rate(from._internal_tackle_power_rate());
+  }
+  if (from._internal_freeform_wait_period() != 0) {
+    _this->_internal_set_freeform_wait_period(from._internal_freeform_wait_period());
+  }
+  if (from._internal_freeform_send_period() != 0) {
+    _this->_internal_set_freeform_send_period(from._internal_freeform_send_period());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stopped_ball_vel = from._internal_stopped_ball_vel();
+  ::uint32_t raw_stopped_ball_vel;
+  memcpy(&raw_stopped_ball_vel, &tmp_stopped_ball_vel, sizeof(tmp_stopped_ball_vel));
+  if (raw_stopped_ball_vel != 0) {
+    _this->_internal_set_stopped_ball_vel(from._internal_stopped_ball_vel());
+  }
+  if (from._internal_max_goal_kicks() != 0) {
+    _this->_internal_set_max_goal_kicks(from._internal_max_goal_kicks());
+  }
+  if (from._internal_clang_del_win() != 0) {
+    _this->_internal_set_clang_del_win(from._internal_clang_del_win());
+  }
+  if (from._internal_clang_rule_win() != 0) {
+    _this->_internal_set_clang_rule_win(from._internal_clang_rule_win());
+  }
+  if (from._internal_kick_off_wait() != 0) {
+    _this->_internal_set_kick_off_wait(from._internal_kick_off_wait());
+  }
+  if (from._internal_connect_wait() != 0) {
+    _this->_internal_set_connect_wait(from._internal_connect_wait());
+  }
+  if (from._internal_proper_goal_kicks() != 0) {
+    _this->_internal_set_proper_goal_kicks(from._internal_proper_goal_kicks());
+  }
+  if (from._internal_auto_mode() != 0) {
+    _this->_internal_set_auto_mode(from._internal_auto_mode());
+  }
+  if (from._internal_keepaway_mode() != 0) {
+    _this->_internal_set_keepaway_mode(from._internal_keepaway_mode());
+  }
+  if (from._internal_keepaway_logging() != 0) {
+    _this->_internal_set_keepaway_logging(from._internal_keepaway_logging());
+  }
+  if (from._internal_game_over_wait() != 0) {
+    _this->_internal_set_game_over_wait(from._internal_game_over_wait());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_keepaway_length = from._internal_keepaway_length();
+  ::uint32_t raw_keepaway_length;
+  memcpy(&raw_keepaway_length, &tmp_keepaway_length, sizeof(tmp_keepaway_length));
+  if (raw_keepaway_length != 0) {
+    _this->_internal_set_keepaway_length(from._internal_keepaway_length());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_keepaway_width = from._internal_keepaway_width();
+  ::uint32_t raw_keepaway_width;
+  memcpy(&raw_keepaway_width, &tmp_keepaway_width, sizeof(tmp_keepaway_width));
+  if (raw_keepaway_width != 0) {
+    _this->_internal_set_keepaway_width(from._internal_keepaway_width());
+  }
+  if (from._internal_keepaway_start() != 0) {
+    _this->_internal_set_keepaway_start(from._internal_keepaway_start());
+  }
+  if (from._internal_nr_normal_halfs() != 0) {
+    _this->_internal_set_nr_normal_halfs(from._internal_nr_normal_halfs());
+  }
+  if (from._internal_nr_extra_halfs() != 0) {
+    _this->_internal_set_nr_extra_halfs(from._internal_nr_extra_halfs());
+  }
+  if (from._internal_keepaway_log_fixed() != 0) {
+    _this->_internal_set_keepaway_log_fixed(from._internal_keepaway_log_fixed());
+  }
+  if (from._internal_keepaway_log_dated() != 0) {
+    _this->_internal_set_keepaway_log_dated(from._internal_keepaway_log_dated());
+  }
+  if (from._internal_penalty_shoot_outs() != 0) {
+    _this->_internal_set_penalty_shoot_outs(from._internal_penalty_shoot_outs());
+  }
+  if (from._internal_pen_random_winner() != 0) {
+    _this->_internal_set_pen_random_winner(from._internal_pen_random_winner());
+  }
+  if (from._internal_pen_before_setup_wait() != 0) {
+    _this->_internal_set_pen_before_setup_wait(from._internal_pen_before_setup_wait());
+  }
+  if (from._internal_pen_setup_wait() != 0) {
+    _this->_internal_set_pen_setup_wait(from._internal_pen_setup_wait());
+  }
+  if (from._internal_pen_ready_wait() != 0) {
+    _this->_internal_set_pen_ready_wait(from._internal_pen_ready_wait());
+  }
+  if (from._internal_pen_taken_wait() != 0) {
+    _this->_internal_set_pen_taken_wait(from._internal_pen_taken_wait());
+  }
+  if (from._internal_pen_nr_kicks() != 0) {
+    _this->_internal_set_pen_nr_kicks(from._internal_pen_nr_kicks());
+  }
+  if (from._internal_pen_max_extra_kicks() != 0) {
+    _this->_internal_set_pen_max_extra_kicks(from._internal_pen_max_extra_kicks());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_pen_dist_x = from._internal_pen_dist_x();
+  ::uint32_t raw_pen_dist_x;
+  memcpy(&raw_pen_dist_x, &tmp_pen_dist_x, sizeof(tmp_pen_dist_x));
+  if (raw_pen_dist_x != 0) {
+    _this->_internal_set_pen_dist_x(from._internal_pen_dist_x());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_pen_max_goalie_dist_x = from._internal_pen_max_goalie_dist_x();
+  ::uint32_t raw_pen_max_goalie_dist_x;
+  memcpy(&raw_pen_max_goalie_dist_x, &tmp_pen_max_goalie_dist_x, sizeof(tmp_pen_max_goalie_dist_x));
+  if (raw_pen_max_goalie_dist_x != 0) {
+    _this->_internal_set_pen_max_goalie_dist_x(from._internal_pen_max_goalie_dist_x());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_ball_stuck_area = from._internal_ball_stuck_area();
+  ::uint32_t raw_ball_stuck_area;
+  memcpy(&raw_ball_stuck_area, &tmp_ball_stuck_area, sizeof(tmp_ball_stuck_area));
+  if (raw_ball_stuck_area != 0) {
+    _this->_internal_set_ball_stuck_area(from._internal_ball_stuck_area());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_tackle_power = from._internal_max_tackle_power();
+  ::uint32_t raw_max_tackle_power;
+  memcpy(&raw_max_tackle_power, &tmp_max_tackle_power, sizeof(tmp_max_tackle_power));
+  if (raw_max_tackle_power != 0) {
+    _this->_internal_set_max_tackle_power(from._internal_max_tackle_power());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_back_tackle_power = from._internal_max_back_tackle_power();
+  ::uint32_t raw_max_back_tackle_power;
+  memcpy(&raw_max_back_tackle_power, &tmp_max_back_tackle_power, sizeof(tmp_max_back_tackle_power));
+  if (raw_max_back_tackle_power != 0) {
+    _this->_internal_set_max_back_tackle_power(from._internal_max_back_tackle_power());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_player_speed_max_min = from._internal_player_speed_max_min();
+  ::uint32_t raw_player_speed_max_min;
+  memcpy(&raw_player_speed_max_min, &tmp_player_speed_max_min, sizeof(tmp_player_speed_max_min));
+  if (raw_player_speed_max_min != 0) {
+    _this->_internal_set_player_speed_max_min(from._internal_player_speed_max_min());
+  }
+  if (from._internal_pen_allow_mult_kicks() != 0) {
+    _this->_internal_set_pen_allow_mult_kicks(from._internal_pen_allow_mult_kicks());
+  }
+  if (from._internal_pen_coach_moves_players() != 0) {
+    _this->_internal_set_pen_coach_moves_players(from._internal_pen_coach_moves_players());
+  }
+  if (from._internal_golden_goal() != 0) {
+    _this->_internal_set_golden_goal(from._internal_golden_goal());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_extra_stamina = from._internal_extra_stamina();
+  ::uint32_t raw_extra_stamina;
+  memcpy(&raw_extra_stamina, &tmp_extra_stamina, sizeof(tmp_extra_stamina));
+  if (raw_extra_stamina != 0) {
+    _this->_internal_set_extra_stamina(from._internal_extra_stamina());
+  }
+  if (from._internal_synch_see_offset() != 0) {
+    _this->_internal_set_synch_see_offset(from._internal_synch_see_offset());
+  }
+  if (from._internal_extra_half_time() != 0) {
+    _this->_internal_set_extra_half_time(from._internal_extra_half_time());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_stamina_capacity = from._internal_stamina_capacity();
+  ::uint32_t raw_stamina_capacity;
+  memcpy(&raw_stamina_capacity, &tmp_stamina_capacity, sizeof(tmp_stamina_capacity));
+  if (raw_stamina_capacity != 0) {
+    _this->_internal_set_stamina_capacity(from._internal_stamina_capacity());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_dash_angle = from._internal_max_dash_angle();
+  ::uint32_t raw_max_dash_angle;
+  memcpy(&raw_max_dash_angle, &tmp_max_dash_angle, sizeof(tmp_max_dash_angle));
+  if (raw_max_dash_angle != 0) {
+    _this->_internal_set_max_dash_angle(from._internal_max_dash_angle());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_dash_angle = from._internal_min_dash_angle();
+  ::uint32_t raw_min_dash_angle;
+  memcpy(&raw_min_dash_angle, &tmp_min_dash_angle, sizeof(tmp_min_dash_angle));
+  if (raw_min_dash_angle != 0) {
+    _this->_internal_set_min_dash_angle(from._internal_min_dash_angle());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_dash_angle_step = from._internal_dash_angle_step();
+  ::uint32_t raw_dash_angle_step;
+  memcpy(&raw_dash_angle_step, &tmp_dash_angle_step, sizeof(tmp_dash_angle_step));
+  if (raw_dash_angle_step != 0) {
+    _this->_internal_set_dash_angle_step(from._internal_dash_angle_step());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_side_dash_rate = from._internal_side_dash_rate();
+  ::uint32_t raw_side_dash_rate;
+  memcpy(&raw_side_dash_rate, &tmp_side_dash_rate, sizeof(tmp_side_dash_rate));
+  if (raw_side_dash_rate != 0) {
+    _this->_internal_set_side_dash_rate(from._internal_side_dash_rate());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_back_dash_rate = from._internal_back_dash_rate();
+  ::uint32_t raw_back_dash_rate;
+  memcpy(&raw_back_dash_rate, &tmp_back_dash_rate, sizeof(tmp_back_dash_rate));
+  if (raw_back_dash_rate != 0) {
+    _this->_internal_set_back_dash_rate(from._internal_back_dash_rate());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_dash_power = from._internal_max_dash_power();
+  ::uint32_t raw_max_dash_power;
+  memcpy(&raw_max_dash_power, &tmp_max_dash_power, sizeof(tmp_max_dash_power));
+  if (raw_max_dash_power != 0) {
+    _this->_internal_set_max_dash_power(from._internal_max_dash_power());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_dash_power = from._internal_min_dash_power();
+  ::uint32_t raw_min_dash_power;
+  memcpy(&raw_min_dash_power, &tmp_min_dash_power, sizeof(tmp_min_dash_power));
+  if (raw_min_dash_power != 0) {
+    _this->_internal_set_min_dash_power(from._internal_min_dash_power());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_tackle_rand_factor = from._internal_tackle_rand_factor();
+  ::uint32_t raw_tackle_rand_factor;
+  memcpy(&raw_tackle_rand_factor, &tmp_tackle_rand_factor, sizeof(tmp_tackle_rand_factor));
+  if (raw_tackle_rand_factor != 0) {
+    _this->_internal_set_tackle_rand_factor(from._internal_tackle_rand_factor());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_detect_probability = from._internal_foul_detect_probability();
+  ::uint32_t raw_foul_detect_probability;
+  memcpy(&raw_foul_detect_probability, &tmp_foul_detect_probability, sizeof(tmp_foul_detect_probability));
+  if (raw_foul_detect_probability != 0) {
+    _this->_internal_set_foul_detect_probability(from._internal_foul_detect_probability());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_foul_exponent = from._internal_foul_exponent();
+  ::uint32_t raw_foul_exponent;
+  memcpy(&raw_foul_exponent, &tmp_foul_exponent, sizeof(tmp_foul_exponent));
+  if (raw_foul_exponent != 0) {
+    _this->_internal_set_foul_exponent(from._internal_foul_exponent());
+  }
+  if (from._internal_foul_cycles() != 0) {
+    _this->_internal_set_foul_cycles(from._internal_foul_cycles());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_red_card_probability = from._internal_red_card_probability();
+  ::uint32_t raw_red_card_probability;
+  memcpy(&raw_red_card_probability, &tmp_red_card_probability, sizeof(tmp_red_card_probability));
+  if (raw_red_card_probability != 0) {
+    _this->_internal_set_red_card_probability(from._internal_red_card_probability());
+  }
+  if (from._internal_illegal_defense_duration() != 0) {
+    _this->_internal_set_illegal_defense_duration(from._internal_illegal_defense_duration());
+  }
+  if (from._internal_illegal_defense_number() != 0) {
+    _this->_internal_set_illegal_defense_number(from._internal_illegal_defense_number());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_illegal_defense_dist_x = from._internal_illegal_defense_dist_x();
+  ::uint32_t raw_illegal_defense_dist_x;
+  memcpy(&raw_illegal_defense_dist_x, &tmp_illegal_defense_dist_x, sizeof(tmp_illegal_defense_dist_x));
+  if (raw_illegal_defense_dist_x != 0) {
+    _this->_internal_set_illegal_defense_dist_x(from._internal_illegal_defense_dist_x());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_illegal_defense_width = from._internal_illegal_defense_width();
+  ::uint32_t raw_illegal_defense_width;
+  memcpy(&raw_illegal_defense_width, &tmp_illegal_defense_width, sizeof(tmp_illegal_defense_width));
+  if (raw_illegal_defense_width != 0) {
+    _this->_internal_set_illegal_defense_width(from._internal_illegal_defense_width());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_max_catch_angle = from._internal_max_catch_angle();
+  ::uint32_t raw_max_catch_angle;
+  memcpy(&raw_max_catch_angle, &tmp_max_catch_angle, sizeof(tmp_max_catch_angle));
+  if (raw_max_catch_angle != 0) {
+    _this->_internal_set_max_catch_angle(from._internal_max_catch_angle());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_min_catch_angle = from._internal_min_catch_angle();
+  ::uint32_t raw_min_catch_angle;
+  memcpy(&raw_min_catch_angle, &tmp_min_catch_angle, sizeof(tmp_min_catch_angle));
+  if (raw_min_catch_angle != 0) {
+    _this->_internal_set_min_catch_angle(from._internal_min_catch_angle());
+  }
+  if (from._internal_random_seed() != 0) {
+    _this->_internal_set_random_seed(from._internal_random_seed());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_long_kick_power_factor = from._internal_long_kick_power_factor();
+  ::uint32_t raw_long_kick_power_factor;
+  memcpy(&raw_long_kick_power_factor, &tmp_long_kick_power_factor, sizeof(tmp_long_kick_power_factor));
+  if (raw_long_kick_power_factor != 0) {
+    _this->_internal_set_long_kick_power_factor(from._internal_long_kick_power_factor());
+  }
+  if (from._internal_long_kick_delay() != 0) {
+    _this->_internal_set_long_kick_delay(from._internal_long_kick_delay());
+  }
+  if (from._internal_max_monitors() != 0) {
+    _this->_internal_set_max_monitors(from._internal_max_monitors());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_catchable_area = from._internal_catchable_area();
+  ::uint32_t raw_catchable_area;
+  memcpy(&raw_catchable_area, &tmp_catchable_area, sizeof(tmp_catchable_area));
+  if (raw_catchable_area != 0) {
+    _this->_internal_set_catchable_area(from._internal_catchable_area());
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float), "Code assumes ::uint32_t and float are the same size.");
+  float tmp_real_speed_max = from._internal_real_speed_max();
+  ::uint32_t raw_real_speed_max;
+  memcpy(&raw_real_speed_max, &tmp_real_speed_max, sizeof(tmp_real_speed_max));
+  if (raw_real_speed_max != 0) {
+    _this->_internal_set_real_speed_max(from._internal_real_speed_max());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ServerParam::CopyFrom(const ServerParam& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:protos.ServerParam)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ServerParam::IsInitialized() const {
+  return true;
+}
+
+void ServerParam::InternalSwap(ServerParam* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.replay_file_, lhs_arena,
+                                       &other->_impl_.replay_file_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.landmark_file_, lhs_arena,
+                                       &other->_impl_.landmark_file_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.text_log_dir_, lhs_arena,
+                                       &other->_impl_.text_log_dir_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.game_log_dir_, lhs_arena,
+                                       &other->_impl_.game_log_dir_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.text_log_fixed_name_, lhs_arena,
+                                       &other->_impl_.text_log_fixed_name_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.game_log_fixed_name_, lhs_arena,
+                                       &other->_impl_.game_log_fixed_name_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.log_date_format_, lhs_arena,
+                                       &other->_impl_.log_date_format_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.team_l_start_, lhs_arena,
+                                       &other->_impl_.team_l_start_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.team_r_start_, lhs_arena,
+                                       &other->_impl_.team_r_start_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.keepaway_log_dir_, lhs_arena,
+                                       &other->_impl_.keepaway_log_dir_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.keepaway_log_fixed_name_, lhs_arena,
+                                       &other->_impl_.keepaway_log_fixed_name_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.module_dir_, lhs_arena,
+                                       &other->_impl_.module_dir_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.coach_msg_file_, lhs_arena,
+                                       &other->_impl_.coach_msg_file_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.fixed_teamname_l_, lhs_arena,
+                                       &other->_impl_.fixed_teamname_l_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.fixed_teamname_r_, lhs_arena,
+                                       &other->_impl_.fixed_teamname_r_, rhs_arena);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ServerParam, _impl_.real_speed_max_)
+      + sizeof(ServerParam::_impl_.real_speed_max_)
+      - PROTOBUF_FIELD_OFFSET(ServerParam, _impl_.goal_width_)>(
+          reinterpret_cast<char*>(&_impl_.goal_width_),
+          reinterpret_cast<char*>(&other->_impl_.goal_width_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ServerParam::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_service_2eproto_getter, &descriptor_table_service_2eproto_once,
+      file_level_metadata_service_2eproto[97]);
+}
+// ===================================================================
+
+class Empty::_Internal {
+ public:
+};
+
+Empty::Empty(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena) {
+  // @@protoc_insertion_point(arena_constructor:protos.Empty)
+}
+Empty::Empty(const Empty& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  Empty* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:protos.Empty)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Empty::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Empty::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata Empty::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_service_2eproto_getter, &descriptor_table_service_2eproto_once,
+      file_level_metadata_service_2eproto[98]);
+}
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace protos
 PROTOBUF_NAMESPACE_OPEN
@@ -33846,6 +42509,14 @@ Arena::CreateMaybeMessage< ::protos::Action >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::protos::Actions*
 Arena::CreateMaybeMessage< ::protos::Actions >(Arena* arena) {
   return Arena::CreateMessageInternal< ::protos::Actions >(arena);
+}
+template<> PROTOBUF_NOINLINE ::protos::ServerParam*
+Arena::CreateMaybeMessage< ::protos::ServerParam >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::protos::ServerParam >(arena);
+}
+template<> PROTOBUF_NOINLINE ::protos::Empty*
+Arena::CreateMaybeMessage< ::protos::Empty >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::protos::Empty >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 // @@protoc_insertion_point(global_scope)

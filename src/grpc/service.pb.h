@@ -194,6 +194,9 @@ extern DefenseLineMessageDefaultTypeInternal _DefenseLineMessage_default_instanc
 class DribbleMessage;
 struct DribbleMessageDefaultTypeInternal;
 extern DribbleMessageDefaultTypeInternal _DribbleMessage_default_instance_;
+class Empty;
+struct EmptyDefaultTypeInternal;
+extern EmptyDefaultTypeInternal _Empty_default_instance_;
 class Focus_MoveToPoint;
 struct Focus_MoveToPointDefaultTypeInternal;
 extern Focus_MoveToPointDefaultTypeInternal _Focus_MoveToPoint_default_instance_;
@@ -290,6 +293,9 @@ extern SelfDefaultTypeInternal _Self_default_instance_;
 class SelfMessage;
 struct SelfMessageDefaultTypeInternal;
 extern SelfMessageDefaultTypeInternal _SelfMessage_default_instance_;
+class ServerParam;
+struct ServerParamDefaultTypeInternal;
+extern ServerParamDefaultTypeInternal _ServerParam_default_instance_;
 class SetplayMessage;
 struct SetplayMessageDefaultTypeInternal;
 extern SetplayMessageDefaultTypeInternal _SetplayMessage_default_instance_;
@@ -442,6 +448,8 @@ template <>
 template <>
 ::protos::DribbleMessage* Arena::CreateMaybeMessage<::protos::DribbleMessage>(Arena*);
 template <>
+::protos::Empty* Arena::CreateMaybeMessage<::protos::Empty>(Arena*);
+template <>
 ::protos::Focus_MoveToPoint* Arena::CreateMaybeMessage<::protos::Focus_MoveToPoint>(Arena*);
 template <>
 ::protos::Focus_Reset* Arena::CreateMaybeMessage<::protos::Focus_Reset>(Arena*);
@@ -505,6 +513,8 @@ template <>
 ::protos::Self* Arena::CreateMaybeMessage<::protos::Self>(Arena*);
 template <>
 ::protos::SelfMessage* Arena::CreateMaybeMessage<::protos::SelfMessage>(Arena*);
+template <>
+::protos::ServerParam* Arena::CreateMaybeMessage<::protos::ServerParam>(Arena*);
 template <>
 ::protos::SetplayMessage* Arena::CreateMaybeMessage<::protos::SetplayMessage>(Arena*);
 template <>
@@ -20165,6 +20175,3003 @@ class Actions final :
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class ServerParam final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.ServerParam) */ {
+ public:
+  inline ServerParam() : ServerParam(nullptr) {}
+  ~ServerParam() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR ServerParam(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ServerParam(const ServerParam& from);
+  ServerParam(ServerParam&& from) noexcept
+    : ServerParam() {
+    *this = ::std::move(from);
+  }
+
+  inline ServerParam& operator=(const ServerParam& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ServerParam& operator=(ServerParam&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ServerParam& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ServerParam* internal_default_instance() {
+    return reinterpret_cast<const ServerParam*>(
+               &_ServerParam_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    97;
+
+  friend void swap(ServerParam& a, ServerParam& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ServerParam* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ServerParam* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ServerParam* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ServerParam>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ServerParam& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ServerParam& from) {
+    ServerParam::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ServerParam* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.ServerParam";
+  }
+  protected:
+  explicit ServerParam(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kReplayFileFieldNumber = 115,
+    kLandmarkFileFieldNumber = 116,
+    kTextLogDirFieldNumber = 121,
+    kGameLogDirFieldNumber = 122,
+    kTextLogFixedNameFieldNumber = 123,
+    kGameLogFixedNameFieldNumber = 124,
+    kLogDateFormatFieldNumber = 129,
+    kTeamLStartFieldNumber = 154,
+    kTeamRStartFieldNumber = 155,
+    kKeepawayLogDirFieldNumber = 160,
+    kKeepawayLogFixedNameFieldNumber = 161,
+    kModuleDirFieldNumber = 179,
+    kCoachMsgFileFieldNumber = 181,
+    kFixedTeamnameLFieldNumber = 206,
+    kFixedTeamnameRFieldNumber = 207,
+    kGoalWidthFieldNumber = 1,
+    kInertiaMomentFieldNumber = 2,
+    kPlayerSizeFieldNumber = 3,
+    kPlayerDecayFieldNumber = 4,
+    kPlayerRandFieldNumber = 5,
+    kPlayerWeightFieldNumber = 6,
+    kPlayerSpeedMaxFieldNumber = 7,
+    kPlayerAccelMaxFieldNumber = 8,
+    kStaminaMaxFieldNumber = 9,
+    kStaminaIncMaxFieldNumber = 10,
+    kRecoverInitFieldNumber = 11,
+    kRecoverDecThrFieldNumber = 12,
+    kRecoverMinFieldNumber = 13,
+    kRecoverDecFieldNumber = 14,
+    kEffortInitFieldNumber = 15,
+    kEffortDecThrFieldNumber = 16,
+    kEffortMinFieldNumber = 17,
+    kEffortDecFieldNumber = 18,
+    kEffortIncThrFieldNumber = 19,
+    kEffortIncFieldNumber = 20,
+    kKickRandFieldNumber = 21,
+    kPlayerRandFactorLFieldNumber = 23,
+    kPlayerRandFactorRFieldNumber = 24,
+    kKickRandFactorLFieldNumber = 25,
+    kKickRandFactorRFieldNumber = 26,
+    kBallSizeFieldNumber = 27,
+    kBallDecayFieldNumber = 28,
+    kBallRandFieldNumber = 29,
+    kBallWeightFieldNumber = 30,
+    kBallSpeedMaxFieldNumber = 31,
+    kBallAccelMaxFieldNumber = 32,
+    kDashPowerRateFieldNumber = 33,
+    kKickPowerRateFieldNumber = 34,
+    kKickableMarginFieldNumber = 35,
+    kControlRadiusFieldNumber = 36,
+    kControlRadiusWidthFieldNumber = 37,
+    kMaxPowerFieldNumber = 38,
+    kMinPowerFieldNumber = 39,
+    kMaxMomentFieldNumber = 40,
+    kMinMomentFieldNumber = 41,
+    kMaxNeckMomentFieldNumber = 42,
+    kMinNeckMomentFieldNumber = 43,
+    kMaxNeckAngleFieldNumber = 44,
+    kMinNeckAngleFieldNumber = 45,
+    kVisibleAngleFieldNumber = 46,
+    kVisibleDistanceFieldNumber = 47,
+    kWindDirFieldNumber = 48,
+    kWindForceFieldNumber = 49,
+    kWindAngleFieldNumber = 50,
+    kWindRandFieldNumber = 51,
+    kKickableAreaFieldNumber = 52,
+    kCatchAreaLFieldNumber = 53,
+    kCatchAreaWFieldNumber = 54,
+    kCatchProbabilityFieldNumber = 55,
+    kTeamActuatorNoiseFieldNumber = 22,
+    kWindNoneFieldNumber = 59,
+    kUseWindRandomFieldNumber = 60,
+    kUseOffsideFieldNumber = 82,
+    kGoalieMaxMovesFieldNumber = 56,
+    kCornerKickMarginFieldNumber = 57,
+    kOffsideActiveAreaSizeFieldNumber = 58,
+    kCoachSayCountMaxFieldNumber = 61,
+    kCoachSayMsgSizeFieldNumber = 62,
+    kClangWinSizeFieldNumber = 63,
+    kClangDefineWinFieldNumber = 64,
+    kClangMetaWinFieldNumber = 65,
+    kClangAdviceWinFieldNumber = 66,
+    kClangInfoWinFieldNumber = 67,
+    kClangMessDelayFieldNumber = 68,
+    kClangMessPerCycleFieldNumber = 69,
+    kHalfTimeFieldNumber = 70,
+    kSimulatorStepFieldNumber = 71,
+    kSendStepFieldNumber = 72,
+    kRecvStepFieldNumber = 73,
+    kSenseBodyStepFieldNumber = 74,
+    kLcmStepFieldNumber = 75,
+    kPlayerSayMsgSizeFieldNumber = 76,
+    kPlayerHearMaxFieldNumber = 77,
+    kPlayerHearIncFieldNumber = 78,
+    kPlayerHearDecayFieldNumber = 79,
+    kCatchBanCycleFieldNumber = 80,
+    kSlowDownFactorFieldNumber = 81,
+    kOffsideKickMarginFieldNumber = 84,
+    kAudioCutDistFieldNumber = 85,
+    kDistQuantizeStepFieldNumber = 86,
+    kLandmarkDistQuantizeStepFieldNumber = 87,
+    kDirQuantizeStepFieldNumber = 88,
+    kDistQuantizeStepLFieldNumber = 89,
+    kDistQuantizeStepRFieldNumber = 90,
+    kLandmarkDistQuantizeStepLFieldNumber = 91,
+    kLandmarkDistQuantizeStepRFieldNumber = 92,
+    kKickoffOffsideFieldNumber = 83,
+    kCoachModeFieldNumber = 95,
+    kCoachWithRefereeModeFieldNumber = 96,
+    kUseOldCoachHearFieldNumber = 97,
+    kDirQuantizeStepLFieldNumber = 93,
+    kDirQuantizeStepRFieldNumber = 94,
+    kSlownessOnTopForLeftTeamFieldNumber = 98,
+    kSlownessOnTopForRightTeamFieldNumber = 99,
+    kStartGoalLFieldNumber = 100,
+    kStartGoalRFieldNumber = 101,
+    kDropBallTimeFieldNumber = 104,
+    kFullstateLFieldNumber = 102,
+    kFullstateRFieldNumber = 103,
+    kSynchModeFieldNumber = 105,
+    kVerboseModeFieldNumber = 113,
+    kSynchOffsetFieldNumber = 106,
+    kSynchMicroSleepFieldNumber = 107,
+    kPointToBanFieldNumber = 108,
+    kPointToDurationFieldNumber = 109,
+    kPlayerPortFieldNumber = 110,
+    kTrainerPortFieldNumber = 111,
+    kOnlineCoachPortFieldNumber = 112,
+    kCoachSendViStepFieldNumber = 114,
+    kSendCommsFieldNumber = 117,
+    kTextLoggingFieldNumber = 118,
+    kGameLoggingFieldNumber = 119,
+    kUseTextLogFixedFieldNumber = 125,
+    kGameLogVersionFieldNumber = 120,
+    kUseGameLogFixedFieldNumber = 126,
+    kUseTextLogDatedFieldNumber = 127,
+    kUseGameLogDatedFieldNumber = 128,
+    kLogTimesFieldNumber = 130,
+    kTextLogCompressionFieldNumber = 132,
+    kGameLogCompressionFieldNumber = 133,
+    kTackleDistFieldNumber = 135,
+    kTackleBackDistFieldNumber = 136,
+    kTackleWidthFieldNumber = 137,
+    kTackleExponentFieldNumber = 138,
+    kRecordMessageFieldNumber = 131,
+    kUseProfileFieldNumber = 134,
+    kFreeKickFaultsFieldNumber = 143,
+    kBackPassesFieldNumber = 144,
+    kTackleCyclesFieldNumber = 139,
+    kTacklePowerRateFieldNumber = 140,
+    kFreeformWaitPeriodFieldNumber = 141,
+    kFreeformSendPeriodFieldNumber = 142,
+    kStoppedBallVelFieldNumber = 146,
+    kMaxGoalKicksFieldNumber = 147,
+    kClangDelWinFieldNumber = 148,
+    kClangRuleWinFieldNumber = 149,
+    kKickOffWaitFieldNumber = 151,
+    kConnectWaitFieldNumber = 152,
+    kProperGoalKicksFieldNumber = 145,
+    kAutoModeFieldNumber = 150,
+    kKeepawayModeFieldNumber = 156,
+    kKeepawayLoggingFieldNumber = 159,
+    kGameOverWaitFieldNumber = 153,
+    kKeepawayLengthFieldNumber = 157,
+    kKeepawayWidthFieldNumber = 158,
+    kKeepawayStartFieldNumber = 164,
+    kNrNormalHalfsFieldNumber = 165,
+    kNrExtraHalfsFieldNumber = 166,
+    kKeepawayLogFixedFieldNumber = 162,
+    kKeepawayLogDatedFieldNumber = 163,
+    kPenaltyShootOutsFieldNumber = 167,
+    kPenRandomWinnerFieldNumber = 175,
+    kPenBeforeSetupWaitFieldNumber = 168,
+    kPenSetupWaitFieldNumber = 169,
+    kPenReadyWaitFieldNumber = 170,
+    kPenTakenWaitFieldNumber = 171,
+    kPenNrKicksFieldNumber = 172,
+    kPenMaxExtraKicksFieldNumber = 173,
+    kPenDistXFieldNumber = 174,
+    kPenMaxGoalieDistXFieldNumber = 177,
+    kBallStuckAreaFieldNumber = 180,
+    kMaxTacklePowerFieldNumber = 182,
+    kMaxBackTacklePowerFieldNumber = 183,
+    kPlayerSpeedMaxMinFieldNumber = 184,
+    kPenAllowMultKicksFieldNumber = 176,
+    kPenCoachMovesPlayersFieldNumber = 178,
+    kGoldenGoalFieldNumber = 200,
+    kExtraStaminaFieldNumber = 185,
+    kSynchSeeOffsetFieldNumber = 186,
+    kExtraHalfTimeFieldNumber = 187,
+    kStaminaCapacityFieldNumber = 188,
+    kMaxDashAngleFieldNumber = 189,
+    kMinDashAngleFieldNumber = 190,
+    kDashAngleStepFieldNumber = 191,
+    kSideDashRateFieldNumber = 192,
+    kBackDashRateFieldNumber = 193,
+    kMaxDashPowerFieldNumber = 194,
+    kMinDashPowerFieldNumber = 195,
+    kTackleRandFactorFieldNumber = 196,
+    kFoulDetectProbabilityFieldNumber = 197,
+    kFoulExponentFieldNumber = 198,
+    kFoulCyclesFieldNumber = 199,
+    kRedCardProbabilityFieldNumber = 201,
+    kIllegalDefenseDurationFieldNumber = 202,
+    kIllegalDefenseNumberFieldNumber = 203,
+    kIllegalDefenseDistXFieldNumber = 204,
+    kIllegalDefenseWidthFieldNumber = 205,
+    kMaxCatchAngleFieldNumber = 208,
+    kMinCatchAngleFieldNumber = 209,
+    kRandomSeedFieldNumber = 210,
+    kLongKickPowerFactorFieldNumber = 211,
+    kLongKickDelayFieldNumber = 212,
+    kMaxMonitorsFieldNumber = 213,
+    kCatchableAreaFieldNumber = 214,
+    kRealSpeedMaxFieldNumber = 215,
+  };
+  // string replay_file = 115;
+  void clear_replay_file() ;
+  const std::string& replay_file() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_replay_file(Arg_&& arg, Args_... args);
+  std::string* mutable_replay_file();
+  PROTOBUF_NODISCARD std::string* release_replay_file();
+  void set_allocated_replay_file(std::string* ptr);
+
+  private:
+  const std::string& _internal_replay_file() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_replay_file(
+      const std::string& value);
+  std::string* _internal_mutable_replay_file();
+
+  public:
+  // string landmark_file = 116;
+  void clear_landmark_file() ;
+  const std::string& landmark_file() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_landmark_file(Arg_&& arg, Args_... args);
+  std::string* mutable_landmark_file();
+  PROTOBUF_NODISCARD std::string* release_landmark_file();
+  void set_allocated_landmark_file(std::string* ptr);
+
+  private:
+  const std::string& _internal_landmark_file() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_landmark_file(
+      const std::string& value);
+  std::string* _internal_mutable_landmark_file();
+
+  public:
+  // string text_log_dir = 121;
+  void clear_text_log_dir() ;
+  const std::string& text_log_dir() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_text_log_dir(Arg_&& arg, Args_... args);
+  std::string* mutable_text_log_dir();
+  PROTOBUF_NODISCARD std::string* release_text_log_dir();
+  void set_allocated_text_log_dir(std::string* ptr);
+
+  private:
+  const std::string& _internal_text_log_dir() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_text_log_dir(
+      const std::string& value);
+  std::string* _internal_mutable_text_log_dir();
+
+  public:
+  // string game_log_dir = 122;
+  void clear_game_log_dir() ;
+  const std::string& game_log_dir() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_game_log_dir(Arg_&& arg, Args_... args);
+  std::string* mutable_game_log_dir();
+  PROTOBUF_NODISCARD std::string* release_game_log_dir();
+  void set_allocated_game_log_dir(std::string* ptr);
+
+  private:
+  const std::string& _internal_game_log_dir() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_game_log_dir(
+      const std::string& value);
+  std::string* _internal_mutable_game_log_dir();
+
+  public:
+  // string text_log_fixed_name = 123;
+  void clear_text_log_fixed_name() ;
+  const std::string& text_log_fixed_name() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_text_log_fixed_name(Arg_&& arg, Args_... args);
+  std::string* mutable_text_log_fixed_name();
+  PROTOBUF_NODISCARD std::string* release_text_log_fixed_name();
+  void set_allocated_text_log_fixed_name(std::string* ptr);
+
+  private:
+  const std::string& _internal_text_log_fixed_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_text_log_fixed_name(
+      const std::string& value);
+  std::string* _internal_mutable_text_log_fixed_name();
+
+  public:
+  // string game_log_fixed_name = 124;
+  void clear_game_log_fixed_name() ;
+  const std::string& game_log_fixed_name() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_game_log_fixed_name(Arg_&& arg, Args_... args);
+  std::string* mutable_game_log_fixed_name();
+  PROTOBUF_NODISCARD std::string* release_game_log_fixed_name();
+  void set_allocated_game_log_fixed_name(std::string* ptr);
+
+  private:
+  const std::string& _internal_game_log_fixed_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_game_log_fixed_name(
+      const std::string& value);
+  std::string* _internal_mutable_game_log_fixed_name();
+
+  public:
+  // string log_date_format = 129;
+  void clear_log_date_format() ;
+  const std::string& log_date_format() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_log_date_format(Arg_&& arg, Args_... args);
+  std::string* mutable_log_date_format();
+  PROTOBUF_NODISCARD std::string* release_log_date_format();
+  void set_allocated_log_date_format(std::string* ptr);
+
+  private:
+  const std::string& _internal_log_date_format() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_log_date_format(
+      const std::string& value);
+  std::string* _internal_mutable_log_date_format();
+
+  public:
+  // string team_l_start = 154;
+  void clear_team_l_start() ;
+  const std::string& team_l_start() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_team_l_start(Arg_&& arg, Args_... args);
+  std::string* mutable_team_l_start();
+  PROTOBUF_NODISCARD std::string* release_team_l_start();
+  void set_allocated_team_l_start(std::string* ptr);
+
+  private:
+  const std::string& _internal_team_l_start() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_team_l_start(
+      const std::string& value);
+  std::string* _internal_mutable_team_l_start();
+
+  public:
+  // string team_r_start = 155;
+  void clear_team_r_start() ;
+  const std::string& team_r_start() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_team_r_start(Arg_&& arg, Args_... args);
+  std::string* mutable_team_r_start();
+  PROTOBUF_NODISCARD std::string* release_team_r_start();
+  void set_allocated_team_r_start(std::string* ptr);
+
+  private:
+  const std::string& _internal_team_r_start() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_team_r_start(
+      const std::string& value);
+  std::string* _internal_mutable_team_r_start();
+
+  public:
+  // string keepaway_log_dir = 160;
+  void clear_keepaway_log_dir() ;
+  const std::string& keepaway_log_dir() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_keepaway_log_dir(Arg_&& arg, Args_... args);
+  std::string* mutable_keepaway_log_dir();
+  PROTOBUF_NODISCARD std::string* release_keepaway_log_dir();
+  void set_allocated_keepaway_log_dir(std::string* ptr);
+
+  private:
+  const std::string& _internal_keepaway_log_dir() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keepaway_log_dir(
+      const std::string& value);
+  std::string* _internal_mutable_keepaway_log_dir();
+
+  public:
+  // string keepaway_log_fixed_name = 161;
+  void clear_keepaway_log_fixed_name() ;
+  const std::string& keepaway_log_fixed_name() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_keepaway_log_fixed_name(Arg_&& arg, Args_... args);
+  std::string* mutable_keepaway_log_fixed_name();
+  PROTOBUF_NODISCARD std::string* release_keepaway_log_fixed_name();
+  void set_allocated_keepaway_log_fixed_name(std::string* ptr);
+
+  private:
+  const std::string& _internal_keepaway_log_fixed_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keepaway_log_fixed_name(
+      const std::string& value);
+  std::string* _internal_mutable_keepaway_log_fixed_name();
+
+  public:
+  // string module_dir = 179;
+  void clear_module_dir() ;
+  const std::string& module_dir() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_module_dir(Arg_&& arg, Args_... args);
+  std::string* mutable_module_dir();
+  PROTOBUF_NODISCARD std::string* release_module_dir();
+  void set_allocated_module_dir(std::string* ptr);
+
+  private:
+  const std::string& _internal_module_dir() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_module_dir(
+      const std::string& value);
+  std::string* _internal_mutable_module_dir();
+
+  public:
+  // string coach_msg_file = 181;
+  void clear_coach_msg_file() ;
+  const std::string& coach_msg_file() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_coach_msg_file(Arg_&& arg, Args_... args);
+  std::string* mutable_coach_msg_file();
+  PROTOBUF_NODISCARD std::string* release_coach_msg_file();
+  void set_allocated_coach_msg_file(std::string* ptr);
+
+  private:
+  const std::string& _internal_coach_msg_file() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_coach_msg_file(
+      const std::string& value);
+  std::string* _internal_mutable_coach_msg_file();
+
+  public:
+  // string fixed_teamname_l = 206;
+  void clear_fixed_teamname_l() ;
+  const std::string& fixed_teamname_l() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_fixed_teamname_l(Arg_&& arg, Args_... args);
+  std::string* mutable_fixed_teamname_l();
+  PROTOBUF_NODISCARD std::string* release_fixed_teamname_l();
+  void set_allocated_fixed_teamname_l(std::string* ptr);
+
+  private:
+  const std::string& _internal_fixed_teamname_l() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_fixed_teamname_l(
+      const std::string& value);
+  std::string* _internal_mutable_fixed_teamname_l();
+
+  public:
+  // string fixed_teamname_r = 207;
+  void clear_fixed_teamname_r() ;
+  const std::string& fixed_teamname_r() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_fixed_teamname_r(Arg_&& arg, Args_... args);
+  std::string* mutable_fixed_teamname_r();
+  PROTOBUF_NODISCARD std::string* release_fixed_teamname_r();
+  void set_allocated_fixed_teamname_r(std::string* ptr);
+
+  private:
+  const std::string& _internal_fixed_teamname_r() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_fixed_teamname_r(
+      const std::string& value);
+  std::string* _internal_mutable_fixed_teamname_r();
+
+  public:
+  // float goal_width = 1;
+  void clear_goal_width() ;
+  float goal_width() const;
+  void set_goal_width(float value);
+
+  private:
+  float _internal_goal_width() const;
+  void _internal_set_goal_width(float value);
+
+  public:
+  // float inertia_moment = 2;
+  void clear_inertia_moment() ;
+  float inertia_moment() const;
+  void set_inertia_moment(float value);
+
+  private:
+  float _internal_inertia_moment() const;
+  void _internal_set_inertia_moment(float value);
+
+  public:
+  // float player_size = 3;
+  void clear_player_size() ;
+  float player_size() const;
+  void set_player_size(float value);
+
+  private:
+  float _internal_player_size() const;
+  void _internal_set_player_size(float value);
+
+  public:
+  // float player_decay = 4;
+  void clear_player_decay() ;
+  float player_decay() const;
+  void set_player_decay(float value);
+
+  private:
+  float _internal_player_decay() const;
+  void _internal_set_player_decay(float value);
+
+  public:
+  // float player_rand = 5;
+  void clear_player_rand() ;
+  float player_rand() const;
+  void set_player_rand(float value);
+
+  private:
+  float _internal_player_rand() const;
+  void _internal_set_player_rand(float value);
+
+  public:
+  // float player_weight = 6;
+  void clear_player_weight() ;
+  float player_weight() const;
+  void set_player_weight(float value);
+
+  private:
+  float _internal_player_weight() const;
+  void _internal_set_player_weight(float value);
+
+  public:
+  // float player_speed_max = 7;
+  void clear_player_speed_max() ;
+  float player_speed_max() const;
+  void set_player_speed_max(float value);
+
+  private:
+  float _internal_player_speed_max() const;
+  void _internal_set_player_speed_max(float value);
+
+  public:
+  // float player_accel_max = 8;
+  void clear_player_accel_max() ;
+  float player_accel_max() const;
+  void set_player_accel_max(float value);
+
+  private:
+  float _internal_player_accel_max() const;
+  void _internal_set_player_accel_max(float value);
+
+  public:
+  // float stamina_max = 9;
+  void clear_stamina_max() ;
+  float stamina_max() const;
+  void set_stamina_max(float value);
+
+  private:
+  float _internal_stamina_max() const;
+  void _internal_set_stamina_max(float value);
+
+  public:
+  // float stamina_inc_max = 10;
+  void clear_stamina_inc_max() ;
+  float stamina_inc_max() const;
+  void set_stamina_inc_max(float value);
+
+  private:
+  float _internal_stamina_inc_max() const;
+  void _internal_set_stamina_inc_max(float value);
+
+  public:
+  // float recover_init = 11;
+  void clear_recover_init() ;
+  float recover_init() const;
+  void set_recover_init(float value);
+
+  private:
+  float _internal_recover_init() const;
+  void _internal_set_recover_init(float value);
+
+  public:
+  // float recover_dec_thr = 12;
+  void clear_recover_dec_thr() ;
+  float recover_dec_thr() const;
+  void set_recover_dec_thr(float value);
+
+  private:
+  float _internal_recover_dec_thr() const;
+  void _internal_set_recover_dec_thr(float value);
+
+  public:
+  // float recover_min = 13;
+  void clear_recover_min() ;
+  float recover_min() const;
+  void set_recover_min(float value);
+
+  private:
+  float _internal_recover_min() const;
+  void _internal_set_recover_min(float value);
+
+  public:
+  // float recover_dec = 14;
+  void clear_recover_dec() ;
+  float recover_dec() const;
+  void set_recover_dec(float value);
+
+  private:
+  float _internal_recover_dec() const;
+  void _internal_set_recover_dec(float value);
+
+  public:
+  // float effort_init = 15;
+  void clear_effort_init() ;
+  float effort_init() const;
+  void set_effort_init(float value);
+
+  private:
+  float _internal_effort_init() const;
+  void _internal_set_effort_init(float value);
+
+  public:
+  // float effort_dec_thr = 16;
+  void clear_effort_dec_thr() ;
+  float effort_dec_thr() const;
+  void set_effort_dec_thr(float value);
+
+  private:
+  float _internal_effort_dec_thr() const;
+  void _internal_set_effort_dec_thr(float value);
+
+  public:
+  // float effort_min = 17;
+  void clear_effort_min() ;
+  float effort_min() const;
+  void set_effort_min(float value);
+
+  private:
+  float _internal_effort_min() const;
+  void _internal_set_effort_min(float value);
+
+  public:
+  // float effort_dec = 18;
+  void clear_effort_dec() ;
+  float effort_dec() const;
+  void set_effort_dec(float value);
+
+  private:
+  float _internal_effort_dec() const;
+  void _internal_set_effort_dec(float value);
+
+  public:
+  // float effort_inc_thr = 19;
+  void clear_effort_inc_thr() ;
+  float effort_inc_thr() const;
+  void set_effort_inc_thr(float value);
+
+  private:
+  float _internal_effort_inc_thr() const;
+  void _internal_set_effort_inc_thr(float value);
+
+  public:
+  // float effort_inc = 20;
+  void clear_effort_inc() ;
+  float effort_inc() const;
+  void set_effort_inc(float value);
+
+  private:
+  float _internal_effort_inc() const;
+  void _internal_set_effort_inc(float value);
+
+  public:
+  // float kick_rand = 21;
+  void clear_kick_rand() ;
+  float kick_rand() const;
+  void set_kick_rand(float value);
+
+  private:
+  float _internal_kick_rand() const;
+  void _internal_set_kick_rand(float value);
+
+  public:
+  // float player_rand_factor_l = 23;
+  void clear_player_rand_factor_l() ;
+  float player_rand_factor_l() const;
+  void set_player_rand_factor_l(float value);
+
+  private:
+  float _internal_player_rand_factor_l() const;
+  void _internal_set_player_rand_factor_l(float value);
+
+  public:
+  // float player_rand_factor_r = 24;
+  void clear_player_rand_factor_r() ;
+  float player_rand_factor_r() const;
+  void set_player_rand_factor_r(float value);
+
+  private:
+  float _internal_player_rand_factor_r() const;
+  void _internal_set_player_rand_factor_r(float value);
+
+  public:
+  // float kick_rand_factor_l = 25;
+  void clear_kick_rand_factor_l() ;
+  float kick_rand_factor_l() const;
+  void set_kick_rand_factor_l(float value);
+
+  private:
+  float _internal_kick_rand_factor_l() const;
+  void _internal_set_kick_rand_factor_l(float value);
+
+  public:
+  // float kick_rand_factor_r = 26;
+  void clear_kick_rand_factor_r() ;
+  float kick_rand_factor_r() const;
+  void set_kick_rand_factor_r(float value);
+
+  private:
+  float _internal_kick_rand_factor_r() const;
+  void _internal_set_kick_rand_factor_r(float value);
+
+  public:
+  // float ball_size = 27;
+  void clear_ball_size() ;
+  float ball_size() const;
+  void set_ball_size(float value);
+
+  private:
+  float _internal_ball_size() const;
+  void _internal_set_ball_size(float value);
+
+  public:
+  // float ball_decay = 28;
+  void clear_ball_decay() ;
+  float ball_decay() const;
+  void set_ball_decay(float value);
+
+  private:
+  float _internal_ball_decay() const;
+  void _internal_set_ball_decay(float value);
+
+  public:
+  // float ball_rand = 29;
+  void clear_ball_rand() ;
+  float ball_rand() const;
+  void set_ball_rand(float value);
+
+  private:
+  float _internal_ball_rand() const;
+  void _internal_set_ball_rand(float value);
+
+  public:
+  // float ball_weight = 30;
+  void clear_ball_weight() ;
+  float ball_weight() const;
+  void set_ball_weight(float value);
+
+  private:
+  float _internal_ball_weight() const;
+  void _internal_set_ball_weight(float value);
+
+  public:
+  // float ball_speed_max = 31;
+  void clear_ball_speed_max() ;
+  float ball_speed_max() const;
+  void set_ball_speed_max(float value);
+
+  private:
+  float _internal_ball_speed_max() const;
+  void _internal_set_ball_speed_max(float value);
+
+  public:
+  // float ball_accel_max = 32;
+  void clear_ball_accel_max() ;
+  float ball_accel_max() const;
+  void set_ball_accel_max(float value);
+
+  private:
+  float _internal_ball_accel_max() const;
+  void _internal_set_ball_accel_max(float value);
+
+  public:
+  // float dash_power_rate = 33;
+  void clear_dash_power_rate() ;
+  float dash_power_rate() const;
+  void set_dash_power_rate(float value);
+
+  private:
+  float _internal_dash_power_rate() const;
+  void _internal_set_dash_power_rate(float value);
+
+  public:
+  // float kick_power_rate = 34;
+  void clear_kick_power_rate() ;
+  float kick_power_rate() const;
+  void set_kick_power_rate(float value);
+
+  private:
+  float _internal_kick_power_rate() const;
+  void _internal_set_kick_power_rate(float value);
+
+  public:
+  // float kickable_margin = 35;
+  void clear_kickable_margin() ;
+  float kickable_margin() const;
+  void set_kickable_margin(float value);
+
+  private:
+  float _internal_kickable_margin() const;
+  void _internal_set_kickable_margin(float value);
+
+  public:
+  // float control_radius = 36;
+  void clear_control_radius() ;
+  float control_radius() const;
+  void set_control_radius(float value);
+
+  private:
+  float _internal_control_radius() const;
+  void _internal_set_control_radius(float value);
+
+  public:
+  // float control_radius_width = 37;
+  void clear_control_radius_width() ;
+  float control_radius_width() const;
+  void set_control_radius_width(float value);
+
+  private:
+  float _internal_control_radius_width() const;
+  void _internal_set_control_radius_width(float value);
+
+  public:
+  // float max_power = 38;
+  void clear_max_power() ;
+  float max_power() const;
+  void set_max_power(float value);
+
+  private:
+  float _internal_max_power() const;
+  void _internal_set_max_power(float value);
+
+  public:
+  // float min_power = 39;
+  void clear_min_power() ;
+  float min_power() const;
+  void set_min_power(float value);
+
+  private:
+  float _internal_min_power() const;
+  void _internal_set_min_power(float value);
+
+  public:
+  // float max_moment = 40;
+  void clear_max_moment() ;
+  float max_moment() const;
+  void set_max_moment(float value);
+
+  private:
+  float _internal_max_moment() const;
+  void _internal_set_max_moment(float value);
+
+  public:
+  // float min_moment = 41;
+  void clear_min_moment() ;
+  float min_moment() const;
+  void set_min_moment(float value);
+
+  private:
+  float _internal_min_moment() const;
+  void _internal_set_min_moment(float value);
+
+  public:
+  // float max_neck_moment = 42;
+  void clear_max_neck_moment() ;
+  float max_neck_moment() const;
+  void set_max_neck_moment(float value);
+
+  private:
+  float _internal_max_neck_moment() const;
+  void _internal_set_max_neck_moment(float value);
+
+  public:
+  // float min_neck_moment = 43;
+  void clear_min_neck_moment() ;
+  float min_neck_moment() const;
+  void set_min_neck_moment(float value);
+
+  private:
+  float _internal_min_neck_moment() const;
+  void _internal_set_min_neck_moment(float value);
+
+  public:
+  // float max_neck_angle = 44;
+  void clear_max_neck_angle() ;
+  float max_neck_angle() const;
+  void set_max_neck_angle(float value);
+
+  private:
+  float _internal_max_neck_angle() const;
+  void _internal_set_max_neck_angle(float value);
+
+  public:
+  // float min_neck_angle = 45;
+  void clear_min_neck_angle() ;
+  float min_neck_angle() const;
+  void set_min_neck_angle(float value);
+
+  private:
+  float _internal_min_neck_angle() const;
+  void _internal_set_min_neck_angle(float value);
+
+  public:
+  // float visible_angle = 46;
+  void clear_visible_angle() ;
+  float visible_angle() const;
+  void set_visible_angle(float value);
+
+  private:
+  float _internal_visible_angle() const;
+  void _internal_set_visible_angle(float value);
+
+  public:
+  // float visible_distance = 47;
+  void clear_visible_distance() ;
+  float visible_distance() const;
+  void set_visible_distance(float value);
+
+  private:
+  float _internal_visible_distance() const;
+  void _internal_set_visible_distance(float value);
+
+  public:
+  // float wind_dir = 48;
+  void clear_wind_dir() ;
+  float wind_dir() const;
+  void set_wind_dir(float value);
+
+  private:
+  float _internal_wind_dir() const;
+  void _internal_set_wind_dir(float value);
+
+  public:
+  // float wind_force = 49;
+  void clear_wind_force() ;
+  float wind_force() const;
+  void set_wind_force(float value);
+
+  private:
+  float _internal_wind_force() const;
+  void _internal_set_wind_force(float value);
+
+  public:
+  // float wind_angle = 50;
+  void clear_wind_angle() ;
+  float wind_angle() const;
+  void set_wind_angle(float value);
+
+  private:
+  float _internal_wind_angle() const;
+  void _internal_set_wind_angle(float value);
+
+  public:
+  // float wind_rand = 51;
+  void clear_wind_rand() ;
+  float wind_rand() const;
+  void set_wind_rand(float value);
+
+  private:
+  float _internal_wind_rand() const;
+  void _internal_set_wind_rand(float value);
+
+  public:
+  // float kickable_area = 52;
+  void clear_kickable_area() ;
+  float kickable_area() const;
+  void set_kickable_area(float value);
+
+  private:
+  float _internal_kickable_area() const;
+  void _internal_set_kickable_area(float value);
+
+  public:
+  // float catch_area_l = 53;
+  void clear_catch_area_l() ;
+  float catch_area_l() const;
+  void set_catch_area_l(float value);
+
+  private:
+  float _internal_catch_area_l() const;
+  void _internal_set_catch_area_l(float value);
+
+  public:
+  // float catch_area_w = 54;
+  void clear_catch_area_w() ;
+  float catch_area_w() const;
+  void set_catch_area_w(float value);
+
+  private:
+  float _internal_catch_area_w() const;
+  void _internal_set_catch_area_w(float value);
+
+  public:
+  // float catch_probability = 55;
+  void clear_catch_probability() ;
+  float catch_probability() const;
+  void set_catch_probability(float value);
+
+  private:
+  float _internal_catch_probability() const;
+  void _internal_set_catch_probability(float value);
+
+  public:
+  // bool team_actuator_noise = 22;
+  void clear_team_actuator_noise() ;
+  bool team_actuator_noise() const;
+  void set_team_actuator_noise(bool value);
+
+  private:
+  bool _internal_team_actuator_noise() const;
+  void _internal_set_team_actuator_noise(bool value);
+
+  public:
+  // bool wind_none = 59;
+  void clear_wind_none() ;
+  bool wind_none() const;
+  void set_wind_none(bool value);
+
+  private:
+  bool _internal_wind_none() const;
+  void _internal_set_wind_none(bool value);
+
+  public:
+  // bool use_wind_random = 60;
+  void clear_use_wind_random() ;
+  bool use_wind_random() const;
+  void set_use_wind_random(bool value);
+
+  private:
+  bool _internal_use_wind_random() const;
+  void _internal_set_use_wind_random(bool value);
+
+  public:
+  // bool use_offside = 82;
+  void clear_use_offside() ;
+  bool use_offside() const;
+  void set_use_offside(bool value);
+
+  private:
+  bool _internal_use_offside() const;
+  void _internal_set_use_offside(bool value);
+
+  public:
+  // int32 goalie_max_moves = 56;
+  void clear_goalie_max_moves() ;
+  ::int32_t goalie_max_moves() const;
+  void set_goalie_max_moves(::int32_t value);
+
+  private:
+  ::int32_t _internal_goalie_max_moves() const;
+  void _internal_set_goalie_max_moves(::int32_t value);
+
+  public:
+  // float corner_kick_margin = 57;
+  void clear_corner_kick_margin() ;
+  float corner_kick_margin() const;
+  void set_corner_kick_margin(float value);
+
+  private:
+  float _internal_corner_kick_margin() const;
+  void _internal_set_corner_kick_margin(float value);
+
+  public:
+  // float offside_active_area_size = 58;
+  void clear_offside_active_area_size() ;
+  float offside_active_area_size() const;
+  void set_offside_active_area_size(float value);
+
+  private:
+  float _internal_offside_active_area_size() const;
+  void _internal_set_offside_active_area_size(float value);
+
+  public:
+  // int32 coach_say_count_max = 61;
+  void clear_coach_say_count_max() ;
+  ::int32_t coach_say_count_max() const;
+  void set_coach_say_count_max(::int32_t value);
+
+  private:
+  ::int32_t _internal_coach_say_count_max() const;
+  void _internal_set_coach_say_count_max(::int32_t value);
+
+  public:
+  // int32 coach_say_msg_size = 62;
+  void clear_coach_say_msg_size() ;
+  ::int32_t coach_say_msg_size() const;
+  void set_coach_say_msg_size(::int32_t value);
+
+  private:
+  ::int32_t _internal_coach_say_msg_size() const;
+  void _internal_set_coach_say_msg_size(::int32_t value);
+
+  public:
+  // int32 clang_win_size = 63;
+  void clear_clang_win_size() ;
+  ::int32_t clang_win_size() const;
+  void set_clang_win_size(::int32_t value);
+
+  private:
+  ::int32_t _internal_clang_win_size() const;
+  void _internal_set_clang_win_size(::int32_t value);
+
+  public:
+  // int32 clang_define_win = 64;
+  void clear_clang_define_win() ;
+  ::int32_t clang_define_win() const;
+  void set_clang_define_win(::int32_t value);
+
+  private:
+  ::int32_t _internal_clang_define_win() const;
+  void _internal_set_clang_define_win(::int32_t value);
+
+  public:
+  // int32 clang_meta_win = 65;
+  void clear_clang_meta_win() ;
+  ::int32_t clang_meta_win() const;
+  void set_clang_meta_win(::int32_t value);
+
+  private:
+  ::int32_t _internal_clang_meta_win() const;
+  void _internal_set_clang_meta_win(::int32_t value);
+
+  public:
+  // int32 clang_advice_win = 66;
+  void clear_clang_advice_win() ;
+  ::int32_t clang_advice_win() const;
+  void set_clang_advice_win(::int32_t value);
+
+  private:
+  ::int32_t _internal_clang_advice_win() const;
+  void _internal_set_clang_advice_win(::int32_t value);
+
+  public:
+  // int32 clang_info_win = 67;
+  void clear_clang_info_win() ;
+  ::int32_t clang_info_win() const;
+  void set_clang_info_win(::int32_t value);
+
+  private:
+  ::int32_t _internal_clang_info_win() const;
+  void _internal_set_clang_info_win(::int32_t value);
+
+  public:
+  // int32 clang_mess_delay = 68;
+  void clear_clang_mess_delay() ;
+  ::int32_t clang_mess_delay() const;
+  void set_clang_mess_delay(::int32_t value);
+
+  private:
+  ::int32_t _internal_clang_mess_delay() const;
+  void _internal_set_clang_mess_delay(::int32_t value);
+
+  public:
+  // int32 clang_mess_per_cycle = 69;
+  void clear_clang_mess_per_cycle() ;
+  ::int32_t clang_mess_per_cycle() const;
+  void set_clang_mess_per_cycle(::int32_t value);
+
+  private:
+  ::int32_t _internal_clang_mess_per_cycle() const;
+  void _internal_set_clang_mess_per_cycle(::int32_t value);
+
+  public:
+  // int32 half_time = 70;
+  void clear_half_time() ;
+  ::int32_t half_time() const;
+  void set_half_time(::int32_t value);
+
+  private:
+  ::int32_t _internal_half_time() const;
+  void _internal_set_half_time(::int32_t value);
+
+  public:
+  // int32 simulator_step = 71;
+  void clear_simulator_step() ;
+  ::int32_t simulator_step() const;
+  void set_simulator_step(::int32_t value);
+
+  private:
+  ::int32_t _internal_simulator_step() const;
+  void _internal_set_simulator_step(::int32_t value);
+
+  public:
+  // int32 send_step = 72;
+  void clear_send_step() ;
+  ::int32_t send_step() const;
+  void set_send_step(::int32_t value);
+
+  private:
+  ::int32_t _internal_send_step() const;
+  void _internal_set_send_step(::int32_t value);
+
+  public:
+  // int32 recv_step = 73;
+  void clear_recv_step() ;
+  ::int32_t recv_step() const;
+  void set_recv_step(::int32_t value);
+
+  private:
+  ::int32_t _internal_recv_step() const;
+  void _internal_set_recv_step(::int32_t value);
+
+  public:
+  // int32 sense_body_step = 74;
+  void clear_sense_body_step() ;
+  ::int32_t sense_body_step() const;
+  void set_sense_body_step(::int32_t value);
+
+  private:
+  ::int32_t _internal_sense_body_step() const;
+  void _internal_set_sense_body_step(::int32_t value);
+
+  public:
+  // int32 lcm_step = 75;
+  void clear_lcm_step() ;
+  ::int32_t lcm_step() const;
+  void set_lcm_step(::int32_t value);
+
+  private:
+  ::int32_t _internal_lcm_step() const;
+  void _internal_set_lcm_step(::int32_t value);
+
+  public:
+  // int32 player_say_msg_size = 76;
+  void clear_player_say_msg_size() ;
+  ::int32_t player_say_msg_size() const;
+  void set_player_say_msg_size(::int32_t value);
+
+  private:
+  ::int32_t _internal_player_say_msg_size() const;
+  void _internal_set_player_say_msg_size(::int32_t value);
+
+  public:
+  // int32 player_hear_max = 77;
+  void clear_player_hear_max() ;
+  ::int32_t player_hear_max() const;
+  void set_player_hear_max(::int32_t value);
+
+  private:
+  ::int32_t _internal_player_hear_max() const;
+  void _internal_set_player_hear_max(::int32_t value);
+
+  public:
+  // int32 player_hear_inc = 78;
+  void clear_player_hear_inc() ;
+  ::int32_t player_hear_inc() const;
+  void set_player_hear_inc(::int32_t value);
+
+  private:
+  ::int32_t _internal_player_hear_inc() const;
+  void _internal_set_player_hear_inc(::int32_t value);
+
+  public:
+  // int32 player_hear_decay = 79;
+  void clear_player_hear_decay() ;
+  ::int32_t player_hear_decay() const;
+  void set_player_hear_decay(::int32_t value);
+
+  private:
+  ::int32_t _internal_player_hear_decay() const;
+  void _internal_set_player_hear_decay(::int32_t value);
+
+  public:
+  // int32 catch_ban_cycle = 80;
+  void clear_catch_ban_cycle() ;
+  ::int32_t catch_ban_cycle() const;
+  void set_catch_ban_cycle(::int32_t value);
+
+  private:
+  ::int32_t _internal_catch_ban_cycle() const;
+  void _internal_set_catch_ban_cycle(::int32_t value);
+
+  public:
+  // int32 slow_down_factor = 81;
+  void clear_slow_down_factor() ;
+  ::int32_t slow_down_factor() const;
+  void set_slow_down_factor(::int32_t value);
+
+  private:
+  ::int32_t _internal_slow_down_factor() const;
+  void _internal_set_slow_down_factor(::int32_t value);
+
+  public:
+  // float offside_kick_margin = 84;
+  void clear_offside_kick_margin() ;
+  float offside_kick_margin() const;
+  void set_offside_kick_margin(float value);
+
+  private:
+  float _internal_offside_kick_margin() const;
+  void _internal_set_offside_kick_margin(float value);
+
+  public:
+  // float audio_cut_dist = 85;
+  void clear_audio_cut_dist() ;
+  float audio_cut_dist() const;
+  void set_audio_cut_dist(float value);
+
+  private:
+  float _internal_audio_cut_dist() const;
+  void _internal_set_audio_cut_dist(float value);
+
+  public:
+  // float dist_quantize_step = 86;
+  void clear_dist_quantize_step() ;
+  float dist_quantize_step() const;
+  void set_dist_quantize_step(float value);
+
+  private:
+  float _internal_dist_quantize_step() const;
+  void _internal_set_dist_quantize_step(float value);
+
+  public:
+  // float landmark_dist_quantize_step = 87;
+  void clear_landmark_dist_quantize_step() ;
+  float landmark_dist_quantize_step() const;
+  void set_landmark_dist_quantize_step(float value);
+
+  private:
+  float _internal_landmark_dist_quantize_step() const;
+  void _internal_set_landmark_dist_quantize_step(float value);
+
+  public:
+  // float dir_quantize_step = 88;
+  void clear_dir_quantize_step() ;
+  float dir_quantize_step() const;
+  void set_dir_quantize_step(float value);
+
+  private:
+  float _internal_dir_quantize_step() const;
+  void _internal_set_dir_quantize_step(float value);
+
+  public:
+  // float dist_quantize_step_l = 89;
+  void clear_dist_quantize_step_l() ;
+  float dist_quantize_step_l() const;
+  void set_dist_quantize_step_l(float value);
+
+  private:
+  float _internal_dist_quantize_step_l() const;
+  void _internal_set_dist_quantize_step_l(float value);
+
+  public:
+  // float dist_quantize_step_r = 90;
+  void clear_dist_quantize_step_r() ;
+  float dist_quantize_step_r() const;
+  void set_dist_quantize_step_r(float value);
+
+  private:
+  float _internal_dist_quantize_step_r() const;
+  void _internal_set_dist_quantize_step_r(float value);
+
+  public:
+  // float landmark_dist_quantize_step_l = 91;
+  void clear_landmark_dist_quantize_step_l() ;
+  float landmark_dist_quantize_step_l() const;
+  void set_landmark_dist_quantize_step_l(float value);
+
+  private:
+  float _internal_landmark_dist_quantize_step_l() const;
+  void _internal_set_landmark_dist_quantize_step_l(float value);
+
+  public:
+  // float landmark_dist_quantize_step_r = 92;
+  void clear_landmark_dist_quantize_step_r() ;
+  float landmark_dist_quantize_step_r() const;
+  void set_landmark_dist_quantize_step_r(float value);
+
+  private:
+  float _internal_landmark_dist_quantize_step_r() const;
+  void _internal_set_landmark_dist_quantize_step_r(float value);
+
+  public:
+  // bool kickoff_offside = 83;
+  void clear_kickoff_offside() ;
+  bool kickoff_offside() const;
+  void set_kickoff_offside(bool value);
+
+  private:
+  bool _internal_kickoff_offside() const;
+  void _internal_set_kickoff_offside(bool value);
+
+  public:
+  // bool coach_mode = 95;
+  void clear_coach_mode() ;
+  bool coach_mode() const;
+  void set_coach_mode(bool value);
+
+  private:
+  bool _internal_coach_mode() const;
+  void _internal_set_coach_mode(bool value);
+
+  public:
+  // bool coach_with_referee_mode = 96;
+  void clear_coach_with_referee_mode() ;
+  bool coach_with_referee_mode() const;
+  void set_coach_with_referee_mode(bool value);
+
+  private:
+  bool _internal_coach_with_referee_mode() const;
+  void _internal_set_coach_with_referee_mode(bool value);
+
+  public:
+  // bool use_old_coach_hear = 97;
+  void clear_use_old_coach_hear() ;
+  bool use_old_coach_hear() const;
+  void set_use_old_coach_hear(bool value);
+
+  private:
+  bool _internal_use_old_coach_hear() const;
+  void _internal_set_use_old_coach_hear(bool value);
+
+  public:
+  // float dir_quantize_step_l = 93;
+  void clear_dir_quantize_step_l() ;
+  float dir_quantize_step_l() const;
+  void set_dir_quantize_step_l(float value);
+
+  private:
+  float _internal_dir_quantize_step_l() const;
+  void _internal_set_dir_quantize_step_l(float value);
+
+  public:
+  // float dir_quantize_step_r = 94;
+  void clear_dir_quantize_step_r() ;
+  float dir_quantize_step_r() const;
+  void set_dir_quantize_step_r(float value);
+
+  private:
+  float _internal_dir_quantize_step_r() const;
+  void _internal_set_dir_quantize_step_r(float value);
+
+  public:
+  // float slowness_on_top_for_left_team = 98;
+  void clear_slowness_on_top_for_left_team() ;
+  float slowness_on_top_for_left_team() const;
+  void set_slowness_on_top_for_left_team(float value);
+
+  private:
+  float _internal_slowness_on_top_for_left_team() const;
+  void _internal_set_slowness_on_top_for_left_team(float value);
+
+  public:
+  // float slowness_on_top_for_right_team = 99;
+  void clear_slowness_on_top_for_right_team() ;
+  float slowness_on_top_for_right_team() const;
+  void set_slowness_on_top_for_right_team(float value);
+
+  private:
+  float _internal_slowness_on_top_for_right_team() const;
+  void _internal_set_slowness_on_top_for_right_team(float value);
+
+  public:
+  // int32 start_goal_l = 100;
+  void clear_start_goal_l() ;
+  ::int32_t start_goal_l() const;
+  void set_start_goal_l(::int32_t value);
+
+  private:
+  ::int32_t _internal_start_goal_l() const;
+  void _internal_set_start_goal_l(::int32_t value);
+
+  public:
+  // int32 start_goal_r = 101;
+  void clear_start_goal_r() ;
+  ::int32_t start_goal_r() const;
+  void set_start_goal_r(::int32_t value);
+
+  private:
+  ::int32_t _internal_start_goal_r() const;
+  void _internal_set_start_goal_r(::int32_t value);
+
+  public:
+  // int32 drop_ball_time = 104;
+  void clear_drop_ball_time() ;
+  ::int32_t drop_ball_time() const;
+  void set_drop_ball_time(::int32_t value);
+
+  private:
+  ::int32_t _internal_drop_ball_time() const;
+  void _internal_set_drop_ball_time(::int32_t value);
+
+  public:
+  // bool fullstate_l = 102;
+  void clear_fullstate_l() ;
+  bool fullstate_l() const;
+  void set_fullstate_l(bool value);
+
+  private:
+  bool _internal_fullstate_l() const;
+  void _internal_set_fullstate_l(bool value);
+
+  public:
+  // bool fullstate_r = 103;
+  void clear_fullstate_r() ;
+  bool fullstate_r() const;
+  void set_fullstate_r(bool value);
+
+  private:
+  bool _internal_fullstate_r() const;
+  void _internal_set_fullstate_r(bool value);
+
+  public:
+  // bool synch_mode = 105;
+  void clear_synch_mode() ;
+  bool synch_mode() const;
+  void set_synch_mode(bool value);
+
+  private:
+  bool _internal_synch_mode() const;
+  void _internal_set_synch_mode(bool value);
+
+  public:
+  // bool verbose_mode = 113;
+  void clear_verbose_mode() ;
+  bool verbose_mode() const;
+  void set_verbose_mode(bool value);
+
+  private:
+  bool _internal_verbose_mode() const;
+  void _internal_set_verbose_mode(bool value);
+
+  public:
+  // int32 synch_offset = 106;
+  void clear_synch_offset() ;
+  ::int32_t synch_offset() const;
+  void set_synch_offset(::int32_t value);
+
+  private:
+  ::int32_t _internal_synch_offset() const;
+  void _internal_set_synch_offset(::int32_t value);
+
+  public:
+  // int32 synch_micro_sleep = 107;
+  void clear_synch_micro_sleep() ;
+  ::int32_t synch_micro_sleep() const;
+  void set_synch_micro_sleep(::int32_t value);
+
+  private:
+  ::int32_t _internal_synch_micro_sleep() const;
+  void _internal_set_synch_micro_sleep(::int32_t value);
+
+  public:
+  // int32 point_to_ban = 108;
+  void clear_point_to_ban() ;
+  ::int32_t point_to_ban() const;
+  void set_point_to_ban(::int32_t value);
+
+  private:
+  ::int32_t _internal_point_to_ban() const;
+  void _internal_set_point_to_ban(::int32_t value);
+
+  public:
+  // int32 point_to_duration = 109;
+  void clear_point_to_duration() ;
+  ::int32_t point_to_duration() const;
+  void set_point_to_duration(::int32_t value);
+
+  private:
+  ::int32_t _internal_point_to_duration() const;
+  void _internal_set_point_to_duration(::int32_t value);
+
+  public:
+  // int32 player_port = 110;
+  void clear_player_port() ;
+  ::int32_t player_port() const;
+  void set_player_port(::int32_t value);
+
+  private:
+  ::int32_t _internal_player_port() const;
+  void _internal_set_player_port(::int32_t value);
+
+  public:
+  // int32 trainer_port = 111;
+  void clear_trainer_port() ;
+  ::int32_t trainer_port() const;
+  void set_trainer_port(::int32_t value);
+
+  private:
+  ::int32_t _internal_trainer_port() const;
+  void _internal_set_trainer_port(::int32_t value);
+
+  public:
+  // int32 online_coach_port = 112;
+  void clear_online_coach_port() ;
+  ::int32_t online_coach_port() const;
+  void set_online_coach_port(::int32_t value);
+
+  private:
+  ::int32_t _internal_online_coach_port() const;
+  void _internal_set_online_coach_port(::int32_t value);
+
+  public:
+  // int32 coach_send_vi_step = 114;
+  void clear_coach_send_vi_step() ;
+  ::int32_t coach_send_vi_step() const;
+  void set_coach_send_vi_step(::int32_t value);
+
+  private:
+  ::int32_t _internal_coach_send_vi_step() const;
+  void _internal_set_coach_send_vi_step(::int32_t value);
+
+  public:
+  // bool send_comms = 117;
+  void clear_send_comms() ;
+  bool send_comms() const;
+  void set_send_comms(bool value);
+
+  private:
+  bool _internal_send_comms() const;
+  void _internal_set_send_comms(bool value);
+
+  public:
+  // bool text_logging = 118;
+  void clear_text_logging() ;
+  bool text_logging() const;
+  void set_text_logging(bool value);
+
+  private:
+  bool _internal_text_logging() const;
+  void _internal_set_text_logging(bool value);
+
+  public:
+  // bool game_logging = 119;
+  void clear_game_logging() ;
+  bool game_logging() const;
+  void set_game_logging(bool value);
+
+  private:
+  bool _internal_game_logging() const;
+  void _internal_set_game_logging(bool value);
+
+  public:
+  // bool use_text_log_fixed = 125;
+  void clear_use_text_log_fixed() ;
+  bool use_text_log_fixed() const;
+  void set_use_text_log_fixed(bool value);
+
+  private:
+  bool _internal_use_text_log_fixed() const;
+  void _internal_set_use_text_log_fixed(bool value);
+
+  public:
+  // int32 game_log_version = 120;
+  void clear_game_log_version() ;
+  ::int32_t game_log_version() const;
+  void set_game_log_version(::int32_t value);
+
+  private:
+  ::int32_t _internal_game_log_version() const;
+  void _internal_set_game_log_version(::int32_t value);
+
+  public:
+  // bool use_game_log_fixed = 126;
+  void clear_use_game_log_fixed() ;
+  bool use_game_log_fixed() const;
+  void set_use_game_log_fixed(bool value);
+
+  private:
+  bool _internal_use_game_log_fixed() const;
+  void _internal_set_use_game_log_fixed(bool value);
+
+  public:
+  // bool use_text_log_dated = 127;
+  void clear_use_text_log_dated() ;
+  bool use_text_log_dated() const;
+  void set_use_text_log_dated(bool value);
+
+  private:
+  bool _internal_use_text_log_dated() const;
+  void _internal_set_use_text_log_dated(bool value);
+
+  public:
+  // bool use_game_log_dated = 128;
+  void clear_use_game_log_dated() ;
+  bool use_game_log_dated() const;
+  void set_use_game_log_dated(bool value);
+
+  private:
+  bool _internal_use_game_log_dated() const;
+  void _internal_set_use_game_log_dated(bool value);
+
+  public:
+  // bool log_times = 130;
+  void clear_log_times() ;
+  bool log_times() const;
+  void set_log_times(bool value);
+
+  private:
+  bool _internal_log_times() const;
+  void _internal_set_log_times(bool value);
+
+  public:
+  // int32 text_log_compression = 132;
+  void clear_text_log_compression() ;
+  ::int32_t text_log_compression() const;
+  void set_text_log_compression(::int32_t value);
+
+  private:
+  ::int32_t _internal_text_log_compression() const;
+  void _internal_set_text_log_compression(::int32_t value);
+
+  public:
+  // int32 game_log_compression = 133;
+  void clear_game_log_compression() ;
+  ::int32_t game_log_compression() const;
+  void set_game_log_compression(::int32_t value);
+
+  private:
+  ::int32_t _internal_game_log_compression() const;
+  void _internal_set_game_log_compression(::int32_t value);
+
+  public:
+  // float tackle_dist = 135;
+  void clear_tackle_dist() ;
+  float tackle_dist() const;
+  void set_tackle_dist(float value);
+
+  private:
+  float _internal_tackle_dist() const;
+  void _internal_set_tackle_dist(float value);
+
+  public:
+  // float tackle_back_dist = 136;
+  void clear_tackle_back_dist() ;
+  float tackle_back_dist() const;
+  void set_tackle_back_dist(float value);
+
+  private:
+  float _internal_tackle_back_dist() const;
+  void _internal_set_tackle_back_dist(float value);
+
+  public:
+  // float tackle_width = 137;
+  void clear_tackle_width() ;
+  float tackle_width() const;
+  void set_tackle_width(float value);
+
+  private:
+  float _internal_tackle_width() const;
+  void _internal_set_tackle_width(float value);
+
+  public:
+  // float tackle_exponent = 138;
+  void clear_tackle_exponent() ;
+  float tackle_exponent() const;
+  void set_tackle_exponent(float value);
+
+  private:
+  float _internal_tackle_exponent() const;
+  void _internal_set_tackle_exponent(float value);
+
+  public:
+  // bool record_message = 131;
+  void clear_record_message() ;
+  bool record_message() const;
+  void set_record_message(bool value);
+
+  private:
+  bool _internal_record_message() const;
+  void _internal_set_record_message(bool value);
+
+  public:
+  // bool use_profile = 134;
+  void clear_use_profile() ;
+  bool use_profile() const;
+  void set_use_profile(bool value);
+
+  private:
+  bool _internal_use_profile() const;
+  void _internal_set_use_profile(bool value);
+
+  public:
+  // bool free_kick_faults = 143;
+  void clear_free_kick_faults() ;
+  bool free_kick_faults() const;
+  void set_free_kick_faults(bool value);
+
+  private:
+  bool _internal_free_kick_faults() const;
+  void _internal_set_free_kick_faults(bool value);
+
+  public:
+  // bool back_passes = 144;
+  void clear_back_passes() ;
+  bool back_passes() const;
+  void set_back_passes(bool value);
+
+  private:
+  bool _internal_back_passes() const;
+  void _internal_set_back_passes(bool value);
+
+  public:
+  // int32 tackle_cycles = 139;
+  void clear_tackle_cycles() ;
+  ::int32_t tackle_cycles() const;
+  void set_tackle_cycles(::int32_t value);
+
+  private:
+  ::int32_t _internal_tackle_cycles() const;
+  void _internal_set_tackle_cycles(::int32_t value);
+
+  public:
+  // float tackle_power_rate = 140;
+  void clear_tackle_power_rate() ;
+  float tackle_power_rate() const;
+  void set_tackle_power_rate(float value);
+
+  private:
+  float _internal_tackle_power_rate() const;
+  void _internal_set_tackle_power_rate(float value);
+
+  public:
+  // int32 freeform_wait_period = 141;
+  void clear_freeform_wait_period() ;
+  ::int32_t freeform_wait_period() const;
+  void set_freeform_wait_period(::int32_t value);
+
+  private:
+  ::int32_t _internal_freeform_wait_period() const;
+  void _internal_set_freeform_wait_period(::int32_t value);
+
+  public:
+  // int32 freeform_send_period = 142;
+  void clear_freeform_send_period() ;
+  ::int32_t freeform_send_period() const;
+  void set_freeform_send_period(::int32_t value);
+
+  private:
+  ::int32_t _internal_freeform_send_period() const;
+  void _internal_set_freeform_send_period(::int32_t value);
+
+  public:
+  // float stopped_ball_vel = 146;
+  void clear_stopped_ball_vel() ;
+  float stopped_ball_vel() const;
+  void set_stopped_ball_vel(float value);
+
+  private:
+  float _internal_stopped_ball_vel() const;
+  void _internal_set_stopped_ball_vel(float value);
+
+  public:
+  // int32 max_goal_kicks = 147;
+  void clear_max_goal_kicks() ;
+  ::int32_t max_goal_kicks() const;
+  void set_max_goal_kicks(::int32_t value);
+
+  private:
+  ::int32_t _internal_max_goal_kicks() const;
+  void _internal_set_max_goal_kicks(::int32_t value);
+
+  public:
+  // int32 clang_del_win = 148;
+  void clear_clang_del_win() ;
+  ::int32_t clang_del_win() const;
+  void set_clang_del_win(::int32_t value);
+
+  private:
+  ::int32_t _internal_clang_del_win() const;
+  void _internal_set_clang_del_win(::int32_t value);
+
+  public:
+  // int32 clang_rule_win = 149;
+  void clear_clang_rule_win() ;
+  ::int32_t clang_rule_win() const;
+  void set_clang_rule_win(::int32_t value);
+
+  private:
+  ::int32_t _internal_clang_rule_win() const;
+  void _internal_set_clang_rule_win(::int32_t value);
+
+  public:
+  // int32 kick_off_wait = 151;
+  void clear_kick_off_wait() ;
+  ::int32_t kick_off_wait() const;
+  void set_kick_off_wait(::int32_t value);
+
+  private:
+  ::int32_t _internal_kick_off_wait() const;
+  void _internal_set_kick_off_wait(::int32_t value);
+
+  public:
+  // int32 connect_wait = 152;
+  void clear_connect_wait() ;
+  ::int32_t connect_wait() const;
+  void set_connect_wait(::int32_t value);
+
+  private:
+  ::int32_t _internal_connect_wait() const;
+  void _internal_set_connect_wait(::int32_t value);
+
+  public:
+  // bool proper_goal_kicks = 145;
+  void clear_proper_goal_kicks() ;
+  bool proper_goal_kicks() const;
+  void set_proper_goal_kicks(bool value);
+
+  private:
+  bool _internal_proper_goal_kicks() const;
+  void _internal_set_proper_goal_kicks(bool value);
+
+  public:
+  // bool auto_mode = 150;
+  void clear_auto_mode() ;
+  bool auto_mode() const;
+  void set_auto_mode(bool value);
+
+  private:
+  bool _internal_auto_mode() const;
+  void _internal_set_auto_mode(bool value);
+
+  public:
+  // bool keepaway_mode = 156;
+  void clear_keepaway_mode() ;
+  bool keepaway_mode() const;
+  void set_keepaway_mode(bool value);
+
+  private:
+  bool _internal_keepaway_mode() const;
+  void _internal_set_keepaway_mode(bool value);
+
+  public:
+  // bool keepaway_logging = 159;
+  void clear_keepaway_logging() ;
+  bool keepaway_logging() const;
+  void set_keepaway_logging(bool value);
+
+  private:
+  bool _internal_keepaway_logging() const;
+  void _internal_set_keepaway_logging(bool value);
+
+  public:
+  // int32 game_over_wait = 153;
+  void clear_game_over_wait() ;
+  ::int32_t game_over_wait() const;
+  void set_game_over_wait(::int32_t value);
+
+  private:
+  ::int32_t _internal_game_over_wait() const;
+  void _internal_set_game_over_wait(::int32_t value);
+
+  public:
+  // float keepaway_length = 157;
+  void clear_keepaway_length() ;
+  float keepaway_length() const;
+  void set_keepaway_length(float value);
+
+  private:
+  float _internal_keepaway_length() const;
+  void _internal_set_keepaway_length(float value);
+
+  public:
+  // float keepaway_width = 158;
+  void clear_keepaway_width() ;
+  float keepaway_width() const;
+  void set_keepaway_width(float value);
+
+  private:
+  float _internal_keepaway_width() const;
+  void _internal_set_keepaway_width(float value);
+
+  public:
+  // int32 keepaway_start = 164;
+  void clear_keepaway_start() ;
+  ::int32_t keepaway_start() const;
+  void set_keepaway_start(::int32_t value);
+
+  private:
+  ::int32_t _internal_keepaway_start() const;
+  void _internal_set_keepaway_start(::int32_t value);
+
+  public:
+  // int32 nr_normal_halfs = 165;
+  void clear_nr_normal_halfs() ;
+  ::int32_t nr_normal_halfs() const;
+  void set_nr_normal_halfs(::int32_t value);
+
+  private:
+  ::int32_t _internal_nr_normal_halfs() const;
+  void _internal_set_nr_normal_halfs(::int32_t value);
+
+  public:
+  // int32 nr_extra_halfs = 166;
+  void clear_nr_extra_halfs() ;
+  ::int32_t nr_extra_halfs() const;
+  void set_nr_extra_halfs(::int32_t value);
+
+  private:
+  ::int32_t _internal_nr_extra_halfs() const;
+  void _internal_set_nr_extra_halfs(::int32_t value);
+
+  public:
+  // bool keepaway_log_fixed = 162;
+  void clear_keepaway_log_fixed() ;
+  bool keepaway_log_fixed() const;
+  void set_keepaway_log_fixed(bool value);
+
+  private:
+  bool _internal_keepaway_log_fixed() const;
+  void _internal_set_keepaway_log_fixed(bool value);
+
+  public:
+  // bool keepaway_log_dated = 163;
+  void clear_keepaway_log_dated() ;
+  bool keepaway_log_dated() const;
+  void set_keepaway_log_dated(bool value);
+
+  private:
+  bool _internal_keepaway_log_dated() const;
+  void _internal_set_keepaway_log_dated(bool value);
+
+  public:
+  // bool penalty_shoot_outs = 167;
+  void clear_penalty_shoot_outs() ;
+  bool penalty_shoot_outs() const;
+  void set_penalty_shoot_outs(bool value);
+
+  private:
+  bool _internal_penalty_shoot_outs() const;
+  void _internal_set_penalty_shoot_outs(bool value);
+
+  public:
+  // bool pen_random_winner = 175;
+  void clear_pen_random_winner() ;
+  bool pen_random_winner() const;
+  void set_pen_random_winner(bool value);
+
+  private:
+  bool _internal_pen_random_winner() const;
+  void _internal_set_pen_random_winner(bool value);
+
+  public:
+  // int32 pen_before_setup_wait = 168;
+  void clear_pen_before_setup_wait() ;
+  ::int32_t pen_before_setup_wait() const;
+  void set_pen_before_setup_wait(::int32_t value);
+
+  private:
+  ::int32_t _internal_pen_before_setup_wait() const;
+  void _internal_set_pen_before_setup_wait(::int32_t value);
+
+  public:
+  // int32 pen_setup_wait = 169;
+  void clear_pen_setup_wait() ;
+  ::int32_t pen_setup_wait() const;
+  void set_pen_setup_wait(::int32_t value);
+
+  private:
+  ::int32_t _internal_pen_setup_wait() const;
+  void _internal_set_pen_setup_wait(::int32_t value);
+
+  public:
+  // int32 pen_ready_wait = 170;
+  void clear_pen_ready_wait() ;
+  ::int32_t pen_ready_wait() const;
+  void set_pen_ready_wait(::int32_t value);
+
+  private:
+  ::int32_t _internal_pen_ready_wait() const;
+  void _internal_set_pen_ready_wait(::int32_t value);
+
+  public:
+  // int32 pen_taken_wait = 171;
+  void clear_pen_taken_wait() ;
+  ::int32_t pen_taken_wait() const;
+  void set_pen_taken_wait(::int32_t value);
+
+  private:
+  ::int32_t _internal_pen_taken_wait() const;
+  void _internal_set_pen_taken_wait(::int32_t value);
+
+  public:
+  // int32 pen_nr_kicks = 172;
+  void clear_pen_nr_kicks() ;
+  ::int32_t pen_nr_kicks() const;
+  void set_pen_nr_kicks(::int32_t value);
+
+  private:
+  ::int32_t _internal_pen_nr_kicks() const;
+  void _internal_set_pen_nr_kicks(::int32_t value);
+
+  public:
+  // int32 pen_max_extra_kicks = 173;
+  void clear_pen_max_extra_kicks() ;
+  ::int32_t pen_max_extra_kicks() const;
+  void set_pen_max_extra_kicks(::int32_t value);
+
+  private:
+  ::int32_t _internal_pen_max_extra_kicks() const;
+  void _internal_set_pen_max_extra_kicks(::int32_t value);
+
+  public:
+  // float pen_dist_x = 174;
+  void clear_pen_dist_x() ;
+  float pen_dist_x() const;
+  void set_pen_dist_x(float value);
+
+  private:
+  float _internal_pen_dist_x() const;
+  void _internal_set_pen_dist_x(float value);
+
+  public:
+  // float pen_max_goalie_dist_x = 177;
+  void clear_pen_max_goalie_dist_x() ;
+  float pen_max_goalie_dist_x() const;
+  void set_pen_max_goalie_dist_x(float value);
+
+  private:
+  float _internal_pen_max_goalie_dist_x() const;
+  void _internal_set_pen_max_goalie_dist_x(float value);
+
+  public:
+  // float ball_stuck_area = 180;
+  void clear_ball_stuck_area() ;
+  float ball_stuck_area() const;
+  void set_ball_stuck_area(float value);
+
+  private:
+  float _internal_ball_stuck_area() const;
+  void _internal_set_ball_stuck_area(float value);
+
+  public:
+  // float max_tackle_power = 182;
+  void clear_max_tackle_power() ;
+  float max_tackle_power() const;
+  void set_max_tackle_power(float value);
+
+  private:
+  float _internal_max_tackle_power() const;
+  void _internal_set_max_tackle_power(float value);
+
+  public:
+  // float max_back_tackle_power = 183;
+  void clear_max_back_tackle_power() ;
+  float max_back_tackle_power() const;
+  void set_max_back_tackle_power(float value);
+
+  private:
+  float _internal_max_back_tackle_power() const;
+  void _internal_set_max_back_tackle_power(float value);
+
+  public:
+  // float player_speed_max_min = 184;
+  void clear_player_speed_max_min() ;
+  float player_speed_max_min() const;
+  void set_player_speed_max_min(float value);
+
+  private:
+  float _internal_player_speed_max_min() const;
+  void _internal_set_player_speed_max_min(float value);
+
+  public:
+  // bool pen_allow_mult_kicks = 176;
+  void clear_pen_allow_mult_kicks() ;
+  bool pen_allow_mult_kicks() const;
+  void set_pen_allow_mult_kicks(bool value);
+
+  private:
+  bool _internal_pen_allow_mult_kicks() const;
+  void _internal_set_pen_allow_mult_kicks(bool value);
+
+  public:
+  // bool pen_coach_moves_players = 178;
+  void clear_pen_coach_moves_players() ;
+  bool pen_coach_moves_players() const;
+  void set_pen_coach_moves_players(bool value);
+
+  private:
+  bool _internal_pen_coach_moves_players() const;
+  void _internal_set_pen_coach_moves_players(bool value);
+
+  public:
+  // bool golden_goal = 200;
+  void clear_golden_goal() ;
+  bool golden_goal() const;
+  void set_golden_goal(bool value);
+
+  private:
+  bool _internal_golden_goal() const;
+  void _internal_set_golden_goal(bool value);
+
+  public:
+  // float extra_stamina = 185;
+  void clear_extra_stamina() ;
+  float extra_stamina() const;
+  void set_extra_stamina(float value);
+
+  private:
+  float _internal_extra_stamina() const;
+  void _internal_set_extra_stamina(float value);
+
+  public:
+  // int32 synch_see_offset = 186;
+  void clear_synch_see_offset() ;
+  ::int32_t synch_see_offset() const;
+  void set_synch_see_offset(::int32_t value);
+
+  private:
+  ::int32_t _internal_synch_see_offset() const;
+  void _internal_set_synch_see_offset(::int32_t value);
+
+  public:
+  // int32 extra_half_time = 187;
+  void clear_extra_half_time() ;
+  ::int32_t extra_half_time() const;
+  void set_extra_half_time(::int32_t value);
+
+  private:
+  ::int32_t _internal_extra_half_time() const;
+  void _internal_set_extra_half_time(::int32_t value);
+
+  public:
+  // float stamina_capacity = 188;
+  void clear_stamina_capacity() ;
+  float stamina_capacity() const;
+  void set_stamina_capacity(float value);
+
+  private:
+  float _internal_stamina_capacity() const;
+  void _internal_set_stamina_capacity(float value);
+
+  public:
+  // float max_dash_angle = 189;
+  void clear_max_dash_angle() ;
+  float max_dash_angle() const;
+  void set_max_dash_angle(float value);
+
+  private:
+  float _internal_max_dash_angle() const;
+  void _internal_set_max_dash_angle(float value);
+
+  public:
+  // float min_dash_angle = 190;
+  void clear_min_dash_angle() ;
+  float min_dash_angle() const;
+  void set_min_dash_angle(float value);
+
+  private:
+  float _internal_min_dash_angle() const;
+  void _internal_set_min_dash_angle(float value);
+
+  public:
+  // float dash_angle_step = 191;
+  void clear_dash_angle_step() ;
+  float dash_angle_step() const;
+  void set_dash_angle_step(float value);
+
+  private:
+  float _internal_dash_angle_step() const;
+  void _internal_set_dash_angle_step(float value);
+
+  public:
+  // float side_dash_rate = 192;
+  void clear_side_dash_rate() ;
+  float side_dash_rate() const;
+  void set_side_dash_rate(float value);
+
+  private:
+  float _internal_side_dash_rate() const;
+  void _internal_set_side_dash_rate(float value);
+
+  public:
+  // float back_dash_rate = 193;
+  void clear_back_dash_rate() ;
+  float back_dash_rate() const;
+  void set_back_dash_rate(float value);
+
+  private:
+  float _internal_back_dash_rate() const;
+  void _internal_set_back_dash_rate(float value);
+
+  public:
+  // float max_dash_power = 194;
+  void clear_max_dash_power() ;
+  float max_dash_power() const;
+  void set_max_dash_power(float value);
+
+  private:
+  float _internal_max_dash_power() const;
+  void _internal_set_max_dash_power(float value);
+
+  public:
+  // float min_dash_power = 195;
+  void clear_min_dash_power() ;
+  float min_dash_power() const;
+  void set_min_dash_power(float value);
+
+  private:
+  float _internal_min_dash_power() const;
+  void _internal_set_min_dash_power(float value);
+
+  public:
+  // float tackle_rand_factor = 196;
+  void clear_tackle_rand_factor() ;
+  float tackle_rand_factor() const;
+  void set_tackle_rand_factor(float value);
+
+  private:
+  float _internal_tackle_rand_factor() const;
+  void _internal_set_tackle_rand_factor(float value);
+
+  public:
+  // float foul_detect_probability = 197;
+  void clear_foul_detect_probability() ;
+  float foul_detect_probability() const;
+  void set_foul_detect_probability(float value);
+
+  private:
+  float _internal_foul_detect_probability() const;
+  void _internal_set_foul_detect_probability(float value);
+
+  public:
+  // float foul_exponent = 198;
+  void clear_foul_exponent() ;
+  float foul_exponent() const;
+  void set_foul_exponent(float value);
+
+  private:
+  float _internal_foul_exponent() const;
+  void _internal_set_foul_exponent(float value);
+
+  public:
+  // int32 foul_cycles = 199;
+  void clear_foul_cycles() ;
+  ::int32_t foul_cycles() const;
+  void set_foul_cycles(::int32_t value);
+
+  private:
+  ::int32_t _internal_foul_cycles() const;
+  void _internal_set_foul_cycles(::int32_t value);
+
+  public:
+  // float red_card_probability = 201;
+  void clear_red_card_probability() ;
+  float red_card_probability() const;
+  void set_red_card_probability(float value);
+
+  private:
+  float _internal_red_card_probability() const;
+  void _internal_set_red_card_probability(float value);
+
+  public:
+  // int32 illegal_defense_duration = 202;
+  void clear_illegal_defense_duration() ;
+  ::int32_t illegal_defense_duration() const;
+  void set_illegal_defense_duration(::int32_t value);
+
+  private:
+  ::int32_t _internal_illegal_defense_duration() const;
+  void _internal_set_illegal_defense_duration(::int32_t value);
+
+  public:
+  // int32 illegal_defense_number = 203;
+  void clear_illegal_defense_number() ;
+  ::int32_t illegal_defense_number() const;
+  void set_illegal_defense_number(::int32_t value);
+
+  private:
+  ::int32_t _internal_illegal_defense_number() const;
+  void _internal_set_illegal_defense_number(::int32_t value);
+
+  public:
+  // float illegal_defense_dist_x = 204;
+  void clear_illegal_defense_dist_x() ;
+  float illegal_defense_dist_x() const;
+  void set_illegal_defense_dist_x(float value);
+
+  private:
+  float _internal_illegal_defense_dist_x() const;
+  void _internal_set_illegal_defense_dist_x(float value);
+
+  public:
+  // float illegal_defense_width = 205;
+  void clear_illegal_defense_width() ;
+  float illegal_defense_width() const;
+  void set_illegal_defense_width(float value);
+
+  private:
+  float _internal_illegal_defense_width() const;
+  void _internal_set_illegal_defense_width(float value);
+
+  public:
+  // float max_catch_angle = 208;
+  void clear_max_catch_angle() ;
+  float max_catch_angle() const;
+  void set_max_catch_angle(float value);
+
+  private:
+  float _internal_max_catch_angle() const;
+  void _internal_set_max_catch_angle(float value);
+
+  public:
+  // float min_catch_angle = 209;
+  void clear_min_catch_angle() ;
+  float min_catch_angle() const;
+  void set_min_catch_angle(float value);
+
+  private:
+  float _internal_min_catch_angle() const;
+  void _internal_set_min_catch_angle(float value);
+
+  public:
+  // int32 random_seed = 210;
+  void clear_random_seed() ;
+  ::int32_t random_seed() const;
+  void set_random_seed(::int32_t value);
+
+  private:
+  ::int32_t _internal_random_seed() const;
+  void _internal_set_random_seed(::int32_t value);
+
+  public:
+  // float long_kick_power_factor = 211;
+  void clear_long_kick_power_factor() ;
+  float long_kick_power_factor() const;
+  void set_long_kick_power_factor(float value);
+
+  private:
+  float _internal_long_kick_power_factor() const;
+  void _internal_set_long_kick_power_factor(float value);
+
+  public:
+  // int32 long_kick_delay = 212;
+  void clear_long_kick_delay() ;
+  ::int32_t long_kick_delay() const;
+  void set_long_kick_delay(::int32_t value);
+
+  private:
+  ::int32_t _internal_long_kick_delay() const;
+  void _internal_set_long_kick_delay(::int32_t value);
+
+  public:
+  // int32 max_monitors = 213;
+  void clear_max_monitors() ;
+  ::int32_t max_monitors() const;
+  void set_max_monitors(::int32_t value);
+
+  private:
+  ::int32_t _internal_max_monitors() const;
+  void _internal_set_max_monitors(::int32_t value);
+
+  public:
+  // float catchable_area = 214;
+  void clear_catchable_area() ;
+  float catchable_area() const;
+  void set_catchable_area(float value);
+
+  private:
+  float _internal_catchable_area() const;
+  void _internal_set_catchable_area(float value);
+
+  public:
+  // float real_speed_max = 215;
+  void clear_real_speed_max() ;
+  float real_speed_max() const;
+  void set_real_speed_max(float value);
+
+  private:
+  float _internal_real_speed_max() const;
+  void _internal_set_real_speed_max(float value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:protos.ServerParam)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr replay_file_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr landmark_file_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr text_log_dir_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr game_log_dir_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr text_log_fixed_name_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr game_log_fixed_name_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr log_date_format_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr team_l_start_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr team_r_start_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keepaway_log_dir_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keepaway_log_fixed_name_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr module_dir_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr coach_msg_file_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fixed_teamname_l_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fixed_teamname_r_;
+    float goal_width_;
+    float inertia_moment_;
+    float player_size_;
+    float player_decay_;
+    float player_rand_;
+    float player_weight_;
+    float player_speed_max_;
+    float player_accel_max_;
+    float stamina_max_;
+    float stamina_inc_max_;
+    float recover_init_;
+    float recover_dec_thr_;
+    float recover_min_;
+    float recover_dec_;
+    float effort_init_;
+    float effort_dec_thr_;
+    float effort_min_;
+    float effort_dec_;
+    float effort_inc_thr_;
+    float effort_inc_;
+    float kick_rand_;
+    float player_rand_factor_l_;
+    float player_rand_factor_r_;
+    float kick_rand_factor_l_;
+    float kick_rand_factor_r_;
+    float ball_size_;
+    float ball_decay_;
+    float ball_rand_;
+    float ball_weight_;
+    float ball_speed_max_;
+    float ball_accel_max_;
+    float dash_power_rate_;
+    float kick_power_rate_;
+    float kickable_margin_;
+    float control_radius_;
+    float control_radius_width_;
+    float max_power_;
+    float min_power_;
+    float max_moment_;
+    float min_moment_;
+    float max_neck_moment_;
+    float min_neck_moment_;
+    float max_neck_angle_;
+    float min_neck_angle_;
+    float visible_angle_;
+    float visible_distance_;
+    float wind_dir_;
+    float wind_force_;
+    float wind_angle_;
+    float wind_rand_;
+    float kickable_area_;
+    float catch_area_l_;
+    float catch_area_w_;
+    float catch_probability_;
+    bool team_actuator_noise_;
+    bool wind_none_;
+    bool use_wind_random_;
+    bool use_offside_;
+    ::int32_t goalie_max_moves_;
+    float corner_kick_margin_;
+    float offside_active_area_size_;
+    ::int32_t coach_say_count_max_;
+    ::int32_t coach_say_msg_size_;
+    ::int32_t clang_win_size_;
+    ::int32_t clang_define_win_;
+    ::int32_t clang_meta_win_;
+    ::int32_t clang_advice_win_;
+    ::int32_t clang_info_win_;
+    ::int32_t clang_mess_delay_;
+    ::int32_t clang_mess_per_cycle_;
+    ::int32_t half_time_;
+    ::int32_t simulator_step_;
+    ::int32_t send_step_;
+    ::int32_t recv_step_;
+    ::int32_t sense_body_step_;
+    ::int32_t lcm_step_;
+    ::int32_t player_say_msg_size_;
+    ::int32_t player_hear_max_;
+    ::int32_t player_hear_inc_;
+    ::int32_t player_hear_decay_;
+    ::int32_t catch_ban_cycle_;
+    ::int32_t slow_down_factor_;
+    float offside_kick_margin_;
+    float audio_cut_dist_;
+    float dist_quantize_step_;
+    float landmark_dist_quantize_step_;
+    float dir_quantize_step_;
+    float dist_quantize_step_l_;
+    float dist_quantize_step_r_;
+    float landmark_dist_quantize_step_l_;
+    float landmark_dist_quantize_step_r_;
+    bool kickoff_offside_;
+    bool coach_mode_;
+    bool coach_with_referee_mode_;
+    bool use_old_coach_hear_;
+    float dir_quantize_step_l_;
+    float dir_quantize_step_r_;
+    float slowness_on_top_for_left_team_;
+    float slowness_on_top_for_right_team_;
+    ::int32_t start_goal_l_;
+    ::int32_t start_goal_r_;
+    ::int32_t drop_ball_time_;
+    bool fullstate_l_;
+    bool fullstate_r_;
+    bool synch_mode_;
+    bool verbose_mode_;
+    ::int32_t synch_offset_;
+    ::int32_t synch_micro_sleep_;
+    ::int32_t point_to_ban_;
+    ::int32_t point_to_duration_;
+    ::int32_t player_port_;
+    ::int32_t trainer_port_;
+    ::int32_t online_coach_port_;
+    ::int32_t coach_send_vi_step_;
+    bool send_comms_;
+    bool text_logging_;
+    bool game_logging_;
+    bool use_text_log_fixed_;
+    ::int32_t game_log_version_;
+    bool use_game_log_fixed_;
+    bool use_text_log_dated_;
+    bool use_game_log_dated_;
+    bool log_times_;
+    ::int32_t text_log_compression_;
+    ::int32_t game_log_compression_;
+    float tackle_dist_;
+    float tackle_back_dist_;
+    float tackle_width_;
+    float tackle_exponent_;
+    bool record_message_;
+    bool use_profile_;
+    bool free_kick_faults_;
+    bool back_passes_;
+    ::int32_t tackle_cycles_;
+    float tackle_power_rate_;
+    ::int32_t freeform_wait_period_;
+    ::int32_t freeform_send_period_;
+    float stopped_ball_vel_;
+    ::int32_t max_goal_kicks_;
+    ::int32_t clang_del_win_;
+    ::int32_t clang_rule_win_;
+    ::int32_t kick_off_wait_;
+    ::int32_t connect_wait_;
+    bool proper_goal_kicks_;
+    bool auto_mode_;
+    bool keepaway_mode_;
+    bool keepaway_logging_;
+    ::int32_t game_over_wait_;
+    float keepaway_length_;
+    float keepaway_width_;
+    ::int32_t keepaway_start_;
+    ::int32_t nr_normal_halfs_;
+    ::int32_t nr_extra_halfs_;
+    bool keepaway_log_fixed_;
+    bool keepaway_log_dated_;
+    bool penalty_shoot_outs_;
+    bool pen_random_winner_;
+    ::int32_t pen_before_setup_wait_;
+    ::int32_t pen_setup_wait_;
+    ::int32_t pen_ready_wait_;
+    ::int32_t pen_taken_wait_;
+    ::int32_t pen_nr_kicks_;
+    ::int32_t pen_max_extra_kicks_;
+    float pen_dist_x_;
+    float pen_max_goalie_dist_x_;
+    float ball_stuck_area_;
+    float max_tackle_power_;
+    float max_back_tackle_power_;
+    float player_speed_max_min_;
+    bool pen_allow_mult_kicks_;
+    bool pen_coach_moves_players_;
+    bool golden_goal_;
+    float extra_stamina_;
+    ::int32_t synch_see_offset_;
+    ::int32_t extra_half_time_;
+    float stamina_capacity_;
+    float max_dash_angle_;
+    float min_dash_angle_;
+    float dash_angle_step_;
+    float side_dash_rate_;
+    float back_dash_rate_;
+    float max_dash_power_;
+    float min_dash_power_;
+    float tackle_rand_factor_;
+    float foul_detect_probability_;
+    float foul_exponent_;
+    ::int32_t foul_cycles_;
+    float red_card_probability_;
+    ::int32_t illegal_defense_duration_;
+    ::int32_t illegal_defense_number_;
+    float illegal_defense_dist_x_;
+    float illegal_defense_width_;
+    float max_catch_angle_;
+    float min_catch_angle_;
+    ::int32_t random_seed_;
+    float long_kick_power_factor_;
+    ::int32_t long_kick_delay_;
+    ::int32_t max_monitors_;
+    float catchable_area_;
+    float real_speed_max_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class Empty final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.Empty) */ {
+ public:
+  inline Empty() : Empty(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR Empty(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Empty(const Empty& from);
+  Empty(Empty&& from) noexcept
+    : Empty() {
+    *this = ::std::move(from);
+  }
+
+  inline Empty& operator=(const Empty& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Empty& operator=(Empty&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Empty& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Empty* internal_default_instance() {
+    return reinterpret_cast<const Empty*>(
+               &_Empty_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    98;
+
+  friend void swap(Empty& a, Empty& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Empty* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Empty* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Empty* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Empty>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const Empty& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const Empty& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.Empty";
+  }
+  protected:
+  explicit Empty(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.Empty)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
 };
 
 // ===================================================================
@@ -38406,6 +41413,4719 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::Action>*
 Actions::_internal_mutable_actions() {
   return &_impl_.actions_;
 }
+
+// -------------------------------------------------------------------
+
+// ServerParam
+
+// float goal_width = 1;
+inline void ServerParam::clear_goal_width() {
+  _impl_.goal_width_ = 0;
+}
+inline float ServerParam::goal_width() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.goal_width)
+  return _internal_goal_width();
+}
+inline void ServerParam::set_goal_width(float value) {
+  _internal_set_goal_width(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.goal_width)
+}
+inline float ServerParam::_internal_goal_width() const {
+  return _impl_.goal_width_;
+}
+inline void ServerParam::_internal_set_goal_width(float value) {
+  ;
+  _impl_.goal_width_ = value;
+}
+
+// float inertia_moment = 2;
+inline void ServerParam::clear_inertia_moment() {
+  _impl_.inertia_moment_ = 0;
+}
+inline float ServerParam::inertia_moment() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.inertia_moment)
+  return _internal_inertia_moment();
+}
+inline void ServerParam::set_inertia_moment(float value) {
+  _internal_set_inertia_moment(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.inertia_moment)
+}
+inline float ServerParam::_internal_inertia_moment() const {
+  return _impl_.inertia_moment_;
+}
+inline void ServerParam::_internal_set_inertia_moment(float value) {
+  ;
+  _impl_.inertia_moment_ = value;
+}
+
+// float player_size = 3;
+inline void ServerParam::clear_player_size() {
+  _impl_.player_size_ = 0;
+}
+inline float ServerParam::player_size() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_size)
+  return _internal_player_size();
+}
+inline void ServerParam::set_player_size(float value) {
+  _internal_set_player_size(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_size)
+}
+inline float ServerParam::_internal_player_size() const {
+  return _impl_.player_size_;
+}
+inline void ServerParam::_internal_set_player_size(float value) {
+  ;
+  _impl_.player_size_ = value;
+}
+
+// float player_decay = 4;
+inline void ServerParam::clear_player_decay() {
+  _impl_.player_decay_ = 0;
+}
+inline float ServerParam::player_decay() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_decay)
+  return _internal_player_decay();
+}
+inline void ServerParam::set_player_decay(float value) {
+  _internal_set_player_decay(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_decay)
+}
+inline float ServerParam::_internal_player_decay() const {
+  return _impl_.player_decay_;
+}
+inline void ServerParam::_internal_set_player_decay(float value) {
+  ;
+  _impl_.player_decay_ = value;
+}
+
+// float player_rand = 5;
+inline void ServerParam::clear_player_rand() {
+  _impl_.player_rand_ = 0;
+}
+inline float ServerParam::player_rand() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_rand)
+  return _internal_player_rand();
+}
+inline void ServerParam::set_player_rand(float value) {
+  _internal_set_player_rand(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_rand)
+}
+inline float ServerParam::_internal_player_rand() const {
+  return _impl_.player_rand_;
+}
+inline void ServerParam::_internal_set_player_rand(float value) {
+  ;
+  _impl_.player_rand_ = value;
+}
+
+// float player_weight = 6;
+inline void ServerParam::clear_player_weight() {
+  _impl_.player_weight_ = 0;
+}
+inline float ServerParam::player_weight() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_weight)
+  return _internal_player_weight();
+}
+inline void ServerParam::set_player_weight(float value) {
+  _internal_set_player_weight(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_weight)
+}
+inline float ServerParam::_internal_player_weight() const {
+  return _impl_.player_weight_;
+}
+inline void ServerParam::_internal_set_player_weight(float value) {
+  ;
+  _impl_.player_weight_ = value;
+}
+
+// float player_speed_max = 7;
+inline void ServerParam::clear_player_speed_max() {
+  _impl_.player_speed_max_ = 0;
+}
+inline float ServerParam::player_speed_max() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_speed_max)
+  return _internal_player_speed_max();
+}
+inline void ServerParam::set_player_speed_max(float value) {
+  _internal_set_player_speed_max(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_speed_max)
+}
+inline float ServerParam::_internal_player_speed_max() const {
+  return _impl_.player_speed_max_;
+}
+inline void ServerParam::_internal_set_player_speed_max(float value) {
+  ;
+  _impl_.player_speed_max_ = value;
+}
+
+// float player_accel_max = 8;
+inline void ServerParam::clear_player_accel_max() {
+  _impl_.player_accel_max_ = 0;
+}
+inline float ServerParam::player_accel_max() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_accel_max)
+  return _internal_player_accel_max();
+}
+inline void ServerParam::set_player_accel_max(float value) {
+  _internal_set_player_accel_max(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_accel_max)
+}
+inline float ServerParam::_internal_player_accel_max() const {
+  return _impl_.player_accel_max_;
+}
+inline void ServerParam::_internal_set_player_accel_max(float value) {
+  ;
+  _impl_.player_accel_max_ = value;
+}
+
+// float stamina_max = 9;
+inline void ServerParam::clear_stamina_max() {
+  _impl_.stamina_max_ = 0;
+}
+inline float ServerParam::stamina_max() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.stamina_max)
+  return _internal_stamina_max();
+}
+inline void ServerParam::set_stamina_max(float value) {
+  _internal_set_stamina_max(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.stamina_max)
+}
+inline float ServerParam::_internal_stamina_max() const {
+  return _impl_.stamina_max_;
+}
+inline void ServerParam::_internal_set_stamina_max(float value) {
+  ;
+  _impl_.stamina_max_ = value;
+}
+
+// float stamina_inc_max = 10;
+inline void ServerParam::clear_stamina_inc_max() {
+  _impl_.stamina_inc_max_ = 0;
+}
+inline float ServerParam::stamina_inc_max() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.stamina_inc_max)
+  return _internal_stamina_inc_max();
+}
+inline void ServerParam::set_stamina_inc_max(float value) {
+  _internal_set_stamina_inc_max(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.stamina_inc_max)
+}
+inline float ServerParam::_internal_stamina_inc_max() const {
+  return _impl_.stamina_inc_max_;
+}
+inline void ServerParam::_internal_set_stamina_inc_max(float value) {
+  ;
+  _impl_.stamina_inc_max_ = value;
+}
+
+// float recover_init = 11;
+inline void ServerParam::clear_recover_init() {
+  _impl_.recover_init_ = 0;
+}
+inline float ServerParam::recover_init() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.recover_init)
+  return _internal_recover_init();
+}
+inline void ServerParam::set_recover_init(float value) {
+  _internal_set_recover_init(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.recover_init)
+}
+inline float ServerParam::_internal_recover_init() const {
+  return _impl_.recover_init_;
+}
+inline void ServerParam::_internal_set_recover_init(float value) {
+  ;
+  _impl_.recover_init_ = value;
+}
+
+// float recover_dec_thr = 12;
+inline void ServerParam::clear_recover_dec_thr() {
+  _impl_.recover_dec_thr_ = 0;
+}
+inline float ServerParam::recover_dec_thr() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.recover_dec_thr)
+  return _internal_recover_dec_thr();
+}
+inline void ServerParam::set_recover_dec_thr(float value) {
+  _internal_set_recover_dec_thr(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.recover_dec_thr)
+}
+inline float ServerParam::_internal_recover_dec_thr() const {
+  return _impl_.recover_dec_thr_;
+}
+inline void ServerParam::_internal_set_recover_dec_thr(float value) {
+  ;
+  _impl_.recover_dec_thr_ = value;
+}
+
+// float recover_min = 13;
+inline void ServerParam::clear_recover_min() {
+  _impl_.recover_min_ = 0;
+}
+inline float ServerParam::recover_min() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.recover_min)
+  return _internal_recover_min();
+}
+inline void ServerParam::set_recover_min(float value) {
+  _internal_set_recover_min(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.recover_min)
+}
+inline float ServerParam::_internal_recover_min() const {
+  return _impl_.recover_min_;
+}
+inline void ServerParam::_internal_set_recover_min(float value) {
+  ;
+  _impl_.recover_min_ = value;
+}
+
+// float recover_dec = 14;
+inline void ServerParam::clear_recover_dec() {
+  _impl_.recover_dec_ = 0;
+}
+inline float ServerParam::recover_dec() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.recover_dec)
+  return _internal_recover_dec();
+}
+inline void ServerParam::set_recover_dec(float value) {
+  _internal_set_recover_dec(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.recover_dec)
+}
+inline float ServerParam::_internal_recover_dec() const {
+  return _impl_.recover_dec_;
+}
+inline void ServerParam::_internal_set_recover_dec(float value) {
+  ;
+  _impl_.recover_dec_ = value;
+}
+
+// float effort_init = 15;
+inline void ServerParam::clear_effort_init() {
+  _impl_.effort_init_ = 0;
+}
+inline float ServerParam::effort_init() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.effort_init)
+  return _internal_effort_init();
+}
+inline void ServerParam::set_effort_init(float value) {
+  _internal_set_effort_init(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.effort_init)
+}
+inline float ServerParam::_internal_effort_init() const {
+  return _impl_.effort_init_;
+}
+inline void ServerParam::_internal_set_effort_init(float value) {
+  ;
+  _impl_.effort_init_ = value;
+}
+
+// float effort_dec_thr = 16;
+inline void ServerParam::clear_effort_dec_thr() {
+  _impl_.effort_dec_thr_ = 0;
+}
+inline float ServerParam::effort_dec_thr() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.effort_dec_thr)
+  return _internal_effort_dec_thr();
+}
+inline void ServerParam::set_effort_dec_thr(float value) {
+  _internal_set_effort_dec_thr(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.effort_dec_thr)
+}
+inline float ServerParam::_internal_effort_dec_thr() const {
+  return _impl_.effort_dec_thr_;
+}
+inline void ServerParam::_internal_set_effort_dec_thr(float value) {
+  ;
+  _impl_.effort_dec_thr_ = value;
+}
+
+// float effort_min = 17;
+inline void ServerParam::clear_effort_min() {
+  _impl_.effort_min_ = 0;
+}
+inline float ServerParam::effort_min() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.effort_min)
+  return _internal_effort_min();
+}
+inline void ServerParam::set_effort_min(float value) {
+  _internal_set_effort_min(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.effort_min)
+}
+inline float ServerParam::_internal_effort_min() const {
+  return _impl_.effort_min_;
+}
+inline void ServerParam::_internal_set_effort_min(float value) {
+  ;
+  _impl_.effort_min_ = value;
+}
+
+// float effort_dec = 18;
+inline void ServerParam::clear_effort_dec() {
+  _impl_.effort_dec_ = 0;
+}
+inline float ServerParam::effort_dec() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.effort_dec)
+  return _internal_effort_dec();
+}
+inline void ServerParam::set_effort_dec(float value) {
+  _internal_set_effort_dec(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.effort_dec)
+}
+inline float ServerParam::_internal_effort_dec() const {
+  return _impl_.effort_dec_;
+}
+inline void ServerParam::_internal_set_effort_dec(float value) {
+  ;
+  _impl_.effort_dec_ = value;
+}
+
+// float effort_inc_thr = 19;
+inline void ServerParam::clear_effort_inc_thr() {
+  _impl_.effort_inc_thr_ = 0;
+}
+inline float ServerParam::effort_inc_thr() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.effort_inc_thr)
+  return _internal_effort_inc_thr();
+}
+inline void ServerParam::set_effort_inc_thr(float value) {
+  _internal_set_effort_inc_thr(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.effort_inc_thr)
+}
+inline float ServerParam::_internal_effort_inc_thr() const {
+  return _impl_.effort_inc_thr_;
+}
+inline void ServerParam::_internal_set_effort_inc_thr(float value) {
+  ;
+  _impl_.effort_inc_thr_ = value;
+}
+
+// float effort_inc = 20;
+inline void ServerParam::clear_effort_inc() {
+  _impl_.effort_inc_ = 0;
+}
+inline float ServerParam::effort_inc() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.effort_inc)
+  return _internal_effort_inc();
+}
+inline void ServerParam::set_effort_inc(float value) {
+  _internal_set_effort_inc(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.effort_inc)
+}
+inline float ServerParam::_internal_effort_inc() const {
+  return _impl_.effort_inc_;
+}
+inline void ServerParam::_internal_set_effort_inc(float value) {
+  ;
+  _impl_.effort_inc_ = value;
+}
+
+// float kick_rand = 21;
+inline void ServerParam::clear_kick_rand() {
+  _impl_.kick_rand_ = 0;
+}
+inline float ServerParam::kick_rand() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.kick_rand)
+  return _internal_kick_rand();
+}
+inline void ServerParam::set_kick_rand(float value) {
+  _internal_set_kick_rand(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.kick_rand)
+}
+inline float ServerParam::_internal_kick_rand() const {
+  return _impl_.kick_rand_;
+}
+inline void ServerParam::_internal_set_kick_rand(float value) {
+  ;
+  _impl_.kick_rand_ = value;
+}
+
+// bool team_actuator_noise = 22;
+inline void ServerParam::clear_team_actuator_noise() {
+  _impl_.team_actuator_noise_ = false;
+}
+inline bool ServerParam::team_actuator_noise() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.team_actuator_noise)
+  return _internal_team_actuator_noise();
+}
+inline void ServerParam::set_team_actuator_noise(bool value) {
+  _internal_set_team_actuator_noise(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.team_actuator_noise)
+}
+inline bool ServerParam::_internal_team_actuator_noise() const {
+  return _impl_.team_actuator_noise_;
+}
+inline void ServerParam::_internal_set_team_actuator_noise(bool value) {
+  ;
+  _impl_.team_actuator_noise_ = value;
+}
+
+// float player_rand_factor_l = 23;
+inline void ServerParam::clear_player_rand_factor_l() {
+  _impl_.player_rand_factor_l_ = 0;
+}
+inline float ServerParam::player_rand_factor_l() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_rand_factor_l)
+  return _internal_player_rand_factor_l();
+}
+inline void ServerParam::set_player_rand_factor_l(float value) {
+  _internal_set_player_rand_factor_l(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_rand_factor_l)
+}
+inline float ServerParam::_internal_player_rand_factor_l() const {
+  return _impl_.player_rand_factor_l_;
+}
+inline void ServerParam::_internal_set_player_rand_factor_l(float value) {
+  ;
+  _impl_.player_rand_factor_l_ = value;
+}
+
+// float player_rand_factor_r = 24;
+inline void ServerParam::clear_player_rand_factor_r() {
+  _impl_.player_rand_factor_r_ = 0;
+}
+inline float ServerParam::player_rand_factor_r() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_rand_factor_r)
+  return _internal_player_rand_factor_r();
+}
+inline void ServerParam::set_player_rand_factor_r(float value) {
+  _internal_set_player_rand_factor_r(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_rand_factor_r)
+}
+inline float ServerParam::_internal_player_rand_factor_r() const {
+  return _impl_.player_rand_factor_r_;
+}
+inline void ServerParam::_internal_set_player_rand_factor_r(float value) {
+  ;
+  _impl_.player_rand_factor_r_ = value;
+}
+
+// float kick_rand_factor_l = 25;
+inline void ServerParam::clear_kick_rand_factor_l() {
+  _impl_.kick_rand_factor_l_ = 0;
+}
+inline float ServerParam::kick_rand_factor_l() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.kick_rand_factor_l)
+  return _internal_kick_rand_factor_l();
+}
+inline void ServerParam::set_kick_rand_factor_l(float value) {
+  _internal_set_kick_rand_factor_l(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.kick_rand_factor_l)
+}
+inline float ServerParam::_internal_kick_rand_factor_l() const {
+  return _impl_.kick_rand_factor_l_;
+}
+inline void ServerParam::_internal_set_kick_rand_factor_l(float value) {
+  ;
+  _impl_.kick_rand_factor_l_ = value;
+}
+
+// float kick_rand_factor_r = 26;
+inline void ServerParam::clear_kick_rand_factor_r() {
+  _impl_.kick_rand_factor_r_ = 0;
+}
+inline float ServerParam::kick_rand_factor_r() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.kick_rand_factor_r)
+  return _internal_kick_rand_factor_r();
+}
+inline void ServerParam::set_kick_rand_factor_r(float value) {
+  _internal_set_kick_rand_factor_r(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.kick_rand_factor_r)
+}
+inline float ServerParam::_internal_kick_rand_factor_r() const {
+  return _impl_.kick_rand_factor_r_;
+}
+inline void ServerParam::_internal_set_kick_rand_factor_r(float value) {
+  ;
+  _impl_.kick_rand_factor_r_ = value;
+}
+
+// float ball_size = 27;
+inline void ServerParam::clear_ball_size() {
+  _impl_.ball_size_ = 0;
+}
+inline float ServerParam::ball_size() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.ball_size)
+  return _internal_ball_size();
+}
+inline void ServerParam::set_ball_size(float value) {
+  _internal_set_ball_size(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.ball_size)
+}
+inline float ServerParam::_internal_ball_size() const {
+  return _impl_.ball_size_;
+}
+inline void ServerParam::_internal_set_ball_size(float value) {
+  ;
+  _impl_.ball_size_ = value;
+}
+
+// float ball_decay = 28;
+inline void ServerParam::clear_ball_decay() {
+  _impl_.ball_decay_ = 0;
+}
+inline float ServerParam::ball_decay() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.ball_decay)
+  return _internal_ball_decay();
+}
+inline void ServerParam::set_ball_decay(float value) {
+  _internal_set_ball_decay(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.ball_decay)
+}
+inline float ServerParam::_internal_ball_decay() const {
+  return _impl_.ball_decay_;
+}
+inline void ServerParam::_internal_set_ball_decay(float value) {
+  ;
+  _impl_.ball_decay_ = value;
+}
+
+// float ball_rand = 29;
+inline void ServerParam::clear_ball_rand() {
+  _impl_.ball_rand_ = 0;
+}
+inline float ServerParam::ball_rand() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.ball_rand)
+  return _internal_ball_rand();
+}
+inline void ServerParam::set_ball_rand(float value) {
+  _internal_set_ball_rand(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.ball_rand)
+}
+inline float ServerParam::_internal_ball_rand() const {
+  return _impl_.ball_rand_;
+}
+inline void ServerParam::_internal_set_ball_rand(float value) {
+  ;
+  _impl_.ball_rand_ = value;
+}
+
+// float ball_weight = 30;
+inline void ServerParam::clear_ball_weight() {
+  _impl_.ball_weight_ = 0;
+}
+inline float ServerParam::ball_weight() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.ball_weight)
+  return _internal_ball_weight();
+}
+inline void ServerParam::set_ball_weight(float value) {
+  _internal_set_ball_weight(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.ball_weight)
+}
+inline float ServerParam::_internal_ball_weight() const {
+  return _impl_.ball_weight_;
+}
+inline void ServerParam::_internal_set_ball_weight(float value) {
+  ;
+  _impl_.ball_weight_ = value;
+}
+
+// float ball_speed_max = 31;
+inline void ServerParam::clear_ball_speed_max() {
+  _impl_.ball_speed_max_ = 0;
+}
+inline float ServerParam::ball_speed_max() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.ball_speed_max)
+  return _internal_ball_speed_max();
+}
+inline void ServerParam::set_ball_speed_max(float value) {
+  _internal_set_ball_speed_max(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.ball_speed_max)
+}
+inline float ServerParam::_internal_ball_speed_max() const {
+  return _impl_.ball_speed_max_;
+}
+inline void ServerParam::_internal_set_ball_speed_max(float value) {
+  ;
+  _impl_.ball_speed_max_ = value;
+}
+
+// float ball_accel_max = 32;
+inline void ServerParam::clear_ball_accel_max() {
+  _impl_.ball_accel_max_ = 0;
+}
+inline float ServerParam::ball_accel_max() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.ball_accel_max)
+  return _internal_ball_accel_max();
+}
+inline void ServerParam::set_ball_accel_max(float value) {
+  _internal_set_ball_accel_max(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.ball_accel_max)
+}
+inline float ServerParam::_internal_ball_accel_max() const {
+  return _impl_.ball_accel_max_;
+}
+inline void ServerParam::_internal_set_ball_accel_max(float value) {
+  ;
+  _impl_.ball_accel_max_ = value;
+}
+
+// float dash_power_rate = 33;
+inline void ServerParam::clear_dash_power_rate() {
+  _impl_.dash_power_rate_ = 0;
+}
+inline float ServerParam::dash_power_rate() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.dash_power_rate)
+  return _internal_dash_power_rate();
+}
+inline void ServerParam::set_dash_power_rate(float value) {
+  _internal_set_dash_power_rate(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.dash_power_rate)
+}
+inline float ServerParam::_internal_dash_power_rate() const {
+  return _impl_.dash_power_rate_;
+}
+inline void ServerParam::_internal_set_dash_power_rate(float value) {
+  ;
+  _impl_.dash_power_rate_ = value;
+}
+
+// float kick_power_rate = 34;
+inline void ServerParam::clear_kick_power_rate() {
+  _impl_.kick_power_rate_ = 0;
+}
+inline float ServerParam::kick_power_rate() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.kick_power_rate)
+  return _internal_kick_power_rate();
+}
+inline void ServerParam::set_kick_power_rate(float value) {
+  _internal_set_kick_power_rate(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.kick_power_rate)
+}
+inline float ServerParam::_internal_kick_power_rate() const {
+  return _impl_.kick_power_rate_;
+}
+inline void ServerParam::_internal_set_kick_power_rate(float value) {
+  ;
+  _impl_.kick_power_rate_ = value;
+}
+
+// float kickable_margin = 35;
+inline void ServerParam::clear_kickable_margin() {
+  _impl_.kickable_margin_ = 0;
+}
+inline float ServerParam::kickable_margin() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.kickable_margin)
+  return _internal_kickable_margin();
+}
+inline void ServerParam::set_kickable_margin(float value) {
+  _internal_set_kickable_margin(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.kickable_margin)
+}
+inline float ServerParam::_internal_kickable_margin() const {
+  return _impl_.kickable_margin_;
+}
+inline void ServerParam::_internal_set_kickable_margin(float value) {
+  ;
+  _impl_.kickable_margin_ = value;
+}
+
+// float control_radius = 36;
+inline void ServerParam::clear_control_radius() {
+  _impl_.control_radius_ = 0;
+}
+inline float ServerParam::control_radius() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.control_radius)
+  return _internal_control_radius();
+}
+inline void ServerParam::set_control_radius(float value) {
+  _internal_set_control_radius(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.control_radius)
+}
+inline float ServerParam::_internal_control_radius() const {
+  return _impl_.control_radius_;
+}
+inline void ServerParam::_internal_set_control_radius(float value) {
+  ;
+  _impl_.control_radius_ = value;
+}
+
+// float control_radius_width = 37;
+inline void ServerParam::clear_control_radius_width() {
+  _impl_.control_radius_width_ = 0;
+}
+inline float ServerParam::control_radius_width() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.control_radius_width)
+  return _internal_control_radius_width();
+}
+inline void ServerParam::set_control_radius_width(float value) {
+  _internal_set_control_radius_width(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.control_radius_width)
+}
+inline float ServerParam::_internal_control_radius_width() const {
+  return _impl_.control_radius_width_;
+}
+inline void ServerParam::_internal_set_control_radius_width(float value) {
+  ;
+  _impl_.control_radius_width_ = value;
+}
+
+// float max_power = 38;
+inline void ServerParam::clear_max_power() {
+  _impl_.max_power_ = 0;
+}
+inline float ServerParam::max_power() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_power)
+  return _internal_max_power();
+}
+inline void ServerParam::set_max_power(float value) {
+  _internal_set_max_power(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_power)
+}
+inline float ServerParam::_internal_max_power() const {
+  return _impl_.max_power_;
+}
+inline void ServerParam::_internal_set_max_power(float value) {
+  ;
+  _impl_.max_power_ = value;
+}
+
+// float min_power = 39;
+inline void ServerParam::clear_min_power() {
+  _impl_.min_power_ = 0;
+}
+inline float ServerParam::min_power() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.min_power)
+  return _internal_min_power();
+}
+inline void ServerParam::set_min_power(float value) {
+  _internal_set_min_power(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.min_power)
+}
+inline float ServerParam::_internal_min_power() const {
+  return _impl_.min_power_;
+}
+inline void ServerParam::_internal_set_min_power(float value) {
+  ;
+  _impl_.min_power_ = value;
+}
+
+// float max_moment = 40;
+inline void ServerParam::clear_max_moment() {
+  _impl_.max_moment_ = 0;
+}
+inline float ServerParam::max_moment() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_moment)
+  return _internal_max_moment();
+}
+inline void ServerParam::set_max_moment(float value) {
+  _internal_set_max_moment(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_moment)
+}
+inline float ServerParam::_internal_max_moment() const {
+  return _impl_.max_moment_;
+}
+inline void ServerParam::_internal_set_max_moment(float value) {
+  ;
+  _impl_.max_moment_ = value;
+}
+
+// float min_moment = 41;
+inline void ServerParam::clear_min_moment() {
+  _impl_.min_moment_ = 0;
+}
+inline float ServerParam::min_moment() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.min_moment)
+  return _internal_min_moment();
+}
+inline void ServerParam::set_min_moment(float value) {
+  _internal_set_min_moment(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.min_moment)
+}
+inline float ServerParam::_internal_min_moment() const {
+  return _impl_.min_moment_;
+}
+inline void ServerParam::_internal_set_min_moment(float value) {
+  ;
+  _impl_.min_moment_ = value;
+}
+
+// float max_neck_moment = 42;
+inline void ServerParam::clear_max_neck_moment() {
+  _impl_.max_neck_moment_ = 0;
+}
+inline float ServerParam::max_neck_moment() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_neck_moment)
+  return _internal_max_neck_moment();
+}
+inline void ServerParam::set_max_neck_moment(float value) {
+  _internal_set_max_neck_moment(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_neck_moment)
+}
+inline float ServerParam::_internal_max_neck_moment() const {
+  return _impl_.max_neck_moment_;
+}
+inline void ServerParam::_internal_set_max_neck_moment(float value) {
+  ;
+  _impl_.max_neck_moment_ = value;
+}
+
+// float min_neck_moment = 43;
+inline void ServerParam::clear_min_neck_moment() {
+  _impl_.min_neck_moment_ = 0;
+}
+inline float ServerParam::min_neck_moment() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.min_neck_moment)
+  return _internal_min_neck_moment();
+}
+inline void ServerParam::set_min_neck_moment(float value) {
+  _internal_set_min_neck_moment(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.min_neck_moment)
+}
+inline float ServerParam::_internal_min_neck_moment() const {
+  return _impl_.min_neck_moment_;
+}
+inline void ServerParam::_internal_set_min_neck_moment(float value) {
+  ;
+  _impl_.min_neck_moment_ = value;
+}
+
+// float max_neck_angle = 44;
+inline void ServerParam::clear_max_neck_angle() {
+  _impl_.max_neck_angle_ = 0;
+}
+inline float ServerParam::max_neck_angle() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_neck_angle)
+  return _internal_max_neck_angle();
+}
+inline void ServerParam::set_max_neck_angle(float value) {
+  _internal_set_max_neck_angle(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_neck_angle)
+}
+inline float ServerParam::_internal_max_neck_angle() const {
+  return _impl_.max_neck_angle_;
+}
+inline void ServerParam::_internal_set_max_neck_angle(float value) {
+  ;
+  _impl_.max_neck_angle_ = value;
+}
+
+// float min_neck_angle = 45;
+inline void ServerParam::clear_min_neck_angle() {
+  _impl_.min_neck_angle_ = 0;
+}
+inline float ServerParam::min_neck_angle() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.min_neck_angle)
+  return _internal_min_neck_angle();
+}
+inline void ServerParam::set_min_neck_angle(float value) {
+  _internal_set_min_neck_angle(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.min_neck_angle)
+}
+inline float ServerParam::_internal_min_neck_angle() const {
+  return _impl_.min_neck_angle_;
+}
+inline void ServerParam::_internal_set_min_neck_angle(float value) {
+  ;
+  _impl_.min_neck_angle_ = value;
+}
+
+// float visible_angle = 46;
+inline void ServerParam::clear_visible_angle() {
+  _impl_.visible_angle_ = 0;
+}
+inline float ServerParam::visible_angle() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.visible_angle)
+  return _internal_visible_angle();
+}
+inline void ServerParam::set_visible_angle(float value) {
+  _internal_set_visible_angle(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.visible_angle)
+}
+inline float ServerParam::_internal_visible_angle() const {
+  return _impl_.visible_angle_;
+}
+inline void ServerParam::_internal_set_visible_angle(float value) {
+  ;
+  _impl_.visible_angle_ = value;
+}
+
+// float visible_distance = 47;
+inline void ServerParam::clear_visible_distance() {
+  _impl_.visible_distance_ = 0;
+}
+inline float ServerParam::visible_distance() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.visible_distance)
+  return _internal_visible_distance();
+}
+inline void ServerParam::set_visible_distance(float value) {
+  _internal_set_visible_distance(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.visible_distance)
+}
+inline float ServerParam::_internal_visible_distance() const {
+  return _impl_.visible_distance_;
+}
+inline void ServerParam::_internal_set_visible_distance(float value) {
+  ;
+  _impl_.visible_distance_ = value;
+}
+
+// float wind_dir = 48;
+inline void ServerParam::clear_wind_dir() {
+  _impl_.wind_dir_ = 0;
+}
+inline float ServerParam::wind_dir() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.wind_dir)
+  return _internal_wind_dir();
+}
+inline void ServerParam::set_wind_dir(float value) {
+  _internal_set_wind_dir(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.wind_dir)
+}
+inline float ServerParam::_internal_wind_dir() const {
+  return _impl_.wind_dir_;
+}
+inline void ServerParam::_internal_set_wind_dir(float value) {
+  ;
+  _impl_.wind_dir_ = value;
+}
+
+// float wind_force = 49;
+inline void ServerParam::clear_wind_force() {
+  _impl_.wind_force_ = 0;
+}
+inline float ServerParam::wind_force() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.wind_force)
+  return _internal_wind_force();
+}
+inline void ServerParam::set_wind_force(float value) {
+  _internal_set_wind_force(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.wind_force)
+}
+inline float ServerParam::_internal_wind_force() const {
+  return _impl_.wind_force_;
+}
+inline void ServerParam::_internal_set_wind_force(float value) {
+  ;
+  _impl_.wind_force_ = value;
+}
+
+// float wind_angle = 50;
+inline void ServerParam::clear_wind_angle() {
+  _impl_.wind_angle_ = 0;
+}
+inline float ServerParam::wind_angle() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.wind_angle)
+  return _internal_wind_angle();
+}
+inline void ServerParam::set_wind_angle(float value) {
+  _internal_set_wind_angle(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.wind_angle)
+}
+inline float ServerParam::_internal_wind_angle() const {
+  return _impl_.wind_angle_;
+}
+inline void ServerParam::_internal_set_wind_angle(float value) {
+  ;
+  _impl_.wind_angle_ = value;
+}
+
+// float wind_rand = 51;
+inline void ServerParam::clear_wind_rand() {
+  _impl_.wind_rand_ = 0;
+}
+inline float ServerParam::wind_rand() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.wind_rand)
+  return _internal_wind_rand();
+}
+inline void ServerParam::set_wind_rand(float value) {
+  _internal_set_wind_rand(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.wind_rand)
+}
+inline float ServerParam::_internal_wind_rand() const {
+  return _impl_.wind_rand_;
+}
+inline void ServerParam::_internal_set_wind_rand(float value) {
+  ;
+  _impl_.wind_rand_ = value;
+}
+
+// float kickable_area = 52;
+inline void ServerParam::clear_kickable_area() {
+  _impl_.kickable_area_ = 0;
+}
+inline float ServerParam::kickable_area() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.kickable_area)
+  return _internal_kickable_area();
+}
+inline void ServerParam::set_kickable_area(float value) {
+  _internal_set_kickable_area(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.kickable_area)
+}
+inline float ServerParam::_internal_kickable_area() const {
+  return _impl_.kickable_area_;
+}
+inline void ServerParam::_internal_set_kickable_area(float value) {
+  ;
+  _impl_.kickable_area_ = value;
+}
+
+// float catch_area_l = 53;
+inline void ServerParam::clear_catch_area_l() {
+  _impl_.catch_area_l_ = 0;
+}
+inline float ServerParam::catch_area_l() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.catch_area_l)
+  return _internal_catch_area_l();
+}
+inline void ServerParam::set_catch_area_l(float value) {
+  _internal_set_catch_area_l(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.catch_area_l)
+}
+inline float ServerParam::_internal_catch_area_l() const {
+  return _impl_.catch_area_l_;
+}
+inline void ServerParam::_internal_set_catch_area_l(float value) {
+  ;
+  _impl_.catch_area_l_ = value;
+}
+
+// float catch_area_w = 54;
+inline void ServerParam::clear_catch_area_w() {
+  _impl_.catch_area_w_ = 0;
+}
+inline float ServerParam::catch_area_w() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.catch_area_w)
+  return _internal_catch_area_w();
+}
+inline void ServerParam::set_catch_area_w(float value) {
+  _internal_set_catch_area_w(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.catch_area_w)
+}
+inline float ServerParam::_internal_catch_area_w() const {
+  return _impl_.catch_area_w_;
+}
+inline void ServerParam::_internal_set_catch_area_w(float value) {
+  ;
+  _impl_.catch_area_w_ = value;
+}
+
+// float catch_probability = 55;
+inline void ServerParam::clear_catch_probability() {
+  _impl_.catch_probability_ = 0;
+}
+inline float ServerParam::catch_probability() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.catch_probability)
+  return _internal_catch_probability();
+}
+inline void ServerParam::set_catch_probability(float value) {
+  _internal_set_catch_probability(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.catch_probability)
+}
+inline float ServerParam::_internal_catch_probability() const {
+  return _impl_.catch_probability_;
+}
+inline void ServerParam::_internal_set_catch_probability(float value) {
+  ;
+  _impl_.catch_probability_ = value;
+}
+
+// int32 goalie_max_moves = 56;
+inline void ServerParam::clear_goalie_max_moves() {
+  _impl_.goalie_max_moves_ = 0;
+}
+inline ::int32_t ServerParam::goalie_max_moves() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.goalie_max_moves)
+  return _internal_goalie_max_moves();
+}
+inline void ServerParam::set_goalie_max_moves(::int32_t value) {
+  _internal_set_goalie_max_moves(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.goalie_max_moves)
+}
+inline ::int32_t ServerParam::_internal_goalie_max_moves() const {
+  return _impl_.goalie_max_moves_;
+}
+inline void ServerParam::_internal_set_goalie_max_moves(::int32_t value) {
+  ;
+  _impl_.goalie_max_moves_ = value;
+}
+
+// float corner_kick_margin = 57;
+inline void ServerParam::clear_corner_kick_margin() {
+  _impl_.corner_kick_margin_ = 0;
+}
+inline float ServerParam::corner_kick_margin() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.corner_kick_margin)
+  return _internal_corner_kick_margin();
+}
+inline void ServerParam::set_corner_kick_margin(float value) {
+  _internal_set_corner_kick_margin(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.corner_kick_margin)
+}
+inline float ServerParam::_internal_corner_kick_margin() const {
+  return _impl_.corner_kick_margin_;
+}
+inline void ServerParam::_internal_set_corner_kick_margin(float value) {
+  ;
+  _impl_.corner_kick_margin_ = value;
+}
+
+// float offside_active_area_size = 58;
+inline void ServerParam::clear_offside_active_area_size() {
+  _impl_.offside_active_area_size_ = 0;
+}
+inline float ServerParam::offside_active_area_size() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.offside_active_area_size)
+  return _internal_offside_active_area_size();
+}
+inline void ServerParam::set_offside_active_area_size(float value) {
+  _internal_set_offside_active_area_size(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.offside_active_area_size)
+}
+inline float ServerParam::_internal_offside_active_area_size() const {
+  return _impl_.offside_active_area_size_;
+}
+inline void ServerParam::_internal_set_offside_active_area_size(float value) {
+  ;
+  _impl_.offside_active_area_size_ = value;
+}
+
+// bool wind_none = 59;
+inline void ServerParam::clear_wind_none() {
+  _impl_.wind_none_ = false;
+}
+inline bool ServerParam::wind_none() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.wind_none)
+  return _internal_wind_none();
+}
+inline void ServerParam::set_wind_none(bool value) {
+  _internal_set_wind_none(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.wind_none)
+}
+inline bool ServerParam::_internal_wind_none() const {
+  return _impl_.wind_none_;
+}
+inline void ServerParam::_internal_set_wind_none(bool value) {
+  ;
+  _impl_.wind_none_ = value;
+}
+
+// bool use_wind_random = 60;
+inline void ServerParam::clear_use_wind_random() {
+  _impl_.use_wind_random_ = false;
+}
+inline bool ServerParam::use_wind_random() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.use_wind_random)
+  return _internal_use_wind_random();
+}
+inline void ServerParam::set_use_wind_random(bool value) {
+  _internal_set_use_wind_random(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.use_wind_random)
+}
+inline bool ServerParam::_internal_use_wind_random() const {
+  return _impl_.use_wind_random_;
+}
+inline void ServerParam::_internal_set_use_wind_random(bool value) {
+  ;
+  _impl_.use_wind_random_ = value;
+}
+
+// int32 coach_say_count_max = 61;
+inline void ServerParam::clear_coach_say_count_max() {
+  _impl_.coach_say_count_max_ = 0;
+}
+inline ::int32_t ServerParam::coach_say_count_max() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.coach_say_count_max)
+  return _internal_coach_say_count_max();
+}
+inline void ServerParam::set_coach_say_count_max(::int32_t value) {
+  _internal_set_coach_say_count_max(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.coach_say_count_max)
+}
+inline ::int32_t ServerParam::_internal_coach_say_count_max() const {
+  return _impl_.coach_say_count_max_;
+}
+inline void ServerParam::_internal_set_coach_say_count_max(::int32_t value) {
+  ;
+  _impl_.coach_say_count_max_ = value;
+}
+
+// int32 coach_say_msg_size = 62;
+inline void ServerParam::clear_coach_say_msg_size() {
+  _impl_.coach_say_msg_size_ = 0;
+}
+inline ::int32_t ServerParam::coach_say_msg_size() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.coach_say_msg_size)
+  return _internal_coach_say_msg_size();
+}
+inline void ServerParam::set_coach_say_msg_size(::int32_t value) {
+  _internal_set_coach_say_msg_size(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.coach_say_msg_size)
+}
+inline ::int32_t ServerParam::_internal_coach_say_msg_size() const {
+  return _impl_.coach_say_msg_size_;
+}
+inline void ServerParam::_internal_set_coach_say_msg_size(::int32_t value) {
+  ;
+  _impl_.coach_say_msg_size_ = value;
+}
+
+// int32 clang_win_size = 63;
+inline void ServerParam::clear_clang_win_size() {
+  _impl_.clang_win_size_ = 0;
+}
+inline ::int32_t ServerParam::clang_win_size() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.clang_win_size)
+  return _internal_clang_win_size();
+}
+inline void ServerParam::set_clang_win_size(::int32_t value) {
+  _internal_set_clang_win_size(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.clang_win_size)
+}
+inline ::int32_t ServerParam::_internal_clang_win_size() const {
+  return _impl_.clang_win_size_;
+}
+inline void ServerParam::_internal_set_clang_win_size(::int32_t value) {
+  ;
+  _impl_.clang_win_size_ = value;
+}
+
+// int32 clang_define_win = 64;
+inline void ServerParam::clear_clang_define_win() {
+  _impl_.clang_define_win_ = 0;
+}
+inline ::int32_t ServerParam::clang_define_win() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.clang_define_win)
+  return _internal_clang_define_win();
+}
+inline void ServerParam::set_clang_define_win(::int32_t value) {
+  _internal_set_clang_define_win(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.clang_define_win)
+}
+inline ::int32_t ServerParam::_internal_clang_define_win() const {
+  return _impl_.clang_define_win_;
+}
+inline void ServerParam::_internal_set_clang_define_win(::int32_t value) {
+  ;
+  _impl_.clang_define_win_ = value;
+}
+
+// int32 clang_meta_win = 65;
+inline void ServerParam::clear_clang_meta_win() {
+  _impl_.clang_meta_win_ = 0;
+}
+inline ::int32_t ServerParam::clang_meta_win() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.clang_meta_win)
+  return _internal_clang_meta_win();
+}
+inline void ServerParam::set_clang_meta_win(::int32_t value) {
+  _internal_set_clang_meta_win(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.clang_meta_win)
+}
+inline ::int32_t ServerParam::_internal_clang_meta_win() const {
+  return _impl_.clang_meta_win_;
+}
+inline void ServerParam::_internal_set_clang_meta_win(::int32_t value) {
+  ;
+  _impl_.clang_meta_win_ = value;
+}
+
+// int32 clang_advice_win = 66;
+inline void ServerParam::clear_clang_advice_win() {
+  _impl_.clang_advice_win_ = 0;
+}
+inline ::int32_t ServerParam::clang_advice_win() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.clang_advice_win)
+  return _internal_clang_advice_win();
+}
+inline void ServerParam::set_clang_advice_win(::int32_t value) {
+  _internal_set_clang_advice_win(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.clang_advice_win)
+}
+inline ::int32_t ServerParam::_internal_clang_advice_win() const {
+  return _impl_.clang_advice_win_;
+}
+inline void ServerParam::_internal_set_clang_advice_win(::int32_t value) {
+  ;
+  _impl_.clang_advice_win_ = value;
+}
+
+// int32 clang_info_win = 67;
+inline void ServerParam::clear_clang_info_win() {
+  _impl_.clang_info_win_ = 0;
+}
+inline ::int32_t ServerParam::clang_info_win() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.clang_info_win)
+  return _internal_clang_info_win();
+}
+inline void ServerParam::set_clang_info_win(::int32_t value) {
+  _internal_set_clang_info_win(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.clang_info_win)
+}
+inline ::int32_t ServerParam::_internal_clang_info_win() const {
+  return _impl_.clang_info_win_;
+}
+inline void ServerParam::_internal_set_clang_info_win(::int32_t value) {
+  ;
+  _impl_.clang_info_win_ = value;
+}
+
+// int32 clang_mess_delay = 68;
+inline void ServerParam::clear_clang_mess_delay() {
+  _impl_.clang_mess_delay_ = 0;
+}
+inline ::int32_t ServerParam::clang_mess_delay() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.clang_mess_delay)
+  return _internal_clang_mess_delay();
+}
+inline void ServerParam::set_clang_mess_delay(::int32_t value) {
+  _internal_set_clang_mess_delay(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.clang_mess_delay)
+}
+inline ::int32_t ServerParam::_internal_clang_mess_delay() const {
+  return _impl_.clang_mess_delay_;
+}
+inline void ServerParam::_internal_set_clang_mess_delay(::int32_t value) {
+  ;
+  _impl_.clang_mess_delay_ = value;
+}
+
+// int32 clang_mess_per_cycle = 69;
+inline void ServerParam::clear_clang_mess_per_cycle() {
+  _impl_.clang_mess_per_cycle_ = 0;
+}
+inline ::int32_t ServerParam::clang_mess_per_cycle() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.clang_mess_per_cycle)
+  return _internal_clang_mess_per_cycle();
+}
+inline void ServerParam::set_clang_mess_per_cycle(::int32_t value) {
+  _internal_set_clang_mess_per_cycle(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.clang_mess_per_cycle)
+}
+inline ::int32_t ServerParam::_internal_clang_mess_per_cycle() const {
+  return _impl_.clang_mess_per_cycle_;
+}
+inline void ServerParam::_internal_set_clang_mess_per_cycle(::int32_t value) {
+  ;
+  _impl_.clang_mess_per_cycle_ = value;
+}
+
+// int32 half_time = 70;
+inline void ServerParam::clear_half_time() {
+  _impl_.half_time_ = 0;
+}
+inline ::int32_t ServerParam::half_time() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.half_time)
+  return _internal_half_time();
+}
+inline void ServerParam::set_half_time(::int32_t value) {
+  _internal_set_half_time(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.half_time)
+}
+inline ::int32_t ServerParam::_internal_half_time() const {
+  return _impl_.half_time_;
+}
+inline void ServerParam::_internal_set_half_time(::int32_t value) {
+  ;
+  _impl_.half_time_ = value;
+}
+
+// int32 simulator_step = 71;
+inline void ServerParam::clear_simulator_step() {
+  _impl_.simulator_step_ = 0;
+}
+inline ::int32_t ServerParam::simulator_step() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.simulator_step)
+  return _internal_simulator_step();
+}
+inline void ServerParam::set_simulator_step(::int32_t value) {
+  _internal_set_simulator_step(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.simulator_step)
+}
+inline ::int32_t ServerParam::_internal_simulator_step() const {
+  return _impl_.simulator_step_;
+}
+inline void ServerParam::_internal_set_simulator_step(::int32_t value) {
+  ;
+  _impl_.simulator_step_ = value;
+}
+
+// int32 send_step = 72;
+inline void ServerParam::clear_send_step() {
+  _impl_.send_step_ = 0;
+}
+inline ::int32_t ServerParam::send_step() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.send_step)
+  return _internal_send_step();
+}
+inline void ServerParam::set_send_step(::int32_t value) {
+  _internal_set_send_step(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.send_step)
+}
+inline ::int32_t ServerParam::_internal_send_step() const {
+  return _impl_.send_step_;
+}
+inline void ServerParam::_internal_set_send_step(::int32_t value) {
+  ;
+  _impl_.send_step_ = value;
+}
+
+// int32 recv_step = 73;
+inline void ServerParam::clear_recv_step() {
+  _impl_.recv_step_ = 0;
+}
+inline ::int32_t ServerParam::recv_step() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.recv_step)
+  return _internal_recv_step();
+}
+inline void ServerParam::set_recv_step(::int32_t value) {
+  _internal_set_recv_step(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.recv_step)
+}
+inline ::int32_t ServerParam::_internal_recv_step() const {
+  return _impl_.recv_step_;
+}
+inline void ServerParam::_internal_set_recv_step(::int32_t value) {
+  ;
+  _impl_.recv_step_ = value;
+}
+
+// int32 sense_body_step = 74;
+inline void ServerParam::clear_sense_body_step() {
+  _impl_.sense_body_step_ = 0;
+}
+inline ::int32_t ServerParam::sense_body_step() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.sense_body_step)
+  return _internal_sense_body_step();
+}
+inline void ServerParam::set_sense_body_step(::int32_t value) {
+  _internal_set_sense_body_step(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.sense_body_step)
+}
+inline ::int32_t ServerParam::_internal_sense_body_step() const {
+  return _impl_.sense_body_step_;
+}
+inline void ServerParam::_internal_set_sense_body_step(::int32_t value) {
+  ;
+  _impl_.sense_body_step_ = value;
+}
+
+// int32 lcm_step = 75;
+inline void ServerParam::clear_lcm_step() {
+  _impl_.lcm_step_ = 0;
+}
+inline ::int32_t ServerParam::lcm_step() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.lcm_step)
+  return _internal_lcm_step();
+}
+inline void ServerParam::set_lcm_step(::int32_t value) {
+  _internal_set_lcm_step(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.lcm_step)
+}
+inline ::int32_t ServerParam::_internal_lcm_step() const {
+  return _impl_.lcm_step_;
+}
+inline void ServerParam::_internal_set_lcm_step(::int32_t value) {
+  ;
+  _impl_.lcm_step_ = value;
+}
+
+// int32 player_say_msg_size = 76;
+inline void ServerParam::clear_player_say_msg_size() {
+  _impl_.player_say_msg_size_ = 0;
+}
+inline ::int32_t ServerParam::player_say_msg_size() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_say_msg_size)
+  return _internal_player_say_msg_size();
+}
+inline void ServerParam::set_player_say_msg_size(::int32_t value) {
+  _internal_set_player_say_msg_size(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_say_msg_size)
+}
+inline ::int32_t ServerParam::_internal_player_say_msg_size() const {
+  return _impl_.player_say_msg_size_;
+}
+inline void ServerParam::_internal_set_player_say_msg_size(::int32_t value) {
+  ;
+  _impl_.player_say_msg_size_ = value;
+}
+
+// int32 player_hear_max = 77;
+inline void ServerParam::clear_player_hear_max() {
+  _impl_.player_hear_max_ = 0;
+}
+inline ::int32_t ServerParam::player_hear_max() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_hear_max)
+  return _internal_player_hear_max();
+}
+inline void ServerParam::set_player_hear_max(::int32_t value) {
+  _internal_set_player_hear_max(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_hear_max)
+}
+inline ::int32_t ServerParam::_internal_player_hear_max() const {
+  return _impl_.player_hear_max_;
+}
+inline void ServerParam::_internal_set_player_hear_max(::int32_t value) {
+  ;
+  _impl_.player_hear_max_ = value;
+}
+
+// int32 player_hear_inc = 78;
+inline void ServerParam::clear_player_hear_inc() {
+  _impl_.player_hear_inc_ = 0;
+}
+inline ::int32_t ServerParam::player_hear_inc() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_hear_inc)
+  return _internal_player_hear_inc();
+}
+inline void ServerParam::set_player_hear_inc(::int32_t value) {
+  _internal_set_player_hear_inc(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_hear_inc)
+}
+inline ::int32_t ServerParam::_internal_player_hear_inc() const {
+  return _impl_.player_hear_inc_;
+}
+inline void ServerParam::_internal_set_player_hear_inc(::int32_t value) {
+  ;
+  _impl_.player_hear_inc_ = value;
+}
+
+// int32 player_hear_decay = 79;
+inline void ServerParam::clear_player_hear_decay() {
+  _impl_.player_hear_decay_ = 0;
+}
+inline ::int32_t ServerParam::player_hear_decay() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_hear_decay)
+  return _internal_player_hear_decay();
+}
+inline void ServerParam::set_player_hear_decay(::int32_t value) {
+  _internal_set_player_hear_decay(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_hear_decay)
+}
+inline ::int32_t ServerParam::_internal_player_hear_decay() const {
+  return _impl_.player_hear_decay_;
+}
+inline void ServerParam::_internal_set_player_hear_decay(::int32_t value) {
+  ;
+  _impl_.player_hear_decay_ = value;
+}
+
+// int32 catch_ban_cycle = 80;
+inline void ServerParam::clear_catch_ban_cycle() {
+  _impl_.catch_ban_cycle_ = 0;
+}
+inline ::int32_t ServerParam::catch_ban_cycle() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.catch_ban_cycle)
+  return _internal_catch_ban_cycle();
+}
+inline void ServerParam::set_catch_ban_cycle(::int32_t value) {
+  _internal_set_catch_ban_cycle(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.catch_ban_cycle)
+}
+inline ::int32_t ServerParam::_internal_catch_ban_cycle() const {
+  return _impl_.catch_ban_cycle_;
+}
+inline void ServerParam::_internal_set_catch_ban_cycle(::int32_t value) {
+  ;
+  _impl_.catch_ban_cycle_ = value;
+}
+
+// int32 slow_down_factor = 81;
+inline void ServerParam::clear_slow_down_factor() {
+  _impl_.slow_down_factor_ = 0;
+}
+inline ::int32_t ServerParam::slow_down_factor() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.slow_down_factor)
+  return _internal_slow_down_factor();
+}
+inline void ServerParam::set_slow_down_factor(::int32_t value) {
+  _internal_set_slow_down_factor(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.slow_down_factor)
+}
+inline ::int32_t ServerParam::_internal_slow_down_factor() const {
+  return _impl_.slow_down_factor_;
+}
+inline void ServerParam::_internal_set_slow_down_factor(::int32_t value) {
+  ;
+  _impl_.slow_down_factor_ = value;
+}
+
+// bool use_offside = 82;
+inline void ServerParam::clear_use_offside() {
+  _impl_.use_offside_ = false;
+}
+inline bool ServerParam::use_offside() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.use_offside)
+  return _internal_use_offside();
+}
+inline void ServerParam::set_use_offside(bool value) {
+  _internal_set_use_offside(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.use_offside)
+}
+inline bool ServerParam::_internal_use_offside() const {
+  return _impl_.use_offside_;
+}
+inline void ServerParam::_internal_set_use_offside(bool value) {
+  ;
+  _impl_.use_offside_ = value;
+}
+
+// bool kickoff_offside = 83;
+inline void ServerParam::clear_kickoff_offside() {
+  _impl_.kickoff_offside_ = false;
+}
+inline bool ServerParam::kickoff_offside() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.kickoff_offside)
+  return _internal_kickoff_offside();
+}
+inline void ServerParam::set_kickoff_offside(bool value) {
+  _internal_set_kickoff_offside(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.kickoff_offside)
+}
+inline bool ServerParam::_internal_kickoff_offside() const {
+  return _impl_.kickoff_offside_;
+}
+inline void ServerParam::_internal_set_kickoff_offside(bool value) {
+  ;
+  _impl_.kickoff_offside_ = value;
+}
+
+// float offside_kick_margin = 84;
+inline void ServerParam::clear_offside_kick_margin() {
+  _impl_.offside_kick_margin_ = 0;
+}
+inline float ServerParam::offside_kick_margin() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.offside_kick_margin)
+  return _internal_offside_kick_margin();
+}
+inline void ServerParam::set_offside_kick_margin(float value) {
+  _internal_set_offside_kick_margin(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.offside_kick_margin)
+}
+inline float ServerParam::_internal_offside_kick_margin() const {
+  return _impl_.offside_kick_margin_;
+}
+inline void ServerParam::_internal_set_offside_kick_margin(float value) {
+  ;
+  _impl_.offside_kick_margin_ = value;
+}
+
+// float audio_cut_dist = 85;
+inline void ServerParam::clear_audio_cut_dist() {
+  _impl_.audio_cut_dist_ = 0;
+}
+inline float ServerParam::audio_cut_dist() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.audio_cut_dist)
+  return _internal_audio_cut_dist();
+}
+inline void ServerParam::set_audio_cut_dist(float value) {
+  _internal_set_audio_cut_dist(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.audio_cut_dist)
+}
+inline float ServerParam::_internal_audio_cut_dist() const {
+  return _impl_.audio_cut_dist_;
+}
+inline void ServerParam::_internal_set_audio_cut_dist(float value) {
+  ;
+  _impl_.audio_cut_dist_ = value;
+}
+
+// float dist_quantize_step = 86;
+inline void ServerParam::clear_dist_quantize_step() {
+  _impl_.dist_quantize_step_ = 0;
+}
+inline float ServerParam::dist_quantize_step() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.dist_quantize_step)
+  return _internal_dist_quantize_step();
+}
+inline void ServerParam::set_dist_quantize_step(float value) {
+  _internal_set_dist_quantize_step(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.dist_quantize_step)
+}
+inline float ServerParam::_internal_dist_quantize_step() const {
+  return _impl_.dist_quantize_step_;
+}
+inline void ServerParam::_internal_set_dist_quantize_step(float value) {
+  ;
+  _impl_.dist_quantize_step_ = value;
+}
+
+// float landmark_dist_quantize_step = 87;
+inline void ServerParam::clear_landmark_dist_quantize_step() {
+  _impl_.landmark_dist_quantize_step_ = 0;
+}
+inline float ServerParam::landmark_dist_quantize_step() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.landmark_dist_quantize_step)
+  return _internal_landmark_dist_quantize_step();
+}
+inline void ServerParam::set_landmark_dist_quantize_step(float value) {
+  _internal_set_landmark_dist_quantize_step(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.landmark_dist_quantize_step)
+}
+inline float ServerParam::_internal_landmark_dist_quantize_step() const {
+  return _impl_.landmark_dist_quantize_step_;
+}
+inline void ServerParam::_internal_set_landmark_dist_quantize_step(float value) {
+  ;
+  _impl_.landmark_dist_quantize_step_ = value;
+}
+
+// float dir_quantize_step = 88;
+inline void ServerParam::clear_dir_quantize_step() {
+  _impl_.dir_quantize_step_ = 0;
+}
+inline float ServerParam::dir_quantize_step() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.dir_quantize_step)
+  return _internal_dir_quantize_step();
+}
+inline void ServerParam::set_dir_quantize_step(float value) {
+  _internal_set_dir_quantize_step(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.dir_quantize_step)
+}
+inline float ServerParam::_internal_dir_quantize_step() const {
+  return _impl_.dir_quantize_step_;
+}
+inline void ServerParam::_internal_set_dir_quantize_step(float value) {
+  ;
+  _impl_.dir_quantize_step_ = value;
+}
+
+// float dist_quantize_step_l = 89;
+inline void ServerParam::clear_dist_quantize_step_l() {
+  _impl_.dist_quantize_step_l_ = 0;
+}
+inline float ServerParam::dist_quantize_step_l() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.dist_quantize_step_l)
+  return _internal_dist_quantize_step_l();
+}
+inline void ServerParam::set_dist_quantize_step_l(float value) {
+  _internal_set_dist_quantize_step_l(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.dist_quantize_step_l)
+}
+inline float ServerParam::_internal_dist_quantize_step_l() const {
+  return _impl_.dist_quantize_step_l_;
+}
+inline void ServerParam::_internal_set_dist_quantize_step_l(float value) {
+  ;
+  _impl_.dist_quantize_step_l_ = value;
+}
+
+// float dist_quantize_step_r = 90;
+inline void ServerParam::clear_dist_quantize_step_r() {
+  _impl_.dist_quantize_step_r_ = 0;
+}
+inline float ServerParam::dist_quantize_step_r() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.dist_quantize_step_r)
+  return _internal_dist_quantize_step_r();
+}
+inline void ServerParam::set_dist_quantize_step_r(float value) {
+  _internal_set_dist_quantize_step_r(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.dist_quantize_step_r)
+}
+inline float ServerParam::_internal_dist_quantize_step_r() const {
+  return _impl_.dist_quantize_step_r_;
+}
+inline void ServerParam::_internal_set_dist_quantize_step_r(float value) {
+  ;
+  _impl_.dist_quantize_step_r_ = value;
+}
+
+// float landmark_dist_quantize_step_l = 91;
+inline void ServerParam::clear_landmark_dist_quantize_step_l() {
+  _impl_.landmark_dist_quantize_step_l_ = 0;
+}
+inline float ServerParam::landmark_dist_quantize_step_l() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.landmark_dist_quantize_step_l)
+  return _internal_landmark_dist_quantize_step_l();
+}
+inline void ServerParam::set_landmark_dist_quantize_step_l(float value) {
+  _internal_set_landmark_dist_quantize_step_l(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.landmark_dist_quantize_step_l)
+}
+inline float ServerParam::_internal_landmark_dist_quantize_step_l() const {
+  return _impl_.landmark_dist_quantize_step_l_;
+}
+inline void ServerParam::_internal_set_landmark_dist_quantize_step_l(float value) {
+  ;
+  _impl_.landmark_dist_quantize_step_l_ = value;
+}
+
+// float landmark_dist_quantize_step_r = 92;
+inline void ServerParam::clear_landmark_dist_quantize_step_r() {
+  _impl_.landmark_dist_quantize_step_r_ = 0;
+}
+inline float ServerParam::landmark_dist_quantize_step_r() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.landmark_dist_quantize_step_r)
+  return _internal_landmark_dist_quantize_step_r();
+}
+inline void ServerParam::set_landmark_dist_quantize_step_r(float value) {
+  _internal_set_landmark_dist_quantize_step_r(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.landmark_dist_quantize_step_r)
+}
+inline float ServerParam::_internal_landmark_dist_quantize_step_r() const {
+  return _impl_.landmark_dist_quantize_step_r_;
+}
+inline void ServerParam::_internal_set_landmark_dist_quantize_step_r(float value) {
+  ;
+  _impl_.landmark_dist_quantize_step_r_ = value;
+}
+
+// float dir_quantize_step_l = 93;
+inline void ServerParam::clear_dir_quantize_step_l() {
+  _impl_.dir_quantize_step_l_ = 0;
+}
+inline float ServerParam::dir_quantize_step_l() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.dir_quantize_step_l)
+  return _internal_dir_quantize_step_l();
+}
+inline void ServerParam::set_dir_quantize_step_l(float value) {
+  _internal_set_dir_quantize_step_l(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.dir_quantize_step_l)
+}
+inline float ServerParam::_internal_dir_quantize_step_l() const {
+  return _impl_.dir_quantize_step_l_;
+}
+inline void ServerParam::_internal_set_dir_quantize_step_l(float value) {
+  ;
+  _impl_.dir_quantize_step_l_ = value;
+}
+
+// float dir_quantize_step_r = 94;
+inline void ServerParam::clear_dir_quantize_step_r() {
+  _impl_.dir_quantize_step_r_ = 0;
+}
+inline float ServerParam::dir_quantize_step_r() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.dir_quantize_step_r)
+  return _internal_dir_quantize_step_r();
+}
+inline void ServerParam::set_dir_quantize_step_r(float value) {
+  _internal_set_dir_quantize_step_r(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.dir_quantize_step_r)
+}
+inline float ServerParam::_internal_dir_quantize_step_r() const {
+  return _impl_.dir_quantize_step_r_;
+}
+inline void ServerParam::_internal_set_dir_quantize_step_r(float value) {
+  ;
+  _impl_.dir_quantize_step_r_ = value;
+}
+
+// bool coach_mode = 95;
+inline void ServerParam::clear_coach_mode() {
+  _impl_.coach_mode_ = false;
+}
+inline bool ServerParam::coach_mode() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.coach_mode)
+  return _internal_coach_mode();
+}
+inline void ServerParam::set_coach_mode(bool value) {
+  _internal_set_coach_mode(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.coach_mode)
+}
+inline bool ServerParam::_internal_coach_mode() const {
+  return _impl_.coach_mode_;
+}
+inline void ServerParam::_internal_set_coach_mode(bool value) {
+  ;
+  _impl_.coach_mode_ = value;
+}
+
+// bool coach_with_referee_mode = 96;
+inline void ServerParam::clear_coach_with_referee_mode() {
+  _impl_.coach_with_referee_mode_ = false;
+}
+inline bool ServerParam::coach_with_referee_mode() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.coach_with_referee_mode)
+  return _internal_coach_with_referee_mode();
+}
+inline void ServerParam::set_coach_with_referee_mode(bool value) {
+  _internal_set_coach_with_referee_mode(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.coach_with_referee_mode)
+}
+inline bool ServerParam::_internal_coach_with_referee_mode() const {
+  return _impl_.coach_with_referee_mode_;
+}
+inline void ServerParam::_internal_set_coach_with_referee_mode(bool value) {
+  ;
+  _impl_.coach_with_referee_mode_ = value;
+}
+
+// bool use_old_coach_hear = 97;
+inline void ServerParam::clear_use_old_coach_hear() {
+  _impl_.use_old_coach_hear_ = false;
+}
+inline bool ServerParam::use_old_coach_hear() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.use_old_coach_hear)
+  return _internal_use_old_coach_hear();
+}
+inline void ServerParam::set_use_old_coach_hear(bool value) {
+  _internal_set_use_old_coach_hear(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.use_old_coach_hear)
+}
+inline bool ServerParam::_internal_use_old_coach_hear() const {
+  return _impl_.use_old_coach_hear_;
+}
+inline void ServerParam::_internal_set_use_old_coach_hear(bool value) {
+  ;
+  _impl_.use_old_coach_hear_ = value;
+}
+
+// float slowness_on_top_for_left_team = 98;
+inline void ServerParam::clear_slowness_on_top_for_left_team() {
+  _impl_.slowness_on_top_for_left_team_ = 0;
+}
+inline float ServerParam::slowness_on_top_for_left_team() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.slowness_on_top_for_left_team)
+  return _internal_slowness_on_top_for_left_team();
+}
+inline void ServerParam::set_slowness_on_top_for_left_team(float value) {
+  _internal_set_slowness_on_top_for_left_team(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.slowness_on_top_for_left_team)
+}
+inline float ServerParam::_internal_slowness_on_top_for_left_team() const {
+  return _impl_.slowness_on_top_for_left_team_;
+}
+inline void ServerParam::_internal_set_slowness_on_top_for_left_team(float value) {
+  ;
+  _impl_.slowness_on_top_for_left_team_ = value;
+}
+
+// float slowness_on_top_for_right_team = 99;
+inline void ServerParam::clear_slowness_on_top_for_right_team() {
+  _impl_.slowness_on_top_for_right_team_ = 0;
+}
+inline float ServerParam::slowness_on_top_for_right_team() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.slowness_on_top_for_right_team)
+  return _internal_slowness_on_top_for_right_team();
+}
+inline void ServerParam::set_slowness_on_top_for_right_team(float value) {
+  _internal_set_slowness_on_top_for_right_team(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.slowness_on_top_for_right_team)
+}
+inline float ServerParam::_internal_slowness_on_top_for_right_team() const {
+  return _impl_.slowness_on_top_for_right_team_;
+}
+inline void ServerParam::_internal_set_slowness_on_top_for_right_team(float value) {
+  ;
+  _impl_.slowness_on_top_for_right_team_ = value;
+}
+
+// int32 start_goal_l = 100;
+inline void ServerParam::clear_start_goal_l() {
+  _impl_.start_goal_l_ = 0;
+}
+inline ::int32_t ServerParam::start_goal_l() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.start_goal_l)
+  return _internal_start_goal_l();
+}
+inline void ServerParam::set_start_goal_l(::int32_t value) {
+  _internal_set_start_goal_l(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.start_goal_l)
+}
+inline ::int32_t ServerParam::_internal_start_goal_l() const {
+  return _impl_.start_goal_l_;
+}
+inline void ServerParam::_internal_set_start_goal_l(::int32_t value) {
+  ;
+  _impl_.start_goal_l_ = value;
+}
+
+// int32 start_goal_r = 101;
+inline void ServerParam::clear_start_goal_r() {
+  _impl_.start_goal_r_ = 0;
+}
+inline ::int32_t ServerParam::start_goal_r() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.start_goal_r)
+  return _internal_start_goal_r();
+}
+inline void ServerParam::set_start_goal_r(::int32_t value) {
+  _internal_set_start_goal_r(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.start_goal_r)
+}
+inline ::int32_t ServerParam::_internal_start_goal_r() const {
+  return _impl_.start_goal_r_;
+}
+inline void ServerParam::_internal_set_start_goal_r(::int32_t value) {
+  ;
+  _impl_.start_goal_r_ = value;
+}
+
+// bool fullstate_l = 102;
+inline void ServerParam::clear_fullstate_l() {
+  _impl_.fullstate_l_ = false;
+}
+inline bool ServerParam::fullstate_l() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.fullstate_l)
+  return _internal_fullstate_l();
+}
+inline void ServerParam::set_fullstate_l(bool value) {
+  _internal_set_fullstate_l(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.fullstate_l)
+}
+inline bool ServerParam::_internal_fullstate_l() const {
+  return _impl_.fullstate_l_;
+}
+inline void ServerParam::_internal_set_fullstate_l(bool value) {
+  ;
+  _impl_.fullstate_l_ = value;
+}
+
+// bool fullstate_r = 103;
+inline void ServerParam::clear_fullstate_r() {
+  _impl_.fullstate_r_ = false;
+}
+inline bool ServerParam::fullstate_r() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.fullstate_r)
+  return _internal_fullstate_r();
+}
+inline void ServerParam::set_fullstate_r(bool value) {
+  _internal_set_fullstate_r(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.fullstate_r)
+}
+inline bool ServerParam::_internal_fullstate_r() const {
+  return _impl_.fullstate_r_;
+}
+inline void ServerParam::_internal_set_fullstate_r(bool value) {
+  ;
+  _impl_.fullstate_r_ = value;
+}
+
+// int32 drop_ball_time = 104;
+inline void ServerParam::clear_drop_ball_time() {
+  _impl_.drop_ball_time_ = 0;
+}
+inline ::int32_t ServerParam::drop_ball_time() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.drop_ball_time)
+  return _internal_drop_ball_time();
+}
+inline void ServerParam::set_drop_ball_time(::int32_t value) {
+  _internal_set_drop_ball_time(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.drop_ball_time)
+}
+inline ::int32_t ServerParam::_internal_drop_ball_time() const {
+  return _impl_.drop_ball_time_;
+}
+inline void ServerParam::_internal_set_drop_ball_time(::int32_t value) {
+  ;
+  _impl_.drop_ball_time_ = value;
+}
+
+// bool synch_mode = 105;
+inline void ServerParam::clear_synch_mode() {
+  _impl_.synch_mode_ = false;
+}
+inline bool ServerParam::synch_mode() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.synch_mode)
+  return _internal_synch_mode();
+}
+inline void ServerParam::set_synch_mode(bool value) {
+  _internal_set_synch_mode(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.synch_mode)
+}
+inline bool ServerParam::_internal_synch_mode() const {
+  return _impl_.synch_mode_;
+}
+inline void ServerParam::_internal_set_synch_mode(bool value) {
+  ;
+  _impl_.synch_mode_ = value;
+}
+
+// int32 synch_offset = 106;
+inline void ServerParam::clear_synch_offset() {
+  _impl_.synch_offset_ = 0;
+}
+inline ::int32_t ServerParam::synch_offset() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.synch_offset)
+  return _internal_synch_offset();
+}
+inline void ServerParam::set_synch_offset(::int32_t value) {
+  _internal_set_synch_offset(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.synch_offset)
+}
+inline ::int32_t ServerParam::_internal_synch_offset() const {
+  return _impl_.synch_offset_;
+}
+inline void ServerParam::_internal_set_synch_offset(::int32_t value) {
+  ;
+  _impl_.synch_offset_ = value;
+}
+
+// int32 synch_micro_sleep = 107;
+inline void ServerParam::clear_synch_micro_sleep() {
+  _impl_.synch_micro_sleep_ = 0;
+}
+inline ::int32_t ServerParam::synch_micro_sleep() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.synch_micro_sleep)
+  return _internal_synch_micro_sleep();
+}
+inline void ServerParam::set_synch_micro_sleep(::int32_t value) {
+  _internal_set_synch_micro_sleep(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.synch_micro_sleep)
+}
+inline ::int32_t ServerParam::_internal_synch_micro_sleep() const {
+  return _impl_.synch_micro_sleep_;
+}
+inline void ServerParam::_internal_set_synch_micro_sleep(::int32_t value) {
+  ;
+  _impl_.synch_micro_sleep_ = value;
+}
+
+// int32 point_to_ban = 108;
+inline void ServerParam::clear_point_to_ban() {
+  _impl_.point_to_ban_ = 0;
+}
+inline ::int32_t ServerParam::point_to_ban() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.point_to_ban)
+  return _internal_point_to_ban();
+}
+inline void ServerParam::set_point_to_ban(::int32_t value) {
+  _internal_set_point_to_ban(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.point_to_ban)
+}
+inline ::int32_t ServerParam::_internal_point_to_ban() const {
+  return _impl_.point_to_ban_;
+}
+inline void ServerParam::_internal_set_point_to_ban(::int32_t value) {
+  ;
+  _impl_.point_to_ban_ = value;
+}
+
+// int32 point_to_duration = 109;
+inline void ServerParam::clear_point_to_duration() {
+  _impl_.point_to_duration_ = 0;
+}
+inline ::int32_t ServerParam::point_to_duration() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.point_to_duration)
+  return _internal_point_to_duration();
+}
+inline void ServerParam::set_point_to_duration(::int32_t value) {
+  _internal_set_point_to_duration(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.point_to_duration)
+}
+inline ::int32_t ServerParam::_internal_point_to_duration() const {
+  return _impl_.point_to_duration_;
+}
+inline void ServerParam::_internal_set_point_to_duration(::int32_t value) {
+  ;
+  _impl_.point_to_duration_ = value;
+}
+
+// int32 player_port = 110;
+inline void ServerParam::clear_player_port() {
+  _impl_.player_port_ = 0;
+}
+inline ::int32_t ServerParam::player_port() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_port)
+  return _internal_player_port();
+}
+inline void ServerParam::set_player_port(::int32_t value) {
+  _internal_set_player_port(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_port)
+}
+inline ::int32_t ServerParam::_internal_player_port() const {
+  return _impl_.player_port_;
+}
+inline void ServerParam::_internal_set_player_port(::int32_t value) {
+  ;
+  _impl_.player_port_ = value;
+}
+
+// int32 trainer_port = 111;
+inline void ServerParam::clear_trainer_port() {
+  _impl_.trainer_port_ = 0;
+}
+inline ::int32_t ServerParam::trainer_port() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.trainer_port)
+  return _internal_trainer_port();
+}
+inline void ServerParam::set_trainer_port(::int32_t value) {
+  _internal_set_trainer_port(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.trainer_port)
+}
+inline ::int32_t ServerParam::_internal_trainer_port() const {
+  return _impl_.trainer_port_;
+}
+inline void ServerParam::_internal_set_trainer_port(::int32_t value) {
+  ;
+  _impl_.trainer_port_ = value;
+}
+
+// int32 online_coach_port = 112;
+inline void ServerParam::clear_online_coach_port() {
+  _impl_.online_coach_port_ = 0;
+}
+inline ::int32_t ServerParam::online_coach_port() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.online_coach_port)
+  return _internal_online_coach_port();
+}
+inline void ServerParam::set_online_coach_port(::int32_t value) {
+  _internal_set_online_coach_port(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.online_coach_port)
+}
+inline ::int32_t ServerParam::_internal_online_coach_port() const {
+  return _impl_.online_coach_port_;
+}
+inline void ServerParam::_internal_set_online_coach_port(::int32_t value) {
+  ;
+  _impl_.online_coach_port_ = value;
+}
+
+// bool verbose_mode = 113;
+inline void ServerParam::clear_verbose_mode() {
+  _impl_.verbose_mode_ = false;
+}
+inline bool ServerParam::verbose_mode() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.verbose_mode)
+  return _internal_verbose_mode();
+}
+inline void ServerParam::set_verbose_mode(bool value) {
+  _internal_set_verbose_mode(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.verbose_mode)
+}
+inline bool ServerParam::_internal_verbose_mode() const {
+  return _impl_.verbose_mode_;
+}
+inline void ServerParam::_internal_set_verbose_mode(bool value) {
+  ;
+  _impl_.verbose_mode_ = value;
+}
+
+// int32 coach_send_vi_step = 114;
+inline void ServerParam::clear_coach_send_vi_step() {
+  _impl_.coach_send_vi_step_ = 0;
+}
+inline ::int32_t ServerParam::coach_send_vi_step() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.coach_send_vi_step)
+  return _internal_coach_send_vi_step();
+}
+inline void ServerParam::set_coach_send_vi_step(::int32_t value) {
+  _internal_set_coach_send_vi_step(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.coach_send_vi_step)
+}
+inline ::int32_t ServerParam::_internal_coach_send_vi_step() const {
+  return _impl_.coach_send_vi_step_;
+}
+inline void ServerParam::_internal_set_coach_send_vi_step(::int32_t value) {
+  ;
+  _impl_.coach_send_vi_step_ = value;
+}
+
+// string replay_file = 115;
+inline void ServerParam::clear_replay_file() {
+  _impl_.replay_file_.ClearToEmpty();
+}
+inline const std::string& ServerParam::replay_file() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.replay_file)
+  return _internal_replay_file();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_replay_file(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.replay_file_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.replay_file)
+}
+inline std::string* ServerParam::mutable_replay_file() {
+  std::string* _s = _internal_mutable_replay_file();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.replay_file)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_replay_file() const {
+  return _impl_.replay_file_.Get();
+}
+inline void ServerParam::_internal_set_replay_file(const std::string& value) {
+  ;
+
+
+  _impl_.replay_file_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_replay_file() {
+  ;
+  return _impl_.replay_file_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_replay_file() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.replay_file)
+  return _impl_.replay_file_.Release();
+}
+inline void ServerParam::set_allocated_replay_file(std::string* value) {
+  _impl_.replay_file_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.replay_file_.IsDefault()) {
+          _impl_.replay_file_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.replay_file)
+}
+
+// string landmark_file = 116;
+inline void ServerParam::clear_landmark_file() {
+  _impl_.landmark_file_.ClearToEmpty();
+}
+inline const std::string& ServerParam::landmark_file() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.landmark_file)
+  return _internal_landmark_file();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_landmark_file(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.landmark_file_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.landmark_file)
+}
+inline std::string* ServerParam::mutable_landmark_file() {
+  std::string* _s = _internal_mutable_landmark_file();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.landmark_file)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_landmark_file() const {
+  return _impl_.landmark_file_.Get();
+}
+inline void ServerParam::_internal_set_landmark_file(const std::string& value) {
+  ;
+
+
+  _impl_.landmark_file_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_landmark_file() {
+  ;
+  return _impl_.landmark_file_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_landmark_file() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.landmark_file)
+  return _impl_.landmark_file_.Release();
+}
+inline void ServerParam::set_allocated_landmark_file(std::string* value) {
+  _impl_.landmark_file_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.landmark_file_.IsDefault()) {
+          _impl_.landmark_file_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.landmark_file)
+}
+
+// bool send_comms = 117;
+inline void ServerParam::clear_send_comms() {
+  _impl_.send_comms_ = false;
+}
+inline bool ServerParam::send_comms() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.send_comms)
+  return _internal_send_comms();
+}
+inline void ServerParam::set_send_comms(bool value) {
+  _internal_set_send_comms(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.send_comms)
+}
+inline bool ServerParam::_internal_send_comms() const {
+  return _impl_.send_comms_;
+}
+inline void ServerParam::_internal_set_send_comms(bool value) {
+  ;
+  _impl_.send_comms_ = value;
+}
+
+// bool text_logging = 118;
+inline void ServerParam::clear_text_logging() {
+  _impl_.text_logging_ = false;
+}
+inline bool ServerParam::text_logging() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.text_logging)
+  return _internal_text_logging();
+}
+inline void ServerParam::set_text_logging(bool value) {
+  _internal_set_text_logging(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.text_logging)
+}
+inline bool ServerParam::_internal_text_logging() const {
+  return _impl_.text_logging_;
+}
+inline void ServerParam::_internal_set_text_logging(bool value) {
+  ;
+  _impl_.text_logging_ = value;
+}
+
+// bool game_logging = 119;
+inline void ServerParam::clear_game_logging() {
+  _impl_.game_logging_ = false;
+}
+inline bool ServerParam::game_logging() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.game_logging)
+  return _internal_game_logging();
+}
+inline void ServerParam::set_game_logging(bool value) {
+  _internal_set_game_logging(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.game_logging)
+}
+inline bool ServerParam::_internal_game_logging() const {
+  return _impl_.game_logging_;
+}
+inline void ServerParam::_internal_set_game_logging(bool value) {
+  ;
+  _impl_.game_logging_ = value;
+}
+
+// int32 game_log_version = 120;
+inline void ServerParam::clear_game_log_version() {
+  _impl_.game_log_version_ = 0;
+}
+inline ::int32_t ServerParam::game_log_version() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.game_log_version)
+  return _internal_game_log_version();
+}
+inline void ServerParam::set_game_log_version(::int32_t value) {
+  _internal_set_game_log_version(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.game_log_version)
+}
+inline ::int32_t ServerParam::_internal_game_log_version() const {
+  return _impl_.game_log_version_;
+}
+inline void ServerParam::_internal_set_game_log_version(::int32_t value) {
+  ;
+  _impl_.game_log_version_ = value;
+}
+
+// string text_log_dir = 121;
+inline void ServerParam::clear_text_log_dir() {
+  _impl_.text_log_dir_.ClearToEmpty();
+}
+inline const std::string& ServerParam::text_log_dir() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.text_log_dir)
+  return _internal_text_log_dir();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_text_log_dir(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.text_log_dir_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.text_log_dir)
+}
+inline std::string* ServerParam::mutable_text_log_dir() {
+  std::string* _s = _internal_mutable_text_log_dir();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.text_log_dir)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_text_log_dir() const {
+  return _impl_.text_log_dir_.Get();
+}
+inline void ServerParam::_internal_set_text_log_dir(const std::string& value) {
+  ;
+
+
+  _impl_.text_log_dir_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_text_log_dir() {
+  ;
+  return _impl_.text_log_dir_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_text_log_dir() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.text_log_dir)
+  return _impl_.text_log_dir_.Release();
+}
+inline void ServerParam::set_allocated_text_log_dir(std::string* value) {
+  _impl_.text_log_dir_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.text_log_dir_.IsDefault()) {
+          _impl_.text_log_dir_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.text_log_dir)
+}
+
+// string game_log_dir = 122;
+inline void ServerParam::clear_game_log_dir() {
+  _impl_.game_log_dir_.ClearToEmpty();
+}
+inline const std::string& ServerParam::game_log_dir() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.game_log_dir)
+  return _internal_game_log_dir();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_game_log_dir(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.game_log_dir_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.game_log_dir)
+}
+inline std::string* ServerParam::mutable_game_log_dir() {
+  std::string* _s = _internal_mutable_game_log_dir();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.game_log_dir)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_game_log_dir() const {
+  return _impl_.game_log_dir_.Get();
+}
+inline void ServerParam::_internal_set_game_log_dir(const std::string& value) {
+  ;
+
+
+  _impl_.game_log_dir_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_game_log_dir() {
+  ;
+  return _impl_.game_log_dir_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_game_log_dir() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.game_log_dir)
+  return _impl_.game_log_dir_.Release();
+}
+inline void ServerParam::set_allocated_game_log_dir(std::string* value) {
+  _impl_.game_log_dir_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.game_log_dir_.IsDefault()) {
+          _impl_.game_log_dir_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.game_log_dir)
+}
+
+// string text_log_fixed_name = 123;
+inline void ServerParam::clear_text_log_fixed_name() {
+  _impl_.text_log_fixed_name_.ClearToEmpty();
+}
+inline const std::string& ServerParam::text_log_fixed_name() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.text_log_fixed_name)
+  return _internal_text_log_fixed_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_text_log_fixed_name(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.text_log_fixed_name_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.text_log_fixed_name)
+}
+inline std::string* ServerParam::mutable_text_log_fixed_name() {
+  std::string* _s = _internal_mutable_text_log_fixed_name();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.text_log_fixed_name)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_text_log_fixed_name() const {
+  return _impl_.text_log_fixed_name_.Get();
+}
+inline void ServerParam::_internal_set_text_log_fixed_name(const std::string& value) {
+  ;
+
+
+  _impl_.text_log_fixed_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_text_log_fixed_name() {
+  ;
+  return _impl_.text_log_fixed_name_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_text_log_fixed_name() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.text_log_fixed_name)
+  return _impl_.text_log_fixed_name_.Release();
+}
+inline void ServerParam::set_allocated_text_log_fixed_name(std::string* value) {
+  _impl_.text_log_fixed_name_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.text_log_fixed_name_.IsDefault()) {
+          _impl_.text_log_fixed_name_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.text_log_fixed_name)
+}
+
+// string game_log_fixed_name = 124;
+inline void ServerParam::clear_game_log_fixed_name() {
+  _impl_.game_log_fixed_name_.ClearToEmpty();
+}
+inline const std::string& ServerParam::game_log_fixed_name() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.game_log_fixed_name)
+  return _internal_game_log_fixed_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_game_log_fixed_name(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.game_log_fixed_name_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.game_log_fixed_name)
+}
+inline std::string* ServerParam::mutable_game_log_fixed_name() {
+  std::string* _s = _internal_mutable_game_log_fixed_name();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.game_log_fixed_name)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_game_log_fixed_name() const {
+  return _impl_.game_log_fixed_name_.Get();
+}
+inline void ServerParam::_internal_set_game_log_fixed_name(const std::string& value) {
+  ;
+
+
+  _impl_.game_log_fixed_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_game_log_fixed_name() {
+  ;
+  return _impl_.game_log_fixed_name_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_game_log_fixed_name() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.game_log_fixed_name)
+  return _impl_.game_log_fixed_name_.Release();
+}
+inline void ServerParam::set_allocated_game_log_fixed_name(std::string* value) {
+  _impl_.game_log_fixed_name_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.game_log_fixed_name_.IsDefault()) {
+          _impl_.game_log_fixed_name_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.game_log_fixed_name)
+}
+
+// bool use_text_log_fixed = 125;
+inline void ServerParam::clear_use_text_log_fixed() {
+  _impl_.use_text_log_fixed_ = false;
+}
+inline bool ServerParam::use_text_log_fixed() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.use_text_log_fixed)
+  return _internal_use_text_log_fixed();
+}
+inline void ServerParam::set_use_text_log_fixed(bool value) {
+  _internal_set_use_text_log_fixed(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.use_text_log_fixed)
+}
+inline bool ServerParam::_internal_use_text_log_fixed() const {
+  return _impl_.use_text_log_fixed_;
+}
+inline void ServerParam::_internal_set_use_text_log_fixed(bool value) {
+  ;
+  _impl_.use_text_log_fixed_ = value;
+}
+
+// bool use_game_log_fixed = 126;
+inline void ServerParam::clear_use_game_log_fixed() {
+  _impl_.use_game_log_fixed_ = false;
+}
+inline bool ServerParam::use_game_log_fixed() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.use_game_log_fixed)
+  return _internal_use_game_log_fixed();
+}
+inline void ServerParam::set_use_game_log_fixed(bool value) {
+  _internal_set_use_game_log_fixed(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.use_game_log_fixed)
+}
+inline bool ServerParam::_internal_use_game_log_fixed() const {
+  return _impl_.use_game_log_fixed_;
+}
+inline void ServerParam::_internal_set_use_game_log_fixed(bool value) {
+  ;
+  _impl_.use_game_log_fixed_ = value;
+}
+
+// bool use_text_log_dated = 127;
+inline void ServerParam::clear_use_text_log_dated() {
+  _impl_.use_text_log_dated_ = false;
+}
+inline bool ServerParam::use_text_log_dated() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.use_text_log_dated)
+  return _internal_use_text_log_dated();
+}
+inline void ServerParam::set_use_text_log_dated(bool value) {
+  _internal_set_use_text_log_dated(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.use_text_log_dated)
+}
+inline bool ServerParam::_internal_use_text_log_dated() const {
+  return _impl_.use_text_log_dated_;
+}
+inline void ServerParam::_internal_set_use_text_log_dated(bool value) {
+  ;
+  _impl_.use_text_log_dated_ = value;
+}
+
+// bool use_game_log_dated = 128;
+inline void ServerParam::clear_use_game_log_dated() {
+  _impl_.use_game_log_dated_ = false;
+}
+inline bool ServerParam::use_game_log_dated() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.use_game_log_dated)
+  return _internal_use_game_log_dated();
+}
+inline void ServerParam::set_use_game_log_dated(bool value) {
+  _internal_set_use_game_log_dated(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.use_game_log_dated)
+}
+inline bool ServerParam::_internal_use_game_log_dated() const {
+  return _impl_.use_game_log_dated_;
+}
+inline void ServerParam::_internal_set_use_game_log_dated(bool value) {
+  ;
+  _impl_.use_game_log_dated_ = value;
+}
+
+// string log_date_format = 129;
+inline void ServerParam::clear_log_date_format() {
+  _impl_.log_date_format_.ClearToEmpty();
+}
+inline const std::string& ServerParam::log_date_format() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.log_date_format)
+  return _internal_log_date_format();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_log_date_format(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.log_date_format_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.log_date_format)
+}
+inline std::string* ServerParam::mutable_log_date_format() {
+  std::string* _s = _internal_mutable_log_date_format();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.log_date_format)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_log_date_format() const {
+  return _impl_.log_date_format_.Get();
+}
+inline void ServerParam::_internal_set_log_date_format(const std::string& value) {
+  ;
+
+
+  _impl_.log_date_format_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_log_date_format() {
+  ;
+  return _impl_.log_date_format_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_log_date_format() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.log_date_format)
+  return _impl_.log_date_format_.Release();
+}
+inline void ServerParam::set_allocated_log_date_format(std::string* value) {
+  _impl_.log_date_format_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.log_date_format_.IsDefault()) {
+          _impl_.log_date_format_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.log_date_format)
+}
+
+// bool log_times = 130;
+inline void ServerParam::clear_log_times() {
+  _impl_.log_times_ = false;
+}
+inline bool ServerParam::log_times() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.log_times)
+  return _internal_log_times();
+}
+inline void ServerParam::set_log_times(bool value) {
+  _internal_set_log_times(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.log_times)
+}
+inline bool ServerParam::_internal_log_times() const {
+  return _impl_.log_times_;
+}
+inline void ServerParam::_internal_set_log_times(bool value) {
+  ;
+  _impl_.log_times_ = value;
+}
+
+// bool record_message = 131;
+inline void ServerParam::clear_record_message() {
+  _impl_.record_message_ = false;
+}
+inline bool ServerParam::record_message() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.record_message)
+  return _internal_record_message();
+}
+inline void ServerParam::set_record_message(bool value) {
+  _internal_set_record_message(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.record_message)
+}
+inline bool ServerParam::_internal_record_message() const {
+  return _impl_.record_message_;
+}
+inline void ServerParam::_internal_set_record_message(bool value) {
+  ;
+  _impl_.record_message_ = value;
+}
+
+// int32 text_log_compression = 132;
+inline void ServerParam::clear_text_log_compression() {
+  _impl_.text_log_compression_ = 0;
+}
+inline ::int32_t ServerParam::text_log_compression() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.text_log_compression)
+  return _internal_text_log_compression();
+}
+inline void ServerParam::set_text_log_compression(::int32_t value) {
+  _internal_set_text_log_compression(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.text_log_compression)
+}
+inline ::int32_t ServerParam::_internal_text_log_compression() const {
+  return _impl_.text_log_compression_;
+}
+inline void ServerParam::_internal_set_text_log_compression(::int32_t value) {
+  ;
+  _impl_.text_log_compression_ = value;
+}
+
+// int32 game_log_compression = 133;
+inline void ServerParam::clear_game_log_compression() {
+  _impl_.game_log_compression_ = 0;
+}
+inline ::int32_t ServerParam::game_log_compression() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.game_log_compression)
+  return _internal_game_log_compression();
+}
+inline void ServerParam::set_game_log_compression(::int32_t value) {
+  _internal_set_game_log_compression(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.game_log_compression)
+}
+inline ::int32_t ServerParam::_internal_game_log_compression() const {
+  return _impl_.game_log_compression_;
+}
+inline void ServerParam::_internal_set_game_log_compression(::int32_t value) {
+  ;
+  _impl_.game_log_compression_ = value;
+}
+
+// bool use_profile = 134;
+inline void ServerParam::clear_use_profile() {
+  _impl_.use_profile_ = false;
+}
+inline bool ServerParam::use_profile() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.use_profile)
+  return _internal_use_profile();
+}
+inline void ServerParam::set_use_profile(bool value) {
+  _internal_set_use_profile(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.use_profile)
+}
+inline bool ServerParam::_internal_use_profile() const {
+  return _impl_.use_profile_;
+}
+inline void ServerParam::_internal_set_use_profile(bool value) {
+  ;
+  _impl_.use_profile_ = value;
+}
+
+// float tackle_dist = 135;
+inline void ServerParam::clear_tackle_dist() {
+  _impl_.tackle_dist_ = 0;
+}
+inline float ServerParam::tackle_dist() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.tackle_dist)
+  return _internal_tackle_dist();
+}
+inline void ServerParam::set_tackle_dist(float value) {
+  _internal_set_tackle_dist(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.tackle_dist)
+}
+inline float ServerParam::_internal_tackle_dist() const {
+  return _impl_.tackle_dist_;
+}
+inline void ServerParam::_internal_set_tackle_dist(float value) {
+  ;
+  _impl_.tackle_dist_ = value;
+}
+
+// float tackle_back_dist = 136;
+inline void ServerParam::clear_tackle_back_dist() {
+  _impl_.tackle_back_dist_ = 0;
+}
+inline float ServerParam::tackle_back_dist() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.tackle_back_dist)
+  return _internal_tackle_back_dist();
+}
+inline void ServerParam::set_tackle_back_dist(float value) {
+  _internal_set_tackle_back_dist(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.tackle_back_dist)
+}
+inline float ServerParam::_internal_tackle_back_dist() const {
+  return _impl_.tackle_back_dist_;
+}
+inline void ServerParam::_internal_set_tackle_back_dist(float value) {
+  ;
+  _impl_.tackle_back_dist_ = value;
+}
+
+// float tackle_width = 137;
+inline void ServerParam::clear_tackle_width() {
+  _impl_.tackle_width_ = 0;
+}
+inline float ServerParam::tackle_width() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.tackle_width)
+  return _internal_tackle_width();
+}
+inline void ServerParam::set_tackle_width(float value) {
+  _internal_set_tackle_width(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.tackle_width)
+}
+inline float ServerParam::_internal_tackle_width() const {
+  return _impl_.tackle_width_;
+}
+inline void ServerParam::_internal_set_tackle_width(float value) {
+  ;
+  _impl_.tackle_width_ = value;
+}
+
+// float tackle_exponent = 138;
+inline void ServerParam::clear_tackle_exponent() {
+  _impl_.tackle_exponent_ = 0;
+}
+inline float ServerParam::tackle_exponent() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.tackle_exponent)
+  return _internal_tackle_exponent();
+}
+inline void ServerParam::set_tackle_exponent(float value) {
+  _internal_set_tackle_exponent(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.tackle_exponent)
+}
+inline float ServerParam::_internal_tackle_exponent() const {
+  return _impl_.tackle_exponent_;
+}
+inline void ServerParam::_internal_set_tackle_exponent(float value) {
+  ;
+  _impl_.tackle_exponent_ = value;
+}
+
+// int32 tackle_cycles = 139;
+inline void ServerParam::clear_tackle_cycles() {
+  _impl_.tackle_cycles_ = 0;
+}
+inline ::int32_t ServerParam::tackle_cycles() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.tackle_cycles)
+  return _internal_tackle_cycles();
+}
+inline void ServerParam::set_tackle_cycles(::int32_t value) {
+  _internal_set_tackle_cycles(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.tackle_cycles)
+}
+inline ::int32_t ServerParam::_internal_tackle_cycles() const {
+  return _impl_.tackle_cycles_;
+}
+inline void ServerParam::_internal_set_tackle_cycles(::int32_t value) {
+  ;
+  _impl_.tackle_cycles_ = value;
+}
+
+// float tackle_power_rate = 140;
+inline void ServerParam::clear_tackle_power_rate() {
+  _impl_.tackle_power_rate_ = 0;
+}
+inline float ServerParam::tackle_power_rate() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.tackle_power_rate)
+  return _internal_tackle_power_rate();
+}
+inline void ServerParam::set_tackle_power_rate(float value) {
+  _internal_set_tackle_power_rate(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.tackle_power_rate)
+}
+inline float ServerParam::_internal_tackle_power_rate() const {
+  return _impl_.tackle_power_rate_;
+}
+inline void ServerParam::_internal_set_tackle_power_rate(float value) {
+  ;
+  _impl_.tackle_power_rate_ = value;
+}
+
+// int32 freeform_wait_period = 141;
+inline void ServerParam::clear_freeform_wait_period() {
+  _impl_.freeform_wait_period_ = 0;
+}
+inline ::int32_t ServerParam::freeform_wait_period() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.freeform_wait_period)
+  return _internal_freeform_wait_period();
+}
+inline void ServerParam::set_freeform_wait_period(::int32_t value) {
+  _internal_set_freeform_wait_period(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.freeform_wait_period)
+}
+inline ::int32_t ServerParam::_internal_freeform_wait_period() const {
+  return _impl_.freeform_wait_period_;
+}
+inline void ServerParam::_internal_set_freeform_wait_period(::int32_t value) {
+  ;
+  _impl_.freeform_wait_period_ = value;
+}
+
+// int32 freeform_send_period = 142;
+inline void ServerParam::clear_freeform_send_period() {
+  _impl_.freeform_send_period_ = 0;
+}
+inline ::int32_t ServerParam::freeform_send_period() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.freeform_send_period)
+  return _internal_freeform_send_period();
+}
+inline void ServerParam::set_freeform_send_period(::int32_t value) {
+  _internal_set_freeform_send_period(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.freeform_send_period)
+}
+inline ::int32_t ServerParam::_internal_freeform_send_period() const {
+  return _impl_.freeform_send_period_;
+}
+inline void ServerParam::_internal_set_freeform_send_period(::int32_t value) {
+  ;
+  _impl_.freeform_send_period_ = value;
+}
+
+// bool free_kick_faults = 143;
+inline void ServerParam::clear_free_kick_faults() {
+  _impl_.free_kick_faults_ = false;
+}
+inline bool ServerParam::free_kick_faults() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.free_kick_faults)
+  return _internal_free_kick_faults();
+}
+inline void ServerParam::set_free_kick_faults(bool value) {
+  _internal_set_free_kick_faults(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.free_kick_faults)
+}
+inline bool ServerParam::_internal_free_kick_faults() const {
+  return _impl_.free_kick_faults_;
+}
+inline void ServerParam::_internal_set_free_kick_faults(bool value) {
+  ;
+  _impl_.free_kick_faults_ = value;
+}
+
+// bool back_passes = 144;
+inline void ServerParam::clear_back_passes() {
+  _impl_.back_passes_ = false;
+}
+inline bool ServerParam::back_passes() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.back_passes)
+  return _internal_back_passes();
+}
+inline void ServerParam::set_back_passes(bool value) {
+  _internal_set_back_passes(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.back_passes)
+}
+inline bool ServerParam::_internal_back_passes() const {
+  return _impl_.back_passes_;
+}
+inline void ServerParam::_internal_set_back_passes(bool value) {
+  ;
+  _impl_.back_passes_ = value;
+}
+
+// bool proper_goal_kicks = 145;
+inline void ServerParam::clear_proper_goal_kicks() {
+  _impl_.proper_goal_kicks_ = false;
+}
+inline bool ServerParam::proper_goal_kicks() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.proper_goal_kicks)
+  return _internal_proper_goal_kicks();
+}
+inline void ServerParam::set_proper_goal_kicks(bool value) {
+  _internal_set_proper_goal_kicks(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.proper_goal_kicks)
+}
+inline bool ServerParam::_internal_proper_goal_kicks() const {
+  return _impl_.proper_goal_kicks_;
+}
+inline void ServerParam::_internal_set_proper_goal_kicks(bool value) {
+  ;
+  _impl_.proper_goal_kicks_ = value;
+}
+
+// float stopped_ball_vel = 146;
+inline void ServerParam::clear_stopped_ball_vel() {
+  _impl_.stopped_ball_vel_ = 0;
+}
+inline float ServerParam::stopped_ball_vel() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.stopped_ball_vel)
+  return _internal_stopped_ball_vel();
+}
+inline void ServerParam::set_stopped_ball_vel(float value) {
+  _internal_set_stopped_ball_vel(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.stopped_ball_vel)
+}
+inline float ServerParam::_internal_stopped_ball_vel() const {
+  return _impl_.stopped_ball_vel_;
+}
+inline void ServerParam::_internal_set_stopped_ball_vel(float value) {
+  ;
+  _impl_.stopped_ball_vel_ = value;
+}
+
+// int32 max_goal_kicks = 147;
+inline void ServerParam::clear_max_goal_kicks() {
+  _impl_.max_goal_kicks_ = 0;
+}
+inline ::int32_t ServerParam::max_goal_kicks() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_goal_kicks)
+  return _internal_max_goal_kicks();
+}
+inline void ServerParam::set_max_goal_kicks(::int32_t value) {
+  _internal_set_max_goal_kicks(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_goal_kicks)
+}
+inline ::int32_t ServerParam::_internal_max_goal_kicks() const {
+  return _impl_.max_goal_kicks_;
+}
+inline void ServerParam::_internal_set_max_goal_kicks(::int32_t value) {
+  ;
+  _impl_.max_goal_kicks_ = value;
+}
+
+// int32 clang_del_win = 148;
+inline void ServerParam::clear_clang_del_win() {
+  _impl_.clang_del_win_ = 0;
+}
+inline ::int32_t ServerParam::clang_del_win() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.clang_del_win)
+  return _internal_clang_del_win();
+}
+inline void ServerParam::set_clang_del_win(::int32_t value) {
+  _internal_set_clang_del_win(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.clang_del_win)
+}
+inline ::int32_t ServerParam::_internal_clang_del_win() const {
+  return _impl_.clang_del_win_;
+}
+inline void ServerParam::_internal_set_clang_del_win(::int32_t value) {
+  ;
+  _impl_.clang_del_win_ = value;
+}
+
+// int32 clang_rule_win = 149;
+inline void ServerParam::clear_clang_rule_win() {
+  _impl_.clang_rule_win_ = 0;
+}
+inline ::int32_t ServerParam::clang_rule_win() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.clang_rule_win)
+  return _internal_clang_rule_win();
+}
+inline void ServerParam::set_clang_rule_win(::int32_t value) {
+  _internal_set_clang_rule_win(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.clang_rule_win)
+}
+inline ::int32_t ServerParam::_internal_clang_rule_win() const {
+  return _impl_.clang_rule_win_;
+}
+inline void ServerParam::_internal_set_clang_rule_win(::int32_t value) {
+  ;
+  _impl_.clang_rule_win_ = value;
+}
+
+// bool auto_mode = 150;
+inline void ServerParam::clear_auto_mode() {
+  _impl_.auto_mode_ = false;
+}
+inline bool ServerParam::auto_mode() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.auto_mode)
+  return _internal_auto_mode();
+}
+inline void ServerParam::set_auto_mode(bool value) {
+  _internal_set_auto_mode(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.auto_mode)
+}
+inline bool ServerParam::_internal_auto_mode() const {
+  return _impl_.auto_mode_;
+}
+inline void ServerParam::_internal_set_auto_mode(bool value) {
+  ;
+  _impl_.auto_mode_ = value;
+}
+
+// int32 kick_off_wait = 151;
+inline void ServerParam::clear_kick_off_wait() {
+  _impl_.kick_off_wait_ = 0;
+}
+inline ::int32_t ServerParam::kick_off_wait() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.kick_off_wait)
+  return _internal_kick_off_wait();
+}
+inline void ServerParam::set_kick_off_wait(::int32_t value) {
+  _internal_set_kick_off_wait(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.kick_off_wait)
+}
+inline ::int32_t ServerParam::_internal_kick_off_wait() const {
+  return _impl_.kick_off_wait_;
+}
+inline void ServerParam::_internal_set_kick_off_wait(::int32_t value) {
+  ;
+  _impl_.kick_off_wait_ = value;
+}
+
+// int32 connect_wait = 152;
+inline void ServerParam::clear_connect_wait() {
+  _impl_.connect_wait_ = 0;
+}
+inline ::int32_t ServerParam::connect_wait() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.connect_wait)
+  return _internal_connect_wait();
+}
+inline void ServerParam::set_connect_wait(::int32_t value) {
+  _internal_set_connect_wait(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.connect_wait)
+}
+inline ::int32_t ServerParam::_internal_connect_wait() const {
+  return _impl_.connect_wait_;
+}
+inline void ServerParam::_internal_set_connect_wait(::int32_t value) {
+  ;
+  _impl_.connect_wait_ = value;
+}
+
+// int32 game_over_wait = 153;
+inline void ServerParam::clear_game_over_wait() {
+  _impl_.game_over_wait_ = 0;
+}
+inline ::int32_t ServerParam::game_over_wait() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.game_over_wait)
+  return _internal_game_over_wait();
+}
+inline void ServerParam::set_game_over_wait(::int32_t value) {
+  _internal_set_game_over_wait(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.game_over_wait)
+}
+inline ::int32_t ServerParam::_internal_game_over_wait() const {
+  return _impl_.game_over_wait_;
+}
+inline void ServerParam::_internal_set_game_over_wait(::int32_t value) {
+  ;
+  _impl_.game_over_wait_ = value;
+}
+
+// string team_l_start = 154;
+inline void ServerParam::clear_team_l_start() {
+  _impl_.team_l_start_.ClearToEmpty();
+}
+inline const std::string& ServerParam::team_l_start() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.team_l_start)
+  return _internal_team_l_start();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_team_l_start(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.team_l_start_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.team_l_start)
+}
+inline std::string* ServerParam::mutable_team_l_start() {
+  std::string* _s = _internal_mutable_team_l_start();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.team_l_start)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_team_l_start() const {
+  return _impl_.team_l_start_.Get();
+}
+inline void ServerParam::_internal_set_team_l_start(const std::string& value) {
+  ;
+
+
+  _impl_.team_l_start_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_team_l_start() {
+  ;
+  return _impl_.team_l_start_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_team_l_start() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.team_l_start)
+  return _impl_.team_l_start_.Release();
+}
+inline void ServerParam::set_allocated_team_l_start(std::string* value) {
+  _impl_.team_l_start_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.team_l_start_.IsDefault()) {
+          _impl_.team_l_start_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.team_l_start)
+}
+
+// string team_r_start = 155;
+inline void ServerParam::clear_team_r_start() {
+  _impl_.team_r_start_.ClearToEmpty();
+}
+inline const std::string& ServerParam::team_r_start() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.team_r_start)
+  return _internal_team_r_start();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_team_r_start(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.team_r_start_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.team_r_start)
+}
+inline std::string* ServerParam::mutable_team_r_start() {
+  std::string* _s = _internal_mutable_team_r_start();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.team_r_start)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_team_r_start() const {
+  return _impl_.team_r_start_.Get();
+}
+inline void ServerParam::_internal_set_team_r_start(const std::string& value) {
+  ;
+
+
+  _impl_.team_r_start_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_team_r_start() {
+  ;
+  return _impl_.team_r_start_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_team_r_start() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.team_r_start)
+  return _impl_.team_r_start_.Release();
+}
+inline void ServerParam::set_allocated_team_r_start(std::string* value) {
+  _impl_.team_r_start_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.team_r_start_.IsDefault()) {
+          _impl_.team_r_start_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.team_r_start)
+}
+
+// bool keepaway_mode = 156;
+inline void ServerParam::clear_keepaway_mode() {
+  _impl_.keepaway_mode_ = false;
+}
+inline bool ServerParam::keepaway_mode() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.keepaway_mode)
+  return _internal_keepaway_mode();
+}
+inline void ServerParam::set_keepaway_mode(bool value) {
+  _internal_set_keepaway_mode(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.keepaway_mode)
+}
+inline bool ServerParam::_internal_keepaway_mode() const {
+  return _impl_.keepaway_mode_;
+}
+inline void ServerParam::_internal_set_keepaway_mode(bool value) {
+  ;
+  _impl_.keepaway_mode_ = value;
+}
+
+// float keepaway_length = 157;
+inline void ServerParam::clear_keepaway_length() {
+  _impl_.keepaway_length_ = 0;
+}
+inline float ServerParam::keepaway_length() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.keepaway_length)
+  return _internal_keepaway_length();
+}
+inline void ServerParam::set_keepaway_length(float value) {
+  _internal_set_keepaway_length(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.keepaway_length)
+}
+inline float ServerParam::_internal_keepaway_length() const {
+  return _impl_.keepaway_length_;
+}
+inline void ServerParam::_internal_set_keepaway_length(float value) {
+  ;
+  _impl_.keepaway_length_ = value;
+}
+
+// float keepaway_width = 158;
+inline void ServerParam::clear_keepaway_width() {
+  _impl_.keepaway_width_ = 0;
+}
+inline float ServerParam::keepaway_width() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.keepaway_width)
+  return _internal_keepaway_width();
+}
+inline void ServerParam::set_keepaway_width(float value) {
+  _internal_set_keepaway_width(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.keepaway_width)
+}
+inline float ServerParam::_internal_keepaway_width() const {
+  return _impl_.keepaway_width_;
+}
+inline void ServerParam::_internal_set_keepaway_width(float value) {
+  ;
+  _impl_.keepaway_width_ = value;
+}
+
+// bool keepaway_logging = 159;
+inline void ServerParam::clear_keepaway_logging() {
+  _impl_.keepaway_logging_ = false;
+}
+inline bool ServerParam::keepaway_logging() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.keepaway_logging)
+  return _internal_keepaway_logging();
+}
+inline void ServerParam::set_keepaway_logging(bool value) {
+  _internal_set_keepaway_logging(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.keepaway_logging)
+}
+inline bool ServerParam::_internal_keepaway_logging() const {
+  return _impl_.keepaway_logging_;
+}
+inline void ServerParam::_internal_set_keepaway_logging(bool value) {
+  ;
+  _impl_.keepaway_logging_ = value;
+}
+
+// string keepaway_log_dir = 160;
+inline void ServerParam::clear_keepaway_log_dir() {
+  _impl_.keepaway_log_dir_.ClearToEmpty();
+}
+inline const std::string& ServerParam::keepaway_log_dir() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.keepaway_log_dir)
+  return _internal_keepaway_log_dir();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_keepaway_log_dir(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.keepaway_log_dir_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.keepaway_log_dir)
+}
+inline std::string* ServerParam::mutable_keepaway_log_dir() {
+  std::string* _s = _internal_mutable_keepaway_log_dir();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.keepaway_log_dir)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_keepaway_log_dir() const {
+  return _impl_.keepaway_log_dir_.Get();
+}
+inline void ServerParam::_internal_set_keepaway_log_dir(const std::string& value) {
+  ;
+
+
+  _impl_.keepaway_log_dir_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_keepaway_log_dir() {
+  ;
+  return _impl_.keepaway_log_dir_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_keepaway_log_dir() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.keepaway_log_dir)
+  return _impl_.keepaway_log_dir_.Release();
+}
+inline void ServerParam::set_allocated_keepaway_log_dir(std::string* value) {
+  _impl_.keepaway_log_dir_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.keepaway_log_dir_.IsDefault()) {
+          _impl_.keepaway_log_dir_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.keepaway_log_dir)
+}
+
+// string keepaway_log_fixed_name = 161;
+inline void ServerParam::clear_keepaway_log_fixed_name() {
+  _impl_.keepaway_log_fixed_name_.ClearToEmpty();
+}
+inline const std::string& ServerParam::keepaway_log_fixed_name() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.keepaway_log_fixed_name)
+  return _internal_keepaway_log_fixed_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_keepaway_log_fixed_name(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.keepaway_log_fixed_name_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.keepaway_log_fixed_name)
+}
+inline std::string* ServerParam::mutable_keepaway_log_fixed_name() {
+  std::string* _s = _internal_mutable_keepaway_log_fixed_name();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.keepaway_log_fixed_name)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_keepaway_log_fixed_name() const {
+  return _impl_.keepaway_log_fixed_name_.Get();
+}
+inline void ServerParam::_internal_set_keepaway_log_fixed_name(const std::string& value) {
+  ;
+
+
+  _impl_.keepaway_log_fixed_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_keepaway_log_fixed_name() {
+  ;
+  return _impl_.keepaway_log_fixed_name_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_keepaway_log_fixed_name() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.keepaway_log_fixed_name)
+  return _impl_.keepaway_log_fixed_name_.Release();
+}
+inline void ServerParam::set_allocated_keepaway_log_fixed_name(std::string* value) {
+  _impl_.keepaway_log_fixed_name_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.keepaway_log_fixed_name_.IsDefault()) {
+          _impl_.keepaway_log_fixed_name_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.keepaway_log_fixed_name)
+}
+
+// bool keepaway_log_fixed = 162;
+inline void ServerParam::clear_keepaway_log_fixed() {
+  _impl_.keepaway_log_fixed_ = false;
+}
+inline bool ServerParam::keepaway_log_fixed() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.keepaway_log_fixed)
+  return _internal_keepaway_log_fixed();
+}
+inline void ServerParam::set_keepaway_log_fixed(bool value) {
+  _internal_set_keepaway_log_fixed(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.keepaway_log_fixed)
+}
+inline bool ServerParam::_internal_keepaway_log_fixed() const {
+  return _impl_.keepaway_log_fixed_;
+}
+inline void ServerParam::_internal_set_keepaway_log_fixed(bool value) {
+  ;
+  _impl_.keepaway_log_fixed_ = value;
+}
+
+// bool keepaway_log_dated = 163;
+inline void ServerParam::clear_keepaway_log_dated() {
+  _impl_.keepaway_log_dated_ = false;
+}
+inline bool ServerParam::keepaway_log_dated() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.keepaway_log_dated)
+  return _internal_keepaway_log_dated();
+}
+inline void ServerParam::set_keepaway_log_dated(bool value) {
+  _internal_set_keepaway_log_dated(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.keepaway_log_dated)
+}
+inline bool ServerParam::_internal_keepaway_log_dated() const {
+  return _impl_.keepaway_log_dated_;
+}
+inline void ServerParam::_internal_set_keepaway_log_dated(bool value) {
+  ;
+  _impl_.keepaway_log_dated_ = value;
+}
+
+// int32 keepaway_start = 164;
+inline void ServerParam::clear_keepaway_start() {
+  _impl_.keepaway_start_ = 0;
+}
+inline ::int32_t ServerParam::keepaway_start() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.keepaway_start)
+  return _internal_keepaway_start();
+}
+inline void ServerParam::set_keepaway_start(::int32_t value) {
+  _internal_set_keepaway_start(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.keepaway_start)
+}
+inline ::int32_t ServerParam::_internal_keepaway_start() const {
+  return _impl_.keepaway_start_;
+}
+inline void ServerParam::_internal_set_keepaway_start(::int32_t value) {
+  ;
+  _impl_.keepaway_start_ = value;
+}
+
+// int32 nr_normal_halfs = 165;
+inline void ServerParam::clear_nr_normal_halfs() {
+  _impl_.nr_normal_halfs_ = 0;
+}
+inline ::int32_t ServerParam::nr_normal_halfs() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.nr_normal_halfs)
+  return _internal_nr_normal_halfs();
+}
+inline void ServerParam::set_nr_normal_halfs(::int32_t value) {
+  _internal_set_nr_normal_halfs(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.nr_normal_halfs)
+}
+inline ::int32_t ServerParam::_internal_nr_normal_halfs() const {
+  return _impl_.nr_normal_halfs_;
+}
+inline void ServerParam::_internal_set_nr_normal_halfs(::int32_t value) {
+  ;
+  _impl_.nr_normal_halfs_ = value;
+}
+
+// int32 nr_extra_halfs = 166;
+inline void ServerParam::clear_nr_extra_halfs() {
+  _impl_.nr_extra_halfs_ = 0;
+}
+inline ::int32_t ServerParam::nr_extra_halfs() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.nr_extra_halfs)
+  return _internal_nr_extra_halfs();
+}
+inline void ServerParam::set_nr_extra_halfs(::int32_t value) {
+  _internal_set_nr_extra_halfs(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.nr_extra_halfs)
+}
+inline ::int32_t ServerParam::_internal_nr_extra_halfs() const {
+  return _impl_.nr_extra_halfs_;
+}
+inline void ServerParam::_internal_set_nr_extra_halfs(::int32_t value) {
+  ;
+  _impl_.nr_extra_halfs_ = value;
+}
+
+// bool penalty_shoot_outs = 167;
+inline void ServerParam::clear_penalty_shoot_outs() {
+  _impl_.penalty_shoot_outs_ = false;
+}
+inline bool ServerParam::penalty_shoot_outs() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.penalty_shoot_outs)
+  return _internal_penalty_shoot_outs();
+}
+inline void ServerParam::set_penalty_shoot_outs(bool value) {
+  _internal_set_penalty_shoot_outs(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.penalty_shoot_outs)
+}
+inline bool ServerParam::_internal_penalty_shoot_outs() const {
+  return _impl_.penalty_shoot_outs_;
+}
+inline void ServerParam::_internal_set_penalty_shoot_outs(bool value) {
+  ;
+  _impl_.penalty_shoot_outs_ = value;
+}
+
+// int32 pen_before_setup_wait = 168;
+inline void ServerParam::clear_pen_before_setup_wait() {
+  _impl_.pen_before_setup_wait_ = 0;
+}
+inline ::int32_t ServerParam::pen_before_setup_wait() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_before_setup_wait)
+  return _internal_pen_before_setup_wait();
+}
+inline void ServerParam::set_pen_before_setup_wait(::int32_t value) {
+  _internal_set_pen_before_setup_wait(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_before_setup_wait)
+}
+inline ::int32_t ServerParam::_internal_pen_before_setup_wait() const {
+  return _impl_.pen_before_setup_wait_;
+}
+inline void ServerParam::_internal_set_pen_before_setup_wait(::int32_t value) {
+  ;
+  _impl_.pen_before_setup_wait_ = value;
+}
+
+// int32 pen_setup_wait = 169;
+inline void ServerParam::clear_pen_setup_wait() {
+  _impl_.pen_setup_wait_ = 0;
+}
+inline ::int32_t ServerParam::pen_setup_wait() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_setup_wait)
+  return _internal_pen_setup_wait();
+}
+inline void ServerParam::set_pen_setup_wait(::int32_t value) {
+  _internal_set_pen_setup_wait(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_setup_wait)
+}
+inline ::int32_t ServerParam::_internal_pen_setup_wait() const {
+  return _impl_.pen_setup_wait_;
+}
+inline void ServerParam::_internal_set_pen_setup_wait(::int32_t value) {
+  ;
+  _impl_.pen_setup_wait_ = value;
+}
+
+// int32 pen_ready_wait = 170;
+inline void ServerParam::clear_pen_ready_wait() {
+  _impl_.pen_ready_wait_ = 0;
+}
+inline ::int32_t ServerParam::pen_ready_wait() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_ready_wait)
+  return _internal_pen_ready_wait();
+}
+inline void ServerParam::set_pen_ready_wait(::int32_t value) {
+  _internal_set_pen_ready_wait(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_ready_wait)
+}
+inline ::int32_t ServerParam::_internal_pen_ready_wait() const {
+  return _impl_.pen_ready_wait_;
+}
+inline void ServerParam::_internal_set_pen_ready_wait(::int32_t value) {
+  ;
+  _impl_.pen_ready_wait_ = value;
+}
+
+// int32 pen_taken_wait = 171;
+inline void ServerParam::clear_pen_taken_wait() {
+  _impl_.pen_taken_wait_ = 0;
+}
+inline ::int32_t ServerParam::pen_taken_wait() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_taken_wait)
+  return _internal_pen_taken_wait();
+}
+inline void ServerParam::set_pen_taken_wait(::int32_t value) {
+  _internal_set_pen_taken_wait(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_taken_wait)
+}
+inline ::int32_t ServerParam::_internal_pen_taken_wait() const {
+  return _impl_.pen_taken_wait_;
+}
+inline void ServerParam::_internal_set_pen_taken_wait(::int32_t value) {
+  ;
+  _impl_.pen_taken_wait_ = value;
+}
+
+// int32 pen_nr_kicks = 172;
+inline void ServerParam::clear_pen_nr_kicks() {
+  _impl_.pen_nr_kicks_ = 0;
+}
+inline ::int32_t ServerParam::pen_nr_kicks() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_nr_kicks)
+  return _internal_pen_nr_kicks();
+}
+inline void ServerParam::set_pen_nr_kicks(::int32_t value) {
+  _internal_set_pen_nr_kicks(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_nr_kicks)
+}
+inline ::int32_t ServerParam::_internal_pen_nr_kicks() const {
+  return _impl_.pen_nr_kicks_;
+}
+inline void ServerParam::_internal_set_pen_nr_kicks(::int32_t value) {
+  ;
+  _impl_.pen_nr_kicks_ = value;
+}
+
+// int32 pen_max_extra_kicks = 173;
+inline void ServerParam::clear_pen_max_extra_kicks() {
+  _impl_.pen_max_extra_kicks_ = 0;
+}
+inline ::int32_t ServerParam::pen_max_extra_kicks() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_max_extra_kicks)
+  return _internal_pen_max_extra_kicks();
+}
+inline void ServerParam::set_pen_max_extra_kicks(::int32_t value) {
+  _internal_set_pen_max_extra_kicks(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_max_extra_kicks)
+}
+inline ::int32_t ServerParam::_internal_pen_max_extra_kicks() const {
+  return _impl_.pen_max_extra_kicks_;
+}
+inline void ServerParam::_internal_set_pen_max_extra_kicks(::int32_t value) {
+  ;
+  _impl_.pen_max_extra_kicks_ = value;
+}
+
+// float pen_dist_x = 174;
+inline void ServerParam::clear_pen_dist_x() {
+  _impl_.pen_dist_x_ = 0;
+}
+inline float ServerParam::pen_dist_x() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_dist_x)
+  return _internal_pen_dist_x();
+}
+inline void ServerParam::set_pen_dist_x(float value) {
+  _internal_set_pen_dist_x(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_dist_x)
+}
+inline float ServerParam::_internal_pen_dist_x() const {
+  return _impl_.pen_dist_x_;
+}
+inline void ServerParam::_internal_set_pen_dist_x(float value) {
+  ;
+  _impl_.pen_dist_x_ = value;
+}
+
+// bool pen_random_winner = 175;
+inline void ServerParam::clear_pen_random_winner() {
+  _impl_.pen_random_winner_ = false;
+}
+inline bool ServerParam::pen_random_winner() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_random_winner)
+  return _internal_pen_random_winner();
+}
+inline void ServerParam::set_pen_random_winner(bool value) {
+  _internal_set_pen_random_winner(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_random_winner)
+}
+inline bool ServerParam::_internal_pen_random_winner() const {
+  return _impl_.pen_random_winner_;
+}
+inline void ServerParam::_internal_set_pen_random_winner(bool value) {
+  ;
+  _impl_.pen_random_winner_ = value;
+}
+
+// bool pen_allow_mult_kicks = 176;
+inline void ServerParam::clear_pen_allow_mult_kicks() {
+  _impl_.pen_allow_mult_kicks_ = false;
+}
+inline bool ServerParam::pen_allow_mult_kicks() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_allow_mult_kicks)
+  return _internal_pen_allow_mult_kicks();
+}
+inline void ServerParam::set_pen_allow_mult_kicks(bool value) {
+  _internal_set_pen_allow_mult_kicks(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_allow_mult_kicks)
+}
+inline bool ServerParam::_internal_pen_allow_mult_kicks() const {
+  return _impl_.pen_allow_mult_kicks_;
+}
+inline void ServerParam::_internal_set_pen_allow_mult_kicks(bool value) {
+  ;
+  _impl_.pen_allow_mult_kicks_ = value;
+}
+
+// float pen_max_goalie_dist_x = 177;
+inline void ServerParam::clear_pen_max_goalie_dist_x() {
+  _impl_.pen_max_goalie_dist_x_ = 0;
+}
+inline float ServerParam::pen_max_goalie_dist_x() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_max_goalie_dist_x)
+  return _internal_pen_max_goalie_dist_x();
+}
+inline void ServerParam::set_pen_max_goalie_dist_x(float value) {
+  _internal_set_pen_max_goalie_dist_x(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_max_goalie_dist_x)
+}
+inline float ServerParam::_internal_pen_max_goalie_dist_x() const {
+  return _impl_.pen_max_goalie_dist_x_;
+}
+inline void ServerParam::_internal_set_pen_max_goalie_dist_x(float value) {
+  ;
+  _impl_.pen_max_goalie_dist_x_ = value;
+}
+
+// bool pen_coach_moves_players = 178;
+inline void ServerParam::clear_pen_coach_moves_players() {
+  _impl_.pen_coach_moves_players_ = false;
+}
+inline bool ServerParam::pen_coach_moves_players() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pen_coach_moves_players)
+  return _internal_pen_coach_moves_players();
+}
+inline void ServerParam::set_pen_coach_moves_players(bool value) {
+  _internal_set_pen_coach_moves_players(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pen_coach_moves_players)
+}
+inline bool ServerParam::_internal_pen_coach_moves_players() const {
+  return _impl_.pen_coach_moves_players_;
+}
+inline void ServerParam::_internal_set_pen_coach_moves_players(bool value) {
+  ;
+  _impl_.pen_coach_moves_players_ = value;
+}
+
+// string module_dir = 179;
+inline void ServerParam::clear_module_dir() {
+  _impl_.module_dir_.ClearToEmpty();
+}
+inline const std::string& ServerParam::module_dir() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.module_dir)
+  return _internal_module_dir();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_module_dir(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.module_dir_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.module_dir)
+}
+inline std::string* ServerParam::mutable_module_dir() {
+  std::string* _s = _internal_mutable_module_dir();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.module_dir)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_module_dir() const {
+  return _impl_.module_dir_.Get();
+}
+inline void ServerParam::_internal_set_module_dir(const std::string& value) {
+  ;
+
+
+  _impl_.module_dir_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_module_dir() {
+  ;
+  return _impl_.module_dir_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_module_dir() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.module_dir)
+  return _impl_.module_dir_.Release();
+}
+inline void ServerParam::set_allocated_module_dir(std::string* value) {
+  _impl_.module_dir_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.module_dir_.IsDefault()) {
+          _impl_.module_dir_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.module_dir)
+}
+
+// float ball_stuck_area = 180;
+inline void ServerParam::clear_ball_stuck_area() {
+  _impl_.ball_stuck_area_ = 0;
+}
+inline float ServerParam::ball_stuck_area() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.ball_stuck_area)
+  return _internal_ball_stuck_area();
+}
+inline void ServerParam::set_ball_stuck_area(float value) {
+  _internal_set_ball_stuck_area(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.ball_stuck_area)
+}
+inline float ServerParam::_internal_ball_stuck_area() const {
+  return _impl_.ball_stuck_area_;
+}
+inline void ServerParam::_internal_set_ball_stuck_area(float value) {
+  ;
+  _impl_.ball_stuck_area_ = value;
+}
+
+// string coach_msg_file = 181;
+inline void ServerParam::clear_coach_msg_file() {
+  _impl_.coach_msg_file_.ClearToEmpty();
+}
+inline const std::string& ServerParam::coach_msg_file() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.coach_msg_file)
+  return _internal_coach_msg_file();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_coach_msg_file(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.coach_msg_file_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.coach_msg_file)
+}
+inline std::string* ServerParam::mutable_coach_msg_file() {
+  std::string* _s = _internal_mutable_coach_msg_file();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.coach_msg_file)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_coach_msg_file() const {
+  return _impl_.coach_msg_file_.Get();
+}
+inline void ServerParam::_internal_set_coach_msg_file(const std::string& value) {
+  ;
+
+
+  _impl_.coach_msg_file_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_coach_msg_file() {
+  ;
+  return _impl_.coach_msg_file_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_coach_msg_file() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.coach_msg_file)
+  return _impl_.coach_msg_file_.Release();
+}
+inline void ServerParam::set_allocated_coach_msg_file(std::string* value) {
+  _impl_.coach_msg_file_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.coach_msg_file_.IsDefault()) {
+          _impl_.coach_msg_file_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.coach_msg_file)
+}
+
+// float max_tackle_power = 182;
+inline void ServerParam::clear_max_tackle_power() {
+  _impl_.max_tackle_power_ = 0;
+}
+inline float ServerParam::max_tackle_power() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_tackle_power)
+  return _internal_max_tackle_power();
+}
+inline void ServerParam::set_max_tackle_power(float value) {
+  _internal_set_max_tackle_power(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_tackle_power)
+}
+inline float ServerParam::_internal_max_tackle_power() const {
+  return _impl_.max_tackle_power_;
+}
+inline void ServerParam::_internal_set_max_tackle_power(float value) {
+  ;
+  _impl_.max_tackle_power_ = value;
+}
+
+// float max_back_tackle_power = 183;
+inline void ServerParam::clear_max_back_tackle_power() {
+  _impl_.max_back_tackle_power_ = 0;
+}
+inline float ServerParam::max_back_tackle_power() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_back_tackle_power)
+  return _internal_max_back_tackle_power();
+}
+inline void ServerParam::set_max_back_tackle_power(float value) {
+  _internal_set_max_back_tackle_power(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_back_tackle_power)
+}
+inline float ServerParam::_internal_max_back_tackle_power() const {
+  return _impl_.max_back_tackle_power_;
+}
+inline void ServerParam::_internal_set_max_back_tackle_power(float value) {
+  ;
+  _impl_.max_back_tackle_power_ = value;
+}
+
+// float player_speed_max_min = 184;
+inline void ServerParam::clear_player_speed_max_min() {
+  _impl_.player_speed_max_min_ = 0;
+}
+inline float ServerParam::player_speed_max_min() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.player_speed_max_min)
+  return _internal_player_speed_max_min();
+}
+inline void ServerParam::set_player_speed_max_min(float value) {
+  _internal_set_player_speed_max_min(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.player_speed_max_min)
+}
+inline float ServerParam::_internal_player_speed_max_min() const {
+  return _impl_.player_speed_max_min_;
+}
+inline void ServerParam::_internal_set_player_speed_max_min(float value) {
+  ;
+  _impl_.player_speed_max_min_ = value;
+}
+
+// float extra_stamina = 185;
+inline void ServerParam::clear_extra_stamina() {
+  _impl_.extra_stamina_ = 0;
+}
+inline float ServerParam::extra_stamina() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.extra_stamina)
+  return _internal_extra_stamina();
+}
+inline void ServerParam::set_extra_stamina(float value) {
+  _internal_set_extra_stamina(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.extra_stamina)
+}
+inline float ServerParam::_internal_extra_stamina() const {
+  return _impl_.extra_stamina_;
+}
+inline void ServerParam::_internal_set_extra_stamina(float value) {
+  ;
+  _impl_.extra_stamina_ = value;
+}
+
+// int32 synch_see_offset = 186;
+inline void ServerParam::clear_synch_see_offset() {
+  _impl_.synch_see_offset_ = 0;
+}
+inline ::int32_t ServerParam::synch_see_offset() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.synch_see_offset)
+  return _internal_synch_see_offset();
+}
+inline void ServerParam::set_synch_see_offset(::int32_t value) {
+  _internal_set_synch_see_offset(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.synch_see_offset)
+}
+inline ::int32_t ServerParam::_internal_synch_see_offset() const {
+  return _impl_.synch_see_offset_;
+}
+inline void ServerParam::_internal_set_synch_see_offset(::int32_t value) {
+  ;
+  _impl_.synch_see_offset_ = value;
+}
+
+// int32 extra_half_time = 187;
+inline void ServerParam::clear_extra_half_time() {
+  _impl_.extra_half_time_ = 0;
+}
+inline ::int32_t ServerParam::extra_half_time() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.extra_half_time)
+  return _internal_extra_half_time();
+}
+inline void ServerParam::set_extra_half_time(::int32_t value) {
+  _internal_set_extra_half_time(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.extra_half_time)
+}
+inline ::int32_t ServerParam::_internal_extra_half_time() const {
+  return _impl_.extra_half_time_;
+}
+inline void ServerParam::_internal_set_extra_half_time(::int32_t value) {
+  ;
+  _impl_.extra_half_time_ = value;
+}
+
+// float stamina_capacity = 188;
+inline void ServerParam::clear_stamina_capacity() {
+  _impl_.stamina_capacity_ = 0;
+}
+inline float ServerParam::stamina_capacity() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.stamina_capacity)
+  return _internal_stamina_capacity();
+}
+inline void ServerParam::set_stamina_capacity(float value) {
+  _internal_set_stamina_capacity(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.stamina_capacity)
+}
+inline float ServerParam::_internal_stamina_capacity() const {
+  return _impl_.stamina_capacity_;
+}
+inline void ServerParam::_internal_set_stamina_capacity(float value) {
+  ;
+  _impl_.stamina_capacity_ = value;
+}
+
+// float max_dash_angle = 189;
+inline void ServerParam::clear_max_dash_angle() {
+  _impl_.max_dash_angle_ = 0;
+}
+inline float ServerParam::max_dash_angle() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_dash_angle)
+  return _internal_max_dash_angle();
+}
+inline void ServerParam::set_max_dash_angle(float value) {
+  _internal_set_max_dash_angle(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_dash_angle)
+}
+inline float ServerParam::_internal_max_dash_angle() const {
+  return _impl_.max_dash_angle_;
+}
+inline void ServerParam::_internal_set_max_dash_angle(float value) {
+  ;
+  _impl_.max_dash_angle_ = value;
+}
+
+// float min_dash_angle = 190;
+inline void ServerParam::clear_min_dash_angle() {
+  _impl_.min_dash_angle_ = 0;
+}
+inline float ServerParam::min_dash_angle() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.min_dash_angle)
+  return _internal_min_dash_angle();
+}
+inline void ServerParam::set_min_dash_angle(float value) {
+  _internal_set_min_dash_angle(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.min_dash_angle)
+}
+inline float ServerParam::_internal_min_dash_angle() const {
+  return _impl_.min_dash_angle_;
+}
+inline void ServerParam::_internal_set_min_dash_angle(float value) {
+  ;
+  _impl_.min_dash_angle_ = value;
+}
+
+// float dash_angle_step = 191;
+inline void ServerParam::clear_dash_angle_step() {
+  _impl_.dash_angle_step_ = 0;
+}
+inline float ServerParam::dash_angle_step() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.dash_angle_step)
+  return _internal_dash_angle_step();
+}
+inline void ServerParam::set_dash_angle_step(float value) {
+  _internal_set_dash_angle_step(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.dash_angle_step)
+}
+inline float ServerParam::_internal_dash_angle_step() const {
+  return _impl_.dash_angle_step_;
+}
+inline void ServerParam::_internal_set_dash_angle_step(float value) {
+  ;
+  _impl_.dash_angle_step_ = value;
+}
+
+// float side_dash_rate = 192;
+inline void ServerParam::clear_side_dash_rate() {
+  _impl_.side_dash_rate_ = 0;
+}
+inline float ServerParam::side_dash_rate() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.side_dash_rate)
+  return _internal_side_dash_rate();
+}
+inline void ServerParam::set_side_dash_rate(float value) {
+  _internal_set_side_dash_rate(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.side_dash_rate)
+}
+inline float ServerParam::_internal_side_dash_rate() const {
+  return _impl_.side_dash_rate_;
+}
+inline void ServerParam::_internal_set_side_dash_rate(float value) {
+  ;
+  _impl_.side_dash_rate_ = value;
+}
+
+// float back_dash_rate = 193;
+inline void ServerParam::clear_back_dash_rate() {
+  _impl_.back_dash_rate_ = 0;
+}
+inline float ServerParam::back_dash_rate() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.back_dash_rate)
+  return _internal_back_dash_rate();
+}
+inline void ServerParam::set_back_dash_rate(float value) {
+  _internal_set_back_dash_rate(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.back_dash_rate)
+}
+inline float ServerParam::_internal_back_dash_rate() const {
+  return _impl_.back_dash_rate_;
+}
+inline void ServerParam::_internal_set_back_dash_rate(float value) {
+  ;
+  _impl_.back_dash_rate_ = value;
+}
+
+// float max_dash_power = 194;
+inline void ServerParam::clear_max_dash_power() {
+  _impl_.max_dash_power_ = 0;
+}
+inline float ServerParam::max_dash_power() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_dash_power)
+  return _internal_max_dash_power();
+}
+inline void ServerParam::set_max_dash_power(float value) {
+  _internal_set_max_dash_power(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_dash_power)
+}
+inline float ServerParam::_internal_max_dash_power() const {
+  return _impl_.max_dash_power_;
+}
+inline void ServerParam::_internal_set_max_dash_power(float value) {
+  ;
+  _impl_.max_dash_power_ = value;
+}
+
+// float min_dash_power = 195;
+inline void ServerParam::clear_min_dash_power() {
+  _impl_.min_dash_power_ = 0;
+}
+inline float ServerParam::min_dash_power() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.min_dash_power)
+  return _internal_min_dash_power();
+}
+inline void ServerParam::set_min_dash_power(float value) {
+  _internal_set_min_dash_power(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.min_dash_power)
+}
+inline float ServerParam::_internal_min_dash_power() const {
+  return _impl_.min_dash_power_;
+}
+inline void ServerParam::_internal_set_min_dash_power(float value) {
+  ;
+  _impl_.min_dash_power_ = value;
+}
+
+// float tackle_rand_factor = 196;
+inline void ServerParam::clear_tackle_rand_factor() {
+  _impl_.tackle_rand_factor_ = 0;
+}
+inline float ServerParam::tackle_rand_factor() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.tackle_rand_factor)
+  return _internal_tackle_rand_factor();
+}
+inline void ServerParam::set_tackle_rand_factor(float value) {
+  _internal_set_tackle_rand_factor(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.tackle_rand_factor)
+}
+inline float ServerParam::_internal_tackle_rand_factor() const {
+  return _impl_.tackle_rand_factor_;
+}
+inline void ServerParam::_internal_set_tackle_rand_factor(float value) {
+  ;
+  _impl_.tackle_rand_factor_ = value;
+}
+
+// float foul_detect_probability = 197;
+inline void ServerParam::clear_foul_detect_probability() {
+  _impl_.foul_detect_probability_ = 0;
+}
+inline float ServerParam::foul_detect_probability() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.foul_detect_probability)
+  return _internal_foul_detect_probability();
+}
+inline void ServerParam::set_foul_detect_probability(float value) {
+  _internal_set_foul_detect_probability(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.foul_detect_probability)
+}
+inline float ServerParam::_internal_foul_detect_probability() const {
+  return _impl_.foul_detect_probability_;
+}
+inline void ServerParam::_internal_set_foul_detect_probability(float value) {
+  ;
+  _impl_.foul_detect_probability_ = value;
+}
+
+// float foul_exponent = 198;
+inline void ServerParam::clear_foul_exponent() {
+  _impl_.foul_exponent_ = 0;
+}
+inline float ServerParam::foul_exponent() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.foul_exponent)
+  return _internal_foul_exponent();
+}
+inline void ServerParam::set_foul_exponent(float value) {
+  _internal_set_foul_exponent(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.foul_exponent)
+}
+inline float ServerParam::_internal_foul_exponent() const {
+  return _impl_.foul_exponent_;
+}
+inline void ServerParam::_internal_set_foul_exponent(float value) {
+  ;
+  _impl_.foul_exponent_ = value;
+}
+
+// int32 foul_cycles = 199;
+inline void ServerParam::clear_foul_cycles() {
+  _impl_.foul_cycles_ = 0;
+}
+inline ::int32_t ServerParam::foul_cycles() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.foul_cycles)
+  return _internal_foul_cycles();
+}
+inline void ServerParam::set_foul_cycles(::int32_t value) {
+  _internal_set_foul_cycles(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.foul_cycles)
+}
+inline ::int32_t ServerParam::_internal_foul_cycles() const {
+  return _impl_.foul_cycles_;
+}
+inline void ServerParam::_internal_set_foul_cycles(::int32_t value) {
+  ;
+  _impl_.foul_cycles_ = value;
+}
+
+// bool golden_goal = 200;
+inline void ServerParam::clear_golden_goal() {
+  _impl_.golden_goal_ = false;
+}
+inline bool ServerParam::golden_goal() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.golden_goal)
+  return _internal_golden_goal();
+}
+inline void ServerParam::set_golden_goal(bool value) {
+  _internal_set_golden_goal(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.golden_goal)
+}
+inline bool ServerParam::_internal_golden_goal() const {
+  return _impl_.golden_goal_;
+}
+inline void ServerParam::_internal_set_golden_goal(bool value) {
+  ;
+  _impl_.golden_goal_ = value;
+}
+
+// float red_card_probability = 201;
+inline void ServerParam::clear_red_card_probability() {
+  _impl_.red_card_probability_ = 0;
+}
+inline float ServerParam::red_card_probability() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.red_card_probability)
+  return _internal_red_card_probability();
+}
+inline void ServerParam::set_red_card_probability(float value) {
+  _internal_set_red_card_probability(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.red_card_probability)
+}
+inline float ServerParam::_internal_red_card_probability() const {
+  return _impl_.red_card_probability_;
+}
+inline void ServerParam::_internal_set_red_card_probability(float value) {
+  ;
+  _impl_.red_card_probability_ = value;
+}
+
+// int32 illegal_defense_duration = 202;
+inline void ServerParam::clear_illegal_defense_duration() {
+  _impl_.illegal_defense_duration_ = 0;
+}
+inline ::int32_t ServerParam::illegal_defense_duration() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.illegal_defense_duration)
+  return _internal_illegal_defense_duration();
+}
+inline void ServerParam::set_illegal_defense_duration(::int32_t value) {
+  _internal_set_illegal_defense_duration(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.illegal_defense_duration)
+}
+inline ::int32_t ServerParam::_internal_illegal_defense_duration() const {
+  return _impl_.illegal_defense_duration_;
+}
+inline void ServerParam::_internal_set_illegal_defense_duration(::int32_t value) {
+  ;
+  _impl_.illegal_defense_duration_ = value;
+}
+
+// int32 illegal_defense_number = 203;
+inline void ServerParam::clear_illegal_defense_number() {
+  _impl_.illegal_defense_number_ = 0;
+}
+inline ::int32_t ServerParam::illegal_defense_number() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.illegal_defense_number)
+  return _internal_illegal_defense_number();
+}
+inline void ServerParam::set_illegal_defense_number(::int32_t value) {
+  _internal_set_illegal_defense_number(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.illegal_defense_number)
+}
+inline ::int32_t ServerParam::_internal_illegal_defense_number() const {
+  return _impl_.illegal_defense_number_;
+}
+inline void ServerParam::_internal_set_illegal_defense_number(::int32_t value) {
+  ;
+  _impl_.illegal_defense_number_ = value;
+}
+
+// float illegal_defense_dist_x = 204;
+inline void ServerParam::clear_illegal_defense_dist_x() {
+  _impl_.illegal_defense_dist_x_ = 0;
+}
+inline float ServerParam::illegal_defense_dist_x() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.illegal_defense_dist_x)
+  return _internal_illegal_defense_dist_x();
+}
+inline void ServerParam::set_illegal_defense_dist_x(float value) {
+  _internal_set_illegal_defense_dist_x(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.illegal_defense_dist_x)
+}
+inline float ServerParam::_internal_illegal_defense_dist_x() const {
+  return _impl_.illegal_defense_dist_x_;
+}
+inline void ServerParam::_internal_set_illegal_defense_dist_x(float value) {
+  ;
+  _impl_.illegal_defense_dist_x_ = value;
+}
+
+// float illegal_defense_width = 205;
+inline void ServerParam::clear_illegal_defense_width() {
+  _impl_.illegal_defense_width_ = 0;
+}
+inline float ServerParam::illegal_defense_width() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.illegal_defense_width)
+  return _internal_illegal_defense_width();
+}
+inline void ServerParam::set_illegal_defense_width(float value) {
+  _internal_set_illegal_defense_width(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.illegal_defense_width)
+}
+inline float ServerParam::_internal_illegal_defense_width() const {
+  return _impl_.illegal_defense_width_;
+}
+inline void ServerParam::_internal_set_illegal_defense_width(float value) {
+  ;
+  _impl_.illegal_defense_width_ = value;
+}
+
+// string fixed_teamname_l = 206;
+inline void ServerParam::clear_fixed_teamname_l() {
+  _impl_.fixed_teamname_l_.ClearToEmpty();
+}
+inline const std::string& ServerParam::fixed_teamname_l() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.fixed_teamname_l)
+  return _internal_fixed_teamname_l();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_fixed_teamname_l(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.fixed_teamname_l_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.fixed_teamname_l)
+}
+inline std::string* ServerParam::mutable_fixed_teamname_l() {
+  std::string* _s = _internal_mutable_fixed_teamname_l();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.fixed_teamname_l)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_fixed_teamname_l() const {
+  return _impl_.fixed_teamname_l_.Get();
+}
+inline void ServerParam::_internal_set_fixed_teamname_l(const std::string& value) {
+  ;
+
+
+  _impl_.fixed_teamname_l_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_fixed_teamname_l() {
+  ;
+  return _impl_.fixed_teamname_l_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_fixed_teamname_l() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.fixed_teamname_l)
+  return _impl_.fixed_teamname_l_.Release();
+}
+inline void ServerParam::set_allocated_fixed_teamname_l(std::string* value) {
+  _impl_.fixed_teamname_l_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.fixed_teamname_l_.IsDefault()) {
+          _impl_.fixed_teamname_l_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.fixed_teamname_l)
+}
+
+// string fixed_teamname_r = 207;
+inline void ServerParam::clear_fixed_teamname_r() {
+  _impl_.fixed_teamname_r_.ClearToEmpty();
+}
+inline const std::string& ServerParam::fixed_teamname_r() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.fixed_teamname_r)
+  return _internal_fixed_teamname_r();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void ServerParam::set_fixed_teamname_r(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.fixed_teamname_r_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.ServerParam.fixed_teamname_r)
+}
+inline std::string* ServerParam::mutable_fixed_teamname_r() {
+  std::string* _s = _internal_mutable_fixed_teamname_r();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.fixed_teamname_r)
+  return _s;
+}
+inline const std::string& ServerParam::_internal_fixed_teamname_r() const {
+  return _impl_.fixed_teamname_r_.Get();
+}
+inline void ServerParam::_internal_set_fixed_teamname_r(const std::string& value) {
+  ;
+
+
+  _impl_.fixed_teamname_r_.Set(value, GetArenaForAllocation());
+}
+inline std::string* ServerParam::_internal_mutable_fixed_teamname_r() {
+  ;
+  return _impl_.fixed_teamname_r_.Mutable( GetArenaForAllocation());
+}
+inline std::string* ServerParam::release_fixed_teamname_r() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.fixed_teamname_r)
+  return _impl_.fixed_teamname_r_.Release();
+}
+inline void ServerParam::set_allocated_fixed_teamname_r(std::string* value) {
+  _impl_.fixed_teamname_r_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.fixed_teamname_r_.IsDefault()) {
+          _impl_.fixed_teamname_r_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.fixed_teamname_r)
+}
+
+// float max_catch_angle = 208;
+inline void ServerParam::clear_max_catch_angle() {
+  _impl_.max_catch_angle_ = 0;
+}
+inline float ServerParam::max_catch_angle() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_catch_angle)
+  return _internal_max_catch_angle();
+}
+inline void ServerParam::set_max_catch_angle(float value) {
+  _internal_set_max_catch_angle(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_catch_angle)
+}
+inline float ServerParam::_internal_max_catch_angle() const {
+  return _impl_.max_catch_angle_;
+}
+inline void ServerParam::_internal_set_max_catch_angle(float value) {
+  ;
+  _impl_.max_catch_angle_ = value;
+}
+
+// float min_catch_angle = 209;
+inline void ServerParam::clear_min_catch_angle() {
+  _impl_.min_catch_angle_ = 0;
+}
+inline float ServerParam::min_catch_angle() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.min_catch_angle)
+  return _internal_min_catch_angle();
+}
+inline void ServerParam::set_min_catch_angle(float value) {
+  _internal_set_min_catch_angle(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.min_catch_angle)
+}
+inline float ServerParam::_internal_min_catch_angle() const {
+  return _impl_.min_catch_angle_;
+}
+inline void ServerParam::_internal_set_min_catch_angle(float value) {
+  ;
+  _impl_.min_catch_angle_ = value;
+}
+
+// int32 random_seed = 210;
+inline void ServerParam::clear_random_seed() {
+  _impl_.random_seed_ = 0;
+}
+inline ::int32_t ServerParam::random_seed() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.random_seed)
+  return _internal_random_seed();
+}
+inline void ServerParam::set_random_seed(::int32_t value) {
+  _internal_set_random_seed(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.random_seed)
+}
+inline ::int32_t ServerParam::_internal_random_seed() const {
+  return _impl_.random_seed_;
+}
+inline void ServerParam::_internal_set_random_seed(::int32_t value) {
+  ;
+  _impl_.random_seed_ = value;
+}
+
+// float long_kick_power_factor = 211;
+inline void ServerParam::clear_long_kick_power_factor() {
+  _impl_.long_kick_power_factor_ = 0;
+}
+inline float ServerParam::long_kick_power_factor() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.long_kick_power_factor)
+  return _internal_long_kick_power_factor();
+}
+inline void ServerParam::set_long_kick_power_factor(float value) {
+  _internal_set_long_kick_power_factor(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.long_kick_power_factor)
+}
+inline float ServerParam::_internal_long_kick_power_factor() const {
+  return _impl_.long_kick_power_factor_;
+}
+inline void ServerParam::_internal_set_long_kick_power_factor(float value) {
+  ;
+  _impl_.long_kick_power_factor_ = value;
+}
+
+// int32 long_kick_delay = 212;
+inline void ServerParam::clear_long_kick_delay() {
+  _impl_.long_kick_delay_ = 0;
+}
+inline ::int32_t ServerParam::long_kick_delay() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.long_kick_delay)
+  return _internal_long_kick_delay();
+}
+inline void ServerParam::set_long_kick_delay(::int32_t value) {
+  _internal_set_long_kick_delay(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.long_kick_delay)
+}
+inline ::int32_t ServerParam::_internal_long_kick_delay() const {
+  return _impl_.long_kick_delay_;
+}
+inline void ServerParam::_internal_set_long_kick_delay(::int32_t value) {
+  ;
+  _impl_.long_kick_delay_ = value;
+}
+
+// int32 max_monitors = 213;
+inline void ServerParam::clear_max_monitors() {
+  _impl_.max_monitors_ = 0;
+}
+inline ::int32_t ServerParam::max_monitors() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.max_monitors)
+  return _internal_max_monitors();
+}
+inline void ServerParam::set_max_monitors(::int32_t value) {
+  _internal_set_max_monitors(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.max_monitors)
+}
+inline ::int32_t ServerParam::_internal_max_monitors() const {
+  return _impl_.max_monitors_;
+}
+inline void ServerParam::_internal_set_max_monitors(::int32_t value) {
+  ;
+  _impl_.max_monitors_ = value;
+}
+
+// float catchable_area = 214;
+inline void ServerParam::clear_catchable_area() {
+  _impl_.catchable_area_ = 0;
+}
+inline float ServerParam::catchable_area() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.catchable_area)
+  return _internal_catchable_area();
+}
+inline void ServerParam::set_catchable_area(float value) {
+  _internal_set_catchable_area(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.catchable_area)
+}
+inline float ServerParam::_internal_catchable_area() const {
+  return _impl_.catchable_area_;
+}
+inline void ServerParam::_internal_set_catchable_area(float value) {
+  ;
+  _impl_.catchable_area_ = value;
+}
+
+// float real_speed_max = 215;
+inline void ServerParam::clear_real_speed_max() {
+  _impl_.real_speed_max_ = 0;
+}
+inline float ServerParam::real_speed_max() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.real_speed_max)
+  return _internal_real_speed_max();
+}
+inline void ServerParam::set_real_speed_max(float value) {
+  _internal_set_real_speed_max(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.real_speed_max)
+}
+inline float ServerParam::_internal_real_speed_max() const {
+  return _impl_.real_speed_max_;
+}
+inline void ServerParam::_internal_set_real_speed_max(float value) {
+  ;
+  _impl_.real_speed_max_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// Empty
 
 #ifdef __GNUC__
 #pragma GCC diagnostic pop

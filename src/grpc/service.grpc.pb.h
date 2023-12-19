@@ -42,11 +42,20 @@ class Game final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::protos::Actions>> PrepareAsyncGetActions(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::protos::Actions>>(PrepareAsyncGetActionsRaw(context, request, cq));
     }
+    virtual ::grpc::Status SendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::protos::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::protos::Empty>> AsyncSendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::protos::Empty>>(AsyncSendServerParamsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::protos::Empty>> PrepareAsyncSendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::protos::Empty>>(PrepareAsyncSendServerParamsRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
       virtual void GetActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::Actions* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::Actions* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void SendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam* request, ::protos::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam* request, ::protos::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -54,6 +63,8 @@ class Game final {
    private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::protos::Actions>* AsyncGetActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::protos::Actions>* PrepareAsyncGetActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::protos::Empty>* AsyncSendServerParamsRaw(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::protos::Empty>* PrepareAsyncSendServerParamsRaw(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -65,11 +76,20 @@ class Game final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::protos::Actions>> PrepareAsyncGetActions(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::protos::Actions>>(PrepareAsyncGetActionsRaw(context, request, cq));
     }
+    ::grpc::Status SendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::protos::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::protos::Empty>> AsyncSendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::protos::Empty>>(AsyncSendServerParamsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::protos::Empty>> PrepareAsyncSendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::protos::Empty>>(PrepareAsyncSendServerParamsRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
       void GetActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::Actions* response, std::function<void(::grpc::Status)>) override;
       void GetActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::Actions* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam* request, ::protos::Empty* response, std::function<void(::grpc::Status)>) override;
+      void SendServerParams(::grpc::ClientContext* context, const ::protos::ServerParam* request, ::protos::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -83,7 +103,10 @@ class Game final {
     class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::protos::Actions>* AsyncGetActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::protos::Actions>* PrepareAsyncGetActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::protos::Empty>* AsyncSendServerParamsRaw(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::protos::Empty>* PrepareAsyncSendServerParamsRaw(::grpc::ClientContext* context, const ::protos::ServerParam& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetActions_;
+    const ::grpc::internal::RpcMethod rpcmethod_SendServerParams_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -92,6 +115,7 @@ class Game final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status GetActions(::grpc::ServerContext* context, const ::protos::State* request, ::protos::Actions* response);
+    virtual ::grpc::Status SendServerParams(::grpc::ServerContext* context, const ::protos::ServerParam* request, ::protos::Empty* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetActions : public BaseClass {
@@ -113,7 +137,27 @@ class Game final {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetActions<Service > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_SendServerParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SendServerParams() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_SendServerParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendServerParams(::grpc::ServerContext* /*context*/, const ::protos::ServerParam* /*request*/, ::protos::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendServerParams(::grpc::ServerContext* context, ::protos::ServerParam* request, ::grpc::ServerAsyncResponseWriter< ::protos::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_GetActions<WithAsyncMethod_SendServerParams<Service > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_GetActions : public BaseClass {
    private:
@@ -141,7 +185,34 @@ class Game final {
     virtual ::grpc::ServerUnaryReactor* GetActions(
       ::grpc::CallbackServerContext* /*context*/, const ::protos::State* /*request*/, ::protos::Actions* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_GetActions<Service > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_SendServerParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_SendServerParams() {
+      ::grpc::Service::MarkMethodCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::protos::ServerParam, ::protos::Empty>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::protos::ServerParam* request, ::protos::Empty* response) { return this->SendServerParams(context, request, response); }));}
+    void SetMessageAllocatorFor_SendServerParams(
+        ::grpc::MessageAllocator< ::protos::ServerParam, ::protos::Empty>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::protos::ServerParam, ::protos::Empty>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_SendServerParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendServerParams(::grpc::ServerContext* /*context*/, const ::protos::ServerParam* /*request*/, ::protos::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SendServerParams(
+      ::grpc::CallbackServerContext* /*context*/, const ::protos::ServerParam* /*request*/, ::protos::Empty* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_GetActions<WithCallbackMethod_SendServerParams<Service > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_GetActions : public BaseClass {
@@ -156,6 +227,23 @@ class Game final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetActions(::grpc::ServerContext* /*context*/, const ::protos::State* /*request*/, ::protos::Actions* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SendServerParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SendServerParams() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_SendServerParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendServerParams(::grpc::ServerContext* /*context*/, const ::protos::ServerParam* /*request*/, ::protos::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -181,6 +269,26 @@ class Game final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_SendServerParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SendServerParams() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_SendServerParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendServerParams(::grpc::ServerContext* /*context*/, const ::protos::ServerParam* /*request*/, ::protos::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendServerParams(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_GetActions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -200,6 +308,28 @@ class Game final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* GetActions(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_SendServerParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_SendServerParams() {
+      ::grpc::Service::MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SendServerParams(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_SendServerParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendServerParams(::grpc::ServerContext* /*context*/, const ::protos::ServerParam* /*request*/, ::protos::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SendServerParams(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -229,9 +359,36 @@ class Game final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetActions(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::protos::State,::protos::Actions>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetActions<Service > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SendServerParams : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_SendServerParams() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::protos::ServerParam, ::protos::Empty>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::protos::ServerParam, ::protos::Empty>* streamer) {
+                       return this->StreamedSendServerParams(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_SendServerParams() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SendServerParams(::grpc::ServerContext* /*context*/, const ::protos::ServerParam* /*request*/, ::protos::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSendServerParams(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::protos::ServerParam,::protos::Empty>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_GetActions<WithStreamedUnaryMethod_SendServerParams<Service > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetActions<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_GetActions<WithStreamedUnaryMethod_SendServerParams<Service > > StreamedService;
 };
 
 }  // namespace protos
