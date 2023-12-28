@@ -154,3 +154,86 @@ class Tools:
     @staticmethod
     def effective_turn(command_moment, speed, inertia_moment):
         return command_moment / (1.0 + inertia_moment * speed)
+    
+    @staticmethod
+    def get_nearest_teammate(agent: IAgent, position: Vector2D):
+        players = agent.wm.teammates
+        best_player = None
+        min_dist2 = 1000
+        for player in players:
+            player_position = Tools.vector2d_message_to_vector2d(player.position)
+            d2 = player_position.dist2( position )
+            if d2 < min_dist2:
+                min_dist2 = d2
+                best_player = player
+
+        return best_player
+    
+    @staticmethod
+    def predict_opponent_reach_step(agent: IAgent, opponent: pb2.Player, first_ball_pos: Vector2D, first_ball_vel: Vector2D,
+                                    ball_move_angle: AngleDeg, receive_point: Vector2D, max_cycle, description):
+        sp = agent.serverParams
+
+        penalty_area = Rect2D(Vector2D(sp.their_penalty_area_line_x, -sp.penalty_area_half_width ),
+                                Size2D(sp.penalty_area_length, sp.penalty_area_half_width * 2.0))
+        CONTROL_AREA_BUF = 0.15
+
+        opp_pos = Vector2D(opponent.position.x, opponent.position.y)
+        opp_vel = Vector2D(opponent.velocity.x, opponent.velocity.y)
+        ptype:pb2.PlayerType = agent.get_type(opponent.type_id)
+        min_cycle = Tools.estimate_min_reach_cycle(opp_pos, ptype.real_speed_max, first_ball_pos,
+                                                   ball_move_angle)
+
+        if min_cycle < 0:
+            return 1000, None
+
+        for cycle in range(max(1, min_cycle), max_cycle + 1):
+            ball_pos = smath.inertia_n_step_point(first_ball_pos, first_ball_vel, cycle, sp.ball_decay)
+            control_area = sp.catchable_area if opponent.is_goalie and penalty_area.contains(ball_pos) else ptype.kickable_area
+
+            inertia_pos = Tools.inertia_point(opp_pos, opp_vel, cycle, ptype.player_decay)
+            target_dist = inertia_pos.dist(ball_pos)
+
+            dash_dist = target_dist
+            if description == 'T' \
+                and first_ball_vel.x() > 2.\
+                and ( receive_point.x() > agent.wm.offside_line_x or receive_point.x() > 30.):
+                pass
+            else:
+                dash_dist -= Tools.estimate_virtual_dash_distance(opponent, ptype.real_speed_max)
+            if dash_dist - control_area - CONTROL_AREA_BUF < 0.001:
+                return cycle, ball_pos
+
+            if description == 'T' \
+                and first_ball_vel.x() > 2.\
+                and ( receive_point.x() > agent.wm.offside_line_x or receive_point.x() > 30.):
+
+                dash_dist -= control_area
+            else:
+                if receive_point.x() < 25.:
+                    dash_dist -= control_area + 0.5
+                else:
+                    dash_dist -= control_area + 0.2
+
+            if dash_dist > ptype.real_speed_max * (cycle + min(opponent.pos_count, 5)):
+                continue
+
+            n_dash = Tools.cycles_to_reach_distance(dash_dist, ptype.real_speed_max)
+            if n_dash > cycle + opponent.pos_count:
+                continue
+
+            n_turn = 0
+            if opponent.body_direction_count > 1:
+                n_turn = Tools.predict_player_turn_cycle(sp, ptype, AngleDeg(opponent.body_direction), opp_vel.r(),
+                                                         target_dist,
+                                                         (ball_pos - inertia_pos).th(), control_area, True)
+
+            n_step = n_turn + n_dash if n_turn == 0 else n_turn + n_dash + 1
+
+            bonus_step = 0
+            if opponent.is_tackling:
+                bonus_step = -5
+            if n_step - bonus_step <= cycle:
+                return cycle, ball_pos
+        return 1000, None
+

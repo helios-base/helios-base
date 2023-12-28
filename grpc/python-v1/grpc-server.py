@@ -32,7 +32,7 @@ class Game(pb2_grpc.GameServicer):
 
 
 def serve():
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=22))
     pb2_grpc.add_GameServicer_to_server(Game(), server)
     server.add_insecure_port('[::]:50051')
     server.start()

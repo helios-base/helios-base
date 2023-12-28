@@ -16,6 +16,7 @@ class WithBallDecisionMaker(IDecisionMaker):
         candidate_actions = self.pass_generator.generate(agent, 0)
 
         if len(candidate_actions) == 0:
+            agent.add_action(pb2.Action(body_hold_ball=pb2.Body_HoldBall()))
             return
 
         agent.add_log_text(pb2.LoggerLevel.PASS, f"candidate_actions: {candidate_actions}")
