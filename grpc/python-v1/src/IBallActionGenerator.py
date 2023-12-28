@@ -11,6 +11,6 @@ class BallActionGenerator:
     def log_debug(self, agent: IAgent, log_level:pb2.LoggerLevel):
         # (self.index, receive_point, False)
         for item in self.debug_list:
-            agent.addLogCircle(log_level, item[1].x(), item[1].y(), 0.1, "blue" if item[2] else "red", False)
-            agent.addLogMessage(log_level, f"{item[0]}", item[1].x() - 0.1, item[1].y() - 0.1, "blue" if item[2] else "red")
+            agent.add_log_circle(log_level, item[1].x(), item[1].y(), 0.1, "blue" if item[2] else "red", False)
+            agent.add_log_message(log_level, f"{item[0]}", item[1].x() - 0.1, item[1].y() - 0.1, "blue" if item[2] else "red")
         

@@ -1,10 +1,11 @@
+from abc import ABC
 import service_pb2 as pb2
 from src.DecisionMaker import DecisionMaker
 from src.IAgent import IAgent
 from src.FormationStrategy import FormationStrategy
 
 
-class SamplePlayerAgent(IAgent):
+class SamplePlayerAgent(IAgent, ABC):
     def __init__(self):
         super().__init__()
         self.decisionMaker = DecisionMaker()
@@ -14,19 +15,19 @@ class SamplePlayerAgent(IAgent):
         self.playerTypes: dict[pb2.PlayerType] = {}
         self.wm: pb2.WorldModel = None
     
-    def getActions(self, wm:pb2.WorldModel) -> pb2.Actions:
+    def get_actions(self, wm:pb2.WorldModel) -> pb2.Actions:
         self.wm = wm
         self.actions.clear()
         self.strategy.update(wm)
-        self.decisionMaker.makeDecision(self)
+        self.decisionMaker.make_decision(self)
         actions = pb2.Actions()
         actions.actions.extend(self.actions)
         return actions
     
-    def getStrategy(self):
+    def get_strategy(self):
         return self.strategy
         
-    def setParams(self, params):
+    def set_params(self, params):
         if isinstance(params, pb2.ServerParam):
             self.serverParams = params
         elif isinstance(params, pb2.PlayerParam):

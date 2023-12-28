@@ -10,8 +10,8 @@ class DecisionMaker(IDecisionMaker):
         self.playOnDecisionMaker = PlayOnDecisionMaker()
         self.setPlayDecisionMaker = SetPlayDecisionMaker()
     
-    def makeDecision(self, agent: IAgent):
+    def make_decision(self, agent: IAgent):
         # if wm.game_mode_type == pb2.GameModeType.PlayOn:
-        self.playOnDecisionMaker.makeDecision(agent)
+        self.playOnDecisionMaker.make_decision(agent)
         # elif wm.is_our_set_play or wm.is_their_set_play:
         #     self.setPlayDecisionMaker.makeDecision(agent, wm)
