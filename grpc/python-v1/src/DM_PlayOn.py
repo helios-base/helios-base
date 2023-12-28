@@ -10,9 +10,9 @@ class PlayOnDecisionMaker(IDecisionMaker):
         self.noBallDecisionMaker = NoBallDecisionMaker()
         pass
     
-    def makeDecision(self, agent: IAgent, wm: pb2.WorldModel):
+    def makeDecision(self, agent: IAgent):
         # agent.addAction(pb2.Action(dash=pb2.Dash(power=100, relative_direction=30)))
-        if wm.self.is_kickable:
-            self.withBallDecisionMaker.makeDecision(agent, wm)
+        if agent.wm.self.is_kickable:
+            self.withBallDecisionMaker.makeDecision(agent)
         else:
-            self.noBallDecisionMaker.makeDecision(agent, wm)
+            self.noBallDecisionMaker.makeDecision(agent)

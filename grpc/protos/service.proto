@@ -98,6 +98,7 @@ message Player {
   float angle_from_ball = 27;
   int32 ball_reach_steps = 28;
   bool is_tackling = 29;
+  int32 type_id = 30;
 }
 
 message Self {
@@ -135,6 +136,8 @@ message Self {
   float tackle_probability = 32;
   float foul_probability = 33;
   ViewWidth view_width = 34;
+  int32 type_id = 35;
+  float kick_rate = 36;
 }
 
 enum InterceptActionType {
@@ -1011,6 +1014,12 @@ message ServerParam {
   int32 max_monitors = 213;
   float catchable_area = 214; 
   float real_speed_max = 215; 
+  float pitch_half_length = 216;
+  float pitch_half_width = 217;
+  float our_penalty_area_line_x = 218;
+  float their_penalty_area_line_x = 219;
+  float penalty_area_half_width = 220;
+  float penalty_area_length = 221;
 }
 
 message PlayerParam {

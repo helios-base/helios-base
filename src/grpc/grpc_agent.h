@@ -17,6 +17,7 @@ class GrpcAgent {
 public:
     std::shared_ptr<Channel> channel;
     std::unique_ptr<Game::Stub> stub_;
+    bool param_sent = false;
     GrpcAgent() {}
 
     void init(std::string target="localhost:50051"){
@@ -24,6 +25,14 @@ public:
         stub_ = Game::NewStub(channel);
     }
 
+    void sendParams(){
+        if (!param_sent){
+            sendServerParam();
+            sendPlayerParams();
+            sendPlayerType();
+            param_sent = true;
+        }
+    }
     ~GrpcAgent() {}
     void getAction(rcsc::PlayerAgent *agent) const;
     void addSayMessage(rcsc::PlayerAgent *agent, protos::Say sayMessage) const;

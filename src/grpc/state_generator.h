@@ -107,6 +107,8 @@ public:
         res->set_tackle_probability(static_cast<float>(self.tackleProbability()));
         res->set_foul_probability(static_cast<float>(self.foulProbability()));
         res->set_view_width(convertViewWidth(self.viewWidth().type()));
+        res->set_type_id(self.playerTypePtr()->id());
+        res->set_kick_rate(self.kickRate());
         return res;
     }
 
@@ -184,6 +186,7 @@ public:
         p->set_angle_from_ball(static_cast<float>(player->angleFromBall().degree()));
         p->set_ball_reach_steps(player->ballReachStep());
         p->set_is_tackling(player->isTackling());
+        p->set_type_id(player->playerTypePtr()->id());
     }
 
     static void updateAbstractPlayerObject(protos::Player * p, const rcsc::AbstractPlayerObject * player){
@@ -216,6 +219,7 @@ public:
         p->set_angle_from_ball(static_cast<float>(player->angleFromBall().degree()));
         p->set_ball_reach_steps(player->ballReachStep());
         p->set_is_tackling(player->isTackling());
+        p->set_type_id(player->playerTypePtr()->id());
     }
 
     static protos::WorldModel * convertWorldModel(const rcsc::WorldModel & wm){

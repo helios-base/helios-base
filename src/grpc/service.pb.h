@@ -1528,6 +1528,7 @@ class Player final :
     kDistFromBallFieldNumber = 26,
     kAngleFromBallFieldNumber = 27,
     kBallReachStepsFieldNumber = 28,
+    kTypeIdFieldNumber = 30,
   };
   // .protos.Vector2D position = 1;
   bool has_position() const;
@@ -1839,6 +1840,16 @@ class Player final :
   void _internal_set_ball_reach_steps(::int32_t value);
 
   public:
+  // int32 type_id = 30;
+  void clear_type_id() ;
+  ::int32_t type_id() const;
+  void set_type_id(::int32_t value);
+
+  private:
+  ::int32_t _internal_type_id() const;
+  void _internal_set_type_id(::int32_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:protos.Player)
  private:
   class _Internal;
@@ -1878,6 +1889,7 @@ class Player final :
     float dist_from_ball_;
     float angle_from_ball_;
     ::int32_t ball_reach_steps_;
+    ::int32_t type_id_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_service_2eproto;
@@ -2045,6 +2057,8 @@ class Self final :
     kTackleProbabilityFieldNumber = 32,
     kFoulProbabilityFieldNumber = 33,
     kViewWidthFieldNumber = 34,
+    kTypeIdFieldNumber = 35,
+    kKickRateFieldNumber = 36,
   };
   // .protos.Vector2D position = 1;
   bool has_position() const;
@@ -2406,6 +2420,26 @@ class Self final :
   void _internal_set_view_width(::protos::ViewWidth value);
 
   public:
+  // int32 type_id = 35;
+  void clear_type_id() ;
+  ::int32_t type_id() const;
+  void set_type_id(::int32_t value);
+
+  private:
+  ::int32_t _internal_type_id() const;
+  void _internal_set_type_id(::int32_t value);
+
+  public:
+  // float kick_rate = 36;
+  void clear_kick_rate() ;
+  float kick_rate() const;
+  void set_kick_rate(float value);
+
+  private:
+  float _internal_kick_rate() const;
+  void _internal_set_kick_rate(float value);
+
+  public:
   // @@protoc_insertion_point(class_scope:protos.Self)
  private:
   class _Internal;
@@ -2450,6 +2484,8 @@ class Self final :
     float tackle_probability_;
     float foul_probability_;
     int view_width_;
+    ::int32_t type_id_;
+    float kick_rate_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_service_2eproto;
@@ -20530,6 +20566,12 @@ class ServerParam final :
     kMaxMonitorsFieldNumber = 213,
     kCatchableAreaFieldNumber = 214,
     kRealSpeedMaxFieldNumber = 215,
+    kPitchHalfLengthFieldNumber = 216,
+    kPitchHalfWidthFieldNumber = 217,
+    kOurPenaltyAreaLineXFieldNumber = 218,
+    kTheirPenaltyAreaLineXFieldNumber = 219,
+    kPenaltyAreaHalfWidthFieldNumber = 220,
+    kPenaltyAreaLengthFieldNumber = 221,
   };
   // string replay_file = 115;
   void clear_replay_file() ;
@@ -22831,6 +22873,66 @@ class ServerParam final :
   void _internal_set_real_speed_max(float value);
 
   public:
+  // float pitch_half_length = 216;
+  void clear_pitch_half_length() ;
+  float pitch_half_length() const;
+  void set_pitch_half_length(float value);
+
+  private:
+  float _internal_pitch_half_length() const;
+  void _internal_set_pitch_half_length(float value);
+
+  public:
+  // float pitch_half_width = 217;
+  void clear_pitch_half_width() ;
+  float pitch_half_width() const;
+  void set_pitch_half_width(float value);
+
+  private:
+  float _internal_pitch_half_width() const;
+  void _internal_set_pitch_half_width(float value);
+
+  public:
+  // float our_penalty_area_line_x = 218;
+  void clear_our_penalty_area_line_x() ;
+  float our_penalty_area_line_x() const;
+  void set_our_penalty_area_line_x(float value);
+
+  private:
+  float _internal_our_penalty_area_line_x() const;
+  void _internal_set_our_penalty_area_line_x(float value);
+
+  public:
+  // float their_penalty_area_line_x = 219;
+  void clear_their_penalty_area_line_x() ;
+  float their_penalty_area_line_x() const;
+  void set_their_penalty_area_line_x(float value);
+
+  private:
+  float _internal_their_penalty_area_line_x() const;
+  void _internal_set_their_penalty_area_line_x(float value);
+
+  public:
+  // float penalty_area_half_width = 220;
+  void clear_penalty_area_half_width() ;
+  float penalty_area_half_width() const;
+  void set_penalty_area_half_width(float value);
+
+  private:
+  float _internal_penalty_area_half_width() const;
+  void _internal_set_penalty_area_half_width(float value);
+
+  public:
+  // float penalty_area_length = 221;
+  void clear_penalty_area_length() ;
+  float penalty_area_length() const;
+  void set_penalty_area_length(float value);
+
+  private:
+  float _internal_penalty_area_length() const;
+  void _internal_set_penalty_area_length(float value);
+
+  public:
   // @@protoc_insertion_point(class_scope:protos.ServerParam)
  private:
   class _Internal;
@@ -23054,6 +23156,12 @@ class ServerParam final :
     ::int32_t max_monitors_;
     float catchable_area_;
     float real_speed_max_;
+    float pitch_half_length_;
+    float pitch_half_width_;
+    float our_penalty_area_line_x_;
+    float their_penalty_area_line_x_;
+    float penalty_area_half_width_;
+    float penalty_area_length_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -26042,6 +26150,26 @@ inline void Player::_internal_set_is_tackling(bool value) {
   _impl_.is_tackling_ = value;
 }
 
+// int32 type_id = 30;
+inline void Player::clear_type_id() {
+  _impl_.type_id_ = 0;
+}
+inline ::int32_t Player::type_id() const {
+  // @@protoc_insertion_point(field_get:protos.Player.type_id)
+  return _internal_type_id();
+}
+inline void Player::set_type_id(::int32_t value) {
+  _internal_set_type_id(value);
+  // @@protoc_insertion_point(field_set:protos.Player.type_id)
+}
+inline ::int32_t Player::_internal_type_id() const {
+  return _impl_.type_id_;
+}
+inline void Player::_internal_set_type_id(::int32_t value) {
+  ;
+  _impl_.type_id_ = value;
+}
+
 // -------------------------------------------------------------------
 
 // Self
@@ -27059,6 +27187,46 @@ inline ::protos::ViewWidth Self::_internal_view_width() const {
 inline void Self::_internal_set_view_width(::protos::ViewWidth value) {
   ;
   _impl_.view_width_ = value;
+}
+
+// int32 type_id = 35;
+inline void Self::clear_type_id() {
+  _impl_.type_id_ = 0;
+}
+inline ::int32_t Self::type_id() const {
+  // @@protoc_insertion_point(field_get:protos.Self.type_id)
+  return _internal_type_id();
+}
+inline void Self::set_type_id(::int32_t value) {
+  _internal_set_type_id(value);
+  // @@protoc_insertion_point(field_set:protos.Self.type_id)
+}
+inline ::int32_t Self::_internal_type_id() const {
+  return _impl_.type_id_;
+}
+inline void Self::_internal_set_type_id(::int32_t value) {
+  ;
+  _impl_.type_id_ = value;
+}
+
+// float kick_rate = 36;
+inline void Self::clear_kick_rate() {
+  _impl_.kick_rate_ = 0;
+}
+inline float Self::kick_rate() const {
+  // @@protoc_insertion_point(field_get:protos.Self.kick_rate)
+  return _internal_kick_rate();
+}
+inline void Self::set_kick_rate(float value) {
+  _internal_set_kick_rate(value);
+  // @@protoc_insertion_point(field_set:protos.Self.kick_rate)
+}
+inline float Self::_internal_kick_rate() const {
+  return _impl_.kick_rate_;
+}
+inline void Self::_internal_set_kick_rate(float value) {
+  ;
+  _impl_.kick_rate_ = value;
 }
 
 // -------------------------------------------------------------------
@@ -47161,6 +47329,126 @@ inline float ServerParam::_internal_real_speed_max() const {
 inline void ServerParam::_internal_set_real_speed_max(float value) {
   ;
   _impl_.real_speed_max_ = value;
+}
+
+// float pitch_half_length = 216;
+inline void ServerParam::clear_pitch_half_length() {
+  _impl_.pitch_half_length_ = 0;
+}
+inline float ServerParam::pitch_half_length() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pitch_half_length)
+  return _internal_pitch_half_length();
+}
+inline void ServerParam::set_pitch_half_length(float value) {
+  _internal_set_pitch_half_length(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pitch_half_length)
+}
+inline float ServerParam::_internal_pitch_half_length() const {
+  return _impl_.pitch_half_length_;
+}
+inline void ServerParam::_internal_set_pitch_half_length(float value) {
+  ;
+  _impl_.pitch_half_length_ = value;
+}
+
+// float pitch_half_width = 217;
+inline void ServerParam::clear_pitch_half_width() {
+  _impl_.pitch_half_width_ = 0;
+}
+inline float ServerParam::pitch_half_width() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.pitch_half_width)
+  return _internal_pitch_half_width();
+}
+inline void ServerParam::set_pitch_half_width(float value) {
+  _internal_set_pitch_half_width(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.pitch_half_width)
+}
+inline float ServerParam::_internal_pitch_half_width() const {
+  return _impl_.pitch_half_width_;
+}
+inline void ServerParam::_internal_set_pitch_half_width(float value) {
+  ;
+  _impl_.pitch_half_width_ = value;
+}
+
+// float our_penalty_area_line_x = 218;
+inline void ServerParam::clear_our_penalty_area_line_x() {
+  _impl_.our_penalty_area_line_x_ = 0;
+}
+inline float ServerParam::our_penalty_area_line_x() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.our_penalty_area_line_x)
+  return _internal_our_penalty_area_line_x();
+}
+inline void ServerParam::set_our_penalty_area_line_x(float value) {
+  _internal_set_our_penalty_area_line_x(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.our_penalty_area_line_x)
+}
+inline float ServerParam::_internal_our_penalty_area_line_x() const {
+  return _impl_.our_penalty_area_line_x_;
+}
+inline void ServerParam::_internal_set_our_penalty_area_line_x(float value) {
+  ;
+  _impl_.our_penalty_area_line_x_ = value;
+}
+
+// float their_penalty_area_line_x = 219;
+inline void ServerParam::clear_their_penalty_area_line_x() {
+  _impl_.their_penalty_area_line_x_ = 0;
+}
+inline float ServerParam::their_penalty_area_line_x() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.their_penalty_area_line_x)
+  return _internal_their_penalty_area_line_x();
+}
+inline void ServerParam::set_their_penalty_area_line_x(float value) {
+  _internal_set_their_penalty_area_line_x(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.their_penalty_area_line_x)
+}
+inline float ServerParam::_internal_their_penalty_area_line_x() const {
+  return _impl_.their_penalty_area_line_x_;
+}
+inline void ServerParam::_internal_set_their_penalty_area_line_x(float value) {
+  ;
+  _impl_.their_penalty_area_line_x_ = value;
+}
+
+// float penalty_area_half_width = 220;
+inline void ServerParam::clear_penalty_area_half_width() {
+  _impl_.penalty_area_half_width_ = 0;
+}
+inline float ServerParam::penalty_area_half_width() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.penalty_area_half_width)
+  return _internal_penalty_area_half_width();
+}
+inline void ServerParam::set_penalty_area_half_width(float value) {
+  _internal_set_penalty_area_half_width(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.penalty_area_half_width)
+}
+inline float ServerParam::_internal_penalty_area_half_width() const {
+  return _impl_.penalty_area_half_width_;
+}
+inline void ServerParam::_internal_set_penalty_area_half_width(float value) {
+  ;
+  _impl_.penalty_area_half_width_ = value;
+}
+
+// float penalty_area_length = 221;
+inline void ServerParam::clear_penalty_area_length() {
+  _impl_.penalty_area_length_ = 0;
+}
+inline float ServerParam::penalty_area_length() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.penalty_area_length)
+  return _internal_penalty_area_length();
+}
+inline void ServerParam::set_penalty_area_length(float value) {
+  _internal_set_penalty_area_length(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.penalty_area_length)
+}
+inline float ServerParam::_internal_penalty_area_length() const {
+  return _impl_.penalty_area_length_;
+}
+inline void ServerParam::_internal_set_penalty_area_length(float value) {
+  ;
+  _impl_.penalty_area_length_ = value;
 }
 
 // -------------------------------------------------------------------

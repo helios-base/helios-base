@@ -17,6 +17,18 @@ class Game(pb2_grpc.GameServicer):
         # with lock:
         actions = self.agent.getActions(request.world_model)
         return actions
+    
+    def SendServerParams(self, request: pb2.ServerParam, context):
+        self.agent.setParams(request)
+        return pb2.Empty()
+    
+    def SendPlayerParams(self, request:pb2.PlayerParam, context):
+        self.agent.setParams(request)
+        return pb2.Empty()
+    
+    def SendPlayerType(self, request: pb2.PlayerType, context):
+        self.agent.setParams(request)
+        return pb2.Empty()
 
 
 def serve():

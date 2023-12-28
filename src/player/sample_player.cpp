@@ -253,6 +253,7 @@ SamplePlayer::actionImpl()
                       __FILE__": preprocess done" );
         return;
     }
+    M_grpc_agent.sendParams();
     M_grpc_agent.getAction(this);
     return;
     //

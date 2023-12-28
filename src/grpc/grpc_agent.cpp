@@ -67,36 +67,36 @@ void GrpcAgent::sendServerParam() const {
     protos::ServerParam serverParam;
     const rcsc::ServerParam& SP = rcsc::ServerParam::i();
     
-    std::string replayFile = SP.replayFile();
-    serverParam.set_allocated_replay_file(&replayFile);
-    std::string landmarkFile = SP.landmarkFile();
-    serverParam.set_allocated_landmark_file(&landmarkFile);
-    std::string textLogDir = SP.textLogDir();
-    serverParam.set_allocated_text_log_dir(&textLogDir);
-    std::string gameLogDir = SP.gameLogDir();
-    serverParam.set_allocated_game_log_dir(&gameLogDir);
-    std::string textLogFixedName = SP.textLogFixedName();
-    serverParam.set_allocated_text_log_fixed_name(&textLogFixedName);
-    std::string gameLogFixedName = SP.gameLogFixedName();
-    serverParam.set_allocated_game_log_fixed_name(&gameLogFixedName);
-    std::string logDateFormat = SP.logDateFormat();
-    serverParam.set_allocated_log_date_format(&logDateFormat);
-    std::string teamLeftStartCommand = SP.teamLeftStartCommand();
-    serverParam.set_allocated_team_l_start(&teamLeftStartCommand);
-    std::string teamRightStartCommand = SP.teamRightStartCommand();
-    serverParam.set_allocated_team_r_start(&teamRightStartCommand);
-    std::string keepawayLogDir = SP.keepawayLogDir();
-    serverParam.set_allocated_keepaway_log_dir(&keepawayLogDir);
-    std::string keepawayLogFixedName = SP.keepawayLogFixedName();
-    serverParam.set_allocated_keepaway_log_fixed_name(&keepawayLogFixedName);
-    std::string moduleDir = SP.moduleDir();
-    serverParam.set_allocated_module_dir(&moduleDir);
-    std::string coachMsgFile = SP.coachMsgFile();
-    serverParam.set_allocated_coach_msg_file(&coachMsgFile);
-    std::string fixedTeamNameLeft = SP.fixedTeamNameLeft();
-    serverParam.set_allocated_fixed_teamname_l(&fixedTeamNameLeft);
-    std::string fixedTeamNameRight = SP.fixedTeamNameRight();
-    serverParam.set_allocated_fixed_teamname_r(&fixedTeamNameRight);
+//    std::string replayFile = SP.replayFile();
+//    serverParam.set_allocated_replay_file(&replayFile);
+//    std::string landmarkFile = SP.landmarkFile();
+//    serverParam.set_allocated_landmark_file(&landmarkFile);
+//    std::string textLogDir = SP.textLogDir();
+//    serverParam.set_allocated_text_log_dir(&textLogDir);
+//    std::string gameLogDir = SP.gameLogDir();
+//    serverParam.set_allocated_game_log_dir(&gameLogDir);
+//    std::string textLogFixedName = SP.textLogFixedName();
+//    serverParam.set_allocated_text_log_fixed_name(&textLogFixedName);
+//    std::string gameLogFixedName = SP.gameLogFixedName();
+//    serverParam.set_allocated_game_log_fixed_name(&gameLogFixedName);
+//    std::string logDateFormat = SP.logDateFormat();
+//    serverParam.set_allocated_log_date_format(&logDateFormat);
+//    std::string teamLeftStartCommand = SP.teamLeftStartCommand();
+//    serverParam.set_allocated_team_l_start(&teamLeftStartCommand);
+//    std::string teamRightStartCommand = SP.teamRightStartCommand();
+//    serverParam.set_allocated_team_r_start(&teamRightStartCommand);
+//    std::string keepawayLogDir = SP.keepawayLogDir();
+//    serverParam.set_allocated_keepaway_log_dir(&keepawayLogDir);
+//    std::string keepawayLogFixedName = SP.keepawayLogFixedName();
+//    serverParam.set_allocated_keepaway_log_fixed_name(&keepawayLogFixedName);
+//    std::string moduleDir = SP.moduleDir();
+//    serverParam.set_allocated_module_dir(&moduleDir);
+//    std::string coachMsgFile = SP.coachMsgFile();
+//    serverParam.set_allocated_coach_msg_file(&coachMsgFile);
+//    std::string fixedTeamNameLeft = SP.fixedTeamNameLeft();
+//    serverParam.set_allocated_fixed_teamname_l(&fixedTeamNameLeft);
+//    std::string fixedTeamNameRight = SP.fixedTeamNameRight();
+//    serverParam.set_allocated_fixed_teamname_r(&fixedTeamNameRight);
 
     serverParam.set_goal_width(SP.goalWidth());
     serverParam.set_inertia_moment(SP.defaultInertiaMoment());
@@ -299,6 +299,13 @@ void GrpcAgent::sendServerParam() const {
     serverParam.set_catchable_area(SP.catchableArea());
     serverParam.set_real_speed_max(SP.defaultRealSpeedMax());
 
+    serverParam.set_pitch_half_length(SP.pitchHalfLength());
+    serverParam.set_pitch_half_width(SP.pitchHalfWidth());
+    serverParam.set_our_penalty_area_line_x(SP.ourPenaltyAreaLineX());
+    serverParam.set_their_penalty_area_line_x(SP.theirPenaltyAreaLineX());
+    serverParam.set_penalty_area_half_width(SP.penaltyAreaHalfWidth());
+    serverParam.set_penalty_area_length(SP.penaltyAreaLength());
+
     ClientContext context;
     protos::Empty empty;
     Status status = stub_->SendServerParams(&context, serverParam, &empty);
@@ -356,8 +363,10 @@ void GrpcAgent::sendPlayerParams() const {
 void GrpcAgent::sendPlayerType() const {
     const rcsc::PlayerParam& PP = rcsc::PlayerParam::i();
     const rcsc::PlayerTypeSet& PT = rcsc::PlayerTypeSet::i();
-
-    for (int i = 0; i < PP.ptMax(); i++) {
+    LOG("pt");
+    LOG(PT.playerTypeMap().size());
+    for (int i = 0; i < PT.playerTypeMap().size(); i++) {
+        LOG(i);
         protos::PlayerType playerTypeGrpc;
         const rcsc::PlayerType* playerType = PT.get(i);
 

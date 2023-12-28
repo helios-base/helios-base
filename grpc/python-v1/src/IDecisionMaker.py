@@ -4,5 +4,5 @@ from src.IAgent import IAgent
 
 class IDecisionMaker(ABC):
     @abstractmethod
-    def makeDecision(self, agent: IAgent, wm: pb2.WorldModel):
+    def makeDecision(self, agent: IAgent):
         pass
