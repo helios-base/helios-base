@@ -209,6 +209,9 @@ extern GoalieAndPlayerMessageDefaultTypeInternal _GoalieAndPlayerMessage_default
 class GoalieMessage;
 struct GoalieMessageDefaultTypeInternal;
 extern GoalieMessageDefaultTypeInternal _GoalieMessage_default_instance_;
+class InitMessage;
+struct InitMessageDefaultTypeInternal;
+extern InitMessageDefaultTypeInternal _InitMessage_default_instance_;
 class InterceptInfo;
 struct InterceptInfoDefaultTypeInternal;
 extern InterceptInfoDefaultTypeInternal _InterceptInfo_default_instance_;
@@ -464,6 +467,8 @@ template <>
 template <>
 ::protos::GoalieMessage* Arena::CreateMaybeMessage<::protos::GoalieMessage>(Arena*);
 template <>
+::protos::InitMessage* Arena::CreateMaybeMessage<::protos::InitMessage>(Arena*);
+template <>
 ::protos::InterceptInfo* Arena::CreateMaybeMessage<::protos::InterceptInfo>(Arena*);
 template <>
 ::protos::InterceptMessage* Arena::CreateMaybeMessage<::protos::InterceptMessage>(Arena*);
@@ -716,59 +721,36 @@ enum GameModeType : int {
   BeforeKickOff = 0,
   TimeOver = 1,
   PlayOn = 2,
-  KickOff_Left = 3,
-  KickOff_Right = 4,
-  KickIn_Left = 5,
-  KickIn_Right = 6,
-  FreeKick_Left = 7,
-  FreeKick_Right = 8,
-  CornerKick_Left = 9,
-  CornerKick_Right = 10,
-  GoalKick_Left = 11,
-  GoalKick_Right = 12,
-  AfterGoal_Left = 13,
-  AfterGoal_Right = 14,
-  OffSide_Left = 15,
-  OffSide_Right = 16,
-  PenaltyKick_Left = 17,
-  PenaltyKick_Right = 18,
-  FirstHalfOver = 19,
-  Pause = 20,
-  Human = 21,
-  FoulCharge_Left = 22,
-  FoulCharge_Right = 23,
-  FoulPush_Left = 24,
-  FoulPush_Right = 25,
-  FoulMultipleAttacker_Left = 26,
-  FoulMultipleAttacker_Right = 27,
-  FoulBallOut_Left = 28,
-  FoulBallOut_Right = 29,
-  BackPass_Left = 30,
-  BackPass_Right = 31,
-  FreeKickFault_Left = 32,
-  FreeKickFault_Right = 33,
-  CatchFault_Left = 34,
-  CatchFault_Right = 35,
-  IndFreeKick_Left = 36,
-  IndFreeKick_Right = 37,
-  PenaltySetup_Left = 38,
-  PenaltySetup_Right = 39,
-  PenaltyReady_Left = 40,
-  PenaltyReady_Right = 41,
-  PenaltyTaken_Left = 42,
-  PenaltyTaken_Right = 43,
-  PenaltyMiss_Left = 44,
-  PenaltyMiss_Right = 45,
-  PenaltyScore_Left = 46,
-  PenaltyScore_Right = 47,
-  IllegalDefense_Left = 48,
-  IllegalDefense_Right = 49,
-  PenaltyOnfield = 50,
-  PenaltyFoul = 51,
-  GoalieCatch_Left = 52,
-  GoalieCatch_Right = 53,
-  ExtendHalf = 54,
-  MODE_MAX = 55,
+  KickOff_ = 3,
+  KickIn_ = 4,
+  FreeKick_ = 5,
+  CornerKick_ = 6,
+  GoalKick_ = 7,
+  AfterGoal_ = 8,
+  OffSide_ = 9,
+  PenaltyKick_ = 10,
+  FirstHalfOver = 11,
+  Pause = 12,
+  Human = 13,
+  FoulCharge_ = 14,
+  FoulPush_ = 15,
+  FoulMultipleAttacker_ = 16,
+  FoulBallOut_ = 17,
+  BackPass_ = 18,
+  FreeKickFault_ = 19,
+  CatchFault_ = 20,
+  IndFreeKick_ = 21,
+  PenaltySetup_ = 22,
+  PenaltyReady_ = 23,
+  PenaltyTaken_ = 24,
+  PenaltyMiss_ = 25,
+  PenaltyScore_ = 26,
+  IllegalDefense_ = 27,
+  PenaltyOnfield_ = 28,
+  PenaltyFoul_ = 29,
+  GoalieCatch_ = 30,
+  ExtendHalf = 31,
+  MODE_MAX = 32,
   GameModeType_INT_MIN_SENTINEL_DO_NOT_USE_ =
       std::numeric_limits<::int32_t>::min(),
   GameModeType_INT_MAX_SENTINEL_DO_NOT_USE_ =
@@ -777,8 +759,8 @@ enum GameModeType : int {
 
 bool GameModeType_IsValid(int value);
 constexpr GameModeType GameModeType_MIN = static_cast<GameModeType>(0);
-constexpr GameModeType GameModeType_MAX = static_cast<GameModeType>(55);
-constexpr int GameModeType_ARRAYSIZE = 55 + 1;
+constexpr GameModeType GameModeType_MAX = static_cast<GameModeType>(32);
+constexpr int GameModeType_ARRAYSIZE = 32 + 1;
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
 GameModeType_descriptor();
 template <typename T>
@@ -791,7 +773,7 @@ const std::string& GameModeType_Name(T value) {
 template <>
 inline const std::string& GameModeType_Name(GameModeType value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfDenseEnum<GameModeType_descriptor,
-                                                 0, 55>(
+                                                 0, 32>(
       static_cast<int>(value));
 }
 inline bool GameModeType_Parse(absl::string_view name, GameModeType* value) {
@@ -3833,6 +3815,161 @@ class State final :
   friend struct ::TableStruct_service_2eproto;
 };// -------------------------------------------------------------------
 
+class InitMessage final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.InitMessage) */ {
+ public:
+  inline InitMessage() : InitMessage(nullptr) {}
+  ~InitMessage() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR InitMessage(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InitMessage(const InitMessage& from);
+  InitMessage(InitMessage&& from) noexcept
+    : InitMessage() {
+    *this = ::std::move(from);
+  }
+
+  inline InitMessage& operator=(const InitMessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InitMessage& operator=(InitMessage&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InitMessage& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InitMessage* internal_default_instance() {
+    return reinterpret_cast<const InitMessage*>(
+               &_InitMessage_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(InitMessage& a, InitMessage& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InitMessage* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InitMessage* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InitMessage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InitMessage>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const InitMessage& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const InitMessage& from) {
+    InitMessage::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(InitMessage* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.InitMessage";
+  }
+  protected:
+  explicit InitMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDebugModeFieldNumber = 1,
+  };
+  // bool debug_mode = 1;
+  void clear_debug_mode() ;
+  bool debug_mode() const;
+  void set_debug_mode(bool value);
+
+  private:
+  bool _internal_debug_mode() const;
+  void _internal_set_debug_mode(bool value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:protos.InitMessage)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    bool debug_mode_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
 class Dash final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.Dash) */ {
  public:
@@ -3889,7 +4026,7 @@ class Dash final :
                &_Dash_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(Dash& a, Dash& b) {
     a.Swap(&b);
@@ -4056,7 +4193,7 @@ class Turn final :
                &_Turn_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(Turn& a, Turn& b) {
     a.Swap(&b);
@@ -4211,7 +4348,7 @@ class Kick final :
                &_Kick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(Kick& a, Kick& b) {
     a.Swap(&b);
@@ -4378,7 +4515,7 @@ class Tackle final :
                &_Tackle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(Tackle& a, Tackle& b) {
     a.Swap(&b);
@@ -4544,7 +4681,7 @@ class Catch final :
                &_Catch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(Catch& a, Catch& b) {
     a.Swap(&b);
@@ -4669,7 +4806,7 @@ class Move final :
                &_Move_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(Move& a, Move& b) {
     a.Swap(&b);
@@ -4836,7 +4973,7 @@ class TurnNeck final :
                &_TurnNeck_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(TurnNeck& a, TurnNeck& b) {
     a.Swap(&b);
@@ -4991,7 +5128,7 @@ class ChangeView final :
                &_ChangeView_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(ChangeView& a, ChangeView& b) {
     a.Swap(&b);
@@ -5146,7 +5283,7 @@ class BallMessage final :
                &_BallMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(BallMessage& a, BallMessage& b) {
     a.Swap(&b);
@@ -5322,7 +5459,7 @@ class PassMessage final :
                &_PassMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(PassMessage& a, PassMessage& b) {
     a.Swap(&b);
@@ -5526,7 +5663,7 @@ class InterceptMessage final :
                &_InterceptMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(InterceptMessage& a, InterceptMessage& b) {
     a.Swap(&b);
@@ -5705,7 +5842,7 @@ class GoalieMessage final :
                &_GoalieMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(GoalieMessage& a, GoalieMessage& b) {
     a.Swap(&b);
@@ -5889,7 +6026,7 @@ class GoalieAndPlayerMessage final :
                &_GoalieAndPlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(GoalieAndPlayerMessage& a, GoalieAndPlayerMessage& b) {
     a.Swap(&b);
@@ -6101,7 +6238,7 @@ class OffsideLineMessage final :
                &_OffsideLineMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(OffsideLineMessage& a, OffsideLineMessage& b) {
     a.Swap(&b);
@@ -6256,7 +6393,7 @@ class DefenseLineMessage final :
                &_DefenseLineMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(DefenseLineMessage& a, DefenseLineMessage& b) {
     a.Swap(&b);
@@ -6410,7 +6547,7 @@ class WaitRequestMessage final :
                &_WaitRequestMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(WaitRequestMessage& a, WaitRequestMessage& b) {
     a.Swap(&b);
@@ -6535,7 +6672,7 @@ class SetplayMessage final :
                &_SetplayMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(SetplayMessage& a, SetplayMessage& b) {
     a.Swap(&b);
@@ -6690,7 +6827,7 @@ class PassRequestMessage final :
                &_PassRequestMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(PassRequestMessage& a, PassRequestMessage& b) {
     a.Swap(&b);
@@ -6850,7 +6987,7 @@ class StaminaMessage final :
                &_StaminaMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(StaminaMessage& a, StaminaMessage& b) {
     a.Swap(&b);
@@ -7005,7 +7142,7 @@ class RecoveryMessage final :
                &_RecoveryMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   friend void swap(RecoveryMessage& a, RecoveryMessage& b) {
     a.Swap(&b);
@@ -7160,7 +7297,7 @@ class StaminaCapacityMessage final :
                &_StaminaCapacityMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   friend void swap(StaminaCapacityMessage& a, StaminaCapacityMessage& b) {
     a.Swap(&b);
@@ -7315,7 +7452,7 @@ class DribbleMessage final :
                &_DribbleMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   friend void swap(DribbleMessage& a, DribbleMessage& b) {
     a.Swap(&b);
@@ -7487,7 +7624,7 @@ class BallGoalieMessage final :
                &_BallGoalieMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   friend void swap(BallGoalieMessage& a, BallGoalieMessage& b) {
     a.Swap(&b);
@@ -7691,7 +7828,7 @@ class OnePlayerMessage final :
                &_OnePlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   friend void swap(OnePlayerMessage& a, OnePlayerMessage& b) {
     a.Swap(&b);
@@ -7863,7 +8000,7 @@ class TwoPlayerMessage final :
                &_TwoPlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   friend void swap(TwoPlayerMessage& a, TwoPlayerMessage& b) {
     a.Swap(&b);
@@ -8063,7 +8200,7 @@ class ThreePlayerMessage final :
                &_ThreePlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   friend void swap(ThreePlayerMessage& a, ThreePlayerMessage& b) {
     a.Swap(&b);
@@ -8291,7 +8428,7 @@ class SelfMessage final :
                &_SelfMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   friend void swap(SelfMessage& a, SelfMessage& b) {
     a.Swap(&b);
@@ -8475,7 +8612,7 @@ class TeammateMessage final :
                &_TeammateMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   friend void swap(TeammateMessage& a, TeammateMessage& b) {
     a.Swap(&b);
@@ -8659,7 +8796,7 @@ class OpponentMessage final :
                &_OpponentMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    39;
 
   friend void swap(OpponentMessage& a, OpponentMessage& b) {
     a.Swap(&b);
@@ -8843,7 +8980,7 @@ class BallPlayerMessage final :
                &_BallPlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    40;
 
   friend void swap(BallPlayerMessage& a, BallPlayerMessage& b) {
     a.Swap(&b);
@@ -9085,7 +9222,7 @@ class Say final :
                &_Say_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    41;
 
   friend void swap(Say& a, Say& b) {
     a.Swap(&b);
@@ -9701,7 +9838,7 @@ class PointTo final :
                &_PointTo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    42;
 
   friend void swap(PointTo& a, PointTo& b) {
     a.Swap(&b);
@@ -9867,7 +10004,7 @@ class PointToOf final :
                &_PointToOf_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    43;
 
   friend void swap(PointToOf& a, PointToOf& b) {
     a.Swap(&b);
@@ -9992,7 +10129,7 @@ class AttentionTo final :
                &_AttentionTo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    44;
 
   friend void swap(AttentionTo& a, AttentionTo& b) {
     a.Swap(&b);
@@ -10158,7 +10295,7 @@ class AttentionToOf final :
                &_AttentionToOf_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    45;
 
   friend void swap(AttentionToOf& a, AttentionToOf& b) {
     a.Swap(&b);
@@ -10283,7 +10420,7 @@ class AddText final :
                &_AddText_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    46;
 
   friend void swap(AddText& a, AddText& b) {
     a.Swap(&b);
@@ -10460,7 +10597,7 @@ class AddPoint final :
                &_AddPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    47;
 
   friend void swap(AddPoint& a, AddPoint& b) {
     a.Swap(&b);
@@ -10654,7 +10791,7 @@ class AddLine final :
                &_AddLine_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    48;
 
   friend void swap(AddLine& a, AddLine& b) {
     a.Swap(&b);
@@ -10864,7 +11001,7 @@ class AddArc final :
                &_AddArc_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    49;
 
   friend void swap(AddArc& a, AddArc& b) {
     a.Swap(&b);
@@ -11094,7 +11231,7 @@ class AddCircle final :
                &_AddCircle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    50;
 
   friend void swap(AddCircle& a, AddCircle& b) {
     a.Swap(&b);
@@ -11312,7 +11449,7 @@ class AddTriangle final :
                &_AddTriangle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    51;
 
   friend void swap(AddTriangle& a, AddTriangle& b) {
     a.Swap(&b);
@@ -11550,7 +11687,7 @@ class AddRectangle final :
                &_AddRectangle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    52;
 
   friend void swap(AddRectangle& a, AddRectangle& b) {
     a.Swap(&b);
@@ -11787,7 +11924,7 @@ class AddSector final :
                &_AddSector_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    53;
 
   friend void swap(AddSector& a, AddSector& b) {
     a.Swap(&b);
@@ -12041,7 +12178,7 @@ class AddMessage final :
                &_AddMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    54;
 
   friend void swap(AddMessage& a, AddMessage& b) {
     a.Swap(&b);
@@ -12270,7 +12407,7 @@ class Log final :
                &_Log_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    55;
 
   friend void swap(Log& a, Log& b) {
     a.Swap(&b);
@@ -12613,7 +12750,7 @@ class DebugClient final :
                &_DebugClient_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    56;
 
   friend void swap(DebugClient& a, DebugClient& b) {
     a.Swap(&b);
@@ -12778,7 +12915,7 @@ class Body_GoToPoint final :
                &_Body_GoToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    57;
 
   friend void swap(Body_GoToPoint& a, Body_GoToPoint& b) {
     a.Swap(&b);
@@ -12962,7 +13099,7 @@ class Body_SmartKick final :
                &_Body_SmartKick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    58;
 
   friend void swap(Body_SmartKick& a, Body_SmartKick& b) {
     a.Swap(&b);
@@ -13158,7 +13295,7 @@ class Bhv_BeforeKickOff final :
                &_Bhv_BeforeKickOff_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    59;
 
   friend void swap(Bhv_BeforeKickOff& a, Bhv_BeforeKickOff& b) {
     a.Swap(&b);
@@ -13317,7 +13454,7 @@ class Bhv_BodyNeckToBall final :
                &_Bhv_BodyNeckToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    60;
 
   friend void swap(Bhv_BodyNeckToBall& a, Bhv_BodyNeckToBall& b) {
     a.Swap(&b);
@@ -13442,7 +13579,7 @@ class Bhv_BodyNeckToPoint final :
                &_Bhv_BodyNeckToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    61;
 
   friend void swap(Bhv_BodyNeckToPoint& a, Bhv_BodyNeckToPoint& b) {
     a.Swap(&b);
@@ -13601,7 +13738,7 @@ class Bhv_Emergency final :
                &_Bhv_Emergency_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    62;
 
   friend void swap(Bhv_Emergency& a, Bhv_Emergency& b) {
     a.Swap(&b);
@@ -13726,7 +13863,7 @@ class Bhv_GoToPointLookBall final :
                &_Bhv_GoToPointLookBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    63;
 
   friend void swap(Bhv_GoToPointLookBall& a, Bhv_GoToPointLookBall& b) {
     a.Swap(&b);
@@ -13910,7 +14047,7 @@ class Bhv_NeckBodyToBall final :
                &_Bhv_NeckBodyToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    64;
 
   friend void swap(Bhv_NeckBodyToBall& a, Bhv_NeckBodyToBall& b) {
     a.Swap(&b);
@@ -14065,7 +14202,7 @@ class Bhv_NeckBodyToPoint final :
                &_Bhv_NeckBodyToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    65;
 
   friend void swap(Bhv_NeckBodyToPoint& a, Bhv_NeckBodyToPoint& b) {
     a.Swap(&b);
@@ -14236,7 +14373,7 @@ class Bhv_ScanField final :
                &_Bhv_ScanField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    66;
 
   friend void swap(Bhv_ScanField& a, Bhv_ScanField& b) {
     a.Swap(&b);
@@ -14360,7 +14497,7 @@ class Body_AdvanceBall final :
                &_Body_AdvanceBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    67;
 
   friend void swap(Body_AdvanceBall& a, Body_AdvanceBall& b) {
     a.Swap(&b);
@@ -14484,7 +14621,7 @@ class Body_ClearBall final :
                &_Body_ClearBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    68;
 
   friend void swap(Body_ClearBall& a, Body_ClearBall& b) {
     a.Swap(&b);
@@ -14609,7 +14746,7 @@ class Body_Dribble final :
                &_Body_Dribble_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    69;
 
   friend void swap(Body_Dribble& a, Body_Dribble& b) {
     a.Swap(&b);
@@ -14817,7 +14954,7 @@ class Body_GoToPointDodge final :
                &_Body_GoToPointDodge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    70;
 
   friend void swap(Body_GoToPointDodge& a, Body_GoToPointDodge& b) {
     a.Swap(&b);
@@ -14989,7 +15126,7 @@ class Body_HoldBall final :
                &_Body_HoldBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    71;
 
   friend void swap(Body_HoldBall& a, Body_HoldBall& b) {
     a.Swap(&b);
@@ -15177,7 +15314,7 @@ class Body_Intercept final :
                &_Body_Intercept_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    72;
 
   friend void swap(Body_Intercept& a, Body_Intercept& b) {
     a.Swap(&b);
@@ -15349,7 +15486,7 @@ class Body_KickOneStep final :
                &_Body_KickOneStep_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    73;
 
   friend void swap(Body_KickOneStep& a, Body_KickOneStep& b) {
     a.Swap(&b);
@@ -15532,7 +15669,7 @@ class Body_StopBall final :
                &_Body_StopBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    74;
 
   friend void swap(Body_StopBall& a, Body_StopBall& b) {
     a.Swap(&b);
@@ -15657,7 +15794,7 @@ class Body_StopDash final :
                &_Body_StopDash_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    75;
 
   friend void swap(Body_StopDash& a, Body_StopDash& b) {
     a.Swap(&b);
@@ -15812,7 +15949,7 @@ class Body_TackleToPoint final :
                &_Body_TackleToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    76;
 
   friend void swap(Body_TackleToPoint& a, Body_TackleToPoint& b) {
     a.Swap(&b);
@@ -15996,7 +16133,7 @@ class Body_TurnToAngle final :
                &_Body_TurnToAngle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    77;
 
   friend void swap(Body_TurnToAngle& a, Body_TurnToAngle& b) {
     a.Swap(&b);
@@ -16151,7 +16288,7 @@ class Body_TurnToBall final :
                &_Body_TurnToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    78;
 
   friend void swap(Body_TurnToBall& a, Body_TurnToBall& b) {
     a.Swap(&b);
@@ -16306,7 +16443,7 @@ class Body_TurnToPoint final :
                &_Body_TurnToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    79;
 
   friend void swap(Body_TurnToPoint& a, Body_TurnToPoint& b) {
     a.Swap(&b);
@@ -16478,7 +16615,7 @@ class Focus_MoveToPoint final :
                &_Focus_MoveToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    80;
 
   friend void swap(Focus_MoveToPoint& a, Focus_MoveToPoint& b) {
     a.Swap(&b);
@@ -16637,7 +16774,7 @@ class Focus_Reset final :
                &_Focus_Reset_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    81;
 
   friend void swap(Focus_Reset& a, Focus_Reset& b) {
     a.Swap(&b);
@@ -16761,7 +16898,7 @@ class Neck_ScanField final :
                &_Neck_ScanField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    82;
 
   friend void swap(Neck_ScanField& a, Neck_ScanField& b) {
     a.Swap(&b);
@@ -16885,7 +17022,7 @@ class Neck_ScanPlayers final :
                &_Neck_ScanPlayers_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    83;
 
   friend void swap(Neck_ScanPlayers& a, Neck_ScanPlayers& b) {
     a.Swap(&b);
@@ -17010,7 +17147,7 @@ class Neck_TurnToBallAndPlayer final :
                &_Neck_TurnToBallAndPlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    84;
 
   friend void swap(Neck_TurnToBallAndPlayer& a, Neck_TurnToBallAndPlayer& b) {
     a.Swap(&b);
@@ -17189,7 +17326,7 @@ class Neck_TurnToBallOrScan final :
                &_Neck_TurnToBallOrScan_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    85;
 
   friend void swap(Neck_TurnToBallOrScan& a, Neck_TurnToBallOrScan& b) {
     a.Swap(&b);
@@ -17343,7 +17480,7 @@ class Neck_TurnToBall final :
                &_Neck_TurnToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    86;
 
   friend void swap(Neck_TurnToBall& a, Neck_TurnToBall& b) {
     a.Swap(&b);
@@ -17468,7 +17605,7 @@ class Neck_TurnToGoalieOrScan final :
                &_Neck_TurnToGoalieOrScan_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    87;
 
   friend void swap(Neck_TurnToGoalieOrScan& a, Neck_TurnToGoalieOrScan& b) {
     a.Swap(&b);
@@ -17622,7 +17759,7 @@ class Neck_TurnToLowConfTeammate final :
                &_Neck_TurnToLowConfTeammate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    88;
 
   friend void swap(Neck_TurnToLowConfTeammate& a, Neck_TurnToLowConfTeammate& b) {
     a.Swap(&b);
@@ -17747,7 +17884,7 @@ class Neck_TurnToPlayerOrScan final :
                &_Neck_TurnToPlayerOrScan_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    89;
 
   friend void swap(Neck_TurnToPlayerOrScan& a, Neck_TurnToPlayerOrScan& b) {
     a.Swap(&b);
@@ -17926,7 +18063,7 @@ class Neck_TurnToPoint final :
                &_Neck_TurnToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    90;
 
   friend void swap(Neck_TurnToPoint& a, Neck_TurnToPoint& b) {
     a.Swap(&b);
@@ -18086,7 +18223,7 @@ class Neck_TurnToRelative final :
                &_Neck_TurnToRelative_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    91;
 
   friend void swap(Neck_TurnToRelative& a, Neck_TurnToRelative& b) {
     a.Swap(&b);
@@ -18241,7 +18378,7 @@ class View_ChangeWidth final :
                &_View_ChangeWidth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    92;
 
   friend void swap(View_ChangeWidth& a, View_ChangeWidth& b) {
     a.Swap(&b);
@@ -18395,7 +18532,7 @@ class View_Normal final :
                &_View_Normal_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    93;
 
   friend void swap(View_Normal& a, View_Normal& b) {
     a.Swap(&b);
@@ -18519,7 +18656,7 @@ class View_Synch final :
                &_View_Synch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    94;
 
   friend void swap(View_Synch& a, View_Synch& b) {
     a.Swap(&b);
@@ -18643,7 +18780,7 @@ class View_Wide final :
                &_View_Wide_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    95;
 
   friend void swap(View_Wide& a, View_Wide& b) {
     a.Swap(&b);
@@ -18826,7 +18963,7 @@ class Action final :
                &_Action_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    96;
 
   friend void swap(Action& a, Action& b) {
     a.Swap(&b);
@@ -20114,7 +20251,7 @@ class Actions final :
                &_Actions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    97;
 
   friend void swap(Actions& a, Actions& b) {
     a.Swap(&b);
@@ -20279,7 +20416,7 @@ class ServerParam final :
                &_ServerParam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    98;
 
   friend void swap(ServerParam& a, ServerParam& b) {
     a.Swap(&b);
@@ -23224,7 +23361,7 @@ class PlayerParam final :
                &_PlayerParam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    99;
 
   friend void swap(PlayerParam& a, PlayerParam& b) {
     a.Swap(&b);
@@ -23715,7 +23852,7 @@ class PlayerType final :
                &_PlayerType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    99;
+    100;
 
   friend void swap(PlayerType& a, PlayerType& b) {
     a.Swap(&b);
@@ -24253,7 +24390,7 @@ class Empty final :
                &_Empty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    101;
 
   friend void swap(Empty& a, Empty& b) {
     a.Swap(&b);
@@ -28853,6 +28990,30 @@ inline void State::set_allocated_full_world_model(::protos::WorldModel* full_wor
   }
   _impl_.full_world_model_ = full_world_model;
   // @@protoc_insertion_point(field_set_allocated:protos.State.full_world_model)
+}
+
+// -------------------------------------------------------------------
+
+// InitMessage
+
+// bool debug_mode = 1;
+inline void InitMessage::clear_debug_mode() {
+  _impl_.debug_mode_ = false;
+}
+inline bool InitMessage::debug_mode() const {
+  // @@protoc_insertion_point(field_get:protos.InitMessage.debug_mode)
+  return _internal_debug_mode();
+}
+inline void InitMessage::set_debug_mode(bool value) {
+  _internal_set_debug_mode(value);
+  // @@protoc_insertion_point(field_set:protos.InitMessage.debug_mode)
+}
+inline bool InitMessage::_internal_debug_mode() const {
+  return _impl_.debug_mode_;
+}
+inline void InitMessage::_internal_set_debug_mode(bool value) {
+  ;
+  _impl_.debug_mode_ = value;
 }
 
 // -------------------------------------------------------------------

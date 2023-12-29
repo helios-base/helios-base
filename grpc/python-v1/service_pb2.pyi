@@ -55,57 +55,34 @@ class GameModeType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     BeforeKickOff: _ClassVar[GameModeType]
     TimeOver: _ClassVar[GameModeType]
     PlayOn: _ClassVar[GameModeType]
-    KickOff_Left: _ClassVar[GameModeType]
-    KickOff_Right: _ClassVar[GameModeType]
-    KickIn_Left: _ClassVar[GameModeType]
-    KickIn_Right: _ClassVar[GameModeType]
-    FreeKick_Left: _ClassVar[GameModeType]
-    FreeKick_Right: _ClassVar[GameModeType]
-    CornerKick_Left: _ClassVar[GameModeType]
-    CornerKick_Right: _ClassVar[GameModeType]
-    GoalKick_Left: _ClassVar[GameModeType]
-    GoalKick_Right: _ClassVar[GameModeType]
-    AfterGoal_Left: _ClassVar[GameModeType]
-    AfterGoal_Right: _ClassVar[GameModeType]
-    OffSide_Left: _ClassVar[GameModeType]
-    OffSide_Right: _ClassVar[GameModeType]
-    PenaltyKick_Left: _ClassVar[GameModeType]
-    PenaltyKick_Right: _ClassVar[GameModeType]
+    KickOff_: _ClassVar[GameModeType]
+    KickIn_: _ClassVar[GameModeType]
+    FreeKick_: _ClassVar[GameModeType]
+    CornerKick_: _ClassVar[GameModeType]
+    GoalKick_: _ClassVar[GameModeType]
+    AfterGoal_: _ClassVar[GameModeType]
+    OffSide_: _ClassVar[GameModeType]
+    PenaltyKick_: _ClassVar[GameModeType]
     FirstHalfOver: _ClassVar[GameModeType]
     Pause: _ClassVar[GameModeType]
     Human: _ClassVar[GameModeType]
-    FoulCharge_Left: _ClassVar[GameModeType]
-    FoulCharge_Right: _ClassVar[GameModeType]
-    FoulPush_Left: _ClassVar[GameModeType]
-    FoulPush_Right: _ClassVar[GameModeType]
-    FoulMultipleAttacker_Left: _ClassVar[GameModeType]
-    FoulMultipleAttacker_Right: _ClassVar[GameModeType]
-    FoulBallOut_Left: _ClassVar[GameModeType]
-    FoulBallOut_Right: _ClassVar[GameModeType]
-    BackPass_Left: _ClassVar[GameModeType]
-    BackPass_Right: _ClassVar[GameModeType]
-    FreeKickFault_Left: _ClassVar[GameModeType]
-    FreeKickFault_Right: _ClassVar[GameModeType]
-    CatchFault_Left: _ClassVar[GameModeType]
-    CatchFault_Right: _ClassVar[GameModeType]
-    IndFreeKick_Left: _ClassVar[GameModeType]
-    IndFreeKick_Right: _ClassVar[GameModeType]
-    PenaltySetup_Left: _ClassVar[GameModeType]
-    PenaltySetup_Right: _ClassVar[GameModeType]
-    PenaltyReady_Left: _ClassVar[GameModeType]
-    PenaltyReady_Right: _ClassVar[GameModeType]
-    PenaltyTaken_Left: _ClassVar[GameModeType]
-    PenaltyTaken_Right: _ClassVar[GameModeType]
-    PenaltyMiss_Left: _ClassVar[GameModeType]
-    PenaltyMiss_Right: _ClassVar[GameModeType]
-    PenaltyScore_Left: _ClassVar[GameModeType]
-    PenaltyScore_Right: _ClassVar[GameModeType]
-    IllegalDefense_Left: _ClassVar[GameModeType]
-    IllegalDefense_Right: _ClassVar[GameModeType]
-    PenaltyOnfield: _ClassVar[GameModeType]
-    PenaltyFoul: _ClassVar[GameModeType]
-    GoalieCatch_Left: _ClassVar[GameModeType]
-    GoalieCatch_Right: _ClassVar[GameModeType]
+    FoulCharge_: _ClassVar[GameModeType]
+    FoulPush_: _ClassVar[GameModeType]
+    FoulMultipleAttacker_: _ClassVar[GameModeType]
+    FoulBallOut_: _ClassVar[GameModeType]
+    BackPass_: _ClassVar[GameModeType]
+    FreeKickFault_: _ClassVar[GameModeType]
+    CatchFault_: _ClassVar[GameModeType]
+    IndFreeKick_: _ClassVar[GameModeType]
+    PenaltySetup_: _ClassVar[GameModeType]
+    PenaltyReady_: _ClassVar[GameModeType]
+    PenaltyTaken_: _ClassVar[GameModeType]
+    PenaltyMiss_: _ClassVar[GameModeType]
+    PenaltyScore_: _ClassVar[GameModeType]
+    IllegalDefense_: _ClassVar[GameModeType]
+    PenaltyOnfield_: _ClassVar[GameModeType]
+    PenaltyFoul_: _ClassVar[GameModeType]
+    GoalieCatch_: _ClassVar[GameModeType]
     ExtendHalf: _ClassVar[GameModeType]
     MODE_MAX: _ClassVar[GameModeType]
 NARROW: ViewWidth
@@ -143,57 +120,34 @@ TURN_BACKWARD_DASH: InterceptActionType
 BeforeKickOff: GameModeType
 TimeOver: GameModeType
 PlayOn: GameModeType
-KickOff_Left: GameModeType
-KickOff_Right: GameModeType
-KickIn_Left: GameModeType
-KickIn_Right: GameModeType
-FreeKick_Left: GameModeType
-FreeKick_Right: GameModeType
-CornerKick_Left: GameModeType
-CornerKick_Right: GameModeType
-GoalKick_Left: GameModeType
-GoalKick_Right: GameModeType
-AfterGoal_Left: GameModeType
-AfterGoal_Right: GameModeType
-OffSide_Left: GameModeType
-OffSide_Right: GameModeType
-PenaltyKick_Left: GameModeType
-PenaltyKick_Right: GameModeType
+KickOff_: GameModeType
+KickIn_: GameModeType
+FreeKick_: GameModeType
+CornerKick_: GameModeType
+GoalKick_: GameModeType
+AfterGoal_: GameModeType
+OffSide_: GameModeType
+PenaltyKick_: GameModeType
 FirstHalfOver: GameModeType
 Pause: GameModeType
 Human: GameModeType
-FoulCharge_Left: GameModeType
-FoulCharge_Right: GameModeType
-FoulPush_Left: GameModeType
-FoulPush_Right: GameModeType
-FoulMultipleAttacker_Left: GameModeType
-FoulMultipleAttacker_Right: GameModeType
-FoulBallOut_Left: GameModeType
-FoulBallOut_Right: GameModeType
-BackPass_Left: GameModeType
-BackPass_Right: GameModeType
-FreeKickFault_Left: GameModeType
-FreeKickFault_Right: GameModeType
-CatchFault_Left: GameModeType
-CatchFault_Right: GameModeType
-IndFreeKick_Left: GameModeType
-IndFreeKick_Right: GameModeType
-PenaltySetup_Left: GameModeType
-PenaltySetup_Right: GameModeType
-PenaltyReady_Left: GameModeType
-PenaltyReady_Right: GameModeType
-PenaltyTaken_Left: GameModeType
-PenaltyTaken_Right: GameModeType
-PenaltyMiss_Left: GameModeType
-PenaltyMiss_Right: GameModeType
-PenaltyScore_Left: GameModeType
-PenaltyScore_Right: GameModeType
-IllegalDefense_Left: GameModeType
-IllegalDefense_Right: GameModeType
-PenaltyOnfield: GameModeType
-PenaltyFoul: GameModeType
-GoalieCatch_Left: GameModeType
-GoalieCatch_Right: GameModeType
+FoulCharge_: GameModeType
+FoulPush_: GameModeType
+FoulMultipleAttacker_: GameModeType
+FoulBallOut_: GameModeType
+BackPass_: GameModeType
+FreeKickFault_: GameModeType
+CatchFault_: GameModeType
+IndFreeKick_: GameModeType
+PenaltySetup_: GameModeType
+PenaltyReady_: GameModeType
+PenaltyTaken_: GameModeType
+PenaltyMiss_: GameModeType
+PenaltyScore_: GameModeType
+IllegalDefense_: GameModeType
+PenaltyOnfield_: GameModeType
+PenaltyFoul_: GameModeType
+GoalieCatch_: GameModeType
 ExtendHalf: GameModeType
 MODE_MAX: GameModeType
 
@@ -518,6 +472,12 @@ class State(_message.Message):
     world_model: WorldModel
     full_world_model: WorldModel
     def __init__(self, world_model: _Optional[_Union[WorldModel, _Mapping]] = ..., full_world_model: _Optional[_Union[WorldModel, _Mapping]] = ...) -> None: ...
+
+class InitMessage(_message.Message):
+    __slots__ = ("debug_mode",)
+    DEBUG_MODE_FIELD_NUMBER: _ClassVar[int]
+    debug_mode: bool
+    def __init__(self, debug_mode: bool = ...) -> None: ...
 
 class Dash(_message.Message):
     __slots__ = ("power", "relative_direction")

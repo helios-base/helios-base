@@ -20,7 +20,7 @@ class Tools:
         
     @staticmethod
     def predict_kick_count(agent: IAgent, kicker_uniform_number, first_ball_speed, ball_move_angle: AngleDeg):
-        if agent.wm.game_mode_type not in [pb2.GameModeType.PlayOn, pb2.GameModeType.PenaltyKick_Left, pb2.GameModeType.PenaltyKick_Right]:
+        if agent.wm.game_mode_type not in [pb2.GameModeType.PlayOn, pb2.GameModeType.PenaltyKick_]:
             return 1
 
         if kicker_uniform_number == agent.wm.self.uniform_number and agent.wm.self.is_kickable:

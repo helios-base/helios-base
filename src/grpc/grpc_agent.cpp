@@ -415,6 +415,20 @@ void GrpcAgent::sendPlayerType() const {
     }
 }
 
+void GrpcAgent::sendInitMessage(rcsc::PlayerAgent * agent) const {
+    
+    ClientContext context;
+    protos::Empty empty;
+    protos::InitMessage initMessage;
+    initMessage.set_debug_mode(agent->config().offlineLogging());
+    Status status = stub_->SendInitMessage(&context, initMessage, &empty);
+    if (!status.ok()) {
+        std::cout << "sendInitMessage rpc failed." << std::endl
+                    << status.error_code() << ": " << status.error_message()
+                    << std::endl;
+    }
+}
+
 void GrpcAgent::getAction(rcsc::PlayerAgent * agent) const{
     LOG("getAction Started");
     LOGV(agent->world().time().cycle());

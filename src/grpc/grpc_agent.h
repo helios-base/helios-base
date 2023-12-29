@@ -25,11 +25,12 @@ public:
         stub_ = Game::NewStub(channel);
     }
 
-    void sendParams(){
+    void sendParams(rcsc::PlayerAgent *agent){
         if (!param_sent){
             sendServerParam();
             sendPlayerParams();
             sendPlayerType();
+            sendInitMessage(agent);
             param_sent = true;
         }
     }
@@ -40,6 +41,7 @@ public:
     void sendServerParam() const;
     void sendPlayerParams() const;
     void sendPlayerType() const;
+    void sendInitMessage(rcsc::PlayerAgent * agent) const;
 
 private:
     static rcsc::ViewWidth convertViewWidth(protos::ViewWidth view_width);

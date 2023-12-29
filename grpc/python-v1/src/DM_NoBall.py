@@ -24,7 +24,8 @@ class NoBallDecisionMaker(IDecisionMaker):
             return
         
         pos = agent.get_strategy().getPosition(agent.wm.self.uniform_number)
-        
+        agent.add_log_text(pb2.LoggerLevel.TEAM, f"opponent_reach_steps: {opponent_reach_steps} "
+                                                 f"our_reach_steps: {our_reach_steps}")
         if opponent_reach_steps < our_reach_steps:
             if BHV_Block().execute(agent):
                 return

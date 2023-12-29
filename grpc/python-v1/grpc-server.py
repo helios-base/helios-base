@@ -29,6 +29,11 @@ class Game(pb2_grpc.GameServicer):
     def SendPlayerType(self, request: pb2.PlayerType, context):
         self.agent.set_params(request)
         return pb2.Empty()
+    
+    def SendInitMessage(self, request, context):
+        self.agent.set_debug_mode(request.debug_mode)
+        print("Debug mode: ", request.debug_mode)
+        return pb2.Empty()
 
 
 def serve():

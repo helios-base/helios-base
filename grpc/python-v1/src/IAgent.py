@@ -12,6 +12,7 @@ class IAgent(ABC):
         self.serverParams: Union[pb2.ServerParam, None] = None
         self.playerParams: Union[pb2.PlayerParam, None] = None
         self.playerTypes: Union[pb2.PlayerType, dict[pb2.PlayerType]] = {}
+        self.debug_mode: bool = False
 
     def get_type(self, id: int) -> pb2.PlayerType:
         if id < 0:
@@ -26,6 +27,8 @@ class IAgent(ABC):
     def get_strategy(self) -> IPositionStrategy:
         pass
 
+    def set_debug_mode(self, debug_mode: bool):
+        self.debug_mode = debug_mode
     #     message Log {
     #   oneof log {
     #     AddText add_text = 1;
@@ -41,6 +44,8 @@ class IAgent(ABC):
     # }
 
     def add_log_text(self, level: pb2.LoggerLevel, message: str):
+        if not self.debug_mode:
+            return
         self.add_action(pb2.Action(
             log=pb2.Log(
                 add_text=pb2.AddText(
@@ -51,6 +56,8 @@ class IAgent(ABC):
         ))
 
     def add_log_message(self, level: pb2.LoggerLevel, message: str, x, y, color):
+        if not self.debug_mode:
+            return
         self.add_action(pb2.Action(
             log=pb2.Log(
                 add_message=pb2.AddMessage(
@@ -64,6 +71,8 @@ class IAgent(ABC):
 
     def add_log_circle(self, level: pb2.LoggerLevel, center_x: float, center_y: float, radius: float, color: str,
                        fill: bool):
+        if not self.debug_mode:
+            return
         self.add_action(pb2.Action(
             log=pb2.Log(
                 add_circle=pb2.AddCircle(

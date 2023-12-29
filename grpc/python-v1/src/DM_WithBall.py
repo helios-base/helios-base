@@ -19,7 +19,8 @@ class WithBallDecisionMaker(IDecisionMaker):
             agent.add_action(pb2.Action(body_hold_ball=pb2.Body_HoldBall()))
             return
 
-        agent.add_log_text(pb2.LoggerLevel.PASS, f"candidate_actions: {candidate_actions}")
+        if agent.debug_mode:
+            agent.add_log_text(pb2.LoggerLevel.PASS, f"candidate_actions: {candidate_actions}")
         candidate_actions.sort(key=lambda x: x.score, reverse=True)
         best_action = candidate_actions[0]
 

@@ -222,6 +222,77 @@ public:
         p->set_type_id(player->playerTypePtr()->id());
     }
 
+    static protos::GameModeType converGameMode(const rcsc::WorldModel & wm){
+        switch (wm.gameMode().type()){
+            case rcsc::GameMode::BeforeKickOff:
+                return protos::GameModeType::BeforeKickOff;
+            case rcsc::GameMode::TimeOver:
+                return protos::GameModeType::TimeOver;
+            case rcsc::GameMode::PlayOn:
+                return protos::GameModeType::PlayOn;
+            case rcsc::GameMode::KickOff_:
+                return protos::GameModeType::KickOff_;
+            case rcsc::GameMode::KickIn_:
+                return protos::GameModeType::KickIn_;
+            case rcsc::GameMode::FreeKick_:
+                return protos::GameModeType::FreeKick_;
+            case rcsc::GameMode::CornerKick_:
+                return protos::GameModeType::CornerKick_;
+            case rcsc::GameMode::GoalKick_:
+                return protos::GameModeType::GoalKick_;
+            case rcsc::GameMode::AfterGoal_:
+                return protos::GameModeType::AfterGoal_;
+            case rcsc::GameMode::OffSide_:
+                return protos::GameModeType::OffSide_;
+            case rcsc::GameMode::PenaltyKick_:
+                return protos::GameModeType::PenaltyKick_;
+            case rcsc::GameMode::FirstHalfOver:
+                return protos::GameModeType::FirstHalfOver;
+            case rcsc::GameMode::Pause:
+                return protos::GameModeType::Pause;
+            case rcsc::GameMode::Human:
+                return protos::GameModeType::Human;
+            case rcsc::GameMode::FoulCharge_:
+                return protos::GameModeType::FoulCharge_;
+            case rcsc::GameMode::FoulPush_:
+                return protos::GameModeType::FoulPush_;
+            case rcsc::GameMode::FoulMultipleAttacker_:
+                return protos::GameModeType::FoulMultipleAttacker_;
+            case rcsc::GameMode::FoulBallOut_:
+                return protos::GameModeType::FoulBallOut_;
+            case rcsc::GameMode::BackPass_:
+                return protos::GameModeType::BackPass_;
+            case rcsc::GameMode::FreeKickFault_:
+                return protos::GameModeType::FreeKickFault_;
+            case rcsc::GameMode::CatchFault_:
+                return protos::GameModeType::CatchFault_;
+            case rcsc::GameMode::IndFreeKick_:
+                return protos::GameModeType::IndFreeKick_;
+            case rcsc::GameMode::PenaltySetup_:
+                return protos::GameModeType::PenaltySetup_;
+            case rcsc::GameMode::PenaltyReady_:
+                return protos::GameModeType::PenaltyReady_;
+            case rcsc::GameMode::PenaltyTaken_:
+                return protos::GameModeType::PenaltyTaken_;
+            case rcsc::GameMode::PenaltyMiss_:
+                return protos::GameModeType::PenaltyMiss_;
+            case rcsc::GameMode::PenaltyScore_:
+                return protos::GameModeType::PenaltyScore_;
+            case rcsc::GameMode::IllegalDefense_:
+                return protos::GameModeType::IllegalDefense_;
+            case rcsc::GameMode::PenaltyOnfield_:
+                return protos::GameModeType::PenaltyOnfield_;
+            case rcsc::GameMode::PenaltyFoul_:
+                return protos::GameModeType::PenaltyFoul_;
+            case rcsc::GameMode::GoalieCatch_:
+                return protos::GameModeType::GoalieCatch_;
+            case rcsc::GameMode::ExtendHalf:
+                return protos::GameModeType::ExtendHalf;
+            case rcsc::GameMode::MODE_MAX:
+                return protos::GameModeType::MODE_MAX;
+        }
+        return protos::GameModeType::MODE_MAX;
+    }
     static protos::WorldModel * convertWorldModel(const rcsc::WorldModel & wm){
 
         auto * res = new WorldModel();
@@ -272,7 +343,7 @@ public:
         res->set_last_kick_side(convertSide(wm.lastKickerSide()));
         res->set_last_kicker_uniform_number(wm.lastKickerUnum());
         res->set_cycle(wm.time().cycle());
-        //game mode type
+        res->set_game_mode_type(converGameMode(wm));
         res->set_left_team_score(wm.gameMode().scoreLeft());
         res->set_right_team_score(wm.gameMode().scoreRight());
         res->set_is_our_set_play(wm.gameMode().isOurSetPlay(wm.ourSide()));
