@@ -351,6 +351,8 @@ public:
         res->set_stoped_cycle(wm.gameMode().time().stopped());
         res->set_our_team_score(wm.ourSide() == rcsc::SideID::LEFT ? wm.gameMode().scoreLeft() : wm.gameMode().scoreRight());
         res->set_their_team_score(wm.ourSide() == rcsc::SideID::LEFT ? wm.gameMode().scoreRight() : wm.gameMode().scoreLeft());
+        res->set_penalty_kick_mode(wm.gameMode().isPenaltyKickMode());
+        //Todo: Add helios_home_positions
         return res;
     }
 
