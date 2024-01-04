@@ -1,11 +1,11 @@
-from src.IBallAction import IBallAction
+from src.IBallAction import BallAction
 from src.IAgent import IAgent
 import service_pb2 as pb2
 
 
 class BallActionGenerator:
     def __init__(self):
-        self.candidateActions: list[IBallAction] = []
+        self.candidateActions: list[BallAction] = []
         self.debug_list = []
         
     def log_debug(self, agent: IAgent, log_level:pb2.LoggerLevel):

@@ -5,7 +5,7 @@ import pyrusgeom.soccer_math as smath
 from pyrusgeom.soccer_math import *
 from pyrusgeom.geom_2d import *
 from src.Tools import Tools
-from src.IBallAction import IBallAction, ActionType
+from src.IBallAction import BallAction, ActionType, PassAction
 
 
 class GeneratorPass(BallActionGenerator):
@@ -68,74 +68,43 @@ class GeneratorPass(BallActionGenerator):
             self.generate_direct_pass(agent, tm)
         for tm in self.receivers:
             self.generate_lead_pass(agent, tm)
-            
-    def generate_direct_pass(self, agent: IAgent, tm: pb2.Player):
-        if agent.debug_mode:
-            agent.add_log_text(pb2.LoggerLevel.PASS, f">> generate_direct_pass to {tm.uniform_number}")
-        sp = agent.serverParams
-        player_type: pb2.PlayerType = agent.get_type(tm.type_id)
-        min_receive_step = 3
-        max_direct_pass_dist = 0.8 * smath.inertia_final_distance(sp.ball_speed_max, sp.ball_decay)
-        max_receive_ball_speed = sp.ball_speed_max * pow(sp.ball_decay, min_receive_step)
-        min_direct_pass_dist = player_type.kickable_area * 2.2
-        tm_pos = Vector2D(tm.position.x, tm.position.y)
-        tm_vel = Vector2D(tm.velocity.x, tm.velocity.y)
-        ball_pos = Vector2D(agent.wm.ball.position.x, agent.wm.ball.position.y)
-        if tm_pos.x() > sp.pitch_half_length - 1.5 \
-                or tm_pos.x() < -sp.pitch_half_length + 5.0 \
-                or tm_pos.abs_y() > sp.pitch_half_width - 1.5:
-            if agent.debug_mode:
-                agent.add_log_text(pb2.LoggerLevel.PASS, f"## FAILED tm_pos is out of field")
-            return
-        # TODO sp.ourTeamGoalPos()
-        if tm_pos.x() < agent.wm.ball.position.x + 1.0 \
-                and tm_pos.dist(Vector2D(-52.5, 0)) < 18.0:
-            if agent.debug_mode:
-                agent.add_log_text(pb2.LoggerLevel.PASS, f"## FAILED tm_pos is near our goal")
-            return
-
-        max_ball_speed = agent.wm.self.kick_rate * sp.max_power
-        if agent.wm.game_mode_type == pb2.GameModeType.PlayOn:
-            max_ball_speed = sp.ball_speed_max
-
-        # TODO SP.defaultRealSpeedMax()
-        min_ball_speed = 1.0
-
-        receive_point = Tools.inertia_final_point(player_type, tm_pos, tm_vel)
-        ball_move_dist = ball_pos.dist(receive_point)
-
-        if ball_move_dist < min_direct_pass_dist or max_direct_pass_dist < ball_move_dist:
-            if agent.debug_mode:
-                agent.add_log_text(pb2.LoggerLevel.PASS, f"## FAILED ball_move_dist is out of range")
-            return
-
-        if agent.wm.game_mode_type == pb2.GameModeType.GoalKick_ \
-                and receive_point.x() < sp.our_penalty_area_line_x + 1.0 \
-                and receive_point.abs_y() < sp.penalty_area_half_width + 1.0:
-            if agent.debug_mode:
-                agent.add_log_text(pb2.LoggerLevel.PASS, f"## FAILED receive_point is in penalty area in goal kick mode")
-            return
-
-        max_receive_ball_speed = min(max_receive_ball_speed, player_type.kickable_area + (
-                    sp.max_dash_power * player_type.dash_power_rate * player_type.effort_max) * 1.8)
-        min_receive_ball_speed = player_type.real_speed_max
-
-        ball_move_angle = (receive_point - ball_pos).th()
-
-        min_ball_step = Tools.ball_move_step(sp.ball_speed_max, ball_move_dist, sp.ball_decay)
-        # TODO Penalty step
-        start_step = max(max(min_receive_step, min_ball_step), 0)
-        max_step = start_step + 2
-        if agent.debug_mode:
-            agent.add_log_text(pb2.LoggerLevel.PASS, f">>>> DPass to {tm.uniform_number} ({round(tm_pos.x(), 2)}, {round(tm_pos.y(), 2)}) -> ({round(receive_point.x(), 2)}, {round(receive_point.y(), 2)}) start_step: {start_step}, max_step: {max_step}")
-
-        self.create_pass(agent, tm, receive_point,
-                    start_step, max_step, min_ball_speed,
-                    max_ball_speed, min_receive_ball_speed,
-                    max_receive_ball_speed, ball_move_dist,
-                    ball_move_angle, "D")
     
+    def generate_direct_pass(self, agent: IAgent, tm: pb2.Player):
+        direct_pass = PassAction()
+        direct_pass.actionType = ActionType.DIRECT_PASS
+        direct_pass.initUnum = agent.wm.self.uniform_number
+        direct_pass.targetUnum = tm.uniform_number
+        direct_pass.initBallPos = Vector2D(agent.wm.ball.position.x, agent.wm.ball.position.y)
+        direct_pass.targetBallPos = Vector2D(tm.position.x, tm.position.y)
+        direct_pass.evaluate()
+        self.candidateActions.append(direct_pass)
+        
     def generate_lead_pass(self, agent: IAgent, tm: pb2.Player):
+        tm_pos = Vector2D(tm.position.x, tm.position.y)
+        ball_pos = Vector2D(agent.wm.ball.position.x, agent.wm.ball.position.y)
+        tm_vel = Vector2D(tm.velocity.x, tm.velocity.y)
+        angle_divs = 8
+        dist_divs = 4
+        angle_step = int(360.0 / angle_divs)
+        dist_step = 1.1
+        
+        angle_from_ball = (tm_pos - ball_pos).th()
+        for d in range(1, dist_divs + 1):
+            player_move_dist = dist_step * d
+            for a in range(angle_step + 1):
+                angle = angle_from_ball + angle_step * a
+                receive_point = tm_pos + tm_vel + Vector2D.from_polar(player_move_dist, angle)
+                lead_pass = PassAction()
+                lead_pass.actionType = ActionType.LEAD_PASS
+                lead_pass.initUnum = agent.wm.self.uniform_number
+                lead_pass.targetUnum = tm.uniform_number
+                lead_pass.initBallPos = Vector2D(agent.wm.ball.position.x, agent.wm.ball.position.y)
+                lead_pass.targetBallPos = Vector2D(receive_point.x(), receive_point.y())
+                lead_pass.evaluate()
+                self.candidateActions.append(lead_pass)
+        
+     
+    def generate_lead_pass2(self, agent: IAgent, tm: pb2.Player):
         if agent.debug_mode:
             agent.add_log_text(pb2.LoggerLevel.PASS, f">> generate_lead_pass to {tm.uniform_number}")
         sp = agent.serverParams
