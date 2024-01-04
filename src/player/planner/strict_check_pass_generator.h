@@ -117,8 +117,18 @@ public:
 
     void generate( const rcsc::WorldModel & wm );
 
-    const std::vector< CooperativeAction::Ptr > & courses( const rcsc::WorldModel & wm )
+    bool M_generate_direct_pass;
+    bool M_generate_lead_pass;
+    bool M_generate_through_pass;
+
+    const std::vector< CooperativeAction::Ptr > & courses( const rcsc::WorldModel & wm, 
+                                                           bool generete_direct_pass = true,
+                                                           bool generete_lead_pass = true,
+                                                           bool generete_through_pass = true )
       {
+          M_generate_direct_pass = generete_direct_pass;
+          M_generate_lead_pass = generete_lead_pass;
+          M_generate_through_pass = generete_through_pass;
           generate( wm );
           return M_courses;
       }

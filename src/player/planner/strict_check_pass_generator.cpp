@@ -484,29 +484,36 @@ StrictCheckPassGenerator::createCourses( const WorldModel & wm )
 {
     const ReceiverCont::iterator end = M_receiver_candidates.end();
 
-    M_pass_type = 'D';
-    for ( ReceiverCont::iterator p = M_receiver_candidates.begin();
-          p != end;
-          ++p )
-    {
-        createDirectPass( wm, *p );
+    if (M_generate_direct_pass){
+        M_pass_type = 'D';
+        for ( ReceiverCont::iterator p = M_receiver_candidates.begin();
+            p != end;
+            ++p )
+        {
+            createDirectPass( wm, *p );
+        }
     }
-
-    M_pass_type = 'L';
-    for ( ReceiverCont::iterator p = M_receiver_candidates.begin();
-          p != end;
-          ++p )
-    {
-        createLeadingPass( wm, *p );
+    
+    if (M_generate_lead_pass){
+        M_pass_type = 'L';
+        for ( ReceiverCont::iterator p = M_receiver_candidates.begin();
+            p != end;
+            ++p )
+        {
+            createLeadingPass( wm, *p );
+        }
     }
-
-    M_pass_type = 'T';
-    for ( ReceiverCont::iterator p = M_receiver_candidates.begin();
-          p != end;
-          ++p )
-    {
-        createThroughPass( wm, *p );
+    
+    if (M_generate_through_pass){
+        M_pass_type = 'T';
+        for ( ReceiverCont::iterator p = M_receiver_candidates.begin();
+            p != end;
+            ++p )
+        {
+            createThroughPass( wm, *p );
+        }
     }
+    
 }
 
 /*-------------------------------------------------------------------*/

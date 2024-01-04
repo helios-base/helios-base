@@ -45,6 +45,19 @@
 #include "player/bhv_basic_move.h"
 #include "player/setplay/bhv_set_play.h"
 #include "player/bhv_penalty_kick.h"
+#include "planner/action_generator.h"
+#include "planner/field_evaluator.h"
+#include "player/sample_field_evaluator.h"
+#include "planner/actgen_cross.h"
+#include "planner/actgen_direct_pass.h"
+#include "planner/actgen_self_pass.h"
+#include "planner/actgen_strict_check_pass.h"
+#include "planner/actgen_short_dribble.h"
+#include "planner/actgen_simple_dribble.h"
+#include "planner/actgen_shoot.h"
+#include "planner/actgen_action_chain_length_filter.h"
+#include "planner/action_chain_holder.h"
+#include "planner/bhv_planned_action.h"
 
 #include <rcsc/player/say_message_builder.h>
 #include <rcsc/common/player_param.h>
@@ -913,6 +926,53 @@ void GrpcAgent::getAction(rcsc::PlayerAgent * agent) const{
         case Action::kHeliosCommunication:
         {
             sample_communication->execute(agent);
+            break;
+        }
+        case Action::kHeliosChainAction:
+        {
+            FieldEvaluator::ConstPtr field_evaluator = FieldEvaluator::ConstPtr( new SampleFieldEvaluator );
+            CompositeActionGenerator * g = new CompositeActionGenerator();
+
+            if (action.helios_chain_action().lead_pass() || action.helios_chain_action().direct_pass() || action.helios_chain_action().through_pass())
+                g->addGenerator( new ActGen_MaxActionChainLengthFilter
+                                ( new ActGen_StrictCheckPass(), 1 ) );
+            if (action.helios_chain_action().cross())
+                g->addGenerator( new ActGen_MaxActionChainLengthFilter
+                                ( new ActGen_Cross(), 1 ) );
+            if (action.helios_chain_action().simple_pass())
+                g->addGenerator( new ActGen_RangeActionChainLengthFilter
+                                ( new ActGen_DirectPass(),
+                                2, ActGen_RangeActionChainLengthFilter::MAX ) );
+            if (action.helios_chain_action().short_dribble())
+                g->addGenerator( new ActGen_MaxActionChainLengthFilter
+                                ( new ActGen_ShortDribble(), 1 ) );
+            if (action.helios_chain_action().long_dribble())
+                g->addGenerator( new ActGen_MaxActionChainLengthFilter
+                                ( new ActGen_SelfPass(), 1 ) );
+            if (action.helios_chain_action().simple_dribble())
+                g->addGenerator( new ActGen_RangeActionChainLengthFilter
+                                ( new ActGen_SimpleDribble(),
+                                2, ActGen_RangeActionChainLengthFilter::MAX ) );
+            // if (action.helios_chain_action().simple_shoot())
+            //     g->addGenerator( new ActGen_RangeActionChainLengthFilter
+            //                     ( new ActGen_Shoot(),
+            //                     2, ActGen_RangeActionChainLengthFilter::MAX ) );
+            if (g->M_generators.empty())
+            {
+                break;
+            }
+            ActionGenerator::ConstPtr action_generator = ActionGenerator::ConstPtr( g );
+            ActionChainHolder::instance().setFieldEvaluator( field_evaluator );
+            ActionChainHolder::instance().setActionGenerator( action_generator );
+            ActionChainHolder::instance().update( agent->world() );
+            if ( Bhv_PlannedAction().execute( agent ) )
+            {
+                agent->debugClient().addMessage( "PlannedAction" );
+                break;
+            }
+
+            Body_HoldBall().execute( agent );
+            agent->setNeckAction( new Neck_ScanField() );
             break;
         }
 

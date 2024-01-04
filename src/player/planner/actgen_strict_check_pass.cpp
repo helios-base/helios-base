@@ -58,7 +58,10 @@ ActGen_StrictCheckPass::generate( std::vector< ActionStatePair > * result,
     }
 
     const std::vector< CooperativeAction::Ptr > &
-        courses = StrictCheckPassGenerator::instance().courses( wm );
+        courses = StrictCheckPassGenerator::instance().courses( wm,
+                                                                M_generate_direct_pass,
+                                                                M_generate_lead_pass,
+                                                                M_generate_through_pass );
 
     //
     // add pass course candidates

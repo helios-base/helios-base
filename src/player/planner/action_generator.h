@@ -89,13 +89,9 @@ public:
  */
 class CompositeActionGenerator
     : public ActionGenerator {
-private:
-    //! generator container
-    std::vector< ConstPtr > M_generators;
-
 public:
 
-
+    std::vector< ConstPtr > M_generators;
     void addGenerator( const ActionGenerator * g )
       {
           if ( g )
