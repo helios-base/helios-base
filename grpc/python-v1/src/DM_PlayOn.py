@@ -15,5 +15,13 @@ class PlayOnDecisionMaker(IDecisionMaker):
         # agent.addAction(pb2.Action(dash=pb2.Dash(power=100, relative_direction=30)))
         if agent.wm.self.is_kickable:
             self.withBallDecisionMaker.make_decision(agent)
+            # agent.add_action(pb2.Action(helios_chain_action=pb2.HeliosChainAction(
+            #     cross=True,
+            #     lead_pass=True,
+            #     direct_pass=True,
+            #     through_pass=True,
+            #     short_dribble=True,
+            #     long_dribble=True,
+            # )))
         else:
             self.noBallDecisionMaker.make_decision(agent)
