@@ -745,6 +745,8 @@ message HeliosSetPlay {}
 
 message HeliosPenalty {}
 
+message HeliosCommunicaion {}
+
 message Action {
   oneof action {
       Dash dash = 1;
@@ -810,6 +812,7 @@ message Action {
       HeliosBasicMove helios_basic_move = 61;
       HeliosSetPlay helios_set_play = 62;
       HeliosPenalty helios_penalty = 63;
+      HeliosCommunicaion helios_communication = 64;
   }
 }
 
