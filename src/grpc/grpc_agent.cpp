@@ -953,12 +953,14 @@ void GrpcAgent::getAction(rcsc::PlayerAgent * agent) const{
                 g->addGenerator( new ActGen_RangeActionChainLengthFilter
                                 ( new ActGen_SimpleDribble(),
                                 2, ActGen_RangeActionChainLengthFilter::MAX ) );
-            // if (action.helios_chain_action().simple_shoot())
-            //     g->addGenerator( new ActGen_RangeActionChainLengthFilter
-            //                     ( new ActGen_Shoot(),
-            //                     2, ActGen_RangeActionChainLengthFilter::MAX ) );
+            if (action.helios_chain_action().simple_shoot())
+                g->addGenerator( new ActGen_RangeActionChainLengthFilter
+                                ( new ActGen_Shoot(),
+                                2, ActGen_RangeActionChainLengthFilter::MAX ) );
             if (g->M_generators.empty())
             {
+                Body_HoldBall().execute( agent );
+                agent->setNeckAction( new Neck_ScanField() );
                 break;
             }
             ActionGenerator::ConstPtr action_generator = ActionGenerator::ConstPtr( g );

@@ -19595,6 +19595,7 @@ class HeliosChainAction final :
     kCrossFieldNumber = 6,
     kSimplePassFieldNumber = 7,
     kSimpleDribbleFieldNumber = 8,
+    kSimpleShootFieldNumber = 9,
   };
   // bool direct_pass = 1;
   void clear_direct_pass() ;
@@ -19676,6 +19677,16 @@ class HeliosChainAction final :
   void _internal_set_simple_dribble(bool value);
 
   public:
+  // bool simple_shoot = 9;
+  void clear_simple_shoot() ;
+  bool simple_shoot() const;
+  void set_simple_shoot(bool value);
+
+  private:
+  bool _internal_simple_shoot() const;
+  void _internal_set_simple_shoot(bool value);
+
+  public:
   // @@protoc_insertion_point(class_scope:protos.HeliosChainAction)
  private:
   class _Internal;
@@ -19692,6 +19703,7 @@ class HeliosChainAction final :
     bool cross_;
     bool simple_pass_;
     bool simple_dribble_;
+    bool simple_shoot_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -40640,6 +40652,26 @@ inline bool HeliosChainAction::_internal_simple_dribble() const {
 inline void HeliosChainAction::_internal_set_simple_dribble(bool value) {
   ;
   _impl_.simple_dribble_ = value;
+}
+
+// bool simple_shoot = 9;
+inline void HeliosChainAction::clear_simple_shoot() {
+  _impl_.simple_shoot_ = false;
+}
+inline bool HeliosChainAction::simple_shoot() const {
+  // @@protoc_insertion_point(field_get:protos.HeliosChainAction.simple_shoot)
+  return _internal_simple_shoot();
+}
+inline void HeliosChainAction::set_simple_shoot(bool value) {
+  _internal_set_simple_shoot(value);
+  // @@protoc_insertion_point(field_set:protos.HeliosChainAction.simple_shoot)
+}
+inline bool HeliosChainAction::_internal_simple_shoot() const {
+  return _impl_.simple_shoot_;
+}
+inline void HeliosChainAction::_internal_set_simple_shoot(bool value) {
+  ;
+  _impl_.simple_shoot_ = value;
 }
 
 // -------------------------------------------------------------------
