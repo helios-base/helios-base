@@ -209,6 +209,36 @@ extern GoalieAndPlayerMessageDefaultTypeInternal _GoalieAndPlayerMessage_default
 class GoalieMessage;
 struct GoalieMessageDefaultTypeInternal;
 extern GoalieMessageDefaultTypeInternal _GoalieMessage_default_instance_;
+class HeliosBasicMove;
+struct HeliosBasicMoveDefaultTypeInternal;
+extern HeliosBasicMoveDefaultTypeInternal _HeliosBasicMove_default_instance_;
+class HeliosBasicOffensive;
+struct HeliosBasicOffensiveDefaultTypeInternal;
+extern HeliosBasicOffensiveDefaultTypeInternal _HeliosBasicOffensive_default_instance_;
+class HeliosChainAction;
+struct HeliosChainActionDefaultTypeInternal;
+extern HeliosChainActionDefaultTypeInternal _HeliosChainAction_default_instance_;
+class HeliosCommunicaion;
+struct HeliosCommunicaionDefaultTypeInternal;
+extern HeliosCommunicaionDefaultTypeInternal _HeliosCommunicaion_default_instance_;
+class HeliosGoalie;
+struct HeliosGoalieDefaultTypeInternal;
+extern HeliosGoalieDefaultTypeInternal _HeliosGoalie_default_instance_;
+class HeliosGoalieKick;
+struct HeliosGoalieKickDefaultTypeInternal;
+extern HeliosGoalieKickDefaultTypeInternal _HeliosGoalieKick_default_instance_;
+class HeliosGoalieMove;
+struct HeliosGoalieMoveDefaultTypeInternal;
+extern HeliosGoalieMoveDefaultTypeInternal _HeliosGoalieMove_default_instance_;
+class HeliosPenalty;
+struct HeliosPenaltyDefaultTypeInternal;
+extern HeliosPenaltyDefaultTypeInternal _HeliosPenalty_default_instance_;
+class HeliosSetPlay;
+struct HeliosSetPlayDefaultTypeInternal;
+extern HeliosSetPlayDefaultTypeInternal _HeliosSetPlay_default_instance_;
+class HeliosShoot;
+struct HeliosShootDefaultTypeInternal;
+extern HeliosShootDefaultTypeInternal _HeliosShoot_default_instance_;
 class InitMessage;
 struct InitMessageDefaultTypeInternal;
 extern InitMessageDefaultTypeInternal _InitMessage_default_instance_;
@@ -356,6 +386,9 @@ extern WaitRequestMessageDefaultTypeInternal _WaitRequestMessage_default_instanc
 class WorldModel;
 struct WorldModelDefaultTypeInternal;
 extern WorldModelDefaultTypeInternal _WorldModel_default_instance_;
+class WorldModel_HeliosHomePositionsEntry_DoNotUse;
+struct WorldModel_HeliosHomePositionsEntry_DoNotUseDefaultTypeInternal;
+extern WorldModel_HeliosHomePositionsEntry_DoNotUseDefaultTypeInternal _WorldModel_HeliosHomePositionsEntry_DoNotUse_default_instance_;
 class WorldModel_OurPlayersDictEntry_DoNotUse;
 struct WorldModel_OurPlayersDictEntry_DoNotUseDefaultTypeInternal;
 extern WorldModel_OurPlayersDictEntry_DoNotUseDefaultTypeInternal _WorldModel_OurPlayersDictEntry_DoNotUse_default_instance_;
@@ -467,6 +500,26 @@ template <>
 template <>
 ::protos::GoalieMessage* Arena::CreateMaybeMessage<::protos::GoalieMessage>(Arena*);
 template <>
+::protos::HeliosBasicMove* Arena::CreateMaybeMessage<::protos::HeliosBasicMove>(Arena*);
+template <>
+::protos::HeliosBasicOffensive* Arena::CreateMaybeMessage<::protos::HeliosBasicOffensive>(Arena*);
+template <>
+::protos::HeliosChainAction* Arena::CreateMaybeMessage<::protos::HeliosChainAction>(Arena*);
+template <>
+::protos::HeliosCommunicaion* Arena::CreateMaybeMessage<::protos::HeliosCommunicaion>(Arena*);
+template <>
+::protos::HeliosGoalie* Arena::CreateMaybeMessage<::protos::HeliosGoalie>(Arena*);
+template <>
+::protos::HeliosGoalieKick* Arena::CreateMaybeMessage<::protos::HeliosGoalieKick>(Arena*);
+template <>
+::protos::HeliosGoalieMove* Arena::CreateMaybeMessage<::protos::HeliosGoalieMove>(Arena*);
+template <>
+::protos::HeliosPenalty* Arena::CreateMaybeMessage<::protos::HeliosPenalty>(Arena*);
+template <>
+::protos::HeliosSetPlay* Arena::CreateMaybeMessage<::protos::HeliosSetPlay>(Arena*);
+template <>
+::protos::HeliosShoot* Arena::CreateMaybeMessage<::protos::HeliosShoot>(Arena*);
+template <>
 ::protos::InitMessage* Arena::CreateMaybeMessage<::protos::InitMessage>(Arena*);
 template <>
 ::protos::InterceptInfo* Arena::CreateMaybeMessage<::protos::InterceptInfo>(Arena*);
@@ -564,6 +617,8 @@ template <>
 ::protos::WaitRequestMessage* Arena::CreateMaybeMessage<::protos::WaitRequestMessage>(Arena*);
 template <>
 ::protos::WorldModel* Arena::CreateMaybeMessage<::protos::WorldModel>(Arena*);
+template <>
+::protos::WorldModel_HeliosHomePositionsEntry_DoNotUse* Arena::CreateMaybeMessage<::protos::WorldModel_HeliosHomePositionsEntry_DoNotUse>(Arena*);
 template <>
 ::protos::WorldModel_OurPlayersDictEntry_DoNotUse* Arena::CreateMaybeMessage<::protos::WorldModel_OurPlayersDictEntry_DoNotUse>(Arena*);
 template <>
@@ -3062,6 +3117,30 @@ public:
 };
 // -------------------------------------------------------------------
 
+class WorldModel_HeliosHomePositionsEntry_DoNotUse final : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<WorldModel_HeliosHomePositionsEntry_DoNotUse, 
+    ::int32_t, ::protos::Vector2D,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<WorldModel_HeliosHomePositionsEntry_DoNotUse, 
+    ::int32_t, ::protos::Vector2D,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
+  WorldModel_HeliosHomePositionsEntry_DoNotUse();
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR WorldModel_HeliosHomePositionsEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit WorldModel_HeliosHomePositionsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const WorldModel_HeliosHomePositionsEntry_DoNotUse& other);
+  static const WorldModel_HeliosHomePositionsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const WorldModel_HeliosHomePositionsEntry_DoNotUse*>(&_WorldModel_HeliosHomePositionsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_service_2eproto;
+};
+// -------------------------------------------------------------------
+
 class WorldModel final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.WorldModel) */ {
  public:
@@ -3118,7 +3197,7 @@ class WorldModel final :
                &_WorldModel_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(WorldModel& a, WorldModel& b) {
     a.Swap(&b);
@@ -3196,6 +3275,7 @@ class WorldModel final :
     kUnknownsFieldNumber = 10,
     kOurPlayersDictFieldNumber = 11,
     kTheirPlayersDictFieldNumber = 12,
+    kHeliosHomePositionsFieldNumber = 31,
     kOurTeamNameFieldNumber = 2,
     kTheirTeamNameFieldNumber = 3,
     kInterceptTableFieldNumber = 1,
@@ -3215,9 +3295,10 @@ class WorldModel final :
     kGameModeTypeFieldNumber = 22,
     kLeftTeamScoreFieldNumber = 23,
     kRightTeamScoreFieldNumber = 24,
+    kStopedCycleFieldNumber = 27,
     kIsOurSetPlayFieldNumber = 25,
     kIsTheirSetPlayFieldNumber = 26,
-    kStopedCycleFieldNumber = 27,
+    kIsPenaltyKickModeFieldNumber = 30,
     kOurTeamScoreFieldNumber = 28,
     kTheirTeamScoreFieldNumber = 29,
   };
@@ -3315,6 +3396,23 @@ class WorldModel final :
       their_players_dict() const;
   ::PROTOBUF_NAMESPACE_ID::Map< ::int32_t, ::protos::Player >*
       mutable_their_players_dict();
+  // map<int32, .protos.Vector2D> helios_home_positions = 31;
+  int helios_home_positions_size() const;
+  private:
+  int _internal_helios_home_positions_size() const;
+
+  public:
+  void clear_helios_home_positions() ;
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::int32_t, ::protos::Vector2D >&
+      _internal_helios_home_positions() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::int32_t, ::protos::Vector2D >*
+      _internal_mutable_helios_home_positions();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::int32_t, ::protos::Vector2D >&
+      helios_home_positions() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::int32_t, ::protos::Vector2D >*
+      mutable_helios_home_positions();
   // string our_team_name = 2;
   void clear_our_team_name() ;
   const std::string& our_team_name() const;
@@ -3537,6 +3635,16 @@ class WorldModel final :
   void _internal_set_right_team_score(::int32_t value);
 
   public:
+  // int32 stoped_cycle = 27;
+  void clear_stoped_cycle() ;
+  ::int32_t stoped_cycle() const;
+  void set_stoped_cycle(::int32_t value);
+
+  private:
+  ::int32_t _internal_stoped_cycle() const;
+  void _internal_set_stoped_cycle(::int32_t value);
+
+  public:
   // bool is_our_set_play = 25;
   void clear_is_our_set_play() ;
   bool is_our_set_play() const;
@@ -3557,14 +3665,14 @@ class WorldModel final :
   void _internal_set_is_their_set_play(bool value);
 
   public:
-  // int32 stoped_cycle = 27;
-  void clear_stoped_cycle() ;
-  ::int32_t stoped_cycle() const;
-  void set_stoped_cycle(::int32_t value);
+  // bool is_penalty_kick_mode = 30;
+  void clear_is_penalty_kick_mode() ;
+  bool is_penalty_kick_mode() const;
+  void set_is_penalty_kick_mode(bool value);
 
   private:
-  ::int32_t _internal_stoped_cycle() const;
-  void _internal_set_stoped_cycle(::int32_t value);
+  bool _internal_is_penalty_kick_mode() const;
+  void _internal_set_is_penalty_kick_mode(bool value);
 
   public:
   // int32 our_team_score = 28;
@@ -3610,6 +3718,11 @@ class WorldModel final :
         ::int32_t, ::protos::Player,
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> their_players_dict_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        WorldModel_HeliosHomePositionsEntry_DoNotUse,
+        ::int32_t, ::protos::Vector2D,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> helios_home_positions_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr our_team_name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr their_team_name_;
     ::protos::InterceptTable* intercept_table_;
@@ -3629,9 +3742,10 @@ class WorldModel final :
     int game_mode_type_;
     ::int32_t left_team_score_;
     ::int32_t right_team_score_;
+    ::int32_t stoped_cycle_;
     bool is_our_set_play_;
     bool is_their_set_play_;
-    ::int32_t stoped_cycle_;
+    bool is_penalty_kick_mode_;
     ::int32_t our_team_score_;
     ::int32_t their_team_score_;
   };
@@ -3695,7 +3809,7 @@ class State final :
                &_State_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(State& a, State& b) {
     a.Swap(&b);
@@ -3871,7 +3985,7 @@ class InitMessage final :
                &_InitMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(InitMessage& a, InitMessage& b) {
     a.Swap(&b);
@@ -4026,7 +4140,7 @@ class Dash final :
                &_Dash_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(Dash& a, Dash& b) {
     a.Swap(&b);
@@ -4193,7 +4307,7 @@ class Turn final :
                &_Turn_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(Turn& a, Turn& b) {
     a.Swap(&b);
@@ -4348,7 +4462,7 @@ class Kick final :
                &_Kick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(Kick& a, Kick& b) {
     a.Swap(&b);
@@ -4515,7 +4629,7 @@ class Tackle final :
                &_Tackle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(Tackle& a, Tackle& b) {
     a.Swap(&b);
@@ -4681,7 +4795,7 @@ class Catch final :
                &_Catch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(Catch& a, Catch& b) {
     a.Swap(&b);
@@ -4806,7 +4920,7 @@ class Move final :
                &_Move_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(Move& a, Move& b) {
     a.Swap(&b);
@@ -4973,7 +5087,7 @@ class TurnNeck final :
                &_TurnNeck_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(TurnNeck& a, TurnNeck& b) {
     a.Swap(&b);
@@ -5128,7 +5242,7 @@ class ChangeView final :
                &_ChangeView_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(ChangeView& a, ChangeView& b) {
     a.Swap(&b);
@@ -5283,7 +5397,7 @@ class BallMessage final :
                &_BallMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(BallMessage& a, BallMessage& b) {
     a.Swap(&b);
@@ -5459,7 +5573,7 @@ class PassMessage final :
                &_PassMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(PassMessage& a, PassMessage& b) {
     a.Swap(&b);
@@ -5663,7 +5777,7 @@ class InterceptMessage final :
                &_InterceptMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(InterceptMessage& a, InterceptMessage& b) {
     a.Swap(&b);
@@ -5842,7 +5956,7 @@ class GoalieMessage final :
                &_GoalieMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(GoalieMessage& a, GoalieMessage& b) {
     a.Swap(&b);
@@ -6026,7 +6140,7 @@ class GoalieAndPlayerMessage final :
                &_GoalieAndPlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(GoalieAndPlayerMessage& a, GoalieAndPlayerMessage& b) {
     a.Swap(&b);
@@ -6238,7 +6352,7 @@ class OffsideLineMessage final :
                &_OffsideLineMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(OffsideLineMessage& a, OffsideLineMessage& b) {
     a.Swap(&b);
@@ -6393,7 +6507,7 @@ class DefenseLineMessage final :
                &_DefenseLineMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(DefenseLineMessage& a, DefenseLineMessage& b) {
     a.Swap(&b);
@@ -6547,7 +6661,7 @@ class WaitRequestMessage final :
                &_WaitRequestMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(WaitRequestMessage& a, WaitRequestMessage& b) {
     a.Swap(&b);
@@ -6672,7 +6786,7 @@ class SetplayMessage final :
                &_SetplayMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(SetplayMessage& a, SetplayMessage& b) {
     a.Swap(&b);
@@ -6827,7 +6941,7 @@ class PassRequestMessage final :
                &_PassRequestMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(PassRequestMessage& a, PassRequestMessage& b) {
     a.Swap(&b);
@@ -6987,7 +7101,7 @@ class StaminaMessage final :
                &_StaminaMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   friend void swap(StaminaMessage& a, StaminaMessage& b) {
     a.Swap(&b);
@@ -7142,7 +7256,7 @@ class RecoveryMessage final :
                &_RecoveryMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   friend void swap(RecoveryMessage& a, RecoveryMessage& b) {
     a.Swap(&b);
@@ -7297,7 +7411,7 @@ class StaminaCapacityMessage final :
                &_StaminaCapacityMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   friend void swap(StaminaCapacityMessage& a, StaminaCapacityMessage& b) {
     a.Swap(&b);
@@ -7452,7 +7566,7 @@ class DribbleMessage final :
                &_DribbleMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   friend void swap(DribbleMessage& a, DribbleMessage& b) {
     a.Swap(&b);
@@ -7624,7 +7738,7 @@ class BallGoalieMessage final :
                &_BallGoalieMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   friend void swap(BallGoalieMessage& a, BallGoalieMessage& b) {
     a.Swap(&b);
@@ -7828,7 +7942,7 @@ class OnePlayerMessage final :
                &_OnePlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   friend void swap(OnePlayerMessage& a, OnePlayerMessage& b) {
     a.Swap(&b);
@@ -8000,7 +8114,7 @@ class TwoPlayerMessage final :
                &_TwoPlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   friend void swap(TwoPlayerMessage& a, TwoPlayerMessage& b) {
     a.Swap(&b);
@@ -8200,7 +8314,7 @@ class ThreePlayerMessage final :
                &_ThreePlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   friend void swap(ThreePlayerMessage& a, ThreePlayerMessage& b) {
     a.Swap(&b);
@@ -8428,7 +8542,7 @@ class SelfMessage final :
                &_SelfMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   friend void swap(SelfMessage& a, SelfMessage& b) {
     a.Swap(&b);
@@ -8612,7 +8726,7 @@ class TeammateMessage final :
                &_TeammateMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    39;
 
   friend void swap(TeammateMessage& a, TeammateMessage& b) {
     a.Swap(&b);
@@ -8796,7 +8910,7 @@ class OpponentMessage final :
                &_OpponentMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    40;
 
   friend void swap(OpponentMessage& a, OpponentMessage& b) {
     a.Swap(&b);
@@ -8980,7 +9094,7 @@ class BallPlayerMessage final :
                &_BallPlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    41;
 
   friend void swap(BallPlayerMessage& a, BallPlayerMessage& b) {
     a.Swap(&b);
@@ -9222,7 +9336,7 @@ class Say final :
                &_Say_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    42;
 
   friend void swap(Say& a, Say& b) {
     a.Swap(&b);
@@ -9838,7 +9952,7 @@ class PointTo final :
                &_PointTo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    43;
 
   friend void swap(PointTo& a, PointTo& b) {
     a.Swap(&b);
@@ -10004,7 +10118,7 @@ class PointToOf final :
                &_PointToOf_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    44;
 
   friend void swap(PointToOf& a, PointToOf& b) {
     a.Swap(&b);
@@ -10129,7 +10243,7 @@ class AttentionTo final :
                &_AttentionTo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    45;
 
   friend void swap(AttentionTo& a, AttentionTo& b) {
     a.Swap(&b);
@@ -10295,7 +10409,7 @@ class AttentionToOf final :
                &_AttentionToOf_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    46;
 
   friend void swap(AttentionToOf& a, AttentionToOf& b) {
     a.Swap(&b);
@@ -10420,7 +10534,7 @@ class AddText final :
                &_AddText_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    47;
 
   friend void swap(AddText& a, AddText& b) {
     a.Swap(&b);
@@ -10597,7 +10711,7 @@ class AddPoint final :
                &_AddPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    48;
 
   friend void swap(AddPoint& a, AddPoint& b) {
     a.Swap(&b);
@@ -10791,7 +10905,7 @@ class AddLine final :
                &_AddLine_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    49;
 
   friend void swap(AddLine& a, AddLine& b) {
     a.Swap(&b);
@@ -11001,7 +11115,7 @@ class AddArc final :
                &_AddArc_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    50;
 
   friend void swap(AddArc& a, AddArc& b) {
     a.Swap(&b);
@@ -11231,7 +11345,7 @@ class AddCircle final :
                &_AddCircle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    51;
 
   friend void swap(AddCircle& a, AddCircle& b) {
     a.Swap(&b);
@@ -11449,7 +11563,7 @@ class AddTriangle final :
                &_AddTriangle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    52;
 
   friend void swap(AddTriangle& a, AddTriangle& b) {
     a.Swap(&b);
@@ -11687,7 +11801,7 @@ class AddRectangle final :
                &_AddRectangle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    53;
 
   friend void swap(AddRectangle& a, AddRectangle& b) {
     a.Swap(&b);
@@ -11924,7 +12038,7 @@ class AddSector final :
                &_AddSector_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    54;
 
   friend void swap(AddSector& a, AddSector& b) {
     a.Swap(&b);
@@ -12178,7 +12292,7 @@ class AddMessage final :
                &_AddMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    55;
 
   friend void swap(AddMessage& a, AddMessage& b) {
     a.Swap(&b);
@@ -12407,7 +12521,7 @@ class Log final :
                &_Log_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    56;
 
   friend void swap(Log& a, Log& b) {
     a.Swap(&b);
@@ -12750,7 +12864,7 @@ class DebugClient final :
                &_DebugClient_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    57;
 
   friend void swap(DebugClient& a, DebugClient& b) {
     a.Swap(&b);
@@ -12915,7 +13029,7 @@ class Body_GoToPoint final :
                &_Body_GoToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    58;
 
   friend void swap(Body_GoToPoint& a, Body_GoToPoint& b) {
     a.Swap(&b);
@@ -13099,7 +13213,7 @@ class Body_SmartKick final :
                &_Body_SmartKick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    59;
 
   friend void swap(Body_SmartKick& a, Body_SmartKick& b) {
     a.Swap(&b);
@@ -13295,7 +13409,7 @@ class Bhv_BeforeKickOff final :
                &_Bhv_BeforeKickOff_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    60;
 
   friend void swap(Bhv_BeforeKickOff& a, Bhv_BeforeKickOff& b) {
     a.Swap(&b);
@@ -13454,7 +13568,7 @@ class Bhv_BodyNeckToBall final :
                &_Bhv_BodyNeckToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    61;
 
   friend void swap(Bhv_BodyNeckToBall& a, Bhv_BodyNeckToBall& b) {
     a.Swap(&b);
@@ -13579,7 +13693,7 @@ class Bhv_BodyNeckToPoint final :
                &_Bhv_BodyNeckToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    62;
 
   friend void swap(Bhv_BodyNeckToPoint& a, Bhv_BodyNeckToPoint& b) {
     a.Swap(&b);
@@ -13738,7 +13852,7 @@ class Bhv_Emergency final :
                &_Bhv_Emergency_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    63;
 
   friend void swap(Bhv_Emergency& a, Bhv_Emergency& b) {
     a.Swap(&b);
@@ -13863,7 +13977,7 @@ class Bhv_GoToPointLookBall final :
                &_Bhv_GoToPointLookBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    64;
 
   friend void swap(Bhv_GoToPointLookBall& a, Bhv_GoToPointLookBall& b) {
     a.Swap(&b);
@@ -14047,7 +14161,7 @@ class Bhv_NeckBodyToBall final :
                &_Bhv_NeckBodyToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    65;
 
   friend void swap(Bhv_NeckBodyToBall& a, Bhv_NeckBodyToBall& b) {
     a.Swap(&b);
@@ -14202,7 +14316,7 @@ class Bhv_NeckBodyToPoint final :
                &_Bhv_NeckBodyToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    66;
 
   friend void swap(Bhv_NeckBodyToPoint& a, Bhv_NeckBodyToPoint& b) {
     a.Swap(&b);
@@ -14373,7 +14487,7 @@ class Bhv_ScanField final :
                &_Bhv_ScanField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    67;
 
   friend void swap(Bhv_ScanField& a, Bhv_ScanField& b) {
     a.Swap(&b);
@@ -14497,7 +14611,7 @@ class Body_AdvanceBall final :
                &_Body_AdvanceBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    68;
 
   friend void swap(Body_AdvanceBall& a, Body_AdvanceBall& b) {
     a.Swap(&b);
@@ -14621,7 +14735,7 @@ class Body_ClearBall final :
                &_Body_ClearBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    69;
 
   friend void swap(Body_ClearBall& a, Body_ClearBall& b) {
     a.Swap(&b);
@@ -14746,7 +14860,7 @@ class Body_Dribble final :
                &_Body_Dribble_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    70;
 
   friend void swap(Body_Dribble& a, Body_Dribble& b) {
     a.Swap(&b);
@@ -14954,7 +15068,7 @@ class Body_GoToPointDodge final :
                &_Body_GoToPointDodge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    71;
 
   friend void swap(Body_GoToPointDodge& a, Body_GoToPointDodge& b) {
     a.Swap(&b);
@@ -15126,7 +15240,7 @@ class Body_HoldBall final :
                &_Body_HoldBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    72;
 
   friend void swap(Body_HoldBall& a, Body_HoldBall& b) {
     a.Swap(&b);
@@ -15314,7 +15428,7 @@ class Body_Intercept final :
                &_Body_Intercept_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    73;
 
   friend void swap(Body_Intercept& a, Body_Intercept& b) {
     a.Swap(&b);
@@ -15486,7 +15600,7 @@ class Body_KickOneStep final :
                &_Body_KickOneStep_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    74;
 
   friend void swap(Body_KickOneStep& a, Body_KickOneStep& b) {
     a.Swap(&b);
@@ -15669,7 +15783,7 @@ class Body_StopBall final :
                &_Body_StopBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    75;
 
   friend void swap(Body_StopBall& a, Body_StopBall& b) {
     a.Swap(&b);
@@ -15794,7 +15908,7 @@ class Body_StopDash final :
                &_Body_StopDash_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    76;
 
   friend void swap(Body_StopDash& a, Body_StopDash& b) {
     a.Swap(&b);
@@ -15949,7 +16063,7 @@ class Body_TackleToPoint final :
                &_Body_TackleToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    77;
 
   friend void swap(Body_TackleToPoint& a, Body_TackleToPoint& b) {
     a.Swap(&b);
@@ -16133,7 +16247,7 @@ class Body_TurnToAngle final :
                &_Body_TurnToAngle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    78;
 
   friend void swap(Body_TurnToAngle& a, Body_TurnToAngle& b) {
     a.Swap(&b);
@@ -16288,7 +16402,7 @@ class Body_TurnToBall final :
                &_Body_TurnToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    79;
 
   friend void swap(Body_TurnToBall& a, Body_TurnToBall& b) {
     a.Swap(&b);
@@ -16443,7 +16557,7 @@ class Body_TurnToPoint final :
                &_Body_TurnToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    80;
 
   friend void swap(Body_TurnToPoint& a, Body_TurnToPoint& b) {
     a.Swap(&b);
@@ -16615,7 +16729,7 @@ class Focus_MoveToPoint final :
                &_Focus_MoveToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    81;
 
   friend void swap(Focus_MoveToPoint& a, Focus_MoveToPoint& b) {
     a.Swap(&b);
@@ -16774,7 +16888,7 @@ class Focus_Reset final :
                &_Focus_Reset_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    82;
 
   friend void swap(Focus_Reset& a, Focus_Reset& b) {
     a.Swap(&b);
@@ -16898,7 +17012,7 @@ class Neck_ScanField final :
                &_Neck_ScanField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    83;
 
   friend void swap(Neck_ScanField& a, Neck_ScanField& b) {
     a.Swap(&b);
@@ -17022,7 +17136,7 @@ class Neck_ScanPlayers final :
                &_Neck_ScanPlayers_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    84;
 
   friend void swap(Neck_ScanPlayers& a, Neck_ScanPlayers& b) {
     a.Swap(&b);
@@ -17147,7 +17261,7 @@ class Neck_TurnToBallAndPlayer final :
                &_Neck_TurnToBallAndPlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    85;
 
   friend void swap(Neck_TurnToBallAndPlayer& a, Neck_TurnToBallAndPlayer& b) {
     a.Swap(&b);
@@ -17326,7 +17440,7 @@ class Neck_TurnToBallOrScan final :
                &_Neck_TurnToBallOrScan_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    86;
 
   friend void swap(Neck_TurnToBallOrScan& a, Neck_TurnToBallOrScan& b) {
     a.Swap(&b);
@@ -17480,7 +17594,7 @@ class Neck_TurnToBall final :
                &_Neck_TurnToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    87;
 
   friend void swap(Neck_TurnToBall& a, Neck_TurnToBall& b) {
     a.Swap(&b);
@@ -17605,7 +17719,7 @@ class Neck_TurnToGoalieOrScan final :
                &_Neck_TurnToGoalieOrScan_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    88;
 
   friend void swap(Neck_TurnToGoalieOrScan& a, Neck_TurnToGoalieOrScan& b) {
     a.Swap(&b);
@@ -17759,7 +17873,7 @@ class Neck_TurnToLowConfTeammate final :
                &_Neck_TurnToLowConfTeammate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    89;
 
   friend void swap(Neck_TurnToLowConfTeammate& a, Neck_TurnToLowConfTeammate& b) {
     a.Swap(&b);
@@ -17884,7 +17998,7 @@ class Neck_TurnToPlayerOrScan final :
                &_Neck_TurnToPlayerOrScan_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    90;
 
   friend void swap(Neck_TurnToPlayerOrScan& a, Neck_TurnToPlayerOrScan& b) {
     a.Swap(&b);
@@ -18063,7 +18177,7 @@ class Neck_TurnToPoint final :
                &_Neck_TurnToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    91;
 
   friend void swap(Neck_TurnToPoint& a, Neck_TurnToPoint& b) {
     a.Swap(&b);
@@ -18223,7 +18337,7 @@ class Neck_TurnToRelative final :
                &_Neck_TurnToRelative_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    92;
 
   friend void swap(Neck_TurnToRelative& a, Neck_TurnToRelative& b) {
     a.Swap(&b);
@@ -18378,7 +18492,7 @@ class View_ChangeWidth final :
                &_View_ChangeWidth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    93;
 
   friend void swap(View_ChangeWidth& a, View_ChangeWidth& b) {
     a.Swap(&b);
@@ -18532,7 +18646,7 @@ class View_Normal final :
                &_View_Normal_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    94;
 
   friend void swap(View_Normal& a, View_Normal& b) {
     a.Swap(&b);
@@ -18656,7 +18770,7 @@ class View_Synch final :
                &_View_Synch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    95;
 
   friend void swap(View_Synch& a, View_Synch& b) {
     a.Swap(&b);
@@ -18780,7 +18894,7 @@ class View_Wide final :
                &_View_Wide_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    96;
 
   friend void swap(View_Wide& a, View_Wide& b) {
     a.Swap(&b);
@@ -18838,6 +18952,1361 @@ class View_Wide final :
   // accessors -------------------------------------------------------
 
   // @@protoc_insertion_point(class_scope:protos.View_Wide)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class HeliosGoalie final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.HeliosGoalie) */ {
+ public:
+  inline HeliosGoalie() : HeliosGoalie(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR HeliosGoalie(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeliosGoalie(const HeliosGoalie& from);
+  HeliosGoalie(HeliosGoalie&& from) noexcept
+    : HeliosGoalie() {
+    *this = ::std::move(from);
+  }
+
+  inline HeliosGoalie& operator=(const HeliosGoalie& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeliosGoalie& operator=(HeliosGoalie&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeliosGoalie& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeliosGoalie* internal_default_instance() {
+    return reinterpret_cast<const HeliosGoalie*>(
+               &_HeliosGoalie_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    97;
+
+  friend void swap(HeliosGoalie& a, HeliosGoalie& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeliosGoalie* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeliosGoalie* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeliosGoalie* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeliosGoalie>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const HeliosGoalie& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const HeliosGoalie& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.HeliosGoalie";
+  }
+  protected:
+  explicit HeliosGoalie(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.HeliosGoalie)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class HeliosGoalieMove final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.HeliosGoalieMove) */ {
+ public:
+  inline HeliosGoalieMove() : HeliosGoalieMove(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR HeliosGoalieMove(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeliosGoalieMove(const HeliosGoalieMove& from);
+  HeliosGoalieMove(HeliosGoalieMove&& from) noexcept
+    : HeliosGoalieMove() {
+    *this = ::std::move(from);
+  }
+
+  inline HeliosGoalieMove& operator=(const HeliosGoalieMove& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeliosGoalieMove& operator=(HeliosGoalieMove&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeliosGoalieMove& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeliosGoalieMove* internal_default_instance() {
+    return reinterpret_cast<const HeliosGoalieMove*>(
+               &_HeliosGoalieMove_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    98;
+
+  friend void swap(HeliosGoalieMove& a, HeliosGoalieMove& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeliosGoalieMove* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeliosGoalieMove* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeliosGoalieMove* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeliosGoalieMove>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const HeliosGoalieMove& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const HeliosGoalieMove& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.HeliosGoalieMove";
+  }
+  protected:
+  explicit HeliosGoalieMove(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.HeliosGoalieMove)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class HeliosGoalieKick final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.HeliosGoalieKick) */ {
+ public:
+  inline HeliosGoalieKick() : HeliosGoalieKick(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR HeliosGoalieKick(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeliosGoalieKick(const HeliosGoalieKick& from);
+  HeliosGoalieKick(HeliosGoalieKick&& from) noexcept
+    : HeliosGoalieKick() {
+    *this = ::std::move(from);
+  }
+
+  inline HeliosGoalieKick& operator=(const HeliosGoalieKick& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeliosGoalieKick& operator=(HeliosGoalieKick&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeliosGoalieKick& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeliosGoalieKick* internal_default_instance() {
+    return reinterpret_cast<const HeliosGoalieKick*>(
+               &_HeliosGoalieKick_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    99;
+
+  friend void swap(HeliosGoalieKick& a, HeliosGoalieKick& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeliosGoalieKick* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeliosGoalieKick* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeliosGoalieKick* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeliosGoalieKick>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const HeliosGoalieKick& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const HeliosGoalieKick& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.HeliosGoalieKick";
+  }
+  protected:
+  explicit HeliosGoalieKick(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.HeliosGoalieKick)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class HeliosShoot final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.HeliosShoot) */ {
+ public:
+  inline HeliosShoot() : HeliosShoot(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR HeliosShoot(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeliosShoot(const HeliosShoot& from);
+  HeliosShoot(HeliosShoot&& from) noexcept
+    : HeliosShoot() {
+    *this = ::std::move(from);
+  }
+
+  inline HeliosShoot& operator=(const HeliosShoot& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeliosShoot& operator=(HeliosShoot&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeliosShoot& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeliosShoot* internal_default_instance() {
+    return reinterpret_cast<const HeliosShoot*>(
+               &_HeliosShoot_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    100;
+
+  friend void swap(HeliosShoot& a, HeliosShoot& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeliosShoot* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeliosShoot* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeliosShoot* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeliosShoot>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const HeliosShoot& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const HeliosShoot& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.HeliosShoot";
+  }
+  protected:
+  explicit HeliosShoot(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.HeliosShoot)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class HeliosChainAction final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.HeliosChainAction) */ {
+ public:
+  inline HeliosChainAction() : HeliosChainAction(nullptr) {}
+  ~HeliosChainAction() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR HeliosChainAction(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeliosChainAction(const HeliosChainAction& from);
+  HeliosChainAction(HeliosChainAction&& from) noexcept
+    : HeliosChainAction() {
+    *this = ::std::move(from);
+  }
+
+  inline HeliosChainAction& operator=(const HeliosChainAction& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeliosChainAction& operator=(HeliosChainAction&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeliosChainAction& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeliosChainAction* internal_default_instance() {
+    return reinterpret_cast<const HeliosChainAction*>(
+               &_HeliosChainAction_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    101;
+
+  friend void swap(HeliosChainAction& a, HeliosChainAction& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeliosChainAction* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeliosChainAction* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeliosChainAction* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeliosChainAction>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const HeliosChainAction& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const HeliosChainAction& from) {
+    HeliosChainAction::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HeliosChainAction* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.HeliosChainAction";
+  }
+  protected:
+  explicit HeliosChainAction(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDirectPassFieldNumber = 1,
+    kLeadPassFieldNumber = 2,
+    kThroughPassFieldNumber = 3,
+    kShortDribbleFieldNumber = 4,
+    kLongDribbleFieldNumber = 5,
+    kCrossFieldNumber = 6,
+    kSimplePassFieldNumber = 7,
+    kSimpleDribbleFieldNumber = 8,
+  };
+  // bool direct_pass = 1;
+  void clear_direct_pass() ;
+  bool direct_pass() const;
+  void set_direct_pass(bool value);
+
+  private:
+  bool _internal_direct_pass() const;
+  void _internal_set_direct_pass(bool value);
+
+  public:
+  // bool lead_pass = 2;
+  void clear_lead_pass() ;
+  bool lead_pass() const;
+  void set_lead_pass(bool value);
+
+  private:
+  bool _internal_lead_pass() const;
+  void _internal_set_lead_pass(bool value);
+
+  public:
+  // bool through_pass = 3;
+  void clear_through_pass() ;
+  bool through_pass() const;
+  void set_through_pass(bool value);
+
+  private:
+  bool _internal_through_pass() const;
+  void _internal_set_through_pass(bool value);
+
+  public:
+  // bool short_dribble = 4;
+  void clear_short_dribble() ;
+  bool short_dribble() const;
+  void set_short_dribble(bool value);
+
+  private:
+  bool _internal_short_dribble() const;
+  void _internal_set_short_dribble(bool value);
+
+  public:
+  // bool long_dribble = 5;
+  void clear_long_dribble() ;
+  bool long_dribble() const;
+  void set_long_dribble(bool value);
+
+  private:
+  bool _internal_long_dribble() const;
+  void _internal_set_long_dribble(bool value);
+
+  public:
+  // bool cross = 6;
+  void clear_cross() ;
+  bool cross() const;
+  void set_cross(bool value);
+
+  private:
+  bool _internal_cross() const;
+  void _internal_set_cross(bool value);
+
+  public:
+  // bool simple_pass = 7;
+  void clear_simple_pass() ;
+  bool simple_pass() const;
+  void set_simple_pass(bool value);
+
+  private:
+  bool _internal_simple_pass() const;
+  void _internal_set_simple_pass(bool value);
+
+  public:
+  // bool simple_dribble = 8;
+  void clear_simple_dribble() ;
+  bool simple_dribble() const;
+  void set_simple_dribble(bool value);
+
+  private:
+  bool _internal_simple_dribble() const;
+  void _internal_set_simple_dribble(bool value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:protos.HeliosChainAction)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    bool direct_pass_;
+    bool lead_pass_;
+    bool through_pass_;
+    bool short_dribble_;
+    bool long_dribble_;
+    bool cross_;
+    bool simple_pass_;
+    bool simple_dribble_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class HeliosBasicOffensive final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.HeliosBasicOffensive) */ {
+ public:
+  inline HeliosBasicOffensive() : HeliosBasicOffensive(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR HeliosBasicOffensive(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeliosBasicOffensive(const HeliosBasicOffensive& from);
+  HeliosBasicOffensive(HeliosBasicOffensive&& from) noexcept
+    : HeliosBasicOffensive() {
+    *this = ::std::move(from);
+  }
+
+  inline HeliosBasicOffensive& operator=(const HeliosBasicOffensive& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeliosBasicOffensive& operator=(HeliosBasicOffensive&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeliosBasicOffensive& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeliosBasicOffensive* internal_default_instance() {
+    return reinterpret_cast<const HeliosBasicOffensive*>(
+               &_HeliosBasicOffensive_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    102;
+
+  friend void swap(HeliosBasicOffensive& a, HeliosBasicOffensive& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeliosBasicOffensive* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeliosBasicOffensive* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeliosBasicOffensive* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeliosBasicOffensive>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const HeliosBasicOffensive& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const HeliosBasicOffensive& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.HeliosBasicOffensive";
+  }
+  protected:
+  explicit HeliosBasicOffensive(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.HeliosBasicOffensive)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class HeliosBasicMove final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.HeliosBasicMove) */ {
+ public:
+  inline HeliosBasicMove() : HeliosBasicMove(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR HeliosBasicMove(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeliosBasicMove(const HeliosBasicMove& from);
+  HeliosBasicMove(HeliosBasicMove&& from) noexcept
+    : HeliosBasicMove() {
+    *this = ::std::move(from);
+  }
+
+  inline HeliosBasicMove& operator=(const HeliosBasicMove& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeliosBasicMove& operator=(HeliosBasicMove&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeliosBasicMove& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeliosBasicMove* internal_default_instance() {
+    return reinterpret_cast<const HeliosBasicMove*>(
+               &_HeliosBasicMove_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    103;
+
+  friend void swap(HeliosBasicMove& a, HeliosBasicMove& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeliosBasicMove* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeliosBasicMove* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeliosBasicMove* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeliosBasicMove>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const HeliosBasicMove& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const HeliosBasicMove& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.HeliosBasicMove";
+  }
+  protected:
+  explicit HeliosBasicMove(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.HeliosBasicMove)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class HeliosSetPlay final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.HeliosSetPlay) */ {
+ public:
+  inline HeliosSetPlay() : HeliosSetPlay(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR HeliosSetPlay(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeliosSetPlay(const HeliosSetPlay& from);
+  HeliosSetPlay(HeliosSetPlay&& from) noexcept
+    : HeliosSetPlay() {
+    *this = ::std::move(from);
+  }
+
+  inline HeliosSetPlay& operator=(const HeliosSetPlay& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeliosSetPlay& operator=(HeliosSetPlay&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeliosSetPlay& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeliosSetPlay* internal_default_instance() {
+    return reinterpret_cast<const HeliosSetPlay*>(
+               &_HeliosSetPlay_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    104;
+
+  friend void swap(HeliosSetPlay& a, HeliosSetPlay& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeliosSetPlay* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeliosSetPlay* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeliosSetPlay* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeliosSetPlay>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const HeliosSetPlay& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const HeliosSetPlay& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.HeliosSetPlay";
+  }
+  protected:
+  explicit HeliosSetPlay(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.HeliosSetPlay)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class HeliosPenalty final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.HeliosPenalty) */ {
+ public:
+  inline HeliosPenalty() : HeliosPenalty(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR HeliosPenalty(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeliosPenalty(const HeliosPenalty& from);
+  HeliosPenalty(HeliosPenalty&& from) noexcept
+    : HeliosPenalty() {
+    *this = ::std::move(from);
+  }
+
+  inline HeliosPenalty& operator=(const HeliosPenalty& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeliosPenalty& operator=(HeliosPenalty&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeliosPenalty& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeliosPenalty* internal_default_instance() {
+    return reinterpret_cast<const HeliosPenalty*>(
+               &_HeliosPenalty_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    105;
+
+  friend void swap(HeliosPenalty& a, HeliosPenalty& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeliosPenalty* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeliosPenalty* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeliosPenalty* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeliosPenalty>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const HeliosPenalty& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const HeliosPenalty& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.HeliosPenalty";
+  }
+  protected:
+  explicit HeliosPenalty(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.HeliosPenalty)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class HeliosCommunicaion final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.HeliosCommunicaion) */ {
+ public:
+  inline HeliosCommunicaion() : HeliosCommunicaion(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR HeliosCommunicaion(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeliosCommunicaion(const HeliosCommunicaion& from);
+  HeliosCommunicaion(HeliosCommunicaion&& from) noexcept
+    : HeliosCommunicaion() {
+    *this = ::std::move(from);
+  }
+
+  inline HeliosCommunicaion& operator=(const HeliosCommunicaion& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeliosCommunicaion& operator=(HeliosCommunicaion&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeliosCommunicaion& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeliosCommunicaion* internal_default_instance() {
+    return reinterpret_cast<const HeliosCommunicaion*>(
+               &_HeliosCommunicaion_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    106;
+
+  friend void swap(HeliosCommunicaion& a, HeliosCommunicaion& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeliosCommunicaion* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeliosCommunicaion* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeliosCommunicaion* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeliosCommunicaion>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const HeliosCommunicaion& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const HeliosCommunicaion& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.HeliosCommunicaion";
+  }
+  protected:
+  explicit HeliosCommunicaion(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.HeliosCommunicaion)
  private:
   class _Internal;
 
@@ -18955,6 +20424,16 @@ class Action final :
     kViewNormal = 52,
     kViewSynch = 53,
     kViewWide = 54,
+    kHeliosGoalie = 55,
+    kHeliosGoalieMove = 56,
+    kHeliosGoalieKick = 57,
+    kHeliosShoot = 58,
+    kHeliosChainAction = 59,
+    kHeliosBasicOffensive = 60,
+    kHeliosBasicMove = 61,
+    kHeliosSetPlay = 62,
+    kHeliosPenalty = 63,
+    kHeliosCommunication = 64,
     ACTION_NOT_SET = 0,
   };
 
@@ -18963,7 +20442,7 @@ class Action final :
                &_Action_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    107;
 
   friend void swap(Action& a, Action& b) {
     a.Swap(&b);
@@ -19089,6 +20568,16 @@ class Action final :
     kViewNormalFieldNumber = 52,
     kViewSynchFieldNumber = 53,
     kViewWideFieldNumber = 54,
+    kHeliosGoalieFieldNumber = 55,
+    kHeliosGoalieMoveFieldNumber = 56,
+    kHeliosGoalieKickFieldNumber = 57,
+    kHeliosShootFieldNumber = 58,
+    kHeliosChainActionFieldNumber = 59,
+    kHeliosBasicOffensiveFieldNumber = 60,
+    kHeliosBasicMoveFieldNumber = 61,
+    kHeliosSetPlayFieldNumber = 62,
+    kHeliosPenaltyFieldNumber = 63,
+    kHeliosCommunicationFieldNumber = 64,
   };
   // .protos.Dash dash = 1;
   bool has_dash() const;
@@ -20062,6 +21551,186 @@ class Action final :
   void unsafe_arena_set_allocated_view_wide(
       ::protos::View_Wide* view_wide);
   ::protos::View_Wide* unsafe_arena_release_view_wide();
+  // .protos.HeliosGoalie helios_goalie = 55;
+  bool has_helios_goalie() const;
+  private:
+  bool _internal_has_helios_goalie() const;
+
+  public:
+  void clear_helios_goalie() ;
+  const ::protos::HeliosGoalie& helios_goalie() const;
+  PROTOBUF_NODISCARD ::protos::HeliosGoalie* release_helios_goalie();
+  ::protos::HeliosGoalie* mutable_helios_goalie();
+  void set_allocated_helios_goalie(::protos::HeliosGoalie* helios_goalie);
+  private:
+  const ::protos::HeliosGoalie& _internal_helios_goalie() const;
+  ::protos::HeliosGoalie* _internal_mutable_helios_goalie();
+  public:
+  void unsafe_arena_set_allocated_helios_goalie(
+      ::protos::HeliosGoalie* helios_goalie);
+  ::protos::HeliosGoalie* unsafe_arena_release_helios_goalie();
+  // .protos.HeliosGoalieMove helios_goalie_move = 56;
+  bool has_helios_goalie_move() const;
+  private:
+  bool _internal_has_helios_goalie_move() const;
+
+  public:
+  void clear_helios_goalie_move() ;
+  const ::protos::HeliosGoalieMove& helios_goalie_move() const;
+  PROTOBUF_NODISCARD ::protos::HeliosGoalieMove* release_helios_goalie_move();
+  ::protos::HeliosGoalieMove* mutable_helios_goalie_move();
+  void set_allocated_helios_goalie_move(::protos::HeliosGoalieMove* helios_goalie_move);
+  private:
+  const ::protos::HeliosGoalieMove& _internal_helios_goalie_move() const;
+  ::protos::HeliosGoalieMove* _internal_mutable_helios_goalie_move();
+  public:
+  void unsafe_arena_set_allocated_helios_goalie_move(
+      ::protos::HeliosGoalieMove* helios_goalie_move);
+  ::protos::HeliosGoalieMove* unsafe_arena_release_helios_goalie_move();
+  // .protos.HeliosGoalieKick helios_goalie_kick = 57;
+  bool has_helios_goalie_kick() const;
+  private:
+  bool _internal_has_helios_goalie_kick() const;
+
+  public:
+  void clear_helios_goalie_kick() ;
+  const ::protos::HeliosGoalieKick& helios_goalie_kick() const;
+  PROTOBUF_NODISCARD ::protos::HeliosGoalieKick* release_helios_goalie_kick();
+  ::protos::HeliosGoalieKick* mutable_helios_goalie_kick();
+  void set_allocated_helios_goalie_kick(::protos::HeliosGoalieKick* helios_goalie_kick);
+  private:
+  const ::protos::HeliosGoalieKick& _internal_helios_goalie_kick() const;
+  ::protos::HeliosGoalieKick* _internal_mutable_helios_goalie_kick();
+  public:
+  void unsafe_arena_set_allocated_helios_goalie_kick(
+      ::protos::HeliosGoalieKick* helios_goalie_kick);
+  ::protos::HeliosGoalieKick* unsafe_arena_release_helios_goalie_kick();
+  // .protos.HeliosShoot helios_shoot = 58;
+  bool has_helios_shoot() const;
+  private:
+  bool _internal_has_helios_shoot() const;
+
+  public:
+  void clear_helios_shoot() ;
+  const ::protos::HeliosShoot& helios_shoot() const;
+  PROTOBUF_NODISCARD ::protos::HeliosShoot* release_helios_shoot();
+  ::protos::HeliosShoot* mutable_helios_shoot();
+  void set_allocated_helios_shoot(::protos::HeliosShoot* helios_shoot);
+  private:
+  const ::protos::HeliosShoot& _internal_helios_shoot() const;
+  ::protos::HeliosShoot* _internal_mutable_helios_shoot();
+  public:
+  void unsafe_arena_set_allocated_helios_shoot(
+      ::protos::HeliosShoot* helios_shoot);
+  ::protos::HeliosShoot* unsafe_arena_release_helios_shoot();
+  // .protos.HeliosChainAction helios_chain_action = 59;
+  bool has_helios_chain_action() const;
+  private:
+  bool _internal_has_helios_chain_action() const;
+
+  public:
+  void clear_helios_chain_action() ;
+  const ::protos::HeliosChainAction& helios_chain_action() const;
+  PROTOBUF_NODISCARD ::protos::HeliosChainAction* release_helios_chain_action();
+  ::protos::HeliosChainAction* mutable_helios_chain_action();
+  void set_allocated_helios_chain_action(::protos::HeliosChainAction* helios_chain_action);
+  private:
+  const ::protos::HeliosChainAction& _internal_helios_chain_action() const;
+  ::protos::HeliosChainAction* _internal_mutable_helios_chain_action();
+  public:
+  void unsafe_arena_set_allocated_helios_chain_action(
+      ::protos::HeliosChainAction* helios_chain_action);
+  ::protos::HeliosChainAction* unsafe_arena_release_helios_chain_action();
+  // .protos.HeliosBasicOffensive helios_basic_offensive = 60;
+  bool has_helios_basic_offensive() const;
+  private:
+  bool _internal_has_helios_basic_offensive() const;
+
+  public:
+  void clear_helios_basic_offensive() ;
+  const ::protos::HeliosBasicOffensive& helios_basic_offensive() const;
+  PROTOBUF_NODISCARD ::protos::HeliosBasicOffensive* release_helios_basic_offensive();
+  ::protos::HeliosBasicOffensive* mutable_helios_basic_offensive();
+  void set_allocated_helios_basic_offensive(::protos::HeliosBasicOffensive* helios_basic_offensive);
+  private:
+  const ::protos::HeliosBasicOffensive& _internal_helios_basic_offensive() const;
+  ::protos::HeliosBasicOffensive* _internal_mutable_helios_basic_offensive();
+  public:
+  void unsafe_arena_set_allocated_helios_basic_offensive(
+      ::protos::HeliosBasicOffensive* helios_basic_offensive);
+  ::protos::HeliosBasicOffensive* unsafe_arena_release_helios_basic_offensive();
+  // .protos.HeliosBasicMove helios_basic_move = 61;
+  bool has_helios_basic_move() const;
+  private:
+  bool _internal_has_helios_basic_move() const;
+
+  public:
+  void clear_helios_basic_move() ;
+  const ::protos::HeliosBasicMove& helios_basic_move() const;
+  PROTOBUF_NODISCARD ::protos::HeliosBasicMove* release_helios_basic_move();
+  ::protos::HeliosBasicMove* mutable_helios_basic_move();
+  void set_allocated_helios_basic_move(::protos::HeliosBasicMove* helios_basic_move);
+  private:
+  const ::protos::HeliosBasicMove& _internal_helios_basic_move() const;
+  ::protos::HeliosBasicMove* _internal_mutable_helios_basic_move();
+  public:
+  void unsafe_arena_set_allocated_helios_basic_move(
+      ::protos::HeliosBasicMove* helios_basic_move);
+  ::protos::HeliosBasicMove* unsafe_arena_release_helios_basic_move();
+  // .protos.HeliosSetPlay helios_set_play = 62;
+  bool has_helios_set_play() const;
+  private:
+  bool _internal_has_helios_set_play() const;
+
+  public:
+  void clear_helios_set_play() ;
+  const ::protos::HeliosSetPlay& helios_set_play() const;
+  PROTOBUF_NODISCARD ::protos::HeliosSetPlay* release_helios_set_play();
+  ::protos::HeliosSetPlay* mutable_helios_set_play();
+  void set_allocated_helios_set_play(::protos::HeliosSetPlay* helios_set_play);
+  private:
+  const ::protos::HeliosSetPlay& _internal_helios_set_play() const;
+  ::protos::HeliosSetPlay* _internal_mutable_helios_set_play();
+  public:
+  void unsafe_arena_set_allocated_helios_set_play(
+      ::protos::HeliosSetPlay* helios_set_play);
+  ::protos::HeliosSetPlay* unsafe_arena_release_helios_set_play();
+  // .protos.HeliosPenalty helios_penalty = 63;
+  bool has_helios_penalty() const;
+  private:
+  bool _internal_has_helios_penalty() const;
+
+  public:
+  void clear_helios_penalty() ;
+  const ::protos::HeliosPenalty& helios_penalty() const;
+  PROTOBUF_NODISCARD ::protos::HeliosPenalty* release_helios_penalty();
+  ::protos::HeliosPenalty* mutable_helios_penalty();
+  void set_allocated_helios_penalty(::protos::HeliosPenalty* helios_penalty);
+  private:
+  const ::protos::HeliosPenalty& _internal_helios_penalty() const;
+  ::protos::HeliosPenalty* _internal_mutable_helios_penalty();
+  public:
+  void unsafe_arena_set_allocated_helios_penalty(
+      ::protos::HeliosPenalty* helios_penalty);
+  ::protos::HeliosPenalty* unsafe_arena_release_helios_penalty();
+  // .protos.HeliosCommunicaion helios_communication = 64;
+  bool has_helios_communication() const;
+  private:
+  bool _internal_has_helios_communication() const;
+
+  public:
+  void clear_helios_communication() ;
+  const ::protos::HeliosCommunicaion& helios_communication() const;
+  PROTOBUF_NODISCARD ::protos::HeliosCommunicaion* release_helios_communication();
+  ::protos::HeliosCommunicaion* mutable_helios_communication();
+  void set_allocated_helios_communication(::protos::HeliosCommunicaion* helios_communication);
+  private:
+  const ::protos::HeliosCommunicaion& _internal_helios_communication() const;
+  ::protos::HeliosCommunicaion* _internal_mutable_helios_communication();
+  public:
+  void unsafe_arena_set_allocated_helios_communication(
+      ::protos::HeliosCommunicaion* helios_communication);
+  ::protos::HeliosCommunicaion* unsafe_arena_release_helios_communication();
   void clear_action();
   ActionCase action_case() const;
   // @@protoc_insertion_point(class_scope:protos.Action)
@@ -20121,6 +21790,16 @@ class Action final :
   void set_has_view_normal();
   void set_has_view_synch();
   void set_has_view_wide();
+  void set_has_helios_goalie();
+  void set_has_helios_goalie_move();
+  void set_has_helios_goalie_kick();
+  void set_has_helios_shoot();
+  void set_has_helios_chain_action();
+  void set_has_helios_basic_offensive();
+  void set_has_helios_basic_move();
+  void set_has_helios_set_play();
+  void set_has_helios_penalty();
+  void set_has_helios_communication();
 
   inline bool has_action() const;
   inline void clear_has_action();
@@ -20186,6 +21865,16 @@ class Action final :
       ::protos::View_Normal* view_normal_;
       ::protos::View_Synch* view_synch_;
       ::protos::View_Wide* view_wide_;
+      ::protos::HeliosGoalie* helios_goalie_;
+      ::protos::HeliosGoalieMove* helios_goalie_move_;
+      ::protos::HeliosGoalieKick* helios_goalie_kick_;
+      ::protos::HeliosShoot* helios_shoot_;
+      ::protos::HeliosChainAction* helios_chain_action_;
+      ::protos::HeliosBasicOffensive* helios_basic_offensive_;
+      ::protos::HeliosBasicMove* helios_basic_move_;
+      ::protos::HeliosSetPlay* helios_set_play_;
+      ::protos::HeliosPenalty* helios_penalty_;
+      ::protos::HeliosCommunicaion* helios_communication_;
     } action_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::uint32_t _oneof_case_[1];
@@ -20251,7 +21940,7 @@ class Actions final :
                &_Actions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    108;
 
   friend void swap(Actions& a, Actions& b) {
     a.Swap(&b);
@@ -20416,7 +22105,7 @@ class ServerParam final :
                &_ServerParam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    109;
 
   friend void swap(ServerParam& a, ServerParam& b) {
     a.Swap(&b);
@@ -23361,7 +25050,7 @@ class PlayerParam final :
                &_PlayerParam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    99;
+    110;
 
   friend void swap(PlayerParam& a, PlayerParam& b) {
     a.Swap(&b);
@@ -23852,7 +25541,7 @@ class PlayerType final :
                &_PlayerType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    111;
 
   friend void swap(PlayerType& a, PlayerType& b) {
     a.Swap(&b);
@@ -24390,7 +26079,7 @@ class Empty final :
                &_Empty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    101;
+    112;
 
   friend void swap(Empty& a, Empty& b) {
     a.Swap(&b);
@@ -27875,6 +29564,8 @@ InterceptTable::_internal_mutable_self_intercept_info() {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // WorldModel
 
 // .protos.InterceptTable intercept_table = 1;
@@ -28812,6 +30503,55 @@ inline ::int32_t WorldModel::_internal_their_team_score() const {
 inline void WorldModel::_internal_set_their_team_score(::int32_t value) {
   ;
   _impl_.their_team_score_ = value;
+}
+
+// bool is_penalty_kick_mode = 30;
+inline void WorldModel::clear_is_penalty_kick_mode() {
+  _impl_.is_penalty_kick_mode_ = false;
+}
+inline bool WorldModel::is_penalty_kick_mode() const {
+  // @@protoc_insertion_point(field_get:protos.WorldModel.is_penalty_kick_mode)
+  return _internal_is_penalty_kick_mode();
+}
+inline void WorldModel::set_is_penalty_kick_mode(bool value) {
+  _internal_set_is_penalty_kick_mode(value);
+  // @@protoc_insertion_point(field_set:protos.WorldModel.is_penalty_kick_mode)
+}
+inline bool WorldModel::_internal_is_penalty_kick_mode() const {
+  return _impl_.is_penalty_kick_mode_;
+}
+inline void WorldModel::_internal_set_is_penalty_kick_mode(bool value) {
+  ;
+  _impl_.is_penalty_kick_mode_ = value;
+}
+
+// map<int32, .protos.Vector2D> helios_home_positions = 31;
+inline int WorldModel::_internal_helios_home_positions_size() const {
+  return _impl_.helios_home_positions_.size();
+}
+inline int WorldModel::helios_home_positions_size() const {
+  return _internal_helios_home_positions_size();
+}
+inline void WorldModel::clear_helios_home_positions() {
+  _impl_.helios_home_positions_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::int32_t, ::protos::Vector2D >&
+WorldModel::_internal_helios_home_positions() const {
+  return _impl_.helios_home_positions_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::int32_t, ::protos::Vector2D >&
+WorldModel::helios_home_positions() const {
+  // @@protoc_insertion_point(field_map:protos.WorldModel.helios_home_positions)
+  return _internal_helios_home_positions();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::int32_t, ::protos::Vector2D >*
+WorldModel::_internal_mutable_helios_home_positions() {
+  return _impl_.helios_home_positions_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::int32_t, ::protos::Vector2D >*
+WorldModel::mutable_helios_home_positions() {
+  // @@protoc_insertion_point(field_mutable_map:protos.WorldModel.helios_home_positions)
+  return _internal_mutable_helios_home_positions();
 }
 
 // -------------------------------------------------------------------
@@ -38724,6 +40464,206 @@ inline void View_ChangeWidth::_internal_set_view_width(::protos::ViewWidth value
 
 // -------------------------------------------------------------------
 
+// HeliosGoalie
+
+// -------------------------------------------------------------------
+
+// HeliosGoalieMove
+
+// -------------------------------------------------------------------
+
+// HeliosGoalieKick
+
+// -------------------------------------------------------------------
+
+// HeliosShoot
+
+// -------------------------------------------------------------------
+
+// HeliosChainAction
+
+// bool direct_pass = 1;
+inline void HeliosChainAction::clear_direct_pass() {
+  _impl_.direct_pass_ = false;
+}
+inline bool HeliosChainAction::direct_pass() const {
+  // @@protoc_insertion_point(field_get:protos.HeliosChainAction.direct_pass)
+  return _internal_direct_pass();
+}
+inline void HeliosChainAction::set_direct_pass(bool value) {
+  _internal_set_direct_pass(value);
+  // @@protoc_insertion_point(field_set:protos.HeliosChainAction.direct_pass)
+}
+inline bool HeliosChainAction::_internal_direct_pass() const {
+  return _impl_.direct_pass_;
+}
+inline void HeliosChainAction::_internal_set_direct_pass(bool value) {
+  ;
+  _impl_.direct_pass_ = value;
+}
+
+// bool lead_pass = 2;
+inline void HeliosChainAction::clear_lead_pass() {
+  _impl_.lead_pass_ = false;
+}
+inline bool HeliosChainAction::lead_pass() const {
+  // @@protoc_insertion_point(field_get:protos.HeliosChainAction.lead_pass)
+  return _internal_lead_pass();
+}
+inline void HeliosChainAction::set_lead_pass(bool value) {
+  _internal_set_lead_pass(value);
+  // @@protoc_insertion_point(field_set:protos.HeliosChainAction.lead_pass)
+}
+inline bool HeliosChainAction::_internal_lead_pass() const {
+  return _impl_.lead_pass_;
+}
+inline void HeliosChainAction::_internal_set_lead_pass(bool value) {
+  ;
+  _impl_.lead_pass_ = value;
+}
+
+// bool through_pass = 3;
+inline void HeliosChainAction::clear_through_pass() {
+  _impl_.through_pass_ = false;
+}
+inline bool HeliosChainAction::through_pass() const {
+  // @@protoc_insertion_point(field_get:protos.HeliosChainAction.through_pass)
+  return _internal_through_pass();
+}
+inline void HeliosChainAction::set_through_pass(bool value) {
+  _internal_set_through_pass(value);
+  // @@protoc_insertion_point(field_set:protos.HeliosChainAction.through_pass)
+}
+inline bool HeliosChainAction::_internal_through_pass() const {
+  return _impl_.through_pass_;
+}
+inline void HeliosChainAction::_internal_set_through_pass(bool value) {
+  ;
+  _impl_.through_pass_ = value;
+}
+
+// bool short_dribble = 4;
+inline void HeliosChainAction::clear_short_dribble() {
+  _impl_.short_dribble_ = false;
+}
+inline bool HeliosChainAction::short_dribble() const {
+  // @@protoc_insertion_point(field_get:protos.HeliosChainAction.short_dribble)
+  return _internal_short_dribble();
+}
+inline void HeliosChainAction::set_short_dribble(bool value) {
+  _internal_set_short_dribble(value);
+  // @@protoc_insertion_point(field_set:protos.HeliosChainAction.short_dribble)
+}
+inline bool HeliosChainAction::_internal_short_dribble() const {
+  return _impl_.short_dribble_;
+}
+inline void HeliosChainAction::_internal_set_short_dribble(bool value) {
+  ;
+  _impl_.short_dribble_ = value;
+}
+
+// bool long_dribble = 5;
+inline void HeliosChainAction::clear_long_dribble() {
+  _impl_.long_dribble_ = false;
+}
+inline bool HeliosChainAction::long_dribble() const {
+  // @@protoc_insertion_point(field_get:protos.HeliosChainAction.long_dribble)
+  return _internal_long_dribble();
+}
+inline void HeliosChainAction::set_long_dribble(bool value) {
+  _internal_set_long_dribble(value);
+  // @@protoc_insertion_point(field_set:protos.HeliosChainAction.long_dribble)
+}
+inline bool HeliosChainAction::_internal_long_dribble() const {
+  return _impl_.long_dribble_;
+}
+inline void HeliosChainAction::_internal_set_long_dribble(bool value) {
+  ;
+  _impl_.long_dribble_ = value;
+}
+
+// bool cross = 6;
+inline void HeliosChainAction::clear_cross() {
+  _impl_.cross_ = false;
+}
+inline bool HeliosChainAction::cross() const {
+  // @@protoc_insertion_point(field_get:protos.HeliosChainAction.cross)
+  return _internal_cross();
+}
+inline void HeliosChainAction::set_cross(bool value) {
+  _internal_set_cross(value);
+  // @@protoc_insertion_point(field_set:protos.HeliosChainAction.cross)
+}
+inline bool HeliosChainAction::_internal_cross() const {
+  return _impl_.cross_;
+}
+inline void HeliosChainAction::_internal_set_cross(bool value) {
+  ;
+  _impl_.cross_ = value;
+}
+
+// bool simple_pass = 7;
+inline void HeliosChainAction::clear_simple_pass() {
+  _impl_.simple_pass_ = false;
+}
+inline bool HeliosChainAction::simple_pass() const {
+  // @@protoc_insertion_point(field_get:protos.HeliosChainAction.simple_pass)
+  return _internal_simple_pass();
+}
+inline void HeliosChainAction::set_simple_pass(bool value) {
+  _internal_set_simple_pass(value);
+  // @@protoc_insertion_point(field_set:protos.HeliosChainAction.simple_pass)
+}
+inline bool HeliosChainAction::_internal_simple_pass() const {
+  return _impl_.simple_pass_;
+}
+inline void HeliosChainAction::_internal_set_simple_pass(bool value) {
+  ;
+  _impl_.simple_pass_ = value;
+}
+
+// bool simple_dribble = 8;
+inline void HeliosChainAction::clear_simple_dribble() {
+  _impl_.simple_dribble_ = false;
+}
+inline bool HeliosChainAction::simple_dribble() const {
+  // @@protoc_insertion_point(field_get:protos.HeliosChainAction.simple_dribble)
+  return _internal_simple_dribble();
+}
+inline void HeliosChainAction::set_simple_dribble(bool value) {
+  _internal_set_simple_dribble(value);
+  // @@protoc_insertion_point(field_set:protos.HeliosChainAction.simple_dribble)
+}
+inline bool HeliosChainAction::_internal_simple_dribble() const {
+  return _impl_.simple_dribble_;
+}
+inline void HeliosChainAction::_internal_set_simple_dribble(bool value) {
+  ;
+  _impl_.simple_dribble_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// HeliosBasicOffensive
+
+// -------------------------------------------------------------------
+
+// HeliosBasicMove
+
+// -------------------------------------------------------------------
+
+// HeliosSetPlay
+
+// -------------------------------------------------------------------
+
+// HeliosPenalty
+
+// -------------------------------------------------------------------
+
+// HeliosCommunicaion
+
+// -------------------------------------------------------------------
+
 // Action
 
 // .protos.Dash dash = 1;
@@ -42719,6 +44659,746 @@ inline ::protos::View_Wide* Action::_internal_mutable_view_wide() {
 inline ::protos::View_Wide* Action::mutable_view_wide() {
   ::protos::View_Wide* _msg = _internal_mutable_view_wide();
   // @@protoc_insertion_point(field_mutable:protos.Action.view_wide)
+  return _msg;
+}
+
+// .protos.HeliosGoalie helios_goalie = 55;
+inline bool Action::has_helios_goalie() const {
+  return action_case() == kHeliosGoalie;
+}
+inline bool Action::_internal_has_helios_goalie() const {
+  return action_case() == kHeliosGoalie;
+}
+inline void Action::set_has_helios_goalie() {
+  _impl_._oneof_case_[0] = kHeliosGoalie;
+}
+inline void Action::clear_helios_goalie() {
+  if (action_case() == kHeliosGoalie) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.helios_goalie_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::HeliosGoalie* Action::release_helios_goalie() {
+  // @@protoc_insertion_point(field_release:protos.Action.helios_goalie)
+  if (action_case() == kHeliosGoalie) {
+    clear_has_action();
+    ::protos::HeliosGoalie* temp = _impl_.action_.helios_goalie_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.helios_goalie_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::HeliosGoalie& Action::_internal_helios_goalie() const {
+  return action_case() == kHeliosGoalie
+      ? *_impl_.action_.helios_goalie_
+      : reinterpret_cast<::protos::HeliosGoalie&>(::protos::_HeliosGoalie_default_instance_);
+}
+inline const ::protos::HeliosGoalie& Action::helios_goalie() const {
+  // @@protoc_insertion_point(field_get:protos.Action.helios_goalie)
+  return _internal_helios_goalie();
+}
+inline ::protos::HeliosGoalie* Action::unsafe_arena_release_helios_goalie() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_goalie)
+  if (action_case() == kHeliosGoalie) {
+    clear_has_action();
+    ::protos::HeliosGoalie* temp = _impl_.action_.helios_goalie_;
+    _impl_.action_.helios_goalie_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Action::unsafe_arena_set_allocated_helios_goalie(::protos::HeliosGoalie* helios_goalie) {
+  clear_action();
+  if (helios_goalie) {
+    set_has_helios_goalie();
+    _impl_.action_.helios_goalie_ = helios_goalie;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_goalie)
+}
+inline ::protos::HeliosGoalie* Action::_internal_mutable_helios_goalie() {
+  if (action_case() != kHeliosGoalie) {
+    clear_action();
+    set_has_helios_goalie();
+    _impl_.action_.helios_goalie_ = CreateMaybeMessage< ::protos::HeliosGoalie >(GetArenaForAllocation());
+  }
+  return _impl_.action_.helios_goalie_;
+}
+inline ::protos::HeliosGoalie* Action::mutable_helios_goalie() {
+  ::protos::HeliosGoalie* _msg = _internal_mutable_helios_goalie();
+  // @@protoc_insertion_point(field_mutable:protos.Action.helios_goalie)
+  return _msg;
+}
+
+// .protos.HeliosGoalieMove helios_goalie_move = 56;
+inline bool Action::has_helios_goalie_move() const {
+  return action_case() == kHeliosGoalieMove;
+}
+inline bool Action::_internal_has_helios_goalie_move() const {
+  return action_case() == kHeliosGoalieMove;
+}
+inline void Action::set_has_helios_goalie_move() {
+  _impl_._oneof_case_[0] = kHeliosGoalieMove;
+}
+inline void Action::clear_helios_goalie_move() {
+  if (action_case() == kHeliosGoalieMove) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.helios_goalie_move_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::HeliosGoalieMove* Action::release_helios_goalie_move() {
+  // @@protoc_insertion_point(field_release:protos.Action.helios_goalie_move)
+  if (action_case() == kHeliosGoalieMove) {
+    clear_has_action();
+    ::protos::HeliosGoalieMove* temp = _impl_.action_.helios_goalie_move_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.helios_goalie_move_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::HeliosGoalieMove& Action::_internal_helios_goalie_move() const {
+  return action_case() == kHeliosGoalieMove
+      ? *_impl_.action_.helios_goalie_move_
+      : reinterpret_cast<::protos::HeliosGoalieMove&>(::protos::_HeliosGoalieMove_default_instance_);
+}
+inline const ::protos::HeliosGoalieMove& Action::helios_goalie_move() const {
+  // @@protoc_insertion_point(field_get:protos.Action.helios_goalie_move)
+  return _internal_helios_goalie_move();
+}
+inline ::protos::HeliosGoalieMove* Action::unsafe_arena_release_helios_goalie_move() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_goalie_move)
+  if (action_case() == kHeliosGoalieMove) {
+    clear_has_action();
+    ::protos::HeliosGoalieMove* temp = _impl_.action_.helios_goalie_move_;
+    _impl_.action_.helios_goalie_move_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Action::unsafe_arena_set_allocated_helios_goalie_move(::protos::HeliosGoalieMove* helios_goalie_move) {
+  clear_action();
+  if (helios_goalie_move) {
+    set_has_helios_goalie_move();
+    _impl_.action_.helios_goalie_move_ = helios_goalie_move;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_goalie_move)
+}
+inline ::protos::HeliosGoalieMove* Action::_internal_mutable_helios_goalie_move() {
+  if (action_case() != kHeliosGoalieMove) {
+    clear_action();
+    set_has_helios_goalie_move();
+    _impl_.action_.helios_goalie_move_ = CreateMaybeMessage< ::protos::HeliosGoalieMove >(GetArenaForAllocation());
+  }
+  return _impl_.action_.helios_goalie_move_;
+}
+inline ::protos::HeliosGoalieMove* Action::mutable_helios_goalie_move() {
+  ::protos::HeliosGoalieMove* _msg = _internal_mutable_helios_goalie_move();
+  // @@protoc_insertion_point(field_mutable:protos.Action.helios_goalie_move)
+  return _msg;
+}
+
+// .protos.HeliosGoalieKick helios_goalie_kick = 57;
+inline bool Action::has_helios_goalie_kick() const {
+  return action_case() == kHeliosGoalieKick;
+}
+inline bool Action::_internal_has_helios_goalie_kick() const {
+  return action_case() == kHeliosGoalieKick;
+}
+inline void Action::set_has_helios_goalie_kick() {
+  _impl_._oneof_case_[0] = kHeliosGoalieKick;
+}
+inline void Action::clear_helios_goalie_kick() {
+  if (action_case() == kHeliosGoalieKick) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.helios_goalie_kick_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::HeliosGoalieKick* Action::release_helios_goalie_kick() {
+  // @@protoc_insertion_point(field_release:protos.Action.helios_goalie_kick)
+  if (action_case() == kHeliosGoalieKick) {
+    clear_has_action();
+    ::protos::HeliosGoalieKick* temp = _impl_.action_.helios_goalie_kick_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.helios_goalie_kick_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::HeliosGoalieKick& Action::_internal_helios_goalie_kick() const {
+  return action_case() == kHeliosGoalieKick
+      ? *_impl_.action_.helios_goalie_kick_
+      : reinterpret_cast<::protos::HeliosGoalieKick&>(::protos::_HeliosGoalieKick_default_instance_);
+}
+inline const ::protos::HeliosGoalieKick& Action::helios_goalie_kick() const {
+  // @@protoc_insertion_point(field_get:protos.Action.helios_goalie_kick)
+  return _internal_helios_goalie_kick();
+}
+inline ::protos::HeliosGoalieKick* Action::unsafe_arena_release_helios_goalie_kick() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_goalie_kick)
+  if (action_case() == kHeliosGoalieKick) {
+    clear_has_action();
+    ::protos::HeliosGoalieKick* temp = _impl_.action_.helios_goalie_kick_;
+    _impl_.action_.helios_goalie_kick_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Action::unsafe_arena_set_allocated_helios_goalie_kick(::protos::HeliosGoalieKick* helios_goalie_kick) {
+  clear_action();
+  if (helios_goalie_kick) {
+    set_has_helios_goalie_kick();
+    _impl_.action_.helios_goalie_kick_ = helios_goalie_kick;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_goalie_kick)
+}
+inline ::protos::HeliosGoalieKick* Action::_internal_mutable_helios_goalie_kick() {
+  if (action_case() != kHeliosGoalieKick) {
+    clear_action();
+    set_has_helios_goalie_kick();
+    _impl_.action_.helios_goalie_kick_ = CreateMaybeMessage< ::protos::HeliosGoalieKick >(GetArenaForAllocation());
+  }
+  return _impl_.action_.helios_goalie_kick_;
+}
+inline ::protos::HeliosGoalieKick* Action::mutable_helios_goalie_kick() {
+  ::protos::HeliosGoalieKick* _msg = _internal_mutable_helios_goalie_kick();
+  // @@protoc_insertion_point(field_mutable:protos.Action.helios_goalie_kick)
+  return _msg;
+}
+
+// .protos.HeliosShoot helios_shoot = 58;
+inline bool Action::has_helios_shoot() const {
+  return action_case() == kHeliosShoot;
+}
+inline bool Action::_internal_has_helios_shoot() const {
+  return action_case() == kHeliosShoot;
+}
+inline void Action::set_has_helios_shoot() {
+  _impl_._oneof_case_[0] = kHeliosShoot;
+}
+inline void Action::clear_helios_shoot() {
+  if (action_case() == kHeliosShoot) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.helios_shoot_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::HeliosShoot* Action::release_helios_shoot() {
+  // @@protoc_insertion_point(field_release:protos.Action.helios_shoot)
+  if (action_case() == kHeliosShoot) {
+    clear_has_action();
+    ::protos::HeliosShoot* temp = _impl_.action_.helios_shoot_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.helios_shoot_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::HeliosShoot& Action::_internal_helios_shoot() const {
+  return action_case() == kHeliosShoot
+      ? *_impl_.action_.helios_shoot_
+      : reinterpret_cast<::protos::HeliosShoot&>(::protos::_HeliosShoot_default_instance_);
+}
+inline const ::protos::HeliosShoot& Action::helios_shoot() const {
+  // @@protoc_insertion_point(field_get:protos.Action.helios_shoot)
+  return _internal_helios_shoot();
+}
+inline ::protos::HeliosShoot* Action::unsafe_arena_release_helios_shoot() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_shoot)
+  if (action_case() == kHeliosShoot) {
+    clear_has_action();
+    ::protos::HeliosShoot* temp = _impl_.action_.helios_shoot_;
+    _impl_.action_.helios_shoot_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Action::unsafe_arena_set_allocated_helios_shoot(::protos::HeliosShoot* helios_shoot) {
+  clear_action();
+  if (helios_shoot) {
+    set_has_helios_shoot();
+    _impl_.action_.helios_shoot_ = helios_shoot;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_shoot)
+}
+inline ::protos::HeliosShoot* Action::_internal_mutable_helios_shoot() {
+  if (action_case() != kHeliosShoot) {
+    clear_action();
+    set_has_helios_shoot();
+    _impl_.action_.helios_shoot_ = CreateMaybeMessage< ::protos::HeliosShoot >(GetArenaForAllocation());
+  }
+  return _impl_.action_.helios_shoot_;
+}
+inline ::protos::HeliosShoot* Action::mutable_helios_shoot() {
+  ::protos::HeliosShoot* _msg = _internal_mutable_helios_shoot();
+  // @@protoc_insertion_point(field_mutable:protos.Action.helios_shoot)
+  return _msg;
+}
+
+// .protos.HeliosChainAction helios_chain_action = 59;
+inline bool Action::has_helios_chain_action() const {
+  return action_case() == kHeliosChainAction;
+}
+inline bool Action::_internal_has_helios_chain_action() const {
+  return action_case() == kHeliosChainAction;
+}
+inline void Action::set_has_helios_chain_action() {
+  _impl_._oneof_case_[0] = kHeliosChainAction;
+}
+inline void Action::clear_helios_chain_action() {
+  if (action_case() == kHeliosChainAction) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.helios_chain_action_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::HeliosChainAction* Action::release_helios_chain_action() {
+  // @@protoc_insertion_point(field_release:protos.Action.helios_chain_action)
+  if (action_case() == kHeliosChainAction) {
+    clear_has_action();
+    ::protos::HeliosChainAction* temp = _impl_.action_.helios_chain_action_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.helios_chain_action_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::HeliosChainAction& Action::_internal_helios_chain_action() const {
+  return action_case() == kHeliosChainAction
+      ? *_impl_.action_.helios_chain_action_
+      : reinterpret_cast<::protos::HeliosChainAction&>(::protos::_HeliosChainAction_default_instance_);
+}
+inline const ::protos::HeliosChainAction& Action::helios_chain_action() const {
+  // @@protoc_insertion_point(field_get:protos.Action.helios_chain_action)
+  return _internal_helios_chain_action();
+}
+inline ::protos::HeliosChainAction* Action::unsafe_arena_release_helios_chain_action() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_chain_action)
+  if (action_case() == kHeliosChainAction) {
+    clear_has_action();
+    ::protos::HeliosChainAction* temp = _impl_.action_.helios_chain_action_;
+    _impl_.action_.helios_chain_action_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Action::unsafe_arena_set_allocated_helios_chain_action(::protos::HeliosChainAction* helios_chain_action) {
+  clear_action();
+  if (helios_chain_action) {
+    set_has_helios_chain_action();
+    _impl_.action_.helios_chain_action_ = helios_chain_action;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_chain_action)
+}
+inline ::protos::HeliosChainAction* Action::_internal_mutable_helios_chain_action() {
+  if (action_case() != kHeliosChainAction) {
+    clear_action();
+    set_has_helios_chain_action();
+    _impl_.action_.helios_chain_action_ = CreateMaybeMessage< ::protos::HeliosChainAction >(GetArenaForAllocation());
+  }
+  return _impl_.action_.helios_chain_action_;
+}
+inline ::protos::HeliosChainAction* Action::mutable_helios_chain_action() {
+  ::protos::HeliosChainAction* _msg = _internal_mutable_helios_chain_action();
+  // @@protoc_insertion_point(field_mutable:protos.Action.helios_chain_action)
+  return _msg;
+}
+
+// .protos.HeliosBasicOffensive helios_basic_offensive = 60;
+inline bool Action::has_helios_basic_offensive() const {
+  return action_case() == kHeliosBasicOffensive;
+}
+inline bool Action::_internal_has_helios_basic_offensive() const {
+  return action_case() == kHeliosBasicOffensive;
+}
+inline void Action::set_has_helios_basic_offensive() {
+  _impl_._oneof_case_[0] = kHeliosBasicOffensive;
+}
+inline void Action::clear_helios_basic_offensive() {
+  if (action_case() == kHeliosBasicOffensive) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.helios_basic_offensive_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::HeliosBasicOffensive* Action::release_helios_basic_offensive() {
+  // @@protoc_insertion_point(field_release:protos.Action.helios_basic_offensive)
+  if (action_case() == kHeliosBasicOffensive) {
+    clear_has_action();
+    ::protos::HeliosBasicOffensive* temp = _impl_.action_.helios_basic_offensive_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.helios_basic_offensive_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::HeliosBasicOffensive& Action::_internal_helios_basic_offensive() const {
+  return action_case() == kHeliosBasicOffensive
+      ? *_impl_.action_.helios_basic_offensive_
+      : reinterpret_cast<::protos::HeliosBasicOffensive&>(::protos::_HeliosBasicOffensive_default_instance_);
+}
+inline const ::protos::HeliosBasicOffensive& Action::helios_basic_offensive() const {
+  // @@protoc_insertion_point(field_get:protos.Action.helios_basic_offensive)
+  return _internal_helios_basic_offensive();
+}
+inline ::protos::HeliosBasicOffensive* Action::unsafe_arena_release_helios_basic_offensive() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_basic_offensive)
+  if (action_case() == kHeliosBasicOffensive) {
+    clear_has_action();
+    ::protos::HeliosBasicOffensive* temp = _impl_.action_.helios_basic_offensive_;
+    _impl_.action_.helios_basic_offensive_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Action::unsafe_arena_set_allocated_helios_basic_offensive(::protos::HeliosBasicOffensive* helios_basic_offensive) {
+  clear_action();
+  if (helios_basic_offensive) {
+    set_has_helios_basic_offensive();
+    _impl_.action_.helios_basic_offensive_ = helios_basic_offensive;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_basic_offensive)
+}
+inline ::protos::HeliosBasicOffensive* Action::_internal_mutable_helios_basic_offensive() {
+  if (action_case() != kHeliosBasicOffensive) {
+    clear_action();
+    set_has_helios_basic_offensive();
+    _impl_.action_.helios_basic_offensive_ = CreateMaybeMessage< ::protos::HeliosBasicOffensive >(GetArenaForAllocation());
+  }
+  return _impl_.action_.helios_basic_offensive_;
+}
+inline ::protos::HeliosBasicOffensive* Action::mutable_helios_basic_offensive() {
+  ::protos::HeliosBasicOffensive* _msg = _internal_mutable_helios_basic_offensive();
+  // @@protoc_insertion_point(field_mutable:protos.Action.helios_basic_offensive)
+  return _msg;
+}
+
+// .protos.HeliosBasicMove helios_basic_move = 61;
+inline bool Action::has_helios_basic_move() const {
+  return action_case() == kHeliosBasicMove;
+}
+inline bool Action::_internal_has_helios_basic_move() const {
+  return action_case() == kHeliosBasicMove;
+}
+inline void Action::set_has_helios_basic_move() {
+  _impl_._oneof_case_[0] = kHeliosBasicMove;
+}
+inline void Action::clear_helios_basic_move() {
+  if (action_case() == kHeliosBasicMove) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.helios_basic_move_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::HeliosBasicMove* Action::release_helios_basic_move() {
+  // @@protoc_insertion_point(field_release:protos.Action.helios_basic_move)
+  if (action_case() == kHeliosBasicMove) {
+    clear_has_action();
+    ::protos::HeliosBasicMove* temp = _impl_.action_.helios_basic_move_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.helios_basic_move_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::HeliosBasicMove& Action::_internal_helios_basic_move() const {
+  return action_case() == kHeliosBasicMove
+      ? *_impl_.action_.helios_basic_move_
+      : reinterpret_cast<::protos::HeliosBasicMove&>(::protos::_HeliosBasicMove_default_instance_);
+}
+inline const ::protos::HeliosBasicMove& Action::helios_basic_move() const {
+  // @@protoc_insertion_point(field_get:protos.Action.helios_basic_move)
+  return _internal_helios_basic_move();
+}
+inline ::protos::HeliosBasicMove* Action::unsafe_arena_release_helios_basic_move() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_basic_move)
+  if (action_case() == kHeliosBasicMove) {
+    clear_has_action();
+    ::protos::HeliosBasicMove* temp = _impl_.action_.helios_basic_move_;
+    _impl_.action_.helios_basic_move_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Action::unsafe_arena_set_allocated_helios_basic_move(::protos::HeliosBasicMove* helios_basic_move) {
+  clear_action();
+  if (helios_basic_move) {
+    set_has_helios_basic_move();
+    _impl_.action_.helios_basic_move_ = helios_basic_move;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_basic_move)
+}
+inline ::protos::HeliosBasicMove* Action::_internal_mutable_helios_basic_move() {
+  if (action_case() != kHeliosBasicMove) {
+    clear_action();
+    set_has_helios_basic_move();
+    _impl_.action_.helios_basic_move_ = CreateMaybeMessage< ::protos::HeliosBasicMove >(GetArenaForAllocation());
+  }
+  return _impl_.action_.helios_basic_move_;
+}
+inline ::protos::HeliosBasicMove* Action::mutable_helios_basic_move() {
+  ::protos::HeliosBasicMove* _msg = _internal_mutable_helios_basic_move();
+  // @@protoc_insertion_point(field_mutable:protos.Action.helios_basic_move)
+  return _msg;
+}
+
+// .protos.HeliosSetPlay helios_set_play = 62;
+inline bool Action::has_helios_set_play() const {
+  return action_case() == kHeliosSetPlay;
+}
+inline bool Action::_internal_has_helios_set_play() const {
+  return action_case() == kHeliosSetPlay;
+}
+inline void Action::set_has_helios_set_play() {
+  _impl_._oneof_case_[0] = kHeliosSetPlay;
+}
+inline void Action::clear_helios_set_play() {
+  if (action_case() == kHeliosSetPlay) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.helios_set_play_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::HeliosSetPlay* Action::release_helios_set_play() {
+  // @@protoc_insertion_point(field_release:protos.Action.helios_set_play)
+  if (action_case() == kHeliosSetPlay) {
+    clear_has_action();
+    ::protos::HeliosSetPlay* temp = _impl_.action_.helios_set_play_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.helios_set_play_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::HeliosSetPlay& Action::_internal_helios_set_play() const {
+  return action_case() == kHeliosSetPlay
+      ? *_impl_.action_.helios_set_play_
+      : reinterpret_cast<::protos::HeliosSetPlay&>(::protos::_HeliosSetPlay_default_instance_);
+}
+inline const ::protos::HeliosSetPlay& Action::helios_set_play() const {
+  // @@protoc_insertion_point(field_get:protos.Action.helios_set_play)
+  return _internal_helios_set_play();
+}
+inline ::protos::HeliosSetPlay* Action::unsafe_arena_release_helios_set_play() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_set_play)
+  if (action_case() == kHeliosSetPlay) {
+    clear_has_action();
+    ::protos::HeliosSetPlay* temp = _impl_.action_.helios_set_play_;
+    _impl_.action_.helios_set_play_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Action::unsafe_arena_set_allocated_helios_set_play(::protos::HeliosSetPlay* helios_set_play) {
+  clear_action();
+  if (helios_set_play) {
+    set_has_helios_set_play();
+    _impl_.action_.helios_set_play_ = helios_set_play;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_set_play)
+}
+inline ::protos::HeliosSetPlay* Action::_internal_mutable_helios_set_play() {
+  if (action_case() != kHeliosSetPlay) {
+    clear_action();
+    set_has_helios_set_play();
+    _impl_.action_.helios_set_play_ = CreateMaybeMessage< ::protos::HeliosSetPlay >(GetArenaForAllocation());
+  }
+  return _impl_.action_.helios_set_play_;
+}
+inline ::protos::HeliosSetPlay* Action::mutable_helios_set_play() {
+  ::protos::HeliosSetPlay* _msg = _internal_mutable_helios_set_play();
+  // @@protoc_insertion_point(field_mutable:protos.Action.helios_set_play)
+  return _msg;
+}
+
+// .protos.HeliosPenalty helios_penalty = 63;
+inline bool Action::has_helios_penalty() const {
+  return action_case() == kHeliosPenalty;
+}
+inline bool Action::_internal_has_helios_penalty() const {
+  return action_case() == kHeliosPenalty;
+}
+inline void Action::set_has_helios_penalty() {
+  _impl_._oneof_case_[0] = kHeliosPenalty;
+}
+inline void Action::clear_helios_penalty() {
+  if (action_case() == kHeliosPenalty) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.helios_penalty_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::HeliosPenalty* Action::release_helios_penalty() {
+  // @@protoc_insertion_point(field_release:protos.Action.helios_penalty)
+  if (action_case() == kHeliosPenalty) {
+    clear_has_action();
+    ::protos::HeliosPenalty* temp = _impl_.action_.helios_penalty_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.helios_penalty_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::HeliosPenalty& Action::_internal_helios_penalty() const {
+  return action_case() == kHeliosPenalty
+      ? *_impl_.action_.helios_penalty_
+      : reinterpret_cast<::protos::HeliosPenalty&>(::protos::_HeliosPenalty_default_instance_);
+}
+inline const ::protos::HeliosPenalty& Action::helios_penalty() const {
+  // @@protoc_insertion_point(field_get:protos.Action.helios_penalty)
+  return _internal_helios_penalty();
+}
+inline ::protos::HeliosPenalty* Action::unsafe_arena_release_helios_penalty() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_penalty)
+  if (action_case() == kHeliosPenalty) {
+    clear_has_action();
+    ::protos::HeliosPenalty* temp = _impl_.action_.helios_penalty_;
+    _impl_.action_.helios_penalty_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Action::unsafe_arena_set_allocated_helios_penalty(::protos::HeliosPenalty* helios_penalty) {
+  clear_action();
+  if (helios_penalty) {
+    set_has_helios_penalty();
+    _impl_.action_.helios_penalty_ = helios_penalty;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_penalty)
+}
+inline ::protos::HeliosPenalty* Action::_internal_mutable_helios_penalty() {
+  if (action_case() != kHeliosPenalty) {
+    clear_action();
+    set_has_helios_penalty();
+    _impl_.action_.helios_penalty_ = CreateMaybeMessage< ::protos::HeliosPenalty >(GetArenaForAllocation());
+  }
+  return _impl_.action_.helios_penalty_;
+}
+inline ::protos::HeliosPenalty* Action::mutable_helios_penalty() {
+  ::protos::HeliosPenalty* _msg = _internal_mutable_helios_penalty();
+  // @@protoc_insertion_point(field_mutable:protos.Action.helios_penalty)
+  return _msg;
+}
+
+// .protos.HeliosCommunicaion helios_communication = 64;
+inline bool Action::has_helios_communication() const {
+  return action_case() == kHeliosCommunication;
+}
+inline bool Action::_internal_has_helios_communication() const {
+  return action_case() == kHeliosCommunication;
+}
+inline void Action::set_has_helios_communication() {
+  _impl_._oneof_case_[0] = kHeliosCommunication;
+}
+inline void Action::clear_helios_communication() {
+  if (action_case() == kHeliosCommunication) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.helios_communication_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::HeliosCommunicaion* Action::release_helios_communication() {
+  // @@protoc_insertion_point(field_release:protos.Action.helios_communication)
+  if (action_case() == kHeliosCommunication) {
+    clear_has_action();
+    ::protos::HeliosCommunicaion* temp = _impl_.action_.helios_communication_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.helios_communication_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::HeliosCommunicaion& Action::_internal_helios_communication() const {
+  return action_case() == kHeliosCommunication
+      ? *_impl_.action_.helios_communication_
+      : reinterpret_cast<::protos::HeliosCommunicaion&>(::protos::_HeliosCommunicaion_default_instance_);
+}
+inline const ::protos::HeliosCommunicaion& Action::helios_communication() const {
+  // @@protoc_insertion_point(field_get:protos.Action.helios_communication)
+  return _internal_helios_communication();
+}
+inline ::protos::HeliosCommunicaion* Action::unsafe_arena_release_helios_communication() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_communication)
+  if (action_case() == kHeliosCommunication) {
+    clear_has_action();
+    ::protos::HeliosCommunicaion* temp = _impl_.action_.helios_communication_;
+    _impl_.action_.helios_communication_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Action::unsafe_arena_set_allocated_helios_communication(::protos::HeliosCommunicaion* helios_communication) {
+  clear_action();
+  if (helios_communication) {
+    set_has_helios_communication();
+    _impl_.action_.helios_communication_ = helios_communication;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_communication)
+}
+inline ::protos::HeliosCommunicaion* Action::_internal_mutable_helios_communication() {
+  if (action_case() != kHeliosCommunication) {
+    clear_action();
+    set_has_helios_communication();
+    _impl_.action_.helios_communication_ = CreateMaybeMessage< ::protos::HeliosCommunicaion >(GetArenaForAllocation());
+  }
+  return _impl_.action_.helios_communication_;
+}
+inline ::protos::HeliosCommunicaion* Action::mutable_helios_communication() {
+  ::protos::HeliosCommunicaion* _msg = _internal_mutable_helios_communication();
+  // @@protoc_insertion_point(field_mutable:protos.Action.helios_communication)
   return _msg;
 }
 

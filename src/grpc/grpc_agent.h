@@ -4,6 +4,7 @@
 #include "service.grpc.pb.h"
 #include "service.pb.h"
 #include <rcsc/player/player_agent.h>
+#include "player/sample_communication.h"
 
 
 using grpc::Channel;
@@ -18,11 +19,15 @@ public:
     std::shared_ptr<Channel> channel;
     std::unique_ptr<Game::Stub> stub_;
     bool param_sent = false;
+    Communication::Ptr sample_communication;
+    
+
     GrpcAgent() {}
 
     void init(std::string target="localhost:50051"){
         channel = grpc::CreateChannel(target, grpc::InsecureChannelCredentials());
         stub_ = Game::NewStub(channel);
+        sample_communication = Communication::Ptr( new SampleCommunication() );
     }
 
     void sendParams(rcsc::PlayerAgent *agent){

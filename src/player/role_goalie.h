@@ -65,7 +65,7 @@ public:
           return ptr;
       }
 
-private:
+public:
     void doKick( rcsc::PlayerAgent * agent );
     void doMove( rcsc::PlayerAgent * agent );
 };

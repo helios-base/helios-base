@@ -40,6 +40,11 @@
 #include "player/basic_actions/view_normal.h"
 #include "player/basic_actions/view_wide.h"
 #include "player/basic_actions/view_synch.h"
+#include "player/role_goalie.h"
+#include "planner/bhv_strict_check_shoot.h"
+#include "player/bhv_basic_move.h"
+#include "player/setplay/bhv_set_play.h"
+#include "player/bhv_penalty_kick.h"
 
 #include <rcsc/player/say_message_builder.h>
 #include <rcsc/common/player_param.h>
@@ -860,6 +865,58 @@ void GrpcAgent::getAction(rcsc::PlayerAgent * agent) const{
             View_Synch().execute(agent);
             break;
         }
+        case  Action::kHeliosGoalie:
+        {
+            RoleGoalie roleGoalie = RoleGoalie();
+            roleGoalie.execute(agent);
+            break;
+        }
+        case Action::kHeliosGoalieMove:
+        {
+            RoleGoalie roleGoalie = RoleGoalie();
+            roleGoalie.doMove(agent);
+            break;
+        }
+        case Action::kHeliosGoalieKick:
+        {
+            RoleGoalie roleGoalie = RoleGoalie();
+            roleGoalie.doKick(agent);
+            break;
+        }
+        case Action::kHeliosShoot:
+        {
+            const rcsc::WorldModel & wm = agent->world();
+
+            if ( wm.gameMode().type() != rcsc::GameMode::IndFreeKick_
+                    && wm.time().stopped() == 0
+                    && wm.self().isKickable()
+                    && Bhv_StrictCheckShoot().execute( agent ) )
+            {
+            }
+            break;
+        }
+        case Action::kHeliosBasicMove:
+        {
+            Bhv_BasicMove().execute(agent);
+            break;
+        }
+        case Action::kHeliosSetPlay:
+        {
+            Bhv_SetPlay().execute( agent );
+            break;
+        }
+        case Action::kHeliosPenalty:
+        {
+            Bhv_PenaltyKick().execute( agent );
+            break;
+        }
+        case Action::kHeliosCommunication:
+        {
+            sample_communication->execute(agent);
+            break;
+        }
+
+//                HeliosChainAction helios_chain_action = 59;
         default:
         {
             LOG("unknown action");

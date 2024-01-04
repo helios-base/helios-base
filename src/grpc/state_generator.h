@@ -1,6 +1,9 @@
 #include "service.pb.h"
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/world_model.h>
+#include "../player/strategy.h"
+
+
 using protos::State;
 using protos::WorldModel;
 class StateGenerator {
@@ -351,8 +354,15 @@ public:
         res->set_stoped_cycle(wm.gameMode().time().stopped());
         res->set_our_team_score(wm.ourSide() == rcsc::SideID::LEFT ? wm.gameMode().scoreLeft() : wm.gameMode().scoreRight());
         res->set_their_team_score(wm.ourSide() == rcsc::SideID::LEFT ? wm.gameMode().scoreRight() : wm.gameMode().scoreLeft());
-        res->set_penalty_kick_mode(wm.gameMode().isPenaltyKickMode());
-        //Todo: Add helios_home_positions
+        res->set_is_penalty_kick_mode(wm.gameMode().isPenaltyKickMode());
+        for (int i = 1; i < 12; i++){
+            auto map = res->mutable_helios_home_positions();
+            auto home_pos = Strategy::i().getPosition(i);
+            auto vec_msg = protos::Vector2D();
+            vec_msg.set_x(home_pos.x);
+            vec_msg.set_y(home_pos.y);
+            (*map)[i] = vec_msg;
+        }
         return res;
     }
 
