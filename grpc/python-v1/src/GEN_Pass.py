@@ -83,15 +83,15 @@ class GeneratorPass(BallActionGenerator):
         tm_pos = Vector2D(tm.position.x, tm.position.y)
         ball_pos = Vector2D(agent.wm.ball.position.x, agent.wm.ball.position.y)
         tm_vel = Vector2D(tm.velocity.x, tm.velocity.y)
-        angle_divs = 8
-        dist_divs = 4
+        angle_divs = 4
+        dist_divs = 2
         angle_step = int(360.0 / angle_divs)
         dist_step = 1.1
         
         angle_from_ball = (tm_pos - ball_pos).th()
         for d in range(1, dist_divs + 1):
             player_move_dist = dist_step * d
-            for a in range(angle_step + 1):
+            for a in range(angle_divs + 1):
                 angle = angle_from_ball + angle_step * a
                 receive_point = tm_pos + tm_vel + Vector2D.from_polar(player_move_dist, angle)
                 lead_pass = PassAction()

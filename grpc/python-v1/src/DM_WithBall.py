@@ -37,7 +37,7 @@ class WithBallDecisionMaker(IDecisionMaker):
                 if candidate.score > best_score:
                     best_score = candidate.score
                     best_action = candidate
-                    # break        
+                    break        
         end_time = time.time()
         WithBallDecisionMaker.sum_time += end_time - start_time
         WithBallDecisionMaker.count += 1
@@ -50,4 +50,4 @@ class WithBallDecisionMaker(IDecisionMaker):
             target_point=pb2.Vector2D(x=best_action.targetBallPos.x(), y=best_action.targetBallPos.y()),
             first_speed=best_action.firstVelocity.r(),
             first_speed_threshold=0.0,
-            max_steps=best_action.targetCycle)))
+            max_steps=3)))
