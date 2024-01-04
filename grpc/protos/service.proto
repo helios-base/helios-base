@@ -239,6 +239,8 @@ message WorldModel {
   int32 stoped_cycle = 27;
   int32 our_team_score = 28;
   int32 their_team_score = 29;
+  bool is_penalty_kick_mode = 30;
+  map<int32, Vector2D> helios_home_positions = 31;
 }
 
 message State {
@@ -716,6 +718,33 @@ message View_Synch {
 message View_Wide {
 }
 
+message HeliosGoalie {}
+
+message HeliosGoalieMove {}
+
+message HeliosGoalieKick {}
+
+message HeliosShoot {}
+
+message HeliosChainAction {
+  bool direct_pass = 1;
+  bool lead_pass = 2;
+  bool through_pass = 3;
+  bool short_dribble = 4;
+  bool long_dribble = 5;
+  bool cross = 6;
+  bool simple_pass = 7;
+  bool simple_dribble = 8;
+}
+
+message HeliosBasicOffensive {}
+
+message HeliosBasicMove {}
+
+message HeliosSetPlay {}
+
+message HeliosPenalty {}
+
 message Action {
   oneof action {
       Dash dash = 1;
@@ -772,6 +801,15 @@ message Action {
       View_Normal view_normal = 52;
       View_Synch view_synch = 53;
       View_Wide view_wide = 54;
+      HeliosGoalie helios_goalie = 55;
+      HeliosGoalieMove helios_goalie_move = 56;
+      HeliosGoalieKick helios_goalie_kick = 57;
+      HeliosShoot helios_shoot = 58;
+      HeliosChainAction helios_chain_action = 59;
+      HeliosBasicOffensive helios_basic_offensive = 60;
+      HeliosBasicMove helios_basic_move = 61;
+      HeliosSetPlay helios_set_play = 62;
+      HeliosPenalty helios_penalty = 63;
   }
 }
 
