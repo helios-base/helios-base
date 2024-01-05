@@ -253,8 +253,10 @@ SamplePlayer::actionImpl()
                       __FILE__": preprocess done" );
         return;
     }
+    ActionChainHolder::instance().update( world() );
     M_grpc_agent.sendParams(this);
     M_grpc_agent.getAction(this);
+    
     return;
     //
     // update action chain
