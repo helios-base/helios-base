@@ -48,6 +48,48 @@ SS2D-gRPC-Server is a gRPC Server that receives information from SS2D-gRPC-Base 
 Developing a base code for each language is a time-consuming task. It requires a lot of effort to develop a base code for each language. The RCSSServer send noisy observation to players and receives low level actions from player such as Dash, Turn, Kick. So, a sample base code should process the received information, denoise information, create a model, make decision, convert high level decision like BodySmartKick, BodyGoToPoint and ... to low level actions and send them to RCSSServer. Therefor, developing a base code for each language is a time-consuming task, also some of the languages are not high performance same as C++ and can not do all of the tasks in a cycle (0.1 second). By using this framework, the SS2D-gRPC-Base denoise information, creates models, sends them to SS2D-gRPC-Server and receives actions from SS2D-gRPC-Server and send them to RCSSServer. So, the SS2D-gRPC-Server can be developed in any language supported by gRPC and its reponsibility is just making decision and sending actions to SS2D-gRPC-Base.
 ## How To Use it?
 ### Build From Source
+#### Requirements
+- Ubuntu 22.04
+```bash
+sudo apt update
+sudo apt install build-essential automake autoconf libtool flex bison libboost-all-dev cmake 
+```
+- RCSSServer - follow [this](https://github.com/rcsoccersim/rcssserver)
+```bash
+git clone git@github.com:rcsoccersim/rcssserver.git
+cd rcssserver
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+```
+- LibRCSC - follow [this](https://github.com/helios-base/librcsc)
+```bash
+git clone git@github.com:helios-base/librcsc.git
+cd librcsc
+git checkout 19175f339dcb5c3f61b56a8c1bff5345109f22ef
+mkdir build
+cd build
+cmake ..
+make
+make install
+```
+- gRPC - follow [this](https://grpc.io/docs/languages/)
+- SS2D-gRPC-Base
+```bash
+git clone git@github.com:Cyrus2D/SS2D-gRPC-Base.git
+cd SS2D-gRPC-Base
+mkdir build
+cd build
+cmake ..
+make
+```
+- Monitor - follow [this](https://github.com/rcsoccersim/rcssmonitor)
+Moniter is a GUI for RCSSServer. It is not necessary to run a team. It is just for watching the game and controlling the game.
+
+- Soccer Window2 - follow [this](git@github.com:helios-base/soccerwindow2.git)
+Soccer Window2 is a GUI for RCSSServer. It is not necessary to run a team. It is just for watching the game and controlling the game and debugging.
 ### Use Docker
 ### Use Binary
 ## Useful Links
