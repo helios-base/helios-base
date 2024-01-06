@@ -297,11 +297,11 @@ Bhv_SetPlayGoalKick::doKickWait( PlayerAgent * agent )
 bool
 Bhv_SetPlayGoalKick::doPass( PlayerAgent * agent )
 {
-    if ( Bhv_PlannedAction().execute( agent ) )
-    {
-        agent->setIntention( new IntentionWaitAfterSetPlayKick() );
-        return true;
-    }
+    // if ( Bhv_PlannedAction().execute( agent ) )
+    // {
+    //     agent->setIntention( new IntentionWaitAfterSetPlayKick() );
+    //     return true;
+    // }
 
     // const WorldModel & wm = agent->world();
 

@@ -117,12 +117,12 @@ Bhv_SetPlayFreeKick::doKick( PlayerAgent * agent )
     //
     // pass
     //
-    if ( Bhv_PlannedAction().execute( agent ) )
-    {
-        agent->debugClient().addMessage( "FreeKick:Plan" );
-        agent->setIntention( new IntentionWaitAfterSetPlayKick() );
-        return;
-    }
+    // if ( Bhv_PlannedAction().execute( agent ) )
+    // {
+    //     agent->debugClient().addMessage( "FreeKick:Plan" );
+    //     agent->setIntention( new IntentionWaitAfterSetPlayKick() );
+    //     return;
+    // }
     // {
     //     Vector2D target_point;
     //     double ball_speed = 0.0;
