@@ -1,4 +1,7 @@
 # HELIOS Base
+
+![image](https://github.com/Cyrus2D/grpc-2d-base/assets/25696836/ed629150-5285-4512-b6d1-68d07464991a)
+
 [![GitHub license](https://img.shields.io/github/license/helios-base/helios-base)](https://github.com/helios-base/helios-base/blob/master/LISENCE)
 
 helios-base is a sample team for the RoboCup Soccer 2D Simulator.
