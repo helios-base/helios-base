@@ -24,7 +24,7 @@ public:
 
     GrpcAgent() {}
 
-    void init(std::string target="localhost:50051"){
+    void init(std::string target="localhost:5000"){
         channel = grpc::CreateChannel(target, grpc::InsecureChannelCredentials());
         stub_ = Game::NewStub(channel);
         sample_communication = Communication::Ptr( new SampleCommunication() );
