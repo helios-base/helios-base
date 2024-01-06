@@ -1,53 +1,55 @@
-# HELIOS Base
+# SS2D-gRPC-Base
 
 ![image](https://github.com/Cyrus2D/grpc-2d-base/assets/25696836/ed629150-5285-4512-b6d1-68d07464991a)
 
 [![GitHub license](https://img.shields.io/github/license/helios-base/helios-base)](https://github.com/helios-base/helios-base/blob/master/LISENCE)
 
-helios-base is a sample team for the RoboCup Soccer 2D Simulator.
-All programs can work with rcssserver-16.
-
-- The RoboCup Soccer Simulator: http://github.com/rcsoccersim/
-- RoboCup Official Homepage: http://www.robocup.org/
-
-## Quick Start
-
-The latest helios-base depends on the following libraries:
- - Boost 1.38 or later https://www.boost.org/
- - The latest librcsc https://github.com/helios-base/librcsc
-
-In the case of Ubuntu 16.04 or later, execute the following commands for installing a basic development environment:
-```
-sudo apt update
-sudo apt install build-essential libboost-all-dev
-```
-And, install librcsc.
-
-To build binaries, execute commands from the root of source directory:
-```
-./bootstrap
-./configure
-make
-```
-
-To start the agent2d team, invoke the start script in `src` directory.
-```
-./start.sh
-```
-
-## Configuring
-
-You may need to configure the build settings if you installed librcsc to an unusual location. 
-You can specify the installed location of librcsc by using `--with-librcsc` option as follows:
-```
-./configure --with-librcsc=/path/to/librcsc
-```
-Usually, this value is the same as `--prefix` option of configuring librcsc.
-You may also need to set the environment variable `LD_LIBRARY_PATH`.
-
-See `./configure --help` for others options.
-
-
+SS2D-gRPC-Base is a new framework for the RoboCup Soccer Simulation 2D.
+This new base code is powered by Helios-Base code and gRPC to help researcher developing a soccer simulation 2D team or researching in this area by using any languages supported by gRPC: 
+ - [C#](https://grpc.io/docs/languages/csharp/) 
+   - [Sample SS2D-gRPC-Server-CSharp](https://github.com/Cyrus2D/SS2D-gRPC-Server-CSharp)
+ - [C++](https://grpc.io/docs/languages/cpp/)
+ - [Dart](https://grpc.io/docs/languages/dart/)
+ - [Go](https://grpc.io/docs/languages/go/)
+ - [Java](https://grpc.io/docs/languages/java/)
+ - [Kotlin](https://grpc.io/docs/languages/kotlin/)
+ - [Node](https://grpc.io/docs/languages/node/)
+   - [Sample SS2D-gRPC-Server-NodeJs](https://github.com/Cyrus2D/SS2D-gRPC-Server-NodeJs)
+ - [Objective-C](https://grpc.io/docs/languages/objective-c/)
+ - [PHP](https://grpc.io/docs/languages/php/)
+ - [Python](https://grpc.io/docs/languages/python/)
+   - [Sample SS2D-gRPC-Server-Python](https://github.com/Cyrus2D/SS2D-gRPC-Server-Python)
+ - [Ruby](https://grpc.io/docs/languages/ruby/)
+## Informations
+#### [RoboCup](https://www.robocup.org/)
+RoboCup is an international robotics competition that focuses on promoting research and development in the field of autonomous robots. The competition aims to advance the state of the art in robotics and artificial intelligence by challenging teams to develop robots capable of playing soccer, rescue, and other tasks against other teams in a real-world or simulated environments.
+#### [Soccer Simulation 2D](https://ssim.robocup.org/)
+The RoboCup Soccer Simulation 2D (SS2D) is one of the leagues within the RoboCup competition. It involves simulating a soccer game using virtual robots controlled by autonomous software agents. The objective is to develop intelligent strategies and algorithms that enable the virtual robots to play soccer effectively.
+#### [RCSSServer](https://github.com/rcsoccersim/rcssserver)
+The RCSSServer is a soccer server for the RoboCup Soccer Simulation 2D. It is a program that simulates a soccer game between two teams of eleven players and one coach each. The server provides a complete simulation of the game, including the physics of the ball, the field, and the players, as well as the dynamics of the game, such as the rules, the referee, and the game clock.
+#### [Helios Base Code](https://github.com/helios-base/helios-base)
+The Helios Base Code is a framework for the RoboCup Soccer Simulation 2D. It is a collection of software components that provide a common infrastructure for developing soccer simulation 2D teams. The base code is designed to be easy to use and extend, and it provides a number of features that make it easier to develop teams.
+#### [gRPC](https://grpc.io/docs/what-is-grpc/)
+gRPC is a high performance, open source, general-purpose RPC framework that puts mobile and HTTP/2 first. gRPC is based on the HTTP/2 standard, which is the next generation of HTTP. HTTP/2 is a binary protocol that is more efficient than HTTP/1.1, which is the current version of HTTP. HTTP/2 is also more secure than HTTP/1.1, because it uses TLS encryption by default.
+#### [SS2D-gRPC-Base](https://github.com/Cyrus2D/SS2D-gRPC-Base)
+SS2D-gRPC-Base is a new framework for the RoboCup Soccer Simulation 2D. This new base code is powered by Helios-Base code and gRPC to help researcher developing a soccer simulation 2D team or researching in this area by using any languages supported by gRPC such as C#, C++, Dart, Go, Java, Kotlin, Node, Objective-C, PHP, Python, Ruby.
+In a normal game, each agents (player, coach, trainer) will connect to the server and send/receive messages to/from the server. By using this new framework, each agent sends infromation that received from RCSSServer after processing to a gRPC Server and receive actions from gRPC Server and send them to RCSSServer.
+#### Messages from Base Code to gRPC Server
+##### State
+##### Server Param
+##### Player Param
+##### Player Type
+#### Actions from gRPC Server to Base Code
+#### SS2D-gRPC-Server
+SS2D-gRPC-Server is a gRPC Server that receives information from SS2D-gRPC-Base and send actions to SS2D-gRPC-Base.
+#### Sample SS2D-gRPC-Server
+#### Why not develop a base code for each language?
+Developing a base code for each language is a time-consuming task. It requires a lot of effort to develop a base code for each language. The RCSSServer send noisy observation to players and receives low level actions from player such as Dash, Turn, Kick. So, a sample base code should process the received information, denoise information, create a model, make decision, convert high level decision like BodySmartKick, BodyGoToPoint and ... to low level actions and send them to RCSSServer. Therefor, developing a base code for each language is a time-consuming task, also some of the languages are not high performance same as C++ and can not do all of the tasks in a cycle (0.1 second). By using this framework, the SS2D-gRPC-Base denoise information, creates models, sends them to SS2D-gRPC-Server and receives actions from SS2D-gRPC-Server and send them to RCSSServer. So, the SS2D-gRPC-Server can be developed in any language supported by gRPC and its reponsibility is just making decision and sending actions to SS2D-gRPC-Base.
+## How To Use it?
+### Build From Source
+### Use Docker
+### Use Binary
+## Useful Links
 ## References
 
 The paper about HELIOS Base:
@@ -56,17 +58,3 @@ Package for the RoboCup Soccer 2D Simulation, In Sven Behnke, Manuela
 Veloso, Arnoud Visser, and Rong Xiong editors, RoboCup2013: Robot
 World XVII, Lecture Notes in Artificial Intelligence, Springer Verlag,
 Berlin, 2014. http://dx.doi.org/10.1007/978-3-662-44468-9_46
-
-Related works:
-- Hidehisa Akiyama, Daisuke Katagami, Katsumi Nitta, Team Formation Construction Using a GUI Tool in the RoboCup Soccer Simulation, SCIS & ISIS, 2006, Volume 2006, SCIS & ISIS 2006, Session ID TH-D2-5, Pages 80-85, Released September 12, 2008, https://doi.org/10.14864/softscis.2006.0.80.0
-- Hidehisa Akiyama, Daisuke Katagami, Katsumi Nitta, Training of Agent Positioning using Human's Instruction, Journal of Advanced Computational Intelligence and Intelligent Informatics, Vol. 11 No.8, pp.998--1006, 2007-10-20. https://doi.org/10.20965/jaciii.2007.p0998
-- 秋山 英久, 野田 五十樹, エージェント配置問題における三角形分割を利用した近似モデル, 人工知能学会論文誌, 2008, 23 巻, 4 号, p. 255-267, 公開日 2008/04/24, Online ISSN 1346-8030, Print ISSN 1346-0714, https://doi.org/10.1527/tjsai.23.255
-- Hidehisa Akiyama, Itsuki Noda, Multi-Agent Positioning Mechanism in the Dynamic Environment, In Ubbo Visser, Fernando Ribeiro, Takeshi Ohashi, and Frank Dellaert, editors, RoboCup 2007: Robot Soccer World Cup XI Lecture Notes in Artificial Intelligence, vol. 5001, Springer, pp.377-384, July 2008. https://doi.org/10.1007/978-3-540-68847-1_38
-- Hidehisa Akiyama, Tomoharu Nakashima, Shigeto Aramaki, Online Cooperative Behavior Planning using a Tree Search Method in the RoboCup Soccer Simulation, Proc. of 4th IEEE International Conference on Intelligent Networking and Collaborative Systems (INCoS-2012), 2012 Sep. https://doi.org/10.1109/iNCoS.2012.83
-- Hidehisa Akiyama, Tomoharu Nakashima, HELIOS2012: RoboCup 2012 Soccer Simulation 2D League Champion, RoboCup 2012: Robot Soccer World Cup XVI Lecture Notes in Computer Science Volume 7500, pp.13-19, June 2013. http://dx.doi.org/10.1007/978-3-642-39250-4_2
-- Takuya Fukushima, Tomoharu Nakashima, Hidehisa Akiyama, Mimicking an Expert Team through the Learning of Evaluation Functions from Action Sequences, RoboCup 2018: Robot World Cup XXII Lecture Notes in Computer Science, Vol. 11374, Springer, Cham, pp 170-180, 04 August 2019  https://doi.org/10.1007/978-3-030-27544-0_14
-- Hidehisa Akiyama, Tomoharu Nakashima, Takuya Fukushima, Jiarun Zhong, Yudai Suzuki, An Ohori, HELIOS2018: RoboCup 2018 Soccer Simulation 2D League Champion, RoboCup 2018: Robot World Cup XXII, Lecture Notes in Computer Science, Vol.11374, Springer, Cham, pp.450-461, 04 August 2019. https://doi.org/10.1007/978-3-030-27544-0_37
-- 福島卓弥, 中島智晴, 秋山英久, RoboCupサッカーにおけるニューラルネットワークを用いた評価関数モデリング, 電気学会論文誌Ｃ（電子・情報・システム部門誌）, 2019, 139 巻, 10 号, pp. 1128-1133, 2019-10-01 https://doi.org/10.1541/ieejeiss.139.1128
-- 秋山 英久, 中島 智晴, 五十嵐 治一, RoboCup サッカーシミュレーションにおける局面評価の表現法と学習法, 知能と情報, 2020, 32 巻, 2 号, p. 691-703, 公開日 2020/04/15, Online ISSN 1881-7203, Print ISSN 1347-7986, https://doi.org/10.3156/jsoft.32.2_691
-- Takuya Fukushima, Tomoharu Nakashima, Hidehisa Akiyama, Evaluation-function modeling with multi-layered perceptron for RoboCup soccer 2D simulation, Artificial Life and Robotics, Volume 25, issue 3, pp.440-445, 2020-04-30. https://doi.org/10.1007/s10015-020-00602-w
-
