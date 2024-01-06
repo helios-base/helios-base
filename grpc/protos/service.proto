@@ -735,6 +735,7 @@ message HeliosChainAction {
   bool cross = 6;
   bool simple_pass = 7;
   bool simple_dribble = 8;
+  bool simple_shoot = 9;
 }
 
 message HeliosBasicOffensive {}
