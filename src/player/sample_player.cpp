@@ -219,7 +219,7 @@ SamplePlayer::initImpl( CmdLineParser & cmd_parser )
 void
 SamplePlayer::actionImpl()
 {
-    if ( this->audioSensor().trainerMessageTime() == world().time() )
+        if ( this->audioSensor().trainerMessageTime() == world().time() )
     {
         std::cerr << world().ourTeamName() << ' ' << world().self().unum()
                   << ' ' << world().time()
@@ -228,35 +228,35 @@ SamplePlayer::actionImpl()
                   << std::endl;
     }
 
-
+    
     //
     // update strategy and analyzer
     //
     Strategy::instance().update( world() );
     FieldAnalyzer::instance().update( world() );
 
-    //
+        //
     // prepare action chain
     //
     M_field_evaluator = createFieldEvaluator();
     M_action_generator = createActionGenerator();
 
-    ActionChainHolder::instance().setFieldEvaluator( M_field_evaluator );
+        ActionChainHolder::instance().setFieldEvaluator( M_field_evaluator );
     ActionChainHolder::instance().setActionGenerator( M_action_generator );
 
     //
     // special situations (tackle, objects accuracy, intention...)
     //
-    if ( doPreprocess() )
+        if ( doPreprocess() )
     {
         dlog.addText( Logger::TEAM,
                       __FILE__": preprocess done" );
-        return;
+                return;
     }
-    ActionChainHolder::instance().update( world() );
+    // ActionChainHolder::instance().update( world() );
     M_grpc_agent.sendParams(this);
-    M_grpc_agent.getAction(this);
-    
+        M_grpc_agent.getAction(this);
+        
     return;
     //
     // update action chain
@@ -536,7 +536,7 @@ SamplePlayer::doPreprocess()
     // ball search
     // check queued intention
     // check simultaneous kick
-
+    
     const WorldModel & wm = this->world();
 
     dlog.addText( Logger::TEAM,
@@ -547,7 +547,7 @@ SamplePlayer::doPreprocess()
     //
     if ( wm.self().isFrozen() )
     {
-        dlog.addText( Logger::TEAM,
+                dlog.addText( Logger::TEAM,
                       __FILE__": tackle wait. expires= %d",
                       wm.self().tackleExpires() );
         // face neck to ball
@@ -615,12 +615,13 @@ SamplePlayer::doPreprocess()
     //
     // check queued action
     //
-    if ( this->doIntention() )
-    {
-        dlog.addText( Logger::TEAM,
-                      __FILE__": do queued intention" );
-        return true;
-    }
+    // if ( this->doIntention() )
+    // {
+    //     std::cout<<"doIntention"<<std::endl;
+    //     dlog.addText( Logger::TEAM,
+    //                   __FILE__": do queued intention" );
+    //     return true;
+    // }
 
     //
     // check simultaneous kick
