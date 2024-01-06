@@ -44,12 +44,20 @@ private:
     FieldEvaluator::ConstPtr M_field_evaluator;
     ActionGenerator::ConstPtr M_action_generator;
     GrpcAgent M_grpc_agent;
+    int M_first_grpc_port;
+    bool M_use_same_grpc_port;
+    bool M_add_20_to_grpc_port_if_right_side;
+
 public:
 
     SamplePlayer();
 
     virtual
     ~SamplePlayer();
+
+    void SetFirstGrpcPort(int port) { M_first_grpc_port = port; }
+    void SetUseSameGrpcPort(bool use_same_grpc_port) { M_use_same_grpc_port = use_same_grpc_port; }
+    void SetAdd20ToGrpcPortIfRightSide(bool add_20_to_grpc_port_if_right_side) { M_add_20_to_grpc_port_if_right_side = add_20_to_grpc_port_if_right_side; }
 
 protected:
 

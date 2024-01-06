@@ -26,6 +26,9 @@ coach="${DIR}/sample_coach"
 teamname="HELIOS_base"
 host="localhost"
 port=6000
+g_port=50051
+same_g_port="false"
+gp20="false"
 coach_port=""
 debug_server_host=""
 debug_server_port=""
@@ -90,7 +93,20 @@ do
       usage
       exit 0
       ;;
-
+    --g-port)
+      if [ $# -lt 2 ]; then
+        usage
+        exit 1
+      fi
+      g_port="${2}"
+      shift 1
+      ;;
+    --same-g-port)
+      same_g_port="true"
+      ;;
+    --gp20)
+      gp2="true"
+      ;;
     -h|--host)
       if [ $# -lt 2 ]; then
         usage
@@ -312,6 +328,13 @@ opt="${opt} --debug_server_host ${debug_server_host}"
 opt="${opt} --debug_server_port ${debug_server_port}"
 opt="${opt} ${offline_logging}"
 opt="${opt} ${debugopt}"
+opt="${opt} --g-port ${g_port}"
+if [ "${same_g_port}" = "true" ]; then
+  opt="${opt} --same-g-port"
+fi
+if [ "${gp20}" = "true" ]; then
+  opt="${opt} --gp20"
+fi
 
 ping -c 1 $host
 

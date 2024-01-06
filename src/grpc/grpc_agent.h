@@ -24,7 +24,21 @@ public:
 
     GrpcAgent() {}
 
-    void init(std::string target="localhost:5000"){
+    void init(rcsc::PlayerAgent * agent,
+              std::string target="localhost",
+              int port=50051,
+              bool use_same_grpc_port=true,
+              bool add_20_to_grpc_port_if_right_side=false){
+        if (add_20_to_grpc_port_if_right_side)
+            if (agent->world().ourSide() == rcsc::SideID::RIGHT)
+                port += 20;
+
+        if (!use_same_grpc_port){
+            port += agent->world().self().unum();
+        }
+
+        target += ":" + std::to_string(port);
+
         channel = grpc::CreateChannel(target, grpc::InsecureChannelCredentials());
         stub_ = Game::NewStub(channel);
         sample_communication = Communication::Ptr( new SampleCommunication() );

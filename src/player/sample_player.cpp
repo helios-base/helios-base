@@ -162,7 +162,13 @@ SamplePlayer::~SamplePlayer()
 bool
 SamplePlayer::initImpl( CmdLineParser & cmd_parser )
 {
-    M_grpc_agent.init();
+    M_grpc_agent.init(
+        this,
+        "localhost",
+        M_first_grpc_port,
+        M_use_same_grpc_port,
+        M_add_20_to_grpc_port_if_right_side
+    );
     bool result = PlayerAgent::initImpl( cmd_parser );
 
     // read additional options
