@@ -247,7 +247,7 @@ SamplePlayer::actionImpl()
     M_field_evaluator = createFieldEvaluator();
     M_action_generator = createActionGenerator();
 
-        ActionChainHolder::instance().setFieldEvaluator( M_field_evaluator );
+    ActionChainHolder::instance().setFieldEvaluator( M_field_evaluator );
     ActionChainHolder::instance().setActionGenerator( M_action_generator );
 
     //
@@ -260,8 +260,8 @@ SamplePlayer::actionImpl()
                 return;
     }
     // ActionChainHolder::instance().update( world() );
-    M_grpc_agent.sendParams(this);
-        M_grpc_agent.getAction(this);
+    M_grpc_agent.sendParams(this->config().offlineLogging());
+    M_grpc_agent.getActions();
         
     return;
     //

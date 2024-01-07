@@ -78,15 +78,15 @@ main( int argc, char **argv )
     {
         rcsc::CmdLineParser cmd_parser( argc, argv );
         int grpc_port = 50051;
-        bool use_same_grpc_port = false;
+        bool use_same_grpc_port = true;
         bool add_20_to_grpc_port_if_right_side = false;
 
         for (int i = 0; i < argc; ++i) {
             if (std::string(argv[i]) == "--g-port") {
                 grpc_port = std::stoi(argv[i+1]);
             }
-            if (std::string(argv[i]) == "--same-g-port") {
-                use_same_grpc_port = true;
+            if (std::string(argv[i]) == "--diff-g-port") {
+                use_same_grpc_port = false;
             }
             if (std::string(argv[i]) == "--gp20") {
                 add_20_to_grpc_port_if_right_side = true;

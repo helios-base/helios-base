@@ -28,17 +28,25 @@
 #define SAMPLE_TRAINER_H
 
 #include <rcsc/trainer/trainer_agent.h>
+#include "grpc/grpc_agent_trainer.h"
 
 class SampleTrainer
     : public rcsc::TrainerAgent {
 private:
-
+    GrpcAgentTrainer M_grpc_agent = GrpcAgentTrainer();
+    int M_first_grpc_port;
+    bool M_use_same_grpc_port;
+    bool M_add_20_to_grpc_port_if_right_side;
 public:
 
     SampleTrainer();
 
     virtual
     ~SampleTrainer();
+
+    void SetFirstGrpcPort(int port) { M_first_grpc_port = port; }
+    void SetUseSameGrpcPort(bool use_same_grpc_port) { M_use_same_grpc_port = use_same_grpc_port; }
+    void SetAdd20ToGrpcPortIfRightSide(bool add_20_to_grpc_port_if_right_side) { M_add_20_to_grpc_port_if_right_side = add_20_to_grpc_port_if_right_side; }
 
 protected:
 

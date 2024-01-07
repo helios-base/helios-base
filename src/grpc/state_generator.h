@@ -1,21 +1,14 @@
 #include "service.pb.h"
 #include <rcsc/player/player_agent.h>
+#include <rcsc/coach/coach_agent.h>
+#include <rcsc/trainer/trainer_agent.h>
 #include <rcsc/player/world_model.h>
-#include "../player/strategy.h"
 
 
 using protos::State;
 using protos::WorldModel;
 class StateGenerator {
 public:
-    static State generateState(rcsc::PlayerAgent *agent) {
-        const rcsc::WorldModel &wm = agent->world();
-        WorldModel * worldModel = convertWorldModel(wm);
-        State state;
-        state.set_allocated_world_model(worldModel);
-        return state;
-    }
-
     static protos::Side convertSide(rcsc::SideID sideId){
         if (sideId == rcsc::LEFT) {
             return protos::Side::LEFT;
@@ -71,6 +64,13 @@ public:
         res->set_ghost_count(ball.ghostCount());
         res->set_dist_from_self(static_cast<float>(ball.distFromSelf()));
         res->set_angle_from_self(static_cast<float>(ball.angleFromSelf().degree()));
+        return res;
+    }
+
+    static protos::Ball * convertBall(const rcsc::CoachBallObject & ball){
+        auto res = new protos::Ball();
+        res->set_allocated_position(convertVector2D(ball.pos()));
+        res->set_allocated_velocity(convertVector2D(ball.vel()));
         return res;
     }
 
@@ -192,6 +192,21 @@ public:
         p->set_type_id(player->playerTypePtr()->id());
     }
 
+    static void updatePlayerObject(protos::Player * p, const rcsc::CoachPlayerObject * player){
+        p->set_allocated_position(convertVector2D(player->pos()));
+        p->set_allocated_velocity(convertVector2D(player->vel()));
+        p->set_side(convertSide(player->side()));
+        p->set_uniform_number(player->unum());
+        p->set_is_goalie(player->goalie());
+        p->set_body_direction(static_cast<float>(player->body().degree()));
+        p->set_face_direction(static_cast<float>(player->face().degree()));
+        p->set_point_to_direction(static_cast<float>(player->pointtoAngle().degree()));
+        p->set_is_kicking(player->isKicking());
+        p->set_ball_reach_steps(player->ballReachStep());
+        p->set_is_tackling(player->isTackling());
+        p->set_type_id(player->playerTypePtr()->id());
+    }
+
     static void updateAbstractPlayerObject(protos::Player * p, const rcsc::AbstractPlayerObject * player){
         p->set_allocated_position(convertVector2D(player->pos()));
         p->set_allocated_seen_position(convertVector2D(player->seenPos()));
@@ -225,8 +240,8 @@ public:
         p->set_type_id(player->playerTypePtr()->id());
     }
 
-    static protos::GameModeType converGameMode(const rcsc::WorldModel & wm){
-        switch (wm.gameMode().type()){
+    static protos::GameModeType converGameMode(const rcsc::GameMode::Type game_mode){
+        switch (game_mode){
             case rcsc::GameMode::BeforeKickOff:
                 return protos::GameModeType::BeforeKickOff;
             case rcsc::GameMode::TimeOver:
@@ -346,7 +361,7 @@ public:
         res->set_last_kick_side(convertSide(wm.lastKickerSide()));
         res->set_last_kicker_uniform_number(wm.lastKickerUnum());
         res->set_cycle(wm.time().cycle());
-        res->set_game_mode_type(converGameMode(wm));
+        res->set_game_mode_type(converGameMode(wm.gameMode().type()));
         res->set_left_team_score(wm.gameMode().scoreLeft());
         res->set_right_team_score(wm.gameMode().scoreRight());
         res->set_is_our_set_play(wm.gameMode().isOurSetPlay(wm.ourSide()));
@@ -355,15 +370,40 @@ public:
         res->set_our_team_score(wm.ourSide() == rcsc::SideID::LEFT ? wm.gameMode().scoreLeft() : wm.gameMode().scoreRight());
         res->set_their_team_score(wm.ourSide() == rcsc::SideID::LEFT ? wm.gameMode().scoreRight() : wm.gameMode().scoreLeft());
         res->set_is_penalty_kick_mode(wm.gameMode().isPenaltyKickMode());
-        for (int i = 1; i < 12; i++){
-            auto map = res->mutable_helios_home_positions();
-            auto home_pos = Strategy::i().getPosition(i);
-            auto vec_msg = protos::Vector2D();
-            vec_msg.set_x(home_pos.x);
-            vec_msg.set_y(home_pos.y);
-            (*map)[i] = vec_msg;
-        }
         return res;
     }
 
+    static protos::WorldModel * convertCoachWorldModel(const rcsc::CoachWorldModel & wm){
+
+        auto * res = new WorldModel();
+        // res->set_allocated_intercept_table(convertInterceptTable(wm.interceptTable()));
+        res->set_allocated_our_team_name(new std::string (wm.ourTeamName()));
+        res->set_allocated_their_team_name(new std::string (wm.theirTeamName()));
+        res->set_our_side(convertSide(wm.ourSide()));
+        res->set_last_set_play_start_time(wm.lastSetPlayStartTime().cycle());
+        // res->set_allocated_self(convertSelf(wm.self()));
+        res->set_allocated_ball(convertBall(wm.ball()));
+        for(auto player : wm.teammates()){
+            auto p = res->add_teammates();
+            updatePlayerObject(p, player);
+        }
+        for(auto player : wm.opponents()){
+            auto p = res->add_opponents();
+            updatePlayerObject(p, player);
+        }
+        res->set_offside_line_x(wm.ourOffsideLineX());
+        res->set_last_kick_side(convertSide(wm.lastKickerSide()));
+        res->set_last_kicker_uniform_number(wm.lastKickerUnum());
+        res->set_cycle(wm.time().cycle());
+        res->set_game_mode_type(converGameMode(wm.gameMode().type()));
+        res->set_left_team_score(wm.gameMode().scoreLeft());
+        res->set_right_team_score(wm.gameMode().scoreRight());
+        res->set_is_our_set_play(wm.gameMode().isOurSetPlay(wm.ourSide()));
+        res->set_is_their_set_play(wm.gameMode().isTheirSetPlay(wm.ourSide()));
+        res->set_stoped_cycle(wm.gameMode().time().stopped());
+        res->set_our_team_score(wm.ourSide() == rcsc::SideID::LEFT ? wm.gameMode().scoreLeft() : wm.gameMode().scoreRight());
+        res->set_their_team_score(wm.ourSide() == rcsc::SideID::LEFT ? wm.gameMode().scoreRight() : wm.gameMode().scoreLeft());
+        res->set_is_penalty_kick_mode(wm.gameMode().isPenaltyKickMode());
+        return res;
+    }
 };

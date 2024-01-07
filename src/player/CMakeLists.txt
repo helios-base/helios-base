@@ -3,6 +3,7 @@ add_executable(sample_player
   ../grpc/service.pb.cc
   ../grpc/service.grpc.pb.cc
   ../grpc/grpc_agent.cpp
+  ../grpc/grpc_agent_player.cpp
   basic_actions/basic_actions.cpp
   basic_actions/bhv_before_kick_off.cpp
   basic_actions/bhv_emergency.cpp
