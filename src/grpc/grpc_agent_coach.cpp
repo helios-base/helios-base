@@ -6,6 +6,8 @@
 #include "coach/sample_coach.h"
 #include <chrono>
 #include <rcsc/common/logger.h>
+#include "grpc/state_generator.h"
+
 using std::chrono::high_resolution_clock;
 using std::chrono::duration_cast;
 using std::chrono::duration;
@@ -97,8 +99,8 @@ void GrpcAgentCoach::getActions() const{
 
 State GrpcAgentCoach::generateState() const {
     auto & wm = M_agent->world();
-    // WorldModel * worldModel = StateGenerator::convertCoachWorldModel(wm);
+    protos::WorldModel * worldModel = StateGenerator::convertCoachWorldModel(wm);
     State state;
-    // state.set_allocated_world_model(worldModel);
+    state.set_allocated_world_model(worldModel);
     return state;
 }
