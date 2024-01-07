@@ -16,5 +16,5 @@ class GrpcAgentPlayer : public GrpcAgent {
     void getActions() const;
     void addSayMessage(protos::Say sayMessage) const;
     State generateState() const;
-    protos::WorldModel addHomePosition(protos::WorldModel * world_model) const;
+    void addHomePosition(protos::WorldModel * world_model) const;
 };

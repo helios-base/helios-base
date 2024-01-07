@@ -846,7 +846,7 @@ State GrpcAgentPlayer::generateState() const{
     return state;
 }
 
-protos::WorldModel GrpcAgentPlayer::addHomePosition(protos::WorldModel * res) const {
+void GrpcAgentPlayer::addHomePosition(protos::WorldModel * res) const {
     for (int i = 1; i < 12; i++){
         auto map = res->mutable_helios_home_positions();
         auto home_pos = Strategy::i().getPosition(i);
