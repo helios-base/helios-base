@@ -244,12 +244,21 @@ message WorldModel {
 }
 
 message State {
-  WorldModel world_model = 1;
-  WorldModel full_world_model = 2;
+  AgentType agent_type = 1;
+  WorldModel world_model = 2;
+  WorldModel full_world_model = 3;
+  
+}
+
+enum AgentType {
+  PlayerT = 0;
+  CoachT = 1;
+  TrainerT = 2;
 }
 
 message InitMessage {
-  bool debug_mode = 1;
+  AgentType agent_type = 1;
+  bool debug_mode = 2;
 }
 
 message Dash {
@@ -748,7 +757,7 @@ message HeliosPenalty {}
 
 message HeliosCommunicaion {}
 
-message Action {
+message PlayerAction {
   oneof action {
       Dash dash = 1;
       Turn turn = 2;
@@ -817,12 +826,75 @@ message Action {
   }
 }
 
-message Actions {
-  repeated Action actions = 1;
+message PlayerActions {
+  repeated PlayerAction actions = 1;
+}
+
+message ChangePlayerType {
+  int32 uniform_number = 1;
+  int32 type = 2;
+}
+
+message DoHeliosSubstitute {}
+
+message DoHeliosSayPlayerTypes {}
+
+message CoachAction {
+  oneof action {
+    ChangePlayerType change_player_types = 1;
+    DoHeliosSubstitute do_helios_substitute = 2;
+    DoHeliosSayPlayerTypes do_helios_say_player_types = 3;
+  }
+}
+
+message CoachActions {
+  repeated CoachAction actions = 1;
+}
+
+message DoKickOff {}
+
+message DoMoveBall {
+  Vector2D position = 1;
+  Vector2D velocity = 2;
+}
+
+message DoMovePlayer {
+  bool our_side = 1;
+  int32 uniform_number = 2;
+  Vector2D position = 3;
+  float body_direction = 4;
+}
+
+message DoRecover {}
+
+message DoChangeMode {
+  GameModeType game_mode_type = 1;
+  Side side = 2; //some of the game mode need to know the side
+}
+
+message DoChangePlayerType {
+  bool our_side = 1;
+  int32 uniform_number = 2;
+  int32 type = 3;
+}
+
+message TrainerAction {
+  oneof action {
+    DoKickOff do_kick_off = 1;
+    DoMoveBall do_move_ball = 2;
+    DoMovePlayer do_move_player = 3;
+    DoRecover do_recover = 4;
+    DoChangeMode do_change_mode = 5;
+    DoChangePlayerType do_change_player_type = 6;
+  }
+}
+
+message TrainerActions {
+  repeated TrainerAction actions = 1;
 }
 
 message ServerParam {
-  float goal_width = 1;
+  AgentType agent_type = 1;
   float inertia_moment = 2;
   float player_size = 3;
   float player_decay = 4;
@@ -1043,43 +1115,46 @@ message ServerParam {
   float their_penalty_area_line_x = 219;
   float penalty_area_half_width = 220;
   float penalty_area_length = 221;
+  float goal_width = 222;
 }
 
 message PlayerParam {
-  int32 player_types = 1;
-  int32 subs_max = 2;
-  int32 pt_max = 3;
-  bool allow_mult_default_type = 4;
-  float player_speed_max_delta_min = 5;
-  float player_speed_max_delta_max = 6;
-  float stamina_inc_max_delta_factor = 7;
-  float player_decay_delta_min = 8;
-  float player_decay_delta_max = 9;
-  float inertia_moment_delta_factor = 10;
-  float dash_power_rate_delta_min = 11;
-  float dash_power_rate_delta_max = 12;
-  float player_size_delta_factor = 13;
-  float kickable_margin_delta_min = 14;
-  float kickable_margin_delta_max = 15;
-  float kick_rand_delta_factor = 16;
-  float extra_stamina_delta_min = 17;
-  float extra_stamina_delta_max = 18;
-  float effort_max_delta_factor = 19;
-  float effort_min_delta_factor = 20;
-  int32 random_seed = 21;
-  float new_dash_power_rate_delta_min = 22;
-  float new_dash_power_rate_delta_max = 23;
-  float new_stamina_inc_max_delta_factor = 24;
-  float kick_power_rate_delta_min = 25;
-  float kick_power_rate_delta_max = 26;
-  float foul_detect_probability_delta_factor = 27;
-  float catchable_area_l_stretch_min = 28;
-  float catchable_area_l_stretch_max = 29;
+  AgentType agent_type = 1;
+  int32 player_types = 2;
+  int32 subs_max = 3;
+  int32 pt_max = 4;
+  bool allow_mult_default_type = 5;
+  float player_speed_max_delta_min = 6;
+  float player_speed_max_delta_max = 7;
+  float stamina_inc_max_delta_factor = 8;
+  float player_decay_delta_min = 9;
+  float player_decay_delta_max = 10;
+  float inertia_moment_delta_factor = 11;
+  float dash_power_rate_delta_min = 12;
+  float dash_power_rate_delta_max = 13;
+  float player_size_delta_factor = 14;
+  float kickable_margin_delta_min = 15;
+  float kickable_margin_delta_max = 16;
+  float kick_rand_delta_factor = 17;
+  float extra_stamina_delta_min = 18;
+  float extra_stamina_delta_max = 19;
+  float effort_max_delta_factor = 20;
+  float effort_min_delta_factor = 21;
+  int32 random_seed = 22;
+  float new_dash_power_rate_delta_min = 23;
+  float new_dash_power_rate_delta_max = 24;
+  float new_stamina_inc_max_delta_factor = 25;
+  float kick_power_rate_delta_min = 26;
+  float kick_power_rate_delta_max = 27;
+  float foul_detect_probability_delta_factor = 28;
+  float catchable_area_l_stretch_min = 29;
+  float catchable_area_l_stretch_max = 30;
+  
 }
 
 message PlayerType {
-  int32 id = 1;
-  float player_speed_max = 2;
+  AgentType agent_type = 1;
+  int32 id = 2;
   float stamina_inc_max = 3;
   float player_decay = 4;
   float inertia_moment = 5;
@@ -1111,15 +1186,18 @@ message PlayerType {
   float player_speed_max2 = 31;
   float real_speed_max2 = 32;
   int32 cycles_to_reach_max_speed = 33;
+  float player_speed_max = 34;
 }
 
 message Empty {
 }
 
 service Game {
-  rpc GetActions(State) returns (Actions) {}
+  rpc GetPlayerActions(State) returns (PlayerActions) {}
+  rpc GetCoachActions(State) returns (CoachActions) {}
+  rpc GetTrainerActions(State) returns (TrainerActions) {}
   rpc SendInitMessage(InitMessage) returns (Empty) {}
   rpc SendServerParams(ServerParam) returns (Empty) {}
   rpc SendPlayerParams(PlayerParam) returns (Empty) {}
-  rpc SendPlayerType(PlayerType) returns (Empty) {}
+  rpc SendPlayerType(PlayerType) returns (Empty) {} //should be PlayerTypes
 }

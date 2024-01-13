@@ -30,7 +30,7 @@
 #include "action_generator.h"
 #include "field_evaluator.h"
 #include "communication.h"
-#include "grpc/grpc_agent.h"
+#include "grpc/grpc_agent_player.h"
 
 #include <rcsc/player/player_agent.h>
 #include <vector>
@@ -43,10 +43,11 @@ private:
 
     FieldEvaluator::ConstPtr M_field_evaluator;
     ActionGenerator::ConstPtr M_action_generator;
-    GrpcAgent M_grpc_agent;
+    GrpcAgentPlayer M_grpc_agent = GrpcAgentPlayer();
     int M_first_grpc_port;
     bool M_use_same_grpc_port;
     bool M_add_20_to_grpc_port_if_right_side;
+    std::string M_grpc_server_address;
 
 public:
 
@@ -58,6 +59,7 @@ public:
     void SetFirstGrpcPort(int port) { M_first_grpc_port = port; }
     void SetUseSameGrpcPort(bool use_same_grpc_port) { M_use_same_grpc_port = use_same_grpc_port; }
     void SetAdd20ToGrpcPortIfRightSide(bool add_20_to_grpc_port_if_right_side) { M_add_20_to_grpc_port_if_right_side = add_20_to_grpc_port_if_right_side; }
+    void SetGrpcIp(std::string grpc_server_address) { M_grpc_server_address = grpc_server_address; }
 
 protected:
 

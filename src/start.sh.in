@@ -26,8 +26,9 @@ coach="${DIR}/sample_coach"
 teamname="HELIOS_base"
 host="localhost"
 port=6000
+g_ip="localhost"
 g_port=50051
-same_g_port="false"
+diff_g_port="false"
 gp20="false"
 coach_port=""
 debug_server_host=""
@@ -82,6 +83,10 @@ usage()
    echo "  --log-dir DIRECTORY          specifies debug log directory (default: /tmp)"
    echo "  --debug-log-ext EXTENSION    specifies debug log file extension (default: .log)"
    echo "  --fullstate FULLSTATE_TYPE   specifies fullstate model handling"
+   echo "  --g-ip GRPC IP               specifies grpc IP (default: localhost)"
+   echo "  --g-port GRPC PORT           specifies grpc port (default: 50051)"
+   echo "  --diff-g-port                specifies different grpc port for each player (default: false)"
+   echo "  --gp20                       add 20 to GRPC Port if team run on right side (default: false)"
    echo "                               FULLSTATE_TYPE is one of [ignore|reference|override].") 1>&2
 }
 
@@ -93,6 +98,14 @@ do
       usage
       exit 0
       ;;
+    --g-ip)
+      if [ $# -lt 2 ]; then
+        usage
+        exit 1
+      fi
+      g_ip="${2}"
+      shift 1
+      ;;
     --g-port)
       if [ $# -lt 2 ]; then
         usage
@@ -101,8 +114,8 @@ do
       g_port="${2}"
       shift 1
       ;;
-    --same-g-port)
-      same_g_port="true"
+    --diff-g-port)
+      diff_g_port="true"
       ;;
     --gp20)
       gp2="true"
@@ -328,9 +341,10 @@ opt="${opt} --debug_server_host ${debug_server_host}"
 opt="${opt} --debug_server_port ${debug_server_port}"
 opt="${opt} ${offline_logging}"
 opt="${opt} ${debugopt}"
+opt="${opt} --g-ip ${g_ip}"
 opt="${opt} --g-port ${g_port}"
 if [ "${same_g_port}" = "true" ]; then
-  opt="${opt} --same-g-port"
+  opt="${opt} --diff-g-port"
 fi
 if [ "${gp20}" = "true" ]; then
   opt="${opt} --gp20"
@@ -383,7 +397,14 @@ if [ "${usecoach}" = "true" ]; then
   coachopt="${coachopt} --debug_server_port ${debug_server_port}"
   coachopt="${coachopt} ${offline_logging}"
   coachopt="${coachopt} ${debugopt}"
-
+  coachopt="${coachopt} --g-ip ${g_ip}"
+  coachopt="${coachopt} --g-port ${g_port}"
+  if [ "${same_g_port}" = "true" ]; then
+    coachopt="${coachopt} --diff-g-port"
+  fi
+  if [ "${gp20}" = "true" ]; then
+    coachopt="${coachopt} --gp20"
+  fi
 
   if  [ X"${offline_mode}" != X'' ]; then
     offline_mode="--offline_client_mode"

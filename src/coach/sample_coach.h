@@ -29,7 +29,7 @@
 
 #include <rcsc/coach/coach_agent.h>
 #include <rcsc/types.h>
-
+#include "grpc/grpc_agent_coach.h"
 #include <vector>
 
 
@@ -48,6 +48,12 @@ private:
 
     rcsc::TeamGraphic M_team_graphic;
 
+    GrpcAgentCoach M_grpc_agent = GrpcAgentCoach();
+    int M_first_grpc_port;
+    bool M_use_same_grpc_port;
+    bool M_add_20_to_grpc_port_if_right_side;
+    std::string M_grpc_server_address;
+
 public:
 
     SampleCoach();
@@ -55,6 +61,13 @@ public:
     virtual
     ~SampleCoach();
 
+    void SetFirstGrpcPort(int port) { M_first_grpc_port = port; }
+    void SetUseSameGrpcPort(bool use_same_grpc_port) { M_use_same_grpc_port = use_same_grpc_port; }
+    void SetAdd20ToGrpcPortIfRightSide(bool add_20_to_grpc_port_if_right_side) { M_add_20_to_grpc_port_if_right_side = add_20_to_grpc_port_if_right_side; }
+    void SetGrpcIp(std::string grpc_server_address) { M_grpc_server_address = grpc_server_address; }
+    
+    void doSubstitute();
+    void sayPlayerTypes();
 
 protected:
 
@@ -81,8 +94,6 @@ protected:
 
 private:
 
-    void doSubstitute();
-
     void doFirstSubstitute();
     void doSubstituteTiredPlayers();
 
@@ -91,10 +102,7 @@ private:
 
     int getFastestType( PlayerTypePtrCont & candidates );
 
-    void sayPlayerTypes();
-
     void sendTeamGraphic();
-
 };
 
 #endif

@@ -150,6 +150,13 @@ SampleCoach::~SampleCoach()
 bool
 SampleCoach::initImpl( CmdLineParser & cmd_parser )
 {
+    M_grpc_agent.init(
+        this,
+        M_grpc_server_address,
+        M_first_grpc_port,
+        M_use_same_grpc_port,
+        M_add_20_to_grpc_port_if_right_side
+    );
     bool result =CoachAgent::initImpl( cmd_parser );
 
 #if 0
@@ -209,6 +216,9 @@ SampleCoach::actionImpl()
         sendTeamGraphic();
     }
 
+    M_grpc_agent.sendParams(this->config().offlineLogging());
+    M_grpc_agent.getActions();
+    return;
     doSubstitute();
     sayPlayerTypes();
 }

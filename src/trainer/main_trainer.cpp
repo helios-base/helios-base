@@ -78,6 +78,31 @@ main( int argc, char ** argv )
 
     {
         rcsc::CmdLineParser cmd_parser( argc, argv );
+                int grpc_port = 50051;
+        bool use_same_grpc_port = true;
+        bool add_20_to_grpc_port_if_right_side = false;
+        std::string grpc_ip = "localhost";
+
+        for (int i = 0; i < argc; ++i) {
+            if (std::string(argv[i]) == "--g-port") {
+                grpc_port = std::stoi(argv[i+1]);
+            }
+            if (std::string(argv[i]) == "--diff-g-port") {
+                use_same_grpc_port = false;
+            }
+            if (std::string(argv[i]) == "--gp20") {
+                add_20_to_grpc_port_if_right_side = true;
+            }
+            if (std::string(argv[i]) == "--g-ip") {
+                grpc_ip = argv[i+1];
+            }
+        }
+
+        agent.SetFirstGrpcPort(grpc_port);
+        agent.SetUseSameGrpcPort(use_same_grpc_port);
+        agent.SetAdd20ToGrpcPortIfRightSide(add_20_to_grpc_port_if_right_side);
+        agent.SetGrpcIp(grpc_ip);
+        
         if ( ! agent.init( cmd_parser ) )
         {
             return EXIT_FAILURE;

@@ -22,7 +22,9 @@
 namespace protos {
 
 static const char* Game_method_names[] = {
-  "/protos.Game/GetActions",
+  "/protos.Game/GetPlayerActions",
+  "/protos.Game/GetCoachActions",
+  "/protos.Game/GetTrainerActions",
   "/protos.Game/SendInitMessage",
   "/protos.Game/SendServerParams",
   "/protos.Game/SendPlayerParams",
@@ -36,32 +38,80 @@ std::unique_ptr< Game::Stub> Game::NewStub(const std::shared_ptr< ::grpc::Channe
 }
 
 Game::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_GetActions_(Game_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendInitMessage_(Game_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendServerParams_(Game_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendPlayerParams_(Game_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SendPlayerType_(Game_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_GetPlayerActions_(Game_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCoachActions_(Game_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTrainerActions_(Game_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendInitMessage_(Game_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendServerParams_(Game_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendPlayerParams_(Game_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendPlayerType_(Game_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status Game::Stub::GetActions(::grpc::ClientContext* context, const ::protos::State& request, ::protos::Actions* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::protos::State, ::protos::Actions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetActions_, context, request, response);
+::grpc::Status Game::Stub::GetPlayerActions(::grpc::ClientContext* context, const ::protos::State& request, ::protos::PlayerActions* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::protos::State, ::protos::PlayerActions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetPlayerActions_, context, request, response);
 }
 
-void Game::Stub::async::GetActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::Actions* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::protos::State, ::protos::Actions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetActions_, context, request, response, std::move(f));
+void Game::Stub::async::GetPlayerActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::PlayerActions* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::protos::State, ::protos::PlayerActions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPlayerActions_, context, request, response, std::move(f));
 }
 
-void Game::Stub::async::GetActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::Actions* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetActions_, context, request, response, reactor);
+void Game::Stub::async::GetPlayerActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::PlayerActions* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPlayerActions_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::protos::Actions>* Game::Stub::PrepareAsyncGetActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::protos::Actions, ::protos::State, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetActions_, context, request);
+::grpc::ClientAsyncResponseReader< ::protos::PlayerActions>* Game::Stub::PrepareAsyncGetPlayerActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::protos::PlayerActions, ::protos::State, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetPlayerActions_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::protos::Actions>* Game::Stub::AsyncGetActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::protos::PlayerActions>* Game::Stub::AsyncGetPlayerActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncGetActionsRaw(context, request, cq);
+    this->PrepareAsyncGetPlayerActionsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Game::Stub::GetCoachActions(::grpc::ClientContext* context, const ::protos::State& request, ::protos::CoachActions* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::protos::State, ::protos::CoachActions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetCoachActions_, context, request, response);
+}
+
+void Game::Stub::async::GetCoachActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::CoachActions* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::protos::State, ::protos::CoachActions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetCoachActions_, context, request, response, std::move(f));
+}
+
+void Game::Stub::async::GetCoachActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::CoachActions* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetCoachActions_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::protos::CoachActions>* Game::Stub::PrepareAsyncGetCoachActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::protos::CoachActions, ::protos::State, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetCoachActions_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::protos::CoachActions>* Game::Stub::AsyncGetCoachActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetCoachActionsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Game::Stub::GetTrainerActions(::grpc::ClientContext* context, const ::protos::State& request, ::protos::TrainerActions* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::protos::State, ::protos::TrainerActions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetTrainerActions_, context, request, response);
+}
+
+void Game::Stub::async::GetTrainerActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::TrainerActions* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::protos::State, ::protos::TrainerActions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetTrainerActions_, context, request, response, std::move(f));
+}
+
+void Game::Stub::async::GetTrainerActions(::grpc::ClientContext* context, const ::protos::State* request, ::protos::TrainerActions* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetTrainerActions_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::protos::TrainerActions>* Game::Stub::PrepareAsyncGetTrainerActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::protos::TrainerActions, ::protos::State, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetTrainerActions_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::protos::TrainerActions>* Game::Stub::AsyncGetTrainerActionsRaw(::grpc::ClientContext* context, const ::protos::State& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetTrainerActionsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -162,15 +212,35 @@ Game::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Game_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::State, ::protos::Actions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::State, ::protos::PlayerActions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Game::Service* service,
              ::grpc::ServerContext* ctx,
              const ::protos::State* req,
-             ::protos::Actions* resp) {
-               return service->GetActions(ctx, req, resp);
+             ::protos::PlayerActions* resp) {
+               return service->GetPlayerActions(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Game_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::State, ::protos::CoachActions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Game::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::protos::State* req,
+             ::protos::CoachActions* resp) {
+               return service->GetCoachActions(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Game_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::State, ::protos::TrainerActions, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Game::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::protos::State* req,
+             ::protos::TrainerActions* resp) {
+               return service->GetTrainerActions(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Game_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::InitMessage, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Game::Service* service,
@@ -180,7 +250,7 @@ Game::Service::Service() {
                return service->SendInitMessage(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Game_method_names[2],
+      Game_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::ServerParam, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Game::Service* service,
@@ -190,7 +260,7 @@ Game::Service::Service() {
                return service->SendServerParams(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Game_method_names[3],
+      Game_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::PlayerParam, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Game::Service* service,
@@ -200,7 +270,7 @@ Game::Service::Service() {
                return service->SendPlayerParams(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Game_method_names[4],
+      Game_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::PlayerType, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Game::Service* service,
@@ -214,7 +284,21 @@ Game::Service::Service() {
 Game::Service::~Service() {
 }
 
-::grpc::Status Game::Service::GetActions(::grpc::ServerContext* context, const ::protos::State* request, ::protos::Actions* response) {
+::grpc::Status Game::Service::GetPlayerActions(::grpc::ServerContext* context, const ::protos::State* request, ::protos::PlayerActions* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Game::Service::GetCoachActions(::grpc::ServerContext* context, const ::protos::State* request, ::protos::CoachActions* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Game::Service::GetTrainerActions(::grpc::ServerContext* context, const ::protos::State* request, ::protos::TrainerActions* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -56,12 +56,6 @@ struct TableStruct_service_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable
     descriptor_table_service_2eproto;
 namespace protos {
-class Action;
-struct ActionDefaultTypeInternal;
-extern ActionDefaultTypeInternal _Action_default_instance_;
-class Actions;
-struct ActionsDefaultTypeInternal;
-extern ActionsDefaultTypeInternal _Actions_default_instance_;
 class AddArc;
 struct AddArcDefaultTypeInternal;
 extern AddArcDefaultTypeInternal _AddArc_default_instance_;
@@ -179,9 +173,18 @@ extern Body_TurnToPointDefaultTypeInternal _Body_TurnToPoint_default_instance_;
 class Catch;
 struct CatchDefaultTypeInternal;
 extern CatchDefaultTypeInternal _Catch_default_instance_;
+class ChangePlayerType;
+struct ChangePlayerTypeDefaultTypeInternal;
+extern ChangePlayerTypeDefaultTypeInternal _ChangePlayerType_default_instance_;
 class ChangeView;
 struct ChangeViewDefaultTypeInternal;
 extern ChangeViewDefaultTypeInternal _ChangeView_default_instance_;
+class CoachAction;
+struct CoachActionDefaultTypeInternal;
+extern CoachActionDefaultTypeInternal _CoachAction_default_instance_;
+class CoachActions;
+struct CoachActionsDefaultTypeInternal;
+extern CoachActionsDefaultTypeInternal _CoachActions_default_instance_;
 class Dash;
 struct DashDefaultTypeInternal;
 extern DashDefaultTypeInternal _Dash_default_instance_;
@@ -191,6 +194,30 @@ extern DebugClientDefaultTypeInternal _DebugClient_default_instance_;
 class DefenseLineMessage;
 struct DefenseLineMessageDefaultTypeInternal;
 extern DefenseLineMessageDefaultTypeInternal _DefenseLineMessage_default_instance_;
+class DoChangeMode;
+struct DoChangeModeDefaultTypeInternal;
+extern DoChangeModeDefaultTypeInternal _DoChangeMode_default_instance_;
+class DoChangePlayerType;
+struct DoChangePlayerTypeDefaultTypeInternal;
+extern DoChangePlayerTypeDefaultTypeInternal _DoChangePlayerType_default_instance_;
+class DoHeliosSayPlayerTypes;
+struct DoHeliosSayPlayerTypesDefaultTypeInternal;
+extern DoHeliosSayPlayerTypesDefaultTypeInternal _DoHeliosSayPlayerTypes_default_instance_;
+class DoHeliosSubstitute;
+struct DoHeliosSubstituteDefaultTypeInternal;
+extern DoHeliosSubstituteDefaultTypeInternal _DoHeliosSubstitute_default_instance_;
+class DoKickOff;
+struct DoKickOffDefaultTypeInternal;
+extern DoKickOffDefaultTypeInternal _DoKickOff_default_instance_;
+class DoMoveBall;
+struct DoMoveBallDefaultTypeInternal;
+extern DoMoveBallDefaultTypeInternal _DoMoveBall_default_instance_;
+class DoMovePlayer;
+struct DoMovePlayerDefaultTypeInternal;
+extern DoMovePlayerDefaultTypeInternal _DoMovePlayer_default_instance_;
+class DoRecover;
+struct DoRecoverDefaultTypeInternal;
+extern DoRecoverDefaultTypeInternal _DoRecover_default_instance_;
 class DribbleMessage;
 struct DribbleMessageDefaultTypeInternal;
 extern DribbleMessageDefaultTypeInternal _DribbleMessage_default_instance_;
@@ -308,6 +335,12 @@ extern PassRequestMessageDefaultTypeInternal _PassRequestMessage_default_instanc
 class Player;
 struct PlayerDefaultTypeInternal;
 extern PlayerDefaultTypeInternal _Player_default_instance_;
+class PlayerAction;
+struct PlayerActionDefaultTypeInternal;
+extern PlayerActionDefaultTypeInternal _PlayerAction_default_instance_;
+class PlayerActions;
+struct PlayerActionsDefaultTypeInternal;
+extern PlayerActionsDefaultTypeInternal _PlayerActions_default_instance_;
 class PlayerParam;
 struct PlayerParamDefaultTypeInternal;
 extern PlayerParamDefaultTypeInternal _PlayerParam_default_instance_;
@@ -356,6 +389,12 @@ extern TeammateMessageDefaultTypeInternal _TeammateMessage_default_instance_;
 class ThreePlayerMessage;
 struct ThreePlayerMessageDefaultTypeInternal;
 extern ThreePlayerMessageDefaultTypeInternal _ThreePlayerMessage_default_instance_;
+class TrainerAction;
+struct TrainerActionDefaultTypeInternal;
+extern TrainerActionDefaultTypeInternal _TrainerAction_default_instance_;
+class TrainerActions;
+struct TrainerActionsDefaultTypeInternal;
+extern TrainerActionsDefaultTypeInternal _TrainerActions_default_instance_;
 class Turn;
 struct TurnDefaultTypeInternal;
 extern TurnDefaultTypeInternal _Turn_default_instance_;
@@ -397,10 +436,6 @@ struct WorldModel_TheirPlayersDictEntry_DoNotUseDefaultTypeInternal;
 extern WorldModel_TheirPlayersDictEntry_DoNotUseDefaultTypeInternal _WorldModel_TheirPlayersDictEntry_DoNotUse_default_instance_;
 }  // namespace protos
 PROTOBUF_NAMESPACE_OPEN
-template <>
-::protos::Action* Arena::CreateMaybeMessage<::protos::Action>(Arena*);
-template <>
-::protos::Actions* Arena::CreateMaybeMessage<::protos::Actions>(Arena*);
 template <>
 ::protos::AddArc* Arena::CreateMaybeMessage<::protos::AddArc>(Arena*);
 template <>
@@ -480,13 +515,35 @@ template <>
 template <>
 ::protos::Catch* Arena::CreateMaybeMessage<::protos::Catch>(Arena*);
 template <>
+::protos::ChangePlayerType* Arena::CreateMaybeMessage<::protos::ChangePlayerType>(Arena*);
+template <>
 ::protos::ChangeView* Arena::CreateMaybeMessage<::protos::ChangeView>(Arena*);
+template <>
+::protos::CoachAction* Arena::CreateMaybeMessage<::protos::CoachAction>(Arena*);
+template <>
+::protos::CoachActions* Arena::CreateMaybeMessage<::protos::CoachActions>(Arena*);
 template <>
 ::protos::Dash* Arena::CreateMaybeMessage<::protos::Dash>(Arena*);
 template <>
 ::protos::DebugClient* Arena::CreateMaybeMessage<::protos::DebugClient>(Arena*);
 template <>
 ::protos::DefenseLineMessage* Arena::CreateMaybeMessage<::protos::DefenseLineMessage>(Arena*);
+template <>
+::protos::DoChangeMode* Arena::CreateMaybeMessage<::protos::DoChangeMode>(Arena*);
+template <>
+::protos::DoChangePlayerType* Arena::CreateMaybeMessage<::protos::DoChangePlayerType>(Arena*);
+template <>
+::protos::DoHeliosSayPlayerTypes* Arena::CreateMaybeMessage<::protos::DoHeliosSayPlayerTypes>(Arena*);
+template <>
+::protos::DoHeliosSubstitute* Arena::CreateMaybeMessage<::protos::DoHeliosSubstitute>(Arena*);
+template <>
+::protos::DoKickOff* Arena::CreateMaybeMessage<::protos::DoKickOff>(Arena*);
+template <>
+::protos::DoMoveBall* Arena::CreateMaybeMessage<::protos::DoMoveBall>(Arena*);
+template <>
+::protos::DoMovePlayer* Arena::CreateMaybeMessage<::protos::DoMovePlayer>(Arena*);
+template <>
+::protos::DoRecover* Arena::CreateMaybeMessage<::protos::DoRecover>(Arena*);
 template <>
 ::protos::DribbleMessage* Arena::CreateMaybeMessage<::protos::DribbleMessage>(Arena*);
 template <>
@@ -566,6 +623,10 @@ template <>
 template <>
 ::protos::Player* Arena::CreateMaybeMessage<::protos::Player>(Arena*);
 template <>
+::protos::PlayerAction* Arena::CreateMaybeMessage<::protos::PlayerAction>(Arena*);
+template <>
+::protos::PlayerActions* Arena::CreateMaybeMessage<::protos::PlayerActions>(Arena*);
+template <>
 ::protos::PlayerParam* Arena::CreateMaybeMessage<::protos::PlayerParam>(Arena*);
 template <>
 ::protos::PlayerType* Arena::CreateMaybeMessage<::protos::PlayerType>(Arena*);
@@ -597,6 +658,10 @@ template <>
 ::protos::TeammateMessage* Arena::CreateMaybeMessage<::protos::TeammateMessage>(Arena*);
 template <>
 ::protos::ThreePlayerMessage* Arena::CreateMaybeMessage<::protos::ThreePlayerMessage>(Arena*);
+template <>
+::protos::TrainerAction* Arena::CreateMaybeMessage<::protos::TrainerAction>(Arena*);
+template <>
+::protos::TrainerActions* Arena::CreateMaybeMessage<::protos::TrainerActions>(Arena*);
 template <>
 ::protos::Turn* Arena::CreateMaybeMessage<::protos::Turn>(Arena*);
 template <>
@@ -834,6 +899,39 @@ inline const std::string& GameModeType_Name(GameModeType value) {
 inline bool GameModeType_Parse(absl::string_view name, GameModeType* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<GameModeType>(
       GameModeType_descriptor(), name, value);
+}
+enum AgentType : int {
+  PlayerT = 0,
+  CoachT = 1,
+  TrainerT = 2,
+  AgentType_INT_MIN_SENTINEL_DO_NOT_USE_ =
+      std::numeric_limits<::int32_t>::min(),
+  AgentType_INT_MAX_SENTINEL_DO_NOT_USE_ =
+      std::numeric_limits<::int32_t>::max(),
+};
+
+bool AgentType_IsValid(int value);
+constexpr AgentType AgentType_MIN = static_cast<AgentType>(0);
+constexpr AgentType AgentType_MAX = static_cast<AgentType>(2);
+constexpr int AgentType_ARRAYSIZE = 2 + 1;
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+AgentType_descriptor();
+template <typename T>
+const std::string& AgentType_Name(T value) {
+  static_assert(std::is_same<T, AgentType>::value ||
+                    std::is_integral<T>::value,
+                "Incorrect type passed to AgentType_Name().");
+  return AgentType_Name(static_cast<AgentType>(value));
+}
+template <>
+inline const std::string& AgentType_Name(AgentType value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfDenseEnum<AgentType_descriptor,
+                                                 0, 2>(
+      static_cast<int>(value));
+}
+inline bool AgentType_Parse(absl::string_view name, AgentType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<AgentType>(
+      AgentType_descriptor(), name, value);
 }
 
 // ===================================================================
@@ -3881,10 +3979,11 @@ class State final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kWorldModelFieldNumber = 1,
-    kFullWorldModelFieldNumber = 2,
+    kWorldModelFieldNumber = 2,
+    kFullWorldModelFieldNumber = 3,
+    kAgentTypeFieldNumber = 1,
   };
-  // .protos.WorldModel world_model = 1;
+  // .protos.WorldModel world_model = 2;
   bool has_world_model() const;
   void clear_world_model() ;
   const ::protos::WorldModel& world_model() const;
@@ -3898,7 +3997,7 @@ class State final :
   void unsafe_arena_set_allocated_world_model(
       ::protos::WorldModel* world_model);
   ::protos::WorldModel* unsafe_arena_release_world_model();
-  // .protos.WorldModel full_world_model = 2;
+  // .protos.WorldModel full_world_model = 3;
   bool has_full_world_model() const;
   void clear_full_world_model() ;
   const ::protos::WorldModel& full_world_model() const;
@@ -3912,6 +4011,16 @@ class State final :
   void unsafe_arena_set_allocated_full_world_model(
       ::protos::WorldModel* full_world_model);
   ::protos::WorldModel* unsafe_arena_release_full_world_model();
+  // .protos.AgentType agent_type = 1;
+  void clear_agent_type() ;
+  ::protos::AgentType agent_type() const;
+  void set_agent_type(::protos::AgentType value);
+
+  private:
+  ::protos::AgentType _internal_agent_type() const;
+  void _internal_set_agent_type(::protos::AgentType value);
+
+  public:
   // @@protoc_insertion_point(class_scope:protos.State)
  private:
   class _Internal;
@@ -3924,6 +4033,7 @@ class State final :
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::protos::WorldModel* world_model_;
     ::protos::WorldModel* full_world_model_;
+    int agent_type_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_service_2eproto;
@@ -4057,9 +4167,20 @@ class InitMessage final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDebugModeFieldNumber = 1,
+    kAgentTypeFieldNumber = 1,
+    kDebugModeFieldNumber = 2,
   };
-  // bool debug_mode = 1;
+  // .protos.AgentType agent_type = 1;
+  void clear_agent_type() ;
+  ::protos::AgentType agent_type() const;
+  void set_agent_type(::protos::AgentType value);
+
+  private:
+  ::protos::AgentType _internal_agent_type() const;
+  void _internal_set_agent_type(::protos::AgentType value);
+
+  public:
+  // bool debug_mode = 2;
   void clear_debug_mode() ;
   bool debug_mode() const;
   void set_debug_mode(bool value);
@@ -4077,6 +4198,7 @@ class InitMessage final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    int agent_type_;
     bool debug_mode_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -20330,25 +20452,25 @@ class HeliosCommunicaion final :
   friend struct ::TableStruct_service_2eproto;
 };// -------------------------------------------------------------------
 
-class Action final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.Action) */ {
+class PlayerAction final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.PlayerAction) */ {
  public:
-  inline Action() : Action(nullptr) {}
-  ~Action() override;
+  inline PlayerAction() : PlayerAction(nullptr) {}
+  ~PlayerAction() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Action(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR PlayerAction(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  Action(const Action& from);
-  Action(Action&& from) noexcept
-    : Action() {
+  PlayerAction(const PlayerAction& from);
+  PlayerAction(PlayerAction&& from) noexcept
+    : PlayerAction() {
     *this = ::std::move(from);
   }
 
-  inline Action& operator=(const Action& from) {
+  inline PlayerAction& operator=(const PlayerAction& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Action& operator=(Action&& from) noexcept {
+  inline PlayerAction& operator=(PlayerAction&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -20378,7 +20500,7 @@ class Action final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const Action& default_instance() {
+  static const PlayerAction& default_instance() {
     return *internal_default_instance();
   }
   enum ActionCase {
@@ -20449,17 +20571,17 @@ class Action final :
     ACTION_NOT_SET = 0,
   };
 
-  static inline const Action* internal_default_instance() {
-    return reinterpret_cast<const Action*>(
-               &_Action_default_instance_);
+  static inline const PlayerAction* internal_default_instance() {
+    return reinterpret_cast<const PlayerAction*>(
+               &_PlayerAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     107;
 
-  friend void swap(Action& a, Action& b) {
+  friend void swap(PlayerAction& a, PlayerAction& b) {
     a.Swap(&b);
   }
-  inline void Swap(Action* other) {
+  inline void Swap(PlayerAction* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -20472,7 +20594,7 @@ class Action final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(Action* other) {
+  void UnsafeArenaSwap(PlayerAction* other) {
     if (other == this) return;
     ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -20480,14 +20602,14 @@ class Action final :
 
   // implements Message ----------------------------------------------
 
-  Action* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Action>(arena);
+  PlayerAction* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<PlayerAction>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Action& from);
+  void CopyFrom(const PlayerAction& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const Action& from) {
-    Action::MergeImpl(*this, from);
+  void MergeFrom( const PlayerAction& from) {
+    PlayerAction::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -20505,15 +20627,15 @@ class Action final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Action* other);
+  void InternalSwap(PlayerAction* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
-    return "protos.Action";
+    return "protos.PlayerAction";
   }
   protected:
-  explicit Action(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit PlayerAction(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -21745,7 +21867,7 @@ class Action final :
   ::protos::HeliosCommunicaion* unsafe_arena_release_helios_communication();
   void clear_action();
   ActionCase action_case() const;
-  // @@protoc_insertion_point(class_scope:protos.Action)
+  // @@protoc_insertion_point(class_scope:protos.PlayerAction)
  private:
   class _Internal;
   void set_has_dash();
@@ -21896,25 +22018,25 @@ class Action final :
   friend struct ::TableStruct_service_2eproto;
 };// -------------------------------------------------------------------
 
-class Actions final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.Actions) */ {
+class PlayerActions final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.PlayerActions) */ {
  public:
-  inline Actions() : Actions(nullptr) {}
-  ~Actions() override;
+  inline PlayerActions() : PlayerActions(nullptr) {}
+  ~PlayerActions() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Actions(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR PlayerActions(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  Actions(const Actions& from);
-  Actions(Actions&& from) noexcept
-    : Actions() {
+  PlayerActions(const PlayerActions& from);
+  PlayerActions(PlayerActions&& from) noexcept
+    : PlayerActions() {
     *this = ::std::move(from);
   }
 
-  inline Actions& operator=(const Actions& from) {
+  inline PlayerActions& operator=(const PlayerActions& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Actions& operator=(Actions&& from) noexcept {
+  inline PlayerActions& operator=(PlayerActions&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -21944,20 +22066,20 @@ class Actions final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const Actions& default_instance() {
+  static const PlayerActions& default_instance() {
     return *internal_default_instance();
   }
-  static inline const Actions* internal_default_instance() {
-    return reinterpret_cast<const Actions*>(
-               &_Actions_default_instance_);
+  static inline const PlayerActions* internal_default_instance() {
+    return reinterpret_cast<const PlayerActions*>(
+               &_PlayerActions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     108;
 
-  friend void swap(Actions& a, Actions& b) {
+  friend void swap(PlayerActions& a, PlayerActions& b) {
     a.Swap(&b);
   }
-  inline void Swap(Actions* other) {
+  inline void Swap(PlayerActions* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -21970,7 +22092,7 @@ class Actions final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(Actions* other) {
+  void UnsafeArenaSwap(PlayerActions* other) {
     if (other == this) return;
     ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -21978,14 +22100,14 @@ class Actions final :
 
   // implements Message ----------------------------------------------
 
-  Actions* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Actions>(arena);
+  PlayerActions* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<PlayerActions>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Actions& from);
+  void CopyFrom(const PlayerActions& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const Actions& from) {
-    Actions::MergeImpl(*this, from);
+  void MergeFrom( const PlayerActions& from) {
+    PlayerActions::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -22003,15 +22125,15 @@ class Actions final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Actions* other);
+  void InternalSwap(PlayerActions* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
-    return "protos.Actions";
+    return "protos.PlayerActions";
   }
   protected:
-  explicit Actions(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit PlayerActions(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -22026,27 +22148,27 @@ class Actions final :
   enum : int {
     kActionsFieldNumber = 1,
   };
-  // repeated .protos.Action actions = 1;
+  // repeated .protos.PlayerAction actions = 1;
   int actions_size() const;
   private:
   int _internal_actions_size() const;
 
   public:
   void clear_actions() ;
-  ::protos::Action* mutable_actions(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::Action >*
+  ::protos::PlayerAction* mutable_actions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::PlayerAction >*
       mutable_actions();
   private:
-  const ::protos::Action& _internal_actions(int index) const;
-  ::protos::Action* _internal_add_actions();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::Action>& _internal_actions() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::Action>* _internal_mutable_actions();
+  const ::protos::PlayerAction& _internal_actions(int index) const;
+  ::protos::PlayerAction* _internal_add_actions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::PlayerAction>& _internal_actions() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::PlayerAction>* _internal_mutable_actions();
   public:
-  const ::protos::Action& actions(int index) const;
-  ::protos::Action* add_actions();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::Action >&
+  const ::protos::PlayerAction& actions(int index) const;
+  ::protos::PlayerAction* add_actions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::PlayerAction >&
       actions() const;
-  // @@protoc_insertion_point(class_scope:protos.Actions)
+  // @@protoc_insertion_point(class_scope:protos.PlayerActions)
  private:
   class _Internal;
 
@@ -22054,7 +22176,2232 @@ class Actions final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::Action > actions_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::PlayerAction > actions_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class ChangePlayerType final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.ChangePlayerType) */ {
+ public:
+  inline ChangePlayerType() : ChangePlayerType(nullptr) {}
+  ~ChangePlayerType() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR ChangePlayerType(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ChangePlayerType(const ChangePlayerType& from);
+  ChangePlayerType(ChangePlayerType&& from) noexcept
+    : ChangePlayerType() {
+    *this = ::std::move(from);
+  }
+
+  inline ChangePlayerType& operator=(const ChangePlayerType& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ChangePlayerType& operator=(ChangePlayerType&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ChangePlayerType& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ChangePlayerType* internal_default_instance() {
+    return reinterpret_cast<const ChangePlayerType*>(
+               &_ChangePlayerType_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    109;
+
+  friend void swap(ChangePlayerType& a, ChangePlayerType& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ChangePlayerType* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ChangePlayerType* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ChangePlayerType* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ChangePlayerType>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ChangePlayerType& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ChangePlayerType& from) {
+    ChangePlayerType::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ChangePlayerType* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.ChangePlayerType";
+  }
+  protected:
+  explicit ChangePlayerType(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUniformNumberFieldNumber = 1,
+    kTypeFieldNumber = 2,
+  };
+  // int32 uniform_number = 1;
+  void clear_uniform_number() ;
+  ::int32_t uniform_number() const;
+  void set_uniform_number(::int32_t value);
+
+  private:
+  ::int32_t _internal_uniform_number() const;
+  void _internal_set_uniform_number(::int32_t value);
+
+  public:
+  // int32 type = 2;
+  void clear_type() ;
+  ::int32_t type() const;
+  void set_type(::int32_t value);
+
+  private:
+  ::int32_t _internal_type() const;
+  void _internal_set_type(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:protos.ChangePlayerType)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::int32_t uniform_number_;
+    ::int32_t type_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class DoHeliosSubstitute final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.DoHeliosSubstitute) */ {
+ public:
+  inline DoHeliosSubstitute() : DoHeliosSubstitute(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR DoHeliosSubstitute(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DoHeliosSubstitute(const DoHeliosSubstitute& from);
+  DoHeliosSubstitute(DoHeliosSubstitute&& from) noexcept
+    : DoHeliosSubstitute() {
+    *this = ::std::move(from);
+  }
+
+  inline DoHeliosSubstitute& operator=(const DoHeliosSubstitute& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DoHeliosSubstitute& operator=(DoHeliosSubstitute&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DoHeliosSubstitute& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DoHeliosSubstitute* internal_default_instance() {
+    return reinterpret_cast<const DoHeliosSubstitute*>(
+               &_DoHeliosSubstitute_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    110;
+
+  friend void swap(DoHeliosSubstitute& a, DoHeliosSubstitute& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DoHeliosSubstitute* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DoHeliosSubstitute* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DoHeliosSubstitute* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DoHeliosSubstitute>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const DoHeliosSubstitute& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const DoHeliosSubstitute& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.DoHeliosSubstitute";
+  }
+  protected:
+  explicit DoHeliosSubstitute(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.DoHeliosSubstitute)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class DoHeliosSayPlayerTypes final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.DoHeliosSayPlayerTypes) */ {
+ public:
+  inline DoHeliosSayPlayerTypes() : DoHeliosSayPlayerTypes(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR DoHeliosSayPlayerTypes(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DoHeliosSayPlayerTypes(const DoHeliosSayPlayerTypes& from);
+  DoHeliosSayPlayerTypes(DoHeliosSayPlayerTypes&& from) noexcept
+    : DoHeliosSayPlayerTypes() {
+    *this = ::std::move(from);
+  }
+
+  inline DoHeliosSayPlayerTypes& operator=(const DoHeliosSayPlayerTypes& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DoHeliosSayPlayerTypes& operator=(DoHeliosSayPlayerTypes&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DoHeliosSayPlayerTypes& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DoHeliosSayPlayerTypes* internal_default_instance() {
+    return reinterpret_cast<const DoHeliosSayPlayerTypes*>(
+               &_DoHeliosSayPlayerTypes_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    111;
+
+  friend void swap(DoHeliosSayPlayerTypes& a, DoHeliosSayPlayerTypes& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DoHeliosSayPlayerTypes* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DoHeliosSayPlayerTypes* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DoHeliosSayPlayerTypes* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DoHeliosSayPlayerTypes>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const DoHeliosSayPlayerTypes& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const DoHeliosSayPlayerTypes& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.DoHeliosSayPlayerTypes";
+  }
+  protected:
+  explicit DoHeliosSayPlayerTypes(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.DoHeliosSayPlayerTypes)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class CoachAction final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.CoachAction) */ {
+ public:
+  inline CoachAction() : CoachAction(nullptr) {}
+  ~CoachAction() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR CoachAction(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CoachAction(const CoachAction& from);
+  CoachAction(CoachAction&& from) noexcept
+    : CoachAction() {
+    *this = ::std::move(from);
+  }
+
+  inline CoachAction& operator=(const CoachAction& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CoachAction& operator=(CoachAction&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CoachAction& default_instance() {
+    return *internal_default_instance();
+  }
+  enum ActionCase {
+    kChangePlayerTypes = 1,
+    kDoHeliosSubstitute = 2,
+    kDoHeliosSayPlayerTypes = 3,
+    ACTION_NOT_SET = 0,
+  };
+
+  static inline const CoachAction* internal_default_instance() {
+    return reinterpret_cast<const CoachAction*>(
+               &_CoachAction_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    112;
+
+  friend void swap(CoachAction& a, CoachAction& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CoachAction* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CoachAction* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CoachAction* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CoachAction>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CoachAction& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CoachAction& from) {
+    CoachAction::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CoachAction* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.CoachAction";
+  }
+  protected:
+  explicit CoachAction(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kChangePlayerTypesFieldNumber = 1,
+    kDoHeliosSubstituteFieldNumber = 2,
+    kDoHeliosSayPlayerTypesFieldNumber = 3,
+  };
+  // .protos.ChangePlayerType change_player_types = 1;
+  bool has_change_player_types() const;
+  private:
+  bool _internal_has_change_player_types() const;
+
+  public:
+  void clear_change_player_types() ;
+  const ::protos::ChangePlayerType& change_player_types() const;
+  PROTOBUF_NODISCARD ::protos::ChangePlayerType* release_change_player_types();
+  ::protos::ChangePlayerType* mutable_change_player_types();
+  void set_allocated_change_player_types(::protos::ChangePlayerType* change_player_types);
+  private:
+  const ::protos::ChangePlayerType& _internal_change_player_types() const;
+  ::protos::ChangePlayerType* _internal_mutable_change_player_types();
+  public:
+  void unsafe_arena_set_allocated_change_player_types(
+      ::protos::ChangePlayerType* change_player_types);
+  ::protos::ChangePlayerType* unsafe_arena_release_change_player_types();
+  // .protos.DoHeliosSubstitute do_helios_substitute = 2;
+  bool has_do_helios_substitute() const;
+  private:
+  bool _internal_has_do_helios_substitute() const;
+
+  public:
+  void clear_do_helios_substitute() ;
+  const ::protos::DoHeliosSubstitute& do_helios_substitute() const;
+  PROTOBUF_NODISCARD ::protos::DoHeliosSubstitute* release_do_helios_substitute();
+  ::protos::DoHeliosSubstitute* mutable_do_helios_substitute();
+  void set_allocated_do_helios_substitute(::protos::DoHeliosSubstitute* do_helios_substitute);
+  private:
+  const ::protos::DoHeliosSubstitute& _internal_do_helios_substitute() const;
+  ::protos::DoHeliosSubstitute* _internal_mutable_do_helios_substitute();
+  public:
+  void unsafe_arena_set_allocated_do_helios_substitute(
+      ::protos::DoHeliosSubstitute* do_helios_substitute);
+  ::protos::DoHeliosSubstitute* unsafe_arena_release_do_helios_substitute();
+  // .protos.DoHeliosSayPlayerTypes do_helios_say_player_types = 3;
+  bool has_do_helios_say_player_types() const;
+  private:
+  bool _internal_has_do_helios_say_player_types() const;
+
+  public:
+  void clear_do_helios_say_player_types() ;
+  const ::protos::DoHeliosSayPlayerTypes& do_helios_say_player_types() const;
+  PROTOBUF_NODISCARD ::protos::DoHeliosSayPlayerTypes* release_do_helios_say_player_types();
+  ::protos::DoHeliosSayPlayerTypes* mutable_do_helios_say_player_types();
+  void set_allocated_do_helios_say_player_types(::protos::DoHeliosSayPlayerTypes* do_helios_say_player_types);
+  private:
+  const ::protos::DoHeliosSayPlayerTypes& _internal_do_helios_say_player_types() const;
+  ::protos::DoHeliosSayPlayerTypes* _internal_mutable_do_helios_say_player_types();
+  public:
+  void unsafe_arena_set_allocated_do_helios_say_player_types(
+      ::protos::DoHeliosSayPlayerTypes* do_helios_say_player_types);
+  ::protos::DoHeliosSayPlayerTypes* unsafe_arena_release_do_helios_say_player_types();
+  void clear_action();
+  ActionCase action_case() const;
+  // @@protoc_insertion_point(class_scope:protos.CoachAction)
+ private:
+  class _Internal;
+  void set_has_change_player_types();
+  void set_has_do_helios_substitute();
+  void set_has_do_helios_say_player_types();
+
+  inline bool has_action() const;
+  inline void clear_has_action();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    union ActionUnion {
+      constexpr ActionUnion() : _constinit_{} {}
+        ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+      ::protos::ChangePlayerType* change_player_types_;
+      ::protos::DoHeliosSubstitute* do_helios_substitute_;
+      ::protos::DoHeliosSayPlayerTypes* do_helios_say_player_types_;
+    } action_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::uint32_t _oneof_case_[1];
+
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class CoachActions final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.CoachActions) */ {
+ public:
+  inline CoachActions() : CoachActions(nullptr) {}
+  ~CoachActions() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR CoachActions(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CoachActions(const CoachActions& from);
+  CoachActions(CoachActions&& from) noexcept
+    : CoachActions() {
+    *this = ::std::move(from);
+  }
+
+  inline CoachActions& operator=(const CoachActions& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CoachActions& operator=(CoachActions&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CoachActions& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CoachActions* internal_default_instance() {
+    return reinterpret_cast<const CoachActions*>(
+               &_CoachActions_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    113;
+
+  friend void swap(CoachActions& a, CoachActions& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CoachActions* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CoachActions* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CoachActions* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CoachActions>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CoachActions& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CoachActions& from) {
+    CoachActions::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CoachActions* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.CoachActions";
+  }
+  protected:
+  explicit CoachActions(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kActionsFieldNumber = 1,
+  };
+  // repeated .protos.CoachAction actions = 1;
+  int actions_size() const;
+  private:
+  int _internal_actions_size() const;
+
+  public:
+  void clear_actions() ;
+  ::protos::CoachAction* mutable_actions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::CoachAction >*
+      mutable_actions();
+  private:
+  const ::protos::CoachAction& _internal_actions(int index) const;
+  ::protos::CoachAction* _internal_add_actions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::CoachAction>& _internal_actions() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::CoachAction>* _internal_mutable_actions();
+  public:
+  const ::protos::CoachAction& actions(int index) const;
+  ::protos::CoachAction* add_actions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::CoachAction >&
+      actions() const;
+  // @@protoc_insertion_point(class_scope:protos.CoachActions)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::CoachAction > actions_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class DoKickOff final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.DoKickOff) */ {
+ public:
+  inline DoKickOff() : DoKickOff(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR DoKickOff(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DoKickOff(const DoKickOff& from);
+  DoKickOff(DoKickOff&& from) noexcept
+    : DoKickOff() {
+    *this = ::std::move(from);
+  }
+
+  inline DoKickOff& operator=(const DoKickOff& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DoKickOff& operator=(DoKickOff&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DoKickOff& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DoKickOff* internal_default_instance() {
+    return reinterpret_cast<const DoKickOff*>(
+               &_DoKickOff_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    114;
+
+  friend void swap(DoKickOff& a, DoKickOff& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DoKickOff* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DoKickOff* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DoKickOff* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DoKickOff>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const DoKickOff& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const DoKickOff& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.DoKickOff";
+  }
+  protected:
+  explicit DoKickOff(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.DoKickOff)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class DoMoveBall final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.DoMoveBall) */ {
+ public:
+  inline DoMoveBall() : DoMoveBall(nullptr) {}
+  ~DoMoveBall() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR DoMoveBall(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DoMoveBall(const DoMoveBall& from);
+  DoMoveBall(DoMoveBall&& from) noexcept
+    : DoMoveBall() {
+    *this = ::std::move(from);
+  }
+
+  inline DoMoveBall& operator=(const DoMoveBall& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DoMoveBall& operator=(DoMoveBall&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DoMoveBall& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DoMoveBall* internal_default_instance() {
+    return reinterpret_cast<const DoMoveBall*>(
+               &_DoMoveBall_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    115;
+
+  friend void swap(DoMoveBall& a, DoMoveBall& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DoMoveBall* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DoMoveBall* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DoMoveBall* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DoMoveBall>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DoMoveBall& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const DoMoveBall& from) {
+    DoMoveBall::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DoMoveBall* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.DoMoveBall";
+  }
+  protected:
+  explicit DoMoveBall(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPositionFieldNumber = 1,
+    kVelocityFieldNumber = 2,
+  };
+  // .protos.Vector2D position = 1;
+  bool has_position() const;
+  void clear_position() ;
+  const ::protos::Vector2D& position() const;
+  PROTOBUF_NODISCARD ::protos::Vector2D* release_position();
+  ::protos::Vector2D* mutable_position();
+  void set_allocated_position(::protos::Vector2D* position);
+  private:
+  const ::protos::Vector2D& _internal_position() const;
+  ::protos::Vector2D* _internal_mutable_position();
+  public:
+  void unsafe_arena_set_allocated_position(
+      ::protos::Vector2D* position);
+  ::protos::Vector2D* unsafe_arena_release_position();
+  // .protos.Vector2D velocity = 2;
+  bool has_velocity() const;
+  void clear_velocity() ;
+  const ::protos::Vector2D& velocity() const;
+  PROTOBUF_NODISCARD ::protos::Vector2D* release_velocity();
+  ::protos::Vector2D* mutable_velocity();
+  void set_allocated_velocity(::protos::Vector2D* velocity);
+  private:
+  const ::protos::Vector2D& _internal_velocity() const;
+  ::protos::Vector2D* _internal_mutable_velocity();
+  public:
+  void unsafe_arena_set_allocated_velocity(
+      ::protos::Vector2D* velocity);
+  ::protos::Vector2D* unsafe_arena_release_velocity();
+  // @@protoc_insertion_point(class_scope:protos.DoMoveBall)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::protos::Vector2D* position_;
+    ::protos::Vector2D* velocity_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class DoMovePlayer final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.DoMovePlayer) */ {
+ public:
+  inline DoMovePlayer() : DoMovePlayer(nullptr) {}
+  ~DoMovePlayer() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR DoMovePlayer(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DoMovePlayer(const DoMovePlayer& from);
+  DoMovePlayer(DoMovePlayer&& from) noexcept
+    : DoMovePlayer() {
+    *this = ::std::move(from);
+  }
+
+  inline DoMovePlayer& operator=(const DoMovePlayer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DoMovePlayer& operator=(DoMovePlayer&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DoMovePlayer& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DoMovePlayer* internal_default_instance() {
+    return reinterpret_cast<const DoMovePlayer*>(
+               &_DoMovePlayer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    116;
+
+  friend void swap(DoMovePlayer& a, DoMovePlayer& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DoMovePlayer* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DoMovePlayer* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DoMovePlayer* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DoMovePlayer>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DoMovePlayer& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const DoMovePlayer& from) {
+    DoMovePlayer::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DoMovePlayer* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.DoMovePlayer";
+  }
+  protected:
+  explicit DoMovePlayer(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPositionFieldNumber = 3,
+    kOurSideFieldNumber = 1,
+    kUniformNumberFieldNumber = 2,
+    kBodyDirectionFieldNumber = 4,
+  };
+  // .protos.Vector2D position = 3;
+  bool has_position() const;
+  void clear_position() ;
+  const ::protos::Vector2D& position() const;
+  PROTOBUF_NODISCARD ::protos::Vector2D* release_position();
+  ::protos::Vector2D* mutable_position();
+  void set_allocated_position(::protos::Vector2D* position);
+  private:
+  const ::protos::Vector2D& _internal_position() const;
+  ::protos::Vector2D* _internal_mutable_position();
+  public:
+  void unsafe_arena_set_allocated_position(
+      ::protos::Vector2D* position);
+  ::protos::Vector2D* unsafe_arena_release_position();
+  // bool our_side = 1;
+  void clear_our_side() ;
+  bool our_side() const;
+  void set_our_side(bool value);
+
+  private:
+  bool _internal_our_side() const;
+  void _internal_set_our_side(bool value);
+
+  public:
+  // int32 uniform_number = 2;
+  void clear_uniform_number() ;
+  ::int32_t uniform_number() const;
+  void set_uniform_number(::int32_t value);
+
+  private:
+  ::int32_t _internal_uniform_number() const;
+  void _internal_set_uniform_number(::int32_t value);
+
+  public:
+  // float body_direction = 4;
+  void clear_body_direction() ;
+  float body_direction() const;
+  void set_body_direction(float value);
+
+  private:
+  float _internal_body_direction() const;
+  void _internal_set_body_direction(float value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:protos.DoMovePlayer)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::protos::Vector2D* position_;
+    bool our_side_;
+    ::int32_t uniform_number_;
+    float body_direction_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class DoRecover final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.DoRecover) */ {
+ public:
+  inline DoRecover() : DoRecover(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR DoRecover(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DoRecover(const DoRecover& from);
+  DoRecover(DoRecover&& from) noexcept
+    : DoRecover() {
+    *this = ::std::move(from);
+  }
+
+  inline DoRecover& operator=(const DoRecover& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DoRecover& operator=(DoRecover&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DoRecover& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DoRecover* internal_default_instance() {
+    return reinterpret_cast<const DoRecover*>(
+               &_DoRecover_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    117;
+
+  friend void swap(DoRecover& a, DoRecover& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DoRecover* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DoRecover* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DoRecover* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DoRecover>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const DoRecover& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const DoRecover& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.DoRecover";
+  }
+  protected:
+  explicit DoRecover(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.DoRecover)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class DoChangeMode final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.DoChangeMode) */ {
+ public:
+  inline DoChangeMode() : DoChangeMode(nullptr) {}
+  ~DoChangeMode() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR DoChangeMode(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DoChangeMode(const DoChangeMode& from);
+  DoChangeMode(DoChangeMode&& from) noexcept
+    : DoChangeMode() {
+    *this = ::std::move(from);
+  }
+
+  inline DoChangeMode& operator=(const DoChangeMode& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DoChangeMode& operator=(DoChangeMode&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DoChangeMode& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DoChangeMode* internal_default_instance() {
+    return reinterpret_cast<const DoChangeMode*>(
+               &_DoChangeMode_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    118;
+
+  friend void swap(DoChangeMode& a, DoChangeMode& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DoChangeMode* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DoChangeMode* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DoChangeMode* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DoChangeMode>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DoChangeMode& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const DoChangeMode& from) {
+    DoChangeMode::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DoChangeMode* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.DoChangeMode";
+  }
+  protected:
+  explicit DoChangeMode(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGameModeTypeFieldNumber = 1,
+    kSideFieldNumber = 2,
+  };
+  // .protos.GameModeType game_mode_type = 1;
+  void clear_game_mode_type() ;
+  ::protos::GameModeType game_mode_type() const;
+  void set_game_mode_type(::protos::GameModeType value);
+
+  private:
+  ::protos::GameModeType _internal_game_mode_type() const;
+  void _internal_set_game_mode_type(::protos::GameModeType value);
+
+  public:
+  // .protos.Side side = 2;
+  void clear_side() ;
+  ::protos::Side side() const;
+  void set_side(::protos::Side value);
+
+  private:
+  ::protos::Side _internal_side() const;
+  void _internal_set_side(::protos::Side value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:protos.DoChangeMode)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int game_mode_type_;
+    int side_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class DoChangePlayerType final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.DoChangePlayerType) */ {
+ public:
+  inline DoChangePlayerType() : DoChangePlayerType(nullptr) {}
+  ~DoChangePlayerType() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR DoChangePlayerType(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DoChangePlayerType(const DoChangePlayerType& from);
+  DoChangePlayerType(DoChangePlayerType&& from) noexcept
+    : DoChangePlayerType() {
+    *this = ::std::move(from);
+  }
+
+  inline DoChangePlayerType& operator=(const DoChangePlayerType& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DoChangePlayerType& operator=(DoChangePlayerType&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const DoChangePlayerType& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DoChangePlayerType* internal_default_instance() {
+    return reinterpret_cast<const DoChangePlayerType*>(
+               &_DoChangePlayerType_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    119;
+
+  friend void swap(DoChangePlayerType& a, DoChangePlayerType& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DoChangePlayerType* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DoChangePlayerType* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DoChangePlayerType* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DoChangePlayerType>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const DoChangePlayerType& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const DoChangePlayerType& from) {
+    DoChangePlayerType::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DoChangePlayerType* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.DoChangePlayerType";
+  }
+  protected:
+  explicit DoChangePlayerType(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOurSideFieldNumber = 1,
+    kUniformNumberFieldNumber = 2,
+    kTypeFieldNumber = 3,
+  };
+  // bool our_side = 1;
+  void clear_our_side() ;
+  bool our_side() const;
+  void set_our_side(bool value);
+
+  private:
+  bool _internal_our_side() const;
+  void _internal_set_our_side(bool value);
+
+  public:
+  // int32 uniform_number = 2;
+  void clear_uniform_number() ;
+  ::int32_t uniform_number() const;
+  void set_uniform_number(::int32_t value);
+
+  private:
+  ::int32_t _internal_uniform_number() const;
+  void _internal_set_uniform_number(::int32_t value);
+
+  public:
+  // int32 type = 3;
+  void clear_type() ;
+  ::int32_t type() const;
+  void set_type(::int32_t value);
+
+  private:
+  ::int32_t _internal_type() const;
+  void _internal_set_type(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:protos.DoChangePlayerType)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    bool our_side_;
+    ::int32_t uniform_number_;
+    ::int32_t type_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class TrainerAction final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.TrainerAction) */ {
+ public:
+  inline TrainerAction() : TrainerAction(nullptr) {}
+  ~TrainerAction() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR TrainerAction(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TrainerAction(const TrainerAction& from);
+  TrainerAction(TrainerAction&& from) noexcept
+    : TrainerAction() {
+    *this = ::std::move(from);
+  }
+
+  inline TrainerAction& operator=(const TrainerAction& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TrainerAction& operator=(TrainerAction&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TrainerAction& default_instance() {
+    return *internal_default_instance();
+  }
+  enum ActionCase {
+    kDoKickOff = 1,
+    kDoMoveBall = 2,
+    kDoMovePlayer = 3,
+    kDoRecover = 4,
+    kDoChangeMode = 5,
+    kDoChangePlayerType = 6,
+    ACTION_NOT_SET = 0,
+  };
+
+  static inline const TrainerAction* internal_default_instance() {
+    return reinterpret_cast<const TrainerAction*>(
+               &_TrainerAction_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    120;
+
+  friend void swap(TrainerAction& a, TrainerAction& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TrainerAction* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TrainerAction* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TrainerAction* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TrainerAction>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TrainerAction& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const TrainerAction& from) {
+    TrainerAction::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TrainerAction* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.TrainerAction";
+  }
+  protected:
+  explicit TrainerAction(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDoKickOffFieldNumber = 1,
+    kDoMoveBallFieldNumber = 2,
+    kDoMovePlayerFieldNumber = 3,
+    kDoRecoverFieldNumber = 4,
+    kDoChangeModeFieldNumber = 5,
+    kDoChangePlayerTypeFieldNumber = 6,
+  };
+  // .protos.DoKickOff do_kick_off = 1;
+  bool has_do_kick_off() const;
+  private:
+  bool _internal_has_do_kick_off() const;
+
+  public:
+  void clear_do_kick_off() ;
+  const ::protos::DoKickOff& do_kick_off() const;
+  PROTOBUF_NODISCARD ::protos::DoKickOff* release_do_kick_off();
+  ::protos::DoKickOff* mutable_do_kick_off();
+  void set_allocated_do_kick_off(::protos::DoKickOff* do_kick_off);
+  private:
+  const ::protos::DoKickOff& _internal_do_kick_off() const;
+  ::protos::DoKickOff* _internal_mutable_do_kick_off();
+  public:
+  void unsafe_arena_set_allocated_do_kick_off(
+      ::protos::DoKickOff* do_kick_off);
+  ::protos::DoKickOff* unsafe_arena_release_do_kick_off();
+  // .protos.DoMoveBall do_move_ball = 2;
+  bool has_do_move_ball() const;
+  private:
+  bool _internal_has_do_move_ball() const;
+
+  public:
+  void clear_do_move_ball() ;
+  const ::protos::DoMoveBall& do_move_ball() const;
+  PROTOBUF_NODISCARD ::protos::DoMoveBall* release_do_move_ball();
+  ::protos::DoMoveBall* mutable_do_move_ball();
+  void set_allocated_do_move_ball(::protos::DoMoveBall* do_move_ball);
+  private:
+  const ::protos::DoMoveBall& _internal_do_move_ball() const;
+  ::protos::DoMoveBall* _internal_mutable_do_move_ball();
+  public:
+  void unsafe_arena_set_allocated_do_move_ball(
+      ::protos::DoMoveBall* do_move_ball);
+  ::protos::DoMoveBall* unsafe_arena_release_do_move_ball();
+  // .protos.DoMovePlayer do_move_player = 3;
+  bool has_do_move_player() const;
+  private:
+  bool _internal_has_do_move_player() const;
+
+  public:
+  void clear_do_move_player() ;
+  const ::protos::DoMovePlayer& do_move_player() const;
+  PROTOBUF_NODISCARD ::protos::DoMovePlayer* release_do_move_player();
+  ::protos::DoMovePlayer* mutable_do_move_player();
+  void set_allocated_do_move_player(::protos::DoMovePlayer* do_move_player);
+  private:
+  const ::protos::DoMovePlayer& _internal_do_move_player() const;
+  ::protos::DoMovePlayer* _internal_mutable_do_move_player();
+  public:
+  void unsafe_arena_set_allocated_do_move_player(
+      ::protos::DoMovePlayer* do_move_player);
+  ::protos::DoMovePlayer* unsafe_arena_release_do_move_player();
+  // .protos.DoRecover do_recover = 4;
+  bool has_do_recover() const;
+  private:
+  bool _internal_has_do_recover() const;
+
+  public:
+  void clear_do_recover() ;
+  const ::protos::DoRecover& do_recover() const;
+  PROTOBUF_NODISCARD ::protos::DoRecover* release_do_recover();
+  ::protos::DoRecover* mutable_do_recover();
+  void set_allocated_do_recover(::protos::DoRecover* do_recover);
+  private:
+  const ::protos::DoRecover& _internal_do_recover() const;
+  ::protos::DoRecover* _internal_mutable_do_recover();
+  public:
+  void unsafe_arena_set_allocated_do_recover(
+      ::protos::DoRecover* do_recover);
+  ::protos::DoRecover* unsafe_arena_release_do_recover();
+  // .protos.DoChangeMode do_change_mode = 5;
+  bool has_do_change_mode() const;
+  private:
+  bool _internal_has_do_change_mode() const;
+
+  public:
+  void clear_do_change_mode() ;
+  const ::protos::DoChangeMode& do_change_mode() const;
+  PROTOBUF_NODISCARD ::protos::DoChangeMode* release_do_change_mode();
+  ::protos::DoChangeMode* mutable_do_change_mode();
+  void set_allocated_do_change_mode(::protos::DoChangeMode* do_change_mode);
+  private:
+  const ::protos::DoChangeMode& _internal_do_change_mode() const;
+  ::protos::DoChangeMode* _internal_mutable_do_change_mode();
+  public:
+  void unsafe_arena_set_allocated_do_change_mode(
+      ::protos::DoChangeMode* do_change_mode);
+  ::protos::DoChangeMode* unsafe_arena_release_do_change_mode();
+  // .protos.DoChangePlayerType do_change_player_type = 6;
+  bool has_do_change_player_type() const;
+  private:
+  bool _internal_has_do_change_player_type() const;
+
+  public:
+  void clear_do_change_player_type() ;
+  const ::protos::DoChangePlayerType& do_change_player_type() const;
+  PROTOBUF_NODISCARD ::protos::DoChangePlayerType* release_do_change_player_type();
+  ::protos::DoChangePlayerType* mutable_do_change_player_type();
+  void set_allocated_do_change_player_type(::protos::DoChangePlayerType* do_change_player_type);
+  private:
+  const ::protos::DoChangePlayerType& _internal_do_change_player_type() const;
+  ::protos::DoChangePlayerType* _internal_mutable_do_change_player_type();
+  public:
+  void unsafe_arena_set_allocated_do_change_player_type(
+      ::protos::DoChangePlayerType* do_change_player_type);
+  ::protos::DoChangePlayerType* unsafe_arena_release_do_change_player_type();
+  void clear_action();
+  ActionCase action_case() const;
+  // @@protoc_insertion_point(class_scope:protos.TrainerAction)
+ private:
+  class _Internal;
+  void set_has_do_kick_off();
+  void set_has_do_move_ball();
+  void set_has_do_move_player();
+  void set_has_do_recover();
+  void set_has_do_change_mode();
+  void set_has_do_change_player_type();
+
+  inline bool has_action() const;
+  inline void clear_has_action();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    union ActionUnion {
+      constexpr ActionUnion() : _constinit_{} {}
+        ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+      ::protos::DoKickOff* do_kick_off_;
+      ::protos::DoMoveBall* do_move_ball_;
+      ::protos::DoMovePlayer* do_move_player_;
+      ::protos::DoRecover* do_recover_;
+      ::protos::DoChangeMode* do_change_mode_;
+      ::protos::DoChangePlayerType* do_change_player_type_;
+    } action_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::uint32_t _oneof_case_[1];
+
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class TrainerActions final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.TrainerActions) */ {
+ public:
+  inline TrainerActions() : TrainerActions(nullptr) {}
+  ~TrainerActions() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR TrainerActions(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TrainerActions(const TrainerActions& from);
+  TrainerActions(TrainerActions&& from) noexcept
+    : TrainerActions() {
+    *this = ::std::move(from);
+  }
+
+  inline TrainerActions& operator=(const TrainerActions& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TrainerActions& operator=(TrainerActions&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TrainerActions& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TrainerActions* internal_default_instance() {
+    return reinterpret_cast<const TrainerActions*>(
+               &_TrainerActions_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    121;
+
+  friend void swap(TrainerActions& a, TrainerActions& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TrainerActions* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TrainerActions* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TrainerActions* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TrainerActions>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TrainerActions& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const TrainerActions& from) {
+    TrainerActions::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TrainerActions* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.TrainerActions";
+  }
+  protected:
+  explicit TrainerActions(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kActionsFieldNumber = 1,
+  };
+  // repeated .protos.TrainerAction actions = 1;
+  int actions_size() const;
+  private:
+  int _internal_actions_size() const;
+
+  public:
+  void clear_actions() ;
+  ::protos::TrainerAction* mutable_actions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::TrainerAction >*
+      mutable_actions();
+  private:
+  const ::protos::TrainerAction& _internal_actions(int index) const;
+  ::protos::TrainerAction* _internal_add_actions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::TrainerAction>& _internal_actions() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::TrainerAction>* _internal_mutable_actions();
+  public:
+  const ::protos::TrainerAction& actions(int index) const;
+  ::protos::TrainerAction* add_actions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::TrainerAction >&
+      actions() const;
+  // @@protoc_insertion_point(class_scope:protos.TrainerActions)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::TrainerAction > actions_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -22117,7 +24464,7 @@ class ServerParam final :
                &_ServerParam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    109;
+    122;
 
   friend void swap(ServerParam& a, ServerParam& b) {
     a.Swap(&b);
@@ -22204,7 +24551,7 @@ class ServerParam final :
     kCoachMsgFileFieldNumber = 181,
     kFixedTeamnameLFieldNumber = 206,
     kFixedTeamnameRFieldNumber = 207,
-    kGoalWidthFieldNumber = 1,
+    kAgentTypeFieldNumber = 1,
     kInertiaMomentFieldNumber = 2,
     kPlayerSizeFieldNumber = 3,
     kPlayerDecayFieldNumber = 4,
@@ -22410,6 +24757,7 @@ class ServerParam final :
     kTheirPenaltyAreaLineXFieldNumber = 219,
     kPenaltyAreaHalfWidthFieldNumber = 220,
     kPenaltyAreaLengthFieldNumber = 221,
+    kGoalWidthFieldNumber = 222,
   };
   // string replay_file = 115;
   void clear_replay_file() ;
@@ -22711,14 +25059,14 @@ class ServerParam final :
   std::string* _internal_mutable_fixed_teamname_r();
 
   public:
-  // float goal_width = 1;
-  void clear_goal_width() ;
-  float goal_width() const;
-  void set_goal_width(float value);
+  // .protos.AgentType agent_type = 1;
+  void clear_agent_type() ;
+  ::protos::AgentType agent_type() const;
+  void set_agent_type(::protos::AgentType value);
 
   private:
-  float _internal_goal_width() const;
-  void _internal_set_goal_width(float value);
+  ::protos::AgentType _internal_agent_type() const;
+  void _internal_set_agent_type(::protos::AgentType value);
 
   public:
   // float inertia_moment = 2;
@@ -24771,6 +27119,16 @@ class ServerParam final :
   void _internal_set_penalty_area_length(float value);
 
   public:
+  // float goal_width = 222;
+  void clear_goal_width() ;
+  float goal_width() const;
+  void set_goal_width(float value);
+
+  private:
+  float _internal_goal_width() const;
+  void _internal_set_goal_width(float value);
+
+  public:
   // @@protoc_insertion_point(class_scope:protos.ServerParam)
  private:
   class _Internal;
@@ -24794,7 +27152,7 @@ class ServerParam final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr coach_msg_file_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fixed_teamname_l_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fixed_teamname_r_;
-    float goal_width_;
+    int agent_type_;
     float inertia_moment_;
     float player_size_;
     float player_decay_;
@@ -25000,6 +27358,7 @@ class ServerParam final :
     float their_penalty_area_line_x_;
     float penalty_area_half_width_;
     float penalty_area_length_;
+    float goal_width_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -25062,7 +27421,7 @@ class PlayerParam final :
                &_PlayerParam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    110;
+    123;
 
   friend void swap(PlayerParam& a, PlayerParam& b) {
     a.Swap(&b);
@@ -25134,37 +27493,48 @@ class PlayerParam final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPlayerTypesFieldNumber = 1,
-    kSubsMaxFieldNumber = 2,
-    kPtMaxFieldNumber = 3,
-    kAllowMultDefaultTypeFieldNumber = 4,
-    kPlayerSpeedMaxDeltaMinFieldNumber = 5,
-    kPlayerSpeedMaxDeltaMaxFieldNumber = 6,
-    kStaminaIncMaxDeltaFactorFieldNumber = 7,
-    kPlayerDecayDeltaMinFieldNumber = 8,
-    kPlayerDecayDeltaMaxFieldNumber = 9,
-    kInertiaMomentDeltaFactorFieldNumber = 10,
-    kDashPowerRateDeltaMinFieldNumber = 11,
-    kDashPowerRateDeltaMaxFieldNumber = 12,
-    kPlayerSizeDeltaFactorFieldNumber = 13,
-    kKickableMarginDeltaMinFieldNumber = 14,
-    kKickableMarginDeltaMaxFieldNumber = 15,
-    kKickRandDeltaFactorFieldNumber = 16,
-    kExtraStaminaDeltaMinFieldNumber = 17,
-    kExtraStaminaDeltaMaxFieldNumber = 18,
-    kEffortMaxDeltaFactorFieldNumber = 19,
-    kEffortMinDeltaFactorFieldNumber = 20,
-    kRandomSeedFieldNumber = 21,
-    kNewDashPowerRateDeltaMinFieldNumber = 22,
-    kNewDashPowerRateDeltaMaxFieldNumber = 23,
-    kNewStaminaIncMaxDeltaFactorFieldNumber = 24,
-    kKickPowerRateDeltaMinFieldNumber = 25,
-    kKickPowerRateDeltaMaxFieldNumber = 26,
-    kFoulDetectProbabilityDeltaFactorFieldNumber = 27,
-    kCatchableAreaLStretchMinFieldNumber = 28,
-    kCatchableAreaLStretchMaxFieldNumber = 29,
+    kAgentTypeFieldNumber = 1,
+    kPlayerTypesFieldNumber = 2,
+    kSubsMaxFieldNumber = 3,
+    kPtMaxFieldNumber = 4,
+    kAllowMultDefaultTypeFieldNumber = 5,
+    kPlayerSpeedMaxDeltaMinFieldNumber = 6,
+    kPlayerSpeedMaxDeltaMaxFieldNumber = 7,
+    kStaminaIncMaxDeltaFactorFieldNumber = 8,
+    kPlayerDecayDeltaMinFieldNumber = 9,
+    kPlayerDecayDeltaMaxFieldNumber = 10,
+    kInertiaMomentDeltaFactorFieldNumber = 11,
+    kDashPowerRateDeltaMinFieldNumber = 12,
+    kDashPowerRateDeltaMaxFieldNumber = 13,
+    kPlayerSizeDeltaFactorFieldNumber = 14,
+    kKickableMarginDeltaMinFieldNumber = 15,
+    kKickableMarginDeltaMaxFieldNumber = 16,
+    kKickRandDeltaFactorFieldNumber = 17,
+    kExtraStaminaDeltaMinFieldNumber = 18,
+    kExtraStaminaDeltaMaxFieldNumber = 19,
+    kEffortMaxDeltaFactorFieldNumber = 20,
+    kEffortMinDeltaFactorFieldNumber = 21,
+    kRandomSeedFieldNumber = 22,
+    kNewDashPowerRateDeltaMinFieldNumber = 23,
+    kNewDashPowerRateDeltaMaxFieldNumber = 24,
+    kNewStaminaIncMaxDeltaFactorFieldNumber = 25,
+    kKickPowerRateDeltaMinFieldNumber = 26,
+    kKickPowerRateDeltaMaxFieldNumber = 27,
+    kFoulDetectProbabilityDeltaFactorFieldNumber = 28,
+    kCatchableAreaLStretchMinFieldNumber = 29,
+    kCatchableAreaLStretchMaxFieldNumber = 30,
   };
-  // int32 player_types = 1;
+  // .protos.AgentType agent_type = 1;
+  void clear_agent_type() ;
+  ::protos::AgentType agent_type() const;
+  void set_agent_type(::protos::AgentType value);
+
+  private:
+  ::protos::AgentType _internal_agent_type() const;
+  void _internal_set_agent_type(::protos::AgentType value);
+
+  public:
+  // int32 player_types = 2;
   void clear_player_types() ;
   ::int32_t player_types() const;
   void set_player_types(::int32_t value);
@@ -25174,7 +27544,7 @@ class PlayerParam final :
   void _internal_set_player_types(::int32_t value);
 
   public:
-  // int32 subs_max = 2;
+  // int32 subs_max = 3;
   void clear_subs_max() ;
   ::int32_t subs_max() const;
   void set_subs_max(::int32_t value);
@@ -25184,7 +27554,7 @@ class PlayerParam final :
   void _internal_set_subs_max(::int32_t value);
 
   public:
-  // int32 pt_max = 3;
+  // int32 pt_max = 4;
   void clear_pt_max() ;
   ::int32_t pt_max() const;
   void set_pt_max(::int32_t value);
@@ -25194,7 +27564,7 @@ class PlayerParam final :
   void _internal_set_pt_max(::int32_t value);
 
   public:
-  // bool allow_mult_default_type = 4;
+  // bool allow_mult_default_type = 5;
   void clear_allow_mult_default_type() ;
   bool allow_mult_default_type() const;
   void set_allow_mult_default_type(bool value);
@@ -25204,7 +27574,7 @@ class PlayerParam final :
   void _internal_set_allow_mult_default_type(bool value);
 
   public:
-  // float player_speed_max_delta_min = 5;
+  // float player_speed_max_delta_min = 6;
   void clear_player_speed_max_delta_min() ;
   float player_speed_max_delta_min() const;
   void set_player_speed_max_delta_min(float value);
@@ -25214,7 +27584,7 @@ class PlayerParam final :
   void _internal_set_player_speed_max_delta_min(float value);
 
   public:
-  // float player_speed_max_delta_max = 6;
+  // float player_speed_max_delta_max = 7;
   void clear_player_speed_max_delta_max() ;
   float player_speed_max_delta_max() const;
   void set_player_speed_max_delta_max(float value);
@@ -25224,7 +27594,7 @@ class PlayerParam final :
   void _internal_set_player_speed_max_delta_max(float value);
 
   public:
-  // float stamina_inc_max_delta_factor = 7;
+  // float stamina_inc_max_delta_factor = 8;
   void clear_stamina_inc_max_delta_factor() ;
   float stamina_inc_max_delta_factor() const;
   void set_stamina_inc_max_delta_factor(float value);
@@ -25234,7 +27604,7 @@ class PlayerParam final :
   void _internal_set_stamina_inc_max_delta_factor(float value);
 
   public:
-  // float player_decay_delta_min = 8;
+  // float player_decay_delta_min = 9;
   void clear_player_decay_delta_min() ;
   float player_decay_delta_min() const;
   void set_player_decay_delta_min(float value);
@@ -25244,7 +27614,7 @@ class PlayerParam final :
   void _internal_set_player_decay_delta_min(float value);
 
   public:
-  // float player_decay_delta_max = 9;
+  // float player_decay_delta_max = 10;
   void clear_player_decay_delta_max() ;
   float player_decay_delta_max() const;
   void set_player_decay_delta_max(float value);
@@ -25254,7 +27624,7 @@ class PlayerParam final :
   void _internal_set_player_decay_delta_max(float value);
 
   public:
-  // float inertia_moment_delta_factor = 10;
+  // float inertia_moment_delta_factor = 11;
   void clear_inertia_moment_delta_factor() ;
   float inertia_moment_delta_factor() const;
   void set_inertia_moment_delta_factor(float value);
@@ -25264,7 +27634,7 @@ class PlayerParam final :
   void _internal_set_inertia_moment_delta_factor(float value);
 
   public:
-  // float dash_power_rate_delta_min = 11;
+  // float dash_power_rate_delta_min = 12;
   void clear_dash_power_rate_delta_min() ;
   float dash_power_rate_delta_min() const;
   void set_dash_power_rate_delta_min(float value);
@@ -25274,7 +27644,7 @@ class PlayerParam final :
   void _internal_set_dash_power_rate_delta_min(float value);
 
   public:
-  // float dash_power_rate_delta_max = 12;
+  // float dash_power_rate_delta_max = 13;
   void clear_dash_power_rate_delta_max() ;
   float dash_power_rate_delta_max() const;
   void set_dash_power_rate_delta_max(float value);
@@ -25284,7 +27654,7 @@ class PlayerParam final :
   void _internal_set_dash_power_rate_delta_max(float value);
 
   public:
-  // float player_size_delta_factor = 13;
+  // float player_size_delta_factor = 14;
   void clear_player_size_delta_factor() ;
   float player_size_delta_factor() const;
   void set_player_size_delta_factor(float value);
@@ -25294,7 +27664,7 @@ class PlayerParam final :
   void _internal_set_player_size_delta_factor(float value);
 
   public:
-  // float kickable_margin_delta_min = 14;
+  // float kickable_margin_delta_min = 15;
   void clear_kickable_margin_delta_min() ;
   float kickable_margin_delta_min() const;
   void set_kickable_margin_delta_min(float value);
@@ -25304,7 +27674,7 @@ class PlayerParam final :
   void _internal_set_kickable_margin_delta_min(float value);
 
   public:
-  // float kickable_margin_delta_max = 15;
+  // float kickable_margin_delta_max = 16;
   void clear_kickable_margin_delta_max() ;
   float kickable_margin_delta_max() const;
   void set_kickable_margin_delta_max(float value);
@@ -25314,7 +27684,7 @@ class PlayerParam final :
   void _internal_set_kickable_margin_delta_max(float value);
 
   public:
-  // float kick_rand_delta_factor = 16;
+  // float kick_rand_delta_factor = 17;
   void clear_kick_rand_delta_factor() ;
   float kick_rand_delta_factor() const;
   void set_kick_rand_delta_factor(float value);
@@ -25324,7 +27694,7 @@ class PlayerParam final :
   void _internal_set_kick_rand_delta_factor(float value);
 
   public:
-  // float extra_stamina_delta_min = 17;
+  // float extra_stamina_delta_min = 18;
   void clear_extra_stamina_delta_min() ;
   float extra_stamina_delta_min() const;
   void set_extra_stamina_delta_min(float value);
@@ -25334,7 +27704,7 @@ class PlayerParam final :
   void _internal_set_extra_stamina_delta_min(float value);
 
   public:
-  // float extra_stamina_delta_max = 18;
+  // float extra_stamina_delta_max = 19;
   void clear_extra_stamina_delta_max() ;
   float extra_stamina_delta_max() const;
   void set_extra_stamina_delta_max(float value);
@@ -25344,7 +27714,7 @@ class PlayerParam final :
   void _internal_set_extra_stamina_delta_max(float value);
 
   public:
-  // float effort_max_delta_factor = 19;
+  // float effort_max_delta_factor = 20;
   void clear_effort_max_delta_factor() ;
   float effort_max_delta_factor() const;
   void set_effort_max_delta_factor(float value);
@@ -25354,7 +27724,7 @@ class PlayerParam final :
   void _internal_set_effort_max_delta_factor(float value);
 
   public:
-  // float effort_min_delta_factor = 20;
+  // float effort_min_delta_factor = 21;
   void clear_effort_min_delta_factor() ;
   float effort_min_delta_factor() const;
   void set_effort_min_delta_factor(float value);
@@ -25364,7 +27734,7 @@ class PlayerParam final :
   void _internal_set_effort_min_delta_factor(float value);
 
   public:
-  // int32 random_seed = 21;
+  // int32 random_seed = 22;
   void clear_random_seed() ;
   ::int32_t random_seed() const;
   void set_random_seed(::int32_t value);
@@ -25374,7 +27744,7 @@ class PlayerParam final :
   void _internal_set_random_seed(::int32_t value);
 
   public:
-  // float new_dash_power_rate_delta_min = 22;
+  // float new_dash_power_rate_delta_min = 23;
   void clear_new_dash_power_rate_delta_min() ;
   float new_dash_power_rate_delta_min() const;
   void set_new_dash_power_rate_delta_min(float value);
@@ -25384,7 +27754,7 @@ class PlayerParam final :
   void _internal_set_new_dash_power_rate_delta_min(float value);
 
   public:
-  // float new_dash_power_rate_delta_max = 23;
+  // float new_dash_power_rate_delta_max = 24;
   void clear_new_dash_power_rate_delta_max() ;
   float new_dash_power_rate_delta_max() const;
   void set_new_dash_power_rate_delta_max(float value);
@@ -25394,7 +27764,7 @@ class PlayerParam final :
   void _internal_set_new_dash_power_rate_delta_max(float value);
 
   public:
-  // float new_stamina_inc_max_delta_factor = 24;
+  // float new_stamina_inc_max_delta_factor = 25;
   void clear_new_stamina_inc_max_delta_factor() ;
   float new_stamina_inc_max_delta_factor() const;
   void set_new_stamina_inc_max_delta_factor(float value);
@@ -25404,7 +27774,7 @@ class PlayerParam final :
   void _internal_set_new_stamina_inc_max_delta_factor(float value);
 
   public:
-  // float kick_power_rate_delta_min = 25;
+  // float kick_power_rate_delta_min = 26;
   void clear_kick_power_rate_delta_min() ;
   float kick_power_rate_delta_min() const;
   void set_kick_power_rate_delta_min(float value);
@@ -25414,7 +27784,7 @@ class PlayerParam final :
   void _internal_set_kick_power_rate_delta_min(float value);
 
   public:
-  // float kick_power_rate_delta_max = 26;
+  // float kick_power_rate_delta_max = 27;
   void clear_kick_power_rate_delta_max() ;
   float kick_power_rate_delta_max() const;
   void set_kick_power_rate_delta_max(float value);
@@ -25424,7 +27794,7 @@ class PlayerParam final :
   void _internal_set_kick_power_rate_delta_max(float value);
 
   public:
-  // float foul_detect_probability_delta_factor = 27;
+  // float foul_detect_probability_delta_factor = 28;
   void clear_foul_detect_probability_delta_factor() ;
   float foul_detect_probability_delta_factor() const;
   void set_foul_detect_probability_delta_factor(float value);
@@ -25434,7 +27804,7 @@ class PlayerParam final :
   void _internal_set_foul_detect_probability_delta_factor(float value);
 
   public:
-  // float catchable_area_l_stretch_min = 28;
+  // float catchable_area_l_stretch_min = 29;
   void clear_catchable_area_l_stretch_min() ;
   float catchable_area_l_stretch_min() const;
   void set_catchable_area_l_stretch_min(float value);
@@ -25444,7 +27814,7 @@ class PlayerParam final :
   void _internal_set_catchable_area_l_stretch_min(float value);
 
   public:
-  // float catchable_area_l_stretch_max = 29;
+  // float catchable_area_l_stretch_max = 30;
   void clear_catchable_area_l_stretch_max() ;
   float catchable_area_l_stretch_max() const;
   void set_catchable_area_l_stretch_max(float value);
@@ -25462,6 +27832,7 @@ class PlayerParam final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    int agent_type_;
     ::int32_t player_types_;
     ::int32_t subs_max_;
     ::int32_t pt_max_;
@@ -25553,7 +27924,7 @@ class PlayerType final :
                &_PlayerType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    111;
+    124;
 
   friend void swap(PlayerType& a, PlayerType& b) {
     a.Swap(&b);
@@ -25625,8 +27996,8 @@ class PlayerType final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kPlayerSpeedMaxFieldNumber = 2,
+    kAgentTypeFieldNumber = 1,
+    kIdFieldNumber = 2,
     kStaminaIncMaxFieldNumber = 3,
     kPlayerDecayFieldNumber = 4,
     kInertiaMomentFieldNumber = 5,
@@ -25658,8 +28029,19 @@ class PlayerType final :
     kPlayerSpeedMax2FieldNumber = 31,
     kRealSpeedMax2FieldNumber = 32,
     kCyclesToReachMaxSpeedFieldNumber = 33,
+    kPlayerSpeedMaxFieldNumber = 34,
   };
-  // int32 id = 1;
+  // .protos.AgentType agent_type = 1;
+  void clear_agent_type() ;
+  ::protos::AgentType agent_type() const;
+  void set_agent_type(::protos::AgentType value);
+
+  private:
+  ::protos::AgentType _internal_agent_type() const;
+  void _internal_set_agent_type(::protos::AgentType value);
+
+  public:
+  // int32 id = 2;
   void clear_id() ;
   ::int32_t id() const;
   void set_id(::int32_t value);
@@ -25667,16 +28049,6 @@ class PlayerType final :
   private:
   ::int32_t _internal_id() const;
   void _internal_set_id(::int32_t value);
-
-  public:
-  // float player_speed_max = 2;
-  void clear_player_speed_max() ;
-  float player_speed_max() const;
-  void set_player_speed_max(float value);
-
-  private:
-  float _internal_player_speed_max() const;
-  void _internal_set_player_speed_max(float value);
 
   public:
   // float stamina_inc_max = 3;
@@ -25989,6 +28361,16 @@ class PlayerType final :
   void _internal_set_cycles_to_reach_max_speed(::int32_t value);
 
   public:
+  // float player_speed_max = 34;
+  void clear_player_speed_max() ;
+  float player_speed_max() const;
+  void set_player_speed_max(float value);
+
+  private:
+  float _internal_player_speed_max() const;
+  void _internal_set_player_speed_max(float value);
+
+  public:
   // @@protoc_insertion_point(class_scope:protos.PlayerType)
  private:
   class _Internal;
@@ -25997,8 +28379,8 @@ class PlayerType final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    int agent_type_;
     ::int32_t id_;
-    float player_speed_max_;
     float stamina_inc_max_;
     float player_decay_;
     float inertia_moment_;
@@ -26030,6 +28412,7 @@ class PlayerType final :
     float player_speed_max2_;
     float real_speed_max2_;
     ::int32_t cycles_to_reach_max_speed_;
+    float player_speed_max_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -26091,7 +28474,7 @@ class Empty final :
                &_Empty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    112;
+    125;
 
   friend void swap(Empty& a, Empty& b) {
     a.Swap(&b);
@@ -30570,7 +32953,27 @@ WorldModel::mutable_helios_home_positions() {
 
 // State
 
-// .protos.WorldModel world_model = 1;
+// .protos.AgentType agent_type = 1;
+inline void State::clear_agent_type() {
+  _impl_.agent_type_ = 0;
+}
+inline ::protos::AgentType State::agent_type() const {
+  // @@protoc_insertion_point(field_get:protos.State.agent_type)
+  return _internal_agent_type();
+}
+inline void State::set_agent_type(::protos::AgentType value) {
+   _internal_set_agent_type(value);
+  // @@protoc_insertion_point(field_set:protos.State.agent_type)
+}
+inline ::protos::AgentType State::_internal_agent_type() const {
+  return static_cast<::protos::AgentType>(_impl_.agent_type_);
+}
+inline void State::_internal_set_agent_type(::protos::AgentType value) {
+  ;
+  _impl_.agent_type_ = value;
+}
+
+// .protos.WorldModel world_model = 2;
 inline bool State::has_world_model() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.world_model_ != nullptr);
@@ -30657,7 +33060,7 @@ inline void State::set_allocated_world_model(::protos::WorldModel* world_model) 
   // @@protoc_insertion_point(field_set_allocated:protos.State.world_model)
 }
 
-// .protos.WorldModel full_world_model = 2;
+// .protos.WorldModel full_world_model = 3;
 inline bool State::has_full_world_model() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.full_world_model_ != nullptr);
@@ -30748,7 +33151,27 @@ inline void State::set_allocated_full_world_model(::protos::WorldModel* full_wor
 
 // InitMessage
 
-// bool debug_mode = 1;
+// .protos.AgentType agent_type = 1;
+inline void InitMessage::clear_agent_type() {
+  _impl_.agent_type_ = 0;
+}
+inline ::protos::AgentType InitMessage::agent_type() const {
+  // @@protoc_insertion_point(field_get:protos.InitMessage.agent_type)
+  return _internal_agent_type();
+}
+inline void InitMessage::set_agent_type(::protos::AgentType value) {
+   _internal_set_agent_type(value);
+  // @@protoc_insertion_point(field_set:protos.InitMessage.agent_type)
+}
+inline ::protos::AgentType InitMessage::_internal_agent_type() const {
+  return static_cast<::protos::AgentType>(_impl_.agent_type_);
+}
+inline void InitMessage::_internal_set_agent_type(::protos::AgentType value) {
+  ;
+  _impl_.agent_type_ = value;
+}
+
+// bool debug_mode = 2;
 inline void InitMessage::clear_debug_mode() {
   _impl_.debug_mode_ = false;
 }
@@ -40696,19 +43119,19 @@ inline void HeliosChainAction::_internal_set_simple_shoot(bool value) {
 
 // -------------------------------------------------------------------
 
-// Action
+// PlayerAction
 
 // .protos.Dash dash = 1;
-inline bool Action::has_dash() const {
+inline bool PlayerAction::has_dash() const {
   return action_case() == kDash;
 }
-inline bool Action::_internal_has_dash() const {
+inline bool PlayerAction::_internal_has_dash() const {
   return action_case() == kDash;
 }
-inline void Action::set_has_dash() {
+inline void PlayerAction::set_has_dash() {
   _impl_._oneof_case_[0] = kDash;
 }
-inline void Action::clear_dash() {
+inline void PlayerAction::clear_dash() {
   if (action_case() == kDash) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.dash_;
@@ -40716,8 +43139,8 @@ inline void Action::clear_dash() {
     clear_has_action();
   }
 }
-inline ::protos::Dash* Action::release_dash() {
-  // @@protoc_insertion_point(field_release:protos.Action.dash)
+inline ::protos::Dash* PlayerAction::release_dash() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.dash)
   if (action_case() == kDash) {
     clear_has_action();
     ::protos::Dash* temp = _impl_.action_.dash_;
@@ -40730,17 +43153,17 @@ inline ::protos::Dash* Action::release_dash() {
     return nullptr;
   }
 }
-inline const ::protos::Dash& Action::_internal_dash() const {
+inline const ::protos::Dash& PlayerAction::_internal_dash() const {
   return action_case() == kDash
       ? *_impl_.action_.dash_
       : reinterpret_cast<::protos::Dash&>(::protos::_Dash_default_instance_);
 }
-inline const ::protos::Dash& Action::dash() const {
-  // @@protoc_insertion_point(field_get:protos.Action.dash)
+inline const ::protos::Dash& PlayerAction::dash() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.dash)
   return _internal_dash();
 }
-inline ::protos::Dash* Action::unsafe_arena_release_dash() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.dash)
+inline ::protos::Dash* PlayerAction::unsafe_arena_release_dash() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.dash)
   if (action_case() == kDash) {
     clear_has_action();
     ::protos::Dash* temp = _impl_.action_.dash_;
@@ -40750,15 +43173,15 @@ inline ::protos::Dash* Action::unsafe_arena_release_dash() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_dash(::protos::Dash* dash) {
+inline void PlayerAction::unsafe_arena_set_allocated_dash(::protos::Dash* dash) {
   clear_action();
   if (dash) {
     set_has_dash();
     _impl_.action_.dash_ = dash;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.dash)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.dash)
 }
-inline ::protos::Dash* Action::_internal_mutable_dash() {
+inline ::protos::Dash* PlayerAction::_internal_mutable_dash() {
   if (action_case() != kDash) {
     clear_action();
     set_has_dash();
@@ -40766,23 +43189,23 @@ inline ::protos::Dash* Action::_internal_mutable_dash() {
   }
   return _impl_.action_.dash_;
 }
-inline ::protos::Dash* Action::mutable_dash() {
+inline ::protos::Dash* PlayerAction::mutable_dash() {
   ::protos::Dash* _msg = _internal_mutable_dash();
-  // @@protoc_insertion_point(field_mutable:protos.Action.dash)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.dash)
   return _msg;
 }
 
 // .protos.Turn turn = 2;
-inline bool Action::has_turn() const {
+inline bool PlayerAction::has_turn() const {
   return action_case() == kTurn;
 }
-inline bool Action::_internal_has_turn() const {
+inline bool PlayerAction::_internal_has_turn() const {
   return action_case() == kTurn;
 }
-inline void Action::set_has_turn() {
+inline void PlayerAction::set_has_turn() {
   _impl_._oneof_case_[0] = kTurn;
 }
-inline void Action::clear_turn() {
+inline void PlayerAction::clear_turn() {
   if (action_case() == kTurn) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.turn_;
@@ -40790,8 +43213,8 @@ inline void Action::clear_turn() {
     clear_has_action();
   }
 }
-inline ::protos::Turn* Action::release_turn() {
-  // @@protoc_insertion_point(field_release:protos.Action.turn)
+inline ::protos::Turn* PlayerAction::release_turn() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.turn)
   if (action_case() == kTurn) {
     clear_has_action();
     ::protos::Turn* temp = _impl_.action_.turn_;
@@ -40804,17 +43227,17 @@ inline ::protos::Turn* Action::release_turn() {
     return nullptr;
   }
 }
-inline const ::protos::Turn& Action::_internal_turn() const {
+inline const ::protos::Turn& PlayerAction::_internal_turn() const {
   return action_case() == kTurn
       ? *_impl_.action_.turn_
       : reinterpret_cast<::protos::Turn&>(::protos::_Turn_default_instance_);
 }
-inline const ::protos::Turn& Action::turn() const {
-  // @@protoc_insertion_point(field_get:protos.Action.turn)
+inline const ::protos::Turn& PlayerAction::turn() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.turn)
   return _internal_turn();
 }
-inline ::protos::Turn* Action::unsafe_arena_release_turn() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.turn)
+inline ::protos::Turn* PlayerAction::unsafe_arena_release_turn() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.turn)
   if (action_case() == kTurn) {
     clear_has_action();
     ::protos::Turn* temp = _impl_.action_.turn_;
@@ -40824,15 +43247,15 @@ inline ::protos::Turn* Action::unsafe_arena_release_turn() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_turn(::protos::Turn* turn) {
+inline void PlayerAction::unsafe_arena_set_allocated_turn(::protos::Turn* turn) {
   clear_action();
   if (turn) {
     set_has_turn();
     _impl_.action_.turn_ = turn;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.turn)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.turn)
 }
-inline ::protos::Turn* Action::_internal_mutable_turn() {
+inline ::protos::Turn* PlayerAction::_internal_mutable_turn() {
   if (action_case() != kTurn) {
     clear_action();
     set_has_turn();
@@ -40840,23 +43263,23 @@ inline ::protos::Turn* Action::_internal_mutable_turn() {
   }
   return _impl_.action_.turn_;
 }
-inline ::protos::Turn* Action::mutable_turn() {
+inline ::protos::Turn* PlayerAction::mutable_turn() {
   ::protos::Turn* _msg = _internal_mutable_turn();
-  // @@protoc_insertion_point(field_mutable:protos.Action.turn)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.turn)
   return _msg;
 }
 
 // .protos.Kick kick = 3;
-inline bool Action::has_kick() const {
+inline bool PlayerAction::has_kick() const {
   return action_case() == kKick;
 }
-inline bool Action::_internal_has_kick() const {
+inline bool PlayerAction::_internal_has_kick() const {
   return action_case() == kKick;
 }
-inline void Action::set_has_kick() {
+inline void PlayerAction::set_has_kick() {
   _impl_._oneof_case_[0] = kKick;
 }
-inline void Action::clear_kick() {
+inline void PlayerAction::clear_kick() {
   if (action_case() == kKick) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.kick_;
@@ -40864,8 +43287,8 @@ inline void Action::clear_kick() {
     clear_has_action();
   }
 }
-inline ::protos::Kick* Action::release_kick() {
-  // @@protoc_insertion_point(field_release:protos.Action.kick)
+inline ::protos::Kick* PlayerAction::release_kick() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.kick)
   if (action_case() == kKick) {
     clear_has_action();
     ::protos::Kick* temp = _impl_.action_.kick_;
@@ -40878,17 +43301,17 @@ inline ::protos::Kick* Action::release_kick() {
     return nullptr;
   }
 }
-inline const ::protos::Kick& Action::_internal_kick() const {
+inline const ::protos::Kick& PlayerAction::_internal_kick() const {
   return action_case() == kKick
       ? *_impl_.action_.kick_
       : reinterpret_cast<::protos::Kick&>(::protos::_Kick_default_instance_);
 }
-inline const ::protos::Kick& Action::kick() const {
-  // @@protoc_insertion_point(field_get:protos.Action.kick)
+inline const ::protos::Kick& PlayerAction::kick() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.kick)
   return _internal_kick();
 }
-inline ::protos::Kick* Action::unsafe_arena_release_kick() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.kick)
+inline ::protos::Kick* PlayerAction::unsafe_arena_release_kick() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.kick)
   if (action_case() == kKick) {
     clear_has_action();
     ::protos::Kick* temp = _impl_.action_.kick_;
@@ -40898,15 +43321,15 @@ inline ::protos::Kick* Action::unsafe_arena_release_kick() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_kick(::protos::Kick* kick) {
+inline void PlayerAction::unsafe_arena_set_allocated_kick(::protos::Kick* kick) {
   clear_action();
   if (kick) {
     set_has_kick();
     _impl_.action_.kick_ = kick;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.kick)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.kick)
 }
-inline ::protos::Kick* Action::_internal_mutable_kick() {
+inline ::protos::Kick* PlayerAction::_internal_mutable_kick() {
   if (action_case() != kKick) {
     clear_action();
     set_has_kick();
@@ -40914,23 +43337,23 @@ inline ::protos::Kick* Action::_internal_mutable_kick() {
   }
   return _impl_.action_.kick_;
 }
-inline ::protos::Kick* Action::mutable_kick() {
+inline ::protos::Kick* PlayerAction::mutable_kick() {
   ::protos::Kick* _msg = _internal_mutable_kick();
-  // @@protoc_insertion_point(field_mutable:protos.Action.kick)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.kick)
   return _msg;
 }
 
 // .protos.Tackle tackle = 4;
-inline bool Action::has_tackle() const {
+inline bool PlayerAction::has_tackle() const {
   return action_case() == kTackle;
 }
-inline bool Action::_internal_has_tackle() const {
+inline bool PlayerAction::_internal_has_tackle() const {
   return action_case() == kTackle;
 }
-inline void Action::set_has_tackle() {
+inline void PlayerAction::set_has_tackle() {
   _impl_._oneof_case_[0] = kTackle;
 }
-inline void Action::clear_tackle() {
+inline void PlayerAction::clear_tackle() {
   if (action_case() == kTackle) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.tackle_;
@@ -40938,8 +43361,8 @@ inline void Action::clear_tackle() {
     clear_has_action();
   }
 }
-inline ::protos::Tackle* Action::release_tackle() {
-  // @@protoc_insertion_point(field_release:protos.Action.tackle)
+inline ::protos::Tackle* PlayerAction::release_tackle() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.tackle)
   if (action_case() == kTackle) {
     clear_has_action();
     ::protos::Tackle* temp = _impl_.action_.tackle_;
@@ -40952,17 +43375,17 @@ inline ::protos::Tackle* Action::release_tackle() {
     return nullptr;
   }
 }
-inline const ::protos::Tackle& Action::_internal_tackle() const {
+inline const ::protos::Tackle& PlayerAction::_internal_tackle() const {
   return action_case() == kTackle
       ? *_impl_.action_.tackle_
       : reinterpret_cast<::protos::Tackle&>(::protos::_Tackle_default_instance_);
 }
-inline const ::protos::Tackle& Action::tackle() const {
-  // @@protoc_insertion_point(field_get:protos.Action.tackle)
+inline const ::protos::Tackle& PlayerAction::tackle() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.tackle)
   return _internal_tackle();
 }
-inline ::protos::Tackle* Action::unsafe_arena_release_tackle() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.tackle)
+inline ::protos::Tackle* PlayerAction::unsafe_arena_release_tackle() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.tackle)
   if (action_case() == kTackle) {
     clear_has_action();
     ::protos::Tackle* temp = _impl_.action_.tackle_;
@@ -40972,15 +43395,15 @@ inline ::protos::Tackle* Action::unsafe_arena_release_tackle() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_tackle(::protos::Tackle* tackle) {
+inline void PlayerAction::unsafe_arena_set_allocated_tackle(::protos::Tackle* tackle) {
   clear_action();
   if (tackle) {
     set_has_tackle();
     _impl_.action_.tackle_ = tackle;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.tackle)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.tackle)
 }
-inline ::protos::Tackle* Action::_internal_mutable_tackle() {
+inline ::protos::Tackle* PlayerAction::_internal_mutable_tackle() {
   if (action_case() != kTackle) {
     clear_action();
     set_has_tackle();
@@ -40988,23 +43411,23 @@ inline ::protos::Tackle* Action::_internal_mutable_tackle() {
   }
   return _impl_.action_.tackle_;
 }
-inline ::protos::Tackle* Action::mutable_tackle() {
+inline ::protos::Tackle* PlayerAction::mutable_tackle() {
   ::protos::Tackle* _msg = _internal_mutable_tackle();
-  // @@protoc_insertion_point(field_mutable:protos.Action.tackle)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.tackle)
   return _msg;
 }
 
 // .protos.Catch catch = 5;
-inline bool Action::has_catch_() const {
+inline bool PlayerAction::has_catch_() const {
   return action_case() == kCatch;
 }
-inline bool Action::_internal_has_catch_() const {
+inline bool PlayerAction::_internal_has_catch_() const {
   return action_case() == kCatch;
 }
-inline void Action::set_has_catch_() {
+inline void PlayerAction::set_has_catch_() {
   _impl_._oneof_case_[0] = kCatch;
 }
-inline void Action::clear_catch_() {
+inline void PlayerAction::clear_catch_() {
   if (action_case() == kCatch) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.catch__;
@@ -41012,8 +43435,8 @@ inline void Action::clear_catch_() {
     clear_has_action();
   }
 }
-inline ::protos::Catch* Action::release_catch_() {
-  // @@protoc_insertion_point(field_release:protos.Action.catch)
+inline ::protos::Catch* PlayerAction::release_catch_() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.catch)
   if (action_case() == kCatch) {
     clear_has_action();
     ::protos::Catch* temp = _impl_.action_.catch__;
@@ -41026,17 +43449,17 @@ inline ::protos::Catch* Action::release_catch_() {
     return nullptr;
   }
 }
-inline const ::protos::Catch& Action::_internal_catch_() const {
+inline const ::protos::Catch& PlayerAction::_internal_catch_() const {
   return action_case() == kCatch
       ? *_impl_.action_.catch__
       : reinterpret_cast<::protos::Catch&>(::protos::_Catch_default_instance_);
 }
-inline const ::protos::Catch& Action::catch_() const {
-  // @@protoc_insertion_point(field_get:protos.Action.catch)
+inline const ::protos::Catch& PlayerAction::catch_() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.catch)
   return _internal_catch_();
 }
-inline ::protos::Catch* Action::unsafe_arena_release_catch_() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.catch)
+inline ::protos::Catch* PlayerAction::unsafe_arena_release_catch_() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.catch)
   if (action_case() == kCatch) {
     clear_has_action();
     ::protos::Catch* temp = _impl_.action_.catch__;
@@ -41046,15 +43469,15 @@ inline ::protos::Catch* Action::unsafe_arena_release_catch_() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_catch_(::protos::Catch* catch_) {
+inline void PlayerAction::unsafe_arena_set_allocated_catch_(::protos::Catch* catch_) {
   clear_action();
   if (catch_) {
     set_has_catch_();
     _impl_.action_.catch__ = catch_;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.catch)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.catch)
 }
-inline ::protos::Catch* Action::_internal_mutable_catch_() {
+inline ::protos::Catch* PlayerAction::_internal_mutable_catch_() {
   if (action_case() != kCatch) {
     clear_action();
     set_has_catch_();
@@ -41062,23 +43485,23 @@ inline ::protos::Catch* Action::_internal_mutable_catch_() {
   }
   return _impl_.action_.catch__;
 }
-inline ::protos::Catch* Action::mutable_catch_() {
+inline ::protos::Catch* PlayerAction::mutable_catch_() {
   ::protos::Catch* _msg = _internal_mutable_catch_();
-  // @@protoc_insertion_point(field_mutable:protos.Action.catch)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.catch)
   return _msg;
 }
 
 // .protos.Move move = 6;
-inline bool Action::has_move() const {
+inline bool PlayerAction::has_move() const {
   return action_case() == kMove;
 }
-inline bool Action::_internal_has_move() const {
+inline bool PlayerAction::_internal_has_move() const {
   return action_case() == kMove;
 }
-inline void Action::set_has_move() {
+inline void PlayerAction::set_has_move() {
   _impl_._oneof_case_[0] = kMove;
 }
-inline void Action::clear_move() {
+inline void PlayerAction::clear_move() {
   if (action_case() == kMove) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.move_;
@@ -41086,8 +43509,8 @@ inline void Action::clear_move() {
     clear_has_action();
   }
 }
-inline ::protos::Move* Action::release_move() {
-  // @@protoc_insertion_point(field_release:protos.Action.move)
+inline ::protos::Move* PlayerAction::release_move() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.move)
   if (action_case() == kMove) {
     clear_has_action();
     ::protos::Move* temp = _impl_.action_.move_;
@@ -41100,17 +43523,17 @@ inline ::protos::Move* Action::release_move() {
     return nullptr;
   }
 }
-inline const ::protos::Move& Action::_internal_move() const {
+inline const ::protos::Move& PlayerAction::_internal_move() const {
   return action_case() == kMove
       ? *_impl_.action_.move_
       : reinterpret_cast<::protos::Move&>(::protos::_Move_default_instance_);
 }
-inline const ::protos::Move& Action::move() const {
-  // @@protoc_insertion_point(field_get:protos.Action.move)
+inline const ::protos::Move& PlayerAction::move() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.move)
   return _internal_move();
 }
-inline ::protos::Move* Action::unsafe_arena_release_move() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.move)
+inline ::protos::Move* PlayerAction::unsafe_arena_release_move() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.move)
   if (action_case() == kMove) {
     clear_has_action();
     ::protos::Move* temp = _impl_.action_.move_;
@@ -41120,15 +43543,15 @@ inline ::protos::Move* Action::unsafe_arena_release_move() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_move(::protos::Move* move) {
+inline void PlayerAction::unsafe_arena_set_allocated_move(::protos::Move* move) {
   clear_action();
   if (move) {
     set_has_move();
     _impl_.action_.move_ = move;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.move)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.move)
 }
-inline ::protos::Move* Action::_internal_mutable_move() {
+inline ::protos::Move* PlayerAction::_internal_mutable_move() {
   if (action_case() != kMove) {
     clear_action();
     set_has_move();
@@ -41136,23 +43559,23 @@ inline ::protos::Move* Action::_internal_mutable_move() {
   }
   return _impl_.action_.move_;
 }
-inline ::protos::Move* Action::mutable_move() {
+inline ::protos::Move* PlayerAction::mutable_move() {
   ::protos::Move* _msg = _internal_mutable_move();
-  // @@protoc_insertion_point(field_mutable:protos.Action.move)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.move)
   return _msg;
 }
 
 // .protos.TurnNeck turn_neck = 7;
-inline bool Action::has_turn_neck() const {
+inline bool PlayerAction::has_turn_neck() const {
   return action_case() == kTurnNeck;
 }
-inline bool Action::_internal_has_turn_neck() const {
+inline bool PlayerAction::_internal_has_turn_neck() const {
   return action_case() == kTurnNeck;
 }
-inline void Action::set_has_turn_neck() {
+inline void PlayerAction::set_has_turn_neck() {
   _impl_._oneof_case_[0] = kTurnNeck;
 }
-inline void Action::clear_turn_neck() {
+inline void PlayerAction::clear_turn_neck() {
   if (action_case() == kTurnNeck) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.turn_neck_;
@@ -41160,8 +43583,8 @@ inline void Action::clear_turn_neck() {
     clear_has_action();
   }
 }
-inline ::protos::TurnNeck* Action::release_turn_neck() {
-  // @@protoc_insertion_point(field_release:protos.Action.turn_neck)
+inline ::protos::TurnNeck* PlayerAction::release_turn_neck() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.turn_neck)
   if (action_case() == kTurnNeck) {
     clear_has_action();
     ::protos::TurnNeck* temp = _impl_.action_.turn_neck_;
@@ -41174,17 +43597,17 @@ inline ::protos::TurnNeck* Action::release_turn_neck() {
     return nullptr;
   }
 }
-inline const ::protos::TurnNeck& Action::_internal_turn_neck() const {
+inline const ::protos::TurnNeck& PlayerAction::_internal_turn_neck() const {
   return action_case() == kTurnNeck
       ? *_impl_.action_.turn_neck_
       : reinterpret_cast<::protos::TurnNeck&>(::protos::_TurnNeck_default_instance_);
 }
-inline const ::protos::TurnNeck& Action::turn_neck() const {
-  // @@protoc_insertion_point(field_get:protos.Action.turn_neck)
+inline const ::protos::TurnNeck& PlayerAction::turn_neck() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.turn_neck)
   return _internal_turn_neck();
 }
-inline ::protos::TurnNeck* Action::unsafe_arena_release_turn_neck() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.turn_neck)
+inline ::protos::TurnNeck* PlayerAction::unsafe_arena_release_turn_neck() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.turn_neck)
   if (action_case() == kTurnNeck) {
     clear_has_action();
     ::protos::TurnNeck* temp = _impl_.action_.turn_neck_;
@@ -41194,15 +43617,15 @@ inline ::protos::TurnNeck* Action::unsafe_arena_release_turn_neck() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_turn_neck(::protos::TurnNeck* turn_neck) {
+inline void PlayerAction::unsafe_arena_set_allocated_turn_neck(::protos::TurnNeck* turn_neck) {
   clear_action();
   if (turn_neck) {
     set_has_turn_neck();
     _impl_.action_.turn_neck_ = turn_neck;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.turn_neck)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.turn_neck)
 }
-inline ::protos::TurnNeck* Action::_internal_mutable_turn_neck() {
+inline ::protos::TurnNeck* PlayerAction::_internal_mutable_turn_neck() {
   if (action_case() != kTurnNeck) {
     clear_action();
     set_has_turn_neck();
@@ -41210,23 +43633,23 @@ inline ::protos::TurnNeck* Action::_internal_mutable_turn_neck() {
   }
   return _impl_.action_.turn_neck_;
 }
-inline ::protos::TurnNeck* Action::mutable_turn_neck() {
+inline ::protos::TurnNeck* PlayerAction::mutable_turn_neck() {
   ::protos::TurnNeck* _msg = _internal_mutable_turn_neck();
-  // @@protoc_insertion_point(field_mutable:protos.Action.turn_neck)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.turn_neck)
   return _msg;
 }
 
 // .protos.ChangeView change_view = 8;
-inline bool Action::has_change_view() const {
+inline bool PlayerAction::has_change_view() const {
   return action_case() == kChangeView;
 }
-inline bool Action::_internal_has_change_view() const {
+inline bool PlayerAction::_internal_has_change_view() const {
   return action_case() == kChangeView;
 }
-inline void Action::set_has_change_view() {
+inline void PlayerAction::set_has_change_view() {
   _impl_._oneof_case_[0] = kChangeView;
 }
-inline void Action::clear_change_view() {
+inline void PlayerAction::clear_change_view() {
   if (action_case() == kChangeView) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.change_view_;
@@ -41234,8 +43657,8 @@ inline void Action::clear_change_view() {
     clear_has_action();
   }
 }
-inline ::protos::ChangeView* Action::release_change_view() {
-  // @@protoc_insertion_point(field_release:protos.Action.change_view)
+inline ::protos::ChangeView* PlayerAction::release_change_view() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.change_view)
   if (action_case() == kChangeView) {
     clear_has_action();
     ::protos::ChangeView* temp = _impl_.action_.change_view_;
@@ -41248,17 +43671,17 @@ inline ::protos::ChangeView* Action::release_change_view() {
     return nullptr;
   }
 }
-inline const ::protos::ChangeView& Action::_internal_change_view() const {
+inline const ::protos::ChangeView& PlayerAction::_internal_change_view() const {
   return action_case() == kChangeView
       ? *_impl_.action_.change_view_
       : reinterpret_cast<::protos::ChangeView&>(::protos::_ChangeView_default_instance_);
 }
-inline const ::protos::ChangeView& Action::change_view() const {
-  // @@protoc_insertion_point(field_get:protos.Action.change_view)
+inline const ::protos::ChangeView& PlayerAction::change_view() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.change_view)
   return _internal_change_view();
 }
-inline ::protos::ChangeView* Action::unsafe_arena_release_change_view() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.change_view)
+inline ::protos::ChangeView* PlayerAction::unsafe_arena_release_change_view() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.change_view)
   if (action_case() == kChangeView) {
     clear_has_action();
     ::protos::ChangeView* temp = _impl_.action_.change_view_;
@@ -41268,15 +43691,15 @@ inline ::protos::ChangeView* Action::unsafe_arena_release_change_view() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_change_view(::protos::ChangeView* change_view) {
+inline void PlayerAction::unsafe_arena_set_allocated_change_view(::protos::ChangeView* change_view) {
   clear_action();
   if (change_view) {
     set_has_change_view();
     _impl_.action_.change_view_ = change_view;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.change_view)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.change_view)
 }
-inline ::protos::ChangeView* Action::_internal_mutable_change_view() {
+inline ::protos::ChangeView* PlayerAction::_internal_mutable_change_view() {
   if (action_case() != kChangeView) {
     clear_action();
     set_has_change_view();
@@ -41284,23 +43707,23 @@ inline ::protos::ChangeView* Action::_internal_mutable_change_view() {
   }
   return _impl_.action_.change_view_;
 }
-inline ::protos::ChangeView* Action::mutable_change_view() {
+inline ::protos::ChangeView* PlayerAction::mutable_change_view() {
   ::protos::ChangeView* _msg = _internal_mutable_change_view();
-  // @@protoc_insertion_point(field_mutable:protos.Action.change_view)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.change_view)
   return _msg;
 }
 
 // .protos.Say say = 9;
-inline bool Action::has_say() const {
+inline bool PlayerAction::has_say() const {
   return action_case() == kSay;
 }
-inline bool Action::_internal_has_say() const {
+inline bool PlayerAction::_internal_has_say() const {
   return action_case() == kSay;
 }
-inline void Action::set_has_say() {
+inline void PlayerAction::set_has_say() {
   _impl_._oneof_case_[0] = kSay;
 }
-inline void Action::clear_say() {
+inline void PlayerAction::clear_say() {
   if (action_case() == kSay) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.say_;
@@ -41308,8 +43731,8 @@ inline void Action::clear_say() {
     clear_has_action();
   }
 }
-inline ::protos::Say* Action::release_say() {
-  // @@protoc_insertion_point(field_release:protos.Action.say)
+inline ::protos::Say* PlayerAction::release_say() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.say)
   if (action_case() == kSay) {
     clear_has_action();
     ::protos::Say* temp = _impl_.action_.say_;
@@ -41322,17 +43745,17 @@ inline ::protos::Say* Action::release_say() {
     return nullptr;
   }
 }
-inline const ::protos::Say& Action::_internal_say() const {
+inline const ::protos::Say& PlayerAction::_internal_say() const {
   return action_case() == kSay
       ? *_impl_.action_.say_
       : reinterpret_cast<::protos::Say&>(::protos::_Say_default_instance_);
 }
-inline const ::protos::Say& Action::say() const {
-  // @@protoc_insertion_point(field_get:protos.Action.say)
+inline const ::protos::Say& PlayerAction::say() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.say)
   return _internal_say();
 }
-inline ::protos::Say* Action::unsafe_arena_release_say() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.say)
+inline ::protos::Say* PlayerAction::unsafe_arena_release_say() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.say)
   if (action_case() == kSay) {
     clear_has_action();
     ::protos::Say* temp = _impl_.action_.say_;
@@ -41342,15 +43765,15 @@ inline ::protos::Say* Action::unsafe_arena_release_say() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_say(::protos::Say* say) {
+inline void PlayerAction::unsafe_arena_set_allocated_say(::protos::Say* say) {
   clear_action();
   if (say) {
     set_has_say();
     _impl_.action_.say_ = say;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.say)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.say)
 }
-inline ::protos::Say* Action::_internal_mutable_say() {
+inline ::protos::Say* PlayerAction::_internal_mutable_say() {
   if (action_case() != kSay) {
     clear_action();
     set_has_say();
@@ -41358,23 +43781,23 @@ inline ::protos::Say* Action::_internal_mutable_say() {
   }
   return _impl_.action_.say_;
 }
-inline ::protos::Say* Action::mutable_say() {
+inline ::protos::Say* PlayerAction::mutable_say() {
   ::protos::Say* _msg = _internal_mutable_say();
-  // @@protoc_insertion_point(field_mutable:protos.Action.say)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.say)
   return _msg;
 }
 
 // .protos.PointTo point_to = 10;
-inline bool Action::has_point_to() const {
+inline bool PlayerAction::has_point_to() const {
   return action_case() == kPointTo;
 }
-inline bool Action::_internal_has_point_to() const {
+inline bool PlayerAction::_internal_has_point_to() const {
   return action_case() == kPointTo;
 }
-inline void Action::set_has_point_to() {
+inline void PlayerAction::set_has_point_to() {
   _impl_._oneof_case_[0] = kPointTo;
 }
-inline void Action::clear_point_to() {
+inline void PlayerAction::clear_point_to() {
   if (action_case() == kPointTo) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.point_to_;
@@ -41382,8 +43805,8 @@ inline void Action::clear_point_to() {
     clear_has_action();
   }
 }
-inline ::protos::PointTo* Action::release_point_to() {
-  // @@protoc_insertion_point(field_release:protos.Action.point_to)
+inline ::protos::PointTo* PlayerAction::release_point_to() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.point_to)
   if (action_case() == kPointTo) {
     clear_has_action();
     ::protos::PointTo* temp = _impl_.action_.point_to_;
@@ -41396,17 +43819,17 @@ inline ::protos::PointTo* Action::release_point_to() {
     return nullptr;
   }
 }
-inline const ::protos::PointTo& Action::_internal_point_to() const {
+inline const ::protos::PointTo& PlayerAction::_internal_point_to() const {
   return action_case() == kPointTo
       ? *_impl_.action_.point_to_
       : reinterpret_cast<::protos::PointTo&>(::protos::_PointTo_default_instance_);
 }
-inline const ::protos::PointTo& Action::point_to() const {
-  // @@protoc_insertion_point(field_get:protos.Action.point_to)
+inline const ::protos::PointTo& PlayerAction::point_to() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.point_to)
   return _internal_point_to();
 }
-inline ::protos::PointTo* Action::unsafe_arena_release_point_to() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.point_to)
+inline ::protos::PointTo* PlayerAction::unsafe_arena_release_point_to() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.point_to)
   if (action_case() == kPointTo) {
     clear_has_action();
     ::protos::PointTo* temp = _impl_.action_.point_to_;
@@ -41416,15 +43839,15 @@ inline ::protos::PointTo* Action::unsafe_arena_release_point_to() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_point_to(::protos::PointTo* point_to) {
+inline void PlayerAction::unsafe_arena_set_allocated_point_to(::protos::PointTo* point_to) {
   clear_action();
   if (point_to) {
     set_has_point_to();
     _impl_.action_.point_to_ = point_to;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.point_to)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.point_to)
 }
-inline ::protos::PointTo* Action::_internal_mutable_point_to() {
+inline ::protos::PointTo* PlayerAction::_internal_mutable_point_to() {
   if (action_case() != kPointTo) {
     clear_action();
     set_has_point_to();
@@ -41432,23 +43855,23 @@ inline ::protos::PointTo* Action::_internal_mutable_point_to() {
   }
   return _impl_.action_.point_to_;
 }
-inline ::protos::PointTo* Action::mutable_point_to() {
+inline ::protos::PointTo* PlayerAction::mutable_point_to() {
   ::protos::PointTo* _msg = _internal_mutable_point_to();
-  // @@protoc_insertion_point(field_mutable:protos.Action.point_to)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.point_to)
   return _msg;
 }
 
 // .protos.PointToOf point_to_of = 11;
-inline bool Action::has_point_to_of() const {
+inline bool PlayerAction::has_point_to_of() const {
   return action_case() == kPointToOf;
 }
-inline bool Action::_internal_has_point_to_of() const {
+inline bool PlayerAction::_internal_has_point_to_of() const {
   return action_case() == kPointToOf;
 }
-inline void Action::set_has_point_to_of() {
+inline void PlayerAction::set_has_point_to_of() {
   _impl_._oneof_case_[0] = kPointToOf;
 }
-inline void Action::clear_point_to_of() {
+inline void PlayerAction::clear_point_to_of() {
   if (action_case() == kPointToOf) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.point_to_of_;
@@ -41456,8 +43879,8 @@ inline void Action::clear_point_to_of() {
     clear_has_action();
   }
 }
-inline ::protos::PointToOf* Action::release_point_to_of() {
-  // @@protoc_insertion_point(field_release:protos.Action.point_to_of)
+inline ::protos::PointToOf* PlayerAction::release_point_to_of() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.point_to_of)
   if (action_case() == kPointToOf) {
     clear_has_action();
     ::protos::PointToOf* temp = _impl_.action_.point_to_of_;
@@ -41470,17 +43893,17 @@ inline ::protos::PointToOf* Action::release_point_to_of() {
     return nullptr;
   }
 }
-inline const ::protos::PointToOf& Action::_internal_point_to_of() const {
+inline const ::protos::PointToOf& PlayerAction::_internal_point_to_of() const {
   return action_case() == kPointToOf
       ? *_impl_.action_.point_to_of_
       : reinterpret_cast<::protos::PointToOf&>(::protos::_PointToOf_default_instance_);
 }
-inline const ::protos::PointToOf& Action::point_to_of() const {
-  // @@protoc_insertion_point(field_get:protos.Action.point_to_of)
+inline const ::protos::PointToOf& PlayerAction::point_to_of() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.point_to_of)
   return _internal_point_to_of();
 }
-inline ::protos::PointToOf* Action::unsafe_arena_release_point_to_of() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.point_to_of)
+inline ::protos::PointToOf* PlayerAction::unsafe_arena_release_point_to_of() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.point_to_of)
   if (action_case() == kPointToOf) {
     clear_has_action();
     ::protos::PointToOf* temp = _impl_.action_.point_to_of_;
@@ -41490,15 +43913,15 @@ inline ::protos::PointToOf* Action::unsafe_arena_release_point_to_of() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_point_to_of(::protos::PointToOf* point_to_of) {
+inline void PlayerAction::unsafe_arena_set_allocated_point_to_of(::protos::PointToOf* point_to_of) {
   clear_action();
   if (point_to_of) {
     set_has_point_to_of();
     _impl_.action_.point_to_of_ = point_to_of;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.point_to_of)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.point_to_of)
 }
-inline ::protos::PointToOf* Action::_internal_mutable_point_to_of() {
+inline ::protos::PointToOf* PlayerAction::_internal_mutable_point_to_of() {
   if (action_case() != kPointToOf) {
     clear_action();
     set_has_point_to_of();
@@ -41506,23 +43929,23 @@ inline ::protos::PointToOf* Action::_internal_mutable_point_to_of() {
   }
   return _impl_.action_.point_to_of_;
 }
-inline ::protos::PointToOf* Action::mutable_point_to_of() {
+inline ::protos::PointToOf* PlayerAction::mutable_point_to_of() {
   ::protos::PointToOf* _msg = _internal_mutable_point_to_of();
-  // @@protoc_insertion_point(field_mutable:protos.Action.point_to_of)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.point_to_of)
   return _msg;
 }
 
 // .protos.AttentionTo attention_to = 12;
-inline bool Action::has_attention_to() const {
+inline bool PlayerAction::has_attention_to() const {
   return action_case() == kAttentionTo;
 }
-inline bool Action::_internal_has_attention_to() const {
+inline bool PlayerAction::_internal_has_attention_to() const {
   return action_case() == kAttentionTo;
 }
-inline void Action::set_has_attention_to() {
+inline void PlayerAction::set_has_attention_to() {
   _impl_._oneof_case_[0] = kAttentionTo;
 }
-inline void Action::clear_attention_to() {
+inline void PlayerAction::clear_attention_to() {
   if (action_case() == kAttentionTo) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.attention_to_;
@@ -41530,8 +43953,8 @@ inline void Action::clear_attention_to() {
     clear_has_action();
   }
 }
-inline ::protos::AttentionTo* Action::release_attention_to() {
-  // @@protoc_insertion_point(field_release:protos.Action.attention_to)
+inline ::protos::AttentionTo* PlayerAction::release_attention_to() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.attention_to)
   if (action_case() == kAttentionTo) {
     clear_has_action();
     ::protos::AttentionTo* temp = _impl_.action_.attention_to_;
@@ -41544,17 +43967,17 @@ inline ::protos::AttentionTo* Action::release_attention_to() {
     return nullptr;
   }
 }
-inline const ::protos::AttentionTo& Action::_internal_attention_to() const {
+inline const ::protos::AttentionTo& PlayerAction::_internal_attention_to() const {
   return action_case() == kAttentionTo
       ? *_impl_.action_.attention_to_
       : reinterpret_cast<::protos::AttentionTo&>(::protos::_AttentionTo_default_instance_);
 }
-inline const ::protos::AttentionTo& Action::attention_to() const {
-  // @@protoc_insertion_point(field_get:protos.Action.attention_to)
+inline const ::protos::AttentionTo& PlayerAction::attention_to() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.attention_to)
   return _internal_attention_to();
 }
-inline ::protos::AttentionTo* Action::unsafe_arena_release_attention_to() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.attention_to)
+inline ::protos::AttentionTo* PlayerAction::unsafe_arena_release_attention_to() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.attention_to)
   if (action_case() == kAttentionTo) {
     clear_has_action();
     ::protos::AttentionTo* temp = _impl_.action_.attention_to_;
@@ -41564,15 +43987,15 @@ inline ::protos::AttentionTo* Action::unsafe_arena_release_attention_to() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_attention_to(::protos::AttentionTo* attention_to) {
+inline void PlayerAction::unsafe_arena_set_allocated_attention_to(::protos::AttentionTo* attention_to) {
   clear_action();
   if (attention_to) {
     set_has_attention_to();
     _impl_.action_.attention_to_ = attention_to;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.attention_to)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.attention_to)
 }
-inline ::protos::AttentionTo* Action::_internal_mutable_attention_to() {
+inline ::protos::AttentionTo* PlayerAction::_internal_mutable_attention_to() {
   if (action_case() != kAttentionTo) {
     clear_action();
     set_has_attention_to();
@@ -41580,23 +44003,23 @@ inline ::protos::AttentionTo* Action::_internal_mutable_attention_to() {
   }
   return _impl_.action_.attention_to_;
 }
-inline ::protos::AttentionTo* Action::mutable_attention_to() {
+inline ::protos::AttentionTo* PlayerAction::mutable_attention_to() {
   ::protos::AttentionTo* _msg = _internal_mutable_attention_to();
-  // @@protoc_insertion_point(field_mutable:protos.Action.attention_to)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.attention_to)
   return _msg;
 }
 
 // .protos.AttentionToOf attention_to_of = 13;
-inline bool Action::has_attention_to_of() const {
+inline bool PlayerAction::has_attention_to_of() const {
   return action_case() == kAttentionToOf;
 }
-inline bool Action::_internal_has_attention_to_of() const {
+inline bool PlayerAction::_internal_has_attention_to_of() const {
   return action_case() == kAttentionToOf;
 }
-inline void Action::set_has_attention_to_of() {
+inline void PlayerAction::set_has_attention_to_of() {
   _impl_._oneof_case_[0] = kAttentionToOf;
 }
-inline void Action::clear_attention_to_of() {
+inline void PlayerAction::clear_attention_to_of() {
   if (action_case() == kAttentionToOf) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.attention_to_of_;
@@ -41604,8 +44027,8 @@ inline void Action::clear_attention_to_of() {
     clear_has_action();
   }
 }
-inline ::protos::AttentionToOf* Action::release_attention_to_of() {
-  // @@protoc_insertion_point(field_release:protos.Action.attention_to_of)
+inline ::protos::AttentionToOf* PlayerAction::release_attention_to_of() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.attention_to_of)
   if (action_case() == kAttentionToOf) {
     clear_has_action();
     ::protos::AttentionToOf* temp = _impl_.action_.attention_to_of_;
@@ -41618,17 +44041,17 @@ inline ::protos::AttentionToOf* Action::release_attention_to_of() {
     return nullptr;
   }
 }
-inline const ::protos::AttentionToOf& Action::_internal_attention_to_of() const {
+inline const ::protos::AttentionToOf& PlayerAction::_internal_attention_to_of() const {
   return action_case() == kAttentionToOf
       ? *_impl_.action_.attention_to_of_
       : reinterpret_cast<::protos::AttentionToOf&>(::protos::_AttentionToOf_default_instance_);
 }
-inline const ::protos::AttentionToOf& Action::attention_to_of() const {
-  // @@protoc_insertion_point(field_get:protos.Action.attention_to_of)
+inline const ::protos::AttentionToOf& PlayerAction::attention_to_of() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.attention_to_of)
   return _internal_attention_to_of();
 }
-inline ::protos::AttentionToOf* Action::unsafe_arena_release_attention_to_of() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.attention_to_of)
+inline ::protos::AttentionToOf* PlayerAction::unsafe_arena_release_attention_to_of() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.attention_to_of)
   if (action_case() == kAttentionToOf) {
     clear_has_action();
     ::protos::AttentionToOf* temp = _impl_.action_.attention_to_of_;
@@ -41638,15 +44061,15 @@ inline ::protos::AttentionToOf* Action::unsafe_arena_release_attention_to_of() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_attention_to_of(::protos::AttentionToOf* attention_to_of) {
+inline void PlayerAction::unsafe_arena_set_allocated_attention_to_of(::protos::AttentionToOf* attention_to_of) {
   clear_action();
   if (attention_to_of) {
     set_has_attention_to_of();
     _impl_.action_.attention_to_of_ = attention_to_of;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.attention_to_of)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.attention_to_of)
 }
-inline ::protos::AttentionToOf* Action::_internal_mutable_attention_to_of() {
+inline ::protos::AttentionToOf* PlayerAction::_internal_mutable_attention_to_of() {
   if (action_case() != kAttentionToOf) {
     clear_action();
     set_has_attention_to_of();
@@ -41654,23 +44077,23 @@ inline ::protos::AttentionToOf* Action::_internal_mutable_attention_to_of() {
   }
   return _impl_.action_.attention_to_of_;
 }
-inline ::protos::AttentionToOf* Action::mutable_attention_to_of() {
+inline ::protos::AttentionToOf* PlayerAction::mutable_attention_to_of() {
   ::protos::AttentionToOf* _msg = _internal_mutable_attention_to_of();
-  // @@protoc_insertion_point(field_mutable:protos.Action.attention_to_of)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.attention_to_of)
   return _msg;
 }
 
 // .protos.Log log = 14;
-inline bool Action::has_log() const {
+inline bool PlayerAction::has_log() const {
   return action_case() == kLog;
 }
-inline bool Action::_internal_has_log() const {
+inline bool PlayerAction::_internal_has_log() const {
   return action_case() == kLog;
 }
-inline void Action::set_has_log() {
+inline void PlayerAction::set_has_log() {
   _impl_._oneof_case_[0] = kLog;
 }
-inline void Action::clear_log() {
+inline void PlayerAction::clear_log() {
   if (action_case() == kLog) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.log_;
@@ -41678,8 +44101,8 @@ inline void Action::clear_log() {
     clear_has_action();
   }
 }
-inline ::protos::Log* Action::release_log() {
-  // @@protoc_insertion_point(field_release:protos.Action.log)
+inline ::protos::Log* PlayerAction::release_log() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.log)
   if (action_case() == kLog) {
     clear_has_action();
     ::protos::Log* temp = _impl_.action_.log_;
@@ -41692,17 +44115,17 @@ inline ::protos::Log* Action::release_log() {
     return nullptr;
   }
 }
-inline const ::protos::Log& Action::_internal_log() const {
+inline const ::protos::Log& PlayerAction::_internal_log() const {
   return action_case() == kLog
       ? *_impl_.action_.log_
       : reinterpret_cast<::protos::Log&>(::protos::_Log_default_instance_);
 }
-inline const ::protos::Log& Action::log() const {
-  // @@protoc_insertion_point(field_get:protos.Action.log)
+inline const ::protos::Log& PlayerAction::log() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.log)
   return _internal_log();
 }
-inline ::protos::Log* Action::unsafe_arena_release_log() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.log)
+inline ::protos::Log* PlayerAction::unsafe_arena_release_log() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.log)
   if (action_case() == kLog) {
     clear_has_action();
     ::protos::Log* temp = _impl_.action_.log_;
@@ -41712,15 +44135,15 @@ inline ::protos::Log* Action::unsafe_arena_release_log() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_log(::protos::Log* log) {
+inline void PlayerAction::unsafe_arena_set_allocated_log(::protos::Log* log) {
   clear_action();
   if (log) {
     set_has_log();
     _impl_.action_.log_ = log;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.log)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.log)
 }
-inline ::protos::Log* Action::_internal_mutable_log() {
+inline ::protos::Log* PlayerAction::_internal_mutable_log() {
   if (action_case() != kLog) {
     clear_action();
     set_has_log();
@@ -41728,23 +44151,23 @@ inline ::protos::Log* Action::_internal_mutable_log() {
   }
   return _impl_.action_.log_;
 }
-inline ::protos::Log* Action::mutable_log() {
+inline ::protos::Log* PlayerAction::mutable_log() {
   ::protos::Log* _msg = _internal_mutable_log();
-  // @@protoc_insertion_point(field_mutable:protos.Action.log)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.log)
   return _msg;
 }
 
 // .protos.DebugClient debug_client = 15;
-inline bool Action::has_debug_client() const {
+inline bool PlayerAction::has_debug_client() const {
   return action_case() == kDebugClient;
 }
-inline bool Action::_internal_has_debug_client() const {
+inline bool PlayerAction::_internal_has_debug_client() const {
   return action_case() == kDebugClient;
 }
-inline void Action::set_has_debug_client() {
+inline void PlayerAction::set_has_debug_client() {
   _impl_._oneof_case_[0] = kDebugClient;
 }
-inline void Action::clear_debug_client() {
+inline void PlayerAction::clear_debug_client() {
   if (action_case() == kDebugClient) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.debug_client_;
@@ -41752,8 +44175,8 @@ inline void Action::clear_debug_client() {
     clear_has_action();
   }
 }
-inline ::protos::DebugClient* Action::release_debug_client() {
-  // @@protoc_insertion_point(field_release:protos.Action.debug_client)
+inline ::protos::DebugClient* PlayerAction::release_debug_client() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.debug_client)
   if (action_case() == kDebugClient) {
     clear_has_action();
     ::protos::DebugClient* temp = _impl_.action_.debug_client_;
@@ -41766,17 +44189,17 @@ inline ::protos::DebugClient* Action::release_debug_client() {
     return nullptr;
   }
 }
-inline const ::protos::DebugClient& Action::_internal_debug_client() const {
+inline const ::protos::DebugClient& PlayerAction::_internal_debug_client() const {
   return action_case() == kDebugClient
       ? *_impl_.action_.debug_client_
       : reinterpret_cast<::protos::DebugClient&>(::protos::_DebugClient_default_instance_);
 }
-inline const ::protos::DebugClient& Action::debug_client() const {
-  // @@protoc_insertion_point(field_get:protos.Action.debug_client)
+inline const ::protos::DebugClient& PlayerAction::debug_client() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.debug_client)
   return _internal_debug_client();
 }
-inline ::protos::DebugClient* Action::unsafe_arena_release_debug_client() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.debug_client)
+inline ::protos::DebugClient* PlayerAction::unsafe_arena_release_debug_client() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.debug_client)
   if (action_case() == kDebugClient) {
     clear_has_action();
     ::protos::DebugClient* temp = _impl_.action_.debug_client_;
@@ -41786,15 +44209,15 @@ inline ::protos::DebugClient* Action::unsafe_arena_release_debug_client() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_debug_client(::protos::DebugClient* debug_client) {
+inline void PlayerAction::unsafe_arena_set_allocated_debug_client(::protos::DebugClient* debug_client) {
   clear_action();
   if (debug_client) {
     set_has_debug_client();
     _impl_.action_.debug_client_ = debug_client;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.debug_client)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.debug_client)
 }
-inline ::protos::DebugClient* Action::_internal_mutable_debug_client() {
+inline ::protos::DebugClient* PlayerAction::_internal_mutable_debug_client() {
   if (action_case() != kDebugClient) {
     clear_action();
     set_has_debug_client();
@@ -41802,23 +44225,23 @@ inline ::protos::DebugClient* Action::_internal_mutable_debug_client() {
   }
   return _impl_.action_.debug_client_;
 }
-inline ::protos::DebugClient* Action::mutable_debug_client() {
+inline ::protos::DebugClient* PlayerAction::mutable_debug_client() {
   ::protos::DebugClient* _msg = _internal_mutable_debug_client();
-  // @@protoc_insertion_point(field_mutable:protos.Action.debug_client)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.debug_client)
   return _msg;
 }
 
 // .protos.Body_GoToPoint body_go_to_point = 16;
-inline bool Action::has_body_go_to_point() const {
+inline bool PlayerAction::has_body_go_to_point() const {
   return action_case() == kBodyGoToPoint;
 }
-inline bool Action::_internal_has_body_go_to_point() const {
+inline bool PlayerAction::_internal_has_body_go_to_point() const {
   return action_case() == kBodyGoToPoint;
 }
-inline void Action::set_has_body_go_to_point() {
+inline void PlayerAction::set_has_body_go_to_point() {
   _impl_._oneof_case_[0] = kBodyGoToPoint;
 }
-inline void Action::clear_body_go_to_point() {
+inline void PlayerAction::clear_body_go_to_point() {
   if (action_case() == kBodyGoToPoint) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_go_to_point_;
@@ -41826,8 +44249,8 @@ inline void Action::clear_body_go_to_point() {
     clear_has_action();
   }
 }
-inline ::protos::Body_GoToPoint* Action::release_body_go_to_point() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_go_to_point)
+inline ::protos::Body_GoToPoint* PlayerAction::release_body_go_to_point() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_go_to_point)
   if (action_case() == kBodyGoToPoint) {
     clear_has_action();
     ::protos::Body_GoToPoint* temp = _impl_.action_.body_go_to_point_;
@@ -41840,17 +44263,17 @@ inline ::protos::Body_GoToPoint* Action::release_body_go_to_point() {
     return nullptr;
   }
 }
-inline const ::protos::Body_GoToPoint& Action::_internal_body_go_to_point() const {
+inline const ::protos::Body_GoToPoint& PlayerAction::_internal_body_go_to_point() const {
   return action_case() == kBodyGoToPoint
       ? *_impl_.action_.body_go_to_point_
       : reinterpret_cast<::protos::Body_GoToPoint&>(::protos::_Body_GoToPoint_default_instance_);
 }
-inline const ::protos::Body_GoToPoint& Action::body_go_to_point() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_go_to_point)
+inline const ::protos::Body_GoToPoint& PlayerAction::body_go_to_point() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_go_to_point)
   return _internal_body_go_to_point();
 }
-inline ::protos::Body_GoToPoint* Action::unsafe_arena_release_body_go_to_point() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_go_to_point)
+inline ::protos::Body_GoToPoint* PlayerAction::unsafe_arena_release_body_go_to_point() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_go_to_point)
   if (action_case() == kBodyGoToPoint) {
     clear_has_action();
     ::protos::Body_GoToPoint* temp = _impl_.action_.body_go_to_point_;
@@ -41860,15 +44283,15 @@ inline ::protos::Body_GoToPoint* Action::unsafe_arena_release_body_go_to_point()
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_go_to_point(::protos::Body_GoToPoint* body_go_to_point) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_go_to_point(::protos::Body_GoToPoint* body_go_to_point) {
   clear_action();
   if (body_go_to_point) {
     set_has_body_go_to_point();
     _impl_.action_.body_go_to_point_ = body_go_to_point;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_go_to_point)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_go_to_point)
 }
-inline ::protos::Body_GoToPoint* Action::_internal_mutable_body_go_to_point() {
+inline ::protos::Body_GoToPoint* PlayerAction::_internal_mutable_body_go_to_point() {
   if (action_case() != kBodyGoToPoint) {
     clear_action();
     set_has_body_go_to_point();
@@ -41876,23 +44299,23 @@ inline ::protos::Body_GoToPoint* Action::_internal_mutable_body_go_to_point() {
   }
   return _impl_.action_.body_go_to_point_;
 }
-inline ::protos::Body_GoToPoint* Action::mutable_body_go_to_point() {
+inline ::protos::Body_GoToPoint* PlayerAction::mutable_body_go_to_point() {
   ::protos::Body_GoToPoint* _msg = _internal_mutable_body_go_to_point();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_go_to_point)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_go_to_point)
   return _msg;
 }
 
 // .protos.Body_SmartKick body_smart_kick = 17;
-inline bool Action::has_body_smart_kick() const {
+inline bool PlayerAction::has_body_smart_kick() const {
   return action_case() == kBodySmartKick;
 }
-inline bool Action::_internal_has_body_smart_kick() const {
+inline bool PlayerAction::_internal_has_body_smart_kick() const {
   return action_case() == kBodySmartKick;
 }
-inline void Action::set_has_body_smart_kick() {
+inline void PlayerAction::set_has_body_smart_kick() {
   _impl_._oneof_case_[0] = kBodySmartKick;
 }
-inline void Action::clear_body_smart_kick() {
+inline void PlayerAction::clear_body_smart_kick() {
   if (action_case() == kBodySmartKick) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_smart_kick_;
@@ -41900,8 +44323,8 @@ inline void Action::clear_body_smart_kick() {
     clear_has_action();
   }
 }
-inline ::protos::Body_SmartKick* Action::release_body_smart_kick() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_smart_kick)
+inline ::protos::Body_SmartKick* PlayerAction::release_body_smart_kick() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_smart_kick)
   if (action_case() == kBodySmartKick) {
     clear_has_action();
     ::protos::Body_SmartKick* temp = _impl_.action_.body_smart_kick_;
@@ -41914,17 +44337,17 @@ inline ::protos::Body_SmartKick* Action::release_body_smart_kick() {
     return nullptr;
   }
 }
-inline const ::protos::Body_SmartKick& Action::_internal_body_smart_kick() const {
+inline const ::protos::Body_SmartKick& PlayerAction::_internal_body_smart_kick() const {
   return action_case() == kBodySmartKick
       ? *_impl_.action_.body_smart_kick_
       : reinterpret_cast<::protos::Body_SmartKick&>(::protos::_Body_SmartKick_default_instance_);
 }
-inline const ::protos::Body_SmartKick& Action::body_smart_kick() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_smart_kick)
+inline const ::protos::Body_SmartKick& PlayerAction::body_smart_kick() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_smart_kick)
   return _internal_body_smart_kick();
 }
-inline ::protos::Body_SmartKick* Action::unsafe_arena_release_body_smart_kick() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_smart_kick)
+inline ::protos::Body_SmartKick* PlayerAction::unsafe_arena_release_body_smart_kick() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_smart_kick)
   if (action_case() == kBodySmartKick) {
     clear_has_action();
     ::protos::Body_SmartKick* temp = _impl_.action_.body_smart_kick_;
@@ -41934,15 +44357,15 @@ inline ::protos::Body_SmartKick* Action::unsafe_arena_release_body_smart_kick() 
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_smart_kick(::protos::Body_SmartKick* body_smart_kick) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_smart_kick(::protos::Body_SmartKick* body_smart_kick) {
   clear_action();
   if (body_smart_kick) {
     set_has_body_smart_kick();
     _impl_.action_.body_smart_kick_ = body_smart_kick;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_smart_kick)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_smart_kick)
 }
-inline ::protos::Body_SmartKick* Action::_internal_mutable_body_smart_kick() {
+inline ::protos::Body_SmartKick* PlayerAction::_internal_mutable_body_smart_kick() {
   if (action_case() != kBodySmartKick) {
     clear_action();
     set_has_body_smart_kick();
@@ -41950,23 +44373,23 @@ inline ::protos::Body_SmartKick* Action::_internal_mutable_body_smart_kick() {
   }
   return _impl_.action_.body_smart_kick_;
 }
-inline ::protos::Body_SmartKick* Action::mutable_body_smart_kick() {
+inline ::protos::Body_SmartKick* PlayerAction::mutable_body_smart_kick() {
   ::protos::Body_SmartKick* _msg = _internal_mutable_body_smart_kick();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_smart_kick)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_smart_kick)
   return _msg;
 }
 
 // .protos.Bhv_BeforeKickOff bhv_before_kick_off = 18;
-inline bool Action::has_bhv_before_kick_off() const {
+inline bool PlayerAction::has_bhv_before_kick_off() const {
   return action_case() == kBhvBeforeKickOff;
 }
-inline bool Action::_internal_has_bhv_before_kick_off() const {
+inline bool PlayerAction::_internal_has_bhv_before_kick_off() const {
   return action_case() == kBhvBeforeKickOff;
 }
-inline void Action::set_has_bhv_before_kick_off() {
+inline void PlayerAction::set_has_bhv_before_kick_off() {
   _impl_._oneof_case_[0] = kBhvBeforeKickOff;
 }
-inline void Action::clear_bhv_before_kick_off() {
+inline void PlayerAction::clear_bhv_before_kick_off() {
   if (action_case() == kBhvBeforeKickOff) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.bhv_before_kick_off_;
@@ -41974,8 +44397,8 @@ inline void Action::clear_bhv_before_kick_off() {
     clear_has_action();
   }
 }
-inline ::protos::Bhv_BeforeKickOff* Action::release_bhv_before_kick_off() {
-  // @@protoc_insertion_point(field_release:protos.Action.bhv_before_kick_off)
+inline ::protos::Bhv_BeforeKickOff* PlayerAction::release_bhv_before_kick_off() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.bhv_before_kick_off)
   if (action_case() == kBhvBeforeKickOff) {
     clear_has_action();
     ::protos::Bhv_BeforeKickOff* temp = _impl_.action_.bhv_before_kick_off_;
@@ -41988,17 +44411,17 @@ inline ::protos::Bhv_BeforeKickOff* Action::release_bhv_before_kick_off() {
     return nullptr;
   }
 }
-inline const ::protos::Bhv_BeforeKickOff& Action::_internal_bhv_before_kick_off() const {
+inline const ::protos::Bhv_BeforeKickOff& PlayerAction::_internal_bhv_before_kick_off() const {
   return action_case() == kBhvBeforeKickOff
       ? *_impl_.action_.bhv_before_kick_off_
       : reinterpret_cast<::protos::Bhv_BeforeKickOff&>(::protos::_Bhv_BeforeKickOff_default_instance_);
 }
-inline const ::protos::Bhv_BeforeKickOff& Action::bhv_before_kick_off() const {
-  // @@protoc_insertion_point(field_get:protos.Action.bhv_before_kick_off)
+inline const ::protos::Bhv_BeforeKickOff& PlayerAction::bhv_before_kick_off() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.bhv_before_kick_off)
   return _internal_bhv_before_kick_off();
 }
-inline ::protos::Bhv_BeforeKickOff* Action::unsafe_arena_release_bhv_before_kick_off() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.bhv_before_kick_off)
+inline ::protos::Bhv_BeforeKickOff* PlayerAction::unsafe_arena_release_bhv_before_kick_off() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.bhv_before_kick_off)
   if (action_case() == kBhvBeforeKickOff) {
     clear_has_action();
     ::protos::Bhv_BeforeKickOff* temp = _impl_.action_.bhv_before_kick_off_;
@@ -42008,15 +44431,15 @@ inline ::protos::Bhv_BeforeKickOff* Action::unsafe_arena_release_bhv_before_kick
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_bhv_before_kick_off(::protos::Bhv_BeforeKickOff* bhv_before_kick_off) {
+inline void PlayerAction::unsafe_arena_set_allocated_bhv_before_kick_off(::protos::Bhv_BeforeKickOff* bhv_before_kick_off) {
   clear_action();
   if (bhv_before_kick_off) {
     set_has_bhv_before_kick_off();
     _impl_.action_.bhv_before_kick_off_ = bhv_before_kick_off;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.bhv_before_kick_off)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.bhv_before_kick_off)
 }
-inline ::protos::Bhv_BeforeKickOff* Action::_internal_mutable_bhv_before_kick_off() {
+inline ::protos::Bhv_BeforeKickOff* PlayerAction::_internal_mutable_bhv_before_kick_off() {
   if (action_case() != kBhvBeforeKickOff) {
     clear_action();
     set_has_bhv_before_kick_off();
@@ -42024,23 +44447,23 @@ inline ::protos::Bhv_BeforeKickOff* Action::_internal_mutable_bhv_before_kick_of
   }
   return _impl_.action_.bhv_before_kick_off_;
 }
-inline ::protos::Bhv_BeforeKickOff* Action::mutable_bhv_before_kick_off() {
+inline ::protos::Bhv_BeforeKickOff* PlayerAction::mutable_bhv_before_kick_off() {
   ::protos::Bhv_BeforeKickOff* _msg = _internal_mutable_bhv_before_kick_off();
-  // @@protoc_insertion_point(field_mutable:protos.Action.bhv_before_kick_off)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.bhv_before_kick_off)
   return _msg;
 }
 
 // .protos.Bhv_BodyNeckToBall bhv_body_neck_to_ball = 19;
-inline bool Action::has_bhv_body_neck_to_ball() const {
+inline bool PlayerAction::has_bhv_body_neck_to_ball() const {
   return action_case() == kBhvBodyNeckToBall;
 }
-inline bool Action::_internal_has_bhv_body_neck_to_ball() const {
+inline bool PlayerAction::_internal_has_bhv_body_neck_to_ball() const {
   return action_case() == kBhvBodyNeckToBall;
 }
-inline void Action::set_has_bhv_body_neck_to_ball() {
+inline void PlayerAction::set_has_bhv_body_neck_to_ball() {
   _impl_._oneof_case_[0] = kBhvBodyNeckToBall;
 }
-inline void Action::clear_bhv_body_neck_to_ball() {
+inline void PlayerAction::clear_bhv_body_neck_to_ball() {
   if (action_case() == kBhvBodyNeckToBall) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.bhv_body_neck_to_ball_;
@@ -42048,8 +44471,8 @@ inline void Action::clear_bhv_body_neck_to_ball() {
     clear_has_action();
   }
 }
-inline ::protos::Bhv_BodyNeckToBall* Action::release_bhv_body_neck_to_ball() {
-  // @@protoc_insertion_point(field_release:protos.Action.bhv_body_neck_to_ball)
+inline ::protos::Bhv_BodyNeckToBall* PlayerAction::release_bhv_body_neck_to_ball() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.bhv_body_neck_to_ball)
   if (action_case() == kBhvBodyNeckToBall) {
     clear_has_action();
     ::protos::Bhv_BodyNeckToBall* temp = _impl_.action_.bhv_body_neck_to_ball_;
@@ -42062,17 +44485,17 @@ inline ::protos::Bhv_BodyNeckToBall* Action::release_bhv_body_neck_to_ball() {
     return nullptr;
   }
 }
-inline const ::protos::Bhv_BodyNeckToBall& Action::_internal_bhv_body_neck_to_ball() const {
+inline const ::protos::Bhv_BodyNeckToBall& PlayerAction::_internal_bhv_body_neck_to_ball() const {
   return action_case() == kBhvBodyNeckToBall
       ? *_impl_.action_.bhv_body_neck_to_ball_
       : reinterpret_cast<::protos::Bhv_BodyNeckToBall&>(::protos::_Bhv_BodyNeckToBall_default_instance_);
 }
-inline const ::protos::Bhv_BodyNeckToBall& Action::bhv_body_neck_to_ball() const {
-  // @@protoc_insertion_point(field_get:protos.Action.bhv_body_neck_to_ball)
+inline const ::protos::Bhv_BodyNeckToBall& PlayerAction::bhv_body_neck_to_ball() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.bhv_body_neck_to_ball)
   return _internal_bhv_body_neck_to_ball();
 }
-inline ::protos::Bhv_BodyNeckToBall* Action::unsafe_arena_release_bhv_body_neck_to_ball() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.bhv_body_neck_to_ball)
+inline ::protos::Bhv_BodyNeckToBall* PlayerAction::unsafe_arena_release_bhv_body_neck_to_ball() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.bhv_body_neck_to_ball)
   if (action_case() == kBhvBodyNeckToBall) {
     clear_has_action();
     ::protos::Bhv_BodyNeckToBall* temp = _impl_.action_.bhv_body_neck_to_ball_;
@@ -42082,15 +44505,15 @@ inline ::protos::Bhv_BodyNeckToBall* Action::unsafe_arena_release_bhv_body_neck_
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_bhv_body_neck_to_ball(::protos::Bhv_BodyNeckToBall* bhv_body_neck_to_ball) {
+inline void PlayerAction::unsafe_arena_set_allocated_bhv_body_neck_to_ball(::protos::Bhv_BodyNeckToBall* bhv_body_neck_to_ball) {
   clear_action();
   if (bhv_body_neck_to_ball) {
     set_has_bhv_body_neck_to_ball();
     _impl_.action_.bhv_body_neck_to_ball_ = bhv_body_neck_to_ball;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.bhv_body_neck_to_ball)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.bhv_body_neck_to_ball)
 }
-inline ::protos::Bhv_BodyNeckToBall* Action::_internal_mutable_bhv_body_neck_to_ball() {
+inline ::protos::Bhv_BodyNeckToBall* PlayerAction::_internal_mutable_bhv_body_neck_to_ball() {
   if (action_case() != kBhvBodyNeckToBall) {
     clear_action();
     set_has_bhv_body_neck_to_ball();
@@ -42098,23 +44521,23 @@ inline ::protos::Bhv_BodyNeckToBall* Action::_internal_mutable_bhv_body_neck_to_
   }
   return _impl_.action_.bhv_body_neck_to_ball_;
 }
-inline ::protos::Bhv_BodyNeckToBall* Action::mutable_bhv_body_neck_to_ball() {
+inline ::protos::Bhv_BodyNeckToBall* PlayerAction::mutable_bhv_body_neck_to_ball() {
   ::protos::Bhv_BodyNeckToBall* _msg = _internal_mutable_bhv_body_neck_to_ball();
-  // @@protoc_insertion_point(field_mutable:protos.Action.bhv_body_neck_to_ball)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.bhv_body_neck_to_ball)
   return _msg;
 }
 
 // .protos.Bhv_BodyNeckToPoint bhv_body_neck_to_point = 20;
-inline bool Action::has_bhv_body_neck_to_point() const {
+inline bool PlayerAction::has_bhv_body_neck_to_point() const {
   return action_case() == kBhvBodyNeckToPoint;
 }
-inline bool Action::_internal_has_bhv_body_neck_to_point() const {
+inline bool PlayerAction::_internal_has_bhv_body_neck_to_point() const {
   return action_case() == kBhvBodyNeckToPoint;
 }
-inline void Action::set_has_bhv_body_neck_to_point() {
+inline void PlayerAction::set_has_bhv_body_neck_to_point() {
   _impl_._oneof_case_[0] = kBhvBodyNeckToPoint;
 }
-inline void Action::clear_bhv_body_neck_to_point() {
+inline void PlayerAction::clear_bhv_body_neck_to_point() {
   if (action_case() == kBhvBodyNeckToPoint) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.bhv_body_neck_to_point_;
@@ -42122,8 +44545,8 @@ inline void Action::clear_bhv_body_neck_to_point() {
     clear_has_action();
   }
 }
-inline ::protos::Bhv_BodyNeckToPoint* Action::release_bhv_body_neck_to_point() {
-  // @@protoc_insertion_point(field_release:protos.Action.bhv_body_neck_to_point)
+inline ::protos::Bhv_BodyNeckToPoint* PlayerAction::release_bhv_body_neck_to_point() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.bhv_body_neck_to_point)
   if (action_case() == kBhvBodyNeckToPoint) {
     clear_has_action();
     ::protos::Bhv_BodyNeckToPoint* temp = _impl_.action_.bhv_body_neck_to_point_;
@@ -42136,17 +44559,17 @@ inline ::protos::Bhv_BodyNeckToPoint* Action::release_bhv_body_neck_to_point() {
     return nullptr;
   }
 }
-inline const ::protos::Bhv_BodyNeckToPoint& Action::_internal_bhv_body_neck_to_point() const {
+inline const ::protos::Bhv_BodyNeckToPoint& PlayerAction::_internal_bhv_body_neck_to_point() const {
   return action_case() == kBhvBodyNeckToPoint
       ? *_impl_.action_.bhv_body_neck_to_point_
       : reinterpret_cast<::protos::Bhv_BodyNeckToPoint&>(::protos::_Bhv_BodyNeckToPoint_default_instance_);
 }
-inline const ::protos::Bhv_BodyNeckToPoint& Action::bhv_body_neck_to_point() const {
-  // @@protoc_insertion_point(field_get:protos.Action.bhv_body_neck_to_point)
+inline const ::protos::Bhv_BodyNeckToPoint& PlayerAction::bhv_body_neck_to_point() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.bhv_body_neck_to_point)
   return _internal_bhv_body_neck_to_point();
 }
-inline ::protos::Bhv_BodyNeckToPoint* Action::unsafe_arena_release_bhv_body_neck_to_point() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.bhv_body_neck_to_point)
+inline ::protos::Bhv_BodyNeckToPoint* PlayerAction::unsafe_arena_release_bhv_body_neck_to_point() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.bhv_body_neck_to_point)
   if (action_case() == kBhvBodyNeckToPoint) {
     clear_has_action();
     ::protos::Bhv_BodyNeckToPoint* temp = _impl_.action_.bhv_body_neck_to_point_;
@@ -42156,15 +44579,15 @@ inline ::protos::Bhv_BodyNeckToPoint* Action::unsafe_arena_release_bhv_body_neck
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_bhv_body_neck_to_point(::protos::Bhv_BodyNeckToPoint* bhv_body_neck_to_point) {
+inline void PlayerAction::unsafe_arena_set_allocated_bhv_body_neck_to_point(::protos::Bhv_BodyNeckToPoint* bhv_body_neck_to_point) {
   clear_action();
   if (bhv_body_neck_to_point) {
     set_has_bhv_body_neck_to_point();
     _impl_.action_.bhv_body_neck_to_point_ = bhv_body_neck_to_point;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.bhv_body_neck_to_point)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.bhv_body_neck_to_point)
 }
-inline ::protos::Bhv_BodyNeckToPoint* Action::_internal_mutable_bhv_body_neck_to_point() {
+inline ::protos::Bhv_BodyNeckToPoint* PlayerAction::_internal_mutable_bhv_body_neck_to_point() {
   if (action_case() != kBhvBodyNeckToPoint) {
     clear_action();
     set_has_bhv_body_neck_to_point();
@@ -42172,23 +44595,23 @@ inline ::protos::Bhv_BodyNeckToPoint* Action::_internal_mutable_bhv_body_neck_to
   }
   return _impl_.action_.bhv_body_neck_to_point_;
 }
-inline ::protos::Bhv_BodyNeckToPoint* Action::mutable_bhv_body_neck_to_point() {
+inline ::protos::Bhv_BodyNeckToPoint* PlayerAction::mutable_bhv_body_neck_to_point() {
   ::protos::Bhv_BodyNeckToPoint* _msg = _internal_mutable_bhv_body_neck_to_point();
-  // @@protoc_insertion_point(field_mutable:protos.Action.bhv_body_neck_to_point)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.bhv_body_neck_to_point)
   return _msg;
 }
 
 // .protos.Bhv_Emergency bhv_emergency = 21;
-inline bool Action::has_bhv_emergency() const {
+inline bool PlayerAction::has_bhv_emergency() const {
   return action_case() == kBhvEmergency;
 }
-inline bool Action::_internal_has_bhv_emergency() const {
+inline bool PlayerAction::_internal_has_bhv_emergency() const {
   return action_case() == kBhvEmergency;
 }
-inline void Action::set_has_bhv_emergency() {
+inline void PlayerAction::set_has_bhv_emergency() {
   _impl_._oneof_case_[0] = kBhvEmergency;
 }
-inline void Action::clear_bhv_emergency() {
+inline void PlayerAction::clear_bhv_emergency() {
   if (action_case() == kBhvEmergency) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.bhv_emergency_;
@@ -42196,8 +44619,8 @@ inline void Action::clear_bhv_emergency() {
     clear_has_action();
   }
 }
-inline ::protos::Bhv_Emergency* Action::release_bhv_emergency() {
-  // @@protoc_insertion_point(field_release:protos.Action.bhv_emergency)
+inline ::protos::Bhv_Emergency* PlayerAction::release_bhv_emergency() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.bhv_emergency)
   if (action_case() == kBhvEmergency) {
     clear_has_action();
     ::protos::Bhv_Emergency* temp = _impl_.action_.bhv_emergency_;
@@ -42210,17 +44633,17 @@ inline ::protos::Bhv_Emergency* Action::release_bhv_emergency() {
     return nullptr;
   }
 }
-inline const ::protos::Bhv_Emergency& Action::_internal_bhv_emergency() const {
+inline const ::protos::Bhv_Emergency& PlayerAction::_internal_bhv_emergency() const {
   return action_case() == kBhvEmergency
       ? *_impl_.action_.bhv_emergency_
       : reinterpret_cast<::protos::Bhv_Emergency&>(::protos::_Bhv_Emergency_default_instance_);
 }
-inline const ::protos::Bhv_Emergency& Action::bhv_emergency() const {
-  // @@protoc_insertion_point(field_get:protos.Action.bhv_emergency)
+inline const ::protos::Bhv_Emergency& PlayerAction::bhv_emergency() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.bhv_emergency)
   return _internal_bhv_emergency();
 }
-inline ::protos::Bhv_Emergency* Action::unsafe_arena_release_bhv_emergency() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.bhv_emergency)
+inline ::protos::Bhv_Emergency* PlayerAction::unsafe_arena_release_bhv_emergency() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.bhv_emergency)
   if (action_case() == kBhvEmergency) {
     clear_has_action();
     ::protos::Bhv_Emergency* temp = _impl_.action_.bhv_emergency_;
@@ -42230,15 +44653,15 @@ inline ::protos::Bhv_Emergency* Action::unsafe_arena_release_bhv_emergency() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_bhv_emergency(::protos::Bhv_Emergency* bhv_emergency) {
+inline void PlayerAction::unsafe_arena_set_allocated_bhv_emergency(::protos::Bhv_Emergency* bhv_emergency) {
   clear_action();
   if (bhv_emergency) {
     set_has_bhv_emergency();
     _impl_.action_.bhv_emergency_ = bhv_emergency;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.bhv_emergency)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.bhv_emergency)
 }
-inline ::protos::Bhv_Emergency* Action::_internal_mutable_bhv_emergency() {
+inline ::protos::Bhv_Emergency* PlayerAction::_internal_mutable_bhv_emergency() {
   if (action_case() != kBhvEmergency) {
     clear_action();
     set_has_bhv_emergency();
@@ -42246,23 +44669,23 @@ inline ::protos::Bhv_Emergency* Action::_internal_mutable_bhv_emergency() {
   }
   return _impl_.action_.bhv_emergency_;
 }
-inline ::protos::Bhv_Emergency* Action::mutable_bhv_emergency() {
+inline ::protos::Bhv_Emergency* PlayerAction::mutable_bhv_emergency() {
   ::protos::Bhv_Emergency* _msg = _internal_mutable_bhv_emergency();
-  // @@protoc_insertion_point(field_mutable:protos.Action.bhv_emergency)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.bhv_emergency)
   return _msg;
 }
 
 // .protos.Bhv_GoToPointLookBall bhv_go_to_point_look_ball = 22;
-inline bool Action::has_bhv_go_to_point_look_ball() const {
+inline bool PlayerAction::has_bhv_go_to_point_look_ball() const {
   return action_case() == kBhvGoToPointLookBall;
 }
-inline bool Action::_internal_has_bhv_go_to_point_look_ball() const {
+inline bool PlayerAction::_internal_has_bhv_go_to_point_look_ball() const {
   return action_case() == kBhvGoToPointLookBall;
 }
-inline void Action::set_has_bhv_go_to_point_look_ball() {
+inline void PlayerAction::set_has_bhv_go_to_point_look_ball() {
   _impl_._oneof_case_[0] = kBhvGoToPointLookBall;
 }
-inline void Action::clear_bhv_go_to_point_look_ball() {
+inline void PlayerAction::clear_bhv_go_to_point_look_ball() {
   if (action_case() == kBhvGoToPointLookBall) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.bhv_go_to_point_look_ball_;
@@ -42270,8 +44693,8 @@ inline void Action::clear_bhv_go_to_point_look_ball() {
     clear_has_action();
   }
 }
-inline ::protos::Bhv_GoToPointLookBall* Action::release_bhv_go_to_point_look_ball() {
-  // @@protoc_insertion_point(field_release:protos.Action.bhv_go_to_point_look_ball)
+inline ::protos::Bhv_GoToPointLookBall* PlayerAction::release_bhv_go_to_point_look_ball() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.bhv_go_to_point_look_ball)
   if (action_case() == kBhvGoToPointLookBall) {
     clear_has_action();
     ::protos::Bhv_GoToPointLookBall* temp = _impl_.action_.bhv_go_to_point_look_ball_;
@@ -42284,17 +44707,17 @@ inline ::protos::Bhv_GoToPointLookBall* Action::release_bhv_go_to_point_look_bal
     return nullptr;
   }
 }
-inline const ::protos::Bhv_GoToPointLookBall& Action::_internal_bhv_go_to_point_look_ball() const {
+inline const ::protos::Bhv_GoToPointLookBall& PlayerAction::_internal_bhv_go_to_point_look_ball() const {
   return action_case() == kBhvGoToPointLookBall
       ? *_impl_.action_.bhv_go_to_point_look_ball_
       : reinterpret_cast<::protos::Bhv_GoToPointLookBall&>(::protos::_Bhv_GoToPointLookBall_default_instance_);
 }
-inline const ::protos::Bhv_GoToPointLookBall& Action::bhv_go_to_point_look_ball() const {
-  // @@protoc_insertion_point(field_get:protos.Action.bhv_go_to_point_look_ball)
+inline const ::protos::Bhv_GoToPointLookBall& PlayerAction::bhv_go_to_point_look_ball() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.bhv_go_to_point_look_ball)
   return _internal_bhv_go_to_point_look_ball();
 }
-inline ::protos::Bhv_GoToPointLookBall* Action::unsafe_arena_release_bhv_go_to_point_look_ball() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.bhv_go_to_point_look_ball)
+inline ::protos::Bhv_GoToPointLookBall* PlayerAction::unsafe_arena_release_bhv_go_to_point_look_ball() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.bhv_go_to_point_look_ball)
   if (action_case() == kBhvGoToPointLookBall) {
     clear_has_action();
     ::protos::Bhv_GoToPointLookBall* temp = _impl_.action_.bhv_go_to_point_look_ball_;
@@ -42304,15 +44727,15 @@ inline ::protos::Bhv_GoToPointLookBall* Action::unsafe_arena_release_bhv_go_to_p
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_bhv_go_to_point_look_ball(::protos::Bhv_GoToPointLookBall* bhv_go_to_point_look_ball) {
+inline void PlayerAction::unsafe_arena_set_allocated_bhv_go_to_point_look_ball(::protos::Bhv_GoToPointLookBall* bhv_go_to_point_look_ball) {
   clear_action();
   if (bhv_go_to_point_look_ball) {
     set_has_bhv_go_to_point_look_ball();
     _impl_.action_.bhv_go_to_point_look_ball_ = bhv_go_to_point_look_ball;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.bhv_go_to_point_look_ball)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.bhv_go_to_point_look_ball)
 }
-inline ::protos::Bhv_GoToPointLookBall* Action::_internal_mutable_bhv_go_to_point_look_ball() {
+inline ::protos::Bhv_GoToPointLookBall* PlayerAction::_internal_mutable_bhv_go_to_point_look_ball() {
   if (action_case() != kBhvGoToPointLookBall) {
     clear_action();
     set_has_bhv_go_to_point_look_ball();
@@ -42320,23 +44743,23 @@ inline ::protos::Bhv_GoToPointLookBall* Action::_internal_mutable_bhv_go_to_poin
   }
   return _impl_.action_.bhv_go_to_point_look_ball_;
 }
-inline ::protos::Bhv_GoToPointLookBall* Action::mutable_bhv_go_to_point_look_ball() {
+inline ::protos::Bhv_GoToPointLookBall* PlayerAction::mutable_bhv_go_to_point_look_ball() {
   ::protos::Bhv_GoToPointLookBall* _msg = _internal_mutable_bhv_go_to_point_look_ball();
-  // @@protoc_insertion_point(field_mutable:protos.Action.bhv_go_to_point_look_ball)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.bhv_go_to_point_look_ball)
   return _msg;
 }
 
 // .protos.Bhv_NeckBodyToBall bhv_neck_body_to_ball = 23;
-inline bool Action::has_bhv_neck_body_to_ball() const {
+inline bool PlayerAction::has_bhv_neck_body_to_ball() const {
   return action_case() == kBhvNeckBodyToBall;
 }
-inline bool Action::_internal_has_bhv_neck_body_to_ball() const {
+inline bool PlayerAction::_internal_has_bhv_neck_body_to_ball() const {
   return action_case() == kBhvNeckBodyToBall;
 }
-inline void Action::set_has_bhv_neck_body_to_ball() {
+inline void PlayerAction::set_has_bhv_neck_body_to_ball() {
   _impl_._oneof_case_[0] = kBhvNeckBodyToBall;
 }
-inline void Action::clear_bhv_neck_body_to_ball() {
+inline void PlayerAction::clear_bhv_neck_body_to_ball() {
   if (action_case() == kBhvNeckBodyToBall) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.bhv_neck_body_to_ball_;
@@ -42344,8 +44767,8 @@ inline void Action::clear_bhv_neck_body_to_ball() {
     clear_has_action();
   }
 }
-inline ::protos::Bhv_NeckBodyToBall* Action::release_bhv_neck_body_to_ball() {
-  // @@protoc_insertion_point(field_release:protos.Action.bhv_neck_body_to_ball)
+inline ::protos::Bhv_NeckBodyToBall* PlayerAction::release_bhv_neck_body_to_ball() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.bhv_neck_body_to_ball)
   if (action_case() == kBhvNeckBodyToBall) {
     clear_has_action();
     ::protos::Bhv_NeckBodyToBall* temp = _impl_.action_.bhv_neck_body_to_ball_;
@@ -42358,17 +44781,17 @@ inline ::protos::Bhv_NeckBodyToBall* Action::release_bhv_neck_body_to_ball() {
     return nullptr;
   }
 }
-inline const ::protos::Bhv_NeckBodyToBall& Action::_internal_bhv_neck_body_to_ball() const {
+inline const ::protos::Bhv_NeckBodyToBall& PlayerAction::_internal_bhv_neck_body_to_ball() const {
   return action_case() == kBhvNeckBodyToBall
       ? *_impl_.action_.bhv_neck_body_to_ball_
       : reinterpret_cast<::protos::Bhv_NeckBodyToBall&>(::protos::_Bhv_NeckBodyToBall_default_instance_);
 }
-inline const ::protos::Bhv_NeckBodyToBall& Action::bhv_neck_body_to_ball() const {
-  // @@protoc_insertion_point(field_get:protos.Action.bhv_neck_body_to_ball)
+inline const ::protos::Bhv_NeckBodyToBall& PlayerAction::bhv_neck_body_to_ball() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.bhv_neck_body_to_ball)
   return _internal_bhv_neck_body_to_ball();
 }
-inline ::protos::Bhv_NeckBodyToBall* Action::unsafe_arena_release_bhv_neck_body_to_ball() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.bhv_neck_body_to_ball)
+inline ::protos::Bhv_NeckBodyToBall* PlayerAction::unsafe_arena_release_bhv_neck_body_to_ball() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.bhv_neck_body_to_ball)
   if (action_case() == kBhvNeckBodyToBall) {
     clear_has_action();
     ::protos::Bhv_NeckBodyToBall* temp = _impl_.action_.bhv_neck_body_to_ball_;
@@ -42378,15 +44801,15 @@ inline ::protos::Bhv_NeckBodyToBall* Action::unsafe_arena_release_bhv_neck_body_
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_bhv_neck_body_to_ball(::protos::Bhv_NeckBodyToBall* bhv_neck_body_to_ball) {
+inline void PlayerAction::unsafe_arena_set_allocated_bhv_neck_body_to_ball(::protos::Bhv_NeckBodyToBall* bhv_neck_body_to_ball) {
   clear_action();
   if (bhv_neck_body_to_ball) {
     set_has_bhv_neck_body_to_ball();
     _impl_.action_.bhv_neck_body_to_ball_ = bhv_neck_body_to_ball;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.bhv_neck_body_to_ball)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.bhv_neck_body_to_ball)
 }
-inline ::protos::Bhv_NeckBodyToBall* Action::_internal_mutable_bhv_neck_body_to_ball() {
+inline ::protos::Bhv_NeckBodyToBall* PlayerAction::_internal_mutable_bhv_neck_body_to_ball() {
   if (action_case() != kBhvNeckBodyToBall) {
     clear_action();
     set_has_bhv_neck_body_to_ball();
@@ -42394,23 +44817,23 @@ inline ::protos::Bhv_NeckBodyToBall* Action::_internal_mutable_bhv_neck_body_to_
   }
   return _impl_.action_.bhv_neck_body_to_ball_;
 }
-inline ::protos::Bhv_NeckBodyToBall* Action::mutable_bhv_neck_body_to_ball() {
+inline ::protos::Bhv_NeckBodyToBall* PlayerAction::mutable_bhv_neck_body_to_ball() {
   ::protos::Bhv_NeckBodyToBall* _msg = _internal_mutable_bhv_neck_body_to_ball();
-  // @@protoc_insertion_point(field_mutable:protos.Action.bhv_neck_body_to_ball)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.bhv_neck_body_to_ball)
   return _msg;
 }
 
 // .protos.Bhv_NeckBodyToPoint bhv_neck_body_to_point = 24;
-inline bool Action::has_bhv_neck_body_to_point() const {
+inline bool PlayerAction::has_bhv_neck_body_to_point() const {
   return action_case() == kBhvNeckBodyToPoint;
 }
-inline bool Action::_internal_has_bhv_neck_body_to_point() const {
+inline bool PlayerAction::_internal_has_bhv_neck_body_to_point() const {
   return action_case() == kBhvNeckBodyToPoint;
 }
-inline void Action::set_has_bhv_neck_body_to_point() {
+inline void PlayerAction::set_has_bhv_neck_body_to_point() {
   _impl_._oneof_case_[0] = kBhvNeckBodyToPoint;
 }
-inline void Action::clear_bhv_neck_body_to_point() {
+inline void PlayerAction::clear_bhv_neck_body_to_point() {
   if (action_case() == kBhvNeckBodyToPoint) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.bhv_neck_body_to_point_;
@@ -42418,8 +44841,8 @@ inline void Action::clear_bhv_neck_body_to_point() {
     clear_has_action();
   }
 }
-inline ::protos::Bhv_NeckBodyToPoint* Action::release_bhv_neck_body_to_point() {
-  // @@protoc_insertion_point(field_release:protos.Action.bhv_neck_body_to_point)
+inline ::protos::Bhv_NeckBodyToPoint* PlayerAction::release_bhv_neck_body_to_point() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.bhv_neck_body_to_point)
   if (action_case() == kBhvNeckBodyToPoint) {
     clear_has_action();
     ::protos::Bhv_NeckBodyToPoint* temp = _impl_.action_.bhv_neck_body_to_point_;
@@ -42432,17 +44855,17 @@ inline ::protos::Bhv_NeckBodyToPoint* Action::release_bhv_neck_body_to_point() {
     return nullptr;
   }
 }
-inline const ::protos::Bhv_NeckBodyToPoint& Action::_internal_bhv_neck_body_to_point() const {
+inline const ::protos::Bhv_NeckBodyToPoint& PlayerAction::_internal_bhv_neck_body_to_point() const {
   return action_case() == kBhvNeckBodyToPoint
       ? *_impl_.action_.bhv_neck_body_to_point_
       : reinterpret_cast<::protos::Bhv_NeckBodyToPoint&>(::protos::_Bhv_NeckBodyToPoint_default_instance_);
 }
-inline const ::protos::Bhv_NeckBodyToPoint& Action::bhv_neck_body_to_point() const {
-  // @@protoc_insertion_point(field_get:protos.Action.bhv_neck_body_to_point)
+inline const ::protos::Bhv_NeckBodyToPoint& PlayerAction::bhv_neck_body_to_point() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.bhv_neck_body_to_point)
   return _internal_bhv_neck_body_to_point();
 }
-inline ::protos::Bhv_NeckBodyToPoint* Action::unsafe_arena_release_bhv_neck_body_to_point() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.bhv_neck_body_to_point)
+inline ::protos::Bhv_NeckBodyToPoint* PlayerAction::unsafe_arena_release_bhv_neck_body_to_point() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.bhv_neck_body_to_point)
   if (action_case() == kBhvNeckBodyToPoint) {
     clear_has_action();
     ::protos::Bhv_NeckBodyToPoint* temp = _impl_.action_.bhv_neck_body_to_point_;
@@ -42452,15 +44875,15 @@ inline ::protos::Bhv_NeckBodyToPoint* Action::unsafe_arena_release_bhv_neck_body
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_bhv_neck_body_to_point(::protos::Bhv_NeckBodyToPoint* bhv_neck_body_to_point) {
+inline void PlayerAction::unsafe_arena_set_allocated_bhv_neck_body_to_point(::protos::Bhv_NeckBodyToPoint* bhv_neck_body_to_point) {
   clear_action();
   if (bhv_neck_body_to_point) {
     set_has_bhv_neck_body_to_point();
     _impl_.action_.bhv_neck_body_to_point_ = bhv_neck_body_to_point;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.bhv_neck_body_to_point)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.bhv_neck_body_to_point)
 }
-inline ::protos::Bhv_NeckBodyToPoint* Action::_internal_mutable_bhv_neck_body_to_point() {
+inline ::protos::Bhv_NeckBodyToPoint* PlayerAction::_internal_mutable_bhv_neck_body_to_point() {
   if (action_case() != kBhvNeckBodyToPoint) {
     clear_action();
     set_has_bhv_neck_body_to_point();
@@ -42468,23 +44891,23 @@ inline ::protos::Bhv_NeckBodyToPoint* Action::_internal_mutable_bhv_neck_body_to
   }
   return _impl_.action_.bhv_neck_body_to_point_;
 }
-inline ::protos::Bhv_NeckBodyToPoint* Action::mutable_bhv_neck_body_to_point() {
+inline ::protos::Bhv_NeckBodyToPoint* PlayerAction::mutable_bhv_neck_body_to_point() {
   ::protos::Bhv_NeckBodyToPoint* _msg = _internal_mutable_bhv_neck_body_to_point();
-  // @@protoc_insertion_point(field_mutable:protos.Action.bhv_neck_body_to_point)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.bhv_neck_body_to_point)
   return _msg;
 }
 
 // .protos.Bhv_ScanField bhv_scan_field = 25;
-inline bool Action::has_bhv_scan_field() const {
+inline bool PlayerAction::has_bhv_scan_field() const {
   return action_case() == kBhvScanField;
 }
-inline bool Action::_internal_has_bhv_scan_field() const {
+inline bool PlayerAction::_internal_has_bhv_scan_field() const {
   return action_case() == kBhvScanField;
 }
-inline void Action::set_has_bhv_scan_field() {
+inline void PlayerAction::set_has_bhv_scan_field() {
   _impl_._oneof_case_[0] = kBhvScanField;
 }
-inline void Action::clear_bhv_scan_field() {
+inline void PlayerAction::clear_bhv_scan_field() {
   if (action_case() == kBhvScanField) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.bhv_scan_field_;
@@ -42492,8 +44915,8 @@ inline void Action::clear_bhv_scan_field() {
     clear_has_action();
   }
 }
-inline ::protos::Bhv_ScanField* Action::release_bhv_scan_field() {
-  // @@protoc_insertion_point(field_release:protos.Action.bhv_scan_field)
+inline ::protos::Bhv_ScanField* PlayerAction::release_bhv_scan_field() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.bhv_scan_field)
   if (action_case() == kBhvScanField) {
     clear_has_action();
     ::protos::Bhv_ScanField* temp = _impl_.action_.bhv_scan_field_;
@@ -42506,17 +44929,17 @@ inline ::protos::Bhv_ScanField* Action::release_bhv_scan_field() {
     return nullptr;
   }
 }
-inline const ::protos::Bhv_ScanField& Action::_internal_bhv_scan_field() const {
+inline const ::protos::Bhv_ScanField& PlayerAction::_internal_bhv_scan_field() const {
   return action_case() == kBhvScanField
       ? *_impl_.action_.bhv_scan_field_
       : reinterpret_cast<::protos::Bhv_ScanField&>(::protos::_Bhv_ScanField_default_instance_);
 }
-inline const ::protos::Bhv_ScanField& Action::bhv_scan_field() const {
-  // @@protoc_insertion_point(field_get:protos.Action.bhv_scan_field)
+inline const ::protos::Bhv_ScanField& PlayerAction::bhv_scan_field() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.bhv_scan_field)
   return _internal_bhv_scan_field();
 }
-inline ::protos::Bhv_ScanField* Action::unsafe_arena_release_bhv_scan_field() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.bhv_scan_field)
+inline ::protos::Bhv_ScanField* PlayerAction::unsafe_arena_release_bhv_scan_field() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.bhv_scan_field)
   if (action_case() == kBhvScanField) {
     clear_has_action();
     ::protos::Bhv_ScanField* temp = _impl_.action_.bhv_scan_field_;
@@ -42526,15 +44949,15 @@ inline ::protos::Bhv_ScanField* Action::unsafe_arena_release_bhv_scan_field() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_bhv_scan_field(::protos::Bhv_ScanField* bhv_scan_field) {
+inline void PlayerAction::unsafe_arena_set_allocated_bhv_scan_field(::protos::Bhv_ScanField* bhv_scan_field) {
   clear_action();
   if (bhv_scan_field) {
     set_has_bhv_scan_field();
     _impl_.action_.bhv_scan_field_ = bhv_scan_field;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.bhv_scan_field)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.bhv_scan_field)
 }
-inline ::protos::Bhv_ScanField* Action::_internal_mutable_bhv_scan_field() {
+inline ::protos::Bhv_ScanField* PlayerAction::_internal_mutable_bhv_scan_field() {
   if (action_case() != kBhvScanField) {
     clear_action();
     set_has_bhv_scan_field();
@@ -42542,23 +44965,23 @@ inline ::protos::Bhv_ScanField* Action::_internal_mutable_bhv_scan_field() {
   }
   return _impl_.action_.bhv_scan_field_;
 }
-inline ::protos::Bhv_ScanField* Action::mutable_bhv_scan_field() {
+inline ::protos::Bhv_ScanField* PlayerAction::mutable_bhv_scan_field() {
   ::protos::Bhv_ScanField* _msg = _internal_mutable_bhv_scan_field();
-  // @@protoc_insertion_point(field_mutable:protos.Action.bhv_scan_field)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.bhv_scan_field)
   return _msg;
 }
 
 // .protos.Body_AdvanceBall body_advance_ball = 26;
-inline bool Action::has_body_advance_ball() const {
+inline bool PlayerAction::has_body_advance_ball() const {
   return action_case() == kBodyAdvanceBall;
 }
-inline bool Action::_internal_has_body_advance_ball() const {
+inline bool PlayerAction::_internal_has_body_advance_ball() const {
   return action_case() == kBodyAdvanceBall;
 }
-inline void Action::set_has_body_advance_ball() {
+inline void PlayerAction::set_has_body_advance_ball() {
   _impl_._oneof_case_[0] = kBodyAdvanceBall;
 }
-inline void Action::clear_body_advance_ball() {
+inline void PlayerAction::clear_body_advance_ball() {
   if (action_case() == kBodyAdvanceBall) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_advance_ball_;
@@ -42566,8 +44989,8 @@ inline void Action::clear_body_advance_ball() {
     clear_has_action();
   }
 }
-inline ::protos::Body_AdvanceBall* Action::release_body_advance_ball() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_advance_ball)
+inline ::protos::Body_AdvanceBall* PlayerAction::release_body_advance_ball() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_advance_ball)
   if (action_case() == kBodyAdvanceBall) {
     clear_has_action();
     ::protos::Body_AdvanceBall* temp = _impl_.action_.body_advance_ball_;
@@ -42580,17 +45003,17 @@ inline ::protos::Body_AdvanceBall* Action::release_body_advance_ball() {
     return nullptr;
   }
 }
-inline const ::protos::Body_AdvanceBall& Action::_internal_body_advance_ball() const {
+inline const ::protos::Body_AdvanceBall& PlayerAction::_internal_body_advance_ball() const {
   return action_case() == kBodyAdvanceBall
       ? *_impl_.action_.body_advance_ball_
       : reinterpret_cast<::protos::Body_AdvanceBall&>(::protos::_Body_AdvanceBall_default_instance_);
 }
-inline const ::protos::Body_AdvanceBall& Action::body_advance_ball() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_advance_ball)
+inline const ::protos::Body_AdvanceBall& PlayerAction::body_advance_ball() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_advance_ball)
   return _internal_body_advance_ball();
 }
-inline ::protos::Body_AdvanceBall* Action::unsafe_arena_release_body_advance_ball() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_advance_ball)
+inline ::protos::Body_AdvanceBall* PlayerAction::unsafe_arena_release_body_advance_ball() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_advance_ball)
   if (action_case() == kBodyAdvanceBall) {
     clear_has_action();
     ::protos::Body_AdvanceBall* temp = _impl_.action_.body_advance_ball_;
@@ -42600,15 +45023,15 @@ inline ::protos::Body_AdvanceBall* Action::unsafe_arena_release_body_advance_bal
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_advance_ball(::protos::Body_AdvanceBall* body_advance_ball) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_advance_ball(::protos::Body_AdvanceBall* body_advance_ball) {
   clear_action();
   if (body_advance_ball) {
     set_has_body_advance_ball();
     _impl_.action_.body_advance_ball_ = body_advance_ball;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_advance_ball)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_advance_ball)
 }
-inline ::protos::Body_AdvanceBall* Action::_internal_mutable_body_advance_ball() {
+inline ::protos::Body_AdvanceBall* PlayerAction::_internal_mutable_body_advance_ball() {
   if (action_case() != kBodyAdvanceBall) {
     clear_action();
     set_has_body_advance_ball();
@@ -42616,23 +45039,23 @@ inline ::protos::Body_AdvanceBall* Action::_internal_mutable_body_advance_ball()
   }
   return _impl_.action_.body_advance_ball_;
 }
-inline ::protos::Body_AdvanceBall* Action::mutable_body_advance_ball() {
+inline ::protos::Body_AdvanceBall* PlayerAction::mutable_body_advance_ball() {
   ::protos::Body_AdvanceBall* _msg = _internal_mutable_body_advance_ball();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_advance_ball)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_advance_ball)
   return _msg;
 }
 
 // .protos.Body_ClearBall body_clear_ball = 27;
-inline bool Action::has_body_clear_ball() const {
+inline bool PlayerAction::has_body_clear_ball() const {
   return action_case() == kBodyClearBall;
 }
-inline bool Action::_internal_has_body_clear_ball() const {
+inline bool PlayerAction::_internal_has_body_clear_ball() const {
   return action_case() == kBodyClearBall;
 }
-inline void Action::set_has_body_clear_ball() {
+inline void PlayerAction::set_has_body_clear_ball() {
   _impl_._oneof_case_[0] = kBodyClearBall;
 }
-inline void Action::clear_body_clear_ball() {
+inline void PlayerAction::clear_body_clear_ball() {
   if (action_case() == kBodyClearBall) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_clear_ball_;
@@ -42640,8 +45063,8 @@ inline void Action::clear_body_clear_ball() {
     clear_has_action();
   }
 }
-inline ::protos::Body_ClearBall* Action::release_body_clear_ball() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_clear_ball)
+inline ::protos::Body_ClearBall* PlayerAction::release_body_clear_ball() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_clear_ball)
   if (action_case() == kBodyClearBall) {
     clear_has_action();
     ::protos::Body_ClearBall* temp = _impl_.action_.body_clear_ball_;
@@ -42654,17 +45077,17 @@ inline ::protos::Body_ClearBall* Action::release_body_clear_ball() {
     return nullptr;
   }
 }
-inline const ::protos::Body_ClearBall& Action::_internal_body_clear_ball() const {
+inline const ::protos::Body_ClearBall& PlayerAction::_internal_body_clear_ball() const {
   return action_case() == kBodyClearBall
       ? *_impl_.action_.body_clear_ball_
       : reinterpret_cast<::protos::Body_ClearBall&>(::protos::_Body_ClearBall_default_instance_);
 }
-inline const ::protos::Body_ClearBall& Action::body_clear_ball() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_clear_ball)
+inline const ::protos::Body_ClearBall& PlayerAction::body_clear_ball() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_clear_ball)
   return _internal_body_clear_ball();
 }
-inline ::protos::Body_ClearBall* Action::unsafe_arena_release_body_clear_ball() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_clear_ball)
+inline ::protos::Body_ClearBall* PlayerAction::unsafe_arena_release_body_clear_ball() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_clear_ball)
   if (action_case() == kBodyClearBall) {
     clear_has_action();
     ::protos::Body_ClearBall* temp = _impl_.action_.body_clear_ball_;
@@ -42674,15 +45097,15 @@ inline ::protos::Body_ClearBall* Action::unsafe_arena_release_body_clear_ball() 
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_clear_ball(::protos::Body_ClearBall* body_clear_ball) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_clear_ball(::protos::Body_ClearBall* body_clear_ball) {
   clear_action();
   if (body_clear_ball) {
     set_has_body_clear_ball();
     _impl_.action_.body_clear_ball_ = body_clear_ball;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_clear_ball)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_clear_ball)
 }
-inline ::protos::Body_ClearBall* Action::_internal_mutable_body_clear_ball() {
+inline ::protos::Body_ClearBall* PlayerAction::_internal_mutable_body_clear_ball() {
   if (action_case() != kBodyClearBall) {
     clear_action();
     set_has_body_clear_ball();
@@ -42690,23 +45113,23 @@ inline ::protos::Body_ClearBall* Action::_internal_mutable_body_clear_ball() {
   }
   return _impl_.action_.body_clear_ball_;
 }
-inline ::protos::Body_ClearBall* Action::mutable_body_clear_ball() {
+inline ::protos::Body_ClearBall* PlayerAction::mutable_body_clear_ball() {
   ::protos::Body_ClearBall* _msg = _internal_mutable_body_clear_ball();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_clear_ball)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_clear_ball)
   return _msg;
 }
 
 // .protos.Body_Dribble body_dribble = 28;
-inline bool Action::has_body_dribble() const {
+inline bool PlayerAction::has_body_dribble() const {
   return action_case() == kBodyDribble;
 }
-inline bool Action::_internal_has_body_dribble() const {
+inline bool PlayerAction::_internal_has_body_dribble() const {
   return action_case() == kBodyDribble;
 }
-inline void Action::set_has_body_dribble() {
+inline void PlayerAction::set_has_body_dribble() {
   _impl_._oneof_case_[0] = kBodyDribble;
 }
-inline void Action::clear_body_dribble() {
+inline void PlayerAction::clear_body_dribble() {
   if (action_case() == kBodyDribble) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_dribble_;
@@ -42714,8 +45137,8 @@ inline void Action::clear_body_dribble() {
     clear_has_action();
   }
 }
-inline ::protos::Body_Dribble* Action::release_body_dribble() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_dribble)
+inline ::protos::Body_Dribble* PlayerAction::release_body_dribble() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_dribble)
   if (action_case() == kBodyDribble) {
     clear_has_action();
     ::protos::Body_Dribble* temp = _impl_.action_.body_dribble_;
@@ -42728,17 +45151,17 @@ inline ::protos::Body_Dribble* Action::release_body_dribble() {
     return nullptr;
   }
 }
-inline const ::protos::Body_Dribble& Action::_internal_body_dribble() const {
+inline const ::protos::Body_Dribble& PlayerAction::_internal_body_dribble() const {
   return action_case() == kBodyDribble
       ? *_impl_.action_.body_dribble_
       : reinterpret_cast<::protos::Body_Dribble&>(::protos::_Body_Dribble_default_instance_);
 }
-inline const ::protos::Body_Dribble& Action::body_dribble() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_dribble)
+inline const ::protos::Body_Dribble& PlayerAction::body_dribble() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_dribble)
   return _internal_body_dribble();
 }
-inline ::protos::Body_Dribble* Action::unsafe_arena_release_body_dribble() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_dribble)
+inline ::protos::Body_Dribble* PlayerAction::unsafe_arena_release_body_dribble() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_dribble)
   if (action_case() == kBodyDribble) {
     clear_has_action();
     ::protos::Body_Dribble* temp = _impl_.action_.body_dribble_;
@@ -42748,15 +45171,15 @@ inline ::protos::Body_Dribble* Action::unsafe_arena_release_body_dribble() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_dribble(::protos::Body_Dribble* body_dribble) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_dribble(::protos::Body_Dribble* body_dribble) {
   clear_action();
   if (body_dribble) {
     set_has_body_dribble();
     _impl_.action_.body_dribble_ = body_dribble;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_dribble)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_dribble)
 }
-inline ::protos::Body_Dribble* Action::_internal_mutable_body_dribble() {
+inline ::protos::Body_Dribble* PlayerAction::_internal_mutable_body_dribble() {
   if (action_case() != kBodyDribble) {
     clear_action();
     set_has_body_dribble();
@@ -42764,23 +45187,23 @@ inline ::protos::Body_Dribble* Action::_internal_mutable_body_dribble() {
   }
   return _impl_.action_.body_dribble_;
 }
-inline ::protos::Body_Dribble* Action::mutable_body_dribble() {
+inline ::protos::Body_Dribble* PlayerAction::mutable_body_dribble() {
   ::protos::Body_Dribble* _msg = _internal_mutable_body_dribble();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_dribble)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_dribble)
   return _msg;
 }
 
 // .protos.Body_GoToPointDodge body_go_to_point_dodge = 29;
-inline bool Action::has_body_go_to_point_dodge() const {
+inline bool PlayerAction::has_body_go_to_point_dodge() const {
   return action_case() == kBodyGoToPointDodge;
 }
-inline bool Action::_internal_has_body_go_to_point_dodge() const {
+inline bool PlayerAction::_internal_has_body_go_to_point_dodge() const {
   return action_case() == kBodyGoToPointDodge;
 }
-inline void Action::set_has_body_go_to_point_dodge() {
+inline void PlayerAction::set_has_body_go_to_point_dodge() {
   _impl_._oneof_case_[0] = kBodyGoToPointDodge;
 }
-inline void Action::clear_body_go_to_point_dodge() {
+inline void PlayerAction::clear_body_go_to_point_dodge() {
   if (action_case() == kBodyGoToPointDodge) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_go_to_point_dodge_;
@@ -42788,8 +45211,8 @@ inline void Action::clear_body_go_to_point_dodge() {
     clear_has_action();
   }
 }
-inline ::protos::Body_GoToPointDodge* Action::release_body_go_to_point_dodge() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_go_to_point_dodge)
+inline ::protos::Body_GoToPointDodge* PlayerAction::release_body_go_to_point_dodge() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_go_to_point_dodge)
   if (action_case() == kBodyGoToPointDodge) {
     clear_has_action();
     ::protos::Body_GoToPointDodge* temp = _impl_.action_.body_go_to_point_dodge_;
@@ -42802,17 +45225,17 @@ inline ::protos::Body_GoToPointDodge* Action::release_body_go_to_point_dodge() {
     return nullptr;
   }
 }
-inline const ::protos::Body_GoToPointDodge& Action::_internal_body_go_to_point_dodge() const {
+inline const ::protos::Body_GoToPointDodge& PlayerAction::_internal_body_go_to_point_dodge() const {
   return action_case() == kBodyGoToPointDodge
       ? *_impl_.action_.body_go_to_point_dodge_
       : reinterpret_cast<::protos::Body_GoToPointDodge&>(::protos::_Body_GoToPointDodge_default_instance_);
 }
-inline const ::protos::Body_GoToPointDodge& Action::body_go_to_point_dodge() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_go_to_point_dodge)
+inline const ::protos::Body_GoToPointDodge& PlayerAction::body_go_to_point_dodge() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_go_to_point_dodge)
   return _internal_body_go_to_point_dodge();
 }
-inline ::protos::Body_GoToPointDodge* Action::unsafe_arena_release_body_go_to_point_dodge() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_go_to_point_dodge)
+inline ::protos::Body_GoToPointDodge* PlayerAction::unsafe_arena_release_body_go_to_point_dodge() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_go_to_point_dodge)
   if (action_case() == kBodyGoToPointDodge) {
     clear_has_action();
     ::protos::Body_GoToPointDodge* temp = _impl_.action_.body_go_to_point_dodge_;
@@ -42822,15 +45245,15 @@ inline ::protos::Body_GoToPointDodge* Action::unsafe_arena_release_body_go_to_po
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_go_to_point_dodge(::protos::Body_GoToPointDodge* body_go_to_point_dodge) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_go_to_point_dodge(::protos::Body_GoToPointDodge* body_go_to_point_dodge) {
   clear_action();
   if (body_go_to_point_dodge) {
     set_has_body_go_to_point_dodge();
     _impl_.action_.body_go_to_point_dodge_ = body_go_to_point_dodge;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_go_to_point_dodge)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_go_to_point_dodge)
 }
-inline ::protos::Body_GoToPointDodge* Action::_internal_mutable_body_go_to_point_dodge() {
+inline ::protos::Body_GoToPointDodge* PlayerAction::_internal_mutable_body_go_to_point_dodge() {
   if (action_case() != kBodyGoToPointDodge) {
     clear_action();
     set_has_body_go_to_point_dodge();
@@ -42838,23 +45261,23 @@ inline ::protos::Body_GoToPointDodge* Action::_internal_mutable_body_go_to_point
   }
   return _impl_.action_.body_go_to_point_dodge_;
 }
-inline ::protos::Body_GoToPointDodge* Action::mutable_body_go_to_point_dodge() {
+inline ::protos::Body_GoToPointDodge* PlayerAction::mutable_body_go_to_point_dodge() {
   ::protos::Body_GoToPointDodge* _msg = _internal_mutable_body_go_to_point_dodge();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_go_to_point_dodge)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_go_to_point_dodge)
   return _msg;
 }
 
 // .protos.Body_HoldBall body_hold_ball = 30;
-inline bool Action::has_body_hold_ball() const {
+inline bool PlayerAction::has_body_hold_ball() const {
   return action_case() == kBodyHoldBall;
 }
-inline bool Action::_internal_has_body_hold_ball() const {
+inline bool PlayerAction::_internal_has_body_hold_ball() const {
   return action_case() == kBodyHoldBall;
 }
-inline void Action::set_has_body_hold_ball() {
+inline void PlayerAction::set_has_body_hold_ball() {
   _impl_._oneof_case_[0] = kBodyHoldBall;
 }
-inline void Action::clear_body_hold_ball() {
+inline void PlayerAction::clear_body_hold_ball() {
   if (action_case() == kBodyHoldBall) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_hold_ball_;
@@ -42862,8 +45285,8 @@ inline void Action::clear_body_hold_ball() {
     clear_has_action();
   }
 }
-inline ::protos::Body_HoldBall* Action::release_body_hold_ball() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_hold_ball)
+inline ::protos::Body_HoldBall* PlayerAction::release_body_hold_ball() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_hold_ball)
   if (action_case() == kBodyHoldBall) {
     clear_has_action();
     ::protos::Body_HoldBall* temp = _impl_.action_.body_hold_ball_;
@@ -42876,17 +45299,17 @@ inline ::protos::Body_HoldBall* Action::release_body_hold_ball() {
     return nullptr;
   }
 }
-inline const ::protos::Body_HoldBall& Action::_internal_body_hold_ball() const {
+inline const ::protos::Body_HoldBall& PlayerAction::_internal_body_hold_ball() const {
   return action_case() == kBodyHoldBall
       ? *_impl_.action_.body_hold_ball_
       : reinterpret_cast<::protos::Body_HoldBall&>(::protos::_Body_HoldBall_default_instance_);
 }
-inline const ::protos::Body_HoldBall& Action::body_hold_ball() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_hold_ball)
+inline const ::protos::Body_HoldBall& PlayerAction::body_hold_ball() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_hold_ball)
   return _internal_body_hold_ball();
 }
-inline ::protos::Body_HoldBall* Action::unsafe_arena_release_body_hold_ball() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_hold_ball)
+inline ::protos::Body_HoldBall* PlayerAction::unsafe_arena_release_body_hold_ball() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_hold_ball)
   if (action_case() == kBodyHoldBall) {
     clear_has_action();
     ::protos::Body_HoldBall* temp = _impl_.action_.body_hold_ball_;
@@ -42896,15 +45319,15 @@ inline ::protos::Body_HoldBall* Action::unsafe_arena_release_body_hold_ball() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_hold_ball(::protos::Body_HoldBall* body_hold_ball) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_hold_ball(::protos::Body_HoldBall* body_hold_ball) {
   clear_action();
   if (body_hold_ball) {
     set_has_body_hold_ball();
     _impl_.action_.body_hold_ball_ = body_hold_ball;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_hold_ball)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_hold_ball)
 }
-inline ::protos::Body_HoldBall* Action::_internal_mutable_body_hold_ball() {
+inline ::protos::Body_HoldBall* PlayerAction::_internal_mutable_body_hold_ball() {
   if (action_case() != kBodyHoldBall) {
     clear_action();
     set_has_body_hold_ball();
@@ -42912,23 +45335,23 @@ inline ::protos::Body_HoldBall* Action::_internal_mutable_body_hold_ball() {
   }
   return _impl_.action_.body_hold_ball_;
 }
-inline ::protos::Body_HoldBall* Action::mutable_body_hold_ball() {
+inline ::protos::Body_HoldBall* PlayerAction::mutable_body_hold_ball() {
   ::protos::Body_HoldBall* _msg = _internal_mutable_body_hold_ball();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_hold_ball)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_hold_ball)
   return _msg;
 }
 
 // .protos.Body_Intercept body_intercept = 31;
-inline bool Action::has_body_intercept() const {
+inline bool PlayerAction::has_body_intercept() const {
   return action_case() == kBodyIntercept;
 }
-inline bool Action::_internal_has_body_intercept() const {
+inline bool PlayerAction::_internal_has_body_intercept() const {
   return action_case() == kBodyIntercept;
 }
-inline void Action::set_has_body_intercept() {
+inline void PlayerAction::set_has_body_intercept() {
   _impl_._oneof_case_[0] = kBodyIntercept;
 }
-inline void Action::clear_body_intercept() {
+inline void PlayerAction::clear_body_intercept() {
   if (action_case() == kBodyIntercept) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_intercept_;
@@ -42936,8 +45359,8 @@ inline void Action::clear_body_intercept() {
     clear_has_action();
   }
 }
-inline ::protos::Body_Intercept* Action::release_body_intercept() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_intercept)
+inline ::protos::Body_Intercept* PlayerAction::release_body_intercept() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_intercept)
   if (action_case() == kBodyIntercept) {
     clear_has_action();
     ::protos::Body_Intercept* temp = _impl_.action_.body_intercept_;
@@ -42950,17 +45373,17 @@ inline ::protos::Body_Intercept* Action::release_body_intercept() {
     return nullptr;
   }
 }
-inline const ::protos::Body_Intercept& Action::_internal_body_intercept() const {
+inline const ::protos::Body_Intercept& PlayerAction::_internal_body_intercept() const {
   return action_case() == kBodyIntercept
       ? *_impl_.action_.body_intercept_
       : reinterpret_cast<::protos::Body_Intercept&>(::protos::_Body_Intercept_default_instance_);
 }
-inline const ::protos::Body_Intercept& Action::body_intercept() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_intercept)
+inline const ::protos::Body_Intercept& PlayerAction::body_intercept() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_intercept)
   return _internal_body_intercept();
 }
-inline ::protos::Body_Intercept* Action::unsafe_arena_release_body_intercept() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_intercept)
+inline ::protos::Body_Intercept* PlayerAction::unsafe_arena_release_body_intercept() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_intercept)
   if (action_case() == kBodyIntercept) {
     clear_has_action();
     ::protos::Body_Intercept* temp = _impl_.action_.body_intercept_;
@@ -42970,15 +45393,15 @@ inline ::protos::Body_Intercept* Action::unsafe_arena_release_body_intercept() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_intercept(::protos::Body_Intercept* body_intercept) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_intercept(::protos::Body_Intercept* body_intercept) {
   clear_action();
   if (body_intercept) {
     set_has_body_intercept();
     _impl_.action_.body_intercept_ = body_intercept;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_intercept)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_intercept)
 }
-inline ::protos::Body_Intercept* Action::_internal_mutable_body_intercept() {
+inline ::protos::Body_Intercept* PlayerAction::_internal_mutable_body_intercept() {
   if (action_case() != kBodyIntercept) {
     clear_action();
     set_has_body_intercept();
@@ -42986,23 +45409,23 @@ inline ::protos::Body_Intercept* Action::_internal_mutable_body_intercept() {
   }
   return _impl_.action_.body_intercept_;
 }
-inline ::protos::Body_Intercept* Action::mutable_body_intercept() {
+inline ::protos::Body_Intercept* PlayerAction::mutable_body_intercept() {
   ::protos::Body_Intercept* _msg = _internal_mutable_body_intercept();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_intercept)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_intercept)
   return _msg;
 }
 
 // .protos.Body_KickOneStep body_kick_one_step = 32;
-inline bool Action::has_body_kick_one_step() const {
+inline bool PlayerAction::has_body_kick_one_step() const {
   return action_case() == kBodyKickOneStep;
 }
-inline bool Action::_internal_has_body_kick_one_step() const {
+inline bool PlayerAction::_internal_has_body_kick_one_step() const {
   return action_case() == kBodyKickOneStep;
 }
-inline void Action::set_has_body_kick_one_step() {
+inline void PlayerAction::set_has_body_kick_one_step() {
   _impl_._oneof_case_[0] = kBodyKickOneStep;
 }
-inline void Action::clear_body_kick_one_step() {
+inline void PlayerAction::clear_body_kick_one_step() {
   if (action_case() == kBodyKickOneStep) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_kick_one_step_;
@@ -43010,8 +45433,8 @@ inline void Action::clear_body_kick_one_step() {
     clear_has_action();
   }
 }
-inline ::protos::Body_KickOneStep* Action::release_body_kick_one_step() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_kick_one_step)
+inline ::protos::Body_KickOneStep* PlayerAction::release_body_kick_one_step() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_kick_one_step)
   if (action_case() == kBodyKickOneStep) {
     clear_has_action();
     ::protos::Body_KickOneStep* temp = _impl_.action_.body_kick_one_step_;
@@ -43024,17 +45447,17 @@ inline ::protos::Body_KickOneStep* Action::release_body_kick_one_step() {
     return nullptr;
   }
 }
-inline const ::protos::Body_KickOneStep& Action::_internal_body_kick_one_step() const {
+inline const ::protos::Body_KickOneStep& PlayerAction::_internal_body_kick_one_step() const {
   return action_case() == kBodyKickOneStep
       ? *_impl_.action_.body_kick_one_step_
       : reinterpret_cast<::protos::Body_KickOneStep&>(::protos::_Body_KickOneStep_default_instance_);
 }
-inline const ::protos::Body_KickOneStep& Action::body_kick_one_step() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_kick_one_step)
+inline const ::protos::Body_KickOneStep& PlayerAction::body_kick_one_step() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_kick_one_step)
   return _internal_body_kick_one_step();
 }
-inline ::protos::Body_KickOneStep* Action::unsafe_arena_release_body_kick_one_step() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_kick_one_step)
+inline ::protos::Body_KickOneStep* PlayerAction::unsafe_arena_release_body_kick_one_step() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_kick_one_step)
   if (action_case() == kBodyKickOneStep) {
     clear_has_action();
     ::protos::Body_KickOneStep* temp = _impl_.action_.body_kick_one_step_;
@@ -43044,15 +45467,15 @@ inline ::protos::Body_KickOneStep* Action::unsafe_arena_release_body_kick_one_st
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_kick_one_step(::protos::Body_KickOneStep* body_kick_one_step) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_kick_one_step(::protos::Body_KickOneStep* body_kick_one_step) {
   clear_action();
   if (body_kick_one_step) {
     set_has_body_kick_one_step();
     _impl_.action_.body_kick_one_step_ = body_kick_one_step;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_kick_one_step)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_kick_one_step)
 }
-inline ::protos::Body_KickOneStep* Action::_internal_mutable_body_kick_one_step() {
+inline ::protos::Body_KickOneStep* PlayerAction::_internal_mutable_body_kick_one_step() {
   if (action_case() != kBodyKickOneStep) {
     clear_action();
     set_has_body_kick_one_step();
@@ -43060,23 +45483,23 @@ inline ::protos::Body_KickOneStep* Action::_internal_mutable_body_kick_one_step(
   }
   return _impl_.action_.body_kick_one_step_;
 }
-inline ::protos::Body_KickOneStep* Action::mutable_body_kick_one_step() {
+inline ::protos::Body_KickOneStep* PlayerAction::mutable_body_kick_one_step() {
   ::protos::Body_KickOneStep* _msg = _internal_mutable_body_kick_one_step();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_kick_one_step)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_kick_one_step)
   return _msg;
 }
 
 // .protos.Body_StopBall body_stop_ball = 33;
-inline bool Action::has_body_stop_ball() const {
+inline bool PlayerAction::has_body_stop_ball() const {
   return action_case() == kBodyStopBall;
 }
-inline bool Action::_internal_has_body_stop_ball() const {
+inline bool PlayerAction::_internal_has_body_stop_ball() const {
   return action_case() == kBodyStopBall;
 }
-inline void Action::set_has_body_stop_ball() {
+inline void PlayerAction::set_has_body_stop_ball() {
   _impl_._oneof_case_[0] = kBodyStopBall;
 }
-inline void Action::clear_body_stop_ball() {
+inline void PlayerAction::clear_body_stop_ball() {
   if (action_case() == kBodyStopBall) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_stop_ball_;
@@ -43084,8 +45507,8 @@ inline void Action::clear_body_stop_ball() {
     clear_has_action();
   }
 }
-inline ::protos::Body_StopBall* Action::release_body_stop_ball() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_stop_ball)
+inline ::protos::Body_StopBall* PlayerAction::release_body_stop_ball() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_stop_ball)
   if (action_case() == kBodyStopBall) {
     clear_has_action();
     ::protos::Body_StopBall* temp = _impl_.action_.body_stop_ball_;
@@ -43098,17 +45521,17 @@ inline ::protos::Body_StopBall* Action::release_body_stop_ball() {
     return nullptr;
   }
 }
-inline const ::protos::Body_StopBall& Action::_internal_body_stop_ball() const {
+inline const ::protos::Body_StopBall& PlayerAction::_internal_body_stop_ball() const {
   return action_case() == kBodyStopBall
       ? *_impl_.action_.body_stop_ball_
       : reinterpret_cast<::protos::Body_StopBall&>(::protos::_Body_StopBall_default_instance_);
 }
-inline const ::protos::Body_StopBall& Action::body_stop_ball() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_stop_ball)
+inline const ::protos::Body_StopBall& PlayerAction::body_stop_ball() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_stop_ball)
   return _internal_body_stop_ball();
 }
-inline ::protos::Body_StopBall* Action::unsafe_arena_release_body_stop_ball() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_stop_ball)
+inline ::protos::Body_StopBall* PlayerAction::unsafe_arena_release_body_stop_ball() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_stop_ball)
   if (action_case() == kBodyStopBall) {
     clear_has_action();
     ::protos::Body_StopBall* temp = _impl_.action_.body_stop_ball_;
@@ -43118,15 +45541,15 @@ inline ::protos::Body_StopBall* Action::unsafe_arena_release_body_stop_ball() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_stop_ball(::protos::Body_StopBall* body_stop_ball) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_stop_ball(::protos::Body_StopBall* body_stop_ball) {
   clear_action();
   if (body_stop_ball) {
     set_has_body_stop_ball();
     _impl_.action_.body_stop_ball_ = body_stop_ball;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_stop_ball)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_stop_ball)
 }
-inline ::protos::Body_StopBall* Action::_internal_mutable_body_stop_ball() {
+inline ::protos::Body_StopBall* PlayerAction::_internal_mutable_body_stop_ball() {
   if (action_case() != kBodyStopBall) {
     clear_action();
     set_has_body_stop_ball();
@@ -43134,23 +45557,23 @@ inline ::protos::Body_StopBall* Action::_internal_mutable_body_stop_ball() {
   }
   return _impl_.action_.body_stop_ball_;
 }
-inline ::protos::Body_StopBall* Action::mutable_body_stop_ball() {
+inline ::protos::Body_StopBall* PlayerAction::mutable_body_stop_ball() {
   ::protos::Body_StopBall* _msg = _internal_mutable_body_stop_ball();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_stop_ball)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_stop_ball)
   return _msg;
 }
 
 // .protos.Body_StopDash body_stop_dash = 34;
-inline bool Action::has_body_stop_dash() const {
+inline bool PlayerAction::has_body_stop_dash() const {
   return action_case() == kBodyStopDash;
 }
-inline bool Action::_internal_has_body_stop_dash() const {
+inline bool PlayerAction::_internal_has_body_stop_dash() const {
   return action_case() == kBodyStopDash;
 }
-inline void Action::set_has_body_stop_dash() {
+inline void PlayerAction::set_has_body_stop_dash() {
   _impl_._oneof_case_[0] = kBodyStopDash;
 }
-inline void Action::clear_body_stop_dash() {
+inline void PlayerAction::clear_body_stop_dash() {
   if (action_case() == kBodyStopDash) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_stop_dash_;
@@ -43158,8 +45581,8 @@ inline void Action::clear_body_stop_dash() {
     clear_has_action();
   }
 }
-inline ::protos::Body_StopDash* Action::release_body_stop_dash() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_stop_dash)
+inline ::protos::Body_StopDash* PlayerAction::release_body_stop_dash() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_stop_dash)
   if (action_case() == kBodyStopDash) {
     clear_has_action();
     ::protos::Body_StopDash* temp = _impl_.action_.body_stop_dash_;
@@ -43172,17 +45595,17 @@ inline ::protos::Body_StopDash* Action::release_body_stop_dash() {
     return nullptr;
   }
 }
-inline const ::protos::Body_StopDash& Action::_internal_body_stop_dash() const {
+inline const ::protos::Body_StopDash& PlayerAction::_internal_body_stop_dash() const {
   return action_case() == kBodyStopDash
       ? *_impl_.action_.body_stop_dash_
       : reinterpret_cast<::protos::Body_StopDash&>(::protos::_Body_StopDash_default_instance_);
 }
-inline const ::protos::Body_StopDash& Action::body_stop_dash() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_stop_dash)
+inline const ::protos::Body_StopDash& PlayerAction::body_stop_dash() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_stop_dash)
   return _internal_body_stop_dash();
 }
-inline ::protos::Body_StopDash* Action::unsafe_arena_release_body_stop_dash() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_stop_dash)
+inline ::protos::Body_StopDash* PlayerAction::unsafe_arena_release_body_stop_dash() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_stop_dash)
   if (action_case() == kBodyStopDash) {
     clear_has_action();
     ::protos::Body_StopDash* temp = _impl_.action_.body_stop_dash_;
@@ -43192,15 +45615,15 @@ inline ::protos::Body_StopDash* Action::unsafe_arena_release_body_stop_dash() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_stop_dash(::protos::Body_StopDash* body_stop_dash) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_stop_dash(::protos::Body_StopDash* body_stop_dash) {
   clear_action();
   if (body_stop_dash) {
     set_has_body_stop_dash();
     _impl_.action_.body_stop_dash_ = body_stop_dash;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_stop_dash)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_stop_dash)
 }
-inline ::protos::Body_StopDash* Action::_internal_mutable_body_stop_dash() {
+inline ::protos::Body_StopDash* PlayerAction::_internal_mutable_body_stop_dash() {
   if (action_case() != kBodyStopDash) {
     clear_action();
     set_has_body_stop_dash();
@@ -43208,23 +45631,23 @@ inline ::protos::Body_StopDash* Action::_internal_mutable_body_stop_dash() {
   }
   return _impl_.action_.body_stop_dash_;
 }
-inline ::protos::Body_StopDash* Action::mutable_body_stop_dash() {
+inline ::protos::Body_StopDash* PlayerAction::mutable_body_stop_dash() {
   ::protos::Body_StopDash* _msg = _internal_mutable_body_stop_dash();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_stop_dash)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_stop_dash)
   return _msg;
 }
 
 // .protos.Body_TackleToPoint body_tackle_to_point = 35;
-inline bool Action::has_body_tackle_to_point() const {
+inline bool PlayerAction::has_body_tackle_to_point() const {
   return action_case() == kBodyTackleToPoint;
 }
-inline bool Action::_internal_has_body_tackle_to_point() const {
+inline bool PlayerAction::_internal_has_body_tackle_to_point() const {
   return action_case() == kBodyTackleToPoint;
 }
-inline void Action::set_has_body_tackle_to_point() {
+inline void PlayerAction::set_has_body_tackle_to_point() {
   _impl_._oneof_case_[0] = kBodyTackleToPoint;
 }
-inline void Action::clear_body_tackle_to_point() {
+inline void PlayerAction::clear_body_tackle_to_point() {
   if (action_case() == kBodyTackleToPoint) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_tackle_to_point_;
@@ -43232,8 +45655,8 @@ inline void Action::clear_body_tackle_to_point() {
     clear_has_action();
   }
 }
-inline ::protos::Body_TackleToPoint* Action::release_body_tackle_to_point() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_tackle_to_point)
+inline ::protos::Body_TackleToPoint* PlayerAction::release_body_tackle_to_point() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_tackle_to_point)
   if (action_case() == kBodyTackleToPoint) {
     clear_has_action();
     ::protos::Body_TackleToPoint* temp = _impl_.action_.body_tackle_to_point_;
@@ -43246,17 +45669,17 @@ inline ::protos::Body_TackleToPoint* Action::release_body_tackle_to_point() {
     return nullptr;
   }
 }
-inline const ::protos::Body_TackleToPoint& Action::_internal_body_tackle_to_point() const {
+inline const ::protos::Body_TackleToPoint& PlayerAction::_internal_body_tackle_to_point() const {
   return action_case() == kBodyTackleToPoint
       ? *_impl_.action_.body_tackle_to_point_
       : reinterpret_cast<::protos::Body_TackleToPoint&>(::protos::_Body_TackleToPoint_default_instance_);
 }
-inline const ::protos::Body_TackleToPoint& Action::body_tackle_to_point() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_tackle_to_point)
+inline const ::protos::Body_TackleToPoint& PlayerAction::body_tackle_to_point() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_tackle_to_point)
   return _internal_body_tackle_to_point();
 }
-inline ::protos::Body_TackleToPoint* Action::unsafe_arena_release_body_tackle_to_point() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_tackle_to_point)
+inline ::protos::Body_TackleToPoint* PlayerAction::unsafe_arena_release_body_tackle_to_point() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_tackle_to_point)
   if (action_case() == kBodyTackleToPoint) {
     clear_has_action();
     ::protos::Body_TackleToPoint* temp = _impl_.action_.body_tackle_to_point_;
@@ -43266,15 +45689,15 @@ inline ::protos::Body_TackleToPoint* Action::unsafe_arena_release_body_tackle_to
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_tackle_to_point(::protos::Body_TackleToPoint* body_tackle_to_point) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_tackle_to_point(::protos::Body_TackleToPoint* body_tackle_to_point) {
   clear_action();
   if (body_tackle_to_point) {
     set_has_body_tackle_to_point();
     _impl_.action_.body_tackle_to_point_ = body_tackle_to_point;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_tackle_to_point)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_tackle_to_point)
 }
-inline ::protos::Body_TackleToPoint* Action::_internal_mutable_body_tackle_to_point() {
+inline ::protos::Body_TackleToPoint* PlayerAction::_internal_mutable_body_tackle_to_point() {
   if (action_case() != kBodyTackleToPoint) {
     clear_action();
     set_has_body_tackle_to_point();
@@ -43282,23 +45705,23 @@ inline ::protos::Body_TackleToPoint* Action::_internal_mutable_body_tackle_to_po
   }
   return _impl_.action_.body_tackle_to_point_;
 }
-inline ::protos::Body_TackleToPoint* Action::mutable_body_tackle_to_point() {
+inline ::protos::Body_TackleToPoint* PlayerAction::mutable_body_tackle_to_point() {
   ::protos::Body_TackleToPoint* _msg = _internal_mutable_body_tackle_to_point();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_tackle_to_point)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_tackle_to_point)
   return _msg;
 }
 
 // .protos.Body_TurnToAngle body_turn_to_angle = 36;
-inline bool Action::has_body_turn_to_angle() const {
+inline bool PlayerAction::has_body_turn_to_angle() const {
   return action_case() == kBodyTurnToAngle;
 }
-inline bool Action::_internal_has_body_turn_to_angle() const {
+inline bool PlayerAction::_internal_has_body_turn_to_angle() const {
   return action_case() == kBodyTurnToAngle;
 }
-inline void Action::set_has_body_turn_to_angle() {
+inline void PlayerAction::set_has_body_turn_to_angle() {
   _impl_._oneof_case_[0] = kBodyTurnToAngle;
 }
-inline void Action::clear_body_turn_to_angle() {
+inline void PlayerAction::clear_body_turn_to_angle() {
   if (action_case() == kBodyTurnToAngle) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_turn_to_angle_;
@@ -43306,8 +45729,8 @@ inline void Action::clear_body_turn_to_angle() {
     clear_has_action();
   }
 }
-inline ::protos::Body_TurnToAngle* Action::release_body_turn_to_angle() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_turn_to_angle)
+inline ::protos::Body_TurnToAngle* PlayerAction::release_body_turn_to_angle() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_turn_to_angle)
   if (action_case() == kBodyTurnToAngle) {
     clear_has_action();
     ::protos::Body_TurnToAngle* temp = _impl_.action_.body_turn_to_angle_;
@@ -43320,17 +45743,17 @@ inline ::protos::Body_TurnToAngle* Action::release_body_turn_to_angle() {
     return nullptr;
   }
 }
-inline const ::protos::Body_TurnToAngle& Action::_internal_body_turn_to_angle() const {
+inline const ::protos::Body_TurnToAngle& PlayerAction::_internal_body_turn_to_angle() const {
   return action_case() == kBodyTurnToAngle
       ? *_impl_.action_.body_turn_to_angle_
       : reinterpret_cast<::protos::Body_TurnToAngle&>(::protos::_Body_TurnToAngle_default_instance_);
 }
-inline const ::protos::Body_TurnToAngle& Action::body_turn_to_angle() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_turn_to_angle)
+inline const ::protos::Body_TurnToAngle& PlayerAction::body_turn_to_angle() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_turn_to_angle)
   return _internal_body_turn_to_angle();
 }
-inline ::protos::Body_TurnToAngle* Action::unsafe_arena_release_body_turn_to_angle() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_turn_to_angle)
+inline ::protos::Body_TurnToAngle* PlayerAction::unsafe_arena_release_body_turn_to_angle() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_turn_to_angle)
   if (action_case() == kBodyTurnToAngle) {
     clear_has_action();
     ::protos::Body_TurnToAngle* temp = _impl_.action_.body_turn_to_angle_;
@@ -43340,15 +45763,15 @@ inline ::protos::Body_TurnToAngle* Action::unsafe_arena_release_body_turn_to_ang
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_turn_to_angle(::protos::Body_TurnToAngle* body_turn_to_angle) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_turn_to_angle(::protos::Body_TurnToAngle* body_turn_to_angle) {
   clear_action();
   if (body_turn_to_angle) {
     set_has_body_turn_to_angle();
     _impl_.action_.body_turn_to_angle_ = body_turn_to_angle;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_turn_to_angle)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_turn_to_angle)
 }
-inline ::protos::Body_TurnToAngle* Action::_internal_mutable_body_turn_to_angle() {
+inline ::protos::Body_TurnToAngle* PlayerAction::_internal_mutable_body_turn_to_angle() {
   if (action_case() != kBodyTurnToAngle) {
     clear_action();
     set_has_body_turn_to_angle();
@@ -43356,23 +45779,23 @@ inline ::protos::Body_TurnToAngle* Action::_internal_mutable_body_turn_to_angle(
   }
   return _impl_.action_.body_turn_to_angle_;
 }
-inline ::protos::Body_TurnToAngle* Action::mutable_body_turn_to_angle() {
+inline ::protos::Body_TurnToAngle* PlayerAction::mutable_body_turn_to_angle() {
   ::protos::Body_TurnToAngle* _msg = _internal_mutable_body_turn_to_angle();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_turn_to_angle)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_turn_to_angle)
   return _msg;
 }
 
 // .protos.Body_TurnToBall body_turn_to_ball = 37;
-inline bool Action::has_body_turn_to_ball() const {
+inline bool PlayerAction::has_body_turn_to_ball() const {
   return action_case() == kBodyTurnToBall;
 }
-inline bool Action::_internal_has_body_turn_to_ball() const {
+inline bool PlayerAction::_internal_has_body_turn_to_ball() const {
   return action_case() == kBodyTurnToBall;
 }
-inline void Action::set_has_body_turn_to_ball() {
+inline void PlayerAction::set_has_body_turn_to_ball() {
   _impl_._oneof_case_[0] = kBodyTurnToBall;
 }
-inline void Action::clear_body_turn_to_ball() {
+inline void PlayerAction::clear_body_turn_to_ball() {
   if (action_case() == kBodyTurnToBall) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_turn_to_ball_;
@@ -43380,8 +45803,8 @@ inline void Action::clear_body_turn_to_ball() {
     clear_has_action();
   }
 }
-inline ::protos::Body_TurnToBall* Action::release_body_turn_to_ball() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_turn_to_ball)
+inline ::protos::Body_TurnToBall* PlayerAction::release_body_turn_to_ball() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_turn_to_ball)
   if (action_case() == kBodyTurnToBall) {
     clear_has_action();
     ::protos::Body_TurnToBall* temp = _impl_.action_.body_turn_to_ball_;
@@ -43394,17 +45817,17 @@ inline ::protos::Body_TurnToBall* Action::release_body_turn_to_ball() {
     return nullptr;
   }
 }
-inline const ::protos::Body_TurnToBall& Action::_internal_body_turn_to_ball() const {
+inline const ::protos::Body_TurnToBall& PlayerAction::_internal_body_turn_to_ball() const {
   return action_case() == kBodyTurnToBall
       ? *_impl_.action_.body_turn_to_ball_
       : reinterpret_cast<::protos::Body_TurnToBall&>(::protos::_Body_TurnToBall_default_instance_);
 }
-inline const ::protos::Body_TurnToBall& Action::body_turn_to_ball() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_turn_to_ball)
+inline const ::protos::Body_TurnToBall& PlayerAction::body_turn_to_ball() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_turn_to_ball)
   return _internal_body_turn_to_ball();
 }
-inline ::protos::Body_TurnToBall* Action::unsafe_arena_release_body_turn_to_ball() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_turn_to_ball)
+inline ::protos::Body_TurnToBall* PlayerAction::unsafe_arena_release_body_turn_to_ball() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_turn_to_ball)
   if (action_case() == kBodyTurnToBall) {
     clear_has_action();
     ::protos::Body_TurnToBall* temp = _impl_.action_.body_turn_to_ball_;
@@ -43414,15 +45837,15 @@ inline ::protos::Body_TurnToBall* Action::unsafe_arena_release_body_turn_to_ball
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_turn_to_ball(::protos::Body_TurnToBall* body_turn_to_ball) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_turn_to_ball(::protos::Body_TurnToBall* body_turn_to_ball) {
   clear_action();
   if (body_turn_to_ball) {
     set_has_body_turn_to_ball();
     _impl_.action_.body_turn_to_ball_ = body_turn_to_ball;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_turn_to_ball)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_turn_to_ball)
 }
-inline ::protos::Body_TurnToBall* Action::_internal_mutable_body_turn_to_ball() {
+inline ::protos::Body_TurnToBall* PlayerAction::_internal_mutable_body_turn_to_ball() {
   if (action_case() != kBodyTurnToBall) {
     clear_action();
     set_has_body_turn_to_ball();
@@ -43430,23 +45853,23 @@ inline ::protos::Body_TurnToBall* Action::_internal_mutable_body_turn_to_ball() 
   }
   return _impl_.action_.body_turn_to_ball_;
 }
-inline ::protos::Body_TurnToBall* Action::mutable_body_turn_to_ball() {
+inline ::protos::Body_TurnToBall* PlayerAction::mutable_body_turn_to_ball() {
   ::protos::Body_TurnToBall* _msg = _internal_mutable_body_turn_to_ball();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_turn_to_ball)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_turn_to_ball)
   return _msg;
 }
 
 // .protos.Body_TurnToPoint body_turn_to_point = 38;
-inline bool Action::has_body_turn_to_point() const {
+inline bool PlayerAction::has_body_turn_to_point() const {
   return action_case() == kBodyTurnToPoint;
 }
-inline bool Action::_internal_has_body_turn_to_point() const {
+inline bool PlayerAction::_internal_has_body_turn_to_point() const {
   return action_case() == kBodyTurnToPoint;
 }
-inline void Action::set_has_body_turn_to_point() {
+inline void PlayerAction::set_has_body_turn_to_point() {
   _impl_._oneof_case_[0] = kBodyTurnToPoint;
 }
-inline void Action::clear_body_turn_to_point() {
+inline void PlayerAction::clear_body_turn_to_point() {
   if (action_case() == kBodyTurnToPoint) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.body_turn_to_point_;
@@ -43454,8 +45877,8 @@ inline void Action::clear_body_turn_to_point() {
     clear_has_action();
   }
 }
-inline ::protos::Body_TurnToPoint* Action::release_body_turn_to_point() {
-  // @@protoc_insertion_point(field_release:protos.Action.body_turn_to_point)
+inline ::protos::Body_TurnToPoint* PlayerAction::release_body_turn_to_point() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.body_turn_to_point)
   if (action_case() == kBodyTurnToPoint) {
     clear_has_action();
     ::protos::Body_TurnToPoint* temp = _impl_.action_.body_turn_to_point_;
@@ -43468,17 +45891,17 @@ inline ::protos::Body_TurnToPoint* Action::release_body_turn_to_point() {
     return nullptr;
   }
 }
-inline const ::protos::Body_TurnToPoint& Action::_internal_body_turn_to_point() const {
+inline const ::protos::Body_TurnToPoint& PlayerAction::_internal_body_turn_to_point() const {
   return action_case() == kBodyTurnToPoint
       ? *_impl_.action_.body_turn_to_point_
       : reinterpret_cast<::protos::Body_TurnToPoint&>(::protos::_Body_TurnToPoint_default_instance_);
 }
-inline const ::protos::Body_TurnToPoint& Action::body_turn_to_point() const {
-  // @@protoc_insertion_point(field_get:protos.Action.body_turn_to_point)
+inline const ::protos::Body_TurnToPoint& PlayerAction::body_turn_to_point() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.body_turn_to_point)
   return _internal_body_turn_to_point();
 }
-inline ::protos::Body_TurnToPoint* Action::unsafe_arena_release_body_turn_to_point() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.body_turn_to_point)
+inline ::protos::Body_TurnToPoint* PlayerAction::unsafe_arena_release_body_turn_to_point() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.body_turn_to_point)
   if (action_case() == kBodyTurnToPoint) {
     clear_has_action();
     ::protos::Body_TurnToPoint* temp = _impl_.action_.body_turn_to_point_;
@@ -43488,15 +45911,15 @@ inline ::protos::Body_TurnToPoint* Action::unsafe_arena_release_body_turn_to_poi
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_body_turn_to_point(::protos::Body_TurnToPoint* body_turn_to_point) {
+inline void PlayerAction::unsafe_arena_set_allocated_body_turn_to_point(::protos::Body_TurnToPoint* body_turn_to_point) {
   clear_action();
   if (body_turn_to_point) {
     set_has_body_turn_to_point();
     _impl_.action_.body_turn_to_point_ = body_turn_to_point;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.body_turn_to_point)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.body_turn_to_point)
 }
-inline ::protos::Body_TurnToPoint* Action::_internal_mutable_body_turn_to_point() {
+inline ::protos::Body_TurnToPoint* PlayerAction::_internal_mutable_body_turn_to_point() {
   if (action_case() != kBodyTurnToPoint) {
     clear_action();
     set_has_body_turn_to_point();
@@ -43504,23 +45927,23 @@ inline ::protos::Body_TurnToPoint* Action::_internal_mutable_body_turn_to_point(
   }
   return _impl_.action_.body_turn_to_point_;
 }
-inline ::protos::Body_TurnToPoint* Action::mutable_body_turn_to_point() {
+inline ::protos::Body_TurnToPoint* PlayerAction::mutable_body_turn_to_point() {
   ::protos::Body_TurnToPoint* _msg = _internal_mutable_body_turn_to_point();
-  // @@protoc_insertion_point(field_mutable:protos.Action.body_turn_to_point)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.body_turn_to_point)
   return _msg;
 }
 
 // .protos.Focus_MoveToPoint focus_move_to_point = 39;
-inline bool Action::has_focus_move_to_point() const {
+inline bool PlayerAction::has_focus_move_to_point() const {
   return action_case() == kFocusMoveToPoint;
 }
-inline bool Action::_internal_has_focus_move_to_point() const {
+inline bool PlayerAction::_internal_has_focus_move_to_point() const {
   return action_case() == kFocusMoveToPoint;
 }
-inline void Action::set_has_focus_move_to_point() {
+inline void PlayerAction::set_has_focus_move_to_point() {
   _impl_._oneof_case_[0] = kFocusMoveToPoint;
 }
-inline void Action::clear_focus_move_to_point() {
+inline void PlayerAction::clear_focus_move_to_point() {
   if (action_case() == kFocusMoveToPoint) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.focus_move_to_point_;
@@ -43528,8 +45951,8 @@ inline void Action::clear_focus_move_to_point() {
     clear_has_action();
   }
 }
-inline ::protos::Focus_MoveToPoint* Action::release_focus_move_to_point() {
-  // @@protoc_insertion_point(field_release:protos.Action.focus_move_to_point)
+inline ::protos::Focus_MoveToPoint* PlayerAction::release_focus_move_to_point() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.focus_move_to_point)
   if (action_case() == kFocusMoveToPoint) {
     clear_has_action();
     ::protos::Focus_MoveToPoint* temp = _impl_.action_.focus_move_to_point_;
@@ -43542,17 +45965,17 @@ inline ::protos::Focus_MoveToPoint* Action::release_focus_move_to_point() {
     return nullptr;
   }
 }
-inline const ::protos::Focus_MoveToPoint& Action::_internal_focus_move_to_point() const {
+inline const ::protos::Focus_MoveToPoint& PlayerAction::_internal_focus_move_to_point() const {
   return action_case() == kFocusMoveToPoint
       ? *_impl_.action_.focus_move_to_point_
       : reinterpret_cast<::protos::Focus_MoveToPoint&>(::protos::_Focus_MoveToPoint_default_instance_);
 }
-inline const ::protos::Focus_MoveToPoint& Action::focus_move_to_point() const {
-  // @@protoc_insertion_point(field_get:protos.Action.focus_move_to_point)
+inline const ::protos::Focus_MoveToPoint& PlayerAction::focus_move_to_point() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.focus_move_to_point)
   return _internal_focus_move_to_point();
 }
-inline ::protos::Focus_MoveToPoint* Action::unsafe_arena_release_focus_move_to_point() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.focus_move_to_point)
+inline ::protos::Focus_MoveToPoint* PlayerAction::unsafe_arena_release_focus_move_to_point() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.focus_move_to_point)
   if (action_case() == kFocusMoveToPoint) {
     clear_has_action();
     ::protos::Focus_MoveToPoint* temp = _impl_.action_.focus_move_to_point_;
@@ -43562,15 +45985,15 @@ inline ::protos::Focus_MoveToPoint* Action::unsafe_arena_release_focus_move_to_p
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_focus_move_to_point(::protos::Focus_MoveToPoint* focus_move_to_point) {
+inline void PlayerAction::unsafe_arena_set_allocated_focus_move_to_point(::protos::Focus_MoveToPoint* focus_move_to_point) {
   clear_action();
   if (focus_move_to_point) {
     set_has_focus_move_to_point();
     _impl_.action_.focus_move_to_point_ = focus_move_to_point;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.focus_move_to_point)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.focus_move_to_point)
 }
-inline ::protos::Focus_MoveToPoint* Action::_internal_mutable_focus_move_to_point() {
+inline ::protos::Focus_MoveToPoint* PlayerAction::_internal_mutable_focus_move_to_point() {
   if (action_case() != kFocusMoveToPoint) {
     clear_action();
     set_has_focus_move_to_point();
@@ -43578,23 +46001,23 @@ inline ::protos::Focus_MoveToPoint* Action::_internal_mutable_focus_move_to_poin
   }
   return _impl_.action_.focus_move_to_point_;
 }
-inline ::protos::Focus_MoveToPoint* Action::mutable_focus_move_to_point() {
+inline ::protos::Focus_MoveToPoint* PlayerAction::mutable_focus_move_to_point() {
   ::protos::Focus_MoveToPoint* _msg = _internal_mutable_focus_move_to_point();
-  // @@protoc_insertion_point(field_mutable:protos.Action.focus_move_to_point)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.focus_move_to_point)
   return _msg;
 }
 
 // .protos.Focus_Reset focus_reset = 40;
-inline bool Action::has_focus_reset() const {
+inline bool PlayerAction::has_focus_reset() const {
   return action_case() == kFocusReset;
 }
-inline bool Action::_internal_has_focus_reset() const {
+inline bool PlayerAction::_internal_has_focus_reset() const {
   return action_case() == kFocusReset;
 }
-inline void Action::set_has_focus_reset() {
+inline void PlayerAction::set_has_focus_reset() {
   _impl_._oneof_case_[0] = kFocusReset;
 }
-inline void Action::clear_focus_reset() {
+inline void PlayerAction::clear_focus_reset() {
   if (action_case() == kFocusReset) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.focus_reset_;
@@ -43602,8 +46025,8 @@ inline void Action::clear_focus_reset() {
     clear_has_action();
   }
 }
-inline ::protos::Focus_Reset* Action::release_focus_reset() {
-  // @@protoc_insertion_point(field_release:protos.Action.focus_reset)
+inline ::protos::Focus_Reset* PlayerAction::release_focus_reset() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.focus_reset)
   if (action_case() == kFocusReset) {
     clear_has_action();
     ::protos::Focus_Reset* temp = _impl_.action_.focus_reset_;
@@ -43616,17 +46039,17 @@ inline ::protos::Focus_Reset* Action::release_focus_reset() {
     return nullptr;
   }
 }
-inline const ::protos::Focus_Reset& Action::_internal_focus_reset() const {
+inline const ::protos::Focus_Reset& PlayerAction::_internal_focus_reset() const {
   return action_case() == kFocusReset
       ? *_impl_.action_.focus_reset_
       : reinterpret_cast<::protos::Focus_Reset&>(::protos::_Focus_Reset_default_instance_);
 }
-inline const ::protos::Focus_Reset& Action::focus_reset() const {
-  // @@protoc_insertion_point(field_get:protos.Action.focus_reset)
+inline const ::protos::Focus_Reset& PlayerAction::focus_reset() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.focus_reset)
   return _internal_focus_reset();
 }
-inline ::protos::Focus_Reset* Action::unsafe_arena_release_focus_reset() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.focus_reset)
+inline ::protos::Focus_Reset* PlayerAction::unsafe_arena_release_focus_reset() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.focus_reset)
   if (action_case() == kFocusReset) {
     clear_has_action();
     ::protos::Focus_Reset* temp = _impl_.action_.focus_reset_;
@@ -43636,15 +46059,15 @@ inline ::protos::Focus_Reset* Action::unsafe_arena_release_focus_reset() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_focus_reset(::protos::Focus_Reset* focus_reset) {
+inline void PlayerAction::unsafe_arena_set_allocated_focus_reset(::protos::Focus_Reset* focus_reset) {
   clear_action();
   if (focus_reset) {
     set_has_focus_reset();
     _impl_.action_.focus_reset_ = focus_reset;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.focus_reset)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.focus_reset)
 }
-inline ::protos::Focus_Reset* Action::_internal_mutable_focus_reset() {
+inline ::protos::Focus_Reset* PlayerAction::_internal_mutable_focus_reset() {
   if (action_case() != kFocusReset) {
     clear_action();
     set_has_focus_reset();
@@ -43652,23 +46075,23 @@ inline ::protos::Focus_Reset* Action::_internal_mutable_focus_reset() {
   }
   return _impl_.action_.focus_reset_;
 }
-inline ::protos::Focus_Reset* Action::mutable_focus_reset() {
+inline ::protos::Focus_Reset* PlayerAction::mutable_focus_reset() {
   ::protos::Focus_Reset* _msg = _internal_mutable_focus_reset();
-  // @@protoc_insertion_point(field_mutable:protos.Action.focus_reset)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.focus_reset)
   return _msg;
 }
 
 // .protos.Neck_ScanField neck_scan_field = 41;
-inline bool Action::has_neck_scan_field() const {
+inline bool PlayerAction::has_neck_scan_field() const {
   return action_case() == kNeckScanField;
 }
-inline bool Action::_internal_has_neck_scan_field() const {
+inline bool PlayerAction::_internal_has_neck_scan_field() const {
   return action_case() == kNeckScanField;
 }
-inline void Action::set_has_neck_scan_field() {
+inline void PlayerAction::set_has_neck_scan_field() {
   _impl_._oneof_case_[0] = kNeckScanField;
 }
-inline void Action::clear_neck_scan_field() {
+inline void PlayerAction::clear_neck_scan_field() {
   if (action_case() == kNeckScanField) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.neck_scan_field_;
@@ -43676,8 +46099,8 @@ inline void Action::clear_neck_scan_field() {
     clear_has_action();
   }
 }
-inline ::protos::Neck_ScanField* Action::release_neck_scan_field() {
-  // @@protoc_insertion_point(field_release:protos.Action.neck_scan_field)
+inline ::protos::Neck_ScanField* PlayerAction::release_neck_scan_field() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.neck_scan_field)
   if (action_case() == kNeckScanField) {
     clear_has_action();
     ::protos::Neck_ScanField* temp = _impl_.action_.neck_scan_field_;
@@ -43690,17 +46113,17 @@ inline ::protos::Neck_ScanField* Action::release_neck_scan_field() {
     return nullptr;
   }
 }
-inline const ::protos::Neck_ScanField& Action::_internal_neck_scan_field() const {
+inline const ::protos::Neck_ScanField& PlayerAction::_internal_neck_scan_field() const {
   return action_case() == kNeckScanField
       ? *_impl_.action_.neck_scan_field_
       : reinterpret_cast<::protos::Neck_ScanField&>(::protos::_Neck_ScanField_default_instance_);
 }
-inline const ::protos::Neck_ScanField& Action::neck_scan_field() const {
-  // @@protoc_insertion_point(field_get:protos.Action.neck_scan_field)
+inline const ::protos::Neck_ScanField& PlayerAction::neck_scan_field() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.neck_scan_field)
   return _internal_neck_scan_field();
 }
-inline ::protos::Neck_ScanField* Action::unsafe_arena_release_neck_scan_field() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.neck_scan_field)
+inline ::protos::Neck_ScanField* PlayerAction::unsafe_arena_release_neck_scan_field() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.neck_scan_field)
   if (action_case() == kNeckScanField) {
     clear_has_action();
     ::protos::Neck_ScanField* temp = _impl_.action_.neck_scan_field_;
@@ -43710,15 +46133,15 @@ inline ::protos::Neck_ScanField* Action::unsafe_arena_release_neck_scan_field() 
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_neck_scan_field(::protos::Neck_ScanField* neck_scan_field) {
+inline void PlayerAction::unsafe_arena_set_allocated_neck_scan_field(::protos::Neck_ScanField* neck_scan_field) {
   clear_action();
   if (neck_scan_field) {
     set_has_neck_scan_field();
     _impl_.action_.neck_scan_field_ = neck_scan_field;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.neck_scan_field)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.neck_scan_field)
 }
-inline ::protos::Neck_ScanField* Action::_internal_mutable_neck_scan_field() {
+inline ::protos::Neck_ScanField* PlayerAction::_internal_mutable_neck_scan_field() {
   if (action_case() != kNeckScanField) {
     clear_action();
     set_has_neck_scan_field();
@@ -43726,23 +46149,23 @@ inline ::protos::Neck_ScanField* Action::_internal_mutable_neck_scan_field() {
   }
   return _impl_.action_.neck_scan_field_;
 }
-inline ::protos::Neck_ScanField* Action::mutable_neck_scan_field() {
+inline ::protos::Neck_ScanField* PlayerAction::mutable_neck_scan_field() {
   ::protos::Neck_ScanField* _msg = _internal_mutable_neck_scan_field();
-  // @@protoc_insertion_point(field_mutable:protos.Action.neck_scan_field)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.neck_scan_field)
   return _msg;
 }
 
 // .protos.Neck_ScanPlayers neck_scan_players = 42;
-inline bool Action::has_neck_scan_players() const {
+inline bool PlayerAction::has_neck_scan_players() const {
   return action_case() == kNeckScanPlayers;
 }
-inline bool Action::_internal_has_neck_scan_players() const {
+inline bool PlayerAction::_internal_has_neck_scan_players() const {
   return action_case() == kNeckScanPlayers;
 }
-inline void Action::set_has_neck_scan_players() {
+inline void PlayerAction::set_has_neck_scan_players() {
   _impl_._oneof_case_[0] = kNeckScanPlayers;
 }
-inline void Action::clear_neck_scan_players() {
+inline void PlayerAction::clear_neck_scan_players() {
   if (action_case() == kNeckScanPlayers) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.neck_scan_players_;
@@ -43750,8 +46173,8 @@ inline void Action::clear_neck_scan_players() {
     clear_has_action();
   }
 }
-inline ::protos::Neck_ScanPlayers* Action::release_neck_scan_players() {
-  // @@protoc_insertion_point(field_release:protos.Action.neck_scan_players)
+inline ::protos::Neck_ScanPlayers* PlayerAction::release_neck_scan_players() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.neck_scan_players)
   if (action_case() == kNeckScanPlayers) {
     clear_has_action();
     ::protos::Neck_ScanPlayers* temp = _impl_.action_.neck_scan_players_;
@@ -43764,17 +46187,17 @@ inline ::protos::Neck_ScanPlayers* Action::release_neck_scan_players() {
     return nullptr;
   }
 }
-inline const ::protos::Neck_ScanPlayers& Action::_internal_neck_scan_players() const {
+inline const ::protos::Neck_ScanPlayers& PlayerAction::_internal_neck_scan_players() const {
   return action_case() == kNeckScanPlayers
       ? *_impl_.action_.neck_scan_players_
       : reinterpret_cast<::protos::Neck_ScanPlayers&>(::protos::_Neck_ScanPlayers_default_instance_);
 }
-inline const ::protos::Neck_ScanPlayers& Action::neck_scan_players() const {
-  // @@protoc_insertion_point(field_get:protos.Action.neck_scan_players)
+inline const ::protos::Neck_ScanPlayers& PlayerAction::neck_scan_players() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.neck_scan_players)
   return _internal_neck_scan_players();
 }
-inline ::protos::Neck_ScanPlayers* Action::unsafe_arena_release_neck_scan_players() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.neck_scan_players)
+inline ::protos::Neck_ScanPlayers* PlayerAction::unsafe_arena_release_neck_scan_players() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.neck_scan_players)
   if (action_case() == kNeckScanPlayers) {
     clear_has_action();
     ::protos::Neck_ScanPlayers* temp = _impl_.action_.neck_scan_players_;
@@ -43784,15 +46207,15 @@ inline ::protos::Neck_ScanPlayers* Action::unsafe_arena_release_neck_scan_player
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_neck_scan_players(::protos::Neck_ScanPlayers* neck_scan_players) {
+inline void PlayerAction::unsafe_arena_set_allocated_neck_scan_players(::protos::Neck_ScanPlayers* neck_scan_players) {
   clear_action();
   if (neck_scan_players) {
     set_has_neck_scan_players();
     _impl_.action_.neck_scan_players_ = neck_scan_players;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.neck_scan_players)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.neck_scan_players)
 }
-inline ::protos::Neck_ScanPlayers* Action::_internal_mutable_neck_scan_players() {
+inline ::protos::Neck_ScanPlayers* PlayerAction::_internal_mutable_neck_scan_players() {
   if (action_case() != kNeckScanPlayers) {
     clear_action();
     set_has_neck_scan_players();
@@ -43800,23 +46223,23 @@ inline ::protos::Neck_ScanPlayers* Action::_internal_mutable_neck_scan_players()
   }
   return _impl_.action_.neck_scan_players_;
 }
-inline ::protos::Neck_ScanPlayers* Action::mutable_neck_scan_players() {
+inline ::protos::Neck_ScanPlayers* PlayerAction::mutable_neck_scan_players() {
   ::protos::Neck_ScanPlayers* _msg = _internal_mutable_neck_scan_players();
-  // @@protoc_insertion_point(field_mutable:protos.Action.neck_scan_players)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.neck_scan_players)
   return _msg;
 }
 
 // .protos.Neck_TurnToBallAndPlayer neck_turn_to_ball_and_player = 43;
-inline bool Action::has_neck_turn_to_ball_and_player() const {
+inline bool PlayerAction::has_neck_turn_to_ball_and_player() const {
   return action_case() == kNeckTurnToBallAndPlayer;
 }
-inline bool Action::_internal_has_neck_turn_to_ball_and_player() const {
+inline bool PlayerAction::_internal_has_neck_turn_to_ball_and_player() const {
   return action_case() == kNeckTurnToBallAndPlayer;
 }
-inline void Action::set_has_neck_turn_to_ball_and_player() {
+inline void PlayerAction::set_has_neck_turn_to_ball_and_player() {
   _impl_._oneof_case_[0] = kNeckTurnToBallAndPlayer;
 }
-inline void Action::clear_neck_turn_to_ball_and_player() {
+inline void PlayerAction::clear_neck_turn_to_ball_and_player() {
   if (action_case() == kNeckTurnToBallAndPlayer) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.neck_turn_to_ball_and_player_;
@@ -43824,8 +46247,8 @@ inline void Action::clear_neck_turn_to_ball_and_player() {
     clear_has_action();
   }
 }
-inline ::protos::Neck_TurnToBallAndPlayer* Action::release_neck_turn_to_ball_and_player() {
-  // @@protoc_insertion_point(field_release:protos.Action.neck_turn_to_ball_and_player)
+inline ::protos::Neck_TurnToBallAndPlayer* PlayerAction::release_neck_turn_to_ball_and_player() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.neck_turn_to_ball_and_player)
   if (action_case() == kNeckTurnToBallAndPlayer) {
     clear_has_action();
     ::protos::Neck_TurnToBallAndPlayer* temp = _impl_.action_.neck_turn_to_ball_and_player_;
@@ -43838,17 +46261,17 @@ inline ::protos::Neck_TurnToBallAndPlayer* Action::release_neck_turn_to_ball_and
     return nullptr;
   }
 }
-inline const ::protos::Neck_TurnToBallAndPlayer& Action::_internal_neck_turn_to_ball_and_player() const {
+inline const ::protos::Neck_TurnToBallAndPlayer& PlayerAction::_internal_neck_turn_to_ball_and_player() const {
   return action_case() == kNeckTurnToBallAndPlayer
       ? *_impl_.action_.neck_turn_to_ball_and_player_
       : reinterpret_cast<::protos::Neck_TurnToBallAndPlayer&>(::protos::_Neck_TurnToBallAndPlayer_default_instance_);
 }
-inline const ::protos::Neck_TurnToBallAndPlayer& Action::neck_turn_to_ball_and_player() const {
-  // @@protoc_insertion_point(field_get:protos.Action.neck_turn_to_ball_and_player)
+inline const ::protos::Neck_TurnToBallAndPlayer& PlayerAction::neck_turn_to_ball_and_player() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.neck_turn_to_ball_and_player)
   return _internal_neck_turn_to_ball_and_player();
 }
-inline ::protos::Neck_TurnToBallAndPlayer* Action::unsafe_arena_release_neck_turn_to_ball_and_player() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.neck_turn_to_ball_and_player)
+inline ::protos::Neck_TurnToBallAndPlayer* PlayerAction::unsafe_arena_release_neck_turn_to_ball_and_player() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.neck_turn_to_ball_and_player)
   if (action_case() == kNeckTurnToBallAndPlayer) {
     clear_has_action();
     ::protos::Neck_TurnToBallAndPlayer* temp = _impl_.action_.neck_turn_to_ball_and_player_;
@@ -43858,15 +46281,15 @@ inline ::protos::Neck_TurnToBallAndPlayer* Action::unsafe_arena_release_neck_tur
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_neck_turn_to_ball_and_player(::protos::Neck_TurnToBallAndPlayer* neck_turn_to_ball_and_player) {
+inline void PlayerAction::unsafe_arena_set_allocated_neck_turn_to_ball_and_player(::protos::Neck_TurnToBallAndPlayer* neck_turn_to_ball_and_player) {
   clear_action();
   if (neck_turn_to_ball_and_player) {
     set_has_neck_turn_to_ball_and_player();
     _impl_.action_.neck_turn_to_ball_and_player_ = neck_turn_to_ball_and_player;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.neck_turn_to_ball_and_player)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.neck_turn_to_ball_and_player)
 }
-inline ::protos::Neck_TurnToBallAndPlayer* Action::_internal_mutable_neck_turn_to_ball_and_player() {
+inline ::protos::Neck_TurnToBallAndPlayer* PlayerAction::_internal_mutable_neck_turn_to_ball_and_player() {
   if (action_case() != kNeckTurnToBallAndPlayer) {
     clear_action();
     set_has_neck_turn_to_ball_and_player();
@@ -43874,23 +46297,23 @@ inline ::protos::Neck_TurnToBallAndPlayer* Action::_internal_mutable_neck_turn_t
   }
   return _impl_.action_.neck_turn_to_ball_and_player_;
 }
-inline ::protos::Neck_TurnToBallAndPlayer* Action::mutable_neck_turn_to_ball_and_player() {
+inline ::protos::Neck_TurnToBallAndPlayer* PlayerAction::mutable_neck_turn_to_ball_and_player() {
   ::protos::Neck_TurnToBallAndPlayer* _msg = _internal_mutable_neck_turn_to_ball_and_player();
-  // @@protoc_insertion_point(field_mutable:protos.Action.neck_turn_to_ball_and_player)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.neck_turn_to_ball_and_player)
   return _msg;
 }
 
 // .protos.Neck_TurnToBallOrScan neck_turn_to_ball_or_scan = 44;
-inline bool Action::has_neck_turn_to_ball_or_scan() const {
+inline bool PlayerAction::has_neck_turn_to_ball_or_scan() const {
   return action_case() == kNeckTurnToBallOrScan;
 }
-inline bool Action::_internal_has_neck_turn_to_ball_or_scan() const {
+inline bool PlayerAction::_internal_has_neck_turn_to_ball_or_scan() const {
   return action_case() == kNeckTurnToBallOrScan;
 }
-inline void Action::set_has_neck_turn_to_ball_or_scan() {
+inline void PlayerAction::set_has_neck_turn_to_ball_or_scan() {
   _impl_._oneof_case_[0] = kNeckTurnToBallOrScan;
 }
-inline void Action::clear_neck_turn_to_ball_or_scan() {
+inline void PlayerAction::clear_neck_turn_to_ball_or_scan() {
   if (action_case() == kNeckTurnToBallOrScan) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.neck_turn_to_ball_or_scan_;
@@ -43898,8 +46321,8 @@ inline void Action::clear_neck_turn_to_ball_or_scan() {
     clear_has_action();
   }
 }
-inline ::protos::Neck_TurnToBallOrScan* Action::release_neck_turn_to_ball_or_scan() {
-  // @@protoc_insertion_point(field_release:protos.Action.neck_turn_to_ball_or_scan)
+inline ::protos::Neck_TurnToBallOrScan* PlayerAction::release_neck_turn_to_ball_or_scan() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.neck_turn_to_ball_or_scan)
   if (action_case() == kNeckTurnToBallOrScan) {
     clear_has_action();
     ::protos::Neck_TurnToBallOrScan* temp = _impl_.action_.neck_turn_to_ball_or_scan_;
@@ -43912,17 +46335,17 @@ inline ::protos::Neck_TurnToBallOrScan* Action::release_neck_turn_to_ball_or_sca
     return nullptr;
   }
 }
-inline const ::protos::Neck_TurnToBallOrScan& Action::_internal_neck_turn_to_ball_or_scan() const {
+inline const ::protos::Neck_TurnToBallOrScan& PlayerAction::_internal_neck_turn_to_ball_or_scan() const {
   return action_case() == kNeckTurnToBallOrScan
       ? *_impl_.action_.neck_turn_to_ball_or_scan_
       : reinterpret_cast<::protos::Neck_TurnToBallOrScan&>(::protos::_Neck_TurnToBallOrScan_default_instance_);
 }
-inline const ::protos::Neck_TurnToBallOrScan& Action::neck_turn_to_ball_or_scan() const {
-  // @@protoc_insertion_point(field_get:protos.Action.neck_turn_to_ball_or_scan)
+inline const ::protos::Neck_TurnToBallOrScan& PlayerAction::neck_turn_to_ball_or_scan() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.neck_turn_to_ball_or_scan)
   return _internal_neck_turn_to_ball_or_scan();
 }
-inline ::protos::Neck_TurnToBallOrScan* Action::unsafe_arena_release_neck_turn_to_ball_or_scan() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.neck_turn_to_ball_or_scan)
+inline ::protos::Neck_TurnToBallOrScan* PlayerAction::unsafe_arena_release_neck_turn_to_ball_or_scan() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.neck_turn_to_ball_or_scan)
   if (action_case() == kNeckTurnToBallOrScan) {
     clear_has_action();
     ::protos::Neck_TurnToBallOrScan* temp = _impl_.action_.neck_turn_to_ball_or_scan_;
@@ -43932,15 +46355,15 @@ inline ::protos::Neck_TurnToBallOrScan* Action::unsafe_arena_release_neck_turn_t
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_neck_turn_to_ball_or_scan(::protos::Neck_TurnToBallOrScan* neck_turn_to_ball_or_scan) {
+inline void PlayerAction::unsafe_arena_set_allocated_neck_turn_to_ball_or_scan(::protos::Neck_TurnToBallOrScan* neck_turn_to_ball_or_scan) {
   clear_action();
   if (neck_turn_to_ball_or_scan) {
     set_has_neck_turn_to_ball_or_scan();
     _impl_.action_.neck_turn_to_ball_or_scan_ = neck_turn_to_ball_or_scan;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.neck_turn_to_ball_or_scan)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.neck_turn_to_ball_or_scan)
 }
-inline ::protos::Neck_TurnToBallOrScan* Action::_internal_mutable_neck_turn_to_ball_or_scan() {
+inline ::protos::Neck_TurnToBallOrScan* PlayerAction::_internal_mutable_neck_turn_to_ball_or_scan() {
   if (action_case() != kNeckTurnToBallOrScan) {
     clear_action();
     set_has_neck_turn_to_ball_or_scan();
@@ -43948,23 +46371,23 @@ inline ::protos::Neck_TurnToBallOrScan* Action::_internal_mutable_neck_turn_to_b
   }
   return _impl_.action_.neck_turn_to_ball_or_scan_;
 }
-inline ::protos::Neck_TurnToBallOrScan* Action::mutable_neck_turn_to_ball_or_scan() {
+inline ::protos::Neck_TurnToBallOrScan* PlayerAction::mutable_neck_turn_to_ball_or_scan() {
   ::protos::Neck_TurnToBallOrScan* _msg = _internal_mutable_neck_turn_to_ball_or_scan();
-  // @@protoc_insertion_point(field_mutable:protos.Action.neck_turn_to_ball_or_scan)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.neck_turn_to_ball_or_scan)
   return _msg;
 }
 
 // .protos.Neck_TurnToBall neck_turn_to_ball = 45;
-inline bool Action::has_neck_turn_to_ball() const {
+inline bool PlayerAction::has_neck_turn_to_ball() const {
   return action_case() == kNeckTurnToBall;
 }
-inline bool Action::_internal_has_neck_turn_to_ball() const {
+inline bool PlayerAction::_internal_has_neck_turn_to_ball() const {
   return action_case() == kNeckTurnToBall;
 }
-inline void Action::set_has_neck_turn_to_ball() {
+inline void PlayerAction::set_has_neck_turn_to_ball() {
   _impl_._oneof_case_[0] = kNeckTurnToBall;
 }
-inline void Action::clear_neck_turn_to_ball() {
+inline void PlayerAction::clear_neck_turn_to_ball() {
   if (action_case() == kNeckTurnToBall) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.neck_turn_to_ball_;
@@ -43972,8 +46395,8 @@ inline void Action::clear_neck_turn_to_ball() {
     clear_has_action();
   }
 }
-inline ::protos::Neck_TurnToBall* Action::release_neck_turn_to_ball() {
-  // @@protoc_insertion_point(field_release:protos.Action.neck_turn_to_ball)
+inline ::protos::Neck_TurnToBall* PlayerAction::release_neck_turn_to_ball() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.neck_turn_to_ball)
   if (action_case() == kNeckTurnToBall) {
     clear_has_action();
     ::protos::Neck_TurnToBall* temp = _impl_.action_.neck_turn_to_ball_;
@@ -43986,17 +46409,17 @@ inline ::protos::Neck_TurnToBall* Action::release_neck_turn_to_ball() {
     return nullptr;
   }
 }
-inline const ::protos::Neck_TurnToBall& Action::_internal_neck_turn_to_ball() const {
+inline const ::protos::Neck_TurnToBall& PlayerAction::_internal_neck_turn_to_ball() const {
   return action_case() == kNeckTurnToBall
       ? *_impl_.action_.neck_turn_to_ball_
       : reinterpret_cast<::protos::Neck_TurnToBall&>(::protos::_Neck_TurnToBall_default_instance_);
 }
-inline const ::protos::Neck_TurnToBall& Action::neck_turn_to_ball() const {
-  // @@protoc_insertion_point(field_get:protos.Action.neck_turn_to_ball)
+inline const ::protos::Neck_TurnToBall& PlayerAction::neck_turn_to_ball() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.neck_turn_to_ball)
   return _internal_neck_turn_to_ball();
 }
-inline ::protos::Neck_TurnToBall* Action::unsafe_arena_release_neck_turn_to_ball() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.neck_turn_to_ball)
+inline ::protos::Neck_TurnToBall* PlayerAction::unsafe_arena_release_neck_turn_to_ball() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.neck_turn_to_ball)
   if (action_case() == kNeckTurnToBall) {
     clear_has_action();
     ::protos::Neck_TurnToBall* temp = _impl_.action_.neck_turn_to_ball_;
@@ -44006,15 +46429,15 @@ inline ::protos::Neck_TurnToBall* Action::unsafe_arena_release_neck_turn_to_ball
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_neck_turn_to_ball(::protos::Neck_TurnToBall* neck_turn_to_ball) {
+inline void PlayerAction::unsafe_arena_set_allocated_neck_turn_to_ball(::protos::Neck_TurnToBall* neck_turn_to_ball) {
   clear_action();
   if (neck_turn_to_ball) {
     set_has_neck_turn_to_ball();
     _impl_.action_.neck_turn_to_ball_ = neck_turn_to_ball;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.neck_turn_to_ball)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.neck_turn_to_ball)
 }
-inline ::protos::Neck_TurnToBall* Action::_internal_mutable_neck_turn_to_ball() {
+inline ::protos::Neck_TurnToBall* PlayerAction::_internal_mutable_neck_turn_to_ball() {
   if (action_case() != kNeckTurnToBall) {
     clear_action();
     set_has_neck_turn_to_ball();
@@ -44022,23 +46445,23 @@ inline ::protos::Neck_TurnToBall* Action::_internal_mutable_neck_turn_to_ball() 
   }
   return _impl_.action_.neck_turn_to_ball_;
 }
-inline ::protos::Neck_TurnToBall* Action::mutable_neck_turn_to_ball() {
+inline ::protos::Neck_TurnToBall* PlayerAction::mutable_neck_turn_to_ball() {
   ::protos::Neck_TurnToBall* _msg = _internal_mutable_neck_turn_to_ball();
-  // @@protoc_insertion_point(field_mutable:protos.Action.neck_turn_to_ball)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.neck_turn_to_ball)
   return _msg;
 }
 
 // .protos.Neck_TurnToGoalieOrScan neck_turn_to_goalie_or_scan = 46;
-inline bool Action::has_neck_turn_to_goalie_or_scan() const {
+inline bool PlayerAction::has_neck_turn_to_goalie_or_scan() const {
   return action_case() == kNeckTurnToGoalieOrScan;
 }
-inline bool Action::_internal_has_neck_turn_to_goalie_or_scan() const {
+inline bool PlayerAction::_internal_has_neck_turn_to_goalie_or_scan() const {
   return action_case() == kNeckTurnToGoalieOrScan;
 }
-inline void Action::set_has_neck_turn_to_goalie_or_scan() {
+inline void PlayerAction::set_has_neck_turn_to_goalie_or_scan() {
   _impl_._oneof_case_[0] = kNeckTurnToGoalieOrScan;
 }
-inline void Action::clear_neck_turn_to_goalie_or_scan() {
+inline void PlayerAction::clear_neck_turn_to_goalie_or_scan() {
   if (action_case() == kNeckTurnToGoalieOrScan) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.neck_turn_to_goalie_or_scan_;
@@ -44046,8 +46469,8 @@ inline void Action::clear_neck_turn_to_goalie_or_scan() {
     clear_has_action();
   }
 }
-inline ::protos::Neck_TurnToGoalieOrScan* Action::release_neck_turn_to_goalie_or_scan() {
-  // @@protoc_insertion_point(field_release:protos.Action.neck_turn_to_goalie_or_scan)
+inline ::protos::Neck_TurnToGoalieOrScan* PlayerAction::release_neck_turn_to_goalie_or_scan() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.neck_turn_to_goalie_or_scan)
   if (action_case() == kNeckTurnToGoalieOrScan) {
     clear_has_action();
     ::protos::Neck_TurnToGoalieOrScan* temp = _impl_.action_.neck_turn_to_goalie_or_scan_;
@@ -44060,17 +46483,17 @@ inline ::protos::Neck_TurnToGoalieOrScan* Action::release_neck_turn_to_goalie_or
     return nullptr;
   }
 }
-inline const ::protos::Neck_TurnToGoalieOrScan& Action::_internal_neck_turn_to_goalie_or_scan() const {
+inline const ::protos::Neck_TurnToGoalieOrScan& PlayerAction::_internal_neck_turn_to_goalie_or_scan() const {
   return action_case() == kNeckTurnToGoalieOrScan
       ? *_impl_.action_.neck_turn_to_goalie_or_scan_
       : reinterpret_cast<::protos::Neck_TurnToGoalieOrScan&>(::protos::_Neck_TurnToGoalieOrScan_default_instance_);
 }
-inline const ::protos::Neck_TurnToGoalieOrScan& Action::neck_turn_to_goalie_or_scan() const {
-  // @@protoc_insertion_point(field_get:protos.Action.neck_turn_to_goalie_or_scan)
+inline const ::protos::Neck_TurnToGoalieOrScan& PlayerAction::neck_turn_to_goalie_or_scan() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.neck_turn_to_goalie_or_scan)
   return _internal_neck_turn_to_goalie_or_scan();
 }
-inline ::protos::Neck_TurnToGoalieOrScan* Action::unsafe_arena_release_neck_turn_to_goalie_or_scan() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.neck_turn_to_goalie_or_scan)
+inline ::protos::Neck_TurnToGoalieOrScan* PlayerAction::unsafe_arena_release_neck_turn_to_goalie_or_scan() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.neck_turn_to_goalie_or_scan)
   if (action_case() == kNeckTurnToGoalieOrScan) {
     clear_has_action();
     ::protos::Neck_TurnToGoalieOrScan* temp = _impl_.action_.neck_turn_to_goalie_or_scan_;
@@ -44080,15 +46503,15 @@ inline ::protos::Neck_TurnToGoalieOrScan* Action::unsafe_arena_release_neck_turn
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_neck_turn_to_goalie_or_scan(::protos::Neck_TurnToGoalieOrScan* neck_turn_to_goalie_or_scan) {
+inline void PlayerAction::unsafe_arena_set_allocated_neck_turn_to_goalie_or_scan(::protos::Neck_TurnToGoalieOrScan* neck_turn_to_goalie_or_scan) {
   clear_action();
   if (neck_turn_to_goalie_or_scan) {
     set_has_neck_turn_to_goalie_or_scan();
     _impl_.action_.neck_turn_to_goalie_or_scan_ = neck_turn_to_goalie_or_scan;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.neck_turn_to_goalie_or_scan)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.neck_turn_to_goalie_or_scan)
 }
-inline ::protos::Neck_TurnToGoalieOrScan* Action::_internal_mutable_neck_turn_to_goalie_or_scan() {
+inline ::protos::Neck_TurnToGoalieOrScan* PlayerAction::_internal_mutable_neck_turn_to_goalie_or_scan() {
   if (action_case() != kNeckTurnToGoalieOrScan) {
     clear_action();
     set_has_neck_turn_to_goalie_or_scan();
@@ -44096,23 +46519,23 @@ inline ::protos::Neck_TurnToGoalieOrScan* Action::_internal_mutable_neck_turn_to
   }
   return _impl_.action_.neck_turn_to_goalie_or_scan_;
 }
-inline ::protos::Neck_TurnToGoalieOrScan* Action::mutable_neck_turn_to_goalie_or_scan() {
+inline ::protos::Neck_TurnToGoalieOrScan* PlayerAction::mutable_neck_turn_to_goalie_or_scan() {
   ::protos::Neck_TurnToGoalieOrScan* _msg = _internal_mutable_neck_turn_to_goalie_or_scan();
-  // @@protoc_insertion_point(field_mutable:protos.Action.neck_turn_to_goalie_or_scan)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.neck_turn_to_goalie_or_scan)
   return _msg;
 }
 
 // .protos.Neck_TurnToLowConfTeammate neck_turn_to_low_conf_teammate = 47;
-inline bool Action::has_neck_turn_to_low_conf_teammate() const {
+inline bool PlayerAction::has_neck_turn_to_low_conf_teammate() const {
   return action_case() == kNeckTurnToLowConfTeammate;
 }
-inline bool Action::_internal_has_neck_turn_to_low_conf_teammate() const {
+inline bool PlayerAction::_internal_has_neck_turn_to_low_conf_teammate() const {
   return action_case() == kNeckTurnToLowConfTeammate;
 }
-inline void Action::set_has_neck_turn_to_low_conf_teammate() {
+inline void PlayerAction::set_has_neck_turn_to_low_conf_teammate() {
   _impl_._oneof_case_[0] = kNeckTurnToLowConfTeammate;
 }
-inline void Action::clear_neck_turn_to_low_conf_teammate() {
+inline void PlayerAction::clear_neck_turn_to_low_conf_teammate() {
   if (action_case() == kNeckTurnToLowConfTeammate) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.neck_turn_to_low_conf_teammate_;
@@ -44120,8 +46543,8 @@ inline void Action::clear_neck_turn_to_low_conf_teammate() {
     clear_has_action();
   }
 }
-inline ::protos::Neck_TurnToLowConfTeammate* Action::release_neck_turn_to_low_conf_teammate() {
-  // @@protoc_insertion_point(field_release:protos.Action.neck_turn_to_low_conf_teammate)
+inline ::protos::Neck_TurnToLowConfTeammate* PlayerAction::release_neck_turn_to_low_conf_teammate() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.neck_turn_to_low_conf_teammate)
   if (action_case() == kNeckTurnToLowConfTeammate) {
     clear_has_action();
     ::protos::Neck_TurnToLowConfTeammate* temp = _impl_.action_.neck_turn_to_low_conf_teammate_;
@@ -44134,17 +46557,17 @@ inline ::protos::Neck_TurnToLowConfTeammate* Action::release_neck_turn_to_low_co
     return nullptr;
   }
 }
-inline const ::protos::Neck_TurnToLowConfTeammate& Action::_internal_neck_turn_to_low_conf_teammate() const {
+inline const ::protos::Neck_TurnToLowConfTeammate& PlayerAction::_internal_neck_turn_to_low_conf_teammate() const {
   return action_case() == kNeckTurnToLowConfTeammate
       ? *_impl_.action_.neck_turn_to_low_conf_teammate_
       : reinterpret_cast<::protos::Neck_TurnToLowConfTeammate&>(::protos::_Neck_TurnToLowConfTeammate_default_instance_);
 }
-inline const ::protos::Neck_TurnToLowConfTeammate& Action::neck_turn_to_low_conf_teammate() const {
-  // @@protoc_insertion_point(field_get:protos.Action.neck_turn_to_low_conf_teammate)
+inline const ::protos::Neck_TurnToLowConfTeammate& PlayerAction::neck_turn_to_low_conf_teammate() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.neck_turn_to_low_conf_teammate)
   return _internal_neck_turn_to_low_conf_teammate();
 }
-inline ::protos::Neck_TurnToLowConfTeammate* Action::unsafe_arena_release_neck_turn_to_low_conf_teammate() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.neck_turn_to_low_conf_teammate)
+inline ::protos::Neck_TurnToLowConfTeammate* PlayerAction::unsafe_arena_release_neck_turn_to_low_conf_teammate() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.neck_turn_to_low_conf_teammate)
   if (action_case() == kNeckTurnToLowConfTeammate) {
     clear_has_action();
     ::protos::Neck_TurnToLowConfTeammate* temp = _impl_.action_.neck_turn_to_low_conf_teammate_;
@@ -44154,15 +46577,15 @@ inline ::protos::Neck_TurnToLowConfTeammate* Action::unsafe_arena_release_neck_t
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_neck_turn_to_low_conf_teammate(::protos::Neck_TurnToLowConfTeammate* neck_turn_to_low_conf_teammate) {
+inline void PlayerAction::unsafe_arena_set_allocated_neck_turn_to_low_conf_teammate(::protos::Neck_TurnToLowConfTeammate* neck_turn_to_low_conf_teammate) {
   clear_action();
   if (neck_turn_to_low_conf_teammate) {
     set_has_neck_turn_to_low_conf_teammate();
     _impl_.action_.neck_turn_to_low_conf_teammate_ = neck_turn_to_low_conf_teammate;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.neck_turn_to_low_conf_teammate)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.neck_turn_to_low_conf_teammate)
 }
-inline ::protos::Neck_TurnToLowConfTeammate* Action::_internal_mutable_neck_turn_to_low_conf_teammate() {
+inline ::protos::Neck_TurnToLowConfTeammate* PlayerAction::_internal_mutable_neck_turn_to_low_conf_teammate() {
   if (action_case() != kNeckTurnToLowConfTeammate) {
     clear_action();
     set_has_neck_turn_to_low_conf_teammate();
@@ -44170,23 +46593,23 @@ inline ::protos::Neck_TurnToLowConfTeammate* Action::_internal_mutable_neck_turn
   }
   return _impl_.action_.neck_turn_to_low_conf_teammate_;
 }
-inline ::protos::Neck_TurnToLowConfTeammate* Action::mutable_neck_turn_to_low_conf_teammate() {
+inline ::protos::Neck_TurnToLowConfTeammate* PlayerAction::mutable_neck_turn_to_low_conf_teammate() {
   ::protos::Neck_TurnToLowConfTeammate* _msg = _internal_mutable_neck_turn_to_low_conf_teammate();
-  // @@protoc_insertion_point(field_mutable:protos.Action.neck_turn_to_low_conf_teammate)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.neck_turn_to_low_conf_teammate)
   return _msg;
 }
 
 // .protos.Neck_TurnToPlayerOrScan neck_turn_to_player_or_scan = 48;
-inline bool Action::has_neck_turn_to_player_or_scan() const {
+inline bool PlayerAction::has_neck_turn_to_player_or_scan() const {
   return action_case() == kNeckTurnToPlayerOrScan;
 }
-inline bool Action::_internal_has_neck_turn_to_player_or_scan() const {
+inline bool PlayerAction::_internal_has_neck_turn_to_player_or_scan() const {
   return action_case() == kNeckTurnToPlayerOrScan;
 }
-inline void Action::set_has_neck_turn_to_player_or_scan() {
+inline void PlayerAction::set_has_neck_turn_to_player_or_scan() {
   _impl_._oneof_case_[0] = kNeckTurnToPlayerOrScan;
 }
-inline void Action::clear_neck_turn_to_player_or_scan() {
+inline void PlayerAction::clear_neck_turn_to_player_or_scan() {
   if (action_case() == kNeckTurnToPlayerOrScan) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.neck_turn_to_player_or_scan_;
@@ -44194,8 +46617,8 @@ inline void Action::clear_neck_turn_to_player_or_scan() {
     clear_has_action();
   }
 }
-inline ::protos::Neck_TurnToPlayerOrScan* Action::release_neck_turn_to_player_or_scan() {
-  // @@protoc_insertion_point(field_release:protos.Action.neck_turn_to_player_or_scan)
+inline ::protos::Neck_TurnToPlayerOrScan* PlayerAction::release_neck_turn_to_player_or_scan() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.neck_turn_to_player_or_scan)
   if (action_case() == kNeckTurnToPlayerOrScan) {
     clear_has_action();
     ::protos::Neck_TurnToPlayerOrScan* temp = _impl_.action_.neck_turn_to_player_or_scan_;
@@ -44208,17 +46631,17 @@ inline ::protos::Neck_TurnToPlayerOrScan* Action::release_neck_turn_to_player_or
     return nullptr;
   }
 }
-inline const ::protos::Neck_TurnToPlayerOrScan& Action::_internal_neck_turn_to_player_or_scan() const {
+inline const ::protos::Neck_TurnToPlayerOrScan& PlayerAction::_internal_neck_turn_to_player_or_scan() const {
   return action_case() == kNeckTurnToPlayerOrScan
       ? *_impl_.action_.neck_turn_to_player_or_scan_
       : reinterpret_cast<::protos::Neck_TurnToPlayerOrScan&>(::protos::_Neck_TurnToPlayerOrScan_default_instance_);
 }
-inline const ::protos::Neck_TurnToPlayerOrScan& Action::neck_turn_to_player_or_scan() const {
-  // @@protoc_insertion_point(field_get:protos.Action.neck_turn_to_player_or_scan)
+inline const ::protos::Neck_TurnToPlayerOrScan& PlayerAction::neck_turn_to_player_or_scan() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.neck_turn_to_player_or_scan)
   return _internal_neck_turn_to_player_or_scan();
 }
-inline ::protos::Neck_TurnToPlayerOrScan* Action::unsafe_arena_release_neck_turn_to_player_or_scan() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.neck_turn_to_player_or_scan)
+inline ::protos::Neck_TurnToPlayerOrScan* PlayerAction::unsafe_arena_release_neck_turn_to_player_or_scan() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.neck_turn_to_player_or_scan)
   if (action_case() == kNeckTurnToPlayerOrScan) {
     clear_has_action();
     ::protos::Neck_TurnToPlayerOrScan* temp = _impl_.action_.neck_turn_to_player_or_scan_;
@@ -44228,15 +46651,15 @@ inline ::protos::Neck_TurnToPlayerOrScan* Action::unsafe_arena_release_neck_turn
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_neck_turn_to_player_or_scan(::protos::Neck_TurnToPlayerOrScan* neck_turn_to_player_or_scan) {
+inline void PlayerAction::unsafe_arena_set_allocated_neck_turn_to_player_or_scan(::protos::Neck_TurnToPlayerOrScan* neck_turn_to_player_or_scan) {
   clear_action();
   if (neck_turn_to_player_or_scan) {
     set_has_neck_turn_to_player_or_scan();
     _impl_.action_.neck_turn_to_player_or_scan_ = neck_turn_to_player_or_scan;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.neck_turn_to_player_or_scan)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.neck_turn_to_player_or_scan)
 }
-inline ::protos::Neck_TurnToPlayerOrScan* Action::_internal_mutable_neck_turn_to_player_or_scan() {
+inline ::protos::Neck_TurnToPlayerOrScan* PlayerAction::_internal_mutable_neck_turn_to_player_or_scan() {
   if (action_case() != kNeckTurnToPlayerOrScan) {
     clear_action();
     set_has_neck_turn_to_player_or_scan();
@@ -44244,23 +46667,23 @@ inline ::protos::Neck_TurnToPlayerOrScan* Action::_internal_mutable_neck_turn_to
   }
   return _impl_.action_.neck_turn_to_player_or_scan_;
 }
-inline ::protos::Neck_TurnToPlayerOrScan* Action::mutable_neck_turn_to_player_or_scan() {
+inline ::protos::Neck_TurnToPlayerOrScan* PlayerAction::mutable_neck_turn_to_player_or_scan() {
   ::protos::Neck_TurnToPlayerOrScan* _msg = _internal_mutable_neck_turn_to_player_or_scan();
-  // @@protoc_insertion_point(field_mutable:protos.Action.neck_turn_to_player_or_scan)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.neck_turn_to_player_or_scan)
   return _msg;
 }
 
 // .protos.Neck_TurnToPoint neck_turn_to_point = 49;
-inline bool Action::has_neck_turn_to_point() const {
+inline bool PlayerAction::has_neck_turn_to_point() const {
   return action_case() == kNeckTurnToPoint;
 }
-inline bool Action::_internal_has_neck_turn_to_point() const {
+inline bool PlayerAction::_internal_has_neck_turn_to_point() const {
   return action_case() == kNeckTurnToPoint;
 }
-inline void Action::set_has_neck_turn_to_point() {
+inline void PlayerAction::set_has_neck_turn_to_point() {
   _impl_._oneof_case_[0] = kNeckTurnToPoint;
 }
-inline void Action::clear_neck_turn_to_point() {
+inline void PlayerAction::clear_neck_turn_to_point() {
   if (action_case() == kNeckTurnToPoint) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.neck_turn_to_point_;
@@ -44268,8 +46691,8 @@ inline void Action::clear_neck_turn_to_point() {
     clear_has_action();
   }
 }
-inline ::protos::Neck_TurnToPoint* Action::release_neck_turn_to_point() {
-  // @@protoc_insertion_point(field_release:protos.Action.neck_turn_to_point)
+inline ::protos::Neck_TurnToPoint* PlayerAction::release_neck_turn_to_point() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.neck_turn_to_point)
   if (action_case() == kNeckTurnToPoint) {
     clear_has_action();
     ::protos::Neck_TurnToPoint* temp = _impl_.action_.neck_turn_to_point_;
@@ -44282,17 +46705,17 @@ inline ::protos::Neck_TurnToPoint* Action::release_neck_turn_to_point() {
     return nullptr;
   }
 }
-inline const ::protos::Neck_TurnToPoint& Action::_internal_neck_turn_to_point() const {
+inline const ::protos::Neck_TurnToPoint& PlayerAction::_internal_neck_turn_to_point() const {
   return action_case() == kNeckTurnToPoint
       ? *_impl_.action_.neck_turn_to_point_
       : reinterpret_cast<::protos::Neck_TurnToPoint&>(::protos::_Neck_TurnToPoint_default_instance_);
 }
-inline const ::protos::Neck_TurnToPoint& Action::neck_turn_to_point() const {
-  // @@protoc_insertion_point(field_get:protos.Action.neck_turn_to_point)
+inline const ::protos::Neck_TurnToPoint& PlayerAction::neck_turn_to_point() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.neck_turn_to_point)
   return _internal_neck_turn_to_point();
 }
-inline ::protos::Neck_TurnToPoint* Action::unsafe_arena_release_neck_turn_to_point() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.neck_turn_to_point)
+inline ::protos::Neck_TurnToPoint* PlayerAction::unsafe_arena_release_neck_turn_to_point() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.neck_turn_to_point)
   if (action_case() == kNeckTurnToPoint) {
     clear_has_action();
     ::protos::Neck_TurnToPoint* temp = _impl_.action_.neck_turn_to_point_;
@@ -44302,15 +46725,15 @@ inline ::protos::Neck_TurnToPoint* Action::unsafe_arena_release_neck_turn_to_poi
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_neck_turn_to_point(::protos::Neck_TurnToPoint* neck_turn_to_point) {
+inline void PlayerAction::unsafe_arena_set_allocated_neck_turn_to_point(::protos::Neck_TurnToPoint* neck_turn_to_point) {
   clear_action();
   if (neck_turn_to_point) {
     set_has_neck_turn_to_point();
     _impl_.action_.neck_turn_to_point_ = neck_turn_to_point;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.neck_turn_to_point)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.neck_turn_to_point)
 }
-inline ::protos::Neck_TurnToPoint* Action::_internal_mutable_neck_turn_to_point() {
+inline ::protos::Neck_TurnToPoint* PlayerAction::_internal_mutable_neck_turn_to_point() {
   if (action_case() != kNeckTurnToPoint) {
     clear_action();
     set_has_neck_turn_to_point();
@@ -44318,23 +46741,23 @@ inline ::protos::Neck_TurnToPoint* Action::_internal_mutable_neck_turn_to_point(
   }
   return _impl_.action_.neck_turn_to_point_;
 }
-inline ::protos::Neck_TurnToPoint* Action::mutable_neck_turn_to_point() {
+inline ::protos::Neck_TurnToPoint* PlayerAction::mutable_neck_turn_to_point() {
   ::protos::Neck_TurnToPoint* _msg = _internal_mutable_neck_turn_to_point();
-  // @@protoc_insertion_point(field_mutable:protos.Action.neck_turn_to_point)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.neck_turn_to_point)
   return _msg;
 }
 
 // .protos.Neck_TurnToRelative neck_turn_to_relative = 50;
-inline bool Action::has_neck_turn_to_relative() const {
+inline bool PlayerAction::has_neck_turn_to_relative() const {
   return action_case() == kNeckTurnToRelative;
 }
-inline bool Action::_internal_has_neck_turn_to_relative() const {
+inline bool PlayerAction::_internal_has_neck_turn_to_relative() const {
   return action_case() == kNeckTurnToRelative;
 }
-inline void Action::set_has_neck_turn_to_relative() {
+inline void PlayerAction::set_has_neck_turn_to_relative() {
   _impl_._oneof_case_[0] = kNeckTurnToRelative;
 }
-inline void Action::clear_neck_turn_to_relative() {
+inline void PlayerAction::clear_neck_turn_to_relative() {
   if (action_case() == kNeckTurnToRelative) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.neck_turn_to_relative_;
@@ -44342,8 +46765,8 @@ inline void Action::clear_neck_turn_to_relative() {
     clear_has_action();
   }
 }
-inline ::protos::Neck_TurnToRelative* Action::release_neck_turn_to_relative() {
-  // @@protoc_insertion_point(field_release:protos.Action.neck_turn_to_relative)
+inline ::protos::Neck_TurnToRelative* PlayerAction::release_neck_turn_to_relative() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.neck_turn_to_relative)
   if (action_case() == kNeckTurnToRelative) {
     clear_has_action();
     ::protos::Neck_TurnToRelative* temp = _impl_.action_.neck_turn_to_relative_;
@@ -44356,17 +46779,17 @@ inline ::protos::Neck_TurnToRelative* Action::release_neck_turn_to_relative() {
     return nullptr;
   }
 }
-inline const ::protos::Neck_TurnToRelative& Action::_internal_neck_turn_to_relative() const {
+inline const ::protos::Neck_TurnToRelative& PlayerAction::_internal_neck_turn_to_relative() const {
   return action_case() == kNeckTurnToRelative
       ? *_impl_.action_.neck_turn_to_relative_
       : reinterpret_cast<::protos::Neck_TurnToRelative&>(::protos::_Neck_TurnToRelative_default_instance_);
 }
-inline const ::protos::Neck_TurnToRelative& Action::neck_turn_to_relative() const {
-  // @@protoc_insertion_point(field_get:protos.Action.neck_turn_to_relative)
+inline const ::protos::Neck_TurnToRelative& PlayerAction::neck_turn_to_relative() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.neck_turn_to_relative)
   return _internal_neck_turn_to_relative();
 }
-inline ::protos::Neck_TurnToRelative* Action::unsafe_arena_release_neck_turn_to_relative() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.neck_turn_to_relative)
+inline ::protos::Neck_TurnToRelative* PlayerAction::unsafe_arena_release_neck_turn_to_relative() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.neck_turn_to_relative)
   if (action_case() == kNeckTurnToRelative) {
     clear_has_action();
     ::protos::Neck_TurnToRelative* temp = _impl_.action_.neck_turn_to_relative_;
@@ -44376,15 +46799,15 @@ inline ::protos::Neck_TurnToRelative* Action::unsafe_arena_release_neck_turn_to_
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_neck_turn_to_relative(::protos::Neck_TurnToRelative* neck_turn_to_relative) {
+inline void PlayerAction::unsafe_arena_set_allocated_neck_turn_to_relative(::protos::Neck_TurnToRelative* neck_turn_to_relative) {
   clear_action();
   if (neck_turn_to_relative) {
     set_has_neck_turn_to_relative();
     _impl_.action_.neck_turn_to_relative_ = neck_turn_to_relative;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.neck_turn_to_relative)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.neck_turn_to_relative)
 }
-inline ::protos::Neck_TurnToRelative* Action::_internal_mutable_neck_turn_to_relative() {
+inline ::protos::Neck_TurnToRelative* PlayerAction::_internal_mutable_neck_turn_to_relative() {
   if (action_case() != kNeckTurnToRelative) {
     clear_action();
     set_has_neck_turn_to_relative();
@@ -44392,23 +46815,23 @@ inline ::protos::Neck_TurnToRelative* Action::_internal_mutable_neck_turn_to_rel
   }
   return _impl_.action_.neck_turn_to_relative_;
 }
-inline ::protos::Neck_TurnToRelative* Action::mutable_neck_turn_to_relative() {
+inline ::protos::Neck_TurnToRelative* PlayerAction::mutable_neck_turn_to_relative() {
   ::protos::Neck_TurnToRelative* _msg = _internal_mutable_neck_turn_to_relative();
-  // @@protoc_insertion_point(field_mutable:protos.Action.neck_turn_to_relative)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.neck_turn_to_relative)
   return _msg;
 }
 
 // .protos.View_ChangeWidth view_change_width = 51;
-inline bool Action::has_view_change_width() const {
+inline bool PlayerAction::has_view_change_width() const {
   return action_case() == kViewChangeWidth;
 }
-inline bool Action::_internal_has_view_change_width() const {
+inline bool PlayerAction::_internal_has_view_change_width() const {
   return action_case() == kViewChangeWidth;
 }
-inline void Action::set_has_view_change_width() {
+inline void PlayerAction::set_has_view_change_width() {
   _impl_._oneof_case_[0] = kViewChangeWidth;
 }
-inline void Action::clear_view_change_width() {
+inline void PlayerAction::clear_view_change_width() {
   if (action_case() == kViewChangeWidth) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.view_change_width_;
@@ -44416,8 +46839,8 @@ inline void Action::clear_view_change_width() {
     clear_has_action();
   }
 }
-inline ::protos::View_ChangeWidth* Action::release_view_change_width() {
-  // @@protoc_insertion_point(field_release:protos.Action.view_change_width)
+inline ::protos::View_ChangeWidth* PlayerAction::release_view_change_width() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.view_change_width)
   if (action_case() == kViewChangeWidth) {
     clear_has_action();
     ::protos::View_ChangeWidth* temp = _impl_.action_.view_change_width_;
@@ -44430,17 +46853,17 @@ inline ::protos::View_ChangeWidth* Action::release_view_change_width() {
     return nullptr;
   }
 }
-inline const ::protos::View_ChangeWidth& Action::_internal_view_change_width() const {
+inline const ::protos::View_ChangeWidth& PlayerAction::_internal_view_change_width() const {
   return action_case() == kViewChangeWidth
       ? *_impl_.action_.view_change_width_
       : reinterpret_cast<::protos::View_ChangeWidth&>(::protos::_View_ChangeWidth_default_instance_);
 }
-inline const ::protos::View_ChangeWidth& Action::view_change_width() const {
-  // @@protoc_insertion_point(field_get:protos.Action.view_change_width)
+inline const ::protos::View_ChangeWidth& PlayerAction::view_change_width() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.view_change_width)
   return _internal_view_change_width();
 }
-inline ::protos::View_ChangeWidth* Action::unsafe_arena_release_view_change_width() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.view_change_width)
+inline ::protos::View_ChangeWidth* PlayerAction::unsafe_arena_release_view_change_width() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.view_change_width)
   if (action_case() == kViewChangeWidth) {
     clear_has_action();
     ::protos::View_ChangeWidth* temp = _impl_.action_.view_change_width_;
@@ -44450,15 +46873,15 @@ inline ::protos::View_ChangeWidth* Action::unsafe_arena_release_view_change_widt
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_view_change_width(::protos::View_ChangeWidth* view_change_width) {
+inline void PlayerAction::unsafe_arena_set_allocated_view_change_width(::protos::View_ChangeWidth* view_change_width) {
   clear_action();
   if (view_change_width) {
     set_has_view_change_width();
     _impl_.action_.view_change_width_ = view_change_width;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.view_change_width)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.view_change_width)
 }
-inline ::protos::View_ChangeWidth* Action::_internal_mutable_view_change_width() {
+inline ::protos::View_ChangeWidth* PlayerAction::_internal_mutable_view_change_width() {
   if (action_case() != kViewChangeWidth) {
     clear_action();
     set_has_view_change_width();
@@ -44466,23 +46889,23 @@ inline ::protos::View_ChangeWidth* Action::_internal_mutable_view_change_width()
   }
   return _impl_.action_.view_change_width_;
 }
-inline ::protos::View_ChangeWidth* Action::mutable_view_change_width() {
+inline ::protos::View_ChangeWidth* PlayerAction::mutable_view_change_width() {
   ::protos::View_ChangeWidth* _msg = _internal_mutable_view_change_width();
-  // @@protoc_insertion_point(field_mutable:protos.Action.view_change_width)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.view_change_width)
   return _msg;
 }
 
 // .protos.View_Normal view_normal = 52;
-inline bool Action::has_view_normal() const {
+inline bool PlayerAction::has_view_normal() const {
   return action_case() == kViewNormal;
 }
-inline bool Action::_internal_has_view_normal() const {
+inline bool PlayerAction::_internal_has_view_normal() const {
   return action_case() == kViewNormal;
 }
-inline void Action::set_has_view_normal() {
+inline void PlayerAction::set_has_view_normal() {
   _impl_._oneof_case_[0] = kViewNormal;
 }
-inline void Action::clear_view_normal() {
+inline void PlayerAction::clear_view_normal() {
   if (action_case() == kViewNormal) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.view_normal_;
@@ -44490,8 +46913,8 @@ inline void Action::clear_view_normal() {
     clear_has_action();
   }
 }
-inline ::protos::View_Normal* Action::release_view_normal() {
-  // @@protoc_insertion_point(field_release:protos.Action.view_normal)
+inline ::protos::View_Normal* PlayerAction::release_view_normal() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.view_normal)
   if (action_case() == kViewNormal) {
     clear_has_action();
     ::protos::View_Normal* temp = _impl_.action_.view_normal_;
@@ -44504,17 +46927,17 @@ inline ::protos::View_Normal* Action::release_view_normal() {
     return nullptr;
   }
 }
-inline const ::protos::View_Normal& Action::_internal_view_normal() const {
+inline const ::protos::View_Normal& PlayerAction::_internal_view_normal() const {
   return action_case() == kViewNormal
       ? *_impl_.action_.view_normal_
       : reinterpret_cast<::protos::View_Normal&>(::protos::_View_Normal_default_instance_);
 }
-inline const ::protos::View_Normal& Action::view_normal() const {
-  // @@protoc_insertion_point(field_get:protos.Action.view_normal)
+inline const ::protos::View_Normal& PlayerAction::view_normal() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.view_normal)
   return _internal_view_normal();
 }
-inline ::protos::View_Normal* Action::unsafe_arena_release_view_normal() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.view_normal)
+inline ::protos::View_Normal* PlayerAction::unsafe_arena_release_view_normal() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.view_normal)
   if (action_case() == kViewNormal) {
     clear_has_action();
     ::protos::View_Normal* temp = _impl_.action_.view_normal_;
@@ -44524,15 +46947,15 @@ inline ::protos::View_Normal* Action::unsafe_arena_release_view_normal() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_view_normal(::protos::View_Normal* view_normal) {
+inline void PlayerAction::unsafe_arena_set_allocated_view_normal(::protos::View_Normal* view_normal) {
   clear_action();
   if (view_normal) {
     set_has_view_normal();
     _impl_.action_.view_normal_ = view_normal;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.view_normal)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.view_normal)
 }
-inline ::protos::View_Normal* Action::_internal_mutable_view_normal() {
+inline ::protos::View_Normal* PlayerAction::_internal_mutable_view_normal() {
   if (action_case() != kViewNormal) {
     clear_action();
     set_has_view_normal();
@@ -44540,23 +46963,23 @@ inline ::protos::View_Normal* Action::_internal_mutable_view_normal() {
   }
   return _impl_.action_.view_normal_;
 }
-inline ::protos::View_Normal* Action::mutable_view_normal() {
+inline ::protos::View_Normal* PlayerAction::mutable_view_normal() {
   ::protos::View_Normal* _msg = _internal_mutable_view_normal();
-  // @@protoc_insertion_point(field_mutable:protos.Action.view_normal)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.view_normal)
   return _msg;
 }
 
 // .protos.View_Synch view_synch = 53;
-inline bool Action::has_view_synch() const {
+inline bool PlayerAction::has_view_synch() const {
   return action_case() == kViewSynch;
 }
-inline bool Action::_internal_has_view_synch() const {
+inline bool PlayerAction::_internal_has_view_synch() const {
   return action_case() == kViewSynch;
 }
-inline void Action::set_has_view_synch() {
+inline void PlayerAction::set_has_view_synch() {
   _impl_._oneof_case_[0] = kViewSynch;
 }
-inline void Action::clear_view_synch() {
+inline void PlayerAction::clear_view_synch() {
   if (action_case() == kViewSynch) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.view_synch_;
@@ -44564,8 +46987,8 @@ inline void Action::clear_view_synch() {
     clear_has_action();
   }
 }
-inline ::protos::View_Synch* Action::release_view_synch() {
-  // @@protoc_insertion_point(field_release:protos.Action.view_synch)
+inline ::protos::View_Synch* PlayerAction::release_view_synch() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.view_synch)
   if (action_case() == kViewSynch) {
     clear_has_action();
     ::protos::View_Synch* temp = _impl_.action_.view_synch_;
@@ -44578,17 +47001,17 @@ inline ::protos::View_Synch* Action::release_view_synch() {
     return nullptr;
   }
 }
-inline const ::protos::View_Synch& Action::_internal_view_synch() const {
+inline const ::protos::View_Synch& PlayerAction::_internal_view_synch() const {
   return action_case() == kViewSynch
       ? *_impl_.action_.view_synch_
       : reinterpret_cast<::protos::View_Synch&>(::protos::_View_Synch_default_instance_);
 }
-inline const ::protos::View_Synch& Action::view_synch() const {
-  // @@protoc_insertion_point(field_get:protos.Action.view_synch)
+inline const ::protos::View_Synch& PlayerAction::view_synch() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.view_synch)
   return _internal_view_synch();
 }
-inline ::protos::View_Synch* Action::unsafe_arena_release_view_synch() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.view_synch)
+inline ::protos::View_Synch* PlayerAction::unsafe_arena_release_view_synch() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.view_synch)
   if (action_case() == kViewSynch) {
     clear_has_action();
     ::protos::View_Synch* temp = _impl_.action_.view_synch_;
@@ -44598,15 +47021,15 @@ inline ::protos::View_Synch* Action::unsafe_arena_release_view_synch() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_view_synch(::protos::View_Synch* view_synch) {
+inline void PlayerAction::unsafe_arena_set_allocated_view_synch(::protos::View_Synch* view_synch) {
   clear_action();
   if (view_synch) {
     set_has_view_synch();
     _impl_.action_.view_synch_ = view_synch;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.view_synch)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.view_synch)
 }
-inline ::protos::View_Synch* Action::_internal_mutable_view_synch() {
+inline ::protos::View_Synch* PlayerAction::_internal_mutable_view_synch() {
   if (action_case() != kViewSynch) {
     clear_action();
     set_has_view_synch();
@@ -44614,23 +47037,23 @@ inline ::protos::View_Synch* Action::_internal_mutable_view_synch() {
   }
   return _impl_.action_.view_synch_;
 }
-inline ::protos::View_Synch* Action::mutable_view_synch() {
+inline ::protos::View_Synch* PlayerAction::mutable_view_synch() {
   ::protos::View_Synch* _msg = _internal_mutable_view_synch();
-  // @@protoc_insertion_point(field_mutable:protos.Action.view_synch)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.view_synch)
   return _msg;
 }
 
 // .protos.View_Wide view_wide = 54;
-inline bool Action::has_view_wide() const {
+inline bool PlayerAction::has_view_wide() const {
   return action_case() == kViewWide;
 }
-inline bool Action::_internal_has_view_wide() const {
+inline bool PlayerAction::_internal_has_view_wide() const {
   return action_case() == kViewWide;
 }
-inline void Action::set_has_view_wide() {
+inline void PlayerAction::set_has_view_wide() {
   _impl_._oneof_case_[0] = kViewWide;
 }
-inline void Action::clear_view_wide() {
+inline void PlayerAction::clear_view_wide() {
   if (action_case() == kViewWide) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.view_wide_;
@@ -44638,8 +47061,8 @@ inline void Action::clear_view_wide() {
     clear_has_action();
   }
 }
-inline ::protos::View_Wide* Action::release_view_wide() {
-  // @@protoc_insertion_point(field_release:protos.Action.view_wide)
+inline ::protos::View_Wide* PlayerAction::release_view_wide() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.view_wide)
   if (action_case() == kViewWide) {
     clear_has_action();
     ::protos::View_Wide* temp = _impl_.action_.view_wide_;
@@ -44652,17 +47075,17 @@ inline ::protos::View_Wide* Action::release_view_wide() {
     return nullptr;
   }
 }
-inline const ::protos::View_Wide& Action::_internal_view_wide() const {
+inline const ::protos::View_Wide& PlayerAction::_internal_view_wide() const {
   return action_case() == kViewWide
       ? *_impl_.action_.view_wide_
       : reinterpret_cast<::protos::View_Wide&>(::protos::_View_Wide_default_instance_);
 }
-inline const ::protos::View_Wide& Action::view_wide() const {
-  // @@protoc_insertion_point(field_get:protos.Action.view_wide)
+inline const ::protos::View_Wide& PlayerAction::view_wide() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.view_wide)
   return _internal_view_wide();
 }
-inline ::protos::View_Wide* Action::unsafe_arena_release_view_wide() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.view_wide)
+inline ::protos::View_Wide* PlayerAction::unsafe_arena_release_view_wide() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.view_wide)
   if (action_case() == kViewWide) {
     clear_has_action();
     ::protos::View_Wide* temp = _impl_.action_.view_wide_;
@@ -44672,15 +47095,15 @@ inline ::protos::View_Wide* Action::unsafe_arena_release_view_wide() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_view_wide(::protos::View_Wide* view_wide) {
+inline void PlayerAction::unsafe_arena_set_allocated_view_wide(::protos::View_Wide* view_wide) {
   clear_action();
   if (view_wide) {
     set_has_view_wide();
     _impl_.action_.view_wide_ = view_wide;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.view_wide)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.view_wide)
 }
-inline ::protos::View_Wide* Action::_internal_mutable_view_wide() {
+inline ::protos::View_Wide* PlayerAction::_internal_mutable_view_wide() {
   if (action_case() != kViewWide) {
     clear_action();
     set_has_view_wide();
@@ -44688,23 +47111,23 @@ inline ::protos::View_Wide* Action::_internal_mutable_view_wide() {
   }
   return _impl_.action_.view_wide_;
 }
-inline ::protos::View_Wide* Action::mutable_view_wide() {
+inline ::protos::View_Wide* PlayerAction::mutable_view_wide() {
   ::protos::View_Wide* _msg = _internal_mutable_view_wide();
-  // @@protoc_insertion_point(field_mutable:protos.Action.view_wide)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.view_wide)
   return _msg;
 }
 
 // .protos.HeliosGoalie helios_goalie = 55;
-inline bool Action::has_helios_goalie() const {
+inline bool PlayerAction::has_helios_goalie() const {
   return action_case() == kHeliosGoalie;
 }
-inline bool Action::_internal_has_helios_goalie() const {
+inline bool PlayerAction::_internal_has_helios_goalie() const {
   return action_case() == kHeliosGoalie;
 }
-inline void Action::set_has_helios_goalie() {
+inline void PlayerAction::set_has_helios_goalie() {
   _impl_._oneof_case_[0] = kHeliosGoalie;
 }
-inline void Action::clear_helios_goalie() {
+inline void PlayerAction::clear_helios_goalie() {
   if (action_case() == kHeliosGoalie) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.helios_goalie_;
@@ -44712,8 +47135,8 @@ inline void Action::clear_helios_goalie() {
     clear_has_action();
   }
 }
-inline ::protos::HeliosGoalie* Action::release_helios_goalie() {
-  // @@protoc_insertion_point(field_release:protos.Action.helios_goalie)
+inline ::protos::HeliosGoalie* PlayerAction::release_helios_goalie() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.helios_goalie)
   if (action_case() == kHeliosGoalie) {
     clear_has_action();
     ::protos::HeliosGoalie* temp = _impl_.action_.helios_goalie_;
@@ -44726,17 +47149,17 @@ inline ::protos::HeliosGoalie* Action::release_helios_goalie() {
     return nullptr;
   }
 }
-inline const ::protos::HeliosGoalie& Action::_internal_helios_goalie() const {
+inline const ::protos::HeliosGoalie& PlayerAction::_internal_helios_goalie() const {
   return action_case() == kHeliosGoalie
       ? *_impl_.action_.helios_goalie_
       : reinterpret_cast<::protos::HeliosGoalie&>(::protos::_HeliosGoalie_default_instance_);
 }
-inline const ::protos::HeliosGoalie& Action::helios_goalie() const {
-  // @@protoc_insertion_point(field_get:protos.Action.helios_goalie)
+inline const ::protos::HeliosGoalie& PlayerAction::helios_goalie() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.helios_goalie)
   return _internal_helios_goalie();
 }
-inline ::protos::HeliosGoalie* Action::unsafe_arena_release_helios_goalie() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_goalie)
+inline ::protos::HeliosGoalie* PlayerAction::unsafe_arena_release_helios_goalie() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.helios_goalie)
   if (action_case() == kHeliosGoalie) {
     clear_has_action();
     ::protos::HeliosGoalie* temp = _impl_.action_.helios_goalie_;
@@ -44746,15 +47169,15 @@ inline ::protos::HeliosGoalie* Action::unsafe_arena_release_helios_goalie() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_helios_goalie(::protos::HeliosGoalie* helios_goalie) {
+inline void PlayerAction::unsafe_arena_set_allocated_helios_goalie(::protos::HeliosGoalie* helios_goalie) {
   clear_action();
   if (helios_goalie) {
     set_has_helios_goalie();
     _impl_.action_.helios_goalie_ = helios_goalie;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_goalie)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.helios_goalie)
 }
-inline ::protos::HeliosGoalie* Action::_internal_mutable_helios_goalie() {
+inline ::protos::HeliosGoalie* PlayerAction::_internal_mutable_helios_goalie() {
   if (action_case() != kHeliosGoalie) {
     clear_action();
     set_has_helios_goalie();
@@ -44762,23 +47185,23 @@ inline ::protos::HeliosGoalie* Action::_internal_mutable_helios_goalie() {
   }
   return _impl_.action_.helios_goalie_;
 }
-inline ::protos::HeliosGoalie* Action::mutable_helios_goalie() {
+inline ::protos::HeliosGoalie* PlayerAction::mutable_helios_goalie() {
   ::protos::HeliosGoalie* _msg = _internal_mutable_helios_goalie();
-  // @@protoc_insertion_point(field_mutable:protos.Action.helios_goalie)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.helios_goalie)
   return _msg;
 }
 
 // .protos.HeliosGoalieMove helios_goalie_move = 56;
-inline bool Action::has_helios_goalie_move() const {
+inline bool PlayerAction::has_helios_goalie_move() const {
   return action_case() == kHeliosGoalieMove;
 }
-inline bool Action::_internal_has_helios_goalie_move() const {
+inline bool PlayerAction::_internal_has_helios_goalie_move() const {
   return action_case() == kHeliosGoalieMove;
 }
-inline void Action::set_has_helios_goalie_move() {
+inline void PlayerAction::set_has_helios_goalie_move() {
   _impl_._oneof_case_[0] = kHeliosGoalieMove;
 }
-inline void Action::clear_helios_goalie_move() {
+inline void PlayerAction::clear_helios_goalie_move() {
   if (action_case() == kHeliosGoalieMove) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.helios_goalie_move_;
@@ -44786,8 +47209,8 @@ inline void Action::clear_helios_goalie_move() {
     clear_has_action();
   }
 }
-inline ::protos::HeliosGoalieMove* Action::release_helios_goalie_move() {
-  // @@protoc_insertion_point(field_release:protos.Action.helios_goalie_move)
+inline ::protos::HeliosGoalieMove* PlayerAction::release_helios_goalie_move() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.helios_goalie_move)
   if (action_case() == kHeliosGoalieMove) {
     clear_has_action();
     ::protos::HeliosGoalieMove* temp = _impl_.action_.helios_goalie_move_;
@@ -44800,17 +47223,17 @@ inline ::protos::HeliosGoalieMove* Action::release_helios_goalie_move() {
     return nullptr;
   }
 }
-inline const ::protos::HeliosGoalieMove& Action::_internal_helios_goalie_move() const {
+inline const ::protos::HeliosGoalieMove& PlayerAction::_internal_helios_goalie_move() const {
   return action_case() == kHeliosGoalieMove
       ? *_impl_.action_.helios_goalie_move_
       : reinterpret_cast<::protos::HeliosGoalieMove&>(::protos::_HeliosGoalieMove_default_instance_);
 }
-inline const ::protos::HeliosGoalieMove& Action::helios_goalie_move() const {
-  // @@protoc_insertion_point(field_get:protos.Action.helios_goalie_move)
+inline const ::protos::HeliosGoalieMove& PlayerAction::helios_goalie_move() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.helios_goalie_move)
   return _internal_helios_goalie_move();
 }
-inline ::protos::HeliosGoalieMove* Action::unsafe_arena_release_helios_goalie_move() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_goalie_move)
+inline ::protos::HeliosGoalieMove* PlayerAction::unsafe_arena_release_helios_goalie_move() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.helios_goalie_move)
   if (action_case() == kHeliosGoalieMove) {
     clear_has_action();
     ::protos::HeliosGoalieMove* temp = _impl_.action_.helios_goalie_move_;
@@ -44820,15 +47243,15 @@ inline ::protos::HeliosGoalieMove* Action::unsafe_arena_release_helios_goalie_mo
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_helios_goalie_move(::protos::HeliosGoalieMove* helios_goalie_move) {
+inline void PlayerAction::unsafe_arena_set_allocated_helios_goalie_move(::protos::HeliosGoalieMove* helios_goalie_move) {
   clear_action();
   if (helios_goalie_move) {
     set_has_helios_goalie_move();
     _impl_.action_.helios_goalie_move_ = helios_goalie_move;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_goalie_move)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.helios_goalie_move)
 }
-inline ::protos::HeliosGoalieMove* Action::_internal_mutable_helios_goalie_move() {
+inline ::protos::HeliosGoalieMove* PlayerAction::_internal_mutable_helios_goalie_move() {
   if (action_case() != kHeliosGoalieMove) {
     clear_action();
     set_has_helios_goalie_move();
@@ -44836,23 +47259,23 @@ inline ::protos::HeliosGoalieMove* Action::_internal_mutable_helios_goalie_move(
   }
   return _impl_.action_.helios_goalie_move_;
 }
-inline ::protos::HeliosGoalieMove* Action::mutable_helios_goalie_move() {
+inline ::protos::HeliosGoalieMove* PlayerAction::mutable_helios_goalie_move() {
   ::protos::HeliosGoalieMove* _msg = _internal_mutable_helios_goalie_move();
-  // @@protoc_insertion_point(field_mutable:protos.Action.helios_goalie_move)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.helios_goalie_move)
   return _msg;
 }
 
 // .protos.HeliosGoalieKick helios_goalie_kick = 57;
-inline bool Action::has_helios_goalie_kick() const {
+inline bool PlayerAction::has_helios_goalie_kick() const {
   return action_case() == kHeliosGoalieKick;
 }
-inline bool Action::_internal_has_helios_goalie_kick() const {
+inline bool PlayerAction::_internal_has_helios_goalie_kick() const {
   return action_case() == kHeliosGoalieKick;
 }
-inline void Action::set_has_helios_goalie_kick() {
+inline void PlayerAction::set_has_helios_goalie_kick() {
   _impl_._oneof_case_[0] = kHeliosGoalieKick;
 }
-inline void Action::clear_helios_goalie_kick() {
+inline void PlayerAction::clear_helios_goalie_kick() {
   if (action_case() == kHeliosGoalieKick) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.helios_goalie_kick_;
@@ -44860,8 +47283,8 @@ inline void Action::clear_helios_goalie_kick() {
     clear_has_action();
   }
 }
-inline ::protos::HeliosGoalieKick* Action::release_helios_goalie_kick() {
-  // @@protoc_insertion_point(field_release:protos.Action.helios_goalie_kick)
+inline ::protos::HeliosGoalieKick* PlayerAction::release_helios_goalie_kick() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.helios_goalie_kick)
   if (action_case() == kHeliosGoalieKick) {
     clear_has_action();
     ::protos::HeliosGoalieKick* temp = _impl_.action_.helios_goalie_kick_;
@@ -44874,17 +47297,17 @@ inline ::protos::HeliosGoalieKick* Action::release_helios_goalie_kick() {
     return nullptr;
   }
 }
-inline const ::protos::HeliosGoalieKick& Action::_internal_helios_goalie_kick() const {
+inline const ::protos::HeliosGoalieKick& PlayerAction::_internal_helios_goalie_kick() const {
   return action_case() == kHeliosGoalieKick
       ? *_impl_.action_.helios_goalie_kick_
       : reinterpret_cast<::protos::HeliosGoalieKick&>(::protos::_HeliosGoalieKick_default_instance_);
 }
-inline const ::protos::HeliosGoalieKick& Action::helios_goalie_kick() const {
-  // @@protoc_insertion_point(field_get:protos.Action.helios_goalie_kick)
+inline const ::protos::HeliosGoalieKick& PlayerAction::helios_goalie_kick() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.helios_goalie_kick)
   return _internal_helios_goalie_kick();
 }
-inline ::protos::HeliosGoalieKick* Action::unsafe_arena_release_helios_goalie_kick() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_goalie_kick)
+inline ::protos::HeliosGoalieKick* PlayerAction::unsafe_arena_release_helios_goalie_kick() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.helios_goalie_kick)
   if (action_case() == kHeliosGoalieKick) {
     clear_has_action();
     ::protos::HeliosGoalieKick* temp = _impl_.action_.helios_goalie_kick_;
@@ -44894,15 +47317,15 @@ inline ::protos::HeliosGoalieKick* Action::unsafe_arena_release_helios_goalie_ki
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_helios_goalie_kick(::protos::HeliosGoalieKick* helios_goalie_kick) {
+inline void PlayerAction::unsafe_arena_set_allocated_helios_goalie_kick(::protos::HeliosGoalieKick* helios_goalie_kick) {
   clear_action();
   if (helios_goalie_kick) {
     set_has_helios_goalie_kick();
     _impl_.action_.helios_goalie_kick_ = helios_goalie_kick;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_goalie_kick)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.helios_goalie_kick)
 }
-inline ::protos::HeliosGoalieKick* Action::_internal_mutable_helios_goalie_kick() {
+inline ::protos::HeliosGoalieKick* PlayerAction::_internal_mutable_helios_goalie_kick() {
   if (action_case() != kHeliosGoalieKick) {
     clear_action();
     set_has_helios_goalie_kick();
@@ -44910,23 +47333,23 @@ inline ::protos::HeliosGoalieKick* Action::_internal_mutable_helios_goalie_kick(
   }
   return _impl_.action_.helios_goalie_kick_;
 }
-inline ::protos::HeliosGoalieKick* Action::mutable_helios_goalie_kick() {
+inline ::protos::HeliosGoalieKick* PlayerAction::mutable_helios_goalie_kick() {
   ::protos::HeliosGoalieKick* _msg = _internal_mutable_helios_goalie_kick();
-  // @@protoc_insertion_point(field_mutable:protos.Action.helios_goalie_kick)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.helios_goalie_kick)
   return _msg;
 }
 
 // .protos.HeliosShoot helios_shoot = 58;
-inline bool Action::has_helios_shoot() const {
+inline bool PlayerAction::has_helios_shoot() const {
   return action_case() == kHeliosShoot;
 }
-inline bool Action::_internal_has_helios_shoot() const {
+inline bool PlayerAction::_internal_has_helios_shoot() const {
   return action_case() == kHeliosShoot;
 }
-inline void Action::set_has_helios_shoot() {
+inline void PlayerAction::set_has_helios_shoot() {
   _impl_._oneof_case_[0] = kHeliosShoot;
 }
-inline void Action::clear_helios_shoot() {
+inline void PlayerAction::clear_helios_shoot() {
   if (action_case() == kHeliosShoot) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.helios_shoot_;
@@ -44934,8 +47357,8 @@ inline void Action::clear_helios_shoot() {
     clear_has_action();
   }
 }
-inline ::protos::HeliosShoot* Action::release_helios_shoot() {
-  // @@protoc_insertion_point(field_release:protos.Action.helios_shoot)
+inline ::protos::HeliosShoot* PlayerAction::release_helios_shoot() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.helios_shoot)
   if (action_case() == kHeliosShoot) {
     clear_has_action();
     ::protos::HeliosShoot* temp = _impl_.action_.helios_shoot_;
@@ -44948,17 +47371,17 @@ inline ::protos::HeliosShoot* Action::release_helios_shoot() {
     return nullptr;
   }
 }
-inline const ::protos::HeliosShoot& Action::_internal_helios_shoot() const {
+inline const ::protos::HeliosShoot& PlayerAction::_internal_helios_shoot() const {
   return action_case() == kHeliosShoot
       ? *_impl_.action_.helios_shoot_
       : reinterpret_cast<::protos::HeliosShoot&>(::protos::_HeliosShoot_default_instance_);
 }
-inline const ::protos::HeliosShoot& Action::helios_shoot() const {
-  // @@protoc_insertion_point(field_get:protos.Action.helios_shoot)
+inline const ::protos::HeliosShoot& PlayerAction::helios_shoot() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.helios_shoot)
   return _internal_helios_shoot();
 }
-inline ::protos::HeliosShoot* Action::unsafe_arena_release_helios_shoot() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_shoot)
+inline ::protos::HeliosShoot* PlayerAction::unsafe_arena_release_helios_shoot() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.helios_shoot)
   if (action_case() == kHeliosShoot) {
     clear_has_action();
     ::protos::HeliosShoot* temp = _impl_.action_.helios_shoot_;
@@ -44968,15 +47391,15 @@ inline ::protos::HeliosShoot* Action::unsafe_arena_release_helios_shoot() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_helios_shoot(::protos::HeliosShoot* helios_shoot) {
+inline void PlayerAction::unsafe_arena_set_allocated_helios_shoot(::protos::HeliosShoot* helios_shoot) {
   clear_action();
   if (helios_shoot) {
     set_has_helios_shoot();
     _impl_.action_.helios_shoot_ = helios_shoot;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_shoot)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.helios_shoot)
 }
-inline ::protos::HeliosShoot* Action::_internal_mutable_helios_shoot() {
+inline ::protos::HeliosShoot* PlayerAction::_internal_mutable_helios_shoot() {
   if (action_case() != kHeliosShoot) {
     clear_action();
     set_has_helios_shoot();
@@ -44984,23 +47407,23 @@ inline ::protos::HeliosShoot* Action::_internal_mutable_helios_shoot() {
   }
   return _impl_.action_.helios_shoot_;
 }
-inline ::protos::HeliosShoot* Action::mutable_helios_shoot() {
+inline ::protos::HeliosShoot* PlayerAction::mutable_helios_shoot() {
   ::protos::HeliosShoot* _msg = _internal_mutable_helios_shoot();
-  // @@protoc_insertion_point(field_mutable:protos.Action.helios_shoot)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.helios_shoot)
   return _msg;
 }
 
 // .protos.HeliosChainAction helios_chain_action = 59;
-inline bool Action::has_helios_chain_action() const {
+inline bool PlayerAction::has_helios_chain_action() const {
   return action_case() == kHeliosChainAction;
 }
-inline bool Action::_internal_has_helios_chain_action() const {
+inline bool PlayerAction::_internal_has_helios_chain_action() const {
   return action_case() == kHeliosChainAction;
 }
-inline void Action::set_has_helios_chain_action() {
+inline void PlayerAction::set_has_helios_chain_action() {
   _impl_._oneof_case_[0] = kHeliosChainAction;
 }
-inline void Action::clear_helios_chain_action() {
+inline void PlayerAction::clear_helios_chain_action() {
   if (action_case() == kHeliosChainAction) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.helios_chain_action_;
@@ -45008,8 +47431,8 @@ inline void Action::clear_helios_chain_action() {
     clear_has_action();
   }
 }
-inline ::protos::HeliosChainAction* Action::release_helios_chain_action() {
-  // @@protoc_insertion_point(field_release:protos.Action.helios_chain_action)
+inline ::protos::HeliosChainAction* PlayerAction::release_helios_chain_action() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.helios_chain_action)
   if (action_case() == kHeliosChainAction) {
     clear_has_action();
     ::protos::HeliosChainAction* temp = _impl_.action_.helios_chain_action_;
@@ -45022,17 +47445,17 @@ inline ::protos::HeliosChainAction* Action::release_helios_chain_action() {
     return nullptr;
   }
 }
-inline const ::protos::HeliosChainAction& Action::_internal_helios_chain_action() const {
+inline const ::protos::HeliosChainAction& PlayerAction::_internal_helios_chain_action() const {
   return action_case() == kHeliosChainAction
       ? *_impl_.action_.helios_chain_action_
       : reinterpret_cast<::protos::HeliosChainAction&>(::protos::_HeliosChainAction_default_instance_);
 }
-inline const ::protos::HeliosChainAction& Action::helios_chain_action() const {
-  // @@protoc_insertion_point(field_get:protos.Action.helios_chain_action)
+inline const ::protos::HeliosChainAction& PlayerAction::helios_chain_action() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.helios_chain_action)
   return _internal_helios_chain_action();
 }
-inline ::protos::HeliosChainAction* Action::unsafe_arena_release_helios_chain_action() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_chain_action)
+inline ::protos::HeliosChainAction* PlayerAction::unsafe_arena_release_helios_chain_action() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.helios_chain_action)
   if (action_case() == kHeliosChainAction) {
     clear_has_action();
     ::protos::HeliosChainAction* temp = _impl_.action_.helios_chain_action_;
@@ -45042,15 +47465,15 @@ inline ::protos::HeliosChainAction* Action::unsafe_arena_release_helios_chain_ac
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_helios_chain_action(::protos::HeliosChainAction* helios_chain_action) {
+inline void PlayerAction::unsafe_arena_set_allocated_helios_chain_action(::protos::HeliosChainAction* helios_chain_action) {
   clear_action();
   if (helios_chain_action) {
     set_has_helios_chain_action();
     _impl_.action_.helios_chain_action_ = helios_chain_action;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_chain_action)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.helios_chain_action)
 }
-inline ::protos::HeliosChainAction* Action::_internal_mutable_helios_chain_action() {
+inline ::protos::HeliosChainAction* PlayerAction::_internal_mutable_helios_chain_action() {
   if (action_case() != kHeliosChainAction) {
     clear_action();
     set_has_helios_chain_action();
@@ -45058,23 +47481,23 @@ inline ::protos::HeliosChainAction* Action::_internal_mutable_helios_chain_actio
   }
   return _impl_.action_.helios_chain_action_;
 }
-inline ::protos::HeliosChainAction* Action::mutable_helios_chain_action() {
+inline ::protos::HeliosChainAction* PlayerAction::mutable_helios_chain_action() {
   ::protos::HeliosChainAction* _msg = _internal_mutable_helios_chain_action();
-  // @@protoc_insertion_point(field_mutable:protos.Action.helios_chain_action)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.helios_chain_action)
   return _msg;
 }
 
 // .protos.HeliosBasicOffensive helios_basic_offensive = 60;
-inline bool Action::has_helios_basic_offensive() const {
+inline bool PlayerAction::has_helios_basic_offensive() const {
   return action_case() == kHeliosBasicOffensive;
 }
-inline bool Action::_internal_has_helios_basic_offensive() const {
+inline bool PlayerAction::_internal_has_helios_basic_offensive() const {
   return action_case() == kHeliosBasicOffensive;
 }
-inline void Action::set_has_helios_basic_offensive() {
+inline void PlayerAction::set_has_helios_basic_offensive() {
   _impl_._oneof_case_[0] = kHeliosBasicOffensive;
 }
-inline void Action::clear_helios_basic_offensive() {
+inline void PlayerAction::clear_helios_basic_offensive() {
   if (action_case() == kHeliosBasicOffensive) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.helios_basic_offensive_;
@@ -45082,8 +47505,8 @@ inline void Action::clear_helios_basic_offensive() {
     clear_has_action();
   }
 }
-inline ::protos::HeliosBasicOffensive* Action::release_helios_basic_offensive() {
-  // @@protoc_insertion_point(field_release:protos.Action.helios_basic_offensive)
+inline ::protos::HeliosBasicOffensive* PlayerAction::release_helios_basic_offensive() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.helios_basic_offensive)
   if (action_case() == kHeliosBasicOffensive) {
     clear_has_action();
     ::protos::HeliosBasicOffensive* temp = _impl_.action_.helios_basic_offensive_;
@@ -45096,17 +47519,17 @@ inline ::protos::HeliosBasicOffensive* Action::release_helios_basic_offensive() 
     return nullptr;
   }
 }
-inline const ::protos::HeliosBasicOffensive& Action::_internal_helios_basic_offensive() const {
+inline const ::protos::HeliosBasicOffensive& PlayerAction::_internal_helios_basic_offensive() const {
   return action_case() == kHeliosBasicOffensive
       ? *_impl_.action_.helios_basic_offensive_
       : reinterpret_cast<::protos::HeliosBasicOffensive&>(::protos::_HeliosBasicOffensive_default_instance_);
 }
-inline const ::protos::HeliosBasicOffensive& Action::helios_basic_offensive() const {
-  // @@protoc_insertion_point(field_get:protos.Action.helios_basic_offensive)
+inline const ::protos::HeliosBasicOffensive& PlayerAction::helios_basic_offensive() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.helios_basic_offensive)
   return _internal_helios_basic_offensive();
 }
-inline ::protos::HeliosBasicOffensive* Action::unsafe_arena_release_helios_basic_offensive() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_basic_offensive)
+inline ::protos::HeliosBasicOffensive* PlayerAction::unsafe_arena_release_helios_basic_offensive() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.helios_basic_offensive)
   if (action_case() == kHeliosBasicOffensive) {
     clear_has_action();
     ::protos::HeliosBasicOffensive* temp = _impl_.action_.helios_basic_offensive_;
@@ -45116,15 +47539,15 @@ inline ::protos::HeliosBasicOffensive* Action::unsafe_arena_release_helios_basic
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_helios_basic_offensive(::protos::HeliosBasicOffensive* helios_basic_offensive) {
+inline void PlayerAction::unsafe_arena_set_allocated_helios_basic_offensive(::protos::HeliosBasicOffensive* helios_basic_offensive) {
   clear_action();
   if (helios_basic_offensive) {
     set_has_helios_basic_offensive();
     _impl_.action_.helios_basic_offensive_ = helios_basic_offensive;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_basic_offensive)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.helios_basic_offensive)
 }
-inline ::protos::HeliosBasicOffensive* Action::_internal_mutable_helios_basic_offensive() {
+inline ::protos::HeliosBasicOffensive* PlayerAction::_internal_mutable_helios_basic_offensive() {
   if (action_case() != kHeliosBasicOffensive) {
     clear_action();
     set_has_helios_basic_offensive();
@@ -45132,23 +47555,23 @@ inline ::protos::HeliosBasicOffensive* Action::_internal_mutable_helios_basic_of
   }
   return _impl_.action_.helios_basic_offensive_;
 }
-inline ::protos::HeliosBasicOffensive* Action::mutable_helios_basic_offensive() {
+inline ::protos::HeliosBasicOffensive* PlayerAction::mutable_helios_basic_offensive() {
   ::protos::HeliosBasicOffensive* _msg = _internal_mutable_helios_basic_offensive();
-  // @@protoc_insertion_point(field_mutable:protos.Action.helios_basic_offensive)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.helios_basic_offensive)
   return _msg;
 }
 
 // .protos.HeliosBasicMove helios_basic_move = 61;
-inline bool Action::has_helios_basic_move() const {
+inline bool PlayerAction::has_helios_basic_move() const {
   return action_case() == kHeliosBasicMove;
 }
-inline bool Action::_internal_has_helios_basic_move() const {
+inline bool PlayerAction::_internal_has_helios_basic_move() const {
   return action_case() == kHeliosBasicMove;
 }
-inline void Action::set_has_helios_basic_move() {
+inline void PlayerAction::set_has_helios_basic_move() {
   _impl_._oneof_case_[0] = kHeliosBasicMove;
 }
-inline void Action::clear_helios_basic_move() {
+inline void PlayerAction::clear_helios_basic_move() {
   if (action_case() == kHeliosBasicMove) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.helios_basic_move_;
@@ -45156,8 +47579,8 @@ inline void Action::clear_helios_basic_move() {
     clear_has_action();
   }
 }
-inline ::protos::HeliosBasicMove* Action::release_helios_basic_move() {
-  // @@protoc_insertion_point(field_release:protos.Action.helios_basic_move)
+inline ::protos::HeliosBasicMove* PlayerAction::release_helios_basic_move() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.helios_basic_move)
   if (action_case() == kHeliosBasicMove) {
     clear_has_action();
     ::protos::HeliosBasicMove* temp = _impl_.action_.helios_basic_move_;
@@ -45170,17 +47593,17 @@ inline ::protos::HeliosBasicMove* Action::release_helios_basic_move() {
     return nullptr;
   }
 }
-inline const ::protos::HeliosBasicMove& Action::_internal_helios_basic_move() const {
+inline const ::protos::HeliosBasicMove& PlayerAction::_internal_helios_basic_move() const {
   return action_case() == kHeliosBasicMove
       ? *_impl_.action_.helios_basic_move_
       : reinterpret_cast<::protos::HeliosBasicMove&>(::protos::_HeliosBasicMove_default_instance_);
 }
-inline const ::protos::HeliosBasicMove& Action::helios_basic_move() const {
-  // @@protoc_insertion_point(field_get:protos.Action.helios_basic_move)
+inline const ::protos::HeliosBasicMove& PlayerAction::helios_basic_move() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.helios_basic_move)
   return _internal_helios_basic_move();
 }
-inline ::protos::HeliosBasicMove* Action::unsafe_arena_release_helios_basic_move() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_basic_move)
+inline ::protos::HeliosBasicMove* PlayerAction::unsafe_arena_release_helios_basic_move() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.helios_basic_move)
   if (action_case() == kHeliosBasicMove) {
     clear_has_action();
     ::protos::HeliosBasicMove* temp = _impl_.action_.helios_basic_move_;
@@ -45190,15 +47613,15 @@ inline ::protos::HeliosBasicMove* Action::unsafe_arena_release_helios_basic_move
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_helios_basic_move(::protos::HeliosBasicMove* helios_basic_move) {
+inline void PlayerAction::unsafe_arena_set_allocated_helios_basic_move(::protos::HeliosBasicMove* helios_basic_move) {
   clear_action();
   if (helios_basic_move) {
     set_has_helios_basic_move();
     _impl_.action_.helios_basic_move_ = helios_basic_move;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_basic_move)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.helios_basic_move)
 }
-inline ::protos::HeliosBasicMove* Action::_internal_mutable_helios_basic_move() {
+inline ::protos::HeliosBasicMove* PlayerAction::_internal_mutable_helios_basic_move() {
   if (action_case() != kHeliosBasicMove) {
     clear_action();
     set_has_helios_basic_move();
@@ -45206,23 +47629,23 @@ inline ::protos::HeliosBasicMove* Action::_internal_mutable_helios_basic_move() 
   }
   return _impl_.action_.helios_basic_move_;
 }
-inline ::protos::HeliosBasicMove* Action::mutable_helios_basic_move() {
+inline ::protos::HeliosBasicMove* PlayerAction::mutable_helios_basic_move() {
   ::protos::HeliosBasicMove* _msg = _internal_mutable_helios_basic_move();
-  // @@protoc_insertion_point(field_mutable:protos.Action.helios_basic_move)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.helios_basic_move)
   return _msg;
 }
 
 // .protos.HeliosSetPlay helios_set_play = 62;
-inline bool Action::has_helios_set_play() const {
+inline bool PlayerAction::has_helios_set_play() const {
   return action_case() == kHeliosSetPlay;
 }
-inline bool Action::_internal_has_helios_set_play() const {
+inline bool PlayerAction::_internal_has_helios_set_play() const {
   return action_case() == kHeliosSetPlay;
 }
-inline void Action::set_has_helios_set_play() {
+inline void PlayerAction::set_has_helios_set_play() {
   _impl_._oneof_case_[0] = kHeliosSetPlay;
 }
-inline void Action::clear_helios_set_play() {
+inline void PlayerAction::clear_helios_set_play() {
   if (action_case() == kHeliosSetPlay) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.helios_set_play_;
@@ -45230,8 +47653,8 @@ inline void Action::clear_helios_set_play() {
     clear_has_action();
   }
 }
-inline ::protos::HeliosSetPlay* Action::release_helios_set_play() {
-  // @@protoc_insertion_point(field_release:protos.Action.helios_set_play)
+inline ::protos::HeliosSetPlay* PlayerAction::release_helios_set_play() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.helios_set_play)
   if (action_case() == kHeliosSetPlay) {
     clear_has_action();
     ::protos::HeliosSetPlay* temp = _impl_.action_.helios_set_play_;
@@ -45244,17 +47667,17 @@ inline ::protos::HeliosSetPlay* Action::release_helios_set_play() {
     return nullptr;
   }
 }
-inline const ::protos::HeliosSetPlay& Action::_internal_helios_set_play() const {
+inline const ::protos::HeliosSetPlay& PlayerAction::_internal_helios_set_play() const {
   return action_case() == kHeliosSetPlay
       ? *_impl_.action_.helios_set_play_
       : reinterpret_cast<::protos::HeliosSetPlay&>(::protos::_HeliosSetPlay_default_instance_);
 }
-inline const ::protos::HeliosSetPlay& Action::helios_set_play() const {
-  // @@protoc_insertion_point(field_get:protos.Action.helios_set_play)
+inline const ::protos::HeliosSetPlay& PlayerAction::helios_set_play() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.helios_set_play)
   return _internal_helios_set_play();
 }
-inline ::protos::HeliosSetPlay* Action::unsafe_arena_release_helios_set_play() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_set_play)
+inline ::protos::HeliosSetPlay* PlayerAction::unsafe_arena_release_helios_set_play() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.helios_set_play)
   if (action_case() == kHeliosSetPlay) {
     clear_has_action();
     ::protos::HeliosSetPlay* temp = _impl_.action_.helios_set_play_;
@@ -45264,15 +47687,15 @@ inline ::protos::HeliosSetPlay* Action::unsafe_arena_release_helios_set_play() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_helios_set_play(::protos::HeliosSetPlay* helios_set_play) {
+inline void PlayerAction::unsafe_arena_set_allocated_helios_set_play(::protos::HeliosSetPlay* helios_set_play) {
   clear_action();
   if (helios_set_play) {
     set_has_helios_set_play();
     _impl_.action_.helios_set_play_ = helios_set_play;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_set_play)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.helios_set_play)
 }
-inline ::protos::HeliosSetPlay* Action::_internal_mutable_helios_set_play() {
+inline ::protos::HeliosSetPlay* PlayerAction::_internal_mutable_helios_set_play() {
   if (action_case() != kHeliosSetPlay) {
     clear_action();
     set_has_helios_set_play();
@@ -45280,23 +47703,23 @@ inline ::protos::HeliosSetPlay* Action::_internal_mutable_helios_set_play() {
   }
   return _impl_.action_.helios_set_play_;
 }
-inline ::protos::HeliosSetPlay* Action::mutable_helios_set_play() {
+inline ::protos::HeliosSetPlay* PlayerAction::mutable_helios_set_play() {
   ::protos::HeliosSetPlay* _msg = _internal_mutable_helios_set_play();
-  // @@protoc_insertion_point(field_mutable:protos.Action.helios_set_play)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.helios_set_play)
   return _msg;
 }
 
 // .protos.HeliosPenalty helios_penalty = 63;
-inline bool Action::has_helios_penalty() const {
+inline bool PlayerAction::has_helios_penalty() const {
   return action_case() == kHeliosPenalty;
 }
-inline bool Action::_internal_has_helios_penalty() const {
+inline bool PlayerAction::_internal_has_helios_penalty() const {
   return action_case() == kHeliosPenalty;
 }
-inline void Action::set_has_helios_penalty() {
+inline void PlayerAction::set_has_helios_penalty() {
   _impl_._oneof_case_[0] = kHeliosPenalty;
 }
-inline void Action::clear_helios_penalty() {
+inline void PlayerAction::clear_helios_penalty() {
   if (action_case() == kHeliosPenalty) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.helios_penalty_;
@@ -45304,8 +47727,8 @@ inline void Action::clear_helios_penalty() {
     clear_has_action();
   }
 }
-inline ::protos::HeliosPenalty* Action::release_helios_penalty() {
-  // @@protoc_insertion_point(field_release:protos.Action.helios_penalty)
+inline ::protos::HeliosPenalty* PlayerAction::release_helios_penalty() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.helios_penalty)
   if (action_case() == kHeliosPenalty) {
     clear_has_action();
     ::protos::HeliosPenalty* temp = _impl_.action_.helios_penalty_;
@@ -45318,17 +47741,17 @@ inline ::protos::HeliosPenalty* Action::release_helios_penalty() {
     return nullptr;
   }
 }
-inline const ::protos::HeliosPenalty& Action::_internal_helios_penalty() const {
+inline const ::protos::HeliosPenalty& PlayerAction::_internal_helios_penalty() const {
   return action_case() == kHeliosPenalty
       ? *_impl_.action_.helios_penalty_
       : reinterpret_cast<::protos::HeliosPenalty&>(::protos::_HeliosPenalty_default_instance_);
 }
-inline const ::protos::HeliosPenalty& Action::helios_penalty() const {
-  // @@protoc_insertion_point(field_get:protos.Action.helios_penalty)
+inline const ::protos::HeliosPenalty& PlayerAction::helios_penalty() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.helios_penalty)
   return _internal_helios_penalty();
 }
-inline ::protos::HeliosPenalty* Action::unsafe_arena_release_helios_penalty() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_penalty)
+inline ::protos::HeliosPenalty* PlayerAction::unsafe_arena_release_helios_penalty() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.helios_penalty)
   if (action_case() == kHeliosPenalty) {
     clear_has_action();
     ::protos::HeliosPenalty* temp = _impl_.action_.helios_penalty_;
@@ -45338,15 +47761,15 @@ inline ::protos::HeliosPenalty* Action::unsafe_arena_release_helios_penalty() {
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_helios_penalty(::protos::HeliosPenalty* helios_penalty) {
+inline void PlayerAction::unsafe_arena_set_allocated_helios_penalty(::protos::HeliosPenalty* helios_penalty) {
   clear_action();
   if (helios_penalty) {
     set_has_helios_penalty();
     _impl_.action_.helios_penalty_ = helios_penalty;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_penalty)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.helios_penalty)
 }
-inline ::protos::HeliosPenalty* Action::_internal_mutable_helios_penalty() {
+inline ::protos::HeliosPenalty* PlayerAction::_internal_mutable_helios_penalty() {
   if (action_case() != kHeliosPenalty) {
     clear_action();
     set_has_helios_penalty();
@@ -45354,23 +47777,23 @@ inline ::protos::HeliosPenalty* Action::_internal_mutable_helios_penalty() {
   }
   return _impl_.action_.helios_penalty_;
 }
-inline ::protos::HeliosPenalty* Action::mutable_helios_penalty() {
+inline ::protos::HeliosPenalty* PlayerAction::mutable_helios_penalty() {
   ::protos::HeliosPenalty* _msg = _internal_mutable_helios_penalty();
-  // @@protoc_insertion_point(field_mutable:protos.Action.helios_penalty)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.helios_penalty)
   return _msg;
 }
 
 // .protos.HeliosCommunicaion helios_communication = 64;
-inline bool Action::has_helios_communication() const {
+inline bool PlayerAction::has_helios_communication() const {
   return action_case() == kHeliosCommunication;
 }
-inline bool Action::_internal_has_helios_communication() const {
+inline bool PlayerAction::_internal_has_helios_communication() const {
   return action_case() == kHeliosCommunication;
 }
-inline void Action::set_has_helios_communication() {
+inline void PlayerAction::set_has_helios_communication() {
   _impl_._oneof_case_[0] = kHeliosCommunication;
 }
-inline void Action::clear_helios_communication() {
+inline void PlayerAction::clear_helios_communication() {
   if (action_case() == kHeliosCommunication) {
     if (GetArenaForAllocation() == nullptr) {
       delete _impl_.action_.helios_communication_;
@@ -45378,8 +47801,8 @@ inline void Action::clear_helios_communication() {
     clear_has_action();
   }
 }
-inline ::protos::HeliosCommunicaion* Action::release_helios_communication() {
-  // @@protoc_insertion_point(field_release:protos.Action.helios_communication)
+inline ::protos::HeliosCommunicaion* PlayerAction::release_helios_communication() {
+  // @@protoc_insertion_point(field_release:protos.PlayerAction.helios_communication)
   if (action_case() == kHeliosCommunication) {
     clear_has_action();
     ::protos::HeliosCommunicaion* temp = _impl_.action_.helios_communication_;
@@ -45392,17 +47815,17 @@ inline ::protos::HeliosCommunicaion* Action::release_helios_communication() {
     return nullptr;
   }
 }
-inline const ::protos::HeliosCommunicaion& Action::_internal_helios_communication() const {
+inline const ::protos::HeliosCommunicaion& PlayerAction::_internal_helios_communication() const {
   return action_case() == kHeliosCommunication
       ? *_impl_.action_.helios_communication_
       : reinterpret_cast<::protos::HeliosCommunicaion&>(::protos::_HeliosCommunicaion_default_instance_);
 }
-inline const ::protos::HeliosCommunicaion& Action::helios_communication() const {
-  // @@protoc_insertion_point(field_get:protos.Action.helios_communication)
+inline const ::protos::HeliosCommunicaion& PlayerAction::helios_communication() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerAction.helios_communication)
   return _internal_helios_communication();
 }
-inline ::protos::HeliosCommunicaion* Action::unsafe_arena_release_helios_communication() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:protos.Action.helios_communication)
+inline ::protos::HeliosCommunicaion* PlayerAction::unsafe_arena_release_helios_communication() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.PlayerAction.helios_communication)
   if (action_case() == kHeliosCommunication) {
     clear_has_action();
     ::protos::HeliosCommunicaion* temp = _impl_.action_.helios_communication_;
@@ -45412,15 +47835,15 @@ inline ::protos::HeliosCommunicaion* Action::unsafe_arena_release_helios_communi
     return nullptr;
   }
 }
-inline void Action::unsafe_arena_set_allocated_helios_communication(::protos::HeliosCommunicaion* helios_communication) {
+inline void PlayerAction::unsafe_arena_set_allocated_helios_communication(::protos::HeliosCommunicaion* helios_communication) {
   clear_action();
   if (helios_communication) {
     set_has_helios_communication();
     _impl_.action_.helios_communication_ = helios_communication;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.Action.helios_communication)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerAction.helios_communication)
 }
-inline ::protos::HeliosCommunicaion* Action::_internal_mutable_helios_communication() {
+inline ::protos::HeliosCommunicaion* PlayerAction::_internal_mutable_helios_communication() {
   if (action_case() != kHeliosCommunication) {
     clear_action();
     set_has_helios_communication();
@@ -45428,70 +47851,1363 @@ inline ::protos::HeliosCommunicaion* Action::_internal_mutable_helios_communicat
   }
   return _impl_.action_.helios_communication_;
 }
-inline ::protos::HeliosCommunicaion* Action::mutable_helios_communication() {
+inline ::protos::HeliosCommunicaion* PlayerAction::mutable_helios_communication() {
   ::protos::HeliosCommunicaion* _msg = _internal_mutable_helios_communication();
-  // @@protoc_insertion_point(field_mutable:protos.Action.helios_communication)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerAction.helios_communication)
   return _msg;
 }
 
-inline bool Action::has_action() const {
+inline bool PlayerAction::has_action() const {
   return action_case() != ACTION_NOT_SET;
 }
-inline void Action::clear_has_action() {
+inline void PlayerAction::clear_has_action() {
   _impl_._oneof_case_[0] = ACTION_NOT_SET;
 }
-inline Action::ActionCase Action::action_case() const {
-  return Action::ActionCase(_impl_._oneof_case_[0]);
+inline PlayerAction::ActionCase PlayerAction::action_case() const {
+  return PlayerAction::ActionCase(_impl_._oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 
-// Actions
+// PlayerActions
 
-// repeated .protos.Action actions = 1;
-inline int Actions::_internal_actions_size() const {
+// repeated .protos.PlayerAction actions = 1;
+inline int PlayerActions::_internal_actions_size() const {
   return _impl_.actions_.size();
 }
-inline int Actions::actions_size() const {
+inline int PlayerActions::actions_size() const {
   return _internal_actions_size();
 }
-inline void Actions::clear_actions() {
+inline void PlayerActions::clear_actions() {
   _internal_mutable_actions()->Clear();
 }
-inline ::protos::Action* Actions::mutable_actions(int index) {
-  // @@protoc_insertion_point(field_mutable:protos.Actions.actions)
+inline ::protos::PlayerAction* PlayerActions::mutable_actions(int index) {
+  // @@protoc_insertion_point(field_mutable:protos.PlayerActions.actions)
   return _internal_mutable_actions()->Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::Action >*
-Actions::mutable_actions() {
-  // @@protoc_insertion_point(field_mutable_list:protos.Actions.actions)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::PlayerAction >*
+PlayerActions::mutable_actions() {
+  // @@protoc_insertion_point(field_mutable_list:protos.PlayerActions.actions)
   return _internal_mutable_actions();
 }
-inline const ::protos::Action& Actions::_internal_actions(int index) const {
+inline const ::protos::PlayerAction& PlayerActions::_internal_actions(int index) const {
   return _internal_actions().Get(index);
 }
-inline const ::protos::Action& Actions::actions(int index) const {
-  // @@protoc_insertion_point(field_get:protos.Actions.actions)
+inline const ::protos::PlayerAction& PlayerActions::actions(int index) const {
+  // @@protoc_insertion_point(field_get:protos.PlayerActions.actions)
   return _internal_actions(index);
 }
-inline ::protos::Action* Actions::_internal_add_actions() {
+inline ::protos::PlayerAction* PlayerActions::_internal_add_actions() {
   return _internal_mutable_actions()->Add();
 }
-inline ::protos::Action* Actions::add_actions() {
-  ::protos::Action* _add = _internal_add_actions();
-  // @@protoc_insertion_point(field_add:protos.Actions.actions)
+inline ::protos::PlayerAction* PlayerActions::add_actions() {
+  ::protos::PlayerAction* _add = _internal_add_actions();
+  // @@protoc_insertion_point(field_add:protos.PlayerActions.actions)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::Action >&
-Actions::actions() const {
-  // @@protoc_insertion_point(field_list:protos.Actions.actions)
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::PlayerAction >&
+PlayerActions::actions() const {
+  // @@protoc_insertion_point(field_list:protos.PlayerActions.actions)
   return _internal_actions();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::Action>&
-Actions::_internal_actions() const {
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::PlayerAction>&
+PlayerActions::_internal_actions() const {
   return _impl_.actions_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::Action>*
-Actions::_internal_mutable_actions() {
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::PlayerAction>*
+PlayerActions::_internal_mutable_actions() {
+  return &_impl_.actions_;
+}
+
+// -------------------------------------------------------------------
+
+// ChangePlayerType
+
+// int32 uniform_number = 1;
+inline void ChangePlayerType::clear_uniform_number() {
+  _impl_.uniform_number_ = 0;
+}
+inline ::int32_t ChangePlayerType::uniform_number() const {
+  // @@protoc_insertion_point(field_get:protos.ChangePlayerType.uniform_number)
+  return _internal_uniform_number();
+}
+inline void ChangePlayerType::set_uniform_number(::int32_t value) {
+  _internal_set_uniform_number(value);
+  // @@protoc_insertion_point(field_set:protos.ChangePlayerType.uniform_number)
+}
+inline ::int32_t ChangePlayerType::_internal_uniform_number() const {
+  return _impl_.uniform_number_;
+}
+inline void ChangePlayerType::_internal_set_uniform_number(::int32_t value) {
+  ;
+  _impl_.uniform_number_ = value;
+}
+
+// int32 type = 2;
+inline void ChangePlayerType::clear_type() {
+  _impl_.type_ = 0;
+}
+inline ::int32_t ChangePlayerType::type() const {
+  // @@protoc_insertion_point(field_get:protos.ChangePlayerType.type)
+  return _internal_type();
+}
+inline void ChangePlayerType::set_type(::int32_t value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:protos.ChangePlayerType.type)
+}
+inline ::int32_t ChangePlayerType::_internal_type() const {
+  return _impl_.type_;
+}
+inline void ChangePlayerType::_internal_set_type(::int32_t value) {
+  ;
+  _impl_.type_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// DoHeliosSubstitute
+
+// -------------------------------------------------------------------
+
+// DoHeliosSayPlayerTypes
+
+// -------------------------------------------------------------------
+
+// CoachAction
+
+// .protos.ChangePlayerType change_player_types = 1;
+inline bool CoachAction::has_change_player_types() const {
+  return action_case() == kChangePlayerTypes;
+}
+inline bool CoachAction::_internal_has_change_player_types() const {
+  return action_case() == kChangePlayerTypes;
+}
+inline void CoachAction::set_has_change_player_types() {
+  _impl_._oneof_case_[0] = kChangePlayerTypes;
+}
+inline void CoachAction::clear_change_player_types() {
+  if (action_case() == kChangePlayerTypes) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.change_player_types_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::ChangePlayerType* CoachAction::release_change_player_types() {
+  // @@protoc_insertion_point(field_release:protos.CoachAction.change_player_types)
+  if (action_case() == kChangePlayerTypes) {
+    clear_has_action();
+    ::protos::ChangePlayerType* temp = _impl_.action_.change_player_types_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.change_player_types_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::ChangePlayerType& CoachAction::_internal_change_player_types() const {
+  return action_case() == kChangePlayerTypes
+      ? *_impl_.action_.change_player_types_
+      : reinterpret_cast<::protos::ChangePlayerType&>(::protos::_ChangePlayerType_default_instance_);
+}
+inline const ::protos::ChangePlayerType& CoachAction::change_player_types() const {
+  // @@protoc_insertion_point(field_get:protos.CoachAction.change_player_types)
+  return _internal_change_player_types();
+}
+inline ::protos::ChangePlayerType* CoachAction::unsafe_arena_release_change_player_types() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.CoachAction.change_player_types)
+  if (action_case() == kChangePlayerTypes) {
+    clear_has_action();
+    ::protos::ChangePlayerType* temp = _impl_.action_.change_player_types_;
+    _impl_.action_.change_player_types_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void CoachAction::unsafe_arena_set_allocated_change_player_types(::protos::ChangePlayerType* change_player_types) {
+  clear_action();
+  if (change_player_types) {
+    set_has_change_player_types();
+    _impl_.action_.change_player_types_ = change_player_types;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.CoachAction.change_player_types)
+}
+inline ::protos::ChangePlayerType* CoachAction::_internal_mutable_change_player_types() {
+  if (action_case() != kChangePlayerTypes) {
+    clear_action();
+    set_has_change_player_types();
+    _impl_.action_.change_player_types_ = CreateMaybeMessage< ::protos::ChangePlayerType >(GetArenaForAllocation());
+  }
+  return _impl_.action_.change_player_types_;
+}
+inline ::protos::ChangePlayerType* CoachAction::mutable_change_player_types() {
+  ::protos::ChangePlayerType* _msg = _internal_mutable_change_player_types();
+  // @@protoc_insertion_point(field_mutable:protos.CoachAction.change_player_types)
+  return _msg;
+}
+
+// .protos.DoHeliosSubstitute do_helios_substitute = 2;
+inline bool CoachAction::has_do_helios_substitute() const {
+  return action_case() == kDoHeliosSubstitute;
+}
+inline bool CoachAction::_internal_has_do_helios_substitute() const {
+  return action_case() == kDoHeliosSubstitute;
+}
+inline void CoachAction::set_has_do_helios_substitute() {
+  _impl_._oneof_case_[0] = kDoHeliosSubstitute;
+}
+inline void CoachAction::clear_do_helios_substitute() {
+  if (action_case() == kDoHeliosSubstitute) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.do_helios_substitute_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::DoHeliosSubstitute* CoachAction::release_do_helios_substitute() {
+  // @@protoc_insertion_point(field_release:protos.CoachAction.do_helios_substitute)
+  if (action_case() == kDoHeliosSubstitute) {
+    clear_has_action();
+    ::protos::DoHeliosSubstitute* temp = _impl_.action_.do_helios_substitute_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.do_helios_substitute_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::DoHeliosSubstitute& CoachAction::_internal_do_helios_substitute() const {
+  return action_case() == kDoHeliosSubstitute
+      ? *_impl_.action_.do_helios_substitute_
+      : reinterpret_cast<::protos::DoHeliosSubstitute&>(::protos::_DoHeliosSubstitute_default_instance_);
+}
+inline const ::protos::DoHeliosSubstitute& CoachAction::do_helios_substitute() const {
+  // @@protoc_insertion_point(field_get:protos.CoachAction.do_helios_substitute)
+  return _internal_do_helios_substitute();
+}
+inline ::protos::DoHeliosSubstitute* CoachAction::unsafe_arena_release_do_helios_substitute() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.CoachAction.do_helios_substitute)
+  if (action_case() == kDoHeliosSubstitute) {
+    clear_has_action();
+    ::protos::DoHeliosSubstitute* temp = _impl_.action_.do_helios_substitute_;
+    _impl_.action_.do_helios_substitute_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void CoachAction::unsafe_arena_set_allocated_do_helios_substitute(::protos::DoHeliosSubstitute* do_helios_substitute) {
+  clear_action();
+  if (do_helios_substitute) {
+    set_has_do_helios_substitute();
+    _impl_.action_.do_helios_substitute_ = do_helios_substitute;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.CoachAction.do_helios_substitute)
+}
+inline ::protos::DoHeliosSubstitute* CoachAction::_internal_mutable_do_helios_substitute() {
+  if (action_case() != kDoHeliosSubstitute) {
+    clear_action();
+    set_has_do_helios_substitute();
+    _impl_.action_.do_helios_substitute_ = CreateMaybeMessage< ::protos::DoHeliosSubstitute >(GetArenaForAllocation());
+  }
+  return _impl_.action_.do_helios_substitute_;
+}
+inline ::protos::DoHeliosSubstitute* CoachAction::mutable_do_helios_substitute() {
+  ::protos::DoHeliosSubstitute* _msg = _internal_mutable_do_helios_substitute();
+  // @@protoc_insertion_point(field_mutable:protos.CoachAction.do_helios_substitute)
+  return _msg;
+}
+
+// .protos.DoHeliosSayPlayerTypes do_helios_say_player_types = 3;
+inline bool CoachAction::has_do_helios_say_player_types() const {
+  return action_case() == kDoHeliosSayPlayerTypes;
+}
+inline bool CoachAction::_internal_has_do_helios_say_player_types() const {
+  return action_case() == kDoHeliosSayPlayerTypes;
+}
+inline void CoachAction::set_has_do_helios_say_player_types() {
+  _impl_._oneof_case_[0] = kDoHeliosSayPlayerTypes;
+}
+inline void CoachAction::clear_do_helios_say_player_types() {
+  if (action_case() == kDoHeliosSayPlayerTypes) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.do_helios_say_player_types_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::DoHeliosSayPlayerTypes* CoachAction::release_do_helios_say_player_types() {
+  // @@protoc_insertion_point(field_release:protos.CoachAction.do_helios_say_player_types)
+  if (action_case() == kDoHeliosSayPlayerTypes) {
+    clear_has_action();
+    ::protos::DoHeliosSayPlayerTypes* temp = _impl_.action_.do_helios_say_player_types_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.do_helios_say_player_types_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::DoHeliosSayPlayerTypes& CoachAction::_internal_do_helios_say_player_types() const {
+  return action_case() == kDoHeliosSayPlayerTypes
+      ? *_impl_.action_.do_helios_say_player_types_
+      : reinterpret_cast<::protos::DoHeliosSayPlayerTypes&>(::protos::_DoHeliosSayPlayerTypes_default_instance_);
+}
+inline const ::protos::DoHeliosSayPlayerTypes& CoachAction::do_helios_say_player_types() const {
+  // @@protoc_insertion_point(field_get:protos.CoachAction.do_helios_say_player_types)
+  return _internal_do_helios_say_player_types();
+}
+inline ::protos::DoHeliosSayPlayerTypes* CoachAction::unsafe_arena_release_do_helios_say_player_types() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.CoachAction.do_helios_say_player_types)
+  if (action_case() == kDoHeliosSayPlayerTypes) {
+    clear_has_action();
+    ::protos::DoHeliosSayPlayerTypes* temp = _impl_.action_.do_helios_say_player_types_;
+    _impl_.action_.do_helios_say_player_types_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void CoachAction::unsafe_arena_set_allocated_do_helios_say_player_types(::protos::DoHeliosSayPlayerTypes* do_helios_say_player_types) {
+  clear_action();
+  if (do_helios_say_player_types) {
+    set_has_do_helios_say_player_types();
+    _impl_.action_.do_helios_say_player_types_ = do_helios_say_player_types;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.CoachAction.do_helios_say_player_types)
+}
+inline ::protos::DoHeliosSayPlayerTypes* CoachAction::_internal_mutable_do_helios_say_player_types() {
+  if (action_case() != kDoHeliosSayPlayerTypes) {
+    clear_action();
+    set_has_do_helios_say_player_types();
+    _impl_.action_.do_helios_say_player_types_ = CreateMaybeMessage< ::protos::DoHeliosSayPlayerTypes >(GetArenaForAllocation());
+  }
+  return _impl_.action_.do_helios_say_player_types_;
+}
+inline ::protos::DoHeliosSayPlayerTypes* CoachAction::mutable_do_helios_say_player_types() {
+  ::protos::DoHeliosSayPlayerTypes* _msg = _internal_mutable_do_helios_say_player_types();
+  // @@protoc_insertion_point(field_mutable:protos.CoachAction.do_helios_say_player_types)
+  return _msg;
+}
+
+inline bool CoachAction::has_action() const {
+  return action_case() != ACTION_NOT_SET;
+}
+inline void CoachAction::clear_has_action() {
+  _impl_._oneof_case_[0] = ACTION_NOT_SET;
+}
+inline CoachAction::ActionCase CoachAction::action_case() const {
+  return CoachAction::ActionCase(_impl_._oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// CoachActions
+
+// repeated .protos.CoachAction actions = 1;
+inline int CoachActions::_internal_actions_size() const {
+  return _impl_.actions_.size();
+}
+inline int CoachActions::actions_size() const {
+  return _internal_actions_size();
+}
+inline void CoachActions::clear_actions() {
+  _internal_mutable_actions()->Clear();
+}
+inline ::protos::CoachAction* CoachActions::mutable_actions(int index) {
+  // @@protoc_insertion_point(field_mutable:protos.CoachActions.actions)
+  return _internal_mutable_actions()->Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::CoachAction >*
+CoachActions::mutable_actions() {
+  // @@protoc_insertion_point(field_mutable_list:protos.CoachActions.actions)
+  return _internal_mutable_actions();
+}
+inline const ::protos::CoachAction& CoachActions::_internal_actions(int index) const {
+  return _internal_actions().Get(index);
+}
+inline const ::protos::CoachAction& CoachActions::actions(int index) const {
+  // @@protoc_insertion_point(field_get:protos.CoachActions.actions)
+  return _internal_actions(index);
+}
+inline ::protos::CoachAction* CoachActions::_internal_add_actions() {
+  return _internal_mutable_actions()->Add();
+}
+inline ::protos::CoachAction* CoachActions::add_actions() {
+  ::protos::CoachAction* _add = _internal_add_actions();
+  // @@protoc_insertion_point(field_add:protos.CoachActions.actions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::CoachAction >&
+CoachActions::actions() const {
+  // @@protoc_insertion_point(field_list:protos.CoachActions.actions)
+  return _internal_actions();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::CoachAction>&
+CoachActions::_internal_actions() const {
+  return _impl_.actions_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::CoachAction>*
+CoachActions::_internal_mutable_actions() {
+  return &_impl_.actions_;
+}
+
+// -------------------------------------------------------------------
+
+// DoKickOff
+
+// -------------------------------------------------------------------
+
+// DoMoveBall
+
+// .protos.Vector2D position = 1;
+inline bool DoMoveBall::has_position() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.position_ != nullptr);
+  return value;
+}
+inline void DoMoveBall::clear_position() {
+  if (_impl_.position_ != nullptr) _impl_.position_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::protos::Vector2D& DoMoveBall::_internal_position() const {
+  const ::protos::Vector2D* p = _impl_.position_;
+  return p != nullptr ? *p : reinterpret_cast<const ::protos::Vector2D&>(
+      ::protos::_Vector2D_default_instance_);
+}
+inline const ::protos::Vector2D& DoMoveBall::position() const {
+  // @@protoc_insertion_point(field_get:protos.DoMoveBall.position)
+  return _internal_position();
+}
+inline void DoMoveBall::unsafe_arena_set_allocated_position(
+    ::protos::Vector2D* position) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.position_);
+  }
+  _impl_.position_ = position;
+  if (position) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.DoMoveBall.position)
+}
+inline ::protos::Vector2D* DoMoveBall::release_position() {
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::protos::Vector2D* temp = _impl_.position_;
+  _impl_.position_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::protos::Vector2D* DoMoveBall::unsafe_arena_release_position() {
+  // @@protoc_insertion_point(field_release:protos.DoMoveBall.position)
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::protos::Vector2D* temp = _impl_.position_;
+  _impl_.position_ = nullptr;
+  return temp;
+}
+inline ::protos::Vector2D* DoMoveBall::_internal_mutable_position() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  if (_impl_.position_ == nullptr) {
+    auto* p = CreateMaybeMessage<::protos::Vector2D>(GetArenaForAllocation());
+    _impl_.position_ = p;
+  }
+  return _impl_.position_;
+}
+inline ::protos::Vector2D* DoMoveBall::mutable_position() {
+  ::protos::Vector2D* _msg = _internal_mutable_position();
+  // @@protoc_insertion_point(field_mutable:protos.DoMoveBall.position)
+  return _msg;
+}
+inline void DoMoveBall::set_allocated_position(::protos::Vector2D* position) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.position_;
+  }
+  if (position) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(position);
+    if (message_arena != submessage_arena) {
+      position = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, position, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.position_ = position;
+  // @@protoc_insertion_point(field_set_allocated:protos.DoMoveBall.position)
+}
+
+// .protos.Vector2D velocity = 2;
+inline bool DoMoveBall::has_velocity() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.velocity_ != nullptr);
+  return value;
+}
+inline void DoMoveBall::clear_velocity() {
+  if (_impl_.velocity_ != nullptr) _impl_.velocity_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::protos::Vector2D& DoMoveBall::_internal_velocity() const {
+  const ::protos::Vector2D* p = _impl_.velocity_;
+  return p != nullptr ? *p : reinterpret_cast<const ::protos::Vector2D&>(
+      ::protos::_Vector2D_default_instance_);
+}
+inline const ::protos::Vector2D& DoMoveBall::velocity() const {
+  // @@protoc_insertion_point(field_get:protos.DoMoveBall.velocity)
+  return _internal_velocity();
+}
+inline void DoMoveBall::unsafe_arena_set_allocated_velocity(
+    ::protos::Vector2D* velocity) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.velocity_);
+  }
+  _impl_.velocity_ = velocity;
+  if (velocity) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.DoMoveBall.velocity)
+}
+inline ::protos::Vector2D* DoMoveBall::release_velocity() {
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::protos::Vector2D* temp = _impl_.velocity_;
+  _impl_.velocity_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::protos::Vector2D* DoMoveBall::unsafe_arena_release_velocity() {
+  // @@protoc_insertion_point(field_release:protos.DoMoveBall.velocity)
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::protos::Vector2D* temp = _impl_.velocity_;
+  _impl_.velocity_ = nullptr;
+  return temp;
+}
+inline ::protos::Vector2D* DoMoveBall::_internal_mutable_velocity() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  if (_impl_.velocity_ == nullptr) {
+    auto* p = CreateMaybeMessage<::protos::Vector2D>(GetArenaForAllocation());
+    _impl_.velocity_ = p;
+  }
+  return _impl_.velocity_;
+}
+inline ::protos::Vector2D* DoMoveBall::mutable_velocity() {
+  ::protos::Vector2D* _msg = _internal_mutable_velocity();
+  // @@protoc_insertion_point(field_mutable:protos.DoMoveBall.velocity)
+  return _msg;
+}
+inline void DoMoveBall::set_allocated_velocity(::protos::Vector2D* velocity) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.velocity_;
+  }
+  if (velocity) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(velocity);
+    if (message_arena != submessage_arena) {
+      velocity = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, velocity, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.velocity_ = velocity;
+  // @@protoc_insertion_point(field_set_allocated:protos.DoMoveBall.velocity)
+}
+
+// -------------------------------------------------------------------
+
+// DoMovePlayer
+
+// bool our_side = 1;
+inline void DoMovePlayer::clear_our_side() {
+  _impl_.our_side_ = false;
+}
+inline bool DoMovePlayer::our_side() const {
+  // @@protoc_insertion_point(field_get:protos.DoMovePlayer.our_side)
+  return _internal_our_side();
+}
+inline void DoMovePlayer::set_our_side(bool value) {
+  _internal_set_our_side(value);
+  // @@protoc_insertion_point(field_set:protos.DoMovePlayer.our_side)
+}
+inline bool DoMovePlayer::_internal_our_side() const {
+  return _impl_.our_side_;
+}
+inline void DoMovePlayer::_internal_set_our_side(bool value) {
+  ;
+  _impl_.our_side_ = value;
+}
+
+// int32 uniform_number = 2;
+inline void DoMovePlayer::clear_uniform_number() {
+  _impl_.uniform_number_ = 0;
+}
+inline ::int32_t DoMovePlayer::uniform_number() const {
+  // @@protoc_insertion_point(field_get:protos.DoMovePlayer.uniform_number)
+  return _internal_uniform_number();
+}
+inline void DoMovePlayer::set_uniform_number(::int32_t value) {
+  _internal_set_uniform_number(value);
+  // @@protoc_insertion_point(field_set:protos.DoMovePlayer.uniform_number)
+}
+inline ::int32_t DoMovePlayer::_internal_uniform_number() const {
+  return _impl_.uniform_number_;
+}
+inline void DoMovePlayer::_internal_set_uniform_number(::int32_t value) {
+  ;
+  _impl_.uniform_number_ = value;
+}
+
+// .protos.Vector2D position = 3;
+inline bool DoMovePlayer::has_position() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.position_ != nullptr);
+  return value;
+}
+inline void DoMovePlayer::clear_position() {
+  if (_impl_.position_ != nullptr) _impl_.position_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::protos::Vector2D& DoMovePlayer::_internal_position() const {
+  const ::protos::Vector2D* p = _impl_.position_;
+  return p != nullptr ? *p : reinterpret_cast<const ::protos::Vector2D&>(
+      ::protos::_Vector2D_default_instance_);
+}
+inline const ::protos::Vector2D& DoMovePlayer::position() const {
+  // @@protoc_insertion_point(field_get:protos.DoMovePlayer.position)
+  return _internal_position();
+}
+inline void DoMovePlayer::unsafe_arena_set_allocated_position(
+    ::protos::Vector2D* position) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.position_);
+  }
+  _impl_.position_ = position;
+  if (position) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.DoMovePlayer.position)
+}
+inline ::protos::Vector2D* DoMovePlayer::release_position() {
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::protos::Vector2D* temp = _impl_.position_;
+  _impl_.position_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::protos::Vector2D* DoMovePlayer::unsafe_arena_release_position() {
+  // @@protoc_insertion_point(field_release:protos.DoMovePlayer.position)
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::protos::Vector2D* temp = _impl_.position_;
+  _impl_.position_ = nullptr;
+  return temp;
+}
+inline ::protos::Vector2D* DoMovePlayer::_internal_mutable_position() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  if (_impl_.position_ == nullptr) {
+    auto* p = CreateMaybeMessage<::protos::Vector2D>(GetArenaForAllocation());
+    _impl_.position_ = p;
+  }
+  return _impl_.position_;
+}
+inline ::protos::Vector2D* DoMovePlayer::mutable_position() {
+  ::protos::Vector2D* _msg = _internal_mutable_position();
+  // @@protoc_insertion_point(field_mutable:protos.DoMovePlayer.position)
+  return _msg;
+}
+inline void DoMovePlayer::set_allocated_position(::protos::Vector2D* position) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.position_;
+  }
+  if (position) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(position);
+    if (message_arena != submessage_arena) {
+      position = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, position, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.position_ = position;
+  // @@protoc_insertion_point(field_set_allocated:protos.DoMovePlayer.position)
+}
+
+// float body_direction = 4;
+inline void DoMovePlayer::clear_body_direction() {
+  _impl_.body_direction_ = 0;
+}
+inline float DoMovePlayer::body_direction() const {
+  // @@protoc_insertion_point(field_get:protos.DoMovePlayer.body_direction)
+  return _internal_body_direction();
+}
+inline void DoMovePlayer::set_body_direction(float value) {
+  _internal_set_body_direction(value);
+  // @@protoc_insertion_point(field_set:protos.DoMovePlayer.body_direction)
+}
+inline float DoMovePlayer::_internal_body_direction() const {
+  return _impl_.body_direction_;
+}
+inline void DoMovePlayer::_internal_set_body_direction(float value) {
+  ;
+  _impl_.body_direction_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// DoRecover
+
+// -------------------------------------------------------------------
+
+// DoChangeMode
+
+// .protos.GameModeType game_mode_type = 1;
+inline void DoChangeMode::clear_game_mode_type() {
+  _impl_.game_mode_type_ = 0;
+}
+inline ::protos::GameModeType DoChangeMode::game_mode_type() const {
+  // @@protoc_insertion_point(field_get:protos.DoChangeMode.game_mode_type)
+  return _internal_game_mode_type();
+}
+inline void DoChangeMode::set_game_mode_type(::protos::GameModeType value) {
+   _internal_set_game_mode_type(value);
+  // @@protoc_insertion_point(field_set:protos.DoChangeMode.game_mode_type)
+}
+inline ::protos::GameModeType DoChangeMode::_internal_game_mode_type() const {
+  return static_cast<::protos::GameModeType>(_impl_.game_mode_type_);
+}
+inline void DoChangeMode::_internal_set_game_mode_type(::protos::GameModeType value) {
+  ;
+  _impl_.game_mode_type_ = value;
+}
+
+// .protos.Side side = 2;
+inline void DoChangeMode::clear_side() {
+  _impl_.side_ = 0;
+}
+inline ::protos::Side DoChangeMode::side() const {
+  // @@protoc_insertion_point(field_get:protos.DoChangeMode.side)
+  return _internal_side();
+}
+inline void DoChangeMode::set_side(::protos::Side value) {
+   _internal_set_side(value);
+  // @@protoc_insertion_point(field_set:protos.DoChangeMode.side)
+}
+inline ::protos::Side DoChangeMode::_internal_side() const {
+  return static_cast<::protos::Side>(_impl_.side_);
+}
+inline void DoChangeMode::_internal_set_side(::protos::Side value) {
+  ;
+  _impl_.side_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// DoChangePlayerType
+
+// bool our_side = 1;
+inline void DoChangePlayerType::clear_our_side() {
+  _impl_.our_side_ = false;
+}
+inline bool DoChangePlayerType::our_side() const {
+  // @@protoc_insertion_point(field_get:protos.DoChangePlayerType.our_side)
+  return _internal_our_side();
+}
+inline void DoChangePlayerType::set_our_side(bool value) {
+  _internal_set_our_side(value);
+  // @@protoc_insertion_point(field_set:protos.DoChangePlayerType.our_side)
+}
+inline bool DoChangePlayerType::_internal_our_side() const {
+  return _impl_.our_side_;
+}
+inline void DoChangePlayerType::_internal_set_our_side(bool value) {
+  ;
+  _impl_.our_side_ = value;
+}
+
+// int32 uniform_number = 2;
+inline void DoChangePlayerType::clear_uniform_number() {
+  _impl_.uniform_number_ = 0;
+}
+inline ::int32_t DoChangePlayerType::uniform_number() const {
+  // @@protoc_insertion_point(field_get:protos.DoChangePlayerType.uniform_number)
+  return _internal_uniform_number();
+}
+inline void DoChangePlayerType::set_uniform_number(::int32_t value) {
+  _internal_set_uniform_number(value);
+  // @@protoc_insertion_point(field_set:protos.DoChangePlayerType.uniform_number)
+}
+inline ::int32_t DoChangePlayerType::_internal_uniform_number() const {
+  return _impl_.uniform_number_;
+}
+inline void DoChangePlayerType::_internal_set_uniform_number(::int32_t value) {
+  ;
+  _impl_.uniform_number_ = value;
+}
+
+// int32 type = 3;
+inline void DoChangePlayerType::clear_type() {
+  _impl_.type_ = 0;
+}
+inline ::int32_t DoChangePlayerType::type() const {
+  // @@protoc_insertion_point(field_get:protos.DoChangePlayerType.type)
+  return _internal_type();
+}
+inline void DoChangePlayerType::set_type(::int32_t value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:protos.DoChangePlayerType.type)
+}
+inline ::int32_t DoChangePlayerType::_internal_type() const {
+  return _impl_.type_;
+}
+inline void DoChangePlayerType::_internal_set_type(::int32_t value) {
+  ;
+  _impl_.type_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// TrainerAction
+
+// .protos.DoKickOff do_kick_off = 1;
+inline bool TrainerAction::has_do_kick_off() const {
+  return action_case() == kDoKickOff;
+}
+inline bool TrainerAction::_internal_has_do_kick_off() const {
+  return action_case() == kDoKickOff;
+}
+inline void TrainerAction::set_has_do_kick_off() {
+  _impl_._oneof_case_[0] = kDoKickOff;
+}
+inline void TrainerAction::clear_do_kick_off() {
+  if (action_case() == kDoKickOff) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.do_kick_off_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::DoKickOff* TrainerAction::release_do_kick_off() {
+  // @@protoc_insertion_point(field_release:protos.TrainerAction.do_kick_off)
+  if (action_case() == kDoKickOff) {
+    clear_has_action();
+    ::protos::DoKickOff* temp = _impl_.action_.do_kick_off_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.do_kick_off_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::DoKickOff& TrainerAction::_internal_do_kick_off() const {
+  return action_case() == kDoKickOff
+      ? *_impl_.action_.do_kick_off_
+      : reinterpret_cast<::protos::DoKickOff&>(::protos::_DoKickOff_default_instance_);
+}
+inline const ::protos::DoKickOff& TrainerAction::do_kick_off() const {
+  // @@protoc_insertion_point(field_get:protos.TrainerAction.do_kick_off)
+  return _internal_do_kick_off();
+}
+inline ::protos::DoKickOff* TrainerAction::unsafe_arena_release_do_kick_off() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.TrainerAction.do_kick_off)
+  if (action_case() == kDoKickOff) {
+    clear_has_action();
+    ::protos::DoKickOff* temp = _impl_.action_.do_kick_off_;
+    _impl_.action_.do_kick_off_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TrainerAction::unsafe_arena_set_allocated_do_kick_off(::protos::DoKickOff* do_kick_off) {
+  clear_action();
+  if (do_kick_off) {
+    set_has_do_kick_off();
+    _impl_.action_.do_kick_off_ = do_kick_off;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.TrainerAction.do_kick_off)
+}
+inline ::protos::DoKickOff* TrainerAction::_internal_mutable_do_kick_off() {
+  if (action_case() != kDoKickOff) {
+    clear_action();
+    set_has_do_kick_off();
+    _impl_.action_.do_kick_off_ = CreateMaybeMessage< ::protos::DoKickOff >(GetArenaForAllocation());
+  }
+  return _impl_.action_.do_kick_off_;
+}
+inline ::protos::DoKickOff* TrainerAction::mutable_do_kick_off() {
+  ::protos::DoKickOff* _msg = _internal_mutable_do_kick_off();
+  // @@protoc_insertion_point(field_mutable:protos.TrainerAction.do_kick_off)
+  return _msg;
+}
+
+// .protos.DoMoveBall do_move_ball = 2;
+inline bool TrainerAction::has_do_move_ball() const {
+  return action_case() == kDoMoveBall;
+}
+inline bool TrainerAction::_internal_has_do_move_ball() const {
+  return action_case() == kDoMoveBall;
+}
+inline void TrainerAction::set_has_do_move_ball() {
+  _impl_._oneof_case_[0] = kDoMoveBall;
+}
+inline void TrainerAction::clear_do_move_ball() {
+  if (action_case() == kDoMoveBall) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.do_move_ball_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::DoMoveBall* TrainerAction::release_do_move_ball() {
+  // @@protoc_insertion_point(field_release:protos.TrainerAction.do_move_ball)
+  if (action_case() == kDoMoveBall) {
+    clear_has_action();
+    ::protos::DoMoveBall* temp = _impl_.action_.do_move_ball_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.do_move_ball_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::DoMoveBall& TrainerAction::_internal_do_move_ball() const {
+  return action_case() == kDoMoveBall
+      ? *_impl_.action_.do_move_ball_
+      : reinterpret_cast<::protos::DoMoveBall&>(::protos::_DoMoveBall_default_instance_);
+}
+inline const ::protos::DoMoveBall& TrainerAction::do_move_ball() const {
+  // @@protoc_insertion_point(field_get:protos.TrainerAction.do_move_ball)
+  return _internal_do_move_ball();
+}
+inline ::protos::DoMoveBall* TrainerAction::unsafe_arena_release_do_move_ball() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.TrainerAction.do_move_ball)
+  if (action_case() == kDoMoveBall) {
+    clear_has_action();
+    ::protos::DoMoveBall* temp = _impl_.action_.do_move_ball_;
+    _impl_.action_.do_move_ball_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TrainerAction::unsafe_arena_set_allocated_do_move_ball(::protos::DoMoveBall* do_move_ball) {
+  clear_action();
+  if (do_move_ball) {
+    set_has_do_move_ball();
+    _impl_.action_.do_move_ball_ = do_move_ball;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.TrainerAction.do_move_ball)
+}
+inline ::protos::DoMoveBall* TrainerAction::_internal_mutable_do_move_ball() {
+  if (action_case() != kDoMoveBall) {
+    clear_action();
+    set_has_do_move_ball();
+    _impl_.action_.do_move_ball_ = CreateMaybeMessage< ::protos::DoMoveBall >(GetArenaForAllocation());
+  }
+  return _impl_.action_.do_move_ball_;
+}
+inline ::protos::DoMoveBall* TrainerAction::mutable_do_move_ball() {
+  ::protos::DoMoveBall* _msg = _internal_mutable_do_move_ball();
+  // @@protoc_insertion_point(field_mutable:protos.TrainerAction.do_move_ball)
+  return _msg;
+}
+
+// .protos.DoMovePlayer do_move_player = 3;
+inline bool TrainerAction::has_do_move_player() const {
+  return action_case() == kDoMovePlayer;
+}
+inline bool TrainerAction::_internal_has_do_move_player() const {
+  return action_case() == kDoMovePlayer;
+}
+inline void TrainerAction::set_has_do_move_player() {
+  _impl_._oneof_case_[0] = kDoMovePlayer;
+}
+inline void TrainerAction::clear_do_move_player() {
+  if (action_case() == kDoMovePlayer) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.do_move_player_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::DoMovePlayer* TrainerAction::release_do_move_player() {
+  // @@protoc_insertion_point(field_release:protos.TrainerAction.do_move_player)
+  if (action_case() == kDoMovePlayer) {
+    clear_has_action();
+    ::protos::DoMovePlayer* temp = _impl_.action_.do_move_player_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.do_move_player_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::DoMovePlayer& TrainerAction::_internal_do_move_player() const {
+  return action_case() == kDoMovePlayer
+      ? *_impl_.action_.do_move_player_
+      : reinterpret_cast<::protos::DoMovePlayer&>(::protos::_DoMovePlayer_default_instance_);
+}
+inline const ::protos::DoMovePlayer& TrainerAction::do_move_player() const {
+  // @@protoc_insertion_point(field_get:protos.TrainerAction.do_move_player)
+  return _internal_do_move_player();
+}
+inline ::protos::DoMovePlayer* TrainerAction::unsafe_arena_release_do_move_player() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.TrainerAction.do_move_player)
+  if (action_case() == kDoMovePlayer) {
+    clear_has_action();
+    ::protos::DoMovePlayer* temp = _impl_.action_.do_move_player_;
+    _impl_.action_.do_move_player_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TrainerAction::unsafe_arena_set_allocated_do_move_player(::protos::DoMovePlayer* do_move_player) {
+  clear_action();
+  if (do_move_player) {
+    set_has_do_move_player();
+    _impl_.action_.do_move_player_ = do_move_player;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.TrainerAction.do_move_player)
+}
+inline ::protos::DoMovePlayer* TrainerAction::_internal_mutable_do_move_player() {
+  if (action_case() != kDoMovePlayer) {
+    clear_action();
+    set_has_do_move_player();
+    _impl_.action_.do_move_player_ = CreateMaybeMessage< ::protos::DoMovePlayer >(GetArenaForAllocation());
+  }
+  return _impl_.action_.do_move_player_;
+}
+inline ::protos::DoMovePlayer* TrainerAction::mutable_do_move_player() {
+  ::protos::DoMovePlayer* _msg = _internal_mutable_do_move_player();
+  // @@protoc_insertion_point(field_mutable:protos.TrainerAction.do_move_player)
+  return _msg;
+}
+
+// .protos.DoRecover do_recover = 4;
+inline bool TrainerAction::has_do_recover() const {
+  return action_case() == kDoRecover;
+}
+inline bool TrainerAction::_internal_has_do_recover() const {
+  return action_case() == kDoRecover;
+}
+inline void TrainerAction::set_has_do_recover() {
+  _impl_._oneof_case_[0] = kDoRecover;
+}
+inline void TrainerAction::clear_do_recover() {
+  if (action_case() == kDoRecover) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.do_recover_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::DoRecover* TrainerAction::release_do_recover() {
+  // @@protoc_insertion_point(field_release:protos.TrainerAction.do_recover)
+  if (action_case() == kDoRecover) {
+    clear_has_action();
+    ::protos::DoRecover* temp = _impl_.action_.do_recover_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.do_recover_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::DoRecover& TrainerAction::_internal_do_recover() const {
+  return action_case() == kDoRecover
+      ? *_impl_.action_.do_recover_
+      : reinterpret_cast<::protos::DoRecover&>(::protos::_DoRecover_default_instance_);
+}
+inline const ::protos::DoRecover& TrainerAction::do_recover() const {
+  // @@protoc_insertion_point(field_get:protos.TrainerAction.do_recover)
+  return _internal_do_recover();
+}
+inline ::protos::DoRecover* TrainerAction::unsafe_arena_release_do_recover() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.TrainerAction.do_recover)
+  if (action_case() == kDoRecover) {
+    clear_has_action();
+    ::protos::DoRecover* temp = _impl_.action_.do_recover_;
+    _impl_.action_.do_recover_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TrainerAction::unsafe_arena_set_allocated_do_recover(::protos::DoRecover* do_recover) {
+  clear_action();
+  if (do_recover) {
+    set_has_do_recover();
+    _impl_.action_.do_recover_ = do_recover;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.TrainerAction.do_recover)
+}
+inline ::protos::DoRecover* TrainerAction::_internal_mutable_do_recover() {
+  if (action_case() != kDoRecover) {
+    clear_action();
+    set_has_do_recover();
+    _impl_.action_.do_recover_ = CreateMaybeMessage< ::protos::DoRecover >(GetArenaForAllocation());
+  }
+  return _impl_.action_.do_recover_;
+}
+inline ::protos::DoRecover* TrainerAction::mutable_do_recover() {
+  ::protos::DoRecover* _msg = _internal_mutable_do_recover();
+  // @@protoc_insertion_point(field_mutable:protos.TrainerAction.do_recover)
+  return _msg;
+}
+
+// .protos.DoChangeMode do_change_mode = 5;
+inline bool TrainerAction::has_do_change_mode() const {
+  return action_case() == kDoChangeMode;
+}
+inline bool TrainerAction::_internal_has_do_change_mode() const {
+  return action_case() == kDoChangeMode;
+}
+inline void TrainerAction::set_has_do_change_mode() {
+  _impl_._oneof_case_[0] = kDoChangeMode;
+}
+inline void TrainerAction::clear_do_change_mode() {
+  if (action_case() == kDoChangeMode) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.do_change_mode_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::DoChangeMode* TrainerAction::release_do_change_mode() {
+  // @@protoc_insertion_point(field_release:protos.TrainerAction.do_change_mode)
+  if (action_case() == kDoChangeMode) {
+    clear_has_action();
+    ::protos::DoChangeMode* temp = _impl_.action_.do_change_mode_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.do_change_mode_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::DoChangeMode& TrainerAction::_internal_do_change_mode() const {
+  return action_case() == kDoChangeMode
+      ? *_impl_.action_.do_change_mode_
+      : reinterpret_cast<::protos::DoChangeMode&>(::protos::_DoChangeMode_default_instance_);
+}
+inline const ::protos::DoChangeMode& TrainerAction::do_change_mode() const {
+  // @@protoc_insertion_point(field_get:protos.TrainerAction.do_change_mode)
+  return _internal_do_change_mode();
+}
+inline ::protos::DoChangeMode* TrainerAction::unsafe_arena_release_do_change_mode() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.TrainerAction.do_change_mode)
+  if (action_case() == kDoChangeMode) {
+    clear_has_action();
+    ::protos::DoChangeMode* temp = _impl_.action_.do_change_mode_;
+    _impl_.action_.do_change_mode_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TrainerAction::unsafe_arena_set_allocated_do_change_mode(::protos::DoChangeMode* do_change_mode) {
+  clear_action();
+  if (do_change_mode) {
+    set_has_do_change_mode();
+    _impl_.action_.do_change_mode_ = do_change_mode;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.TrainerAction.do_change_mode)
+}
+inline ::protos::DoChangeMode* TrainerAction::_internal_mutable_do_change_mode() {
+  if (action_case() != kDoChangeMode) {
+    clear_action();
+    set_has_do_change_mode();
+    _impl_.action_.do_change_mode_ = CreateMaybeMessage< ::protos::DoChangeMode >(GetArenaForAllocation());
+  }
+  return _impl_.action_.do_change_mode_;
+}
+inline ::protos::DoChangeMode* TrainerAction::mutable_do_change_mode() {
+  ::protos::DoChangeMode* _msg = _internal_mutable_do_change_mode();
+  // @@protoc_insertion_point(field_mutable:protos.TrainerAction.do_change_mode)
+  return _msg;
+}
+
+// .protos.DoChangePlayerType do_change_player_type = 6;
+inline bool TrainerAction::has_do_change_player_type() const {
+  return action_case() == kDoChangePlayerType;
+}
+inline bool TrainerAction::_internal_has_do_change_player_type() const {
+  return action_case() == kDoChangePlayerType;
+}
+inline void TrainerAction::set_has_do_change_player_type() {
+  _impl_._oneof_case_[0] = kDoChangePlayerType;
+}
+inline void TrainerAction::clear_do_change_player_type() {
+  if (action_case() == kDoChangePlayerType) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.action_.do_change_player_type_;
+    }
+    clear_has_action();
+  }
+}
+inline ::protos::DoChangePlayerType* TrainerAction::release_do_change_player_type() {
+  // @@protoc_insertion_point(field_release:protos.TrainerAction.do_change_player_type)
+  if (action_case() == kDoChangePlayerType) {
+    clear_has_action();
+    ::protos::DoChangePlayerType* temp = _impl_.action_.do_change_player_type_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.action_.do_change_player_type_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::protos::DoChangePlayerType& TrainerAction::_internal_do_change_player_type() const {
+  return action_case() == kDoChangePlayerType
+      ? *_impl_.action_.do_change_player_type_
+      : reinterpret_cast<::protos::DoChangePlayerType&>(::protos::_DoChangePlayerType_default_instance_);
+}
+inline const ::protos::DoChangePlayerType& TrainerAction::do_change_player_type() const {
+  // @@protoc_insertion_point(field_get:protos.TrainerAction.do_change_player_type)
+  return _internal_do_change_player_type();
+}
+inline ::protos::DoChangePlayerType* TrainerAction::unsafe_arena_release_do_change_player_type() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:protos.TrainerAction.do_change_player_type)
+  if (action_case() == kDoChangePlayerType) {
+    clear_has_action();
+    ::protos::DoChangePlayerType* temp = _impl_.action_.do_change_player_type_;
+    _impl_.action_.do_change_player_type_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TrainerAction::unsafe_arena_set_allocated_do_change_player_type(::protos::DoChangePlayerType* do_change_player_type) {
+  clear_action();
+  if (do_change_player_type) {
+    set_has_do_change_player_type();
+    _impl_.action_.do_change_player_type_ = do_change_player_type;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.TrainerAction.do_change_player_type)
+}
+inline ::protos::DoChangePlayerType* TrainerAction::_internal_mutable_do_change_player_type() {
+  if (action_case() != kDoChangePlayerType) {
+    clear_action();
+    set_has_do_change_player_type();
+    _impl_.action_.do_change_player_type_ = CreateMaybeMessage< ::protos::DoChangePlayerType >(GetArenaForAllocation());
+  }
+  return _impl_.action_.do_change_player_type_;
+}
+inline ::protos::DoChangePlayerType* TrainerAction::mutable_do_change_player_type() {
+  ::protos::DoChangePlayerType* _msg = _internal_mutable_do_change_player_type();
+  // @@protoc_insertion_point(field_mutable:protos.TrainerAction.do_change_player_type)
+  return _msg;
+}
+
+inline bool TrainerAction::has_action() const {
+  return action_case() != ACTION_NOT_SET;
+}
+inline void TrainerAction::clear_has_action() {
+  _impl_._oneof_case_[0] = ACTION_NOT_SET;
+}
+inline TrainerAction::ActionCase TrainerAction::action_case() const {
+  return TrainerAction::ActionCase(_impl_._oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// TrainerActions
+
+// repeated .protos.TrainerAction actions = 1;
+inline int TrainerActions::_internal_actions_size() const {
+  return _impl_.actions_.size();
+}
+inline int TrainerActions::actions_size() const {
+  return _internal_actions_size();
+}
+inline void TrainerActions::clear_actions() {
+  _internal_mutable_actions()->Clear();
+}
+inline ::protos::TrainerAction* TrainerActions::mutable_actions(int index) {
+  // @@protoc_insertion_point(field_mutable:protos.TrainerActions.actions)
+  return _internal_mutable_actions()->Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::TrainerAction >*
+TrainerActions::mutable_actions() {
+  // @@protoc_insertion_point(field_mutable_list:protos.TrainerActions.actions)
+  return _internal_mutable_actions();
+}
+inline const ::protos::TrainerAction& TrainerActions::_internal_actions(int index) const {
+  return _internal_actions().Get(index);
+}
+inline const ::protos::TrainerAction& TrainerActions::actions(int index) const {
+  // @@protoc_insertion_point(field_get:protos.TrainerActions.actions)
+  return _internal_actions(index);
+}
+inline ::protos::TrainerAction* TrainerActions::_internal_add_actions() {
+  return _internal_mutable_actions()->Add();
+}
+inline ::protos::TrainerAction* TrainerActions::add_actions() {
+  ::protos::TrainerAction* _add = _internal_add_actions();
+  // @@protoc_insertion_point(field_add:protos.TrainerActions.actions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::protos::TrainerAction >&
+TrainerActions::actions() const {
+  // @@protoc_insertion_point(field_list:protos.TrainerActions.actions)
+  return _internal_actions();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::TrainerAction>&
+TrainerActions::_internal_actions() const {
+  return _impl_.actions_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<::protos::TrainerAction>*
+TrainerActions::_internal_mutable_actions() {
   return &_impl_.actions_;
 }
 
@@ -45499,24 +49215,24 @@ Actions::_internal_mutable_actions() {
 
 // ServerParam
 
-// float goal_width = 1;
-inline void ServerParam::clear_goal_width() {
-  _impl_.goal_width_ = 0;
+// .protos.AgentType agent_type = 1;
+inline void ServerParam::clear_agent_type() {
+  _impl_.agent_type_ = 0;
 }
-inline float ServerParam::goal_width() const {
-  // @@protoc_insertion_point(field_get:protos.ServerParam.goal_width)
-  return _internal_goal_width();
+inline ::protos::AgentType ServerParam::agent_type() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.agent_type)
+  return _internal_agent_type();
 }
-inline void ServerParam::set_goal_width(float value) {
-  _internal_set_goal_width(value);
-  // @@protoc_insertion_point(field_set:protos.ServerParam.goal_width)
+inline void ServerParam::set_agent_type(::protos::AgentType value) {
+   _internal_set_agent_type(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.agent_type)
 }
-inline float ServerParam::_internal_goal_width() const {
-  return _impl_.goal_width_;
+inline ::protos::AgentType ServerParam::_internal_agent_type() const {
+  return static_cast<::protos::AgentType>(_impl_.agent_type_);
 }
-inline void ServerParam::_internal_set_goal_width(float value) {
+inline void ServerParam::_internal_set_agent_type(::protos::AgentType value) {
   ;
-  _impl_.goal_width_ = value;
+  _impl_.agent_type_ = value;
 }
 
 // float inertia_moment = 2;
@@ -50324,11 +54040,51 @@ inline void ServerParam::_internal_set_penalty_area_length(float value) {
   _impl_.penalty_area_length_ = value;
 }
 
+// float goal_width = 222;
+inline void ServerParam::clear_goal_width() {
+  _impl_.goal_width_ = 0;
+}
+inline float ServerParam::goal_width() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.goal_width)
+  return _internal_goal_width();
+}
+inline void ServerParam::set_goal_width(float value) {
+  _internal_set_goal_width(value);
+  // @@protoc_insertion_point(field_set:protos.ServerParam.goal_width)
+}
+inline float ServerParam::_internal_goal_width() const {
+  return _impl_.goal_width_;
+}
+inline void ServerParam::_internal_set_goal_width(float value) {
+  ;
+  _impl_.goal_width_ = value;
+}
+
 // -------------------------------------------------------------------
 
 // PlayerParam
 
-// int32 player_types = 1;
+// .protos.AgentType agent_type = 1;
+inline void PlayerParam::clear_agent_type() {
+  _impl_.agent_type_ = 0;
+}
+inline ::protos::AgentType PlayerParam::agent_type() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerParam.agent_type)
+  return _internal_agent_type();
+}
+inline void PlayerParam::set_agent_type(::protos::AgentType value) {
+   _internal_set_agent_type(value);
+  // @@protoc_insertion_point(field_set:protos.PlayerParam.agent_type)
+}
+inline ::protos::AgentType PlayerParam::_internal_agent_type() const {
+  return static_cast<::protos::AgentType>(_impl_.agent_type_);
+}
+inline void PlayerParam::_internal_set_agent_type(::protos::AgentType value) {
+  ;
+  _impl_.agent_type_ = value;
+}
+
+// int32 player_types = 2;
 inline void PlayerParam::clear_player_types() {
   _impl_.player_types_ = 0;
 }
@@ -50348,7 +54104,7 @@ inline void PlayerParam::_internal_set_player_types(::int32_t value) {
   _impl_.player_types_ = value;
 }
 
-// int32 subs_max = 2;
+// int32 subs_max = 3;
 inline void PlayerParam::clear_subs_max() {
   _impl_.subs_max_ = 0;
 }
@@ -50368,7 +54124,7 @@ inline void PlayerParam::_internal_set_subs_max(::int32_t value) {
   _impl_.subs_max_ = value;
 }
 
-// int32 pt_max = 3;
+// int32 pt_max = 4;
 inline void PlayerParam::clear_pt_max() {
   _impl_.pt_max_ = 0;
 }
@@ -50388,7 +54144,7 @@ inline void PlayerParam::_internal_set_pt_max(::int32_t value) {
   _impl_.pt_max_ = value;
 }
 
-// bool allow_mult_default_type = 4;
+// bool allow_mult_default_type = 5;
 inline void PlayerParam::clear_allow_mult_default_type() {
   _impl_.allow_mult_default_type_ = false;
 }
@@ -50408,7 +54164,7 @@ inline void PlayerParam::_internal_set_allow_mult_default_type(bool value) {
   _impl_.allow_mult_default_type_ = value;
 }
 
-// float player_speed_max_delta_min = 5;
+// float player_speed_max_delta_min = 6;
 inline void PlayerParam::clear_player_speed_max_delta_min() {
   _impl_.player_speed_max_delta_min_ = 0;
 }
@@ -50428,7 +54184,7 @@ inline void PlayerParam::_internal_set_player_speed_max_delta_min(float value) {
   _impl_.player_speed_max_delta_min_ = value;
 }
 
-// float player_speed_max_delta_max = 6;
+// float player_speed_max_delta_max = 7;
 inline void PlayerParam::clear_player_speed_max_delta_max() {
   _impl_.player_speed_max_delta_max_ = 0;
 }
@@ -50448,7 +54204,7 @@ inline void PlayerParam::_internal_set_player_speed_max_delta_max(float value) {
   _impl_.player_speed_max_delta_max_ = value;
 }
 
-// float stamina_inc_max_delta_factor = 7;
+// float stamina_inc_max_delta_factor = 8;
 inline void PlayerParam::clear_stamina_inc_max_delta_factor() {
   _impl_.stamina_inc_max_delta_factor_ = 0;
 }
@@ -50468,7 +54224,7 @@ inline void PlayerParam::_internal_set_stamina_inc_max_delta_factor(float value)
   _impl_.stamina_inc_max_delta_factor_ = value;
 }
 
-// float player_decay_delta_min = 8;
+// float player_decay_delta_min = 9;
 inline void PlayerParam::clear_player_decay_delta_min() {
   _impl_.player_decay_delta_min_ = 0;
 }
@@ -50488,7 +54244,7 @@ inline void PlayerParam::_internal_set_player_decay_delta_min(float value) {
   _impl_.player_decay_delta_min_ = value;
 }
 
-// float player_decay_delta_max = 9;
+// float player_decay_delta_max = 10;
 inline void PlayerParam::clear_player_decay_delta_max() {
   _impl_.player_decay_delta_max_ = 0;
 }
@@ -50508,7 +54264,7 @@ inline void PlayerParam::_internal_set_player_decay_delta_max(float value) {
   _impl_.player_decay_delta_max_ = value;
 }
 
-// float inertia_moment_delta_factor = 10;
+// float inertia_moment_delta_factor = 11;
 inline void PlayerParam::clear_inertia_moment_delta_factor() {
   _impl_.inertia_moment_delta_factor_ = 0;
 }
@@ -50528,7 +54284,7 @@ inline void PlayerParam::_internal_set_inertia_moment_delta_factor(float value) 
   _impl_.inertia_moment_delta_factor_ = value;
 }
 
-// float dash_power_rate_delta_min = 11;
+// float dash_power_rate_delta_min = 12;
 inline void PlayerParam::clear_dash_power_rate_delta_min() {
   _impl_.dash_power_rate_delta_min_ = 0;
 }
@@ -50548,7 +54304,7 @@ inline void PlayerParam::_internal_set_dash_power_rate_delta_min(float value) {
   _impl_.dash_power_rate_delta_min_ = value;
 }
 
-// float dash_power_rate_delta_max = 12;
+// float dash_power_rate_delta_max = 13;
 inline void PlayerParam::clear_dash_power_rate_delta_max() {
   _impl_.dash_power_rate_delta_max_ = 0;
 }
@@ -50568,7 +54324,7 @@ inline void PlayerParam::_internal_set_dash_power_rate_delta_max(float value) {
   _impl_.dash_power_rate_delta_max_ = value;
 }
 
-// float player_size_delta_factor = 13;
+// float player_size_delta_factor = 14;
 inline void PlayerParam::clear_player_size_delta_factor() {
   _impl_.player_size_delta_factor_ = 0;
 }
@@ -50588,7 +54344,7 @@ inline void PlayerParam::_internal_set_player_size_delta_factor(float value) {
   _impl_.player_size_delta_factor_ = value;
 }
 
-// float kickable_margin_delta_min = 14;
+// float kickable_margin_delta_min = 15;
 inline void PlayerParam::clear_kickable_margin_delta_min() {
   _impl_.kickable_margin_delta_min_ = 0;
 }
@@ -50608,7 +54364,7 @@ inline void PlayerParam::_internal_set_kickable_margin_delta_min(float value) {
   _impl_.kickable_margin_delta_min_ = value;
 }
 
-// float kickable_margin_delta_max = 15;
+// float kickable_margin_delta_max = 16;
 inline void PlayerParam::clear_kickable_margin_delta_max() {
   _impl_.kickable_margin_delta_max_ = 0;
 }
@@ -50628,7 +54384,7 @@ inline void PlayerParam::_internal_set_kickable_margin_delta_max(float value) {
   _impl_.kickable_margin_delta_max_ = value;
 }
 
-// float kick_rand_delta_factor = 16;
+// float kick_rand_delta_factor = 17;
 inline void PlayerParam::clear_kick_rand_delta_factor() {
   _impl_.kick_rand_delta_factor_ = 0;
 }
@@ -50648,7 +54404,7 @@ inline void PlayerParam::_internal_set_kick_rand_delta_factor(float value) {
   _impl_.kick_rand_delta_factor_ = value;
 }
 
-// float extra_stamina_delta_min = 17;
+// float extra_stamina_delta_min = 18;
 inline void PlayerParam::clear_extra_stamina_delta_min() {
   _impl_.extra_stamina_delta_min_ = 0;
 }
@@ -50668,7 +54424,7 @@ inline void PlayerParam::_internal_set_extra_stamina_delta_min(float value) {
   _impl_.extra_stamina_delta_min_ = value;
 }
 
-// float extra_stamina_delta_max = 18;
+// float extra_stamina_delta_max = 19;
 inline void PlayerParam::clear_extra_stamina_delta_max() {
   _impl_.extra_stamina_delta_max_ = 0;
 }
@@ -50688,7 +54444,7 @@ inline void PlayerParam::_internal_set_extra_stamina_delta_max(float value) {
   _impl_.extra_stamina_delta_max_ = value;
 }
 
-// float effort_max_delta_factor = 19;
+// float effort_max_delta_factor = 20;
 inline void PlayerParam::clear_effort_max_delta_factor() {
   _impl_.effort_max_delta_factor_ = 0;
 }
@@ -50708,7 +54464,7 @@ inline void PlayerParam::_internal_set_effort_max_delta_factor(float value) {
   _impl_.effort_max_delta_factor_ = value;
 }
 
-// float effort_min_delta_factor = 20;
+// float effort_min_delta_factor = 21;
 inline void PlayerParam::clear_effort_min_delta_factor() {
   _impl_.effort_min_delta_factor_ = 0;
 }
@@ -50728,7 +54484,7 @@ inline void PlayerParam::_internal_set_effort_min_delta_factor(float value) {
   _impl_.effort_min_delta_factor_ = value;
 }
 
-// int32 random_seed = 21;
+// int32 random_seed = 22;
 inline void PlayerParam::clear_random_seed() {
   _impl_.random_seed_ = 0;
 }
@@ -50748,7 +54504,7 @@ inline void PlayerParam::_internal_set_random_seed(::int32_t value) {
   _impl_.random_seed_ = value;
 }
 
-// float new_dash_power_rate_delta_min = 22;
+// float new_dash_power_rate_delta_min = 23;
 inline void PlayerParam::clear_new_dash_power_rate_delta_min() {
   _impl_.new_dash_power_rate_delta_min_ = 0;
 }
@@ -50768,7 +54524,7 @@ inline void PlayerParam::_internal_set_new_dash_power_rate_delta_min(float value
   _impl_.new_dash_power_rate_delta_min_ = value;
 }
 
-// float new_dash_power_rate_delta_max = 23;
+// float new_dash_power_rate_delta_max = 24;
 inline void PlayerParam::clear_new_dash_power_rate_delta_max() {
   _impl_.new_dash_power_rate_delta_max_ = 0;
 }
@@ -50788,7 +54544,7 @@ inline void PlayerParam::_internal_set_new_dash_power_rate_delta_max(float value
   _impl_.new_dash_power_rate_delta_max_ = value;
 }
 
-// float new_stamina_inc_max_delta_factor = 24;
+// float new_stamina_inc_max_delta_factor = 25;
 inline void PlayerParam::clear_new_stamina_inc_max_delta_factor() {
   _impl_.new_stamina_inc_max_delta_factor_ = 0;
 }
@@ -50808,7 +54564,7 @@ inline void PlayerParam::_internal_set_new_stamina_inc_max_delta_factor(float va
   _impl_.new_stamina_inc_max_delta_factor_ = value;
 }
 
-// float kick_power_rate_delta_min = 25;
+// float kick_power_rate_delta_min = 26;
 inline void PlayerParam::clear_kick_power_rate_delta_min() {
   _impl_.kick_power_rate_delta_min_ = 0;
 }
@@ -50828,7 +54584,7 @@ inline void PlayerParam::_internal_set_kick_power_rate_delta_min(float value) {
   _impl_.kick_power_rate_delta_min_ = value;
 }
 
-// float kick_power_rate_delta_max = 26;
+// float kick_power_rate_delta_max = 27;
 inline void PlayerParam::clear_kick_power_rate_delta_max() {
   _impl_.kick_power_rate_delta_max_ = 0;
 }
@@ -50848,7 +54604,7 @@ inline void PlayerParam::_internal_set_kick_power_rate_delta_max(float value) {
   _impl_.kick_power_rate_delta_max_ = value;
 }
 
-// float foul_detect_probability_delta_factor = 27;
+// float foul_detect_probability_delta_factor = 28;
 inline void PlayerParam::clear_foul_detect_probability_delta_factor() {
   _impl_.foul_detect_probability_delta_factor_ = 0;
 }
@@ -50868,7 +54624,7 @@ inline void PlayerParam::_internal_set_foul_detect_probability_delta_factor(floa
   _impl_.foul_detect_probability_delta_factor_ = value;
 }
 
-// float catchable_area_l_stretch_min = 28;
+// float catchable_area_l_stretch_min = 29;
 inline void PlayerParam::clear_catchable_area_l_stretch_min() {
   _impl_.catchable_area_l_stretch_min_ = 0;
 }
@@ -50888,7 +54644,7 @@ inline void PlayerParam::_internal_set_catchable_area_l_stretch_min(float value)
   _impl_.catchable_area_l_stretch_min_ = value;
 }
 
-// float catchable_area_l_stretch_max = 29;
+// float catchable_area_l_stretch_max = 30;
 inline void PlayerParam::clear_catchable_area_l_stretch_max() {
   _impl_.catchable_area_l_stretch_max_ = 0;
 }
@@ -50912,7 +54668,27 @@ inline void PlayerParam::_internal_set_catchable_area_l_stretch_max(float value)
 
 // PlayerType
 
-// int32 id = 1;
+// .protos.AgentType agent_type = 1;
+inline void PlayerType::clear_agent_type() {
+  _impl_.agent_type_ = 0;
+}
+inline ::protos::AgentType PlayerType::agent_type() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerType.agent_type)
+  return _internal_agent_type();
+}
+inline void PlayerType::set_agent_type(::protos::AgentType value) {
+   _internal_set_agent_type(value);
+  // @@protoc_insertion_point(field_set:protos.PlayerType.agent_type)
+}
+inline ::protos::AgentType PlayerType::_internal_agent_type() const {
+  return static_cast<::protos::AgentType>(_impl_.agent_type_);
+}
+inline void PlayerType::_internal_set_agent_type(::protos::AgentType value) {
+  ;
+  _impl_.agent_type_ = value;
+}
+
+// int32 id = 2;
 inline void PlayerType::clear_id() {
   _impl_.id_ = 0;
 }
@@ -50930,26 +54706,6 @@ inline ::int32_t PlayerType::_internal_id() const {
 inline void PlayerType::_internal_set_id(::int32_t value) {
   ;
   _impl_.id_ = value;
-}
-
-// float player_speed_max = 2;
-inline void PlayerType::clear_player_speed_max() {
-  _impl_.player_speed_max_ = 0;
-}
-inline float PlayerType::player_speed_max() const {
-  // @@protoc_insertion_point(field_get:protos.PlayerType.player_speed_max)
-  return _internal_player_speed_max();
-}
-inline void PlayerType::set_player_speed_max(float value) {
-  _internal_set_player_speed_max(value);
-  // @@protoc_insertion_point(field_set:protos.PlayerType.player_speed_max)
-}
-inline float PlayerType::_internal_player_speed_max() const {
-  return _impl_.player_speed_max_;
-}
-inline void PlayerType::_internal_set_player_speed_max(float value) {
-  ;
-  _impl_.player_speed_max_ = value;
 }
 
 // float stamina_inc_max = 3;
@@ -51572,6 +55328,26 @@ inline void PlayerType::_internal_set_cycles_to_reach_max_speed(::int32_t value)
   _impl_.cycles_to_reach_max_speed_ = value;
 }
 
+// float player_speed_max = 34;
+inline void PlayerType::clear_player_speed_max() {
+  _impl_.player_speed_max_ = 0;
+}
+inline float PlayerType::player_speed_max() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerType.player_speed_max)
+  return _internal_player_speed_max();
+}
+inline void PlayerType::set_player_speed_max(float value) {
+  _internal_set_player_speed_max(value);
+  // @@protoc_insertion_point(field_set:protos.PlayerType.player_speed_max)
+}
+inline float PlayerType::_internal_player_speed_max() const {
+  return _impl_.player_speed_max_;
+}
+inline void PlayerType::_internal_set_player_speed_max(float value) {
+  ;
+  _impl_.player_speed_max_ = value;
+}
+
 // -------------------------------------------------------------------
 
 // Empty
@@ -51615,6 +55391,12 @@ struct is_proto_enum<::protos::GameModeType> : std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor<::protos::GameModeType>() {
   return ::protos::GameModeType_descriptor();
+}
+template <>
+struct is_proto_enum<::protos::AgentType> : std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor<::protos::AgentType>() {
+  return ::protos::AgentType_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE
