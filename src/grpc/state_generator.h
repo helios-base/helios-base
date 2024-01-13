@@ -74,7 +74,7 @@ public:
         return res;
     }
 
-    static protos::Self * convertSelf(const rcsc::SelfObject & self){
+    static protos::Self * convertSelf(const rcsc::SelfObject & self, const rcsc::WorldModel & wm){
         auto res = new protos::Self();
         res->set_allocated_position(convertVector2D(self.pos()));
         res->set_allocated_seen_position(convertVector2D(self.seenPos()));
@@ -111,7 +111,11 @@ public:
         res->set_foul_probability(static_cast<float>(self.foulProbability()));
         res->set_view_width(convertViewWidth(self.viewWidth().type()));
         res->set_type_id(self.playerTypePtr()->id());
-        res->set_kick_rate(self.kickRate());
+        double kick_rate = self.playerType().kickRate( wm.ball().distFromSelf(),
+                                      ( wm.ball().angleFromSelf() - self.body() ).degree() );
+        kick_rate = std::max( kick_rate, 0.0001 );
+        res->set_kick_rate(kick_rate);
+        
         return res;
     }
 
@@ -319,7 +323,7 @@ public:
         res->set_allocated_their_team_name(new std::string (wm.theirTeamName()));
         res->set_our_side(convertSide(wm.ourSide()));
         res->set_last_set_play_start_time(wm.lastSetPlayStartTime().cycle());
-        res->set_allocated_self(convertSelf(wm.self()));
+        res->set_allocated_self(convertSelf(wm.self(), wm));
         res->set_allocated_ball(convertBall(wm.ball()));
         for(auto player : wm.teammates()){
             auto p = res->add_teammates();
