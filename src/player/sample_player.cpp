@@ -164,7 +164,7 @@ SamplePlayer::initImpl( CmdLineParser & cmd_parser )
 {
     M_grpc_agent.init(
         this,
-        "localhost",
+        M_grpc_server_address,
         M_first_grpc_port,
         M_use_same_grpc_port,
         M_add_20_to_grpc_port_if_right_side
