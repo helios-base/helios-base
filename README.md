@@ -119,6 +119,13 @@ cd build
 cmake ..
 make
 ```
+- - Troubleshooting
+    - If you saw an error about the different version of GRpc
+    - You should delete src/grpc/service.pb.cc and src/grpc/service.pb.h
+    - Then, generate them again by going to the base root directory and
+    - ```bash
+    protoc ./grpc/protos/service.proto --cpp_out=./src/grpc/
+    ```
 - Monitor - follow [this](https://github.com/rcsoccersim/rcssmonitor)
 Moniter is a GUI for RCSSServer. It is not necessary to run a team. It is just for watching the game and controlling the game.
 
