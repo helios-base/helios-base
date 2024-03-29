@@ -125,7 +125,7 @@ make
     - Then, generate them again by going to the base root directory and
     ```bash
     cd grpc/proto
-    protoc service.proto --cpp_out=../../src/grpc/
+    protoc --proto_path=. --cpp_out=../../src/grpc/ --grpc_out=../../src/grpc/ --plugin=protoc-gen-grpc=$HOME/.local/bin/grpc_cpp_plugin service.proto
     ```
 - Monitor - follow [this](https://github.com/rcsoccersim/rcssmonitor)
 Moniter is a GUI for RCSSServer. It is not necessary to run a team. It is just for watching the game and controlling the game.
