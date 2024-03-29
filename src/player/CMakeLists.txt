@@ -89,6 +89,7 @@ add_executable(sample_player
   neck_offensive_intercept_neck.cpp
   view_tactical.cpp
   intention_receive.cpp
+  intercept_evaluator_sample.cpp
   soccer_role.cpp
   role_center_back.cpp
   role_center_forward.cpp
