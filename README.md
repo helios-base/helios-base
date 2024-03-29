@@ -123,7 +123,7 @@ make
     - If you saw an error about the different version of GRpc
     - You should delete src/grpc/service.pb.cc and src/grpc/service.pb.h
     - Then, generate them again by going to the base root directory and
-    - ```bash
+    ```bash
     protoc ./grpc/protos/service.proto --cpp_out=./src/grpc/
     ```
 - Monitor - follow [this](https://github.com/rcsoccersim/rcssmonitor)
