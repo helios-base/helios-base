@@ -77,7 +77,37 @@ cmake ..
 make
 make install
 ```
-- gRPC - follow [this](https://grpc.io/docs/languages/)
+- gRPC - follow [this](https://grpc.io/docs/languages/cpp/quickstart/)
+```bash
+export MY_INSTALL_DIR=$HOME/.local
+mkdir -p $MY_INSTALL_DIR
+export PATH="$MY_INSTALL_DIR/bin:$PATH"
+sudo apt install -y build-essential autoconf libtool pkg-config
+git clone --recurse-submodules -b v1.62.0 --depth 1 --shallow-submodules https://github.com/grpc/grpc
+cd grpc/
+mkdir -p cmake/build
+pushd cmake/build
+cmake -DgRPC_INSTALL=ON       -DgRPC_BUILD_TESTS=OFF       -DCMAKE_INSTALL_PREFIX=$MY_INSTALL_DIR       ../..
+make -j 4
+make install
+```
+- - Add the following lines at the end of $HOME/.bashrc
+```bash
+export MY_INSTALL_DIR=$HOME/.local
+export PATH="$MY_INSTALL_DIR/bin:$PATH"
+```
+- - Use the new version of bashrc
+```bash
+source $HOME/.bashrc
+```
+- - to test grpc, go to grpc directory (in this example it is in $HOME/grpc
+```bash
+cd examples/cpp/helloworld
+mkdir -p cmake/build
+cd cmake/build/
+cmake -DCMAKE_PREFIX_PATH=$MY_INSTALL_DIR ../..
+make
+```
 - SS2D-gRPC-Base
 ```bash
 git clone git@github.com:Cyrus2D/SS2D-gRPC-Base.git
@@ -86,6 +116,8 @@ mkdir build
 cd build
 cmake ..
 make
+run greeter_server in one tab by "./greeter_server"
+run greeter_client in another tab "./greeter_client"
 ```
 - Monitor - follow [this](https://github.com/rcsoccersim/rcssmonitor)
 Moniter is a GUI for RCSSServer. It is not necessary to run a team. It is just for watching the game and controlling the game.
