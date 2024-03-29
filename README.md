@@ -100,13 +100,15 @@ export PATH="$MY_INSTALL_DIR/bin:$PATH"
 ```bash
 source $HOME/.bashrc
 ```
-- - to test grpc, go to grpc directory (in this example it is in $HOME/grpc
+- - to test grpc, go to grpc directory (in this example it is in $HOME/grpc)
 ```bash
 cd examples/cpp/helloworld
 mkdir -p cmake/build
 cd cmake/build/
 cmake -DCMAKE_PREFIX_PATH=$MY_INSTALL_DIR ../..
 make
+run ./greeter_server in one tab
+run ./greeter_client in another tab
 ```
 - SS2D-gRPC-Base
 ```bash
@@ -116,8 +118,6 @@ mkdir build
 cd build
 cmake ..
 make
-run greeter_server in one tab by "./greeter_server"
-run greeter_client in another tab "./greeter_client"
 ```
 - Monitor - follow [this](https://github.com/rcsoccersim/rcssmonitor)
 Moniter is a GUI for RCSSServer. It is not necessary to run a team. It is just for watching the game and controlling the game.
