@@ -75,7 +75,6 @@ void GrpcAgentTrainer::getActions() const{
             const auto & doMoveBall = action.do_move_ball();
             const auto & ballPosition = GrpcAgent::convertVector2D(doMoveBall.position());
             const auto & ballVelocity = doMoveBall.has_velocity() ? GrpcAgent::convertVector2D(doMoveBall.velocity()) : rcsc::Vector2D(0, 0);
-            
             agent->doMoveBall(ballPosition, ballVelocity);
             break;
         }
@@ -249,6 +248,8 @@ void GrpcAgentTrainer::getActions() const{
                 break;
             }
             }
+            agent->doChangeMode(play_mode);
+            break;
         }
         case TrainerAction::kDoChangePlayerType:
         {
