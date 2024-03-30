@@ -6,9 +6,9 @@
 
 #include <chrono>
 #include <rcsc/common/logger.h>
-using std::chrono::high_resolution_clock;
-using std::chrono::duration_cast;
 using std::chrono::duration;
+using std::chrono::duration_cast;
+using std::chrono::high_resolution_clock;
 using std::chrono::milliseconds;
 
 #define DEBUG
@@ -21,22 +21,24 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-
-GrpcAgentTrainer::GrpcAgentTrainer() {
+GrpcAgentTrainer::GrpcAgentTrainer()
+{
     agent_type = protos::AgentType::TrainerT;
 }
 
-void GrpcAgentTrainer::init(rcsc::TrainerAgent * agent,
+void GrpcAgentTrainer::init(rcsc::TrainerAgent *agent,
                             std::string target,
                             int port,
                             bool use_same_grpc_port,
-                            bool add_20_to_grpc_port_if_right_side){
+                            bool add_20_to_grpc_port_if_right_side)
+{
     M_agent = agent;
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
 
-    if (!use_same_grpc_port){
+    if (!use_same_grpc_port)
+    {
         port += 13;
     }
 
@@ -46,7 +48,8 @@ void GrpcAgentTrainer::init(rcsc::TrainerAgent * agent,
     stub_ = Game::NewStub(channel);
 }
 
-void GrpcAgentTrainer::getActions() const{
+void GrpcAgentTrainer::getActions() const
+{
     LOG("getAction Started");
     auto agent = M_agent;
     LOGV(agent->world().time().cycle());
@@ -55,13 +58,15 @@ void GrpcAgentTrainer::getActions() const{
     protos::TrainerActions actions;
     ClientContext context;
     Status status = stub_->GetTrainerActions(&context, state, &actions);
-    if (!status.ok()) {
+    if (!status.ok())
+    {
         std::cout << status.error_code() << ": " << status.error_message()
                   << std::endl;
         return;
     }
 
-    for(int i = 0; i < actions.actions_size(); i++){
+    for (int i = 0; i < actions.actions_size(); i++)
+    {
         auto action = actions.actions(i);
         switch (action.action_case())
         {
@@ -72,23 +77,25 @@ void GrpcAgentTrainer::getActions() const{
         }
         case TrainerAction::kDoMoveBall:
         {
-            const auto & doMoveBall = action.do_move_ball();
-            const auto & ballPosition = GrpcAgent::convertVector2D(doMoveBall.position());
-            const auto & ballVelocity = doMoveBall.has_velocity() ? GrpcAgent::convertVector2D(doMoveBall.velocity()) : rcsc::Vector2D(0, 0);
+            const auto &doMoveBall = action.do_move_ball();
+            const auto &ballPosition = GrpcAgent::convertVector2D(doMoveBall.position());
+            const auto &ballVelocity = doMoveBall.has_velocity() ? GrpcAgent::convertVector2D(doMoveBall.velocity()) : rcsc::Vector2D(0, 0);
             agent->doMoveBall(ballPosition, ballVelocity);
             break;
         }
         case TrainerAction::kDoMovePlayer:
         {
-            const auto & doMovePlayer = action.do_move_player();
-            const auto & unum = doMovePlayer.uniform_number();
-            const auto & position = GrpcAgent::convertVector2D(doMovePlayer.position());
-            const auto & body = rcsc::AngleDeg(doMovePlayer.body_direction());
+            const auto &doMovePlayer = action.do_move_player();
+            const auto &unum = doMovePlayer.uniform_number();
+            const auto &position = GrpcAgent::convertVector2D(doMovePlayer.position());
+            const auto &body = rcsc::AngleDeg(doMovePlayer.body_direction());
             std::string team_name = "";
-            if (doMovePlayer.our_side()){
+            if (doMovePlayer.our_side())
+            {
                 team_name = agent->world().ourTeamName();
             }
-            else {
+            else
+            {
                 team_name = agent->world().theirTeamName();
             }
             agent->doMovePlayer(team_name, unum, position, body);
@@ -101,8 +108,8 @@ void GrpcAgentTrainer::getActions() const{
         }
         case TrainerAction::kDoChangeMode:
         {
-            const auto & mode = action.do_change_mode().game_mode_type();
-            const auto & side = action.do_change_mode().side();
+            const auto &mode = action.do_change_mode().game_mode_type();
+            const auto &side = action.do_change_mode().side();
 
             rcsc::PlayMode play_mode;
             switch (mode)
@@ -253,9 +260,9 @@ void GrpcAgentTrainer::getActions() const{
         }
         case TrainerAction::kDoChangePlayerType:
         {
-            const auto & doChangePlayerType = action.do_change_player_type();
-            const auto & playerType = doChangePlayerType.type();
-            const auto & unum = doChangePlayerType.uniform_number();
+            const auto &doChangePlayerType = action.do_change_player_type();
+            const auto &playerType = doChangePlayerType.type();
+            const auto &unum = doChangePlayerType.uniform_number();
             std::string team_name = doChangePlayerType.our_side() ? agent->world().ourTeamName() : agent->world().theirTeamName();
             agent->doChangePlayerType(team_name, unum, playerType);
             break;
@@ -266,11 +273,12 @@ void GrpcAgentTrainer::getActions() const{
             break;
         }
         }
-    } 
+    }
 }
 
-State GrpcAgentTrainer::generateState() const {
-    auto & wm = M_agent->world();
+State GrpcAgentTrainer::generateState() const
+{
+    auto &wm = M_agent->world();
     // WorldModel * worldModel = StateGenerator::convertCoachWorldModel(wm);
     State state;
     // state.set_allocated_world_model(worldModel);

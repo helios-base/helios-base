@@ -8,9 +8,9 @@
 #include <rcsc/common/logger.h>
 #include "grpc/state_generator.h"
 
-using std::chrono::high_resolution_clock;
-using std::chrono::duration_cast;
 using std::chrono::duration;
+using std::chrono::duration_cast;
+using std::chrono::high_resolution_clock;
 using std::chrono::milliseconds;
 
 #define DEBUG
@@ -23,22 +23,24 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-
-GrpcAgentCoach::GrpcAgentCoach() {
+GrpcAgentCoach::GrpcAgentCoach()
+{
     agent_type = protos::AgentType::CoachT;
 }
 
-void GrpcAgentCoach::init(rcsc::CoachAgent * agent,
-                            std::string target,
-                            int port,
-                            bool use_same_grpc_port,
-                            bool add_20_to_grpc_port_if_right_side){
+void GrpcAgentCoach::init(rcsc::CoachAgent *agent,
+                          std::string target,
+                          int port,
+                          bool use_same_grpc_port,
+                          bool add_20_to_grpc_port_if_right_side)
+{
     M_agent = agent;
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
 
-    if (!use_same_grpc_port){
+    if (!use_same_grpc_port)
+    {
         port += 13;
     }
 
@@ -48,7 +50,8 @@ void GrpcAgentCoach::init(rcsc::CoachAgent * agent,
     stub_ = Game::NewStub(channel);
 }
 
-void GrpcAgentCoach::getActions() const{
+void GrpcAgentCoach::getActions() const
+{
     LOG("getAction Started");
     auto agent = M_agent;
     LOGV(agent->world().time().cycle());
@@ -57,21 +60,23 @@ void GrpcAgentCoach::getActions() const{
     protos::CoachActions actions;
     ClientContext context;
     Status status = stub_->GetCoachActions(&context, state, &actions);
-    if (!status.ok()) {
+    if (!status.ok())
+    {
         std::cout << status.error_code() << ": " << status.error_message()
                   << std::endl;
         return;
     }
 
-    for(int i = 0; i < actions.actions_size(); i++){
+    for (int i = 0; i < actions.actions_size(); i++)
+    {
         auto action = actions.actions(i);
         switch (action.action_case())
         {
         case CoachAction::kChangePlayerTypes:
         {
-            const auto & changePlayerTypes = action.change_player_types();
-            const auto & playerType = changePlayerTypes.type();
-            const auto & unum = changePlayerTypes.uniform_number();
+            const auto &changePlayerTypes = action.change_player_types();
+            const auto &playerType = changePlayerTypes.type();
+            const auto &unum = changePlayerTypes.uniform_number();
 
             agent->doChangePlayerType(unum, playerType);
             break;
@@ -94,12 +99,13 @@ void GrpcAgentCoach::getActions() const{
             break;
         }
         }
-    } 
+    }
 }
 
-State GrpcAgentCoach::generateState() const {
-    auto & wm = M_agent->world();
-    protos::WorldModel * worldModel = StateGenerator::convertCoachWorldModel(wm);
+State GrpcAgentCoach::generateState() const
+{
+    auto &wm = M_agent->world();
+    protos::WorldModel *worldModel = StateGenerator::convertCoachWorldModel(wm);
     State state;
     state.set_allocated_world_model(worldModel);
     return state;

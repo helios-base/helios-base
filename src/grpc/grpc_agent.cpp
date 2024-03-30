@@ -6,9 +6,9 @@
 
 #include <chrono>
 #include <rcsc/common/logger.h>
-using std::chrono::high_resolution_clock;
-using std::chrono::duration_cast;
 using std::chrono::duration;
+using std::chrono::duration_cast;
+using std::chrono::high_resolution_clock;
 using std::chrono::milliseconds;
 
 #define DEBUG
@@ -21,8 +21,10 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-void GrpcAgent::sendParams(bool offline_logging){
-    if (!param_sent){
+void GrpcAgent::sendParams(bool offline_logging)
+{
+    if (!param_sent)
+    {
         sendServerParam();
         sendPlayerParams();
         sendPlayerType();
@@ -30,42 +32,43 @@ void GrpcAgent::sendParams(bool offline_logging){
         param_sent = true;
     }
 }
-void GrpcAgent::sendServerParam() const {
+void GrpcAgent::sendServerParam() const
+{
     LOG("sendServerParam Started");
 
     protos::ServerParam serverParam;
-    const rcsc::ServerParam& SP = rcsc::ServerParam::i();
-    
-//    std::string replayFile = SP.replayFile();
-//    serverParam.set_allocated_replay_file(&replayFile);
-//    std::string landmarkFile = SP.landmarkFile();
-//    serverParam.set_allocated_landmark_file(&landmarkFile);
-//    std::string textLogDir = SP.textLogDir();
-//    serverParam.set_allocated_text_log_dir(&textLogDir);
-//    std::string gameLogDir = SP.gameLogDir();
-//    serverParam.set_allocated_game_log_dir(&gameLogDir);
-//    std::string textLogFixedName = SP.textLogFixedName();
-//    serverParam.set_allocated_text_log_fixed_name(&textLogFixedName);
-//    std::string gameLogFixedName = SP.gameLogFixedName();
-//    serverParam.set_allocated_game_log_fixed_name(&gameLogFixedName);
-//    std::string logDateFormat = SP.logDateFormat();
-//    serverParam.set_allocated_log_date_format(&logDateFormat);
-//    std::string teamLeftStartCommand = SP.teamLeftStartCommand();
-//    serverParam.set_allocated_team_l_start(&teamLeftStartCommand);
-//    std::string teamRightStartCommand = SP.teamRightStartCommand();
-//    serverParam.set_allocated_team_r_start(&teamRightStartCommand);
-//    std::string keepawayLogDir = SP.keepawayLogDir();
-//    serverParam.set_allocated_keepaway_log_dir(&keepawayLogDir);
-//    std::string keepawayLogFixedName = SP.keepawayLogFixedName();
-//    serverParam.set_allocated_keepaway_log_fixed_name(&keepawayLogFixedName);
-//    std::string moduleDir = SP.moduleDir();
-//    serverParam.set_allocated_module_dir(&moduleDir);
-//    std::string coachMsgFile = SP.coachMsgFile();
-//    serverParam.set_allocated_coach_msg_file(&coachMsgFile);
-//    std::string fixedTeamNameLeft = SP.fixedTeamNameLeft();
-//    serverParam.set_allocated_fixed_teamname_l(&fixedTeamNameLeft);
-//    std::string fixedTeamNameRight = SP.fixedTeamNameRight();
-//    serverParam.set_allocated_fixed_teamname_r(&fixedTeamNameRight);
+    const rcsc::ServerParam &SP = rcsc::ServerParam::i();
+
+    //    std::string replayFile = SP.replayFile();
+    //    serverParam.set_allocated_replay_file(&replayFile);
+    //    std::string landmarkFile = SP.landmarkFile();
+    //    serverParam.set_allocated_landmark_file(&landmarkFile);
+    //    std::string textLogDir = SP.textLogDir();
+    //    serverParam.set_allocated_text_log_dir(&textLogDir);
+    //    std::string gameLogDir = SP.gameLogDir();
+    //    serverParam.set_allocated_game_log_dir(&gameLogDir);
+    //    std::string textLogFixedName = SP.textLogFixedName();
+    //    serverParam.set_allocated_text_log_fixed_name(&textLogFixedName);
+    //    std::string gameLogFixedName = SP.gameLogFixedName();
+    //    serverParam.set_allocated_game_log_fixed_name(&gameLogFixedName);
+    //    std::string logDateFormat = SP.logDateFormat();
+    //    serverParam.set_allocated_log_date_format(&logDateFormat);
+    //    std::string teamLeftStartCommand = SP.teamLeftStartCommand();
+    //    serverParam.set_allocated_team_l_start(&teamLeftStartCommand);
+    //    std::string teamRightStartCommand = SP.teamRightStartCommand();
+    //    serverParam.set_allocated_team_r_start(&teamRightStartCommand);
+    //    std::string keepawayLogDir = SP.keepawayLogDir();
+    //    serverParam.set_allocated_keepaway_log_dir(&keepawayLogDir);
+    //    std::string keepawayLogFixedName = SP.keepawayLogFixedName();
+    //    serverParam.set_allocated_keepaway_log_fixed_name(&keepawayLogFixedName);
+    //    std::string moduleDir = SP.moduleDir();
+    //    serverParam.set_allocated_module_dir(&moduleDir);
+    //    std::string coachMsgFile = SP.coachMsgFile();
+    //    serverParam.set_allocated_coach_msg_file(&coachMsgFile);
+    //    std::string fixedTeamNameLeft = SP.fixedTeamNameLeft();
+    //    serverParam.set_allocated_fixed_teamname_l(&fixedTeamNameLeft);
+    //    std::string fixedTeamNameRight = SP.fixedTeamNameRight();
+    //    serverParam.set_allocated_fixed_teamname_r(&fixedTeamNameRight);
 
     serverParam.set_goal_width(SP.goalWidth());
     serverParam.set_inertia_moment(SP.defaultInertiaMoment());
@@ -279,16 +282,18 @@ void GrpcAgent::sendServerParam() const {
     protos::Empty empty;
     serverParam.set_agent_type(this->agent_type);
     Status status = stub_->SendServerParams(&context, serverParam, &empty);
-    if (!status.ok()) {
+    if (!status.ok())
+    {
         std::cout << "SendServerParams rpc failed." << std::endl
                   << status.error_code() << ": " << status.error_message()
                   << std::endl;
     }
 }
 
-void GrpcAgent::sendPlayerParams() const {
+void GrpcAgent::sendPlayerParams() const
+{
     protos::PlayerParam playerParam;
-    const rcsc::PlayerParam& PP = rcsc::PlayerParam::i();
+    const rcsc::PlayerParam &PP = rcsc::PlayerParam::i();
 
     playerParam.set_player_types(PP.playerTypes());
     playerParam.set_subs_max(PP.subsMax());
@@ -318,28 +323,31 @@ void GrpcAgent::sendPlayerParams() const {
     playerParam.set_kick_power_rate_delta_max(PP.kickPowerRateDeltaMax());
     playerParam.set_foul_detect_probability_delta_factor(PP.foulDetectProbabilityDeltaFactor());
     playerParam.set_catchable_area_l_stretch_min(PP.catchAreaLengthStretchMin());
-    playerParam.set_catchable_area_l_stretch_max(PP.catchAreaLengthStretchMax());    
+    playerParam.set_catchable_area_l_stretch_max(PP.catchAreaLengthStretchMax());
 
     ClientContext context;
     protos::Empty empty;
     playerParam.set_agent_type(this->agent_type);
     Status status = stub_->SendPlayerParams(&context, playerParam, &empty);
-    if (!status.ok()) {
+    if (!status.ok())
+    {
         std::cout << "SendPlayerParams rpc failed." << std::endl
                   << status.error_code() << ": " << status.error_message()
                   << std::endl;
     }
 }
 
-void GrpcAgent::sendPlayerType() const {
-    const rcsc::PlayerParam& PP = rcsc::PlayerParam::i();
-    const rcsc::PlayerTypeSet& PT = rcsc::PlayerTypeSet::i();
+void GrpcAgent::sendPlayerType() const
+{
+    const rcsc::PlayerParam &PP = rcsc::PlayerParam::i();
+    const rcsc::PlayerTypeSet &PT = rcsc::PlayerTypeSet::i();
     LOG("pt");
     LOG(PT.playerTypeMap().size());
-    for (int i = 0; i < PT.playerTypeMap().size(); i++) {
+    for (int i = 0; i < PT.playerTypeMap().size(); i++)
+    {
         LOG(i);
         protos::PlayerType playerTypeGrpc;
-        const rcsc::PlayerType* playerType = PT.get(i);
+        const rcsc::PlayerType *playerType = PT.get(i);
 
         playerTypeGrpc.set_id(playerType->id());
         playerTypeGrpc.set_player_speed_max(playerType->playerSpeedMax());
@@ -379,7 +387,8 @@ void GrpcAgent::sendPlayerType() const {
         protos::Empty empty;
         playerTypeGrpc.set_agent_type(this->agent_type);
         Status status = stub_->SendPlayerType(&context, playerTypeGrpc, &empty);
-        if (!status.ok()) {
+        if (!status.ok())
+        {
             std::cout << "SendPlayerType rpc failed. id=" << i << std::endl
                       << status.error_code() << ": " << status.error_message()
                       << std::endl;
@@ -387,93 +396,96 @@ void GrpcAgent::sendPlayerType() const {
     }
 }
 
-void GrpcAgent::sendInitMessage(bool offline_logging) const {
-    
+void GrpcAgent::sendInitMessage(bool offline_logging) const
+{
+
     ClientContext context;
     protos::Empty empty;
     protos::InitMessage initMessage;
     initMessage.set_debug_mode(offline_logging);
     initMessage.set_agent_type(this->agent_type);
     Status status = stub_->SendInitMessage(&context, initMessage, &empty);
-    if (!status.ok()) {
+    if (!status.ok())
+    {
         std::cout << "sendInitMessage rpc failed." << std::endl
-                    << status.error_code() << ": " << status.error_message()
-                    << std::endl;
+                  << status.error_code() << ": " << status.error_message()
+                  << std::endl;
     }
 }
 
-void GrpcAgent::addDlog(protos::Log log) const{
+void GrpcAgent::addDlog(protos::Log log) const
+{
     switch (log.log_case())
     {
-        case protos::Log::kAddText:
-        {
-            const auto& addText = log.add_text();
-            rcsc::dlog.addText(addText.level(), addText.message().c_str());
-            break;
-        }
-        case protos::Log::kAddPoint:
-        {
-            const auto& addPoint = log.add_point();
-            const auto& point = GrpcAgent::convertVector2D(addPoint.point());
-            rcsc::dlog.addPoint(addPoint.level(), point, addPoint.color().c_str());
-            break;
-        }
-        case protos::Log::kAddLine:
-        {
-            const auto& addLine = log.add_line();
-            const auto& point1 = GrpcAgent::convertVector2D(addLine.start());
-            const auto& point2 = GrpcAgent::convertVector2D(addLine.end());
-            rcsc::dlog.addLine(addLine.level(), point1, point2, addLine.color().c_str());
-            break;
-        }
-        case protos::Log::kAddArc:
-        {
-            const auto& addArc = log.add_arc();
-            const auto& center = GrpcAgent::convertVector2D(addArc.center());
-            rcsc::dlog.addArc(addArc.level(), center, addArc.radius(), addArc.start_angle(), addArc.span_angel(), addArc.color().c_str());
-            break;
-        }
-        case protos::Log::kAddCircle:
-        {
-            const auto& addCircle = log.add_circle();
-            const auto& center = GrpcAgent::convertVector2D(addCircle.center());
-            rcsc::dlog.addCircle(addCircle.level(), center, addCircle.radius(), addCircle.color().c_str(), addCircle.fill());
-            break;
-        }
-        case protos::Log::kAddTriangle:
-        {
-            const auto& addTriangle = log.add_triangle();
-            const auto& point1 = GrpcAgent::convertVector2D(addTriangle.point1());
-            const auto& point2 = GrpcAgent::convertVector2D(addTriangle.point2());
-            const auto& point3 = GrpcAgent::convertVector2D(addTriangle.point3());
-            rcsc::dlog.addTriangle(addTriangle.level(), point1, point2, point3, addTriangle.color().c_str(), addTriangle.fill());
-            break;
-        }
-        case protos::Log::kAddRectangle:
-        {
-            const auto& addRectangle = log.add_rectangle();
-            rcsc::dlog.addRect(addRectangle.level(), addRectangle.left(), addRectangle.top(),addRectangle.length(), addRectangle.width(), addRectangle.color().c_str(), addRectangle.fill());
-            break;
-        }
-        case protos::Log::kAddSector:
-        {
-            const auto& addSector = log.add_sector();
-            const auto& center = GrpcAgent::convertVector2D(addSector.center());
-            rcsc::dlog.addSector(addSector.level(), center, addSector.min_radius(), addSector.max_radius(), addSector.start_angle(), addSector.span_angel(), addSector.color().c_str(), addSector.fill());
-            break;
-        }
-        case protos::Log::kAddMessage:
-        {
-            const auto& addMessage = log.add_message();
-            const auto& position = GrpcAgent::convertVector2D(addMessage.position());
-            rcsc::dlog.addMessage(addMessage.level(), position, addMessage.message().c_str(), addMessage.color().c_str());
-            break;
-        }
-
+    case protos::Log::kAddText:
+    {
+        const auto &addText = log.add_text();
+        rcsc::dlog.addText(addText.level(), addText.message().c_str());
+        break;
+    }
+    case protos::Log::kAddPoint:
+    {
+        const auto &addPoint = log.add_point();
+        const auto &point = GrpcAgent::convertVector2D(addPoint.point());
+        rcsc::dlog.addPoint(addPoint.level(), point, addPoint.color().c_str());
+        break;
+    }
+    case protos::Log::kAddLine:
+    {
+        const auto &addLine = log.add_line();
+        const auto &point1 = GrpcAgent::convertVector2D(addLine.start());
+        const auto &point2 = GrpcAgent::convertVector2D(addLine.end());
+        rcsc::dlog.addLine(addLine.level(), point1, point2, addLine.color().c_str());
+        break;
+    }
+    case protos::Log::kAddArc:
+    {
+        const auto &addArc = log.add_arc();
+        const auto &center = GrpcAgent::convertVector2D(addArc.center());
+        rcsc::dlog.addArc(addArc.level(), center, addArc.radius(), addArc.start_angle(), addArc.span_angel(), addArc.color().c_str());
+        break;
+    }
+    case protos::Log::kAddCircle:
+    {
+        const auto &addCircle = log.add_circle();
+        const auto &center = GrpcAgent::convertVector2D(addCircle.center());
+        rcsc::dlog.addCircle(addCircle.level(), center, addCircle.radius(), addCircle.color().c_str(), addCircle.fill());
+        break;
+    }
+    case protos::Log::kAddTriangle:
+    {
+        const auto &addTriangle = log.add_triangle();
+        const auto &point1 = GrpcAgent::convertVector2D(addTriangle.point1());
+        const auto &point2 = GrpcAgent::convertVector2D(addTriangle.point2());
+        const auto &point3 = GrpcAgent::convertVector2D(addTriangle.point3());
+        rcsc::dlog.addTriangle(addTriangle.level(), point1, point2, point3, addTriangle.color().c_str(), addTriangle.fill());
+        break;
+    }
+    case protos::Log::kAddRectangle:
+    {
+        const auto &addRectangle = log.add_rectangle();
+        rcsc::dlog.addRect(addRectangle.level(), addRectangle.left(), addRectangle.top(), addRectangle.length(), addRectangle.width(), addRectangle.color().c_str(), addRectangle.fill());
+        break;
+    }
+    case protos::Log::kAddSector:
+    {
+        const auto &addSector = log.add_sector();
+        const auto &center = GrpcAgent::convertVector2D(addSector.center());
+        rcsc::dlog.addSector(addSector.level(), center, addSector.min_radius(), addSector.max_radius(), addSector.start_angle(), addSector.span_angel(), addSector.color().c_str(), addSector.fill());
+        break;
+    }
+    case protos::Log::kAddMessage:
+    {
+        const auto &addMessage = log.add_message();
+        const auto &position = GrpcAgent::convertVector2D(addMessage.position());
+        rcsc::dlog.addMessage(addMessage.level(), position, addMessage.message().c_str(), addMessage.color().c_str());
+        break;
+    }
     }
 }
 
-rcsc::ViewWidth GrpcAgent::convertViewWidth(protos::ViewWidth view_width){
+rcsc::ViewWidth GrpcAgent::convertViewWidth(protos::ViewWidth view_width)
+{
     switch (view_width)
     {
     case protos::ViewWidth::NARROW:
@@ -487,7 +499,8 @@ rcsc::ViewWidth GrpcAgent::convertViewWidth(protos::ViewWidth view_width){
     }
 }
 
-rcsc::SideID GrpcAgent::convertSideID(protos::Side side){
+rcsc::SideID GrpcAgent::convertSideID(protos::Side side)
+{
     switch (side)
     {
     case protos::Side::LEFT:
@@ -499,6 +512,7 @@ rcsc::SideID GrpcAgent::convertSideID(protos::Side side){
     }
 }
 
-rcsc::Vector2D GrpcAgent::convertVector2D(protos::Vector2D vector2d){
+rcsc::Vector2D GrpcAgent::convertVector2D(protos::Vector2D vector2d)
+{
     return rcsc::Vector2D(vector2d.x(), vector2d.y());
 }
