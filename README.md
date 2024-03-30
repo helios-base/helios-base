@@ -132,6 +132,34 @@ Moniter is a GUI for RCSSServer. It is not necessary to run a team. It is just f
 
 - Soccer Window2 - follow [this](git@github.com:helios-base/soccerwindow2.git)
 Soccer Window2 is a GUI for RCSSServer. It is not necessary to run a team. It is just for watching the game and controlling the game and debugging.
+#### Run
+You need to run the RCSSServer first to host a soccer simulation 2D game.
+Then you should run the SS2D-gRPC-Base to run 12 agents (11 players and 1 coach) and connect them to the RCSSServer.
+Before starting the game (kick off), you should run the SS2D-gRPC-Server to receive information from SS2D-gRPC-Base, make decision and send actions to SS2D-gRPC-Base.
+All of the agents can connect to the SS2D-gRPC-Server, send information to it, and receive action from it. Also, each agent can connect to a unique SS2D-gRPC-Server. To connect to a unique SS2D-gRPC-Server, you should run 12 different instant of SS2D-gRPC-Server.
+To watch a game you need to run RCSSMonitor or SoccerWindow2.
+
+- RCSSServer: run the RCSSServer in a directory that you want to save the game log.
+To change server configurations, you can pass the configuration file to the server, or set each config as an argument, or update default values in the $HOME/.rcssserver/server.conf file.
+```bash
+rcssserver
+```
+
+- SS2D-gRPC-Base
+```bash
+cd build/bin
+./start.sh
+```
+You can change the configuration of the base code by passing arguments to the start.sh script. The arguments are as follows:
+- -t: team name
+- -h: rcssserver host name
+- -p: rcssserver players port
+- -P: rcssserver coach port
+- -n: number of players
+- --g-ip: grpc server ip
+- --g-port: grpc server port
+- --diff-g-port: specifies different grpc port for each player (from g-port to g-port + n)
+- --gp20: add 20 to GRPC Port if team run on right side
 ### Use Docker
 ### Use Binary
 ## Useful Links
