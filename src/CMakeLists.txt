@@ -1,5 +1,3 @@
-include(../grpc/common.cmake)
-add_subdirectory(grpc)
 add_subdirectory(player)
 add_subdirectory(coach)
 add_subdirectory(trainer)

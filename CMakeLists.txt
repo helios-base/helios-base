@@ -15,6 +15,20 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 set(CMAKE_CXX_FLAGS "-W -Wall")
 
+# GRPC
+# list(APPEND CMAKE_PREFIX_PATH "${GRPC_LIB_PATH}")
+# set(LIBRARY_PATH "${GRPC_LIB_PATH}/lib")
+# link_directories(${LIBRARY_PATH})
+find_package(absl CONFIG REQUIRED)
+find_package(Protobuf CONFIG REQUIRED)
+find_package(gRPC CONFIG REQUIRED)
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${Protobuf_INCLUDE_DIRS}")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${gRPC_INCLUDE_DIRS}")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${absl_INCLUDE_DIRS}")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${GRPC_LIB_PATH}/include")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L${GRPC_LIB_PATH}/lib")
+set(_GRPC_GRPCPP gRPC::grpc++)
+
 # check librcsc
 set(LIBRCSC_INSTALL_DIR "$ENV{HOME}/.local;$ENV{HOME}/local" CACHE PATH "The path where librcsc is installed.")
 
@@ -62,6 +76,9 @@ configure_file(
   ${PROJECT_BINARY_DIR}/config.h
   )
 
+# thread
+find_package(Threads REQUIRED)
+
 # check the settings
 message(STATUS "Found librcsc:")
 message(STATUS "  LIBRCSC_LIBDIR=${LIBRCSC_LIBDIR}")
@@ -71,4 +88,8 @@ message(STATUS "Build settings:")
 message(STATUS "  BUILD_TYPE=${CMAKE_BUILD_TYPE}")
 
 # sub directories
+add_subdirectory(grpc)
 add_subdirectory(src)
+
+include_directories("${GRPC_LIB_PATH}/include/google/protobuf")
+add_definitions("${GRPC_LIB_PATH}/include/google/protobuf")

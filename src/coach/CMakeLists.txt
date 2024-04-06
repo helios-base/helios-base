@@ -10,6 +10,8 @@ add_executable(sample_coach
   main_coach.cpp
   )
 
+# add_dependencies(sample_coach generate_proto)
+
 target_include_directories(sample_coach
   PRIVATE
     ${PROJECT_SOURCE_DIR}/../grpc/
@@ -23,20 +25,16 @@ target_include_directories(sample_coach
 
 target_link_libraries(sample_coach
   PRIVATE
-    service_grpc_proto
-    absl::flags
-    absl::flags_parse
-    ${_REFLECTION}
     ${_GRPC_GRPCPP}
-    ${_PROTOBUF_LIBPROTOBUF}
   PUBLIC
     ${LIBRCSC_LIB}
     Boost::system
     ZLIB::ZLIB
     Threads::Threads
+    
   )
 
-set_target_properties(sample_coach
+  set_target_properties(sample_coach
   PROPERTIES
   RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin
   )

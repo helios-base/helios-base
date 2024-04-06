@@ -111,6 +111,7 @@ add_executable(sample_player
   main_player.cpp
   )
 
+# add_dependencies(sample_player generate_proto)
 
 target_include_directories(sample_player
   PRIVATE
@@ -127,12 +128,7 @@ target_include_directories(sample_player
 
 target_link_libraries(sample_player
   PRIVATE
-    service_grpc_proto
-    absl::flags
-    absl::flags_parse
-    ${_REFLECTION}
     ${_GRPC_GRPCPP}
-    ${_PROTOBUF_LIBPROTOBUF}
   PUBLIC
     ${LIBRCSC_LIB}
     Boost::system

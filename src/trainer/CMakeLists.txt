@@ -9,6 +9,9 @@ add_executable(sample_trainer
   main_trainer.cpp
   )
 
+  
+# add_dependencies(sample_trainer generate_proto)
+
 target_include_directories(sample_trainer
   PRIVATE
     ${PROJECT_SOURCE_DIR}/../grpc/
@@ -22,12 +25,7 @@ target_include_directories(sample_trainer
 
 target_link_libraries(sample_trainer
   PRIVATE
-    service_grpc_proto
-    absl::flags
-    absl::flags_parse
-    ${_REFLECTION}
     ${_GRPC_GRPCPP}
-    ${_PROTOBUF_LIBPROTOBUF}
   PUBLIC
     ${LIBRCSC_LIB}
     Boost::system
