@@ -110,10 +110,10 @@ make
 run ./greeter_server in one tab
 run ./greeter_client in another tab
 ```
-- SS2D-gRPC-Base
+- SoccerSimulationProxy
 ```bash
-git clone git@github.com:Cyrus2D/SS2D-gRPC-Base.git
-cd SS2D-gRPC-Base
+git clone --recurse-submodules git@github.com:Cyrus2D/SoccerSimulationProxy.git
+cd SoccerSimulationProxy
 mkdir build
 cd build
 cmake ..
@@ -124,8 +124,8 @@ make
     - You should delete src/grpc/service.pb.cc and src/grpc/service.pb.h
     - Then, generate them again by going to the base root directory and
     ```bash
-    cd grpc/proto
-    protoc --proto_path=. --cpp_out=../../src/grpc/ --grpc_out=../../src/grpc/ --plugin=protoc-gen-grpc=$HOME/.local/bin/grpc_cpp_plugin service.proto
+    cd grpc/CrossLangSoccerFramework/proto
+    protoc --proto_path=. --cpp_out=../../../src/grpc/ --grpc_out=../../../src/grpc/ --plugin=protoc-gen-grpc=$HOME/.local/bin/grpc_cpp_plugin service.proto
     ```
 - Monitor - follow [this](https://github.com/rcsoccersim/rcssmonitor)
 Moniter is a GUI for RCSSServer. It is not necessary to run a team. It is just for watching the game and controlling the game.
