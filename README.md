@@ -112,7 +112,7 @@ run ./greeter_client in another tab
 ```
 - SoccerSimulationProxy
 ```bash
-git clone --recurse-submodules git@github.com:Cyrus2D/SoccerSimulationProxy.git
+git clone
 cd SoccerSimulationProxy
 mkdir build
 cd build

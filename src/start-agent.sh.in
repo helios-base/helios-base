@@ -40,10 +40,9 @@ config_dir="${DIR}/formations-dt"
 coach_conf="${DIR}/coach.conf"
 team_graphic="--use_team_graphic off"
 
-number=11
-usecoach="true"
-
-unum=0
+is_player="true"
+is_coach="false"
+is_goalie="false"
 
 sleepprog=sleep
 goaliesleep=1
@@ -66,7 +65,6 @@ usage()
    echo "  -P  --coach-port PORT        specifies server port for online coach (default: 6002)"
    echo "  -t, --teamname TEAMNAME      specifies team name"
    echo "  -n, --number NUMBER          specifies the number of players"
-   echo "  -u, --unum UNUM              specifies the uniform number of players"
    echo "  -C, --without-coach          specifies not to run the coach"
    echo "  -f, --formation DIR          specifies the formation directory"
    echo "  --team-graphic FILE          specifies the team graphic xpm file"
@@ -87,6 +85,9 @@ usage()
    echo "  --g-port GRPC PORT           specifies grpc port (default: 50051)"
    echo "  --diff-g-port                specifies different grpc port for each player (default: false)"
    echo "  --gp20                       add 20 to GRPC Port if team run on right side (default: false)"
+   echo "  --goalie                     specifies to run as a goalie"
+   echo "  --player                     specifies to run as a player"
+   echo "  --coach                      specifies to run as a coach"
    echo "                               FULLSTATE_TYPE is one of [ignore|reference|override].") 1>&2
 }
 
@@ -154,28 +155,6 @@ do
       fi
       teamname="${2}"
       shift 1
-      ;;
-
-    -n|--number)
-      if [ $# -lt 2 ]; then
-        usage
-        exit 1
-      fi
-      number="${2}"
-      shift 1
-      ;;
-
-    -u|--unum)
-      if [ $# -lt 2 ]; then
-        usage
-        exit 1
-      fi
-      unum="${2}"
-      shift 1
-      ;;
-
-    -C|--without-coach)
-      usecoach="false"
       ;;
 
     -f|--formation)
@@ -275,6 +254,15 @@ do
       shift 1
       ;;
 
+    --goalie)
+      is_goalie="true"
+      ;;
+    --player)
+      is_player="true"
+      ;;
+    --coach)
+      is_coach="true"
+      ;;
     --fullstate)
       if [ $# -lt 2 ]; then
         usage
@@ -315,6 +303,11 @@ do
   shift 1
 done
 
+if [ "${is_player}" = "false" -a "${is_coach}" = "false" -a "${is_goalie}" = "false" ]; then
+  echo "You must specify at least one of --player, --coach, or --goalie."
+  exit 1
+fi
+
 if  [ X"${offline_logging}" != X'' ]; then
   if  [ X"${offline_mode}" != X'' ]; then
     echo "'--offline-logging' and '--offline-mode' cannot be used simultaneously."
@@ -352,44 +345,17 @@ fi
 
 ping -c 1 $host
 
-if [ $number -gt 0 ]; then
-  offline_number=""
-  if  [ X"${offline_mode}" != X'' ]; then
-    offline_number="--offline_client_number 1"
-    if [ $unum -eq 0 ]; then
-      $player ${opt} -g ${offline_number} &
-      $sleepprog $goaliesleep
-    elif [ $unum -eq 1 ]; then
-      $player ${opt} -g ${offline_number} &
-      $sleepprog $goaliesleep
-    fi
-  else
-    $player ${opt} -g &
-    $sleepprog $goaliesleep
-  fi
+if [ "${is_goalie}" = "true" ]; then
+  $player ${opt} -g &
+  $sleepprog $goaliesleep
 fi
 
-i=2
-while [ $i -le ${number} ] ; do
-  offline_number=""
-  if  [ X"${offline_mode}" != X'' ]; then
-    offline_number="--offline_client_number ${i}"
-    if [ $unum -eq 0 ]; then
-      $player ${opt} ${offline_number} &
-      $sleepprog $sleeptime
-    elif [ $unum -eq $i ]; then
-      $player ${opt} ${offline_number} &
-      $sleepprog $sleeptime
-    fi
-  else
+if [ "${is_player}" = "true" ]; then
     $player ${opt} &
     $sleepprog $sleeptime
-  fi
+fi
 
-  i=`expr $i + 1`
-done
-
-if [ "${usecoach}" = "true" ]; then
+if [ "${is_coach}" = "true" ]; then
   coachopt="--coach-config ${coach_conf}"
   coachopt="${coachopt} -h ${host} -p ${coach_port} -t ${teamname}"
   coachopt="${coachopt} ${team_graphic}"
@@ -405,15 +371,5 @@ if [ "${usecoach}" = "true" ]; then
   if [ "${gp20}" = "true" ]; then
     coachopt="${coachopt} --gp20"
   fi
-
-  if  [ X"${offline_mode}" != X'' ]; then
-    offline_mode="--offline_client_mode"
-    if [ $unum -eq 0 ]; then
-      $coach ${coachopt} ${offline_mode} &
-    elif [ $unum -eq 12 ]; then
-      $coach ${coachopt} ${offline_mode} &
-    fi
-  else
-    $coach ${coachopt} &
-  fi
+  $coach ${coachopt} &
 fi
