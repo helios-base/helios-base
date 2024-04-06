@@ -40,6 +40,7 @@
 #include <rcsc/param/param_map.h>
 #include <rcsc/param/cmd_line_parser.h>
 #include <rcsc/random.h>
+#include <thread>
 
 using namespace rcsc;
 
@@ -76,6 +77,18 @@ SampleTrainer::initImpl( CmdLineParser & cmd_parser )
         M_use_same_grpc_port,
         M_add_20_to_grpc_port_if_right_side
     );
+
+    bool connectedToGrpcServer = false;
+    do
+    {
+        std::cout<<"Connecting to GRPC server..."<<std::endl;
+        connectedToGrpcServer = M_grpc_agent.connectToGrpcServer();
+        if (connectedToGrpcServer == false) {
+            std::cout<<"Failed to connect to GRPC server. Retrying..."<<std::endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+    } while (connectedToGrpcServer == false);
+
     bool result = TrainerAgent::initImpl( cmd_parser );
 
 #if 0

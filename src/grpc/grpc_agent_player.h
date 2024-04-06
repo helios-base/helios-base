@@ -4,6 +4,7 @@
 class GrpcAgentPlayer : public GrpcAgent {
     rcsc::PlayerAgent * M_agent;
     Communication::Ptr sample_communication;
+    std::string target;
     public:
     GrpcAgentPlayer();
 
@@ -13,6 +14,7 @@ class GrpcAgentPlayer : public GrpcAgent {
               bool use_same_grpc_port=true,
               bool add_20_to_grpc_port_if_right_side=false);
 
+    bool connectToGrpcServer();
     void getActions() const;
     void addSayMessage(protos::Say sayMessage) const;
     State generateState() const;

@@ -42,10 +42,22 @@ void GrpcAgentTrainer::init(rcsc::TrainerAgent *agent,
         port += 13;
     }
 
-    target += ":" + std::to_string(port);
+    this->target = target + ":" + std::to_string(port);
+}
 
-    channel = grpc::CreateChannel(target, grpc::InsecureChannelCredentials());
+bool GrpcAgentTrainer::connectToGrpcServer()
+{
+    channel = grpc::CreateChannel(this->target, grpc::InsecureChannelCredentials());
     stub_ = Game::NewStub(channel);
+
+    // Check if the channel is connected
+    if (channel->GetState(true) == grpc_connectivity_state::GRPC_CHANNEL_READY) {
+        std::cout << "gRPC channel is connected." << std::endl;
+        return true;
+    } else {
+        std::cout << "gRPC channel is not connected." << std::endl;
+        return false;
+    }
 }
 
 void GrpcAgentTrainer::getActions() const

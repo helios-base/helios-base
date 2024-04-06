@@ -99,33 +99,37 @@ void GrpcAgentPlayer::init(rcsc::PlayerAgent *agent,
         port += M_agent->world().self().unum();
     }
 
-    target += ":" + std::to_string(port);
-
-    channel = grpc::CreateChannel(target, grpc::InsecureChannelCredentials());
-    stub_ = Game::NewStub(channel);
+    this->target = target + ":" + std::to_string(port);
+    LOG("target: " + this->target);
     sample_communication = Communication::Ptr(new SampleCommunication());
+}
+
+bool GrpcAgentPlayer::connectToGrpcServer()
+{
+    channel = grpc::CreateChannel(this->target, grpc::InsecureChannelCredentials());
+    stub_ = Game::NewStub(channel);
+
+    // Check if the channel is connected
+    if (channel->GetState(true) == grpc_connectivity_state::GRPC_CHANNEL_READY) {
+        std::cout << "gRPC channel is connected." << std::endl;
+        return true;
+    } else {
+        std::cout << "gRPC channel is not connected." << std::endl;
+        return false;
+    }
 }
 
 void GrpcAgentPlayer::getActions() const
 {
-    LOG("getAction Started");
+    // LOG("getAction Started");
     auto agent = M_agent;
-    LOGV(agent->world().time().cycle());
+    // LOGV(agent->world().time().cycle());
     State state = generateState();
     state.set_agent_type(protos::AgentType::PlayerT);
     protos::PlayerActions actions;
     ClientContext context;
-    static int c = 0;
-    static int t_1_2 = 0;
-    c++;
-    auto t1 = std::chrono::high_resolution_clock::now();
     Status status = stub_->GetPlayerActions(&context, state, &actions);
-    auto t2 = std::chrono::high_resolution_clock::now();
-    t_1_2 += (t2 - t1).count();
-    if (c > 100)
-    {
-        std::cout << "grpc:" << static_cast<float>(t_1_2) / float(c) << std::endl;
-    }
+
     if (!status.ok())
     {
         std::cout << status.error_code() << ": " << status.error_message()

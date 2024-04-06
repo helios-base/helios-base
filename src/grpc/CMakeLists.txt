@@ -11,7 +11,7 @@
 # set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # include(../../grpc/common.cmake)
-get_filename_component(service_proto "../../grpc/CrossLangSoccerFramework/protos/service.proto" ABSOLUTE)
+get_filename_component(service_proto "../../grpc/protos/service.proto" ABSOLUTE)
 get_filename_component(service_proto_path "${service_proto}" PATH)
 
 set(service_proto_srcs "${CMAKE_CURRENT_SOURCE_DIR}/service.pb.cc")
