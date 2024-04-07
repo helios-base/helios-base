@@ -26,6 +26,7 @@ public:
     std::string target;
     std::shared_ptr<Channel> channel;
     std::unique_ptr<Game::Stub> stub_;
+    bool is_connected = false;
     bool param_sent = false;
     protos::AgentType agent_type;
 

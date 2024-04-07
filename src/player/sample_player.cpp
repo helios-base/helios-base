@@ -171,17 +171,6 @@ SamplePlayer::initImpl( CmdLineParser & cmd_parser )
         M_add_20_to_grpc_port_if_right_side
     );
 
-    bool connectedToGrpcServer = false;
-    do
-    {
-        std::cout<<"Connecting to GRPC server..."<<std::endl;
-        connectedToGrpcServer = M_grpc_agent.connectToGrpcServer();
-        if (connectedToGrpcServer == false) {
-            std::cout<<"Failed to connect to GRPC server. Retrying..."<<std::endl;
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-    } while (connectedToGrpcServer == false);
-    
     bool result = PlayerAgent::initImpl( cmd_parser );
 
     // read additional options
@@ -238,7 +227,7 @@ SamplePlayer::initImpl( CmdLineParser & cmd_parser )
 void
 SamplePlayer::actionImpl()
 {
-        if ( this->audioSensor().trainerMessageTime() == world().time() )
+    if ( this->audioSensor().trainerMessageTime() == world().time() )
     {
         std::cerr << world().ourTeamName() << ' ' << world().self().unum()
                   << ' ' << world().time()
@@ -247,6 +236,16 @@ SamplePlayer::actionImpl()
                   << std::endl;
     }
 
+    // connect to grpc server
+    bool connectedToGrpcServer = false;
+    while (M_grpc_agent.is_connected == false)
+    {
+        std::cout<<"Connecting to GRPC server..."<<std::endl;
+        connectedToGrpcServer = M_grpc_agent.connectToGrpcServer();
+        if (connectedToGrpcServer == false) {
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+    }
     
     //
     // update strategy and analyzer

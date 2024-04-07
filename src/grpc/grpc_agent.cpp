@@ -441,6 +441,7 @@ bool GrpcAgent::connectToGrpcServer()
 
     if (getInitMessage())
     {
+        is_connected = true;
         return true;
     }
     else
