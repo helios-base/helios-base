@@ -100,15 +100,12 @@ void GrpcAgentPlayer::init(rcsc::PlayerAgent *agent,
     }
 
     this->target = target + ":" + std::to_string(port);
-    LOG("target: " + this->target);
     sample_communication = Communication::Ptr(new SampleCommunication());
 }
 
 void GrpcAgentPlayer::getActions() const
 {
-    // LOG("getAction Started");
     auto agent = M_agent;
-    // LOGV(agent->world().time().cycle());
     State state = generateState();
     state.set_agent_type(protos::AgentType::PlayerT);
     protos::PlayerActions actions;
@@ -122,7 +119,6 @@ void GrpcAgentPlayer::getActions() const
         return;
     }
 
-    LOG("getAction apply actions on agent");
     int body_action_done = 0;
     for (int i = 0; i < actions.actions_size(); i++)
     {
@@ -210,10 +206,8 @@ void GrpcAgentPlayer::getActions() const
         // todo debugClient
         case PlayerAction::kBodyGoToPoint:
         {
-            LOG("body go to point");
             const auto &bodyGoToPoint = action.body_go_to_point();
             const auto &targetPoint = GrpcAgent::convertVector2D(bodyGoToPoint.target_point());
-            LOGV(targetPoint);
             Body_GoToPoint(targetPoint, bodyGoToPoint.distance_threshold(), bodyGoToPoint.max_dash_power()).execute(agent);
             body_action_done++;
             break;
@@ -638,7 +632,6 @@ void GrpcAgentPlayer::getActions() const
             break;
         }
         }
-        LOG("getAction done");
     }
 }
 

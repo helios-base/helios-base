@@ -49,9 +49,7 @@ void GrpcAgentCoach::init(rcsc::CoachAgent *agent,
 
 void GrpcAgentCoach::getActions() const
 {
-    // LOG("getAction Started");
     auto agent = M_agent;
-    LOGV(agent->world().time().cycle());
     State state = generateState();
     state.set_agent_type(protos::AgentType::CoachT);
     protos::CoachActions actions;

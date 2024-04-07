@@ -47,9 +47,7 @@ void GrpcAgentTrainer::init(rcsc::TrainerAgent *agent,
 
 void GrpcAgentTrainer::getActions() const
 {
-    LOG("getAction Started");
     auto agent = M_agent;
-    LOGV(agent->world().time().cycle());
     State state = generateState();
     state.set_agent_type(protos::AgentType::TrainerT);
     protos::TrainerActions actions;
