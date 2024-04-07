@@ -82,7 +82,12 @@ cp ${BUILD_PWD}formations-taker bin/ -r
 cp ${BUILD_PWD}*.conf bin/
 cp ${BUILD_PWD}*.sh bin/
 chmod 777 bin/*
-tar -czvf bin.tar.gz bin
+
+if [ -x "$(command -v 7z)" ]; then
+    7z a bin.7z bin/*
+fi
+
+tar -czvf bin.tar.gz bin/*
 
 echo "All in one created."
 
