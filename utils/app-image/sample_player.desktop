@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=sampleplayer
+Comment=Soccer Simulation Proxy Sample Player
+TryExec=sample_player
+Exec=sample_player
+Icon=sample_player
+MimeType=image/x-foo;
+Categories=Development;
+X-KDE-Library=libsoccersimulationproxy
+X-KDE-FactoryName=CYRUS
+X-KDE-ServiceType=SoccerSimulationProxy
