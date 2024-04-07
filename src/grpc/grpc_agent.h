@@ -23,6 +23,7 @@ using protos::TrainerAction;
 
 class GrpcAgent {
 public:
+    std::string target;
     std::shared_ptr<Channel> channel;
     std::unique_ptr<Game::Stub> stub_;
     bool param_sent = false;
@@ -36,6 +37,8 @@ public:
     void sendPlayerParams() const;
     void sendPlayerType() const;
     void sendInitMessage(bool offline_logging) const;
+    bool getInitMessage() const;
+    bool connectToGrpcServer();
 
     static rcsc::ViewWidth convertViewWidth(protos::ViewWidth view_width);
     static rcsc::SideID convertSideID(protos::Side side_id);

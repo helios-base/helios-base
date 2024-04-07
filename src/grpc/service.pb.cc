@@ -3013,8 +3013,21 @@ struct EmptyDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EmptyDefaultTypeInternal _Empty_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR InitMessageFromServer::InitMessageFromServer(
+    ::_pbi::ConstantInitialized) {}
+struct InitMessageFromServerDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InitMessageFromServerDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InitMessageFromServerDefaultTypeInternal() {}
+  union {
+    InitMessageFromServer _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InitMessageFromServerDefaultTypeInternal _InitMessageFromServer_default_instance_;
 }  // namespace protos
-static ::_pb::Metadata file_level_metadata_service_2eproto[126];
+static ::_pb::Metadata file_level_metadata_service_2eproto[127];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_service_2eproto[6];
 static constexpr const ::_pb::ServiceDescriptor**
     file_level_service_descriptors_service_2eproto = nullptr;
@@ -5022,6 +5035,14 @@ const ::uint32_t TableStruct_service_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::protos::InitMessageFromServer, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
 };
 
 static const ::_pbi::MigrationSchema
@@ -5152,6 +5173,7 @@ static const ::_pbi::MigrationSchema
         { 1914, -1, -1, sizeof(::protos::PlayerParam)},
         { 1952, -1, -1, sizeof(::protos::PlayerType)},
         { 1994, -1, -1, sizeof(::protos::Empty)},
+        { 2002, -1, -1, sizeof(::protos::InitMessageFromServer)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -5281,6 +5303,7 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::protos::_PlayerParam_default_instance_._instance,
     &::protos::_PlayerType_default_instance_._instance,
     &::protos::_Empty_default_instance_._instance,
+    &::protos::_InitMessageFromServer_default_instance_._instance,
 };
 const char descriptor_table_protodef_service_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\rservice.proto\022\006protos\"=\n\010Vector2D\022\t\n\001x"
@@ -5903,58 +5926,60 @@ const char descriptor_table_protodef_service_2eproto[] PROTOBUF_SECTION_VARIABLE
     "\n\021player_speed_max2\030\037 \001(\002\022\027\n\017real_speed_"
     "max2\030  \001(\002\022!\n\031cycles_to_reach_max_speed\030"
     "! \001(\005\022\030\n\020player_speed_max\030\" \001(\002\"\007\n\005Empty"
-    "*-\n\tViewWidth\022\n\n\006NARROW\020\000\022\n\n\006NORMAL\020\001\022\010\n"
-    "\004WIDE\020\002*(\n\004Side\022\013\n\007UNKNOWN\020\000\022\010\n\004LEFT\020\001\022\t"
-    "\n\005RIGHT\020\002*\255\002\n\013LoggerLevel\022\010\n\004None\020\000\022\n\n\006S"
-    "YSTEM\020\001\022\n\n\006SENSOR\020\002\022\t\n\005WORLD\020\004\022\n\n\006ACTION"
-    "\020\010\022\r\n\tINTERCEPT\020\020\022\010\n\004KICK\020 \022\010\n\004HOLD\020@\022\014\n"
-    "\007DRIBBLE\020\200\001\022\t\n\004PASS\020\200\002\022\n\n\005CROSS\020\200\004\022\n\n\005SH"
-    "OOT\020\200\010\022\n\n\005CLEAR\020\200\020\022\n\n\005BLOCK\020\200 \022\t\n\004MARK\020\200"
-    "@\022\021\n\013POSITIONING\020\200\200\001\022\n\n\004ROLE\020\200\200\002\022\n\n\004TEAM"
-    "\020\200\200\004\022\023\n\rCOMMUNICATION\020\200\200\010\022\016\n\010ANALYZER\020\200\200"
-    "\020\022\022\n\014ACTION_CHAIN\020\200\200 \022\n\n\004PLAN\020\200\200@*v\n\023Int"
-    "erceptActionType\022!\n\035UNKNOWN_Intercept_Ac"
-    "tion_Type\020\000\022\r\n\tOMNI_DASH\020\001\022\025\n\021TURN_FORWA"
-    "RD_DASH\020\002\022\026\n\022TURN_BACKWARD_DASH\020\003*\273\004\n\014Ga"
-    "meModeType\022\021\n\rBeforeKickOff\020\000\022\014\n\010TimeOve"
-    "r\020\001\022\n\n\006PlayOn\020\002\022\014\n\010KickOff_\020\003\022\013\n\007KickIn_"
-    "\020\004\022\r\n\tFreeKick_\020\005\022\017\n\013CornerKick_\020\006\022\r\n\tGo"
-    "alKick_\020\007\022\016\n\nAfterGoal_\020\010\022\014\n\010OffSide_\020\t\022"
-    "\020\n\014PenaltyKick_\020\n\022\021\n\rFirstHalfOver\020\013\022\t\n\005"
-    "Pause\020\014\022\t\n\005Human\020\r\022\017\n\013FoulCharge_\020\016\022\r\n\tF"
-    "oulPush_\020\017\022\031\n\025FoulMultipleAttacker_\020\020\022\020\n"
-    "\014FoulBallOut_\020\021\022\r\n\tBackPass_\020\022\022\022\n\016FreeKi"
-    "ckFault_\020\023\022\017\n\013CatchFault_\020\024\022\020\n\014IndFreeKi"
-    "ck_\020\025\022\021\n\rPenaltySetup_\020\026\022\021\n\rPenaltyReady"
-    "_\020\027\022\021\n\rPenaltyTaken_\020\030\022\020\n\014PenaltyMiss_\020\031"
-    "\022\021\n\rPenaltyScore_\020\032\022\023\n\017IllegalDefense_\020\033"
-    "\022\023\n\017PenaltyOnfield_\020\034\022\020\n\014PenaltyFoul_\020\035\022"
-    "\020\n\014GoalieCatch_\020\036\022\016\n\nExtendHalf\020\037\022\014\n\010MOD"
-    "E_MAX\020 *2\n\tAgentType\022\013\n\007PlayerT\020\000\022\n\n\006Coa"
-    "chT\020\001\022\014\n\010TrainerT\020\0022\236\003\n\004Game\022:\n\020GetPlaye"
-    "rActions\022\r.protos.State\032\025.protos.PlayerA"
-    "ctions\"\000\0228\n\017GetCoachActions\022\r.protos.Sta"
-    "te\032\024.protos.CoachActions\"\000\022<\n\021GetTrainer"
-    "Actions\022\r.protos.State\032\026.protos.TrainerA"
-    "ctions\"\000\0227\n\017SendInitMessage\022\023.protos.Ini"
-    "tMessage\032\r.protos.Empty\"\000\0228\n\020SendServerP"
-    "arams\022\023.protos.ServerParam\032\r.protos.Empt"
-    "y\"\000\0228\n\020SendPlayerParams\022\023.protos.PlayerP"
-    "aram\032\r.protos.Empty\"\000\0225\n\016SendPlayerType\022"
-    "\022.protos.PlayerType\032\r.protos.Empty\"\000b\006pr"
-    "oto3"
+    "\"\027\n\025InitMessageFromServer*-\n\tViewWidth\022\n"
+    "\n\006NARROW\020\000\022\n\n\006NORMAL\020\001\022\010\n\004WIDE\020\002*(\n\004Side"
+    "\022\013\n\007UNKNOWN\020\000\022\010\n\004LEFT\020\001\022\t\n\005RIGHT\020\002*\255\002\n\013L"
+    "oggerLevel\022\010\n\004None\020\000\022\n\n\006SYSTEM\020\001\022\n\n\006SENS"
+    "OR\020\002\022\t\n\005WORLD\020\004\022\n\n\006ACTION\020\010\022\r\n\tINTERCEPT"
+    "\020\020\022\010\n\004KICK\020 \022\010\n\004HOLD\020@\022\014\n\007DRIBBLE\020\200\001\022\t\n\004"
+    "PASS\020\200\002\022\n\n\005CROSS\020\200\004\022\n\n\005SHOOT\020\200\010\022\n\n\005CLEAR"
+    "\020\200\020\022\n\n\005BLOCK\020\200 \022\t\n\004MARK\020\200@\022\021\n\013POSITIONIN"
+    "G\020\200\200\001\022\n\n\004ROLE\020\200\200\002\022\n\n\004TEAM\020\200\200\004\022\023\n\rCOMMUNI"
+    "CATION\020\200\200\010\022\016\n\010ANALYZER\020\200\200\020\022\022\n\014ACTION_CHA"
+    "IN\020\200\200 \022\n\n\004PLAN\020\200\200@*v\n\023InterceptActionTyp"
+    "e\022!\n\035UNKNOWN_Intercept_Action_Type\020\000\022\r\n\t"
+    "OMNI_DASH\020\001\022\025\n\021TURN_FORWARD_DASH\020\002\022\026\n\022TU"
+    "RN_BACKWARD_DASH\020\003*\273\004\n\014GameModeType\022\021\n\rB"
+    "eforeKickOff\020\000\022\014\n\010TimeOver\020\001\022\n\n\006PlayOn\020\002"
+    "\022\014\n\010KickOff_\020\003\022\013\n\007KickIn_\020\004\022\r\n\tFreeKick_"
+    "\020\005\022\017\n\013CornerKick_\020\006\022\r\n\tGoalKick_\020\007\022\016\n\nAf"
+    "terGoal_\020\010\022\014\n\010OffSide_\020\t\022\020\n\014PenaltyKick_"
+    "\020\n\022\021\n\rFirstHalfOver\020\013\022\t\n\005Pause\020\014\022\t\n\005Huma"
+    "n\020\r\022\017\n\013FoulCharge_\020\016\022\r\n\tFoulPush_\020\017\022\031\n\025F"
+    "oulMultipleAttacker_\020\020\022\020\n\014FoulBallOut_\020\021"
+    "\022\r\n\tBackPass_\020\022\022\022\n\016FreeKickFault_\020\023\022\017\n\013C"
+    "atchFault_\020\024\022\020\n\014IndFreeKick_\020\025\022\021\n\rPenalt"
+    "ySetup_\020\026\022\021\n\rPenaltyReady_\020\027\022\021\n\rPenaltyT"
+    "aken_\020\030\022\020\n\014PenaltyMiss_\020\031\022\021\n\rPenaltyScor"
+    "e_\020\032\022\023\n\017IllegalDefense_\020\033\022\023\n\017PenaltyOnfi"
+    "eld_\020\034\022\020\n\014PenaltyFoul_\020\035\022\020\n\014GoalieCatch_"
+    "\020\036\022\016\n\nExtendHalf\020\037\022\014\n\010MODE_MAX\020 *2\n\tAgen"
+    "tType\022\013\n\007PlayerT\020\000\022\n\n\006CoachT\020\001\022\014\n\010Traine"
+    "rT\020\0022\340\003\n\004Game\022:\n\020GetPlayerActions\022\r.prot"
+    "os.State\032\025.protos.PlayerActions\"\000\0228\n\017Get"
+    "CoachActions\022\r.protos.State\032\024.protos.Coa"
+    "chActions\"\000\022<\n\021GetTrainerActions\022\r.proto"
+    "s.State\032\026.protos.TrainerActions\"\000\0227\n\017Sen"
+    "dInitMessage\022\023.protos.InitMessage\032\r.prot"
+    "os.Empty\"\000\0228\n\020SendServerParams\022\023.protos."
+    "ServerParam\032\r.protos.Empty\"\000\0228\n\020SendPlay"
+    "erParams\022\023.protos.PlayerParam\032\r.protos.E"
+    "mpty\"\000\0225\n\016SendPlayerType\022\022.protos.Player"
+    "Type\032\r.protos.Empty\"\000\022@\n\016GetInitMessage\022"
+    "\r.protos.Empty\032\035.protos.InitMessageFromS"
+    "erver\"\000b\006proto3"
 };
 static ::absl::once_flag descriptor_table_service_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_service_2eproto = {
     false,
     false,
-    26364,
+    26455,
     descriptor_table_protodef_service_2eproto,
     "service.proto",
     &descriptor_table_service_2eproto_once,
     nullptr,
     0,
-    126,
+    127,
     schemas,
     file_default_instances,
     TableStruct_service_2eproto::offsets,
@@ -50486,6 +50511,44 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Empty::GetClassData() const { 
       &descriptor_table_service_2eproto_getter, &descriptor_table_service_2eproto_once,
       file_level_metadata_service_2eproto[125]);
 }
+// ===================================================================
+
+class InitMessageFromServer::_Internal {
+ public:
+};
+
+InitMessageFromServer::InitMessageFromServer(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena) {
+  // @@protoc_insertion_point(arena_constructor:protos.InitMessageFromServer)
+}
+InitMessageFromServer::InitMessageFromServer(const InitMessageFromServer& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  InitMessageFromServer* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:protos.InitMessageFromServer)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InitMessageFromServer::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InitMessageFromServer::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata InitMessageFromServer::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_service_2eproto_getter, &descriptor_table_service_2eproto_once,
+      file_level_metadata_service_2eproto[126]);
+}
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace protos
 PROTOBUF_NAMESPACE_OPEN
@@ -50992,6 +51055,10 @@ Arena::CreateMaybeMessage< ::protos::PlayerType >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::protos::Empty*
 Arena::CreateMaybeMessage< ::protos::Empty >(Arena* arena) {
   return Arena::CreateMessageInternal< ::protos::Empty >(arena);
+}
+template<> PROTOBUF_NOINLINE ::protos::InitMessageFromServer*
+Arena::CreateMaybeMessage< ::protos::InitMessageFromServer >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::protos::InitMessageFromServer >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 // @@protoc_insertion_point(global_scope)

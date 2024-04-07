@@ -269,6 +269,9 @@ extern HeliosShootDefaultTypeInternal _HeliosShoot_default_instance_;
 class InitMessage;
 struct InitMessageDefaultTypeInternal;
 extern InitMessageDefaultTypeInternal _InitMessage_default_instance_;
+class InitMessageFromServer;
+struct InitMessageFromServerDefaultTypeInternal;
+extern InitMessageFromServerDefaultTypeInternal _InitMessageFromServer_default_instance_;
 class InterceptInfo;
 struct InterceptInfoDefaultTypeInternal;
 extern InterceptInfoDefaultTypeInternal _InterceptInfo_default_instance_;
@@ -578,6 +581,8 @@ template <>
 ::protos::HeliosShoot* Arena::CreateMaybeMessage<::protos::HeliosShoot>(Arena*);
 template <>
 ::protos::InitMessage* Arena::CreateMaybeMessage<::protos::InitMessage>(Arena*);
+template <>
+::protos::InitMessageFromServer* Arena::CreateMaybeMessage<::protos::InitMessageFromServer>(Arena*);
 template <>
 ::protos::InterceptInfo* Arena::CreateMaybeMessage<::protos::InterceptInfo>(Arena*);
 template <>
@@ -28541,6 +28546,130 @@ class Empty final :
   struct Impl_ {
   };
   friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class InitMessageFromServer final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:protos.InitMessageFromServer) */ {
+ public:
+  inline InitMessageFromServer() : InitMessageFromServer(nullptr) {}
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR InitMessageFromServer(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  InitMessageFromServer(const InitMessageFromServer& from);
+  InitMessageFromServer(InitMessageFromServer&& from) noexcept
+    : InitMessageFromServer() {
+    *this = ::std::move(from);
+  }
+
+  inline InitMessageFromServer& operator=(const InitMessageFromServer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline InitMessageFromServer& operator=(InitMessageFromServer&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const InitMessageFromServer& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const InitMessageFromServer* internal_default_instance() {
+    return reinterpret_cast<const InitMessageFromServer*>(
+               &_InitMessageFromServer_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    126;
+
+  friend void swap(InitMessageFromServer& a, InitMessageFromServer& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(InitMessageFromServer* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(InitMessageFromServer* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  InitMessageFromServer* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<InitMessageFromServer>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const InitMessageFromServer& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const InitMessageFromServer& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.InitMessageFromServer";
+  }
+  protected:
+  explicit InitMessageFromServer(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:protos.InitMessageFromServer)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_service_2eproto;
 };
 
 // ===================================================================
@@ -55351,6 +55480,10 @@ inline void PlayerType::_internal_set_player_speed_max(float value) {
 // -------------------------------------------------------------------
 
 // Empty
+
+// -------------------------------------------------------------------
+
+// InitMessageFromServer
 
 #ifdef __GNUC__
 #pragma GCC diagnostic pop

@@ -47,21 +47,6 @@ void GrpcAgentCoach::init(rcsc::CoachAgent *agent,
     this->target = target + ":" + std::to_string(port);
 }
 
-bool GrpcAgentCoach::connectToGrpcServer()
-{
-    channel = grpc::CreateChannel(this->target, grpc::InsecureChannelCredentials());
-    stub_ = Game::NewStub(channel);
-
-    // Check if the channel is connected
-    if (channel->GetState(true) == grpc_connectivity_state::GRPC_CHANNEL_READY) {
-        std::cout << "gRPC channel is connected." << std::endl;
-        return true;
-    } else {
-        std::cout << "gRPC channel is not connected." << std::endl;
-        return false;
-    }
-}
-
 void GrpcAgentCoach::getActions() const
 {
     // LOG("getAction Started");

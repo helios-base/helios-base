@@ -1192,6 +1192,9 @@ message PlayerType {
 message Empty {
 }
 
+message InitMessageFromServer {
+}
+
 service Game {
   rpc GetPlayerActions(State) returns (PlayerActions) {}
   rpc GetCoachActions(State) returns (CoachActions) {}
@@ -1200,4 +1203,5 @@ service Game {
   rpc SendServerParams(ServerParam) returns (Empty) {}
   rpc SendPlayerParams(PlayerParam) returns (Empty) {}
   rpc SendPlayerType(PlayerType) returns (Empty) {} //should be PlayerTypes
+  rpc GetInitMessage(Empty) returns (InitMessageFromServer) {}
 }

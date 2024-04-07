@@ -413,6 +413,42 @@ void GrpcAgent::sendInitMessage(bool offline_logging) const
     }
 }
 
+bool GrpcAgent::getInitMessage() const
+{
+    ClientContext context;
+    protos::Empty empty;
+    protos::InitMessageFromServer initMessageFromServer;
+    Status status = stub_->GetInitMessage(&context, empty, &initMessageFromServer);
+    if (!status.ok())
+    {
+        std::cout << "GetInitMessage rpc failed." << std::endl
+                  << status.error_code() << ": " << status.error_message()
+                  << std::endl;
+        return false;
+    }
+    else
+    {
+        LOG("InitMessage received");
+        LOGV(initMessageFromServer.DebugString());
+        return true;
+    }
+}
+
+bool GrpcAgent::connectToGrpcServer()
+{
+    channel = grpc::CreateChannel(this->target, grpc::InsecureChannelCredentials());
+    stub_ = Game::NewStub(channel);
+
+    if (getInitMessage())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 void GrpcAgent::addDlog(protos::Log log) const
 {
     switch (log.log_case())
