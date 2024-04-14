@@ -15,14 +15,14 @@ DIR=`dirname $0`
 
 player="${DIR}/sample_player"
 coach="${DIR}/sample_coach"
-trainer="${DIR}/helios_trainer"
-teamname="HELIOS"
+trainer="${DIR}/sample_trainer"
+teamname="TRAINER_MODE"
 host="localhost"
 g_port=50051
 diff_g_port="false"
 gp20="false"
 config="${DIR}/player.conf"
-config_dir="${DIR}/formations-train"
+config_dir="${DIR}/formations-dt"
 
 number=11
 usecoach="true"
