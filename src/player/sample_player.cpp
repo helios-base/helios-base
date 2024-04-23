@@ -338,6 +338,15 @@ SamplePlayer::actionImpl()
     Bhv_SetPlay().execute( this );
 }
 
+void
+SamplePlayer::handleExit()
+{
+    std::cout << "BYE BYE BYE BYE BYE" << std::endl;
+    M_grpc_agent.sendByeCommand();
+    // call super class method
+    PlayerAgent::handleExit();
+}
+
 /*-------------------------------------------------------------------*/
 /*!
 

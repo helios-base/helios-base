@@ -58,6 +58,8 @@ protected:
     */
     virtual
     bool initImpl( rcsc::CmdLineParser & cmd_parser );
+    void
+    handleExit() override;
 
     //! main decision
     virtual

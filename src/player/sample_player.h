@@ -74,6 +74,9 @@ protected:
     virtual
     void actionImpl();
 
+    void
+    handleExit() override;
+
     //! communication decision
     virtual
     void communicationImpl();

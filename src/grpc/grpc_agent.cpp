@@ -434,6 +434,21 @@ bool GrpcAgent::getInitMessage() const
     }
 }
 
+void GrpcAgent::sendByeCommand() const
+{
+    ClientContext context;
+    protos::Empty empty1;
+    protos::Empty empty2;
+    Status status = stub_->SendByeCommand(&context, empty1, &empty2);
+    if (!status.ok())
+    {
+        std::cout << "SendByeCommand rpc failed." << std::endl
+                  << status.error_code() << ": " << status.error_message()
+                  << std::endl;
+    }
+
+}
+
 bool GrpcAgent::connectToGrpcServer()
 {
     channel = grpc::CreateChannel(this->target, grpc::InsecureChannelCredentials());

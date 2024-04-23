@@ -145,6 +145,13 @@ SampleTrainer::actionImpl()
     doKeepaway();
 }
 
+void
+SampleTrainer::handleExit()
+{
+    M_grpc_agent.sendByeCommand();
+    TrainerAgent::handleExit();
+}
+
 /*-------------------------------------------------------------------*/
 /*!
 

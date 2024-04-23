@@ -81,6 +81,8 @@ protected:
     //! main decision making
     virtual
     void actionImpl();
+    void
+    handleExit() override;
 
 
     virtual

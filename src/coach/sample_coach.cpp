@@ -236,6 +236,13 @@ SampleCoach::actionImpl()
     sayPlayerTypes();
 }
 
+void
+SampleCoach::handleExit()
+{
+    M_grpc_agent.sendByeCommand();
+    CoachAgent::handleExit();
+}
+
 /*-------------------------------------------------------------------*/
 /*!
 

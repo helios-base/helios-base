@@ -1204,4 +1204,5 @@ service Game {
   rpc SendPlayerParams(PlayerParam) returns (Empty) {}
   rpc SendPlayerType(PlayerType) returns (Empty) {} //should be PlayerTypes
   rpc GetInitMessage(Empty) returns (InitMessageFromServer) {}
+  rpc SendByeCommand(Empty) returns (Empty) {}
 }

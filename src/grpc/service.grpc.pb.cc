@@ -30,6 +30,7 @@ static const char* Game_method_names[] = {
   "/protos.Game/SendPlayerParams",
   "/protos.Game/SendPlayerType",
   "/protos.Game/GetInitMessage",
+  "/protos.Game/SendByeCommand",
 };
 
 std::unique_ptr< Game::Stub> Game::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -47,6 +48,7 @@ Game::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, cons
   , rpcmethod_SendPlayerParams_(Game_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SendPlayerType_(Game_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetInitMessage_(Game_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendByeCommand_(Game_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Game::Stub::GetPlayerActions(::grpc::ClientContext* context, const ::protos::State& request, ::protos::PlayerActions* response) {
@@ -233,6 +235,29 @@ void Game::Stub::async::GetInitMessage(::grpc::ClientContext* context, const ::p
   return result;
 }
 
+::grpc::Status Game::Stub::SendByeCommand(::grpc::ClientContext* context, const ::protos::Empty& request, ::protos::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::protos::Empty, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SendByeCommand_, context, request, response);
+}
+
+void Game::Stub::async::SendByeCommand(::grpc::ClientContext* context, const ::protos::Empty* request, ::protos::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::protos::Empty, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendByeCommand_, context, request, response, std::move(f));
+}
+
+void Game::Stub::async::SendByeCommand(::grpc::ClientContext* context, const ::protos::Empty* request, ::protos::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendByeCommand_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::protos::Empty>* Game::Stub::PrepareAsyncSendByeCommandRaw(::grpc::ClientContext* context, const ::protos::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::protos::Empty, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SendByeCommand_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::protos::Empty>* Game::Stub::AsyncSendByeCommandRaw(::grpc::ClientContext* context, const ::protos::Empty& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSendByeCommandRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 Game::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Game_method_names[0],
@@ -314,6 +339,16 @@ Game::Service::Service() {
              ::protos::InitMessageFromServer* resp) {
                return service->GetInitMessage(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Game_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::Empty, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Game::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::protos::Empty* req,
+             ::protos::Empty* resp) {
+               return service->SendByeCommand(ctx, req, resp);
+             }, this)));
 }
 
 Game::Service::~Service() {
@@ -369,6 +404,13 @@ Game::Service::~Service() {
 }
 
 ::grpc::Status Game::Service::GetInitMessage(::grpc::ServerContext* context, const ::protos::Empty* request, ::protos::InitMessageFromServer* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Game::Service::SendByeCommand(::grpc::ServerContext* context, const ::protos::Empty* request, ::protos::Empty* response) {
   (void) context;
   (void) request;
   (void) response;
