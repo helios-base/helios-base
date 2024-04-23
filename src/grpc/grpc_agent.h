@@ -39,6 +39,7 @@ public:
     void sendPlayerType() const;
     void sendInitMessage(bool offline_logging) const;
     bool getInitMessage() const;
+    void sendByeCommand() const;
     bool connectToGrpcServer();
 
     static rcsc::ViewWidth convertViewWidth(protos::ViewWidth view_width);

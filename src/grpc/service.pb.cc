@@ -5955,7 +5955,7 @@ const char descriptor_table_protodef_service_2eproto[] PROTOBUF_SECTION_VARIABLE
     "eld_\020\034\022\020\n\014PenaltyFoul_\020\035\022\020\n\014GoalieCatch_"
     "\020\036\022\016\n\nExtendHalf\020\037\022\014\n\010MODE_MAX\020 *2\n\tAgen"
     "tType\022\013\n\007PlayerT\020\000\022\n\n\006CoachT\020\001\022\014\n\010Traine"
-    "rT\020\0022\340\003\n\004Game\022:\n\020GetPlayerActions\022\r.prot"
+    "rT\020\0022\222\004\n\004Game\022:\n\020GetPlayerActions\022\r.prot"
     "os.State\032\025.protos.PlayerActions\"\000\0228\n\017Get"
     "CoachActions\022\r.protos.State\032\024.protos.Coa"
     "chActions\"\000\022<\n\021GetTrainerActions\022\r.proto"
@@ -5967,13 +5967,14 @@ const char descriptor_table_protodef_service_2eproto[] PROTOBUF_SECTION_VARIABLE
     "mpty\"\000\0225\n\016SendPlayerType\022\022.protos.Player"
     "Type\032\r.protos.Empty\"\000\022@\n\016GetInitMessage\022"
     "\r.protos.Empty\032\035.protos.InitMessageFromS"
-    "erver\"\000b\006proto3"
+    "erver\"\000\0220\n\016SendByeCommand\022\r.protos.Empty"
+    "\032\r.protos.Empty\"\000b\006proto3"
 };
 static ::absl::once_flag descriptor_table_service_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_service_2eproto = {
     false,
     false,
-    26455,
+    26505,
     descriptor_table_protodef_service_2eproto,
     "service.proto",
     &descriptor_table_service_2eproto_once,
