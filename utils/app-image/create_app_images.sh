@@ -71,27 +71,29 @@ echo "LIBC_PATH=" $PLAYER_LIBC_PATH
 echo "App Image Created."
 
 echo "Start to create all in one."
-mkdir -p bin
-mv samplecoach-x86_64.AppImage bin/sample_coach
-mv sampleplayer-x86_64.AppImage bin/sample_player
-mv sampletrainer-x86_64.AppImage bin/sample_trainer
+mkdir -p soccer-simulation-proxy
+mv samplecoach-x86_64.AppImage soccer-simulation-proxy/sample_coach
+mv sampleplayer-x86_64.AppImage soccer-simulation-proxy/sample_player
+mv sampletrainer-x86_64.AppImage soccer-simulation-proxy/sample_trainer
 
-cp ${BUILD_PWD}formations-dt bin/ -r
-cp ${BUILD_PWD}formations-keeper bin/ -r
-cp ${BUILD_PWD}formations-taker bin/ -r
-cp ${BUILD_PWD}*.conf bin/
-cp ${BUILD_PWD}*.sh bin/
-chmod 777 bin/*
+cp ${BUILD_PWD}formations-dt soccer-simulation-proxy/ -r
+cp ${BUILD_PWD}formations-keeper soccer-simulation-proxy/ -r
+cp ${BUILD_PWD}formations-taker soccer-simulation-proxy/ -r
+cp ${BUILD_PWD}*.conf soccer-simulation-proxy/
+cp ${BUILD_PWD}*.sh soccer-simulation-proxy/
+chmod 777 soccer-simulation-proxy/*
 
-if [ -x "$(command -v 7z)" ]; then
-    7z a bin.7z bin/*
-fi
+# if [ -x "$(command -v 7z)" ]; then
+#     7z a bin.7z bin/*
+# fi
 
-tar -czvf bin.tar.gz bin/*
-
+tar -czvf soccer-simulation-proxy.tar.gz soccer-simulation-proxy/*
+tar -czvf sample_player.tar.gz sample_player
+tar -czvf sample_coach.tar.gz sample_coach
+tar -czvf sample_trainer.tar.gz sample_trainer
 echo "All in one created."
 
 rm -rf $PLAYER_APP_IMAGE_DIR_NAME
 rm -rf $COACH_APP_IMAGE_DIR_NAME
 rm -rf $TRAINER_APP_IMAGE_DIR_NAME
-rm -rf bin
+rm -rf soccer-simulation-proxy
