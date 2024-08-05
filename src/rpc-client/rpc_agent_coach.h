@@ -1,12 +1,12 @@
-#include "grpc_agent.h"
+#include "rpc_agent.h"
 
 #ifndef GrpcAgentCoach_H
 #define GrpcAgentCoach_H
 
-class GrpcAgentCoach : public GrpcAgent {
+class RpcAgentCoach : public RpcAgent {
     rcsc::CoachAgent * M_agent;
     public:
-    GrpcAgentCoach() ;
+    RpcAgentCoach() ;
 
     void init(rcsc::CoachAgent * agent,
               std::string target="localhost",

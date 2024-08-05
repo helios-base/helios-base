@@ -1,10 +1,10 @@
-#include "grpc_agent.h"
+#include "rpc_agent.h"
 
-class GrpcAgentTrainer : public GrpcAgent {
+class RpcAgentTrainer : public RpcAgent {
     rcsc::TrainerAgent * M_agent;
     
     public:
-    GrpcAgentTrainer() ;
+    RpcAgentTrainer() ;
 
     void init(rcsc::TrainerAgent * agent,
               std::string target="localhost",

@@ -3,8 +3,8 @@ add_executable(sample_trainer
         ../thrift-generated/Game.cpp
         ../thrift-generated/soccer_service_types.cpp
         ../rpc-client/state_generator.cpp
-        ../rpc-client/grpc_agent.cpp
-        ../rpc-client/grpc_agent_trainer.cpp
+        ../rpc-client/rpc_agent.cpp
+        ../rpc-client/rpc_agent_trainer.cpp
   sample_trainer.cpp
   main_trainer.cpp
   )

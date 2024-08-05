@@ -4,8 +4,8 @@ add_executable(sample_player
         ../rpc-client/state_generator.cpp
 #  ../rpc-client/service.pb.cc
 #  ../rpc-client/service.rpc-client.pb.cc
-        ../rpc-client/grpc_agent.cpp
-        ../rpc-client/grpc_agent_player.cpp
+        ../rpc-client/rpc_agent.cpp
+        ../rpc-client/rpc_agent_player.cpp
   basic_actions/basic_actions.cpp
   basic_actions/bhv_before_kick_off.cpp
   basic_actions/bhv_emergency.cpp

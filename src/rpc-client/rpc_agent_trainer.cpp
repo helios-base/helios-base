@@ -1,4 +1,4 @@
-#include "grpc_agent_trainer.h"
+#include "rpc_agent_trainer.h"
 // #include "state_generator.h"
 
 #include <rcsc/player/say_message_builder.h>
@@ -21,16 +21,16 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-GrpcAgentTrainer::GrpcAgentTrainer()
+RpcAgentTrainer::RpcAgentTrainer()
 {
     agent_type = soccer::AgentType::TrainerT;
 }
 
-void GrpcAgentTrainer::init(rcsc::TrainerAgent *agent,
-                            std::string target,
-                            int port,
-                            bool use_same_grpc_port,
-                            bool add_20_to_grpc_port_if_right_side)
+void RpcAgentTrainer::init(rcsc::TrainerAgent *agent,
+                           std::string target,
+                           int port,
+                           bool use_same_grpc_port,
+                           bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
     if (add_20_to_grpc_port_if_right_side)
@@ -46,7 +46,7 @@ void GrpcAgentTrainer::init(rcsc::TrainerAgent *agent,
     this->server_port = port;
 }
 
-void GrpcAgentTrainer::getActions() const
+void RpcAgentTrainer::getActions() const
 {
     auto agent = M_agent;
     soccer::State state = generateState();
@@ -73,8 +73,8 @@ void GrpcAgentTrainer::getActions() const
         if (action.__isset.do_move_ball)
         {
             const auto &doMoveBall = action.do_move_ball;
-            const auto &ballPosition = GrpcAgent::convertVector2D(doMoveBall.position);
-            const auto &ballVelocity = doMoveBall.__isset.velocity ? GrpcAgent::convertVector2D(doMoveBall.velocity) : rcsc::Vector2D(0, 0);
+            const auto &ballPosition = RpcAgent::convertVector2D(doMoveBall.position);
+            const auto &ballVelocity = doMoveBall.__isset.velocity ? RpcAgent::convertVector2D(doMoveBall.velocity) : rcsc::Vector2D(0, 0);
             agent->doMoveBall(ballPosition, ballVelocity);
             continue;
         }
@@ -82,7 +82,7 @@ void GrpcAgentTrainer::getActions() const
         {
             const auto &doMovePlayer = action.do_move_player;
             const auto &unum = doMovePlayer.uniform_number;
-            const auto &position = GrpcAgent::convertVector2D(doMovePlayer.position);
+            const auto &position = RpcAgent::convertVector2D(doMovePlayer.position);
             const auto &body = rcsc::AngleDeg(doMovePlayer.body_direction);
             std::string team_name = "";
             if (doMovePlayer.our_side)
@@ -264,7 +264,7 @@ void GrpcAgentTrainer::getActions() const
     }
 }
 
-soccer::State GrpcAgentTrainer::generateState() const
+soccer::State RpcAgentTrainer::generateState() const
 {
     auto &wm = M_agent->world();
     // WorldModel * worldModel = StateGenerator::convertCoachWorldModel(wm);

@@ -1,11 +1,11 @@
-#include "grpc_agent.h"
+#include "rpc_agent.h"
 #include "player/sample_communication.h"
 
-class GrpcAgentPlayer : public GrpcAgent {
+class RpcAgentPlayer : public RpcAgent {
     rcsc::PlayerAgent * M_agent;
     Communication::Ptr sample_communication;
     public:
-    GrpcAgentPlayer();
+    RpcAgentPlayer();
 
     void init(rcsc::PlayerAgent * agent,
               std::string target="localhost",

@@ -22,7 +22,7 @@ using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;
 //using namespace soccer;
 
-class GrpcAgent {
+class RpcAgent {
 public:
     std::string server_host;
     int server_port;
@@ -34,7 +34,7 @@ public:
     bool param_sent = false;
     soccer::AgentType::type agent_type;
 
-    ~GrpcAgent() {}
+    ~RpcAgent() {}
     
     void sendParams(bool offline_logging);
     void addDlog(soccer::Log log) const;
