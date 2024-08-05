@@ -23,7 +23,7 @@ using std::chrono::milliseconds;
 
 GrpcAgentTrainer::GrpcAgentTrainer()
 {
-    agent_type = protos::AgentType::TrainerT;
+    agent_type = soccer::AgentType::TrainerT;
 }
 
 void GrpcAgentTrainer::init(rcsc::TrainerAgent *agent,
@@ -42,50 +42,50 @@ void GrpcAgentTrainer::init(rcsc::TrainerAgent *agent,
         port += 13;
     }
 
-    this->target = target + ":" + std::to_string(port);
+    this->server_host = target;
+    this->server_port = port;
 }
 
 void GrpcAgentTrainer::getActions() const
 {
     auto agent = M_agent;
-    State state = generateState();
-    state.set_agent_type(protos::AgentType::TrainerT);
-    protos::TrainerActions actions;
-    ClientContext context;
-    Status status = stub_->GetTrainerActions(&context, state, &actions);
-    if (!status.ok())
-    {
-        std::cout << status.error_code() << ": " << status.error_message()
-                  << std::endl;
+    soccer::State state = generateState();
+//    state.set_agent_type(protos::AgentType::TrainerT);
+    state.agent_type = soccer::AgentType::TrainerT;
+
+    soccer::TrainerActions actions;
+
+    try{
+        client->GetTrainerActions(actions, state);
+    }
+    catch(const std::exception& e){
+        std::cerr << e.what() << '\n';
         return;
     }
-
-    for (int i = 0; i < actions.actions_size(); i++)
+    for (int i = 0; i < actions.actions.size(); i++)
     {
-        auto action = actions.actions(i);
-        switch (action.action_case())
-        {
-        case TrainerAction::kDoKickOff:
+        auto action = actions.actions[i];
+        if (action.__isset.do_kick_off)
         {
             agent->doKickOff();
-            break;
+            continue;
         }
-        case TrainerAction::kDoMoveBall:
+        if (action.__isset.do_move_ball)
         {
-            const auto &doMoveBall = action.do_move_ball();
-            const auto &ballPosition = GrpcAgent::convertVector2D(doMoveBall.position());
-            const auto &ballVelocity = doMoveBall.has_velocity() ? GrpcAgent::convertVector2D(doMoveBall.velocity()) : rcsc::Vector2D(0, 0);
+            const auto &doMoveBall = action.do_move_ball;
+            const auto &ballPosition = GrpcAgent::convertVector2D(doMoveBall.position);
+            const auto &ballVelocity = doMoveBall.__isset.velocity ? GrpcAgent::convertVector2D(doMoveBall.velocity) : rcsc::Vector2D(0, 0);
             agent->doMoveBall(ballPosition, ballVelocity);
-            break;
+            continue;
         }
-        case TrainerAction::kDoMovePlayer:
+        if (action.__isset.do_move_player)
         {
-            const auto &doMovePlayer = action.do_move_player();
-            const auto &unum = doMovePlayer.uniform_number();
-            const auto &position = GrpcAgent::convertVector2D(doMovePlayer.position());
-            const auto &body = rcsc::AngleDeg(doMovePlayer.body_direction());
+            const auto &doMovePlayer = action.do_move_player;
+            const auto &unum = doMovePlayer.uniform_number;
+            const auto &position = GrpcAgent::convertVector2D(doMovePlayer.position);
+            const auto &body = rcsc::AngleDeg(doMovePlayer.body_direction);
             std::string team_name = "";
-            if (doMovePlayer.our_side())
+            if (doMovePlayer.our_side)
             {
                 team_name = agent->world().ourTeamName();
             }
@@ -94,154 +94,154 @@ void GrpcAgentTrainer::getActions() const
                 team_name = agent->world().theirTeamName();
             }
             agent->doMovePlayer(team_name, unum, position, body);
-            break;
+            continue;
         }
-        case TrainerAction::kDoRecover:
+        if (action.__isset.do_recover)
         {
             agent->doRecover();
-            break;
+            continue;
         }
-        case TrainerAction::kDoChangeMode:
+        if (action.__isset.do_change_mode)
         {
-            const auto &mode = action.do_change_mode().game_mode_type();
-            const auto &side = action.do_change_mode().side();
+            const auto &mode = action.do_change_mode.game_mode_type;
+            const auto &side = action.do_change_mode.side;
 
             rcsc::PlayMode play_mode;
             switch (mode)
             {
-            case protos::GameModeType::BeforeKickOff:
+            case soccer::GameModeType::BeforeKickOff:
             {
                 play_mode = rcsc::PlayMode::PM_BeforeKickOff;
                 break;
             }
-            case protos::GameModeType::TimeOver:
+            case soccer::GameModeType::TimeOver:
             {
                 play_mode = rcsc::PlayMode::PM_TimeOver;
                 break;
             }
-            case protos::GameModeType::PlayOn:
+            case soccer::GameModeType::PlayOn:
             {
                 play_mode = rcsc::PlayMode::PM_PlayOn;
                 break;
             }
-            case protos::GameModeType::KickOff_:
+            case soccer::GameModeType::KickOff_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_KickOff_Left : rcsc::PlayMode::PM_KickOff_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_KickOff_Left : rcsc::PlayMode::PM_KickOff_Right;
                 break;
             }
-            case protos::GameModeType::KickIn_:
+            case soccer::GameModeType::KickIn_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_KickIn_Left : rcsc::PlayMode::PM_KickIn_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_KickIn_Left : rcsc::PlayMode::PM_KickIn_Right;
                 break;
             }
-            case protos::GameModeType::FreeKick_:
+            case soccer::GameModeType::FreeKick_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_FreeKick_Left : rcsc::PlayMode::PM_FreeKick_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_FreeKick_Left : rcsc::PlayMode::PM_FreeKick_Right;
                 break;
             }
-            case protos::GameModeType::CornerKick_:
+            case soccer::GameModeType::CornerKick_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_CornerKick_Left : rcsc::PlayMode::PM_CornerKick_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_CornerKick_Left : rcsc::PlayMode::PM_CornerKick_Right;
                 break;
             }
-            case protos::GameModeType::GoalKick_:
+            case soccer::GameModeType::GoalKick_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_GoalKick_Left : rcsc::PlayMode::PM_GoalKick_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_GoalKick_Left : rcsc::PlayMode::PM_GoalKick_Right;
                 break;
             }
-            case protos::GameModeType::AfterGoal_:
+            case soccer::GameModeType::AfterGoal_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_AfterGoal_Left : rcsc::PlayMode::PM_AfterGoal_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_AfterGoal_Left : rcsc::PlayMode::PM_AfterGoal_Right;
                 break;
             }
-            case protos::GameModeType::OffSide_:
+            case soccer::GameModeType::OffSide_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_OffSide_Left : rcsc::PlayMode::PM_OffSide_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_OffSide_Left : rcsc::PlayMode::PM_OffSide_Right;
                 break;
             }
-            case protos::GameModeType::FirstHalfOver:
+            case soccer::GameModeType::FirstHalfOver:
             {
                 play_mode = rcsc::PlayMode::PM_FirstHalfOver;
                 break;
             }
-            case protos::GameModeType::Pause:
+            case soccer::GameModeType::Pause:
             {
                 play_mode = rcsc::PlayMode::PM_Pause;
                 break;
             }
-            case protos::GameModeType::Human:
+            case soccer::GameModeType::Human:
             {
                 play_mode = rcsc::PlayMode::PM_Human;
                 break;
             }
-            case protos::GameModeType::FoulCharge_:
+            case soccer::GameModeType::FoulCharge_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_Foul_Charge_Left : rcsc::PlayMode::PM_Foul_Charge_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_Foul_Charge_Left : rcsc::PlayMode::PM_Foul_Charge_Right;
                 break;
             }
-            case protos::GameModeType::FoulPush_:
+            case soccer::GameModeType::FoulPush_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_Foul_Push_Left : rcsc::PlayMode::PM_Foul_Push_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_Foul_Push_Left : rcsc::PlayMode::PM_Foul_Push_Right;
                 break;
             }
-            case protos::GameModeType::FoulMultipleAttacker_:
+            case soccer::GameModeType::FoulMultipleAttacker_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_Foul_MultipleAttacker_Left : rcsc::PlayMode::PM_Foul_MultipleAttacker_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_Foul_MultipleAttacker_Left : rcsc::PlayMode::PM_Foul_MultipleAttacker_Right;
                 break;
             }
-            case protos::GameModeType::FoulBallOut_:
+            case soccer::GameModeType::FoulBallOut_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_Foul_BallOut_Left : rcsc::PlayMode::PM_Foul_BallOut_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_Foul_BallOut_Left : rcsc::PlayMode::PM_Foul_BallOut_Right;
                 break;
             }
-            case protos::GameModeType::BackPass_:
+            case soccer::GameModeType::BackPass_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_Back_Pass_Left : rcsc::PlayMode::PM_Back_Pass_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_Back_Pass_Left : rcsc::PlayMode::PM_Back_Pass_Right;
                 break;
             }
-            case protos::GameModeType::FreeKickFault_:
+            case soccer::GameModeType::FreeKickFault_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_Free_Kick_Fault_Left : rcsc::PlayMode::PM_Free_Kick_Fault_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_Free_Kick_Fault_Left : rcsc::PlayMode::PM_Free_Kick_Fault_Right;
                 break;
             }
-            case protos::GameModeType::CatchFault_:
+            case soccer::GameModeType::CatchFault_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_CatchFault_Left : rcsc::PlayMode::PM_CatchFault_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_CatchFault_Left : rcsc::PlayMode::PM_CatchFault_Right;
                 break;
             }
-            case protos::GameModeType::IndFreeKick_:
+            case soccer::GameModeType::IndFreeKick_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_IndFreeKick_Left : rcsc::PlayMode::PM_IndFreeKick_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_IndFreeKick_Left : rcsc::PlayMode::PM_IndFreeKick_Right;
                 break;
             }
-            case protos::GameModeType::PenaltySetup_:
+            case soccer::GameModeType::PenaltySetup_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_PenaltySetup_Left : rcsc::PlayMode::PM_PenaltySetup_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_PenaltySetup_Left : rcsc::PlayMode::PM_PenaltySetup_Right;
                 break;
             }
-            case protos::GameModeType::PenaltyReady_:
+            case soccer::GameModeType::PenaltyReady_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_PenaltyReady_Left : rcsc::PlayMode::PM_PenaltyReady_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_PenaltyReady_Left : rcsc::PlayMode::PM_PenaltyReady_Right;
                 break;
             }
-            case protos::GameModeType::PenaltyTaken_:
+            case soccer::GameModeType::PenaltyTaken_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_PenaltyTaken_Left : rcsc::PlayMode::PM_PenaltyTaken_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_PenaltyTaken_Left : rcsc::PlayMode::PM_PenaltyTaken_Right;
                 break;
             }
-            case protos::GameModeType::PenaltyMiss_:
+            case soccer::GameModeType::PenaltyMiss_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_PenaltyMiss_Left : rcsc::PlayMode::PM_PenaltyMiss_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_PenaltyMiss_Left : rcsc::PlayMode::PM_PenaltyMiss_Right;
                 break;
             }
-            case protos::GameModeType::PenaltyScore_:
+            case soccer::GameModeType::PenaltyScore_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_PenaltyScore_Left : rcsc::PlayMode::PM_PenaltyScore_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_PenaltyScore_Left : rcsc::PlayMode::PM_PenaltyScore_Right;
                 break;
             }
-            case protos::GameModeType::IllegalDefense_:
+            case soccer::GameModeType::IllegalDefense_:
             {
-                play_mode = side == protos::Side::LEFT ? rcsc::PlayMode::PM_Illegal_Defense_Left : rcsc::PlayMode::PM_Illegal_Defense_Right;
+                play_mode = side == soccer::Side::LEFT ? rcsc::PlayMode::PM_Illegal_Defense_Left : rcsc::PlayMode::PM_Illegal_Defense_Right;
                 break;
             }
             default:
@@ -251,31 +251,24 @@ void GrpcAgentTrainer::getActions() const
             }
             }
             agent->doChangeMode(play_mode);
-            break;
+            continue;
         }
-        case TrainerAction::kDoChangePlayerType:
+        if (action.__isset.do_change_player_type)
         {
-            const auto &doChangePlayerType = action.do_change_player_type();
-            const auto &playerType = doChangePlayerType.type();
-            const auto &unum = doChangePlayerType.uniform_number();
-            std::string team_name = doChangePlayerType.our_side() ? agent->world().ourTeamName() : agent->world().theirTeamName();
+            const auto &doChangePlayerType = action.do_change_player_type;
+            const auto &playerType = doChangePlayerType.type;
+            const auto &unum = doChangePlayerType.uniform_number;
+            std::string team_name = doChangePlayerType.our_side ? agent->world().ourTeamName() : agent->world().theirTeamName();
             agent->doChangePlayerType(team_name, unum, playerType);
-            break;
-        }
-        default:
-        {
-            LOG("unknown action");
-            break;
-        }
         }
     }
 }
 
-State GrpcAgentTrainer::generateState() const
+soccer::State GrpcAgentTrainer::generateState() const
 {
     auto &wm = M_agent->world();
     // WorldModel * worldModel = StateGenerator::convertCoachWorldModel(wm);
-    State state;
+    soccer::State state;
     // state.set_allocated_world_model(worldModel);
     return state;
 }

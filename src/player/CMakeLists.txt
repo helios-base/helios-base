@@ -1,7 +1,9 @@
 add_executable(sample_player
+        ../thrift/Game.cpp
+        ../thrift/soccer_service_types.cpp
   ../grpc/state_generator.cpp
-  ../grpc/service.pb.cc
-  ../grpc/service.grpc.pb.cc
+#  ../grpc/service.pb.cc
+#  ../grpc/service.grpc.pb.cc
   ../grpc/grpc_agent.cpp
   ../grpc/grpc_agent_player.cpp
   basic_actions/basic_actions.cpp
@@ -115,7 +117,7 @@ add_executable(sample_player
 
 target_include_directories(sample_player
   PRIVATE
-    ${PROJECT_SOURCE_DIR}/../grpc/
+#    ${PROJECT_SOURCE_DIR}/../grpc/
     ${PROJECT_SOURCE_DIR}/src/
     ${PROJECT_SOURCE_DIR}/src/player
     ${PROJECT_SOURCE_DIR}/src/player/planner
@@ -128,7 +130,9 @@ target_include_directories(sample_player
 
 target_link_libraries(sample_player
   PRIVATE
-    ${_GRPC_GRPCPP}
+    ${THRIFT_LIBRARY}
+    pthread
+#    ${_GRPC_GRPCPP}
   PUBLIC
     ${LIBRCSC_LIB}
     Boost::system

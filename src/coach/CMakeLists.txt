@@ -1,10 +1,11 @@
 
 add_executable(sample_coach
+        ../thrift/Game.cpp
+        ../thrift/soccer_service_types.cpp
   ../grpc/state_generator.cpp
-  ../grpc/service.pb.cc
-  ../grpc/service.grpc.pb.cc
-  ../grpc/grpc_agent.cpp
+        ../grpc/grpc_agent.cpp
   ../grpc/grpc_agent_coach.cpp
+
   sample_freeform_message.cpp
   sample_coach.cpp
   main_coach.cpp
@@ -25,7 +26,9 @@ target_include_directories(sample_coach
 
 target_link_libraries(sample_coach
   PRIVATE
-    ${_GRPC_GRPCPP}
+        ${THRIFT_LIBRARY}
+        pthread
+#    ${_GRPC_GRPCPP}
   PUBLIC
     ${LIBRCSC_LIB}
     Boost::system

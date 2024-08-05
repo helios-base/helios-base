@@ -13,5 +13,5 @@ class GrpcAgentTrainer : public GrpcAgent {
               bool add_20_to_grpc_port_if_right_side=false);
 
     void getActions() const;
-    State generateState() const;
+    soccer::State generateState() const;
 };

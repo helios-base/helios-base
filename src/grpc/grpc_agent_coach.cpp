@@ -25,7 +25,7 @@ using std::chrono::milliseconds;
 
 GrpcAgentCoach::GrpcAgentCoach()
 {
-    agent_type = protos::AgentType::CoachT;
+    agent_type = soccer::AgentType::CoachT;
 }
 
 void GrpcAgentCoach::init(rcsc::CoachAgent *agent,
@@ -44,64 +44,60 @@ void GrpcAgentCoach::init(rcsc::CoachAgent *agent,
         port += 13;
     }
 
-    this->target = target + ":" + std::to_string(port);
+    this->server_host = target;
+    this->server_port = port;
 }
 
 void GrpcAgentCoach::getActions() const
 {
     auto agent = M_agent;
-    State state = generateState();
-    state.set_agent_type(protos::AgentType::CoachT);
-    protos::CoachActions actions;
-    ClientContext context;
-    Status status = stub_->GetCoachActions(&context, state, &actions);
-    if (!status.ok())
+    soccer::State state = generateState();
+    state.agent_type = soccer::AgentType::CoachT;
+    soccer::CoachActions actions;
+    try{
+        transport->open();
+        client->GetCoachActions(actions, state);
+    }
+    catch (const std::exception &e)
     {
-        std::cout << status.error_code() << ": " << status.error_message()
-                  << std::endl;
+        transport->close();
+        std::cerr << e.what() << std::endl;
         return;
     }
+    transport->close();
 
-    for (int i = 0; i < actions.actions_size(); i++)
+    for (int i = 0; i < actions.actions.size(); i++)
     {
-        auto action = actions.actions(i);
-        switch (action.action_case())
+        auto action = actions.actions[i];
+        if (action.__isset.change_player_types)
         {
-        case CoachAction::kChangePlayerTypes:
-        {
-            const auto &changePlayerTypes = action.change_player_types();
-            const auto &playerType = changePlayerTypes.type();
-            const auto &unum = changePlayerTypes.uniform_number();
+            const auto &changePlayerTypes = action.change_player_types;
+            const auto &playerType = changePlayerTypes.type;
+            const auto &unum = changePlayerTypes.uniform_number;
 
             agent->doChangePlayerType(unum, playerType);
             break;
         }
-        case CoachAction::kDoHeliosSayPlayerTypes:
+        if (action.__isset.do_helios_say_player_types)
         {
             auto sample_coach = dynamic_cast<SampleCoach *>(agent);
             sample_coach->sayPlayerTypes();
             break;
         }
-        case CoachAction::kDoHeliosSubstitute:
+        if (action.__isset.do_helios_substitute)
         {
             auto sample_coach = dynamic_cast<SampleCoach *>(agent);
             sample_coach->doSubstitute();
             break;
         }
-        default:
-        {
-            LOG("unknown action");
-            break;
-        }
-        }
     }
 }
 
-State GrpcAgentCoach::generateState() const
+soccer::State GrpcAgentCoach::generateState() const
 {
     auto &wm = M_agent->world();
-    protos::WorldModel *worldModel = StateGenerator::convertCoachWorldModel(wm);
-    State state;
-    state.set_allocated_world_model(worldModel);
+    soccer::WorldModel worldModel = StateGenerator::convertCoachWorldModel(wm);
+    soccer::State state;
+    state.world_model = worldModel;
     return state;
 }

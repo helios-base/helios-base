@@ -15,19 +15,24 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 set(CMAKE_CXX_FLAGS "-W -Wall")
 
+# Thrift paths
+set(THRIFT_INCLUDE_DIR /usr/include/thrift)
+set(THRIFT_LIBRARY /usr/lib/x86_64-linux-gnu/libthrift.so)
+set(THRIFT_COMPILER /usr/bin/thrift)
+
 # GRPC
 # list(APPEND CMAKE_PREFIX_PATH "${GRPC_LIB_PATH}")
 # set(LIBRARY_PATH "${GRPC_LIB_PATH}/lib")
 # link_directories(${LIBRARY_PATH})
-find_package(absl CONFIG REQUIRED)
-find_package(Protobuf CONFIG REQUIRED)
-find_package(gRPC CONFIG REQUIRED)
+#find_package(absl CONFIG REQUIRED)
+#find_package(Protobuf CONFIG REQUIRED)
+#find_package(gRPC CONFIG REQUIRED)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${Protobuf_INCLUDE_DIRS}")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${gRPC_INCLUDE_DIRS}")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${absl_INCLUDE_DIRS}")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I${GRPC_LIB_PATH}/include")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L${GRPC_LIB_PATH}/lib")
-set(_GRPC_GRPCPP gRPC::grpc++)
+#set(_GRPC_GRPCPP gRPC::grpc++)
 
 # check librcsc
 set(LIBRCSC_INSTALL_DIR "$ENV{HOME}/.local;$ENV{HOME}/local" CACHE PATH "The path where librcsc is installed.")
@@ -87,9 +92,19 @@ message(STATUS "  LIBRCSC_INCLUDE_DIR=${LIBRCSC_INCLUDE_DIR}")
 message(STATUS "Build settings:")
 message(STATUS "  BUILD_TYPE=${CMAKE_BUILD_TYPE}")
 
+# Source and include directories
+include_directories(${THRIFT_INCLUDE_DIR} include src/thrift)
+
+# Custom command to generate Thrift files during configuration
+execute_process(
+        COMMAND ${THRIFT_COMPILER} --gen cpp -out ${CMAKE_SOURCE_DIR}/src/thrift ${CMAKE_SOURCE_DIR}/idl/soccer_service.thrift
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        RESULT_VARIABLE THRIFT_GEN_RESULT
+)
+
 # sub directories
-add_subdirectory(grpc)
+#add_subdirectory(grpc)
 add_subdirectory(src)
 
-include_directories("${GRPC_LIB_PATH}/include/google/protobuf")
-add_definitions("${GRPC_LIB_PATH}/include/google/protobuf")
+#include_directories("${GRPC_LIB_PATH}/include/google/protobuf")
+#add_definitions("${GRPC_LIB_PATH}/include/google/protobuf")

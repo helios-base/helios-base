@@ -14,7 +14,7 @@ class GrpcAgentPlayer : public GrpcAgent {
               bool add_20_to_grpc_port_if_right_side=false);
 
     void getActions() const;
-    void addSayMessage(protos::Say sayMessage) const;
-    State generateState() const;
-    void addHomePosition(protos::WorldModel * world_model) const;
+    void addSayMessage(soccer::Say sayMessage) const;
+    soccer::State generateState() const;
+    void addHomePosition(soccer::WorldModel * world_model) const;
 };
