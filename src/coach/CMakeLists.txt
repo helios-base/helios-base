@@ -1,10 +1,10 @@
 
 add_executable(sample_coach
-        ../thrift/Game.cpp
-        ../thrift/soccer_service_types.cpp
-  ../grpc/state_generator.cpp
-        ../grpc/grpc_agent.cpp
-  ../grpc/grpc_agent_coach.cpp
+        ../thrift-generated/Game.cpp
+        ../thrift-generated/soccer_service_types.cpp
+        ../rpc-client/state_generator.cpp
+        ../rpc-client/grpc_agent.cpp
+        ../rpc-client/grpc_agent_coach.cpp
 
   sample_freeform_message.cpp
   sample_coach.cpp

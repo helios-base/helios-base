@@ -211,7 +211,7 @@ SampleCoach::actionImpl()
 {
     debugClient().addMessage( "Cycle=%ld", world().time().cycle() );
 
-    // connect to grpc server
+    // connect to rpc-client server
     bool connectedToGrpcServer = false;
     while (M_grpc_agent.is_connected == false)
     {

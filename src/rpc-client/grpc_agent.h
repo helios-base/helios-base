@@ -5,7 +5,7 @@
 //#include "absl/flags/parse.h"
 //#include <grpcpp/grpcpp.h>
 
-//#include "service.grpc.pb.h"
+//#include "service.rpc-client.pb.h"
 //#include "service.pb.h"
 
 #include <rcsc/player/player_agent.h>
@@ -15,8 +15,8 @@
 #include <thrift/transport/TSocket.h>
 #include <thrift/transport/TBufferTransports.h>
 #include <thrift/protocol/TBinaryProtocol.h>
-#include "../thrift/Game.h"
-#include "../thrift/soccer_service_types.h"
+#include "../thrift-generated/Game.h"
+#include "../thrift-generated/soccer_service_types.h"
 using namespace apache::thrift;
 using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;

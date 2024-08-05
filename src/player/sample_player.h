@@ -30,7 +30,7 @@
 #include "action_generator.h"
 #include "field_evaluator.h"
 #include "communication.h"
-#include "grpc/grpc_agent_player.h"
+#include "rpc-client/grpc_agent_player.h"
 
 #include <rcsc/player/player_agent.h>
 #include <vector>

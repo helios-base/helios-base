@@ -6,7 +6,7 @@
 #include "coach/sample_coach.h"
 #include <chrono>
 #include <rcsc/common/logger.h>
-#include "grpc/state_generator.h"
+#include "rpc-client/state_generator.h"
 
 using std::chrono::duration;
 using std::chrono::duration_cast;

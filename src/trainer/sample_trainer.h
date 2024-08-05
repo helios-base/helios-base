@@ -28,7 +28,7 @@
 #define SAMPLE_TRAINER_H
 
 #include <rcsc/trainer/trainer_agent.h>
-#include "grpc/grpc_agent_trainer.h"
+#include "rpc-client/grpc_agent_trainer.h"
 
 class SampleTrainer
     : public rcsc::TrainerAgent {

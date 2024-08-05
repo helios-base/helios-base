@@ -29,7 +29,7 @@
 
 #include <rcsc/coach/coach_agent.h>
 #include <rcsc/types.h>
-#include "grpc/grpc_agent_coach.h"
+#include "rpc-client/grpc_agent_coach.h"
 #include <vector>
 
 

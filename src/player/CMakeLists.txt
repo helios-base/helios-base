@@ -1,11 +1,11 @@
 add_executable(sample_player
-        ../thrift/Game.cpp
-        ../thrift/soccer_service_types.cpp
-  ../grpc/state_generator.cpp
-#  ../grpc/service.pb.cc
-#  ../grpc/service.grpc.pb.cc
-  ../grpc/grpc_agent.cpp
-  ../grpc/grpc_agent_player.cpp
+        ../thrift-generated/Game.cpp
+        ../thrift-generated/soccer_service_types.cpp
+        ../rpc-client/state_generator.cpp
+#  ../rpc-client/service.pb.cc
+#  ../rpc-client/service.rpc-client.pb.cc
+        ../rpc-client/grpc_agent.cpp
+        ../rpc-client/grpc_agent_player.cpp
   basic_actions/basic_actions.cpp
   basic_actions/bhv_before_kick_off.cpp
   basic_actions/bhv_emergency.cpp
@@ -117,7 +117,7 @@ add_executable(sample_player
 
 target_include_directories(sample_player
   PRIVATE
-#    ${PROJECT_SOURCE_DIR}/../grpc/
+#    ${PROJECT_SOURCE_DIR}/../rpc-client/
     ${PROJECT_SOURCE_DIR}/src/
     ${PROJECT_SOURCE_DIR}/src/player
     ${PROJECT_SOURCE_DIR}/src/player/planner
