@@ -25,12 +25,12 @@ class GameIf {
   virtual void GetPlayerActions(PlayerActions& _return, const State& state) = 0;
   virtual void GetCoachActions(CoachActions& _return, const State& state) = 0;
   virtual void GetTrainerActions(TrainerActions& _return, const State& state) = 0;
-  virtual void SendInitMessage(const InitMessage& init_message) = 0;
-  virtual void SendServerParams(const ServerParam& server_param) = 0;
-  virtual void SendPlayerParams(const PlayerParam& player_param) = 0;
-  virtual void SendPlayerType(const PlayerType& player_type) = 0;
+  virtual void SendInitMessage(Empty& _return, const InitMessage& init_message) = 0;
+  virtual void SendServerParams(Empty& _return, const ServerParam& server_param) = 0;
+  virtual void SendPlayerParams(Empty& _return, const PlayerParam& player_param) = 0;
+  virtual void SendPlayerType(Empty& _return, const PlayerType& player_type) = 0;
   virtual void GetInitMessage(InitMessageFromServer& _return, const Empty& empty) = 0;
-  virtual void SendByeCommand(const Empty& empty) = 0;
+  virtual void SendByeCommand(Empty& _return, const Empty& empty) = 0;
 };
 
 class GameIfFactory {
@@ -69,22 +69,22 @@ class GameNull : virtual public GameIf {
   void GetTrainerActions(TrainerActions& /* _return */, const State& /* state */) override {
     return;
   }
-  void SendInitMessage(const InitMessage& /* init_message */) override {
+  void SendInitMessage(Empty& /* _return */, const InitMessage& /* init_message */) override {
     return;
   }
-  void SendServerParams(const ServerParam& /* server_param */) override {
+  void SendServerParams(Empty& /* _return */, const ServerParam& /* server_param */) override {
     return;
   }
-  void SendPlayerParams(const PlayerParam& /* player_param */) override {
+  void SendPlayerParams(Empty& /* _return */, const PlayerParam& /* player_param */) override {
     return;
   }
-  void SendPlayerType(const PlayerType& /* player_type */) override {
+  void SendPlayerType(Empty& /* _return */, const PlayerType& /* player_type */) override {
     return;
   }
   void GetInitMessage(InitMessageFromServer& /* _return */, const Empty& /* empty */) override {
     return;
   }
-  void SendByeCommand(const Empty& /* empty */) override {
+  void SendByeCommand(Empty& /* _return */, const Empty& /* empty */) override {
     return;
   }
 };
@@ -450,6 +450,10 @@ class Game_SendInitMessage_pargs {
 
 };
 
+typedef struct _Game_SendInitMessage_result__isset {
+  _Game_SendInitMessage_result__isset() : success(false) {}
+  bool success :1;
+} _Game_SendInitMessage_result__isset;
 
 class Game_SendInitMessage_result {
  public:
@@ -460,9 +464,16 @@ class Game_SendInitMessage_result {
   }
 
   virtual ~Game_SendInitMessage_result() noexcept;
+  Empty success;
 
-  bool operator == (const Game_SendInitMessage_result & /* rhs */) const
+  _Game_SendInitMessage_result__isset __isset;
+
+  void __set_success(const Empty& val);
+
+  bool operator == (const Game_SendInitMessage_result & rhs) const
   {
+    if (!(success == rhs.success))
+      return false;
     return true;
   }
   bool operator != (const Game_SendInitMessage_result &rhs) const {
@@ -476,12 +487,19 @@ class Game_SendInitMessage_result {
 
 };
 
+typedef struct _Game_SendInitMessage_presult__isset {
+  _Game_SendInitMessage_presult__isset() : success(false) {}
+  bool success :1;
+} _Game_SendInitMessage_presult__isset;
 
 class Game_SendInitMessage_presult {
  public:
 
 
   virtual ~Game_SendInitMessage_presult() noexcept;
+  Empty* success;
+
+  _Game_SendInitMessage_presult__isset __isset;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
 
@@ -536,6 +554,10 @@ class Game_SendServerParams_pargs {
 
 };
 
+typedef struct _Game_SendServerParams_result__isset {
+  _Game_SendServerParams_result__isset() : success(false) {}
+  bool success :1;
+} _Game_SendServerParams_result__isset;
 
 class Game_SendServerParams_result {
  public:
@@ -546,9 +568,16 @@ class Game_SendServerParams_result {
   }
 
   virtual ~Game_SendServerParams_result() noexcept;
+  Empty success;
 
-  bool operator == (const Game_SendServerParams_result & /* rhs */) const
+  _Game_SendServerParams_result__isset __isset;
+
+  void __set_success(const Empty& val);
+
+  bool operator == (const Game_SendServerParams_result & rhs) const
   {
+    if (!(success == rhs.success))
+      return false;
     return true;
   }
   bool operator != (const Game_SendServerParams_result &rhs) const {
@@ -562,12 +591,19 @@ class Game_SendServerParams_result {
 
 };
 
+typedef struct _Game_SendServerParams_presult__isset {
+  _Game_SendServerParams_presult__isset() : success(false) {}
+  bool success :1;
+} _Game_SendServerParams_presult__isset;
 
 class Game_SendServerParams_presult {
  public:
 
 
   virtual ~Game_SendServerParams_presult() noexcept;
+  Empty* success;
+
+  _Game_SendServerParams_presult__isset __isset;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
 
@@ -622,6 +658,10 @@ class Game_SendPlayerParams_pargs {
 
 };
 
+typedef struct _Game_SendPlayerParams_result__isset {
+  _Game_SendPlayerParams_result__isset() : success(false) {}
+  bool success :1;
+} _Game_SendPlayerParams_result__isset;
 
 class Game_SendPlayerParams_result {
  public:
@@ -632,9 +672,16 @@ class Game_SendPlayerParams_result {
   }
 
   virtual ~Game_SendPlayerParams_result() noexcept;
+  Empty success;
 
-  bool operator == (const Game_SendPlayerParams_result & /* rhs */) const
+  _Game_SendPlayerParams_result__isset __isset;
+
+  void __set_success(const Empty& val);
+
+  bool operator == (const Game_SendPlayerParams_result & rhs) const
   {
+    if (!(success == rhs.success))
+      return false;
     return true;
   }
   bool operator != (const Game_SendPlayerParams_result &rhs) const {
@@ -648,12 +695,19 @@ class Game_SendPlayerParams_result {
 
 };
 
+typedef struct _Game_SendPlayerParams_presult__isset {
+  _Game_SendPlayerParams_presult__isset() : success(false) {}
+  bool success :1;
+} _Game_SendPlayerParams_presult__isset;
 
 class Game_SendPlayerParams_presult {
  public:
 
 
   virtual ~Game_SendPlayerParams_presult() noexcept;
+  Empty* success;
+
+  _Game_SendPlayerParams_presult__isset __isset;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
 
@@ -708,6 +762,10 @@ class Game_SendPlayerType_pargs {
 
 };
 
+typedef struct _Game_SendPlayerType_result__isset {
+  _Game_SendPlayerType_result__isset() : success(false) {}
+  bool success :1;
+} _Game_SendPlayerType_result__isset;
 
 class Game_SendPlayerType_result {
  public:
@@ -718,9 +776,16 @@ class Game_SendPlayerType_result {
   }
 
   virtual ~Game_SendPlayerType_result() noexcept;
+  Empty success;
 
-  bool operator == (const Game_SendPlayerType_result & /* rhs */) const
+  _Game_SendPlayerType_result__isset __isset;
+
+  void __set_success(const Empty& val);
+
+  bool operator == (const Game_SendPlayerType_result & rhs) const
   {
+    if (!(success == rhs.success))
+      return false;
     return true;
   }
   bool operator != (const Game_SendPlayerType_result &rhs) const {
@@ -734,12 +799,19 @@ class Game_SendPlayerType_result {
 
 };
 
+typedef struct _Game_SendPlayerType_presult__isset {
+  _Game_SendPlayerType_presult__isset() : success(false) {}
+  bool success :1;
+} _Game_SendPlayerType_presult__isset;
 
 class Game_SendPlayerType_presult {
  public:
 
 
   virtual ~Game_SendPlayerType_presult() noexcept;
+  Empty* success;
+
+  _Game_SendPlayerType_presult__isset __isset;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
 
@@ -898,6 +970,10 @@ class Game_SendByeCommand_pargs {
 
 };
 
+typedef struct _Game_SendByeCommand_result__isset {
+  _Game_SendByeCommand_result__isset() : success(false) {}
+  bool success :1;
+} _Game_SendByeCommand_result__isset;
 
 class Game_SendByeCommand_result {
  public:
@@ -908,9 +984,16 @@ class Game_SendByeCommand_result {
   }
 
   virtual ~Game_SendByeCommand_result() noexcept;
+  Empty success;
 
-  bool operator == (const Game_SendByeCommand_result & /* rhs */) const
+  _Game_SendByeCommand_result__isset __isset;
+
+  void __set_success(const Empty& val);
+
+  bool operator == (const Game_SendByeCommand_result & rhs) const
   {
+    if (!(success == rhs.success))
+      return false;
     return true;
   }
   bool operator != (const Game_SendByeCommand_result &rhs) const {
@@ -924,12 +1007,19 @@ class Game_SendByeCommand_result {
 
 };
 
+typedef struct _Game_SendByeCommand_presult__isset {
+  _Game_SendByeCommand_presult__isset() : success(false) {}
+  bool success :1;
+} _Game_SendByeCommand_presult__isset;
 
 class Game_SendByeCommand_presult {
  public:
 
 
   virtual ~Game_SendByeCommand_presult() noexcept;
+  Empty* success;
+
+  _Game_SendByeCommand_presult__isset __isset;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
 
@@ -969,24 +1059,24 @@ class GameClient : virtual public GameIf {
   void GetTrainerActions(TrainerActions& _return, const State& state) override;
   void send_GetTrainerActions(const State& state);
   void recv_GetTrainerActions(TrainerActions& _return);
-  void SendInitMessage(const InitMessage& init_message) override;
+  void SendInitMessage(Empty& _return, const InitMessage& init_message) override;
   void send_SendInitMessage(const InitMessage& init_message);
-  void recv_SendInitMessage();
-  void SendServerParams(const ServerParam& server_param) override;
+  void recv_SendInitMessage(Empty& _return);
+  void SendServerParams(Empty& _return, const ServerParam& server_param) override;
   void send_SendServerParams(const ServerParam& server_param);
-  void recv_SendServerParams();
-  void SendPlayerParams(const PlayerParam& player_param) override;
+  void recv_SendServerParams(Empty& _return);
+  void SendPlayerParams(Empty& _return, const PlayerParam& player_param) override;
   void send_SendPlayerParams(const PlayerParam& player_param);
-  void recv_SendPlayerParams();
-  void SendPlayerType(const PlayerType& player_type) override;
+  void recv_SendPlayerParams(Empty& _return);
+  void SendPlayerType(Empty& _return, const PlayerType& player_type) override;
   void send_SendPlayerType(const PlayerType& player_type);
-  void recv_SendPlayerType();
+  void recv_SendPlayerType(Empty& _return);
   void GetInitMessage(InitMessageFromServer& _return, const Empty& empty) override;
   void send_GetInitMessage(const Empty& empty);
   void recv_GetInitMessage(InitMessageFromServer& _return);
-  void SendByeCommand(const Empty& empty) override;
+  void SendByeCommand(Empty& _return, const Empty& empty) override;
   void send_SendByeCommand(const Empty& empty);
-  void recv_SendByeCommand();
+  void recv_SendByeCommand(Empty& _return);
  protected:
   std::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   std::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;
@@ -1081,40 +1171,44 @@ class GameMultiface : virtual public GameIf {
     return;
   }
 
-  void SendInitMessage(const InitMessage& init_message) override {
+  void SendInitMessage(Empty& _return, const InitMessage& init_message) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->SendInitMessage(init_message);
+      ifaces_[i]->SendInitMessage(_return, init_message);
     }
-    ifaces_[i]->SendInitMessage(init_message);
+    ifaces_[i]->SendInitMessage(_return, init_message);
+    return;
   }
 
-  void SendServerParams(const ServerParam& server_param) override {
+  void SendServerParams(Empty& _return, const ServerParam& server_param) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->SendServerParams(server_param);
+      ifaces_[i]->SendServerParams(_return, server_param);
     }
-    ifaces_[i]->SendServerParams(server_param);
+    ifaces_[i]->SendServerParams(_return, server_param);
+    return;
   }
 
-  void SendPlayerParams(const PlayerParam& player_param) override {
+  void SendPlayerParams(Empty& _return, const PlayerParam& player_param) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->SendPlayerParams(player_param);
+      ifaces_[i]->SendPlayerParams(_return, player_param);
     }
-    ifaces_[i]->SendPlayerParams(player_param);
+    ifaces_[i]->SendPlayerParams(_return, player_param);
+    return;
   }
 
-  void SendPlayerType(const PlayerType& player_type) override {
+  void SendPlayerType(Empty& _return, const PlayerType& player_type) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->SendPlayerType(player_type);
+      ifaces_[i]->SendPlayerType(_return, player_type);
     }
-    ifaces_[i]->SendPlayerType(player_type);
+    ifaces_[i]->SendPlayerType(_return, player_type);
+    return;
   }
 
   void GetInitMessage(InitMessageFromServer& _return, const Empty& empty) override {
@@ -1127,13 +1221,14 @@ class GameMultiface : virtual public GameIf {
     return;
   }
 
-  void SendByeCommand(const Empty& empty) override {
+  void SendByeCommand(Empty& _return, const Empty& empty) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->SendByeCommand(empty);
+      ifaces_[i]->SendByeCommand(_return, empty);
     }
-    ifaces_[i]->SendByeCommand(empty);
+    ifaces_[i]->SendByeCommand(_return, empty);
+    return;
   }
 
 };
@@ -1177,24 +1272,24 @@ class GameConcurrentClient : virtual public GameIf {
   void GetTrainerActions(TrainerActions& _return, const State& state) override;
   int32_t send_GetTrainerActions(const State& state);
   void recv_GetTrainerActions(TrainerActions& _return, const int32_t seqid);
-  void SendInitMessage(const InitMessage& init_message) override;
+  void SendInitMessage(Empty& _return, const InitMessage& init_message) override;
   int32_t send_SendInitMessage(const InitMessage& init_message);
-  void recv_SendInitMessage(const int32_t seqid);
-  void SendServerParams(const ServerParam& server_param) override;
+  void recv_SendInitMessage(Empty& _return, const int32_t seqid);
+  void SendServerParams(Empty& _return, const ServerParam& server_param) override;
   int32_t send_SendServerParams(const ServerParam& server_param);
-  void recv_SendServerParams(const int32_t seqid);
-  void SendPlayerParams(const PlayerParam& player_param) override;
+  void recv_SendServerParams(Empty& _return, const int32_t seqid);
+  void SendPlayerParams(Empty& _return, const PlayerParam& player_param) override;
   int32_t send_SendPlayerParams(const PlayerParam& player_param);
-  void recv_SendPlayerParams(const int32_t seqid);
-  void SendPlayerType(const PlayerType& player_type) override;
+  void recv_SendPlayerParams(Empty& _return, const int32_t seqid);
+  void SendPlayerType(Empty& _return, const PlayerType& player_type) override;
   int32_t send_SendPlayerType(const PlayerType& player_type);
-  void recv_SendPlayerType(const int32_t seqid);
+  void recv_SendPlayerType(Empty& _return, const int32_t seqid);
   void GetInitMessage(InitMessageFromServer& _return, const Empty& empty) override;
   int32_t send_GetInitMessage(const Empty& empty);
   void recv_GetInitMessage(InitMessageFromServer& _return, const int32_t seqid);
-  void SendByeCommand(const Empty& empty) override;
+  void SendByeCommand(Empty& _return, const Empty& empty) override;
   int32_t send_SendByeCommand(const Empty& empty);
-  void recv_SendByeCommand(const int32_t seqid);
+  void recv_SendByeCommand(Empty& _return, const int32_t seqid);
  protected:
   std::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   std::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;

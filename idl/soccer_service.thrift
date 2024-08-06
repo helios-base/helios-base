@@ -1155,11 +1155,11 @@ service Game {
   PlayerActions GetPlayerActions(1: State state),
   CoachActions GetCoachActions(1: State state),
   TrainerActions GetTrainerActions(1: State state),
-  void SendInitMessage(1: InitMessage init_message),
-  void SendServerParams(1: ServerParam server_param),
-  void SendPlayerParams(1: PlayerParam player_param),
-  void SendPlayerType(1: PlayerType player_type),
+  Empty SendInitMessage(1: InitMessage init_message),
+  Empty SendServerParams(1: ServerParam server_param),
+  Empty SendPlayerParams(1: PlayerParam player_param),
+  Empty SendPlayerType(1: PlayerType player_type),
   InitMessageFromServer GetInitMessage(1: Empty empty),
-  void SendByeCommand(1: Empty empty)
+  Empty SendByeCommand(1: Empty empty)
 }
 

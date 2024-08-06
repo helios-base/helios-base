@@ -672,7 +672,20 @@ uint32_t Game_SendInitMessage_result::read(::apache::thrift::protocol::TProtocol
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->success.read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -687,6 +700,11 @@ uint32_t Game_SendInitMessage_result::write(::apache::thrift::protocol::TProtoco
 
   xfer += oprot->writeStructBegin("Game_SendInitMessage_result");
 
+  if (this->__isset.success) {
+    xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_STRUCT, 0);
+    xfer += this->success.write(oprot);
+    xfer += oprot->writeFieldEnd();
+  }
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -716,7 +734,20 @@ uint32_t Game_SendInitMessage_presult::read(::apache::thrift::protocol::TProtoco
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += (*(this->success)).read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -828,7 +859,20 @@ uint32_t Game_SendServerParams_result::read(::apache::thrift::protocol::TProtoco
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->success.read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -843,6 +887,11 @@ uint32_t Game_SendServerParams_result::write(::apache::thrift::protocol::TProtoc
 
   xfer += oprot->writeStructBegin("Game_SendServerParams_result");
 
+  if (this->__isset.success) {
+    xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_STRUCT, 0);
+    xfer += this->success.write(oprot);
+    xfer += oprot->writeFieldEnd();
+  }
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -872,7 +921,20 @@ uint32_t Game_SendServerParams_presult::read(::apache::thrift::protocol::TProtoc
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += (*(this->success)).read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -984,7 +1046,20 @@ uint32_t Game_SendPlayerParams_result::read(::apache::thrift::protocol::TProtoco
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->success.read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -999,6 +1074,11 @@ uint32_t Game_SendPlayerParams_result::write(::apache::thrift::protocol::TProtoc
 
   xfer += oprot->writeStructBegin("Game_SendPlayerParams_result");
 
+  if (this->__isset.success) {
+    xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_STRUCT, 0);
+    xfer += this->success.write(oprot);
+    xfer += oprot->writeFieldEnd();
+  }
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -1028,7 +1108,20 @@ uint32_t Game_SendPlayerParams_presult::read(::apache::thrift::protocol::TProtoc
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += (*(this->success)).read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -1140,7 +1233,20 @@ uint32_t Game_SendPlayerType_result::read(::apache::thrift::protocol::TProtocol*
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->success.read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -1155,6 +1261,11 @@ uint32_t Game_SendPlayerType_result::write(::apache::thrift::protocol::TProtocol
 
   xfer += oprot->writeStructBegin("Game_SendPlayerType_result");
 
+  if (this->__isset.success) {
+    xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_STRUCT, 0);
+    xfer += this->success.write(oprot);
+    xfer += oprot->writeFieldEnd();
+  }
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -1184,7 +1295,20 @@ uint32_t Game_SendPlayerType_presult::read(::apache::thrift::protocol::TProtocol
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += (*(this->success)).read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -1483,7 +1607,20 @@ uint32_t Game_SendByeCommand_result::read(::apache::thrift::protocol::TProtocol*
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->success.read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -1498,6 +1635,11 @@ uint32_t Game_SendByeCommand_result::write(::apache::thrift::protocol::TProtocol
 
   xfer += oprot->writeStructBegin("Game_SendByeCommand_result");
 
+  if (this->__isset.success) {
+    xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_STRUCT, 0);
+    xfer += this->success.write(oprot);
+    xfer += oprot->writeFieldEnd();
+  }
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -1527,7 +1669,20 @@ uint32_t Game_SendByeCommand_presult::read(::apache::thrift::protocol::TProtocol
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += (*(this->success)).read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -1710,10 +1865,10 @@ void GameClient::recv_GetTrainerActions(TrainerActions& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "GetTrainerActions failed: unknown result");
 }
 
-void GameClient::SendInitMessage(const InitMessage& init_message)
+void GameClient::SendInitMessage(Empty& _return, const InitMessage& init_message)
 {
   send_SendInitMessage(init_message);
-  recv_SendInitMessage();
+  recv_SendInitMessage(_return);
 }
 
 void GameClient::send_SendInitMessage(const InitMessage& init_message)
@@ -1730,7 +1885,7 @@ void GameClient::send_SendInitMessage(const InitMessage& init_message)
   oprot_->getTransport()->flush();
 }
 
-void GameClient::recv_SendInitMessage()
+void GameClient::recv_SendInitMessage(Empty& _return)
 {
 
   int32_t rseqid = 0;
@@ -1756,17 +1911,22 @@ void GameClient::recv_SendInitMessage()
     iprot_->getTransport()->readEnd();
   }
   Game_SendInitMessage_presult result;
+  result.success = &_return;
   result.read(iprot_);
   iprot_->readMessageEnd();
   iprot_->getTransport()->readEnd();
 
-  return;
+  if (result.__isset.success) {
+    // _return pointer has now been filled
+    return;
+  }
+  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendInitMessage failed: unknown result");
 }
 
-void GameClient::SendServerParams(const ServerParam& server_param)
+void GameClient::SendServerParams(Empty& _return, const ServerParam& server_param)
 {
   send_SendServerParams(server_param);
-  recv_SendServerParams();
+  recv_SendServerParams(_return);
 }
 
 void GameClient::send_SendServerParams(const ServerParam& server_param)
@@ -1783,7 +1943,7 @@ void GameClient::send_SendServerParams(const ServerParam& server_param)
   oprot_->getTransport()->flush();
 }
 
-void GameClient::recv_SendServerParams()
+void GameClient::recv_SendServerParams(Empty& _return)
 {
 
   int32_t rseqid = 0;
@@ -1809,17 +1969,22 @@ void GameClient::recv_SendServerParams()
     iprot_->getTransport()->readEnd();
   }
   Game_SendServerParams_presult result;
+  result.success = &_return;
   result.read(iprot_);
   iprot_->readMessageEnd();
   iprot_->getTransport()->readEnd();
 
-  return;
+  if (result.__isset.success) {
+    // _return pointer has now been filled
+    return;
+  }
+  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendServerParams failed: unknown result");
 }
 
-void GameClient::SendPlayerParams(const PlayerParam& player_param)
+void GameClient::SendPlayerParams(Empty& _return, const PlayerParam& player_param)
 {
   send_SendPlayerParams(player_param);
-  recv_SendPlayerParams();
+  recv_SendPlayerParams(_return);
 }
 
 void GameClient::send_SendPlayerParams(const PlayerParam& player_param)
@@ -1836,7 +2001,7 @@ void GameClient::send_SendPlayerParams(const PlayerParam& player_param)
   oprot_->getTransport()->flush();
 }
 
-void GameClient::recv_SendPlayerParams()
+void GameClient::recv_SendPlayerParams(Empty& _return)
 {
 
   int32_t rseqid = 0;
@@ -1862,17 +2027,22 @@ void GameClient::recv_SendPlayerParams()
     iprot_->getTransport()->readEnd();
   }
   Game_SendPlayerParams_presult result;
+  result.success = &_return;
   result.read(iprot_);
   iprot_->readMessageEnd();
   iprot_->getTransport()->readEnd();
 
-  return;
+  if (result.__isset.success) {
+    // _return pointer has now been filled
+    return;
+  }
+  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendPlayerParams failed: unknown result");
 }
 
-void GameClient::SendPlayerType(const PlayerType& player_type)
+void GameClient::SendPlayerType(Empty& _return, const PlayerType& player_type)
 {
   send_SendPlayerType(player_type);
-  recv_SendPlayerType();
+  recv_SendPlayerType(_return);
 }
 
 void GameClient::send_SendPlayerType(const PlayerType& player_type)
@@ -1889,7 +2059,7 @@ void GameClient::send_SendPlayerType(const PlayerType& player_type)
   oprot_->getTransport()->flush();
 }
 
-void GameClient::recv_SendPlayerType()
+void GameClient::recv_SendPlayerType(Empty& _return)
 {
 
   int32_t rseqid = 0;
@@ -1915,11 +2085,16 @@ void GameClient::recv_SendPlayerType()
     iprot_->getTransport()->readEnd();
   }
   Game_SendPlayerType_presult result;
+  result.success = &_return;
   result.read(iprot_);
   iprot_->readMessageEnd();
   iprot_->getTransport()->readEnd();
 
-  return;
+  if (result.__isset.success) {
+    // _return pointer has now been filled
+    return;
+  }
+  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendPlayerType failed: unknown result");
 }
 
 void GameClient::GetInitMessage(InitMessageFromServer& _return, const Empty& empty)
@@ -1980,10 +2155,10 @@ void GameClient::recv_GetInitMessage(InitMessageFromServer& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "GetInitMessage failed: unknown result");
 }
 
-void GameClient::SendByeCommand(const Empty& empty)
+void GameClient::SendByeCommand(Empty& _return, const Empty& empty)
 {
   send_SendByeCommand(empty);
-  recv_SendByeCommand();
+  recv_SendByeCommand(_return);
 }
 
 void GameClient::send_SendByeCommand(const Empty& empty)
@@ -2000,7 +2175,7 @@ void GameClient::send_SendByeCommand(const Empty& empty)
   oprot_->getTransport()->flush();
 }
 
-void GameClient::recv_SendByeCommand()
+void GameClient::recv_SendByeCommand(Empty& _return)
 {
 
   int32_t rseqid = 0;
@@ -2026,11 +2201,16 @@ void GameClient::recv_SendByeCommand()
     iprot_->getTransport()->readEnd();
   }
   Game_SendByeCommand_presult result;
+  result.success = &_return;
   result.read(iprot_);
   iprot_->readMessageEnd();
   iprot_->getTransport()->readEnd();
 
-  return;
+  if (result.__isset.success) {
+    // _return pointer has now been filled
+    return;
+  }
+  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendByeCommand failed: unknown result");
 }
 
 bool GameProcessor::dispatchCall(::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, const std::string& fname, int32_t seqid, void* callContext) {
@@ -2237,7 +2417,8 @@ void GameProcessor::process_SendInitMessage(int32_t seqid, ::apache::thrift::pro
 
   Game_SendInitMessage_result result;
   try {
-    iface_->SendInitMessage(args.init_message);
+    iface_->SendInitMessage(result.success, args.init_message);
+    result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
       this->eventHandler_->handlerError(ctx, "Game.SendInitMessage");
@@ -2290,7 +2471,8 @@ void GameProcessor::process_SendServerParams(int32_t seqid, ::apache::thrift::pr
 
   Game_SendServerParams_result result;
   try {
-    iface_->SendServerParams(args.server_param);
+    iface_->SendServerParams(result.success, args.server_param);
+    result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
       this->eventHandler_->handlerError(ctx, "Game.SendServerParams");
@@ -2343,7 +2525,8 @@ void GameProcessor::process_SendPlayerParams(int32_t seqid, ::apache::thrift::pr
 
   Game_SendPlayerParams_result result;
   try {
-    iface_->SendPlayerParams(args.player_param);
+    iface_->SendPlayerParams(result.success, args.player_param);
+    result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
       this->eventHandler_->handlerError(ctx, "Game.SendPlayerParams");
@@ -2396,7 +2579,8 @@ void GameProcessor::process_SendPlayerType(int32_t seqid, ::apache::thrift::prot
 
   Game_SendPlayerType_result result;
   try {
-    iface_->SendPlayerType(args.player_type);
+    iface_->SendPlayerType(result.success, args.player_type);
+    result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
       this->eventHandler_->handlerError(ctx, "Game.SendPlayerType");
@@ -2503,7 +2687,8 @@ void GameProcessor::process_SendByeCommand(int32_t seqid, ::apache::thrift::prot
 
   Game_SendByeCommand_result result;
   try {
-    iface_->SendByeCommand(args.empty);
+    iface_->SendByeCommand(result.success, args.empty);
+    result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
       this->eventHandler_->handlerError(ctx, "Game.SendByeCommand");
@@ -2792,10 +2977,10 @@ void GameConcurrentClient::recv_GetTrainerActions(TrainerActions& _return, const
   } // end while(true)
 }
 
-void GameConcurrentClient::SendInitMessage(const InitMessage& init_message)
+void GameConcurrentClient::SendInitMessage(Empty& _return, const InitMessage& init_message)
 {
   int32_t seqid = send_SendInitMessage(init_message);
-  recv_SendInitMessage(seqid);
+  recv_SendInitMessage(_return, seqid);
 }
 
 int32_t GameConcurrentClient::send_SendInitMessage(const InitMessage& init_message)
@@ -2816,7 +3001,7 @@ int32_t GameConcurrentClient::send_SendInitMessage(const InitMessage& init_messa
   return cseqid;
 }
 
-void GameConcurrentClient::recv_SendInitMessage(const int32_t seqid)
+void GameConcurrentClient::recv_SendInitMessage(Empty& _return, const int32_t seqid)
 {
 
   int32_t rseqid = 0;
@@ -2855,12 +3040,18 @@ void GameConcurrentClient::recv_SendInitMessage(const int32_t seqid)
         throw TProtocolException(TProtocolException::INVALID_DATA);
       }
       Game_SendInitMessage_presult result;
+      result.success = &_return;
       result.read(iprot_);
       iprot_->readMessageEnd();
       iprot_->getTransport()->readEnd();
 
-      sentry.commit();
-      return;
+      if (result.__isset.success) {
+        // _return pointer has now been filled
+        sentry.commit();
+        return;
+      }
+      // in a bad state, don't commit
+      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendInitMessage failed: unknown result");
     }
     // seqid != rseqid
     this->sync_->updatePending(fname, mtype, rseqid);
@@ -2870,10 +3061,10 @@ void GameConcurrentClient::recv_SendInitMessage(const int32_t seqid)
   } // end while(true)
 }
 
-void GameConcurrentClient::SendServerParams(const ServerParam& server_param)
+void GameConcurrentClient::SendServerParams(Empty& _return, const ServerParam& server_param)
 {
   int32_t seqid = send_SendServerParams(server_param);
-  recv_SendServerParams(seqid);
+  recv_SendServerParams(_return, seqid);
 }
 
 int32_t GameConcurrentClient::send_SendServerParams(const ServerParam& server_param)
@@ -2894,7 +3085,7 @@ int32_t GameConcurrentClient::send_SendServerParams(const ServerParam& server_pa
   return cseqid;
 }
 
-void GameConcurrentClient::recv_SendServerParams(const int32_t seqid)
+void GameConcurrentClient::recv_SendServerParams(Empty& _return, const int32_t seqid)
 {
 
   int32_t rseqid = 0;
@@ -2933,12 +3124,18 @@ void GameConcurrentClient::recv_SendServerParams(const int32_t seqid)
         throw TProtocolException(TProtocolException::INVALID_DATA);
       }
       Game_SendServerParams_presult result;
+      result.success = &_return;
       result.read(iprot_);
       iprot_->readMessageEnd();
       iprot_->getTransport()->readEnd();
 
-      sentry.commit();
-      return;
+      if (result.__isset.success) {
+        // _return pointer has now been filled
+        sentry.commit();
+        return;
+      }
+      // in a bad state, don't commit
+      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendServerParams failed: unknown result");
     }
     // seqid != rseqid
     this->sync_->updatePending(fname, mtype, rseqid);
@@ -2948,10 +3145,10 @@ void GameConcurrentClient::recv_SendServerParams(const int32_t seqid)
   } // end while(true)
 }
 
-void GameConcurrentClient::SendPlayerParams(const PlayerParam& player_param)
+void GameConcurrentClient::SendPlayerParams(Empty& _return, const PlayerParam& player_param)
 {
   int32_t seqid = send_SendPlayerParams(player_param);
-  recv_SendPlayerParams(seqid);
+  recv_SendPlayerParams(_return, seqid);
 }
 
 int32_t GameConcurrentClient::send_SendPlayerParams(const PlayerParam& player_param)
@@ -2972,7 +3169,7 @@ int32_t GameConcurrentClient::send_SendPlayerParams(const PlayerParam& player_pa
   return cseqid;
 }
 
-void GameConcurrentClient::recv_SendPlayerParams(const int32_t seqid)
+void GameConcurrentClient::recv_SendPlayerParams(Empty& _return, const int32_t seqid)
 {
 
   int32_t rseqid = 0;
@@ -3011,12 +3208,18 @@ void GameConcurrentClient::recv_SendPlayerParams(const int32_t seqid)
         throw TProtocolException(TProtocolException::INVALID_DATA);
       }
       Game_SendPlayerParams_presult result;
+      result.success = &_return;
       result.read(iprot_);
       iprot_->readMessageEnd();
       iprot_->getTransport()->readEnd();
 
-      sentry.commit();
-      return;
+      if (result.__isset.success) {
+        // _return pointer has now been filled
+        sentry.commit();
+        return;
+      }
+      // in a bad state, don't commit
+      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendPlayerParams failed: unknown result");
     }
     // seqid != rseqid
     this->sync_->updatePending(fname, mtype, rseqid);
@@ -3026,10 +3229,10 @@ void GameConcurrentClient::recv_SendPlayerParams(const int32_t seqid)
   } // end while(true)
 }
 
-void GameConcurrentClient::SendPlayerType(const PlayerType& player_type)
+void GameConcurrentClient::SendPlayerType(Empty& _return, const PlayerType& player_type)
 {
   int32_t seqid = send_SendPlayerType(player_type);
-  recv_SendPlayerType(seqid);
+  recv_SendPlayerType(_return, seqid);
 }
 
 int32_t GameConcurrentClient::send_SendPlayerType(const PlayerType& player_type)
@@ -3050,7 +3253,7 @@ int32_t GameConcurrentClient::send_SendPlayerType(const PlayerType& player_type)
   return cseqid;
 }
 
-void GameConcurrentClient::recv_SendPlayerType(const int32_t seqid)
+void GameConcurrentClient::recv_SendPlayerType(Empty& _return, const int32_t seqid)
 {
 
   int32_t rseqid = 0;
@@ -3089,12 +3292,18 @@ void GameConcurrentClient::recv_SendPlayerType(const int32_t seqid)
         throw TProtocolException(TProtocolException::INVALID_DATA);
       }
       Game_SendPlayerType_presult result;
+      result.success = &_return;
       result.read(iprot_);
       iprot_->readMessageEnd();
       iprot_->getTransport()->readEnd();
 
-      sentry.commit();
-      return;
+      if (result.__isset.success) {
+        // _return pointer has now been filled
+        sentry.commit();
+        return;
+      }
+      // in a bad state, don't commit
+      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendPlayerType failed: unknown result");
     }
     // seqid != rseqid
     this->sync_->updatePending(fname, mtype, rseqid);
@@ -3188,10 +3397,10 @@ void GameConcurrentClient::recv_GetInitMessage(InitMessageFromServer& _return, c
   } // end while(true)
 }
 
-void GameConcurrentClient::SendByeCommand(const Empty& empty)
+void GameConcurrentClient::SendByeCommand(Empty& _return, const Empty& empty)
 {
   int32_t seqid = send_SendByeCommand(empty);
-  recv_SendByeCommand(seqid);
+  recv_SendByeCommand(_return, seqid);
 }
 
 int32_t GameConcurrentClient::send_SendByeCommand(const Empty& empty)
@@ -3212,7 +3421,7 @@ int32_t GameConcurrentClient::send_SendByeCommand(const Empty& empty)
   return cseqid;
 }
 
-void GameConcurrentClient::recv_SendByeCommand(const int32_t seqid)
+void GameConcurrentClient::recv_SendByeCommand(Empty& _return, const int32_t seqid)
 {
 
   int32_t rseqid = 0;
@@ -3251,12 +3460,18 @@ void GameConcurrentClient::recv_SendByeCommand(const int32_t seqid)
         throw TProtocolException(TProtocolException::INVALID_DATA);
       }
       Game_SendByeCommand_presult result;
+      result.success = &_return;
       result.read(iprot_);
       iprot_->readMessageEnd();
       iprot_->getTransport()->readEnd();
 
-      sentry.commit();
-      return;
+      if (result.__isset.success) {
+        // _return pointer has now been filled
+        sentry.commit();
+        return;
+      }
+      // in a bad state, don't commit
+      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendByeCommand failed: unknown result");
     }
     // seqid != rseqid
     this->sync_->updatePending(fname, mtype, rseqid);

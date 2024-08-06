@@ -25,11 +25,13 @@ void RpcAgent::sendParams(bool offline_logging)
 {
     if (!param_sent)
     {
+        LOG("sendParams Started");
         sendServerParam();
         sendPlayerParams();
         sendPlayerType();
         sendInitMessage(offline_logging);
         param_sent = true;
+        LOG("sendParams Done");
     }
 }
 void RpcAgent::sendServerParam() const
@@ -279,7 +281,8 @@ void RpcAgent::sendServerParam() const
 
     try{
         transport->open();
-        client->send_SendServerParams(serverParam);
+        soccer::Empty empty;
+        client->SendServerParams(empty, serverParam);
     }
     catch(const std::exception& e){
         std::cout << "SendServerParams rpc failed." << std::endl
@@ -291,9 +294,10 @@ void RpcAgent::sendServerParam() const
 
 void RpcAgent::sendPlayerParams() const
 {
+    LOG("sendPlayerParams Started");
     soccer::PlayerParam playerParam;
     const rcsc::PlayerParam &PP = rcsc::PlayerParam::i();
-
+    playerParam.agent_type = this->agent_type;
     playerParam.player_types = PP.playerTypes();
     playerParam.subs_max = PP.subsMax();
     playerParam.pt_max = PP.ptMax();
@@ -326,7 +330,8 @@ void RpcAgent::sendPlayerParams() const
 
     try{
         transport->open();
-        client->SendPlayerParams(playerParam);
+        soccer::Empty empty;
+        client->SendPlayerParams(empty, playerParam);
     }
     catch(const std::exception& e){
         std::cout << "SendPlayerParams rpc failed." << std::endl
@@ -338,10 +343,9 @@ void RpcAgent::sendPlayerParams() const
 
 void RpcAgent::sendPlayerType() const
 {
+    LOG("sendPlayerType Started");
     const rcsc::PlayerParam &PP = rcsc::PlayerParam::i();
     const rcsc::PlayerTypeSet &PT = rcsc::PlayerTypeSet::i();
-    LOG("pt");
-    LOG(PT.playerTypeMap().size());
     for (int i = 0; i < PT.playerTypeMap().size(); i++)
     {
         LOG(i);
@@ -383,9 +387,10 @@ void RpcAgent::sendPlayerType() const
         playerTypeGrpc.cycles_to_reach_max_speed = playerType->cyclesToReachMaxSpeed();
 
         try{
+            soccer::Empty empty;
             playerTypeGrpc.agent_type = this->agent_type;
             transport->open();
-            client->SendPlayerType(playerTypeGrpc);
+            client->SendPlayerType(empty, playerTypeGrpc);
         }
         catch(const std::exception& e){
             std::cout << "SendPlayerType rpc failed. id=" << i << std::endl
@@ -404,7 +409,7 @@ void RpcAgent::sendInitMessage(bool offline_logging) const
     initMessage.agent_type = this->agent_type;
     try{
         transport->open();
-        client->SendInitMessage(initMessage);
+        client->SendInitMessage(empty, initMessage);
     }
     catch(const std::exception& e){
         std::cout << "sendInitMessage rpc failed." << std::endl
@@ -439,8 +444,9 @@ void RpcAgent::sendByeCommand() const
 {
     try{
         soccer::Empty empty;
+        soccer::Empty empty2;
         transport->open();
-        client->SendByeCommand(empty);
+        client->SendByeCommand(empty, empty2);
     }
     catch(const std::exception& e){
         std::cout << "SendByeCommand rpc failed." << std::endl

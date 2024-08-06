@@ -35,22 +35,22 @@ class GameHandler : virtual public GameIf {
     printf("GetTrainerActions\n");
   }
 
-  void SendInitMessage(const InitMessage& init_message) {
+  void SendInitMessage(Empty& _return, const InitMessage& init_message) {
     // Your implementation goes here
     printf("SendInitMessage\n");
   }
 
-  void SendServerParams(const ServerParam& server_param) {
+  void SendServerParams(Empty& _return, const ServerParam& server_param) {
     // Your implementation goes here
     printf("SendServerParams\n");
   }
 
-  void SendPlayerParams(const PlayerParam& player_param) {
+  void SendPlayerParams(Empty& _return, const PlayerParam& player_param) {
     // Your implementation goes here
     printf("SendPlayerParams\n");
   }
 
-  void SendPlayerType(const PlayerType& player_type) {
+  void SendPlayerType(Empty& _return, const PlayerType& player_type) {
     // Your implementation goes here
     printf("SendPlayerType\n");
   }
@@ -60,7 +60,7 @@ class GameHandler : virtual public GameIf {
     printf("GetInitMessage\n");
   }
 
-  void SendByeCommand(const Empty& empty) {
+  void SendByeCommand(Empty& _return, const Empty& empty) {
     // Your implementation goes here
     printf("SendByeCommand\n");
   }

@@ -15,8 +15,8 @@
 #include <thrift/transport/TSocket.h>
 #include <thrift/transport/TBufferTransports.h>
 #include <thrift/protocol/TBinaryProtocol.h>
-#include "../thrift-generated/Game.h"
-#include "../thrift-generated/soccer_service_types.h"
+#include "thrift-generated/Game.h"
+#include "thrift-generated/soccer_service_types.h"
 using namespace apache::thrift;
 using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;
