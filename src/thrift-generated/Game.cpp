@@ -36,6 +36,14 @@ uint32_t Game_GetPlayerActions_args::read(::apache::thrift::protocol::TProtocol*
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
           xfer += this->state.read(iprot);
           this->__isset.state = true;
         } else {
@@ -59,7 +67,11 @@ uint32_t Game_GetPlayerActions_args::write(::apache::thrift::protocol::TProtocol
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_GetPlayerActions_args");
 
-  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += this->state.write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -78,7 +90,11 @@ uint32_t Game_GetPlayerActions_pargs::write(::apache::thrift::protocol::TProtoco
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_GetPlayerActions_pargs");
 
-  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += (*(this->register_response)).write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += (*(this->state)).write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -223,6 +239,14 @@ uint32_t Game_GetCoachActions_args::read(::apache::thrift::protocol::TProtocol* 
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
           xfer += this->state.read(iprot);
           this->__isset.state = true;
         } else {
@@ -246,7 +270,11 @@ uint32_t Game_GetCoachActions_args::write(::apache::thrift::protocol::TProtocol*
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_GetCoachActions_args");
 
-  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += this->state.write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -265,7 +293,11 @@ uint32_t Game_GetCoachActions_pargs::write(::apache::thrift::protocol::TProtocol
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_GetCoachActions_pargs");
 
-  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += (*(this->register_response)).write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += (*(this->state)).write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -410,6 +442,14 @@ uint32_t Game_GetTrainerActions_args::read(::apache::thrift::protocol::TProtocol
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
           xfer += this->state.read(iprot);
           this->__isset.state = true;
         } else {
@@ -433,7 +473,11 @@ uint32_t Game_GetTrainerActions_args::write(::apache::thrift::protocol::TProtoco
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_GetTrainerActions_args");
 
-  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += this->state.write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -452,7 +496,11 @@ uint32_t Game_GetTrainerActions_pargs::write(::apache::thrift::protocol::TProtoc
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_GetTrainerActions_pargs");
 
-  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += (*(this->register_response)).write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("state", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += (*(this->state)).write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -597,6 +645,14 @@ uint32_t Game_SendInitMessage_args::read(::apache::thrift::protocol::TProtocol* 
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
           xfer += this->init_message.read(iprot);
           this->__isset.init_message = true;
         } else {
@@ -620,7 +676,11 @@ uint32_t Game_SendInitMessage_args::write(::apache::thrift::protocol::TProtocol*
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_SendInitMessage_args");
 
-  xfer += oprot->writeFieldBegin("init_message", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("init_message", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += this->init_message.write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -639,7 +699,11 @@ uint32_t Game_SendInitMessage_pargs::write(::apache::thrift::protocol::TProtocol
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_SendInitMessage_pargs");
 
-  xfer += oprot->writeFieldBegin("init_message", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += (*(this->register_response)).write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("init_message", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += (*(this->init_message)).write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -784,6 +848,14 @@ uint32_t Game_SendServerParams_args::read(::apache::thrift::protocol::TProtocol*
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
           xfer += this->server_param.read(iprot);
           this->__isset.server_param = true;
         } else {
@@ -807,7 +879,11 @@ uint32_t Game_SendServerParams_args::write(::apache::thrift::protocol::TProtocol
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_SendServerParams_args");
 
-  xfer += oprot->writeFieldBegin("server_param", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("server_param", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += this->server_param.write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -826,7 +902,11 @@ uint32_t Game_SendServerParams_pargs::write(::apache::thrift::protocol::TProtoco
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_SendServerParams_pargs");
 
-  xfer += oprot->writeFieldBegin("server_param", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += (*(this->register_response)).write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("server_param", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += (*(this->server_param)).write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -971,6 +1051,14 @@ uint32_t Game_SendPlayerParams_args::read(::apache::thrift::protocol::TProtocol*
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
           xfer += this->player_param.read(iprot);
           this->__isset.player_param = true;
         } else {
@@ -994,7 +1082,11 @@ uint32_t Game_SendPlayerParams_args::write(::apache::thrift::protocol::TProtocol
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_SendPlayerParams_args");
 
-  xfer += oprot->writeFieldBegin("player_param", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("player_param", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += this->player_param.write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -1013,7 +1105,11 @@ uint32_t Game_SendPlayerParams_pargs::write(::apache::thrift::protocol::TProtoco
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_SendPlayerParams_pargs");
 
-  xfer += oprot->writeFieldBegin("player_param", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += (*(this->register_response)).write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("player_param", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += (*(this->player_param)).write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -1158,6 +1254,14 @@ uint32_t Game_SendPlayerType_args::read(::apache::thrift::protocol::TProtocol* i
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
           xfer += this->player_type.read(iprot);
           this->__isset.player_type = true;
         } else {
@@ -1181,7 +1285,11 @@ uint32_t Game_SendPlayerType_args::write(::apache::thrift::protocol::TProtocol* 
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_SendPlayerType_args");
 
-  xfer += oprot->writeFieldBegin("player_type", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("player_type", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += this->player_type.write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -1200,7 +1308,11 @@ uint32_t Game_SendPlayerType_pargs::write(::apache::thrift::protocol::TProtocol*
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_SendPlayerType_pargs");
 
-  xfer += oprot->writeFieldBegin("player_type", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += (*(this->register_response)).write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("player_type", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += (*(this->player_type)).write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -1318,11 +1430,11 @@ uint32_t Game_SendPlayerType_presult::read(::apache::thrift::protocol::TProtocol
 }
 
 
-Game_GetInitMessage_args::~Game_GetInitMessage_args() noexcept {
+Game_Register_args::~Game_Register_args() noexcept {
 }
 
 
-uint32_t Game_GetInitMessage_args::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t Game_Register_args::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   ::apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -1345,8 +1457,8 @@ uint32_t Game_GetInitMessage_args::read(::apache::thrift::protocol::TProtocol* i
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
-          xfer += this->empty.read(iprot);
-          this->__isset.empty = true;
+          xfer += this->request.read(iprot);
+          this->__isset.request = true;
         } else {
           xfer += iprot->skip(ftype);
         }
@@ -1363,13 +1475,13 @@ uint32_t Game_GetInitMessage_args::read(::apache::thrift::protocol::TProtocol* i
   return xfer;
 }
 
-uint32_t Game_GetInitMessage_args::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t Game_Register_args::write(::apache::thrift::protocol::TProtocol* oprot) const {
   uint32_t xfer = 0;
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
-  xfer += oprot->writeStructBegin("Game_GetInitMessage_args");
+  xfer += oprot->writeStructBegin("Game_Register_args");
 
-  xfer += oprot->writeFieldBegin("empty", ::apache::thrift::protocol::T_STRUCT, 1);
-  xfer += this->empty.write(oprot);
+  xfer += oprot->writeFieldBegin("request", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->request.write(oprot);
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldStop();
@@ -1378,17 +1490,17 @@ uint32_t Game_GetInitMessage_args::write(::apache::thrift::protocol::TProtocol* 
 }
 
 
-Game_GetInitMessage_pargs::~Game_GetInitMessage_pargs() noexcept {
+Game_Register_pargs::~Game_Register_pargs() noexcept {
 }
 
 
-uint32_t Game_GetInitMessage_pargs::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t Game_Register_pargs::write(::apache::thrift::protocol::TProtocol* oprot) const {
   uint32_t xfer = 0;
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
-  xfer += oprot->writeStructBegin("Game_GetInitMessage_pargs");
+  xfer += oprot->writeStructBegin("Game_Register_pargs");
 
-  xfer += oprot->writeFieldBegin("empty", ::apache::thrift::protocol::T_STRUCT, 1);
-  xfer += (*(this->empty)).write(oprot);
+  xfer += oprot->writeFieldBegin("request", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += (*(this->request)).write(oprot);
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldStop();
@@ -1397,11 +1509,11 @@ uint32_t Game_GetInitMessage_pargs::write(::apache::thrift::protocol::TProtocol*
 }
 
 
-Game_GetInitMessage_result::~Game_GetInitMessage_result() noexcept {
+Game_Register_result::~Game_Register_result() noexcept {
 }
 
 
-uint32_t Game_GetInitMessage_result::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t Game_Register_result::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   ::apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -1442,11 +1554,11 @@ uint32_t Game_GetInitMessage_result::read(::apache::thrift::protocol::TProtocol*
   return xfer;
 }
 
-uint32_t Game_GetInitMessage_result::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t Game_Register_result::write(::apache::thrift::protocol::TProtocol* oprot) const {
 
   uint32_t xfer = 0;
 
-  xfer += oprot->writeStructBegin("Game_GetInitMessage_result");
+  xfer += oprot->writeStructBegin("Game_Register_result");
 
   if (this->__isset.success) {
     xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_STRUCT, 0);
@@ -1459,11 +1571,11 @@ uint32_t Game_GetInitMessage_result::write(::apache::thrift::protocol::TProtocol
 }
 
 
-Game_GetInitMessage_presult::~Game_GetInitMessage_presult() noexcept {
+Game_Register_presult::~Game_Register_presult() noexcept {
 }
 
 
-uint32_t Game_GetInitMessage_presult::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t Game_Register_presult::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   ::apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -1532,8 +1644,8 @@ uint32_t Game_SendByeCommand_args::read(::apache::thrift::protocol::TProtocol* i
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
-          xfer += this->empty.read(iprot);
-          this->__isset.empty = true;
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
         } else {
           xfer += iprot->skip(ftype);
         }
@@ -1555,8 +1667,8 @@ uint32_t Game_SendByeCommand_args::write(::apache::thrift::protocol::TProtocol* 
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_SendByeCommand_args");
 
-  xfer += oprot->writeFieldBegin("empty", ::apache::thrift::protocol::T_STRUCT, 1);
-  xfer += this->empty.write(oprot);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldStop();
@@ -1574,8 +1686,8 @@ uint32_t Game_SendByeCommand_pargs::write(::apache::thrift::protocol::TProtocol*
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("Game_SendByeCommand_pargs");
 
-  xfer += oprot->writeFieldBegin("empty", ::apache::thrift::protocol::T_STRUCT, 1);
-  xfer += (*(this->empty)).write(oprot);
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += (*(this->register_response)).write(oprot);
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldStop();
@@ -1691,18 +1803,19 @@ uint32_t Game_SendByeCommand_presult::read(::apache::thrift::protocol::TProtocol
   return xfer;
 }
 
-void GameClient::GetPlayerActions(PlayerActions& _return, const State& state)
+void GameClient::GetPlayerActions(PlayerActions& _return, const RegisterResponse& register_response, const State& state)
 {
-  send_GetPlayerActions(state);
+  send_GetPlayerActions(register_response, state);
   recv_GetPlayerActions(_return);
 }
 
-void GameClient::send_GetPlayerActions(const State& state)
+void GameClient::send_GetPlayerActions(const RegisterResponse& register_response, const State& state)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("GetPlayerActions", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_GetPlayerActions_pargs args;
+  args.register_response = &register_response;
   args.state = &state;
   args.write(oprot_);
 
@@ -1749,18 +1862,19 @@ void GameClient::recv_GetPlayerActions(PlayerActions& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "GetPlayerActions failed: unknown result");
 }
 
-void GameClient::GetCoachActions(CoachActions& _return, const State& state)
+void GameClient::GetCoachActions(CoachActions& _return, const RegisterResponse& register_response, const State& state)
 {
-  send_GetCoachActions(state);
+  send_GetCoachActions(register_response, state);
   recv_GetCoachActions(_return);
 }
 
-void GameClient::send_GetCoachActions(const State& state)
+void GameClient::send_GetCoachActions(const RegisterResponse& register_response, const State& state)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("GetCoachActions", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_GetCoachActions_pargs args;
+  args.register_response = &register_response;
   args.state = &state;
   args.write(oprot_);
 
@@ -1807,18 +1921,19 @@ void GameClient::recv_GetCoachActions(CoachActions& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "GetCoachActions failed: unknown result");
 }
 
-void GameClient::GetTrainerActions(TrainerActions& _return, const State& state)
+void GameClient::GetTrainerActions(TrainerActions& _return, const RegisterResponse& register_response, const State& state)
 {
-  send_GetTrainerActions(state);
+  send_GetTrainerActions(register_response, state);
   recv_GetTrainerActions(_return);
 }
 
-void GameClient::send_GetTrainerActions(const State& state)
+void GameClient::send_GetTrainerActions(const RegisterResponse& register_response, const State& state)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("GetTrainerActions", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_GetTrainerActions_pargs args;
+  args.register_response = &register_response;
   args.state = &state;
   args.write(oprot_);
 
@@ -1865,18 +1980,19 @@ void GameClient::recv_GetTrainerActions(TrainerActions& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "GetTrainerActions failed: unknown result");
 }
 
-void GameClient::SendInitMessage(Empty& _return, const InitMessage& init_message)
+void GameClient::SendInitMessage(Empty& _return, const RegisterResponse& register_response, const InitMessage& init_message)
 {
-  send_SendInitMessage(init_message);
+  send_SendInitMessage(register_response, init_message);
   recv_SendInitMessage(_return);
 }
 
-void GameClient::send_SendInitMessage(const InitMessage& init_message)
+void GameClient::send_SendInitMessage(const RegisterResponse& register_response, const InitMessage& init_message)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("SendInitMessage", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_SendInitMessage_pargs args;
+  args.register_response = &register_response;
   args.init_message = &init_message;
   args.write(oprot_);
 
@@ -1923,18 +2039,19 @@ void GameClient::recv_SendInitMessage(Empty& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendInitMessage failed: unknown result");
 }
 
-void GameClient::SendServerParams(Empty& _return, const ServerParam& server_param)
+void GameClient::SendServerParams(Empty& _return, const RegisterResponse& register_response, const ServerParam& server_param)
 {
-  send_SendServerParams(server_param);
+  send_SendServerParams(register_response, server_param);
   recv_SendServerParams(_return);
 }
 
-void GameClient::send_SendServerParams(const ServerParam& server_param)
+void GameClient::send_SendServerParams(const RegisterResponse& register_response, const ServerParam& server_param)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("SendServerParams", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_SendServerParams_pargs args;
+  args.register_response = &register_response;
   args.server_param = &server_param;
   args.write(oprot_);
 
@@ -1981,18 +2098,19 @@ void GameClient::recv_SendServerParams(Empty& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendServerParams failed: unknown result");
 }
 
-void GameClient::SendPlayerParams(Empty& _return, const PlayerParam& player_param)
+void GameClient::SendPlayerParams(Empty& _return, const RegisterResponse& register_response, const PlayerParam& player_param)
 {
-  send_SendPlayerParams(player_param);
+  send_SendPlayerParams(register_response, player_param);
   recv_SendPlayerParams(_return);
 }
 
-void GameClient::send_SendPlayerParams(const PlayerParam& player_param)
+void GameClient::send_SendPlayerParams(const RegisterResponse& register_response, const PlayerParam& player_param)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("SendPlayerParams", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_SendPlayerParams_pargs args;
+  args.register_response = &register_response;
   args.player_param = &player_param;
   args.write(oprot_);
 
@@ -2039,18 +2157,19 @@ void GameClient::recv_SendPlayerParams(Empty& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendPlayerParams failed: unknown result");
 }
 
-void GameClient::SendPlayerType(Empty& _return, const PlayerType& player_type)
+void GameClient::SendPlayerType(Empty& _return, const RegisterResponse& register_response, const PlayerType& player_type)
 {
-  send_SendPlayerType(player_type);
+  send_SendPlayerType(register_response, player_type);
   recv_SendPlayerType(_return);
 }
 
-void GameClient::send_SendPlayerType(const PlayerType& player_type)
+void GameClient::send_SendPlayerType(const RegisterResponse& register_response, const PlayerType& player_type)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("SendPlayerType", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_SendPlayerType_pargs args;
+  args.register_response = &register_response;
   args.player_type = &player_type;
   args.write(oprot_);
 
@@ -2097,19 +2216,19 @@ void GameClient::recv_SendPlayerType(Empty& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "SendPlayerType failed: unknown result");
 }
 
-void GameClient::GetInitMessage(InitMessageFromServer& _return, const Empty& empty)
+void GameClient::Register(RegisterResponse& _return, const RegisterRequest& request)
 {
-  send_GetInitMessage(empty);
-  recv_GetInitMessage(_return);
+  send_Register(request);
+  recv_Register(_return);
 }
 
-void GameClient::send_GetInitMessage(const Empty& empty)
+void GameClient::send_Register(const RegisterRequest& request)
 {
   int32_t cseqid = 0;
-  oprot_->writeMessageBegin("GetInitMessage", ::apache::thrift::protocol::T_CALL, cseqid);
+  oprot_->writeMessageBegin("Register", ::apache::thrift::protocol::T_CALL, cseqid);
 
-  Game_GetInitMessage_pargs args;
-  args.empty = &empty;
+  Game_Register_pargs args;
+  args.request = &request;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();
@@ -2117,7 +2236,7 @@ void GameClient::send_GetInitMessage(const Empty& empty)
   oprot_->getTransport()->flush();
 }
 
-void GameClient::recv_GetInitMessage(InitMessageFromServer& _return)
+void GameClient::recv_Register(RegisterResponse& _return)
 {
 
   int32_t rseqid = 0;
@@ -2137,12 +2256,12 @@ void GameClient::recv_GetInitMessage(InitMessageFromServer& _return)
     iprot_->readMessageEnd();
     iprot_->getTransport()->readEnd();
   }
-  if (fname.compare("GetInitMessage") != 0) {
+  if (fname.compare("Register") != 0) {
     iprot_->skip(::apache::thrift::protocol::T_STRUCT);
     iprot_->readMessageEnd();
     iprot_->getTransport()->readEnd();
   }
-  Game_GetInitMessage_presult result;
+  Game_Register_presult result;
   result.success = &_return;
   result.read(iprot_);
   iprot_->readMessageEnd();
@@ -2152,22 +2271,22 @@ void GameClient::recv_GetInitMessage(InitMessageFromServer& _return)
     // _return pointer has now been filled
     return;
   }
-  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "GetInitMessage failed: unknown result");
+  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "Register failed: unknown result");
 }
 
-void GameClient::SendByeCommand(Empty& _return, const Empty& empty)
+void GameClient::SendByeCommand(Empty& _return, const RegisterResponse& register_response)
 {
-  send_SendByeCommand(empty);
+  send_SendByeCommand(register_response);
   recv_SendByeCommand(_return);
 }
 
-void GameClient::send_SendByeCommand(const Empty& empty)
+void GameClient::send_SendByeCommand(const RegisterResponse& register_response)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("SendByeCommand", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_SendByeCommand_pargs args;
-  args.empty = &empty;
+  args.register_response = &register_response;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();
@@ -2255,7 +2374,7 @@ void GameProcessor::process_GetPlayerActions(int32_t seqid, ::apache::thrift::pr
 
   Game_GetPlayerActions_result result;
   try {
-    iface_->GetPlayerActions(result.success, args.state);
+    iface_->GetPlayerActions(result.success, args.register_response, args.state);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
@@ -2309,7 +2428,7 @@ void GameProcessor::process_GetCoachActions(int32_t seqid, ::apache::thrift::pro
 
   Game_GetCoachActions_result result;
   try {
-    iface_->GetCoachActions(result.success, args.state);
+    iface_->GetCoachActions(result.success, args.register_response, args.state);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
@@ -2363,7 +2482,7 @@ void GameProcessor::process_GetTrainerActions(int32_t seqid, ::apache::thrift::p
 
   Game_GetTrainerActions_result result;
   try {
-    iface_->GetTrainerActions(result.success, args.state);
+    iface_->GetTrainerActions(result.success, args.register_response, args.state);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
@@ -2417,7 +2536,7 @@ void GameProcessor::process_SendInitMessage(int32_t seqid, ::apache::thrift::pro
 
   Game_SendInitMessage_result result;
   try {
-    iface_->SendInitMessage(result.success, args.init_message);
+    iface_->SendInitMessage(result.success, args.register_response, args.init_message);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
@@ -2471,7 +2590,7 @@ void GameProcessor::process_SendServerParams(int32_t seqid, ::apache::thrift::pr
 
   Game_SendServerParams_result result;
   try {
-    iface_->SendServerParams(result.success, args.server_param);
+    iface_->SendServerParams(result.success, args.register_response, args.server_param);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
@@ -2525,7 +2644,7 @@ void GameProcessor::process_SendPlayerParams(int32_t seqid, ::apache::thrift::pr
 
   Game_SendPlayerParams_result result;
   try {
-    iface_->SendPlayerParams(result.success, args.player_param);
+    iface_->SendPlayerParams(result.success, args.register_response, args.player_param);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
@@ -2579,7 +2698,7 @@ void GameProcessor::process_SendPlayerType(int32_t seqid, ::apache::thrift::prot
 
   Game_SendPlayerType_result result;
   try {
-    iface_->SendPlayerType(result.success, args.player_type);
+    iface_->SendPlayerType(result.success, args.register_response, args.player_type);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
@@ -2610,38 +2729,38 @@ void GameProcessor::process_SendPlayerType(int32_t seqid, ::apache::thrift::prot
   }
 }
 
-void GameProcessor::process_GetInitMessage(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext)
+void GameProcessor::process_Register(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext)
 {
   void* ctx = nullptr;
   if (this->eventHandler_.get() != nullptr) {
-    ctx = this->eventHandler_->getContext("Game.GetInitMessage", callContext);
+    ctx = this->eventHandler_->getContext("Game.Register", callContext);
   }
-  ::apache::thrift::TProcessorContextFreer freer(this->eventHandler_.get(), ctx, "Game.GetInitMessage");
+  ::apache::thrift::TProcessorContextFreer freer(this->eventHandler_.get(), ctx, "Game.Register");
 
   if (this->eventHandler_.get() != nullptr) {
-    this->eventHandler_->preRead(ctx, "Game.GetInitMessage");
+    this->eventHandler_->preRead(ctx, "Game.Register");
   }
 
-  Game_GetInitMessage_args args;
+  Game_Register_args args;
   args.read(iprot);
   iprot->readMessageEnd();
   uint32_t bytes = iprot->getTransport()->readEnd();
 
   if (this->eventHandler_.get() != nullptr) {
-    this->eventHandler_->postRead(ctx, "Game.GetInitMessage", bytes);
+    this->eventHandler_->postRead(ctx, "Game.Register", bytes);
   }
 
-  Game_GetInitMessage_result result;
+  Game_Register_result result;
   try {
-    iface_->GetInitMessage(result.success, args.empty);
+    iface_->Register(result.success, args.request);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
-      this->eventHandler_->handlerError(ctx, "Game.GetInitMessage");
+      this->eventHandler_->handlerError(ctx, "Game.Register");
     }
 
     ::apache::thrift::TApplicationException x(e.what());
-    oprot->writeMessageBegin("GetInitMessage", ::apache::thrift::protocol::T_EXCEPTION, seqid);
+    oprot->writeMessageBegin("Register", ::apache::thrift::protocol::T_EXCEPTION, seqid);
     x.write(oprot);
     oprot->writeMessageEnd();
     oprot->getTransport()->writeEnd();
@@ -2650,17 +2769,17 @@ void GameProcessor::process_GetInitMessage(int32_t seqid, ::apache::thrift::prot
   }
 
   if (this->eventHandler_.get() != nullptr) {
-    this->eventHandler_->preWrite(ctx, "Game.GetInitMessage");
+    this->eventHandler_->preWrite(ctx, "Game.Register");
   }
 
-  oprot->writeMessageBegin("GetInitMessage", ::apache::thrift::protocol::T_REPLY, seqid);
+  oprot->writeMessageBegin("Register", ::apache::thrift::protocol::T_REPLY, seqid);
   result.write(oprot);
   oprot->writeMessageEnd();
   bytes = oprot->getTransport()->writeEnd();
   oprot->getTransport()->flush();
 
   if (this->eventHandler_.get() != nullptr) {
-    this->eventHandler_->postWrite(ctx, "Game.GetInitMessage", bytes);
+    this->eventHandler_->postWrite(ctx, "Game.Register", bytes);
   }
 }
 
@@ -2687,7 +2806,7 @@ void GameProcessor::process_SendByeCommand(int32_t seqid, ::apache::thrift::prot
 
   Game_SendByeCommand_result result;
   try {
-    iface_->SendByeCommand(result.success, args.empty);
+    iface_->SendByeCommand(result.success, args.register_response);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != nullptr) {
@@ -2725,19 +2844,20 @@ void GameProcessor::process_SendByeCommand(int32_t seqid, ::apache::thrift::prot
   return processor;
 }
 
-void GameConcurrentClient::GetPlayerActions(PlayerActions& _return, const State& state)
+void GameConcurrentClient::GetPlayerActions(PlayerActions& _return, const RegisterResponse& register_response, const State& state)
 {
-  int32_t seqid = send_GetPlayerActions(state);
+  int32_t seqid = send_GetPlayerActions(register_response, state);
   recv_GetPlayerActions(_return, seqid);
 }
 
-int32_t GameConcurrentClient::send_GetPlayerActions(const State& state)
+int32_t GameConcurrentClient::send_GetPlayerActions(const RegisterResponse& register_response, const State& state)
 {
   int32_t cseqid = this->sync_->generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(this->sync_.get());
   oprot_->writeMessageBegin("GetPlayerActions", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_GetPlayerActions_pargs args;
+  args.register_response = &register_response;
   args.state = &state;
   args.write(oprot_);
 
@@ -2809,19 +2929,20 @@ void GameConcurrentClient::recv_GetPlayerActions(PlayerActions& _return, const i
   } // end while(true)
 }
 
-void GameConcurrentClient::GetCoachActions(CoachActions& _return, const State& state)
+void GameConcurrentClient::GetCoachActions(CoachActions& _return, const RegisterResponse& register_response, const State& state)
 {
-  int32_t seqid = send_GetCoachActions(state);
+  int32_t seqid = send_GetCoachActions(register_response, state);
   recv_GetCoachActions(_return, seqid);
 }
 
-int32_t GameConcurrentClient::send_GetCoachActions(const State& state)
+int32_t GameConcurrentClient::send_GetCoachActions(const RegisterResponse& register_response, const State& state)
 {
   int32_t cseqid = this->sync_->generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(this->sync_.get());
   oprot_->writeMessageBegin("GetCoachActions", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_GetCoachActions_pargs args;
+  args.register_response = &register_response;
   args.state = &state;
   args.write(oprot_);
 
@@ -2893,19 +3014,20 @@ void GameConcurrentClient::recv_GetCoachActions(CoachActions& _return, const int
   } // end while(true)
 }
 
-void GameConcurrentClient::GetTrainerActions(TrainerActions& _return, const State& state)
+void GameConcurrentClient::GetTrainerActions(TrainerActions& _return, const RegisterResponse& register_response, const State& state)
 {
-  int32_t seqid = send_GetTrainerActions(state);
+  int32_t seqid = send_GetTrainerActions(register_response, state);
   recv_GetTrainerActions(_return, seqid);
 }
 
-int32_t GameConcurrentClient::send_GetTrainerActions(const State& state)
+int32_t GameConcurrentClient::send_GetTrainerActions(const RegisterResponse& register_response, const State& state)
 {
   int32_t cseqid = this->sync_->generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(this->sync_.get());
   oprot_->writeMessageBegin("GetTrainerActions", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_GetTrainerActions_pargs args;
+  args.register_response = &register_response;
   args.state = &state;
   args.write(oprot_);
 
@@ -2977,19 +3099,20 @@ void GameConcurrentClient::recv_GetTrainerActions(TrainerActions& _return, const
   } // end while(true)
 }
 
-void GameConcurrentClient::SendInitMessage(Empty& _return, const InitMessage& init_message)
+void GameConcurrentClient::SendInitMessage(Empty& _return, const RegisterResponse& register_response, const InitMessage& init_message)
 {
-  int32_t seqid = send_SendInitMessage(init_message);
+  int32_t seqid = send_SendInitMessage(register_response, init_message);
   recv_SendInitMessage(_return, seqid);
 }
 
-int32_t GameConcurrentClient::send_SendInitMessage(const InitMessage& init_message)
+int32_t GameConcurrentClient::send_SendInitMessage(const RegisterResponse& register_response, const InitMessage& init_message)
 {
   int32_t cseqid = this->sync_->generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(this->sync_.get());
   oprot_->writeMessageBegin("SendInitMessage", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_SendInitMessage_pargs args;
+  args.register_response = &register_response;
   args.init_message = &init_message;
   args.write(oprot_);
 
@@ -3061,19 +3184,20 @@ void GameConcurrentClient::recv_SendInitMessage(Empty& _return, const int32_t se
   } // end while(true)
 }
 
-void GameConcurrentClient::SendServerParams(Empty& _return, const ServerParam& server_param)
+void GameConcurrentClient::SendServerParams(Empty& _return, const RegisterResponse& register_response, const ServerParam& server_param)
 {
-  int32_t seqid = send_SendServerParams(server_param);
+  int32_t seqid = send_SendServerParams(register_response, server_param);
   recv_SendServerParams(_return, seqid);
 }
 
-int32_t GameConcurrentClient::send_SendServerParams(const ServerParam& server_param)
+int32_t GameConcurrentClient::send_SendServerParams(const RegisterResponse& register_response, const ServerParam& server_param)
 {
   int32_t cseqid = this->sync_->generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(this->sync_.get());
   oprot_->writeMessageBegin("SendServerParams", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_SendServerParams_pargs args;
+  args.register_response = &register_response;
   args.server_param = &server_param;
   args.write(oprot_);
 
@@ -3145,19 +3269,20 @@ void GameConcurrentClient::recv_SendServerParams(Empty& _return, const int32_t s
   } // end while(true)
 }
 
-void GameConcurrentClient::SendPlayerParams(Empty& _return, const PlayerParam& player_param)
+void GameConcurrentClient::SendPlayerParams(Empty& _return, const RegisterResponse& register_response, const PlayerParam& player_param)
 {
-  int32_t seqid = send_SendPlayerParams(player_param);
+  int32_t seqid = send_SendPlayerParams(register_response, player_param);
   recv_SendPlayerParams(_return, seqid);
 }
 
-int32_t GameConcurrentClient::send_SendPlayerParams(const PlayerParam& player_param)
+int32_t GameConcurrentClient::send_SendPlayerParams(const RegisterResponse& register_response, const PlayerParam& player_param)
 {
   int32_t cseqid = this->sync_->generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(this->sync_.get());
   oprot_->writeMessageBegin("SendPlayerParams", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_SendPlayerParams_pargs args;
+  args.register_response = &register_response;
   args.player_param = &player_param;
   args.write(oprot_);
 
@@ -3229,19 +3354,20 @@ void GameConcurrentClient::recv_SendPlayerParams(Empty& _return, const int32_t s
   } // end while(true)
 }
 
-void GameConcurrentClient::SendPlayerType(Empty& _return, const PlayerType& player_type)
+void GameConcurrentClient::SendPlayerType(Empty& _return, const RegisterResponse& register_response, const PlayerType& player_type)
 {
-  int32_t seqid = send_SendPlayerType(player_type);
+  int32_t seqid = send_SendPlayerType(register_response, player_type);
   recv_SendPlayerType(_return, seqid);
 }
 
-int32_t GameConcurrentClient::send_SendPlayerType(const PlayerType& player_type)
+int32_t GameConcurrentClient::send_SendPlayerType(const RegisterResponse& register_response, const PlayerType& player_type)
 {
   int32_t cseqid = this->sync_->generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(this->sync_.get());
   oprot_->writeMessageBegin("SendPlayerType", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_SendPlayerType_pargs args;
+  args.register_response = &register_response;
   args.player_type = &player_type;
   args.write(oprot_);
 
@@ -3313,20 +3439,20 @@ void GameConcurrentClient::recv_SendPlayerType(Empty& _return, const int32_t seq
   } // end while(true)
 }
 
-void GameConcurrentClient::GetInitMessage(InitMessageFromServer& _return, const Empty& empty)
+void GameConcurrentClient::Register(RegisterResponse& _return, const RegisterRequest& request)
 {
-  int32_t seqid = send_GetInitMessage(empty);
-  recv_GetInitMessage(_return, seqid);
+  int32_t seqid = send_Register(request);
+  recv_Register(_return, seqid);
 }
 
-int32_t GameConcurrentClient::send_GetInitMessage(const Empty& empty)
+int32_t GameConcurrentClient::send_Register(const RegisterRequest& request)
 {
   int32_t cseqid = this->sync_->generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(this->sync_.get());
-  oprot_->writeMessageBegin("GetInitMessage", ::apache::thrift::protocol::T_CALL, cseqid);
+  oprot_->writeMessageBegin("Register", ::apache::thrift::protocol::T_CALL, cseqid);
 
-  Game_GetInitMessage_pargs args;
-  args.empty = &empty;
+  Game_Register_pargs args;
+  args.request = &request;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();
@@ -3337,7 +3463,7 @@ int32_t GameConcurrentClient::send_GetInitMessage(const Empty& empty)
   return cseqid;
 }
 
-void GameConcurrentClient::recv_GetInitMessage(InitMessageFromServer& _return, const int32_t seqid)
+void GameConcurrentClient::recv_Register(RegisterResponse& _return, const int32_t seqid)
 {
 
   int32_t rseqid = 0;
@@ -3366,7 +3492,7 @@ void GameConcurrentClient::recv_GetInitMessage(InitMessageFromServer& _return, c
         iprot_->readMessageEnd();
         iprot_->getTransport()->readEnd();
       }
-      if (fname.compare("GetInitMessage") != 0) {
+      if (fname.compare("Register") != 0) {
         iprot_->skip(::apache::thrift::protocol::T_STRUCT);
         iprot_->readMessageEnd();
         iprot_->getTransport()->readEnd();
@@ -3375,7 +3501,7 @@ void GameConcurrentClient::recv_GetInitMessage(InitMessageFromServer& _return, c
         using ::apache::thrift::protocol::TProtocolException;
         throw TProtocolException(TProtocolException::INVALID_DATA);
       }
-      Game_GetInitMessage_presult result;
+      Game_Register_presult result;
       result.success = &_return;
       result.read(iprot_);
       iprot_->readMessageEnd();
@@ -3387,7 +3513,7 @@ void GameConcurrentClient::recv_GetInitMessage(InitMessageFromServer& _return, c
         return;
       }
       // in a bad state, don't commit
-      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "GetInitMessage failed: unknown result");
+      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "Register failed: unknown result");
     }
     // seqid != rseqid
     this->sync_->updatePending(fname, mtype, rseqid);
@@ -3397,20 +3523,20 @@ void GameConcurrentClient::recv_GetInitMessage(InitMessageFromServer& _return, c
   } // end while(true)
 }
 
-void GameConcurrentClient::SendByeCommand(Empty& _return, const Empty& empty)
+void GameConcurrentClient::SendByeCommand(Empty& _return, const RegisterResponse& register_response)
 {
-  int32_t seqid = send_SendByeCommand(empty);
+  int32_t seqid = send_SendByeCommand(register_response);
   recv_SendByeCommand(_return, seqid);
 }
 
-int32_t GameConcurrentClient::send_SendByeCommand(const Empty& empty)
+int32_t GameConcurrentClient::send_SendByeCommand(const RegisterResponse& register_response)
 {
   int32_t cseqid = this->sync_->generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(this->sync_.get());
   oprot_->writeMessageBegin("SendByeCommand", ::apache::thrift::protocol::T_CALL, cseqid);
 
   Game_SendByeCommand_pargs args;
-  args.empty = &empty;
+  args.register_response = &register_response;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();

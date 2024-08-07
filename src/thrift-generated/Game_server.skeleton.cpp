@@ -20,47 +20,47 @@ class GameHandler : virtual public GameIf {
     // Your initialization goes here
   }
 
-  void GetPlayerActions(PlayerActions& _return, const State& state) {
+  void GetPlayerActions(PlayerActions& _return, const RegisterResponse& register_response, const State& state) {
     // Your implementation goes here
     printf("GetPlayerActions\n");
   }
 
-  void GetCoachActions(CoachActions& _return, const State& state) {
+  void GetCoachActions(CoachActions& _return, const RegisterResponse& register_response, const State& state) {
     // Your implementation goes here
     printf("GetCoachActions\n");
   }
 
-  void GetTrainerActions(TrainerActions& _return, const State& state) {
+  void GetTrainerActions(TrainerActions& _return, const RegisterResponse& register_response, const State& state) {
     // Your implementation goes here
     printf("GetTrainerActions\n");
   }
 
-  void SendInitMessage(Empty& _return, const InitMessage& init_message) {
+  void SendInitMessage(Empty& _return, const RegisterResponse& register_response, const InitMessage& init_message) {
     // Your implementation goes here
     printf("SendInitMessage\n");
   }
 
-  void SendServerParams(Empty& _return, const ServerParam& server_param) {
+  void SendServerParams(Empty& _return, const RegisterResponse& register_response, const ServerParam& server_param) {
     // Your implementation goes here
     printf("SendServerParams\n");
   }
 
-  void SendPlayerParams(Empty& _return, const PlayerParam& player_param) {
+  void SendPlayerParams(Empty& _return, const RegisterResponse& register_response, const PlayerParam& player_param) {
     // Your implementation goes here
     printf("SendPlayerParams\n");
   }
 
-  void SendPlayerType(Empty& _return, const PlayerType& player_type) {
+  void SendPlayerType(Empty& _return, const RegisterResponse& register_response, const PlayerType& player_type) {
     // Your implementation goes here
     printf("SendPlayerType\n");
   }
 
-  void GetInitMessage(InitMessageFromServer& _return, const Empty& empty) {
+  void Register(RegisterResponse& _return, const RegisterRequest& request) {
     // Your implementation goes here
-    printf("GetInitMessage\n");
+    printf("Register\n");
   }
 
-  void SendByeCommand(Empty& _return, const Empty& empty) {
+  void SendByeCommand(Empty& _return, const RegisterResponse& register_response) {
     // Your implementation goes here
     printf("SendByeCommand\n");
   }

@@ -1149,17 +1149,25 @@ struct PlayerType {
 
 struct Empty {}
 
-struct InitMessageFromServer {}
+struct RegisterRequest {
+  1: AgentType agent_type,
+  2: string team_name,
+  3: i32 uniform_number
+}
+
+struct RegisterResponse {
+    1: i32 client_id
+}
 
 service Game {
-  PlayerActions GetPlayerActions(1: State state),
-  CoachActions GetCoachActions(1: State state),
-  TrainerActions GetTrainerActions(1: State state),
-  Empty SendInitMessage(1: InitMessage init_message),
-  Empty SendServerParams(1: ServerParam server_param),
-  Empty SendPlayerParams(1: PlayerParam player_param),
-  Empty SendPlayerType(1: PlayerType player_type),
-  InitMessageFromServer GetInitMessage(1: Empty empty),
-  Empty SendByeCommand(1: Empty empty)
+  PlayerActions GetPlayerActions(1: RegisterResponse register_response, 2: State state),
+  CoachActions GetCoachActions(1: RegisterResponse register_response, 2: State state),
+  TrainerActions GetTrainerActions(1: RegisterResponse register_response, 2: State state),
+  Empty SendInitMessage(1: RegisterResponse register_response, 2: InitMessage init_message),
+  Empty SendServerParams(1: RegisterResponse register_response, 2: ServerParam server_param),
+  Empty SendPlayerParams(1: RegisterResponse register_response, 2: PlayerParam player_param),
+  Empty SendPlayerType(1: RegisterResponse register_response, 2: PlayerType player_type),
+  RegisterResponse Register(1: RegisterRequest request),
+  Empty SendByeCommand(1: RegisterResponse register_response)
 }
 

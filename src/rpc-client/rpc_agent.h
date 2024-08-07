@@ -33,6 +33,9 @@ public:
     bool is_connected = false;
     bool param_sent = false;
     soccer::AgentType::type agent_type;
+    int unum;
+    std::string team_name;
+    soccer::RegisterResponse register_response;
 
     ~RpcAgent() {}
     
@@ -42,7 +45,7 @@ public:
     void sendPlayerParams() const;
     void sendPlayerType() const;
     void sendInitMessage(bool offline_logging) const;
-    bool getInitMessage() const;
+    bool Register();
     void sendByeCommand() const;
     bool connectToGrpcServer();
 

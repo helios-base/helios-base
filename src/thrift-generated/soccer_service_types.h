@@ -401,7 +401,9 @@ class PlayerType;
 
 class Empty;
 
-class InitMessageFromServer;
+class RegisterRequest;
+
+class RegisterResponse;
 
 typedef struct _ThriftVector2D__isset {
   _ThriftVector2D__isset() : x(false), y(false), dist(false), angle(false) {}
@@ -9877,26 +9879,56 @@ void swap(Empty &a, Empty &b);
 
 std::ostream& operator<<(std::ostream& out, const Empty& obj);
 
+typedef struct _RegisterRequest__isset {
+  _RegisterRequest__isset() : agent_type(false), team_name(false), uniform_number(false) {}
+  bool agent_type :1;
+  bool team_name :1;
+  bool uniform_number :1;
+} _RegisterRequest__isset;
 
-class InitMessageFromServer : public virtual ::apache::thrift::TBase {
+class RegisterRequest : public virtual ::apache::thrift::TBase {
  public:
 
-  InitMessageFromServer(const InitMessageFromServer&) noexcept;
-  InitMessageFromServer& operator=(const InitMessageFromServer&) noexcept;
-  InitMessageFromServer() noexcept {
+  RegisterRequest(const RegisterRequest&);
+  RegisterRequest& operator=(const RegisterRequest&);
+  RegisterRequest() noexcept
+                  : agent_type(static_cast<AgentType::type>(0)),
+                    team_name(),
+                    uniform_number(0) {
   }
 
-  virtual ~InitMessageFromServer() noexcept;
+  virtual ~RegisterRequest() noexcept;
+  /**
+   * 
+   * @see AgentType
+   */
+  AgentType::type agent_type;
+  std::string team_name;
+  int32_t uniform_number;
 
-  bool operator == (const InitMessageFromServer & /* rhs */) const
+  _RegisterRequest__isset __isset;
+
+  void __set_agent_type(const AgentType::type val);
+
+  void __set_team_name(const std::string& val);
+
+  void __set_uniform_number(const int32_t val);
+
+  bool operator == (const RegisterRequest & rhs) const
   {
+    if (!(agent_type == rhs.agent_type))
+      return false;
+    if (!(team_name == rhs.team_name))
+      return false;
+    if (!(uniform_number == rhs.uniform_number))
+      return false;
     return true;
   }
-  bool operator != (const InitMessageFromServer &rhs) const {
+  bool operator != (const RegisterRequest &rhs) const {
     return !(*this == rhs);
   }
 
-  bool operator < (const InitMessageFromServer & ) const;
+  bool operator < (const RegisterRequest & ) const;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot) override;
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const override;
@@ -9904,9 +9936,52 @@ class InitMessageFromServer : public virtual ::apache::thrift::TBase {
   virtual void printTo(std::ostream& out) const;
 };
 
-void swap(InitMessageFromServer &a, InitMessageFromServer &b);
+void swap(RegisterRequest &a, RegisterRequest &b);
 
-std::ostream& operator<<(std::ostream& out, const InitMessageFromServer& obj);
+std::ostream& operator<<(std::ostream& out, const RegisterRequest& obj);
+
+typedef struct _RegisterResponse__isset {
+  _RegisterResponse__isset() : client_id(false) {}
+  bool client_id :1;
+} _RegisterResponse__isset;
+
+class RegisterResponse : public virtual ::apache::thrift::TBase {
+ public:
+
+  RegisterResponse(const RegisterResponse&) noexcept;
+  RegisterResponse& operator=(const RegisterResponse&) noexcept;
+  RegisterResponse() noexcept
+                   : client_id(0) {
+  }
+
+  virtual ~RegisterResponse() noexcept;
+  int32_t client_id;
+
+  _RegisterResponse__isset __isset;
+
+  void __set_client_id(const int32_t val);
+
+  bool operator == (const RegisterResponse & rhs) const
+  {
+    if (!(client_id == rhs.client_id))
+      return false;
+    return true;
+  }
+  bool operator != (const RegisterResponse &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const RegisterResponse & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot) override;
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const override;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(RegisterResponse &a, RegisterResponse &b);
+
+std::ostream& operator<<(std::ostream& out, const RegisterResponse& obj);
 
 } // namespace
 

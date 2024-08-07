@@ -33,6 +33,7 @@ void RpcAgentTrainer::init(rcsc::TrainerAgent *agent,
                            bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
+    unum = 13;
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
@@ -50,13 +51,12 @@ void RpcAgentTrainer::getActions() const
 {
     auto agent = M_agent;
     soccer::State state = generateState();
-//    state.set_agent_type(protos::AgentType::TrainerT);
     state.agent_type = soccer::AgentType::TrainerT;
 
     soccer::TrainerActions actions;
 
     try{
-        client->GetTrainerActions(actions, state);
+        client->GetTrainerActions(actions, register_response, state);
     }
     catch(const std::exception& e){
         std::cerr << e.what() << '\n';

@@ -280,16 +280,14 @@ void RpcAgent::sendServerParam() const
     serverParam.penalty_area_length = SP.penaltyAreaLength();
 
     try{
-        transport->open();
         soccer::Empty empty;
-        client->SendServerParams(empty, serverParam);
+        client->SendServerParams(empty, register_response, serverParam);
     }
     catch(const std::exception& e){
         std::cout << "SendServerParams rpc failed." << std::endl
                   << e.what()
                   << std::endl;
     }
-    transport->close();
 }
 
 void RpcAgent::sendPlayerParams() const
@@ -328,17 +326,16 @@ void RpcAgent::sendPlayerParams() const
     playerParam.catchable_area_l_stretch_min = PP.catchAreaLengthStretchMin();
     playerParam.catchable_area_l_stretch_max = PP.catchAreaLengthStretchMax();
 
-    try{
-        transport->open();
+    try
+    {
         soccer::Empty empty;
-        client->SendPlayerParams(empty, playerParam);
+        client->SendPlayerParams(empty, register_response, playerParam);
     }
     catch(const std::exception& e){
         std::cout << "SendPlayerParams rpc failed." << std::endl
                   << e.what()
                   << std::endl;
     }
-    transport->close();
 }
 
 void RpcAgent::sendPlayerType() const
@@ -385,19 +382,16 @@ void RpcAgent::sendPlayerType() const
         playerTypeGrpc.player_speed_max2 = playerType->playerSpeedMax2();
         playerTypeGrpc.real_speed_max2 = playerType->realSpeedMax2();
         playerTypeGrpc.cycles_to_reach_max_speed = playerType->cyclesToReachMaxSpeed();
-
         try{
             soccer::Empty empty;
             playerTypeGrpc.agent_type = this->agent_type;
-            transport->open();
-            client->SendPlayerType(empty, playerTypeGrpc);
+            client->SendPlayerType(empty, register_response, playerTypeGrpc);
         }
         catch(const std::exception& e){
             std::cout << "SendPlayerType rpc failed. id=" << i << std::endl
                       << e.what()
                       << std::endl;
         }
-        transport->close();
     }
 }
 
@@ -408,31 +402,29 @@ void RpcAgent::sendInitMessage(bool offline_logging) const
     initMessage.debug_mode = offline_logging;
     initMessage.agent_type = this->agent_type;
     try{
-        transport->open();
-        client->SendInitMessage(empty, initMessage);
+        client->SendInitMessage(empty, register_response, initMessage);
     }
     catch(const std::exception& e){
         std::cout << "sendInitMessage rpc failed." << std::endl
                   << e.what()
                   << std::endl;
     }
-    transport->close();
 }
 
-bool RpcAgent::getInitMessage() const
+bool RpcAgent::Register()
 {
     std::cout<<"Getting InitMessage..."<<std::endl;
     soccer::Empty empty;
-    soccer::InitMessageFromServer initMessageFromServer;
+    soccer::RegisterRequest registerRequest;
+    registerRequest.agent_type = agent_type;
+    registerRequest.uniform_number = unum;
+    registerRequest.team_name = team_name;
     try{
-        transport->open();
-        client->GetInitMessage(initMessageFromServer, empty);
-        transport->close();
+        client->Register(register_response, registerRequest);
         LOG("InitMessage received");
         return true;
     }
     catch(const std::exception& e){
-        transport->close();
         std::cout << "GetInitMessage rpc failed." << std::endl
                   << e.what()
                   << std::endl;
@@ -445,15 +437,13 @@ void RpcAgent::sendByeCommand() const
     try{
         soccer::Empty empty;
         soccer::Empty empty2;
-        transport->open();
-        client->SendByeCommand(empty, empty2);
+        client->SendByeCommand(empty, register_response);
     }
     catch(const std::exception& e){
         std::cout << "SendByeCommand rpc failed." << std::endl
                   << e.what()
                   << std::endl;
     }
-    transport->close();
 }
 
 bool RpcAgent::connectToGrpcServer()
@@ -472,8 +462,8 @@ bool RpcAgent::connectToGrpcServer()
 
     // Create a client to use the protocol encoder
     client = std::make_shared<soccer::GameClient>(protocol);
-
-    if (getInitMessage())
+    transport->open();
+    if (Register())
     {
         is_connected = true;
         std::cout<<"Connected to server."<<std::endl;

@@ -90,6 +90,7 @@ void RpcAgentPlayer::init(rcsc::PlayerAgent *agent,
                           bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
+    unum = agent->world().self().unum();
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
@@ -112,15 +113,16 @@ void RpcAgentPlayer::getActions() const
     soccer::PlayerActions actions;
     
     try{
-        transport->open();
-        client->GetPlayerActions(actions, state);
+        auto start_time = high_resolution_clock::now();
+        client->GetPlayerActions(actions, register_response, state);
+        auto end_time = high_resolution_clock::now();
+        auto duration = duration_cast<milliseconds>(end_time - start_time);
+        std::cout<<"get: "<<duration.count()<<"ms"<<std::endl;
     }
     catch(const std::exception& e){
         std::cout << e.what() << '\n';
-        transport->close();
         return;
     }
-    transport->close();
 
     int body_action_done = 0;
     for (int i = 0; i < actions.actions.size(); i++)

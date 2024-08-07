@@ -24006,17 +24006,29 @@ void Empty::printTo(std::ostream& out) const {
 }
 
 
-InitMessageFromServer::~InitMessageFromServer() noexcept {
+RegisterRequest::~RegisterRequest() noexcept {
 }
 
-std::ostream& operator<<(std::ostream& out, const InitMessageFromServer& obj)
+
+void RegisterRequest::__set_agent_type(const AgentType::type val) {
+  this->agent_type = val;
+}
+
+void RegisterRequest::__set_team_name(const std::string& val) {
+  this->team_name = val;
+}
+
+void RegisterRequest::__set_uniform_number(const int32_t val) {
+  this->uniform_number = val;
+}
+std::ostream& operator<<(std::ostream& out, const RegisterRequest& obj)
 {
   obj.printTo(out);
   return out;
 }
 
 
-uint32_t InitMessageFromServer::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t RegisterRequest::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   ::apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -24035,7 +24047,38 @@ uint32_t InitMessageFromServer::read(::apache::thrift::protocol::TProtocol* ipro
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    xfer += iprot->skip(ftype);
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          int32_t ecast340;
+          xfer += iprot->readI32(ecast340);
+          this->agent_type = static_cast<AgentType::type>(ecast340);
+          this->__isset.agent_type = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->team_name);
+          this->__isset.team_name = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->uniform_number);
+          this->__isset.uniform_number = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
     xfer += iprot->readFieldEnd();
   }
 
@@ -24044,32 +24087,147 @@ uint32_t InitMessageFromServer::read(::apache::thrift::protocol::TProtocol* ipro
   return xfer;
 }
 
-uint32_t InitMessageFromServer::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t RegisterRequest::write(::apache::thrift::protocol::TProtocol* oprot) const {
   uint32_t xfer = 0;
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
-  xfer += oprot->writeStructBegin("InitMessageFromServer");
+  xfer += oprot->writeStructBegin("RegisterRequest");
+
+  xfer += oprot->writeFieldBegin("agent_type", ::apache::thrift::protocol::T_I32, 1);
+  xfer += oprot->writeI32(static_cast<int32_t>(this->agent_type));
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("team_name", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->team_name);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("uniform_number", ::apache::thrift::protocol::T_I32, 3);
+  xfer += oprot->writeI32(this->uniform_number);
+  xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
 }
 
-void swap(InitMessageFromServer &a, InitMessageFromServer &b) {
+void swap(RegisterRequest &a, RegisterRequest &b) {
   using ::std::swap;
-  (void) a;
-  (void) b;
+  swap(a.agent_type, b.agent_type);
+  swap(a.team_name, b.team_name);
+  swap(a.uniform_number, b.uniform_number);
+  swap(a.__isset, b.__isset);
 }
 
-InitMessageFromServer::InitMessageFromServer(const InitMessageFromServer& other340) noexcept {
-  (void) other340;
+RegisterRequest::RegisterRequest(const RegisterRequest& other341) {
+  agent_type = other341.agent_type;
+  team_name = other341.team_name;
+  uniform_number = other341.uniform_number;
+  __isset = other341.__isset;
 }
-InitMessageFromServer& InitMessageFromServer::operator=(const InitMessageFromServer& other341) noexcept {
-  (void) other341;
+RegisterRequest& RegisterRequest::operator=(const RegisterRequest& other342) {
+  agent_type = other342.agent_type;
+  team_name = other342.team_name;
+  uniform_number = other342.uniform_number;
+  __isset = other342.__isset;
   return *this;
 }
-void InitMessageFromServer::printTo(std::ostream& out) const {
+void RegisterRequest::printTo(std::ostream& out) const {
   using ::apache::thrift::to_string;
-  out << "InitMessageFromServer(";
+  out << "RegisterRequest(";
+  out << "agent_type=" << to_string(agent_type);
+  out << ", " << "team_name=" << to_string(team_name);
+  out << ", " << "uniform_number=" << to_string(uniform_number);
+  out << ")";
+}
+
+
+RegisterResponse::~RegisterResponse() noexcept {
+}
+
+
+void RegisterResponse::__set_client_id(const int32_t val) {
+  this->client_id = val;
+}
+std::ostream& operator<<(std::ostream& out, const RegisterResponse& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t RegisterResponse::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  ::apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->client_id);
+          this->__isset.client_id = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t RegisterResponse::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("RegisterResponse");
+
+  xfer += oprot->writeFieldBegin("client_id", ::apache::thrift::protocol::T_I32, 1);
+  xfer += oprot->writeI32(this->client_id);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(RegisterResponse &a, RegisterResponse &b) {
+  using ::std::swap;
+  swap(a.client_id, b.client_id);
+  swap(a.__isset, b.__isset);
+}
+
+RegisterResponse::RegisterResponse(const RegisterResponse& other343) noexcept {
+  client_id = other343.client_id;
+  __isset = other343.__isset;
+}
+RegisterResponse& RegisterResponse::operator=(const RegisterResponse& other344) noexcept {
+  client_id = other344.client_id;
+  __isset = other344.__isset;
+  return *this;
+}
+void RegisterResponse::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "RegisterResponse(";
+  out << "client_id=" << to_string(client_id);
   out << ")";
 }
 
