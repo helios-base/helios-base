@@ -70,13 +70,6 @@ SampleTrainer::~SampleTrainer()
 bool
 SampleTrainer::initImpl( CmdLineParser & cmd_parser )
 {
-    M_grpc_agent.init(
-        this,
-        M_grpc_server_address,
-        M_first_grpc_port,
-        M_use_same_grpc_port,
-        M_add_20_to_grpc_port_if_right_side
-    );
 
     bool result = TrainerAgent::initImpl( cmd_parser );
 
@@ -119,6 +112,15 @@ SampleTrainer::actionImpl()
 {
     // connect to rpc-client server
     bool connectedToGrpcServer = false;
+    if (!M_grpc_agent.is_connected){
+        M_grpc_agent.init(
+                this,
+                M_grpc_server_address,
+                M_first_grpc_port,
+                M_use_same_grpc_port,
+                M_add_20_to_grpc_port_if_right_side
+        );
+    }
     while (M_grpc_agent.is_connected == false)
     {
         std::cout<<"Connecting to GRPC server..."<<std::endl;

@@ -151,13 +151,6 @@ SampleCoach::~SampleCoach()
 bool
 SampleCoach::initImpl( CmdLineParser & cmd_parser )
 {
-    M_grpc_agent.init(
-        this,
-        M_grpc_server_address,
-        M_first_grpc_port,
-        M_use_same_grpc_port,
-        M_add_20_to_grpc_port_if_right_side
-    );
 
     bool result =CoachAgent::initImpl( cmd_parser );
 
@@ -212,6 +205,16 @@ SampleCoach::actionImpl()
     debugClient().addMessage( "Cycle=%ld", world().time().cycle() );
 
     // connect to rpc-client server
+    if (!M_grpc_agent.is_connected){
+        M_grpc_agent.init(
+                this,
+                M_grpc_server_address,
+                M_first_grpc_port,
+                M_use_same_grpc_port,
+                M_add_20_to_grpc_port_if_right_side
+        );
+    }
+
     bool connectedToGrpcServer = false;
     while (M_grpc_agent.is_connected == false)
     {
