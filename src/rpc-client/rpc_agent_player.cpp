@@ -123,7 +123,7 @@ void RpcAgentPlayer::getActions() const
         std::cout << e.what() << '\n';
         return;
     }
-
+    std::cout<<"action size:"<<actions.actions.size()<<std::endl;
     int body_action_done = 0;
     for (int i = 0; i < actions.actions.size(); i++)
     {
@@ -131,6 +131,7 @@ void RpcAgentPlayer::getActions() const
         
         if (action.__isset.dash)
         {
+            std::cout<<"Dash:"<<action.dash.power<<","<<action.dash.relative_direction<<std::endl;
             agent->doDash(action.dash.power, action.dash.relative_direction);
             body_action_done++;
             continue;

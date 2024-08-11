@@ -97,18 +97,7 @@ fi
 #fi
 
 #for (( i=2; i<=${number}; i=$i+1 )) ; do
-
+  $player ${OPT} -n 11 &
+  $sleepprog $sleeptime
 #done
 
-#if [ "${usecoach}" = "true" ]; then
-#  $coach -h $host -t $teamname &
-#fi
-trainer_opt="-h $host -t $teamname"
-trainer_opt="${trainer_opt} --g-port ${g_port}"
-if [ "${same_g_port}" = "true" ]; then
-  trainer_opt="${trainer_opt} --diff-g-port"
-fi
-if [ "${gp20}" = "true" ]; then
-  trainer_opt="${trainer_opt} --gp20"
-fi
-$trainer $trainer_opt &

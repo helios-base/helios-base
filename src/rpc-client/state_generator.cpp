@@ -259,7 +259,14 @@ void StateGenerator::updatePlayerObject(soccer::Player & p, const rcsc::PlayerOb
     p.angle_from_ball = static_cast<float>(player->angleFromBall().degree());
     p.ball_reach_steps = player->ballReachStep();
     p.is_tackling = player->isTackling();
-    p.type_id = player->playerTypePtr()->id();
+    if (player->playerTypePtr() == nullptr)
+    {
+        p.type_id = 0;
+    }
+    else
+    {
+        p.type_id = player->playerTypePtr()->id();
+    }
 }
 
 /**
@@ -281,7 +288,15 @@ void StateGenerator::updatePlayerObject(soccer::Player &p, const rcsc::CoachPlay
     p.is_kicking = player->isKicking();
     p.ball_reach_steps = player->ballReachStep();
     p.is_tackling = player->isTackling();
-    p.type_id = player->playerTypePtr()->id();
+    if (player->playerTypePtr() == nullptr)
+    {
+        p.type_id = 0;
+    }
+    else
+    {
+        p.type_id = player->playerTypePtr()->id();
+    }
+
 }
 
 /**
@@ -321,7 +336,14 @@ void StateGenerator::updateAbstractPlayerObject(soccer::Player &p, const rcsc::A
     p.angle_from_ball = static_cast<float>(player->angleFromBall().degree());
     p.ball_reach_steps = player->ballReachStep();
     p.is_tackling = player->isTackling();
-    p.type_id = player->playerTypePtr()->id();
+    if (player->playerTypePtr() == nullptr)
+    {
+        p.type_id = 0;
+    }
+    else
+    {
+        p.type_id = player->playerTypePtr()->id();
+    }
 }
 
 /**
@@ -490,12 +512,19 @@ soccer::WorldModel StateGenerator::convertCoachWorldModel(const rcsc::CoachWorld
     res.ball = convertBall(wm.ball());
     for (auto player : wm.teammates())
     {
+        if(player == nullptr || !player->isValid() || player->unum() < 1 || player->unum() > 11 ){
+            continue;
+        }
+        std::cout<<">>added teammate"<<std::endl;
         auto p = soccer::Player();
         updatePlayerObject(p, player);
         res.teammates.push_back(p);
     }
     for (auto player : wm.opponents())
     {
+        if(player == nullptr || !player->isValid() || player->unum() < 1 || player->unum() > 11 ){
+            continue;
+        }
         auto p = soccer::Player();
         updatePlayerObject(p, player);
         res.opponents.push_back(p);

@@ -1,4 +1,5 @@
 #include "rpc_agent_trainer.h"
+#include "state_generator.h"
 // #include "state_generator.h"
 
 #include <rcsc/player/say_message_builder.h>
@@ -50,7 +51,9 @@ void RpcAgentTrainer::init(rcsc::TrainerAgent *agent,
 void RpcAgentTrainer::getActions() const
 {
     auto agent = M_agent;
+    std::cout<<"generating state for cycle:"<<agent->world().time().cycle()<<std::endl;
     soccer::State state = generateState();
+    std::cout<<"generated state for cycle:"<<agent->world().time().cycle()<<std::endl;
     state.agent_type = soccer::AgentType::TrainerT;
 
     soccer::TrainerActions actions;
@@ -62,6 +65,7 @@ void RpcAgentTrainer::getActions() const
         std::cerr << e.what() << '\n';
         return;
     }
+    std::cout<<"actions:"<<actions.actions.size()<<std::endl;
     for (int i = 0; i < actions.actions.size(); i++)
     {
         auto action = actions.actions[i];
@@ -267,8 +271,8 @@ void RpcAgentTrainer::getActions() const
 soccer::State RpcAgentTrainer::generateState() const
 {
     auto &wm = M_agent->world();
-    // WorldModel * worldModel = StateGenerator::convertCoachWorldModel(wm);
+     soccer::WorldModel worldModel = StateGenerator::convertCoachWorldModel(wm);
     soccer::State state;
-    // state.set_allocated_world_model(worldModel);
+    state.world_model = worldModel;
     return state;
 }

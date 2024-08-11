@@ -49,6 +49,17 @@ file(
   FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
   )
 
+configure_file(
+        ${PROJECT_SOURCE_DIR}/src/player.sh.in
+        ${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/player.sh
+        @ONLY
+)
+file(
+        COPY ${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/player.sh
+        DESTINATION ${PROJECT_BINARY_DIR}/bin
+        FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+)
+
 # copy other files to the binary direcotry
 file(COPY
   formations-dt formations-keeper formations-taker player.conf coach.conf start-debug.sh start-offline.sh
