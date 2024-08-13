@@ -110,10 +110,10 @@ SampleTrainer::initImpl( CmdLineParser & cmd_parser )
 void
 SampleTrainer::actionImpl()
 {
-    // connect to rpc-client server
+    // connect to thrift-client server
     bool connectedToGrpcServer = false;
-    if (!M_grpc_agent.is_connected){
-        M_grpc_agent.init(
+    if (!M_grpc_agent->isConnected()){
+        dynamic_cast<ThriftAgentTrainer*>(M_grpc_agent)->init(
                 this,
                 M_grpc_server_address,
                 M_first_grpc_port,
@@ -121,10 +121,10 @@ SampleTrainer::actionImpl()
                 M_add_20_to_grpc_port_if_right_side
         );
     }
-    while (M_grpc_agent.is_connected == false)
+    while (M_grpc_agent->isConnected() == false)
     {
         std::cout<<"Connecting to GRPC server..."<<std::endl;
-        connectedToGrpcServer = M_grpc_agent.connectToGrpcServer();
+        connectedToGrpcServer = M_grpc_agent->connectToGrpcServer();
         if (connectedToGrpcServer == false) {
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
@@ -138,8 +138,8 @@ SampleTrainer::actionImpl()
 
     //////////////////////////////////////////////////////////////////
     // Add your code here.
-    M_grpc_agent.sendParams(this->config().offlineLogging());
-    M_grpc_agent.getActions();
+    M_grpc_agent->sendParams(this->config().offlineLogging());
+    M_grpc_agent->getActions();
     return;
     //sampleAction();
     //recoverForever();
@@ -150,7 +150,7 @@ SampleTrainer::actionImpl()
 void
 SampleTrainer::handleExit()
 {
-    M_grpc_agent.sendByeCommand();
+    M_grpc_agent->sendByeCommand();
     TrainerAgent::handleExit();
 }
 

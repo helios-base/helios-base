@@ -1,5 +1,5 @@
-#include "rpc_agent_player.h"
-#include "state_generator.h"
+#include "thrift_agent_player.h"
+#include "thrift_state_generator.h"
 #include "player/basic_actions/body_go_to_point.h"
 #include "player/basic_actions/body_smart_kick.h"
 #include "player/basic_actions/bhv_before_kick_off.h"
@@ -78,16 +78,16 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-RpcAgentPlayer::RpcAgentPlayer()
+ThriftAgentPlayer::ThriftAgentPlayer()
 {
     agent_type = soccer::AgentType::PlayerT;
 }
 
-void RpcAgentPlayer::init(rcsc::PlayerAgent *agent,
-                          std::string target,
-                          int port,
-                          bool use_same_grpc_port,
-                          bool add_20_to_grpc_port_if_right_side)
+void ThriftAgentPlayer::init(rcsc::PlayerAgent *agent,
+                             std::string target,
+                             int port,
+                             bool use_same_grpc_port,
+                             bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
     unum = agent->world().self().unum();
@@ -105,7 +105,7 @@ void RpcAgentPlayer::init(rcsc::PlayerAgent *agent,
     sample_communication = Communication::Ptr(new SampleCommunication());
 }
 
-void RpcAgentPlayer::getActions() const
+void ThriftAgentPlayer::getActions() const
 {
     auto agent = M_agent;
     soccer::State state = generateState();
@@ -173,7 +173,7 @@ void RpcAgentPlayer::getActions() const
         }
         if (action.__isset.change_view)
         {
-            const rcsc::ViewWidth view_width = RpcAgent::convertViewWidth(action.change_view.view_width);
+            const rcsc::ViewWidth view_width = ThriftAgent::convertViewWidth(action.change_view.view_width);
             agent->doChangeView(view_width);
             continue;
         }
@@ -194,7 +194,7 @@ void RpcAgentPlayer::getActions() const
         }
         if (action.__isset.attention_to)
         {
-            const rcsc::SideID side = RpcAgent::convertSideID(action.attention_to.side);
+            const rcsc::SideID side = ThriftAgent::convertSideID(action.attention_to.side);
             agent->doAttentionto(side, action.attention_to.unum);
             continue;
         }
@@ -212,7 +212,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.body_go_to_point)
         {
             const auto &bodyGoToPoint = action.body_go_to_point;
-            const auto &targetPoint = RpcAgent::convertVector2D(bodyGoToPoint.target_point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(bodyGoToPoint.target_point);
             Body_GoToPoint(targetPoint, bodyGoToPoint.distance_threshold, bodyGoToPoint.max_dash_power).execute(agent);
             body_action_done++;
             continue;
@@ -220,7 +220,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.body_smart_kick)
         {
             const auto &bodySmartKick = action.body_smart_kick;
-            const auto &targetPoint = RpcAgent::convertVector2D(bodySmartKick.target_point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(bodySmartKick.target_point);
             Body_SmartKick(targetPoint, bodySmartKick.first_speed, bodySmartKick.first_speed_threshold,
                            bodySmartKick.max_steps).execute(agent);
             body_action_done++;
@@ -229,7 +229,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.bhv_before_kick_off)
         {
             const auto &bhvBeforeKickOff = action.bhv_before_kick_off;
-            const auto &point = RpcAgent::convertVector2D(bhvBeforeKickOff.point);
+            const auto &point = ThriftAgent::convertVector2D(bhvBeforeKickOff.point);
             Bhv_BeforeKickOff(point).execute(agent);
             continue;
         }
@@ -242,7 +242,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.bhv_body_neck_to_point)
         {
             const auto &bhvBodyNeckToPoint = action.bhv_body_neck_to_point;
-            const auto &targetPoint = RpcAgent::convertVector2D(bhvBodyNeckToPoint.point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(bhvBodyNeckToPoint.point);
             Bhv_BodyNeckToPoint(targetPoint).execute(agent);
             body_action_done++;
             continue;
@@ -255,7 +255,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.bhv_go_to_point_look_ball)
         {
             const auto &bhvGoToPointLookBall = action.bhv_go_to_point_look_ball;
-            const auto &targetPoint = RpcAgent::convertVector2D(bhvGoToPointLookBall.target_point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(bhvGoToPointLookBall.target_point);
             Bhv_GoToPointLookBall(targetPoint, bhvGoToPointLookBall.distance_threshold, bhvGoToPointLookBall.max_dash_power).execute(agent);
             body_action_done++;
             continue;
@@ -269,7 +269,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.bhv_neck_body_to_point)
         {
             const auto &bhvNeckBodyToPoint = action.bhv_neck_body_to_point;
-            const auto &targetPoint = RpcAgent::convertVector2D(bhvNeckBodyToPoint.point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(bhvNeckBodyToPoint.point);
             Bhv_NeckBodyToPoint(targetPoint, bhvNeckBodyToPoint.angle_buf).execute(agent);
             continue;
         }
@@ -293,7 +293,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.body_dribble)
         {
             const auto &bodyDribble = action.body_dribble;
-            const auto &targetPoint = RpcAgent::convertVector2D(bodyDribble.target_point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(bodyDribble.target_point);
             Body_Dribble(
                 targetPoint,
                 bodyDribble.distance_threshold,
@@ -307,7 +307,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.body_go_to_point_dodge)
         {
             const auto &bodyGoToPointDodge = action.body_go_to_point_dodge;
-            const auto &targetPoint = RpcAgent::convertVector2D(bodyGoToPointDodge.target_point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(bodyGoToPointDodge.target_point);
             Body_GoToPointDodge(
                 targetPoint,
                 bodyGoToPointDodge.dash_power)
@@ -318,8 +318,8 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.body_hold_ball)
         {
             const auto &bodyHoldBall = action.body_hold_ball;
-            const auto &turnTargetPoint = RpcAgent::convertVector2D(bodyHoldBall.turn_target_point);
-            const auto &kickTargetPoint = RpcAgent::convertVector2D(bodyHoldBall.kick_target_point);
+            const auto &turnTargetPoint = ThriftAgent::convertVector2D(bodyHoldBall.turn_target_point);
+            const auto &kickTargetPoint = ThriftAgent::convertVector2D(bodyHoldBall.kick_target_point);
             Body_HoldBall(
                 bodyHoldBall.do_turn,
                 turnTargetPoint,
@@ -331,7 +331,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.body_intercept)
         {
             const auto &bodyIntercept = action.body_intercept;
-            const auto &facePoint = RpcAgent::convertVector2D(bodyIntercept.face_point);
+            const auto &facePoint = ThriftAgent::convertVector2D(bodyIntercept.face_point);
             Body_Intercept(
                 bodyIntercept.save_recovery,
                 facePoint)
@@ -342,7 +342,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.body_kick_one_step)
         {
             const auto &bodyKickOneStep = action.body_kick_one_step;
-            const auto &targetPoint = RpcAgent::convertVector2D(bodyKickOneStep.target_point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(bodyKickOneStep.target_point);
             Body_KickOneStep(
                 targetPoint,
                 bodyKickOneStep.first_speed,
@@ -369,7 +369,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.body_tackle_to_point)
         {
             const auto &bodyTackleToPoint = action.body_tackle_to_point;
-            const auto &targetPoint = RpcAgent::convertVector2D(bodyTackleToPoint.target_point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(bodyTackleToPoint.target_point);
             Body_TackleToPoint(
                 targetPoint,
                 bodyTackleToPoint.min_probability,
@@ -399,7 +399,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.body_turn_to_point)
         {
             const auto &bodyTurnToPoint = action.body_turn_to_point;
-            const auto &targetPoint = RpcAgent::convertVector2D(bodyTurnToPoint.target_point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(bodyTurnToPoint.target_point);
             Body_TurnToPoint(
                 targetPoint,
                 bodyTurnToPoint.cycle)
@@ -410,7 +410,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.focus_move_to_point)
         {
             const auto &focusMoveToPoint = action.focus_move_to_point;
-            const auto &targetPoint = RpcAgent::convertVector2D(focusMoveToPoint.target_point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(focusMoveToPoint.target_point);
             rcsc::Focus_MoveToPoint(
                 targetPoint)
                 .execute(agent);
@@ -503,7 +503,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.neck_turn_to_point)
         {
             const auto &neckTurnToPoint = action.neck_turn_to_point;
-            const auto &targetPoint = RpcAgent::convertVector2D(neckTurnToPoint.target_point);
+            const auto &targetPoint = ThriftAgent::convertVector2D(neckTurnToPoint.target_point);
             Neck_TurnToPoint(
                 targetPoint)
                 .execute(agent);
@@ -520,7 +520,7 @@ void RpcAgentPlayer::getActions() const
         if (action.__isset.view_change_width)
         {
             const auto &viewChangeWidth = action.view_change_width;
-            const rcsc::ViewWidth view_width = RpcAgent::convertViewWidth(viewChangeWidth.view_width);
+            const rcsc::ViewWidth view_width = ThriftAgent::convertViewWidth(viewChangeWidth.view_width);
             View_ChangeWidth(
                 view_width)
                 .execute(agent);
@@ -634,23 +634,23 @@ void RpcAgentPlayer::getActions() const
     }
 }
 
-void RpcAgentPlayer::addSayMessage(soccer::Say sayMessage) const
+void ThriftAgentPlayer::addSayMessage(soccer::Say sayMessage) const
 {
     auto agent = M_agent;
 
     if (sayMessage.__isset.ball_message)
     {
         const auto &ballMessage = sayMessage.ball_message;
-        const auto &ballPosition = RpcAgent::convertVector2D(ballMessage.ball_position);
-        const auto &ballVelocity = RpcAgent::convertVector2D(ballMessage.ball_velocity);
+        const auto &ballPosition = ThriftAgent::convertVector2D(ballMessage.ball_position);
+        const auto &ballVelocity = ThriftAgent::convertVector2D(ballMessage.ball_velocity);
         agent->addSayMessage(new rcsc::BallMessage(ballPosition, ballVelocity));
     }
     if (sayMessage.__isset.pass_message)
     {
         const auto &passMessage = sayMessage.pass_message;
-        const auto &receiverPoint = RpcAgent::convertVector2D(passMessage.receiver_point);
-        const auto &ballPosition = RpcAgent::convertVector2D(passMessage.ball_position);
-        const auto &ballVelocity = RpcAgent::convertVector2D(passMessage.ball_velocity);
+        const auto &receiverPoint = ThriftAgent::convertVector2D(passMessage.receiver_point);
+        const auto &ballPosition = ThriftAgent::convertVector2D(passMessage.ball_position);
+        const auto &ballVelocity = ThriftAgent::convertVector2D(passMessage.ball_velocity);
         agent->addSayMessage(new rcsc::PassMessage(passMessage.receiver_uniform_number,
                                                    receiverPoint,
                                                    ballPosition,
@@ -666,7 +666,7 @@ void RpcAgentPlayer::addSayMessage(soccer::Say sayMessage) const
     if (sayMessage.__isset.goalie_message)
     {
         const auto &goalieMessage = sayMessage.goalie_message;
-        const auto &goaliePosition = RpcAgent::convertVector2D(goalieMessage.goalie_position);
+        const auto &goaliePosition = ThriftAgent::convertVector2D(goalieMessage.goalie_position);
         agent->addSayMessage(new rcsc::GoalieMessage(goalieMessage.goalie_uniform_number,
                                                      goaliePosition,
                                                      goalieMessage.goalie_body_direction));
@@ -674,8 +674,8 @@ void RpcAgentPlayer::addSayMessage(soccer::Say sayMessage) const
     if (sayMessage.__isset.goalie_and_player_message)
     {
         const auto &goalieAndPlayerMessage = sayMessage.goalie_and_player_message;
-        const auto &goaliePosition = RpcAgent::convertVector2D(goalieAndPlayerMessage.goalie_position);
-        const auto &playerPosition = RpcAgent::convertVector2D(goalieAndPlayerMessage.player_position);
+        const auto &goaliePosition = ThriftAgent::convertVector2D(goalieAndPlayerMessage.goalie_position);
+        const auto &playerPosition = ThriftAgent::convertVector2D(goalieAndPlayerMessage.player_position);
         agent->addSayMessage(new rcsc::GoalieAndPlayerMessage(goalieAndPlayerMessage.goalie_uniform_number,
                                                               goaliePosition,
                                                               goalieAndPlayerMessage.goalie_body_direction,
@@ -705,7 +705,7 @@ void RpcAgentPlayer::addSayMessage(soccer::Say sayMessage) const
     if (sayMessage.__isset.pass_request_message)
     {
         const auto &passRequestMessage = sayMessage.pass_request_message;
-        const auto &targetPoint = RpcAgent::convertVector2D(passRequestMessage.target_point);
+        const auto &targetPoint = ThriftAgent::convertVector2D(passRequestMessage.target_point);
         agent->addSayMessage(new rcsc::PassRequestMessage(targetPoint));
     }
     if (sayMessage.__isset.stamina_message)
@@ -726,28 +726,28 @@ void RpcAgentPlayer::addSayMessage(soccer::Say sayMessage) const
     if (sayMessage.__isset.dribble_message)
     {
         const auto &dribbleMessage = sayMessage.dribble_message;
-        const auto &targetPoint = RpcAgent::convertVector2D(dribbleMessage.target_point);
+        const auto &targetPoint = ThriftAgent::convertVector2D(dribbleMessage.target_point);
         agent->addSayMessage(new rcsc::DribbleMessage(targetPoint, dribbleMessage.queue_count));
     }
     if (sayMessage.__isset.ball_goalie_message)
     {
         const auto &ballGoalieMessage = sayMessage.ball_goalie_message;
-        const auto &ballPosition = RpcAgent::convertVector2D(ballGoalieMessage.ball_position);
-        const auto &ballVelocity = RpcAgent::convertVector2D(ballGoalieMessage.ball_velocity);
-        const auto &goaliePosition = RpcAgent::convertVector2D(ballGoalieMessage.goalie_position);
+        const auto &ballPosition = ThriftAgent::convertVector2D(ballGoalieMessage.ball_position);
+        const auto &ballVelocity = ThriftAgent::convertVector2D(ballGoalieMessage.ball_velocity);
+        const auto &goaliePosition = ThriftAgent::convertVector2D(ballGoalieMessage.goalie_position);
         agent->addSayMessage(new rcsc::BallGoalieMessage(ballPosition, ballVelocity, goaliePosition, ballGoalieMessage.goalie_body_direction));
     }
     if (sayMessage.__isset.one_player_message)
     {
         const auto &onePlayerMessage = sayMessage.one_player_message;
-        const auto &playerPosition = RpcAgent::convertVector2D(onePlayerMessage.position);
+        const auto &playerPosition = ThriftAgent::convertVector2D(onePlayerMessage.position);
         agent->addSayMessage(new rcsc::OnePlayerMessage(onePlayerMessage.uniform_number, playerPosition));
     }
     if (sayMessage.__isset.two_player_message)
     {
         const auto &twoPlayersMessage = sayMessage.two_player_message;
-        const auto &player1Position = RpcAgent::convertVector2D(twoPlayersMessage.first_position);
-        const auto &player2Position = RpcAgent::convertVector2D(twoPlayersMessage.second_position);
+        const auto &player1Position = ThriftAgent::convertVector2D(twoPlayersMessage.first_position);
+        const auto &player2Position = ThriftAgent::convertVector2D(twoPlayersMessage.second_position);
         agent->addSayMessage(new rcsc::TwoPlayerMessage(twoPlayersMessage.first_uniform_number,
                                                         player1Position,
                                                         twoPlayersMessage.second_uniform_number,
@@ -756,9 +756,9 @@ void RpcAgentPlayer::addSayMessage(soccer::Say sayMessage) const
     if (sayMessage.__isset.three_player_message)
     {
         const auto &threePlayersMessage = sayMessage.three_player_message;
-        const auto &player1Position = RpcAgent::convertVector2D(threePlayersMessage.first_position);
-        const auto &player2Position = RpcAgent::convertVector2D(threePlayersMessage.second_position);
-        const auto &player3Position = RpcAgent::convertVector2D(threePlayersMessage.third_position);
+        const auto &player1Position = ThriftAgent::convertVector2D(threePlayersMessage.first_position);
+        const auto &player2Position = ThriftAgent::convertVector2D(threePlayersMessage.second_position);
+        const auto &player3Position = ThriftAgent::convertVector2D(threePlayersMessage.third_position);
         agent->addSayMessage(new rcsc::ThreePlayerMessage(threePlayersMessage.first_uniform_number,
                                                           player1Position,
                                                           threePlayersMessage.second_uniform_number,
@@ -769,47 +769,47 @@ void RpcAgentPlayer::addSayMessage(soccer::Say sayMessage) const
     if (sayMessage.__isset.self_message)
     {
         const auto &selfMessage = sayMessage.self_message;
-        const auto &selfPosition = RpcAgent::convertVector2D(selfMessage.self_position);
+        const auto &selfPosition = ThriftAgent::convertVector2D(selfMessage.self_position);
         agent->addSayMessage(new rcsc::SelfMessage(selfPosition, selfMessage.self_body_direction, selfMessage.self_stamina));
     }
     if (sayMessage.__isset.teammate_message)
     {
         const auto &teammateMessage = sayMessage.teammate_message;
-        const auto &teammatePosition = RpcAgent::convertVector2D(teammateMessage.position);
+        const auto &teammatePosition = ThriftAgent::convertVector2D(teammateMessage.position);
         agent->addSayMessage(new rcsc::TeammateMessage(teammateMessage.uniform_number, teammatePosition, teammateMessage.body_direction));
     }
     if (sayMessage.__isset.opponent_message)
     {
         const auto &opponentMessage = sayMessage.opponent_message;
-        const auto &opponentPosition = RpcAgent::convertVector2D(opponentMessage.position);
+        const auto &opponentPosition = ThriftAgent::convertVector2D(opponentMessage.position);
         agent->addSayMessage(new rcsc::OpponentMessage(opponentMessage.uniform_number, opponentPosition, opponentMessage.body_direction));
     }
     if (sayMessage.__isset.ball_player_message)
     {
         const auto &ballPlayerMessage = sayMessage.ball_player_message;
-        const auto &ballPosition = RpcAgent::convertVector2D(ballPlayerMessage.ball_position);
-        const auto &ballVelocity = RpcAgent::convertVector2D(ballPlayerMessage.ball_velocity);
-        const auto &playerPosition = RpcAgent::convertVector2D(ballPlayerMessage.player_position);
+        const auto &ballPosition = ThriftAgent::convertVector2D(ballPlayerMessage.ball_position);
+        const auto &ballVelocity = ThriftAgent::convertVector2D(ballPlayerMessage.ball_velocity);
+        const auto &playerPosition = ThriftAgent::convertVector2D(ballPlayerMessage.player_position);
         agent->addSayMessage(new rcsc::BallPlayerMessage(ballPosition, ballVelocity, ballPlayerMessage.uniform_number, playerPosition, ballPlayerMessage.body_direction));
     }
 }
 //
-soccer::State RpcAgentPlayer::generateState() const
+soccer::State ThriftAgentPlayer::generateState() const
 {
     const rcsc::WorldModel &wm = M_agent->world();
-    soccer::WorldModel worldModel = StateGenerator::convertWorldModel(wm);
+    soccer::WorldModel worldModel = ThriftStateGenerator::convertWorldModel(wm);
     addHomePosition(&worldModel);
     soccer::State state;
     state.world_model = worldModel;
     return state;
 }
 
-void RpcAgentPlayer::addHomePosition(soccer::WorldModel *res) const
+void ThriftAgentPlayer::addHomePosition(soccer::WorldModel *res) const
 {
     for (int i = 1; i < 12; i++)
     {
         auto home_pos = Strategy::i().getPosition(i);
-        auto vec_msg = soccer::ThriftVector2D();
+        auto vec_msg = soccer::RpcVector2D();
         vec_msg.x = home_pos.x;
         vec_msg.y = home_pos.y;
         res->helios_home_positions[i] = vec_msg;

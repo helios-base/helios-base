@@ -1,10 +1,10 @@
-#include "rpc_agent.h"
+#include "grpc_agent.h"
 
-class RpcAgentTrainer : public RpcAgent {
+class GrpcAgentTrainer : public GrpcAgent {
     rcsc::TrainerAgent * M_agent;
     
     public:
-    RpcAgentTrainer() ;
+    GrpcAgentTrainer() ;
 
     void init(rcsc::TrainerAgent * agent,
               std::string target="localhost",
@@ -13,5 +13,5 @@ class RpcAgentTrainer : public RpcAgent {
               bool add_20_to_grpc_port_if_right_side=false);
 
     void getActions() const;
-    soccer::State generateState() const;
+    State generateState() const;
 };

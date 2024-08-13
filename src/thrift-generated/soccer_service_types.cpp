@@ -300,33 +300,33 @@ std::string to_string(const GameModeType::type& val) {
 }
 
 
-ThriftVector2D::~ThriftVector2D() noexcept {
+RpcVector2D::~RpcVector2D() noexcept {
 }
 
 
-void ThriftVector2D::__set_x(const double val) {
+void RpcVector2D::__set_x(const double val) {
   this->x = val;
 }
 
-void ThriftVector2D::__set_y(const double val) {
+void RpcVector2D::__set_y(const double val) {
   this->y = val;
 }
 
-void ThriftVector2D::__set_dist(const double val) {
+void RpcVector2D::__set_dist(const double val) {
   this->dist = val;
 }
 
-void ThriftVector2D::__set_angle(const double val) {
+void RpcVector2D::__set_angle(const double val) {
   this->angle = val;
 }
-std::ostream& operator<<(std::ostream& out, const ThriftVector2D& obj)
+std::ostream& operator<<(std::ostream& out, const RpcVector2D& obj)
 {
   obj.printTo(out);
   return out;
 }
 
 
-uint32_t ThriftVector2D::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t RpcVector2D::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   ::apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -391,10 +391,10 @@ uint32_t ThriftVector2D::read(::apache::thrift::protocol::TProtocol* iprot) {
   return xfer;
 }
 
-uint32_t ThriftVector2D::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t RpcVector2D::write(::apache::thrift::protocol::TProtocol* oprot) const {
   uint32_t xfer = 0;
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
-  xfer += oprot->writeStructBegin("ThriftVector2D");
+  xfer += oprot->writeStructBegin("RpcVector2D");
 
   xfer += oprot->writeFieldBegin("x", ::apache::thrift::protocol::T_DOUBLE, 1);
   xfer += oprot->writeDouble(this->x);
@@ -417,7 +417,7 @@ uint32_t ThriftVector2D::write(::apache::thrift::protocol::TProtocol* oprot) con
   return xfer;
 }
 
-void swap(ThriftVector2D &a, ThriftVector2D &b) {
+void swap(RpcVector2D &a, RpcVector2D &b) {
   using ::std::swap;
   swap(a.x, b.x);
   swap(a.y, b.y);
@@ -426,14 +426,14 @@ void swap(ThriftVector2D &a, ThriftVector2D &b) {
   swap(a.__isset, b.__isset);
 }
 
-ThriftVector2D::ThriftVector2D(const ThriftVector2D& other0) noexcept {
+RpcVector2D::RpcVector2D(const RpcVector2D& other0) noexcept {
   x = other0.x;
   y = other0.y;
   dist = other0.dist;
   angle = other0.angle;
   __isset = other0.__isset;
 }
-ThriftVector2D& ThriftVector2D::operator=(const ThriftVector2D& other1) noexcept {
+RpcVector2D& RpcVector2D::operator=(const RpcVector2D& other1) noexcept {
   x = other1.x;
   y = other1.y;
   dist = other1.dist;
@@ -441,9 +441,9 @@ ThriftVector2D& ThriftVector2D::operator=(const ThriftVector2D& other1) noexcept
   __isset = other1.__isset;
   return *this;
 }
-void ThriftVector2D::printTo(std::ostream& out) const {
+void RpcVector2D::printTo(std::ostream& out) const {
   using ::apache::thrift::to_string;
-  out << "ThriftVector2D(";
+  out << "RpcVector2D(";
   out << "x=" << to_string(x);
   out << ", " << "y=" << to_string(y);
   out << ", " << "dist=" << to_string(dist);
@@ -456,31 +456,31 @@ Ball::~Ball() noexcept {
 }
 
 
-void Ball::__set_position(const ThriftVector2D& val) {
+void Ball::__set_position(const RpcVector2D& val) {
   this->position = val;
 }
 
-void Ball::__set_relative_position(const ThriftVector2D& val) {
+void Ball::__set_relative_position(const RpcVector2D& val) {
   this->relative_position = val;
 }
 
-void Ball::__set_seen_position(const ThriftVector2D& val) {
+void Ball::__set_seen_position(const RpcVector2D& val) {
   this->seen_position = val;
 }
 
-void Ball::__set_heard_position(const ThriftVector2D& val) {
+void Ball::__set_heard_position(const RpcVector2D& val) {
   this->heard_position = val;
 }
 
-void Ball::__set_velocity(const ThriftVector2D& val) {
+void Ball::__set_velocity(const RpcVector2D& val) {
   this->velocity = val;
 }
 
-void Ball::__set_seen_velocity(const ThriftVector2D& val) {
+void Ball::__set_seen_velocity(const RpcVector2D& val) {
   this->seen_velocity = val;
 }
 
-void Ball::__set_heard_velocity(const ThriftVector2D& val) {
+void Ball::__set_heard_velocity(const RpcVector2D& val) {
   this->heard_velocity = val;
 }
 
@@ -868,23 +868,23 @@ Player::~Player() noexcept {
 }
 
 
-void Player::__set_position(const ThriftVector2D& val) {
+void Player::__set_position(const RpcVector2D& val) {
   this->position = val;
 }
 
-void Player::__set_seen_position(const ThriftVector2D& val) {
+void Player::__set_seen_position(const RpcVector2D& val) {
   this->seen_position = val;
 }
 
-void Player::__set_heard_position(const ThriftVector2D& val) {
+void Player::__set_heard_position(const RpcVector2D& val) {
   this->heard_position = val;
 }
 
-void Player::__set_velocity(const ThriftVector2D& val) {
+void Player::__set_velocity(const RpcVector2D& val) {
   this->velocity = val;
 }
 
-void Player::__set_seen_velocity(const ThriftVector2D& val) {
+void Player::__set_seen_velocity(const RpcVector2D& val) {
   this->seen_velocity = val;
 }
 
@@ -1542,23 +1542,23 @@ Self::~Self() noexcept {
 }
 
 
-void Self::__set_position(const ThriftVector2D& val) {
+void Self::__set_position(const RpcVector2D& val) {
   this->position = val;
 }
 
-void Self::__set_seen_position(const ThriftVector2D& val) {
+void Self::__set_seen_position(const RpcVector2D& val) {
   this->seen_position = val;
 }
 
-void Self::__set_heard_position(const ThriftVector2D& val) {
+void Self::__set_heard_position(const RpcVector2D& val) {
   this->heard_position = val;
 }
 
-void Self::__set_velocity(const ThriftVector2D& val) {
+void Self::__set_velocity(const RpcVector2D& val) {
   this->velocity = val;
 }
 
-void Self::__set_seen_velocity(const ThriftVector2D& val) {
+void Self::__set_seen_velocity(const RpcVector2D& val) {
   this->seen_velocity = val;
 }
 
@@ -2362,7 +2362,7 @@ void InterceptInfo::__set_dash_dir(const double val) {
   this->dash_dir = val;
 }
 
-void InterceptInfo::__set_final_self_position(const ThriftVector2D& val) {
+void InterceptInfo::__set_final_self_position(const RpcVector2D& val) {
   this->final_self_position = val;
 }
 
@@ -3024,7 +3024,7 @@ void WorldModel::__set_is_penalty_kick_mode(const bool val) {
   this->is_penalty_kick_mode = val;
 }
 
-void WorldModel::__set_helios_home_positions(const std::map<int32_t, ThriftVector2D> & val) {
+void WorldModel::__set_helios_home_positions(const std::map<int32_t, RpcVector2D> & val) {
   this->helios_home_positions = val;
 }
 std::ostream& operator<<(std::ostream& out, const WorldModel& obj)
@@ -3380,7 +3380,7 @@ uint32_t WorldModel::read(::apache::thrift::protocol::TProtocol* iprot) {
             {
               int32_t _key59;
               xfer += iprot->readI32(_key59);
-              ThriftVector2D& _val60 = this->helios_home_positions[_key59];
+              RpcVector2D& _val60 = this->helios_home_positions[_key59];
               xfer += _val60.read(iprot);
             }
             xfer += iprot->readMapEnd();
@@ -3572,7 +3572,7 @@ uint32_t WorldModel::write(::apache::thrift::protocol::TProtocol* oprot) const {
   xfer += oprot->writeFieldBegin("helios_home_positions", ::apache::thrift::protocol::T_MAP, 31);
   {
     xfer += oprot->writeMapBegin(::apache::thrift::protocol::T_I32, ::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->helios_home_positions.size()));
-    std::map<int32_t, ThriftVector2D> ::const_iterator _iter66;
+    std::map<int32_t, RpcVector2D> ::const_iterator _iter66;
     for (_iter66 = this->helios_home_positions.begin(); _iter66 != this->helios_home_positions.end(); ++_iter66)
     {
       xfer += oprot->writeI32(_iter66->first);
@@ -4776,11 +4776,11 @@ BallMessage::~BallMessage() noexcept {
 }
 
 
-void BallMessage::__set_ball_position(const ThriftVector2D& val) {
+void BallMessage::__set_ball_position(const RpcVector2D& val) {
   this->ball_position = val;
 }
 
-void BallMessage::__set_ball_velocity(const ThriftVector2D& val) {
+void BallMessage::__set_ball_velocity(const RpcVector2D& val) {
   this->ball_velocity = val;
 }
 std::ostream& operator<<(std::ostream& out, const BallMessage& obj)
@@ -4892,15 +4892,15 @@ void PassMessage::__set_receiver_uniform_number(const int32_t val) {
   this->receiver_uniform_number = val;
 }
 
-void PassMessage::__set_receiver_point(const ThriftVector2D& val) {
+void PassMessage::__set_receiver_point(const RpcVector2D& val) {
   this->receiver_point = val;
 }
 
-void PassMessage::__set_ball_position(const ThriftVector2D& val) {
+void PassMessage::__set_ball_position(const RpcVector2D& val) {
   this->ball_position = val;
 }
 
-void PassMessage::__set_ball_velocity(const ThriftVector2D& val) {
+void PassMessage::__set_ball_velocity(const RpcVector2D& val) {
   this->ball_velocity = val;
 }
 std::ostream& operator<<(std::ostream& out, const PassMessage& obj)
@@ -5176,7 +5176,7 @@ void GoalieMessage::__set_goalie_uniform_number(const int32_t val) {
   this->goalie_uniform_number = val;
 }
 
-void GoalieMessage::__set_goalie_position(const ThriftVector2D& val) {
+void GoalieMessage::__set_goalie_position(const RpcVector2D& val) {
   this->goalie_position = val;
 }
 
@@ -5308,7 +5308,7 @@ void GoalieAndPlayerMessage::__set_goalie_uniform_number(const int32_t val) {
   this->goalie_uniform_number = val;
 }
 
-void GoalieAndPlayerMessage::__set_goalie_position(const ThriftVector2D& val) {
+void GoalieAndPlayerMessage::__set_goalie_position(const RpcVector2D& val) {
   this->goalie_position = val;
 }
 
@@ -5320,7 +5320,7 @@ void GoalieAndPlayerMessage::__set_player_uniform_number(const int32_t val) {
   this->player_uniform_number = val;
 }
 
-void GoalieAndPlayerMessage::__set_player_position(const ThriftVector2D& val) {
+void GoalieAndPlayerMessage::__set_player_position(const RpcVector2D& val) {
   this->player_position = val;
 }
 std::ostream& operator<<(std::ostream& out, const GoalieAndPlayerMessage& obj)
@@ -5820,7 +5820,7 @@ PassRequestMessage::~PassRequestMessage() noexcept {
 }
 
 
-void PassRequestMessage::__set_target_point(const ThriftVector2D& val) {
+void PassRequestMessage::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 std::ostream& operator<<(std::ostream& out, const PassRequestMessage& obj)
@@ -6188,7 +6188,7 @@ DribbleMessage::~DribbleMessage() noexcept {
 }
 
 
-void DribbleMessage::__set_target_point(const ThriftVector2D& val) {
+void DribbleMessage::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 
@@ -6300,15 +6300,15 @@ BallGoalieMessage::~BallGoalieMessage() noexcept {
 }
 
 
-void BallGoalieMessage::__set_ball_position(const ThriftVector2D& val) {
+void BallGoalieMessage::__set_ball_position(const RpcVector2D& val) {
   this->ball_position = val;
 }
 
-void BallGoalieMessage::__set_ball_velocity(const ThriftVector2D& val) {
+void BallGoalieMessage::__set_ball_velocity(const RpcVector2D& val) {
   this->ball_velocity = val;
 }
 
-void BallGoalieMessage::__set_goalie_position(const ThriftVector2D& val) {
+void BallGoalieMessage::__set_goalie_position(const RpcVector2D& val) {
   this->goalie_position = val;
 }
 
@@ -6456,7 +6456,7 @@ void OnePlayerMessage::__set_uniform_number(const int32_t val) {
   this->uniform_number = val;
 }
 
-void OnePlayerMessage::__set_position(const ThriftVector2D& val) {
+void OnePlayerMessage::__set_position(const RpcVector2D& val) {
   this->position = val;
 }
 std::ostream& operator<<(std::ostream& out, const OnePlayerMessage& obj)
@@ -6568,7 +6568,7 @@ void TwoPlayerMessage::__set_first_uniform_number(const int32_t val) {
   this->first_uniform_number = val;
 }
 
-void TwoPlayerMessage::__set_first_position(const ThriftVector2D& val) {
+void TwoPlayerMessage::__set_first_position(const RpcVector2D& val) {
   this->first_position = val;
 }
 
@@ -6576,7 +6576,7 @@ void TwoPlayerMessage::__set_second_uniform_number(const int32_t val) {
   this->second_uniform_number = val;
 }
 
-void TwoPlayerMessage::__set_second_position(const ThriftVector2D& val) {
+void TwoPlayerMessage::__set_second_position(const RpcVector2D& val) {
   this->second_position = val;
 }
 std::ostream& operator<<(std::ostream& out, const TwoPlayerMessage& obj)
@@ -6720,7 +6720,7 @@ void ThreePlayerMessage::__set_first_uniform_number(const int32_t val) {
   this->first_uniform_number = val;
 }
 
-void ThreePlayerMessage::__set_first_position(const ThriftVector2D& val) {
+void ThreePlayerMessage::__set_first_position(const RpcVector2D& val) {
   this->first_position = val;
 }
 
@@ -6728,7 +6728,7 @@ void ThreePlayerMessage::__set_second_uniform_number(const int32_t val) {
   this->second_uniform_number = val;
 }
 
-void ThreePlayerMessage::__set_second_position(const ThriftVector2D& val) {
+void ThreePlayerMessage::__set_second_position(const RpcVector2D& val) {
   this->second_position = val;
 }
 
@@ -6736,7 +6736,7 @@ void ThreePlayerMessage::__set_third_uniform_number(const int32_t val) {
   this->third_uniform_number = val;
 }
 
-void ThreePlayerMessage::__set_third_position(const ThriftVector2D& val) {
+void ThreePlayerMessage::__set_third_position(const RpcVector2D& val) {
   this->third_position = val;
 }
 std::ostream& operator<<(std::ostream& out, const ThreePlayerMessage& obj)
@@ -6908,7 +6908,7 @@ SelfMessage::~SelfMessage() noexcept {
 }
 
 
-void SelfMessage::__set_self_position(const ThriftVector2D& val) {
+void SelfMessage::__set_self_position(const RpcVector2D& val) {
   this->self_position = val;
 }
 
@@ -7044,7 +7044,7 @@ void TeammateMessage::__set_uniform_number(const int32_t val) {
   this->uniform_number = val;
 }
 
-void TeammateMessage::__set_position(const ThriftVector2D& val) {
+void TeammateMessage::__set_position(const RpcVector2D& val) {
   this->position = val;
 }
 
@@ -7176,7 +7176,7 @@ void OpponentMessage::__set_uniform_number(const int32_t val) {
   this->uniform_number = val;
 }
 
-void OpponentMessage::__set_position(const ThriftVector2D& val) {
+void OpponentMessage::__set_position(const RpcVector2D& val) {
   this->position = val;
 }
 
@@ -7304,11 +7304,11 @@ BallPlayerMessage::~BallPlayerMessage() noexcept {
 }
 
 
-void BallPlayerMessage::__set_ball_position(const ThriftVector2D& val) {
+void BallPlayerMessage::__set_ball_position(const RpcVector2D& val) {
   this->ball_position = val;
 }
 
-void BallPlayerMessage::__set_ball_velocity(const ThriftVector2D& val) {
+void BallPlayerMessage::__set_ball_velocity(const RpcVector2D& val) {
   this->ball_velocity = val;
 }
 
@@ -7316,7 +7316,7 @@ void BallPlayerMessage::__set_uniform_number(const int32_t val) {
   this->uniform_number = val;
 }
 
-void BallPlayerMessage::__set_player_position(const ThriftVector2D& val) {
+void BallPlayerMessage::__set_player_position(const RpcVector2D& val) {
   this->player_position = val;
 }
 
@@ -8512,7 +8512,7 @@ void AddPoint::__set_level(const LoggerLevel::type val) {
   this->level = val;
 }
 
-void AddPoint::__set_point(const ThriftVector2D& val) {
+void AddPoint::__set_point(const RpcVector2D& val) {
   this->point = val;
 }
 
@@ -8646,11 +8646,11 @@ void AddLine::__set_level(const LoggerLevel::type val) {
   this->level = val;
 }
 
-void AddLine::__set_start_point(const ThriftVector2D& val) {
+void AddLine::__set_start_point(const RpcVector2D& val) {
   this->start_point = val;
 }
 
-void AddLine::__set_end_point(const ThriftVector2D& val) {
+void AddLine::__set_end_point(const RpcVector2D& val) {
   this->end_point = val;
 }
 
@@ -8800,7 +8800,7 @@ void AddArc::__set_level(const LoggerLevel::type val) {
   this->level = val;
 }
 
-void AddArc::__set_center(const ThriftVector2D& val) {
+void AddArc::__set_center(const RpcVector2D& val) {
   this->center = val;
 }
 
@@ -8994,7 +8994,7 @@ void AddCircle::__set_level(const LoggerLevel::type val) {
   this->level = val;
 }
 
-void AddCircle::__set_center(const ThriftVector2D& val) {
+void AddCircle::__set_center(const RpcVector2D& val) {
   this->center = val;
 }
 
@@ -9168,15 +9168,15 @@ void AddTriangle::__set_level(const LoggerLevel::type val) {
   this->level = val;
 }
 
-void AddTriangle::__set_point1(const ThriftVector2D& val) {
+void AddTriangle::__set_point1(const RpcVector2D& val) {
   this->point1 = val;
 }
 
-void AddTriangle::__set_point2(const ThriftVector2D& val) {
+void AddTriangle::__set_point2(const RpcVector2D& val) {
   this->point2 = val;
 }
 
-void AddTriangle::__set_point3(const ThriftVector2D& val) {
+void AddTriangle::__set_point3(const RpcVector2D& val) {
   this->point3 = val;
 }
 
@@ -9576,7 +9576,7 @@ void AddSector::__set_level(const LoggerLevel::type val) {
   this->level = val;
 }
 
-void AddSector::__set_center(const ThriftVector2D& val) {
+void AddSector::__set_center(const RpcVector2D& val) {
   this->center = val;
 }
 
@@ -9810,7 +9810,7 @@ void AddMessage::__set_level(const LoggerLevel::type val) {
   this->level = val;
 }
 
-void AddMessage::__set_position(const ThriftVector2D& val) {
+void AddMessage::__set_position(const RpcVector2D& val) {
   this->position = val;
 }
 
@@ -10322,7 +10322,7 @@ Body_GoToPoint::~Body_GoToPoint() noexcept {
 }
 
 
-void Body_GoToPoint::__set_target_point(const ThriftVector2D& val) {
+void Body_GoToPoint::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 
@@ -10454,7 +10454,7 @@ Body_SmartKick::~Body_SmartKick() noexcept {
 }
 
 
-void Body_SmartKick::__set_target_point(const ThriftVector2D& val) {
+void Body_SmartKick::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 
@@ -10606,7 +10606,7 @@ Bhv_BeforeKickOff::~Bhv_BeforeKickOff() noexcept {
 }
 
 
-void Bhv_BeforeKickOff::__set_point(const ThriftVector2D& val) {
+void Bhv_BeforeKickOff::__set_point(const RpcVector2D& val) {
   this->point = val;
 }
 std::ostream& operator<<(std::ostream& out, const Bhv_BeforeKickOff& obj)
@@ -10766,7 +10766,7 @@ Bhv_BodyNeckToPoint::~Bhv_BodyNeckToPoint() noexcept {
 }
 
 
-void Bhv_BodyNeckToPoint::__set_point(const ThriftVector2D& val) {
+void Bhv_BodyNeckToPoint::__set_point(const RpcVector2D& val) {
   this->point = val;
 }
 std::ostream& operator<<(std::ostream& out, const Bhv_BodyNeckToPoint& obj)
@@ -10926,7 +10926,7 @@ Bhv_GoToPointLookBall::~Bhv_GoToPointLookBall() noexcept {
 }
 
 
-void Bhv_GoToPointLookBall::__set_target_point(const ThriftVector2D& val) {
+void Bhv_GoToPointLookBall::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 
@@ -11150,7 +11150,7 @@ Bhv_NeckBodyToPoint::~Bhv_NeckBodyToPoint() noexcept {
 }
 
 
-void Bhv_NeckBodyToPoint::__set_point(const ThriftVector2D& val) {
+void Bhv_NeckBodyToPoint::__set_point(const RpcVector2D& val) {
   this->point = val;
 }
 
@@ -11466,7 +11466,7 @@ Body_Dribble::~Body_Dribble() noexcept {
 }
 
 
-void Body_Dribble::__set_target_point(const ThriftVector2D& val) {
+void Body_Dribble::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 
@@ -11638,7 +11638,7 @@ Body_GoToPointDodge::~Body_GoToPointDodge() noexcept {
 }
 
 
-void Body_GoToPointDodge::__set_target_point(const ThriftVector2D& val) {
+void Body_GoToPointDodge::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 
@@ -11754,11 +11754,11 @@ void Body_HoldBall::__set_do_turn(const bool val) {
   this->do_turn = val;
 }
 
-void Body_HoldBall::__set_turn_target_point(const ThriftVector2D& val) {
+void Body_HoldBall::__set_turn_target_point(const RpcVector2D& val) {
   this->turn_target_point = val;
 }
 
-void Body_HoldBall::__set_kick_target_point(const ThriftVector2D& val) {
+void Body_HoldBall::__set_kick_target_point(const RpcVector2D& val) {
   this->kick_target_point = val;
 }
 std::ostream& operator<<(std::ostream& out, const Body_HoldBall& obj)
@@ -11886,7 +11886,7 @@ void Body_Intercept::__set_save_recovery(const bool val) {
   this->save_recovery = val;
 }
 
-void Body_Intercept::__set_face_point(const ThriftVector2D& val) {
+void Body_Intercept::__set_face_point(const RpcVector2D& val) {
   this->face_point = val;
 }
 std::ostream& operator<<(std::ostream& out, const Body_Intercept& obj)
@@ -11994,7 +11994,7 @@ Body_KickOneStep::~Body_KickOneStep() noexcept {
 }
 
 
-void Body_KickOneStep::__set_target_point(const ThriftVector2D& val) {
+void Body_KickOneStep::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 
@@ -12286,7 +12286,7 @@ Body_TackleToPoint::~Body_TackleToPoint() noexcept {
 }
 
 
-void Body_TackleToPoint::__set_target_point(const ThriftVector2D& val) {
+void Body_TackleToPoint::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 
@@ -12602,7 +12602,7 @@ Body_TurnToPoint::~Body_TurnToPoint() noexcept {
 }
 
 
-void Body_TurnToPoint::__set_target_point(const ThriftVector2D& val) {
+void Body_TurnToPoint::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 
@@ -12714,7 +12714,7 @@ Focus_MoveToPoint::~Focus_MoveToPoint() noexcept {
 }
 
 
-void Focus_MoveToPoint::__set_target_point(const ThriftVector2D& val) {
+void Focus_MoveToPoint::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 std::ostream& operator<<(std::ostream& out, const Focus_MoveToPoint& obj)
@@ -13598,7 +13598,7 @@ Neck_TurnToPoint::~Neck_TurnToPoint() noexcept {
 }
 
 
-void Neck_TurnToPoint::__set_target_point(const ThriftVector2D& val) {
+void Neck_TurnToPoint::__set_target_point(const RpcVector2D& val) {
   this->target_point = val;
 }
 std::ostream& operator<<(std::ostream& out, const Neck_TurnToPoint& obj)
@@ -17102,11 +17102,11 @@ DoMoveBall::~DoMoveBall() noexcept {
 }
 
 
-void DoMoveBall::__set_position(const ThriftVector2D& val) {
+void DoMoveBall::__set_position(const RpcVector2D& val) {
   this->position = val;
 }
 
-void DoMoveBall::__set_velocity(const ThriftVector2D& val) {
+void DoMoveBall::__set_velocity(const RpcVector2D& val) {
   this->velocity = val;
 __isset.velocity = true;
 }
@@ -17224,7 +17224,7 @@ void DoMovePlayer::__set_uniform_number(const int32_t val) {
   this->uniform_number = val;
 }
 
-void DoMovePlayer::__set_position(const ThriftVector2D& val) {
+void DoMovePlayer::__set_position(const RpcVector2D& val) {
   this->position = val;
 }
 

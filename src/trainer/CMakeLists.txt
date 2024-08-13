@@ -2,9 +2,14 @@
 add_executable(sample_trainer
         ../thrift-generated/Game.cpp
         ../thrift-generated/soccer_service_types.cpp
-        ../rpc-client/state_generator.cpp
-        ../rpc-client/rpc_agent.cpp
-        ../rpc-client/rpc_agent_trainer.cpp
+        ../thrift-client/thrift_state_generator.cpp
+        ../thrift-client/thrift_agent.cpp
+        ../thrift-client/thrift_agent_trainer.cpp
+        ../grpc-generated/service.pb.cc
+        ../grpc-generated/service.grpc.pb.cc
+        ../grpc-client/state_generator.cpp
+        ../grpc-client/grpc_agent.cpp
+        ../grpc-client/grpc_agent_trainer.cpp
   sample_trainer.cpp
   main_trainer.cpp
   )
@@ -14,7 +19,7 @@ add_executable(sample_trainer
 
 target_include_directories(sample_trainer
   PRIVATE
-    ${PROJECT_SOURCE_DIR}/../grpc/
+        ${PROJECT_SOURCE_DIR}/../idl/grpc/
     ${PROJECT_SOURCE_DIR}/src
     ${PROJECT_SOURCE_DIR}/trainer
     ${PROJECT_BINARY_DIR}
@@ -27,7 +32,7 @@ target_link_libraries(sample_trainer
   PRIVATE
         ${THRIFT_LIBRARY}
         pthread
-#    ${_GRPC_GRPCPP}
+        ${_GRPC_GRPCPP}
   PUBLIC
     ${LIBRCSC_LIB}
     Boost::system

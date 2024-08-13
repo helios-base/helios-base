@@ -1,14 +1,12 @@
-#include "rpc_agent.h"
+#include "thrift_agent.h"
 
-#ifndef GrpcAgentCoach_H
-#define GrpcAgentCoach_H
-
-class RpcAgentCoach : public RpcAgent {
-    rcsc::CoachAgent * M_agent;
+class ThriftAgentTrainer : public ThriftAgent {
+    rcsc::TrainerAgent * M_agent;
+    
     public:
-    RpcAgentCoach() ;
+    ThriftAgentTrainer() ;
 
-    void init(rcsc::CoachAgent * agent,
+    void init(rcsc::TrainerAgent * agent,
               std::string target="localhost",
               int port=50051,
               bool use_same_grpc_port=true,
@@ -17,4 +15,3 @@ class RpcAgentCoach : public RpcAgent {
     void getActions() const;
     soccer::State generateState() const;
 };
-#endif

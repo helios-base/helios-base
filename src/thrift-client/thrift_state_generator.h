@@ -16,15 +16,15 @@ using namespace apache::thrift::transport;
 //using protos::State;
 //using protos::WorldModel;
 /**
- * @class StateGenerator
+ * @class ThriftStateGenerator
  * @brief This class provides static methods to convert various objects from the rcsc namespace to their corresponding protobuf representations.
  */
-class StateGenerator
+class ThriftStateGenerator
 {
 public:
     static soccer::Side::type convertSide(rcsc::SideID sideId);
     static soccer::ViewWidth::type convertViewWidth(rcsc::ViewWidth::Type viewWidth);
-    static soccer::ThriftVector2D convertVector2D(rcsc::Vector2D vector2D);
+    static soccer::RpcVector2D convertVector2D(rcsc::Vector2D vector2D);
     static soccer::Ball convertBall(const rcsc::BallObject &ball);
     static soccer::Ball convertBall(const rcsc::CoachBallObject &ball);
     static soccer::Self convertSelf(const rcsc::SelfObject &self, const rcsc::WorldModel &wm);

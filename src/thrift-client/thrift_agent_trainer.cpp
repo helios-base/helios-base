@@ -1,5 +1,5 @@
-#include "rpc_agent_trainer.h"
-#include "state_generator.h"
+#include "thrift_agent_trainer.h"
+#include "thrift_state_generator.h"
 // #include "state_generator.h"
 
 #include <rcsc/player/say_message_builder.h>
@@ -22,16 +22,16 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-RpcAgentTrainer::RpcAgentTrainer()
+ThriftAgentTrainer::ThriftAgentTrainer()
 {
     agent_type = soccer::AgentType::TrainerT;
 }
 
-void RpcAgentTrainer::init(rcsc::TrainerAgent *agent,
-                           std::string target,
-                           int port,
-                           bool use_same_grpc_port,
-                           bool add_20_to_grpc_port_if_right_side)
+void ThriftAgentTrainer::init(rcsc::TrainerAgent *agent,
+                              std::string target,
+                              int port,
+                              bool use_same_grpc_port,
+                              bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
     unum = 13;
@@ -48,7 +48,7 @@ void RpcAgentTrainer::init(rcsc::TrainerAgent *agent,
     this->server_port = port;
 }
 
-void RpcAgentTrainer::getActions() const
+void ThriftAgentTrainer::getActions() const
 {
     auto agent = M_agent;
     std::cout<<"generating state for cycle:"<<agent->world().time().cycle()<<std::endl;
@@ -77,8 +77,8 @@ void RpcAgentTrainer::getActions() const
         if (action.__isset.do_move_ball)
         {
             const auto &doMoveBall = action.do_move_ball;
-            const auto &ballPosition = RpcAgent::convertVector2D(doMoveBall.position);
-            const auto &ballVelocity = doMoveBall.__isset.velocity ? RpcAgent::convertVector2D(doMoveBall.velocity) : rcsc::Vector2D(0, 0);
+            const auto &ballPosition = ThriftAgent::convertVector2D(doMoveBall.position);
+            const auto &ballVelocity = doMoveBall.__isset.velocity ? ThriftAgent::convertVector2D(doMoveBall.velocity) : rcsc::Vector2D(0, 0);
             agent->doMoveBall(ballPosition, ballVelocity);
             continue;
         }
@@ -86,7 +86,7 @@ void RpcAgentTrainer::getActions() const
         {
             const auto &doMovePlayer = action.do_move_player;
             const auto &unum = doMovePlayer.uniform_number;
-            const auto &position = RpcAgent::convertVector2D(doMovePlayer.position);
+            const auto &position = ThriftAgent::convertVector2D(doMovePlayer.position);
             const auto &body = rcsc::AngleDeg(doMovePlayer.body_direction);
             std::string team_name = "";
             if (doMovePlayer.our_side)
@@ -268,10 +268,10 @@ void RpcAgentTrainer::getActions() const
     }
 }
 
-soccer::State RpcAgentTrainer::generateState() const
+soccer::State ThriftAgentTrainer::generateState() const
 {
     auto &wm = M_agent->world();
-     soccer::WorldModel worldModel = StateGenerator::convertCoachWorldModel(wm);
+     soccer::WorldModel worldModel = ThriftStateGenerator::convertCoachWorldModel(wm);
     soccer::State state;
     state.world_model = worldModel;
     return state;

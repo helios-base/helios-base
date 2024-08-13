@@ -1,5 +1,5 @@
-#include "rpc_agent.h"
-#include "state_generator.h"
+#include "thrift_agent.h"
+#include "thrift_state_generator.h"
 
 #include <rcsc/player/say_message_builder.h>
 #include <rcsc/common/player_param.h>
@@ -21,7 +21,7 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-void RpcAgent::sendParams(bool offline_logging)
+void ThriftAgent::sendParams(bool offline_logging)
 {
     if (!param_sent)
     {
@@ -34,7 +34,7 @@ void RpcAgent::sendParams(bool offline_logging)
         LOG("sendParams Done");
     }
 }
-void RpcAgent::sendServerParam() const
+void ThriftAgent::sendServerParam() const
 {
     LOG("sendServerParam Started");
 
@@ -290,7 +290,7 @@ void RpcAgent::sendServerParam() const
     }
 }
 
-void RpcAgent::sendPlayerParams() const
+void ThriftAgent::sendPlayerParams() const
 {
     LOG("sendPlayerParams Started");
     soccer::PlayerParam playerParam;
@@ -338,7 +338,7 @@ void RpcAgent::sendPlayerParams() const
     }
 }
 
-void RpcAgent::sendPlayerType() const
+void ThriftAgent::sendPlayerType() const
 {
     LOG("sendPlayerType Started");
     const rcsc::PlayerParam &PP = rcsc::PlayerParam::i();
@@ -395,7 +395,7 @@ void RpcAgent::sendPlayerType() const
     }
 }
 
-void RpcAgent::sendInitMessage(bool offline_logging) const
+void ThriftAgent::sendInitMessage(bool offline_logging) const
 {
     soccer::Empty empty;
     soccer::InitMessage initMessage;
@@ -411,7 +411,7 @@ void RpcAgent::sendInitMessage(bool offline_logging) const
     }
 }
 
-bool RpcAgent::Register()
+bool ThriftAgent::Register()
 {
     std::cout<<"Getting InitMessage..."<<std::endl;
     soccer::Empty empty;
@@ -432,7 +432,7 @@ bool RpcAgent::Register()
     }
 }
 
-void RpcAgent::sendByeCommand() const
+void ThriftAgent::sendByeCommand() const
 {
     try{
         soccer::Empty empty;
@@ -446,7 +446,7 @@ void RpcAgent::sendByeCommand() const
     }
 }
 
-bool RpcAgent::connectToGrpcServer()
+bool ThriftAgent::connectToGrpcServer()
 {
     std::cout<<"Connecting to server..."<<std::endl;
     socket = std::make_shared<TSocket>(server_host, server_port);
@@ -476,7 +476,7 @@ bool RpcAgent::connectToGrpcServer()
     }
 }
 
-void RpcAgent::addDlog(soccer::Log log) const
+void ThriftAgent::addDlog(soccer::Log log) const
 {
     if (log.__isset.add_text){
         const auto &addText = log.add_text;
@@ -485,34 +485,34 @@ void RpcAgent::addDlog(soccer::Log log) const
 
     if (log.__isset.add_point){
         const auto &addPoint = log.add_point;
-        const auto &point = RpcAgent::convertVector2D(addPoint.point);
+        const auto &point = ThriftAgent::convertVector2D(addPoint.point);
         rcsc::dlog.addPoint(addPoint.level, point, addPoint.color.c_str());
     }
 
     if (log.__isset.add_line){
         const auto &addLine = log.add_line;
-        const auto &point1 = RpcAgent::convertVector2D(addLine.start_point);
-        const auto &point2 = RpcAgent::convertVector2D(addLine.end_point);
+        const auto &point1 = ThriftAgent::convertVector2D(addLine.start_point);
+        const auto &point2 = ThriftAgent::convertVector2D(addLine.end_point);
         rcsc::dlog.addLine(addLine.level, point1, point2, addLine.color.c_str());
     }
 
     if (log.__isset.add_arc){
         const auto &addArc = log.add_arc;
-        const auto &center = RpcAgent::convertVector2D(addArc.center);
+        const auto &center = ThriftAgent::convertVector2D(addArc.center);
         rcsc::dlog.addArc(addArc.level, center, addArc.radius, addArc.start_angle, addArc.span_angel, addArc.color.c_str());
     }
 
     if (log.__isset.add_circle){
         const auto &addCircle = log.add_circle;
-        const auto &center = RpcAgent::convertVector2D(addCircle.center);
+        const auto &center = ThriftAgent::convertVector2D(addCircle.center);
         rcsc::dlog.addCircle(addCircle.level, center, addCircle.radius, addCircle.color.c_str(), addCircle.fill);
     }
 
     if (log.__isset.add_triangle){
         const auto &addTriangle = log.add_triangle;
-        const auto &point1 = RpcAgent::convertVector2D(addTriangle.point1);
-        const auto &point2 = RpcAgent::convertVector2D(addTriangle.point2);
-        const auto &point3 = RpcAgent::convertVector2D(addTriangle.point3);
+        const auto &point1 = ThriftAgent::convertVector2D(addTriangle.point1);
+        const auto &point2 = ThriftAgent::convertVector2D(addTriangle.point2);
+        const auto &point3 = ThriftAgent::convertVector2D(addTriangle.point3);
         rcsc::dlog.addTriangle(addTriangle.level, point1, point2, point3, addTriangle.color.c_str(), addTriangle.fill);
     }
 
@@ -523,18 +523,18 @@ void RpcAgent::addDlog(soccer::Log log) const
 
     if (log.__isset.add_sector){
         const auto &addSector = log.add_sector;
-        const auto &center = RpcAgent::convertVector2D(addSector.center);
+        const auto &center = ThriftAgent::convertVector2D(addSector.center);
         rcsc::dlog.addSector(addSector.level, center, addSector.min_radius, addSector.max_radius, addSector.start_angle, addSector.span_angel, addSector.color.c_str(), addSector.fill);
     }
 
     if (log.__isset.add_message){
         const auto &addMessage = log.add_message;
-        const auto &position = RpcAgent::convertVector2D(addMessage.position);
+        const auto &position = ThriftAgent::convertVector2D(addMessage.position);
         rcsc::dlog.addMessage(addMessage.level, position, addMessage.message.c_str(), addMessage.color.c_str());
     }
 }
 
-rcsc::ViewWidth RpcAgent::convertViewWidth(soccer::ViewWidth::type view_width)
+rcsc::ViewWidth ThriftAgent::convertViewWidth(soccer::ViewWidth::type view_width)
 {
     switch (view_width)
     {
@@ -549,7 +549,7 @@ rcsc::ViewWidth RpcAgent::convertViewWidth(soccer::ViewWidth::type view_width)
     }
 }
 
-rcsc::SideID RpcAgent::convertSideID(soccer::Side::type side)
+rcsc::SideID ThriftAgent::convertSideID(soccer::Side::type side)
 {
     switch (side)
     {
@@ -562,7 +562,7 @@ rcsc::SideID RpcAgent::convertSideID(soccer::Side::type side)
     }
 }
 
-rcsc::Vector2D RpcAgent::convertVector2D(soccer::ThriftVector2D vector2d)
+rcsc::Vector2D ThriftAgent::convertVector2D(soccer::RpcVector2D vector2d)
 {
     return rcsc::Vector2D(vector2d.x, vector2d.y);
 }

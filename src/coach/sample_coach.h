@@ -29,7 +29,8 @@
 
 #include <rcsc/coach/coach_agent.h>
 #include <rcsc/types.h>
-#include "rpc-client/rpc_agent_coach.h"
+#include "thrift-client/thrift_agent_coach.h"
+#include "rpc-client/rpc-agent.h"
 #include <vector>
 
 
@@ -48,7 +49,7 @@ private:
 
     rcsc::TeamGraphic M_team_graphic;
 
-    RpcAgentCoach M_grpc_agent = RpcAgentCoach();
+    IRpcAgent * M_grpc_agent = new ThriftAgentCoach();
     int M_first_grpc_port;
     bool M_use_same_grpc_port;
     bool M_add_20_to_grpc_port_if_right_side;

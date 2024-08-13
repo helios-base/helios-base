@@ -1,4 +1,4 @@
-#include "state_generator.h"
+#include "thrift_state_generator.h"
 using namespace apache::thrift;
 using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;
@@ -9,7 +9,7 @@ using namespace apache::thrift::transport;
  * @param sideId The `rcsc::SideID` to convert.
  * @return The converted `protos::Side`.
  */
-soccer::Side::type StateGenerator::convertSide(rcsc::SideID sideId)
+soccer::Side::type ThriftStateGenerator::convertSide(rcsc::SideID sideId)
 {
     if (sideId == rcsc::LEFT)
     {
@@ -28,7 +28,7 @@ soccer::Side::type StateGenerator::convertSide(rcsc::SideID sideId)
  * @param viewWidth The `rcsc::ViewWidth::Type` to be converted.
  * @return The converted `soccer::ViewWidth`.
  */
-soccer::ViewWidth::type StateGenerator::convertViewWidth(rcsc::ViewWidth::Type viewWidth)
+soccer::ViewWidth::type ThriftStateGenerator::convertViewWidth(rcsc::ViewWidth::Type viewWidth)
 {
     if (viewWidth == rcsc::ViewWidth::Type::NARROW)
     {
@@ -51,9 +51,9 @@ soccer::ViewWidth::type StateGenerator::convertViewWidth(rcsc::ViewWidth::Type v
  * @param vector2D The rcsc::Vector2D object to be converted.
  * @return The converted soccer::Vector2D object.
  */
-soccer::ThriftVector2D StateGenerator::convertVector2D(rcsc::Vector2D vector2D)
+soccer::RpcVector2D ThriftStateGenerator::convertVector2D(rcsc::Vector2D vector2D)
 {
-    auto res = soccer::ThriftVector2D();
+    auto res = soccer::RpcVector2D();
     res.x = static_cast<float>(vector2D.x);
     res.y = static_cast<float>(vector2D.y);
     res.dist = static_cast<float>(vector2D.r());
@@ -67,7 +67,7 @@ soccer::ThriftVector2D StateGenerator::convertVector2D(rcsc::Vector2D vector2D)
  * @param ball The `rcsc::BallObject` to be converted.
  * @return The converted `soccer::Ball` object.
  */
-soccer::Ball StateGenerator::convertBall(const rcsc::BallObject &ball)
+soccer::Ball ThriftStateGenerator::convertBall(const rcsc::BallObject &ball)
 {
     auto res = soccer::Ball();
     res.position = convertVector2D(ball.pos());
@@ -97,7 +97,7 @@ soccer::Ball StateGenerator::convertBall(const rcsc::BallObject &ball)
  * @param ball The CoachBallObject to be converted.
  * @return The converted soccer::Ball object.
  */
-soccer::Ball StateGenerator::convertBall(const rcsc::CoachBallObject &ball)
+soccer::Ball ThriftStateGenerator::convertBall(const rcsc::CoachBallObject &ball)
 {
     auto res = soccer::Ball();
     res.position = convertVector2D(ball.pos());
@@ -112,7 +112,7 @@ soccer::Ball StateGenerator::convertBall(const rcsc::CoachBallObject &ball)
  * @param wm The `rcsc::WorldModel` object containing the world state.
  * @return The converted `soccer::Self` object.
  */
-soccer::Self StateGenerator::convertSelf(const rcsc::SelfObject &self, const rcsc::WorldModel &wm)
+soccer::Self ThriftStateGenerator::convertSelf(const rcsc::SelfObject &self, const rcsc::WorldModel &wm)
 {
     auto res = soccer::Self();
     res.position = convertVector2D(self.pos());
@@ -165,7 +165,7 @@ soccer::Self StateGenerator::convertSelf(const rcsc::SelfObject &self, const rcs
  * @param actionType The `rcsc::Intercept::ActionType` to be converted.
  * @return The converted `soccer::InterceptActionType`.
  */
-soccer::InterceptActionType::type StateGenerator::convertInterceptActionType(rcsc::Intercept::ActionType actionType)
+soccer::InterceptActionType::type ThriftStateGenerator::convertInterceptActionType(rcsc::Intercept::ActionType actionType)
 {
     switch (actionType)
     {
@@ -185,7 +185,7 @@ soccer::InterceptActionType::type StateGenerator::convertInterceptActionType(rcs
  * @param interceptTable The `rcsc::InterceptTable` object to be converted.
  * @return The converted `soccer::InterceptTable` object.
  */
-soccer::InterceptTable StateGenerator::convertInterceptTable(const rcsc::InterceptTable &interceptTable)
+soccer::InterceptTable ThriftStateGenerator::convertInterceptTable(const rcsc::InterceptTable &interceptTable)
 {
     auto res = soccer::InterceptTable();
     res.self_reach_steps = interceptTable.selfStep();
@@ -228,7 +228,7 @@ soccer::InterceptTable StateGenerator::convertInterceptTable(const rcsc::Interce
  * @param p The protobuf Player object to update.
  * @param player The rcsc::PlayerObject containing the player information.
  */
-void StateGenerator::updatePlayerObject(soccer::Player & p, const rcsc::PlayerObject *player)
+void ThriftStateGenerator::updatePlayerObject(soccer::Player & p, const rcsc::PlayerObject *player)
 {
     p.position = convertVector2D(player->pos());
     p.seen_position = convertVector2D(player->seenPos());
@@ -275,7 +275,7 @@ void StateGenerator::updatePlayerObject(soccer::Player & p, const rcsc::PlayerOb
  * @param p The pointer to the soccer::Player object to be updated.
  * @param player The pointer to the rcsc::CoachPlayerObject containing the updated player information.
  */
-void StateGenerator::updatePlayerObject(soccer::Player &p, const rcsc::CoachPlayerObject *player)
+void ThriftStateGenerator::updatePlayerObject(soccer::Player &p, const rcsc::CoachPlayerObject *player)
 {
     p.position = convertVector2D(player->pos());
     p.velocity = convertVector2D(player->vel());
@@ -305,7 +305,7 @@ void StateGenerator::updatePlayerObject(soccer::Player &p, const rcsc::CoachPlay
  * @param p The protobuf Player object to update.
  * @param player The rcsc::AbstractPlayerObject containing the player information.
  */
-void StateGenerator::updateAbstractPlayerObject(soccer::Player &p, const rcsc::AbstractPlayerObject *player)
+void ThriftStateGenerator::updateAbstractPlayerObject(soccer::Player &p, const rcsc::AbstractPlayerObject *player)
 {
     p.position = convertVector2D(player->pos());
     p.seen_position = convertVector2D(player->seenPos());
@@ -352,7 +352,7 @@ void StateGenerator::updateAbstractPlayerObject(soccer::Player &p, const rcsc::A
  * @param game_mode The game mode to convert.
  * @return The converted game mode.
  */
-soccer::GameModeType::type StateGenerator::converGameMode(const rcsc::GameMode::Type game_mode)
+soccer::GameModeType::type ThriftStateGenerator::converGameMode(const rcsc::GameMode::Type game_mode)
 {
     switch (game_mode)
     {
@@ -432,7 +432,7 @@ soccer::GameModeType::type StateGenerator::converGameMode(const rcsc::GameMode::
  * @param wm The rcsc::WorldModel object to be converted.
  * @return A pointer to the converted soccer::WorldModel object.
  */
-soccer::WorldModel StateGenerator::convertWorldModel(const rcsc::WorldModel &wm)
+soccer::WorldModel ThriftStateGenerator::convertWorldModel(const rcsc::WorldModel &wm)
 {
     auto res = soccer::WorldModel();
     res.intercept_table = convertInterceptTable(wm.interceptTable());
@@ -502,7 +502,7 @@ soccer::WorldModel StateGenerator::convertWorldModel(const rcsc::WorldModel &wm)
  * @param wm The CoachWorldModel object to be converted.
  * @return A pointer to the converted soccer::WorldModel object.
  */
-soccer::WorldModel StateGenerator::convertCoachWorldModel(const rcsc::CoachWorldModel &wm)
+soccer::WorldModel ThriftStateGenerator::convertCoachWorldModel(const rcsc::CoachWorldModel &wm)
 {
     auto res = soccer::WorldModel();
     res.our_team_name = wm.ourTeamName();
@@ -515,7 +515,7 @@ soccer::WorldModel StateGenerator::convertCoachWorldModel(const rcsc::CoachWorld
         if(player == nullptr || !player->isValid() || player->unum() < 1 || player->unum() > 11 ){
             continue;
         }
-        std::cout<<">>added teammate"<<std::endl;
+//        std::cout<<">>added teammate"<<std::endl;
         auto p = soccer::Player();
         updatePlayerObject(p, player);
         res.teammates.push_back(p);

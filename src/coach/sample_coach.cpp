@@ -204,9 +204,9 @@ SampleCoach::actionImpl()
 {
     debugClient().addMessage( "Cycle=%ld", world().time().cycle() );
 
-    // connect to rpc-client server
-    if (!M_grpc_agent.is_connected){
-        M_grpc_agent.init(
+    // connect to thrift-client server
+    if (!M_grpc_agent->isConnected()){
+        dynamic_cast<ThriftAgentCoach*>(M_grpc_agent)->init(
                 this,
                 M_grpc_server_address,
                 M_first_grpc_port,
@@ -216,10 +216,10 @@ SampleCoach::actionImpl()
     }
 
     bool connectedToGrpcServer = false;
-    while (M_grpc_agent.is_connected == false)
+    while (M_grpc_agent->isConnected() == false)
     {
         std::cout<<"Connecting to GRPC server..."<<std::endl;
-        connectedToGrpcServer = M_grpc_agent.connectToGrpcServer();
+        connectedToGrpcServer = M_grpc_agent->connectToGrpcServer();
         if (connectedToGrpcServer == false) {
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
@@ -232,8 +232,8 @@ SampleCoach::actionImpl()
         sendTeamGraphic();
     }
 
-    M_grpc_agent.sendParams(this->config().offlineLogging());
-    M_grpc_agent.getActions();
+    M_grpc_agent->sendParams(this->config().offlineLogging());
+    M_grpc_agent->getActions();
     return;
     doSubstitute();
     sayPlayerTypes();
@@ -242,7 +242,7 @@ SampleCoach::actionImpl()
 void
 SampleCoach::handleExit()
 {
-    M_grpc_agent.sendByeCommand();
+    M_grpc_agent->sendByeCommand();
     CoachAgent::handleExit();
 }
 

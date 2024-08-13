@@ -1,4 +1,4 @@
-#include "rpc_agent_coach.h"
+#include "thrift_agent_coach.h"
 // #include "state_generator.h"
 
 #include <rcsc/player/say_message_builder.h>
@@ -6,7 +6,7 @@
 #include "coach/sample_coach.h"
 #include <chrono>
 #include <rcsc/common/logger.h>
-#include "rpc-client/state_generator.h"
+#include "thrift-client/thrift_state_generator.h"
 
 using std::chrono::duration;
 using std::chrono::duration_cast;
@@ -23,16 +23,16 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-RpcAgentCoach::RpcAgentCoach()
+ThriftAgentCoach::ThriftAgentCoach()
 {
     agent_type = soccer::AgentType::CoachT;
 }
 
-void RpcAgentCoach::init(rcsc::CoachAgent *agent,
-                         std::string target,
-                         int port,
-                         bool use_same_grpc_port,
-                         bool add_20_to_grpc_port_if_right_side)
+void ThriftAgentCoach::init(rcsc::CoachAgent *agent,
+                            std::string target,
+                            int port,
+                            bool use_same_grpc_port,
+                            bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
     unum = 12;
@@ -49,7 +49,7 @@ void RpcAgentCoach::init(rcsc::CoachAgent *agent,
     this->server_port = port;
 }
 
-void RpcAgentCoach::getActions() const
+void ThriftAgentCoach::getActions() const
 {
     auto agent = M_agent;
     soccer::State state = generateState();
@@ -91,10 +91,10 @@ void RpcAgentCoach::getActions() const
     }
 }
 
-soccer::State RpcAgentCoach::generateState() const
+soccer::State ThriftAgentCoach::generateState() const
 {
     auto &wm = M_agent->world();
-    soccer::WorldModel worldModel = StateGenerator::convertCoachWorldModel(wm);
+    soccer::WorldModel worldModel = ThriftStateGenerator::convertCoachWorldModel(wm);
     soccer::State state;
     state.world_model = worldModel;
     return state;

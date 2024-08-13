@@ -13,7 +13,7 @@ enum AgentType {
   TrainerT = 2
 }
 
-struct ThriftVector2D {
+struct RpcVector2D {
   1: double x,
   2: double y,
   3: double dist,
@@ -21,13 +21,13 @@ struct ThriftVector2D {
 }
 
 struct Ball {
-  1: ThriftVector2D position,
-  2: ThriftVector2D relative_position,
-  3: ThriftVector2D seen_position,
-  4: ThriftVector2D heard_position,
-  5: ThriftVector2D velocity,
-  6: ThriftVector2D seen_velocity,
-  7: ThriftVector2D heard_velocity,
+  1: RpcVector2D position,
+  2: RpcVector2D relative_position,
+  3: RpcVector2D seen_position,
+  4: RpcVector2D heard_position,
+  5: RpcVector2D velocity,
+  6: RpcVector2D seen_velocity,
+  7: RpcVector2D heard_velocity,
   8: i32 pos_count,
   9: i32 seen_pos_count,
   10: i32 heard_pos_count,
@@ -72,11 +72,11 @@ enum LoggerLevel {
 }
 
 struct Player {
-  1: ThriftVector2D position,
-  2: ThriftVector2D seen_position,
-  3: ThriftVector2D heard_position,
-  4: ThriftVector2D velocity,
-  5: ThriftVector2D seen_velocity,
+  1: RpcVector2D position,
+  2: RpcVector2D seen_position,
+  3: RpcVector2D heard_position,
+  4: RpcVector2D velocity,
+  5: RpcVector2D seen_velocity,
   6: i32 pos_count,
   7: i32 seen_pos_count,
   8: i32 heard_pos_count,
@@ -105,11 +105,11 @@ struct Player {
 }
 
 struct Self {
-  1: ThriftVector2D position,
-  2: ThriftVector2D seen_position,
-  3: ThriftVector2D heard_position,
-  4: ThriftVector2D velocity,
-  5: ThriftVector2D seen_velocity,
+  1: RpcVector2D position,
+  2: RpcVector2D seen_position,
+  3: RpcVector2D heard_position,
+  4: RpcVector2D velocity,
+  5: RpcVector2D seen_velocity,
   6: i32 pos_count,
   7: i32 seen_pos_count,
   8: i32 heard_pos_count,
@@ -157,7 +157,7 @@ struct InterceptInfo {
   4: i32 dash_steps,
   5: double dash_power,
   6: double dash_dir,
-  7: ThriftVector2D final_self_position,
+  7: RpcVector2D final_self_position,
   8: double final_ball_dist,
   9: double final_stamina,
   10: double value
@@ -243,7 +243,7 @@ struct WorldModel {
   28: i32 our_team_score,
   29: i32 their_team_score,
   30: bool is_penalty_kick_mode,
-  31: map<i32, ThriftVector2D> helios_home_positions
+  31: map<i32, RpcVector2D> helios_home_positions
 }
 
 struct State {
@@ -292,15 +292,15 @@ struct ChangeView {
 }
 
 struct BallMessage {
-  1: ThriftVector2D ball_position,
-  2: ThriftVector2D ball_velocity
+  1: RpcVector2D ball_position,
+  2: RpcVector2D ball_velocity
 }
 
 struct PassMessage {
   1: i32 receiver_uniform_number,
-  2: ThriftVector2D receiver_point,
-  3: ThriftVector2D ball_position,
-  4: ThriftVector2D ball_velocity
+  2: RpcVector2D receiver_point,
+  3: RpcVector2D ball_position,
+  4: RpcVector2D ball_velocity
 }
 
 struct InterceptMessage {
@@ -311,16 +311,16 @@ struct InterceptMessage {
 
 struct GoalieMessage {
   1: i32 goalie_uniform_number,
-  2: ThriftVector2D goalie_position,
+  2: RpcVector2D goalie_position,
   3: double goalie_body_direction
 }
 
 struct GoalieAndPlayerMessage {
   1: i32 goalie_uniform_number,
-  2: ThriftVector2D goalie_position,
+  2: RpcVector2D goalie_position,
   3: double goalie_body_direction,
   4: i32 player_uniform_number,
-  5: ThriftVector2D player_position
+  5: RpcVector2D player_position
 }
 
 struct OffsideLineMessage {
@@ -338,7 +338,7 @@ struct SetplayMessage {
 }
 
 struct PassRequestMessage {
-  1: ThriftVector2D target_point
+  1: RpcVector2D target_point
 }
 
 struct StaminaMessage {
@@ -354,61 +354,61 @@ struct StaminaCapacityMessage {
 }
 
 struct DribbleMessage {
-  1: ThriftVector2D target_point,
+  1: RpcVector2D target_point,
   2: i32 queue_count
 }
 
 struct BallGoalieMessage {
-  1: ThriftVector2D ball_position,
-  2: ThriftVector2D ball_velocity,
-  3: ThriftVector2D goalie_position,
+  1: RpcVector2D ball_position,
+  2: RpcVector2D ball_velocity,
+  3: RpcVector2D goalie_position,
   4: double goalie_body_direction
 }
 
 struct OnePlayerMessage {
   1: i32 uniform_number,
-  2: ThriftVector2D position
+  2: RpcVector2D position
 }
 
 struct TwoPlayerMessage {
   1: i32 first_uniform_number,
-  2: ThriftVector2D first_position,
+  2: RpcVector2D first_position,
   3: i32 second_uniform_number,
-  4: ThriftVector2D second_position
+  4: RpcVector2D second_position
 }
 
 struct ThreePlayerMessage {
   1: i32 first_uniform_number,
-  2: ThriftVector2D first_position,
+  2: RpcVector2D first_position,
   3: i32 second_uniform_number,
-  4: ThriftVector2D second_position,
+  4: RpcVector2D second_position,
   5: i32 third_uniform_number,
-  6: ThriftVector2D third_position
+  6: RpcVector2D third_position
 }
 
 struct SelfMessage {
-  1: ThriftVector2D self_position,
+  1: RpcVector2D self_position,
   2: double self_body_direction,
   3: double self_stamina
 }
 
 struct TeammateMessage {
   1: i32 uniform_number,
-  2: ThriftVector2D position,
+  2: RpcVector2D position,
   3: double body_direction
 }
 
 struct OpponentMessage {
   1: i32 uniform_number,
-  2: ThriftVector2D position,
+  2: RpcVector2D position,
   3: double body_direction
 }
 
 struct BallPlayerMessage {
-  1: ThriftVector2D ball_position,
-  2: ThriftVector2D ball_velocity,
+  1: RpcVector2D ball_position,
+  2: RpcVector2D ball_velocity,
   3: i32 uniform_number,
-  4: ThriftVector2D player_position,
+  4: RpcVector2D player_position,
   5: double body_direction
 }
 
@@ -458,20 +458,20 @@ struct AddText {
 
 struct AddPoint {
   1: LoggerLevel level,
-  2: ThriftVector2D point,
+  2: RpcVector2D point,
   3: string color
 }
 
 struct AddLine {
   1: LoggerLevel level,
-  2: ThriftVector2D start_point,
-  3: ThriftVector2D end_point,
+  2: RpcVector2D start_point,
+  3: RpcVector2D end_point,
   4: string color
 }
 
 struct AddArc {
   1: LoggerLevel level,
-  2: ThriftVector2D center,
+  2: RpcVector2D center,
   3: double radius,
   4: double start_angle,
   5: double span_angel,
@@ -480,7 +480,7 @@ struct AddArc {
 
 struct AddCircle {
   1: LoggerLevel level,
-  2: ThriftVector2D center,
+  2: RpcVector2D center,
   3: double radius,
   4: string color,
   5: bool fill
@@ -488,9 +488,9 @@ struct AddCircle {
 
 struct AddTriangle {
   1: LoggerLevel level,
-  2: ThriftVector2D point1,
-  3: ThriftVector2D point2,
-  4: ThriftVector2D point3,
+  2: RpcVector2D point1,
+  3: RpcVector2D point2,
+  4: RpcVector2D point3,
   5: string color,
   6: bool fill
 }
@@ -507,7 +507,7 @@ struct AddRectangle {
 
 struct AddSector {
   1: LoggerLevel level,
-  2: ThriftVector2D center,
+  2: RpcVector2D center,
   3: double min_radius,
   4: double max_radius,
   5: double start_angle,
@@ -518,7 +518,7 @@ struct AddSector {
 
 struct AddMessage {
   1: LoggerLevel level,
-  2: ThriftVector2D position,
+  2: RpcVector2D position,
   3: string message,
   4: string color
 }
@@ -540,32 +540,32 @@ struct DebugClient {
 }
 
 struct Body_GoToPoint {
-  1: ThriftVector2D target_point,
+  1: RpcVector2D target_point,
   2: double distance_threshold,
   3: double max_dash_power
 }
 
 struct Body_SmartKick {
-  1: ThriftVector2D target_point,
+  1: RpcVector2D target_point,
   2: double first_speed,
   3: double first_speed_threshold,
   4: i32 max_steps
 }
 
 struct Bhv_BeforeKickOff {
-  1: ThriftVector2D point
+  1: RpcVector2D point
 }
 
 struct Bhv_BodyNeckToBall {}
 
 struct Bhv_BodyNeckToPoint {
-  1: ThriftVector2D point
+  1: RpcVector2D point
 }
 
 struct Bhv_Emergency {}
 
 struct Bhv_GoToPointLookBall {
-  1: ThriftVector2D target_point,
+  1: RpcVector2D target_point,
   2: double distance_threshold,
   3: double max_dash_power
 }
@@ -575,7 +575,7 @@ struct Bhv_NeckBodyToBall {
 }
 
 struct Bhv_NeckBodyToPoint {
-  1: ThriftVector2D point,
+  1: RpcVector2D point,
   2: double angle_buf
 }
 
@@ -586,7 +586,7 @@ struct Body_AdvanceBall {}
 struct Body_ClearBall {}
 
 struct Body_Dribble {
-  1: ThriftVector2D target_point,
+  1: RpcVector2D target_point,
   2: double distance_threshold,
   3: double dash_power,
   4: i32 dash_count,
@@ -594,23 +594,23 @@ struct Body_Dribble {
 }
 
 struct Body_GoToPointDodge {
-  1: ThriftVector2D target_point,
+  1: RpcVector2D target_point,
   2: double dash_power
 }
 
 struct Body_HoldBall {
   1: bool do_turn,
-  2: ThriftVector2D turn_target_point,
-  3: ThriftVector2D kick_target_point
+  2: RpcVector2D turn_target_point,
+  3: RpcVector2D kick_target_point
 }
 
 struct Body_Intercept {
   1: bool save_recovery,
-  2: ThriftVector2D face_point
+  2: RpcVector2D face_point
 }
 
 struct Body_KickOneStep {
-  1: ThriftVector2D target_point,
+  1: RpcVector2D target_point,
   2: double first_speed,
   3: bool force_mode
 }
@@ -622,7 +622,7 @@ struct Body_StopDash {
 }
 
 struct Body_TackleToPoint {
-  1: ThriftVector2D target_point,
+  1: RpcVector2D target_point,
   2: double min_probability,
    3: double min_speed
 }
@@ -636,12 +636,12 @@ struct Body_TurnToBall {
 }
 
 struct Body_TurnToPoint {
-  1: ThriftVector2D target_point,
+  1: RpcVector2D target_point,
   2: i32 cycle
 }
 
 struct Focus_MoveToPoint {
-  1: ThriftVector2D target_point
+  1: RpcVector2D target_point
 }
 
 struct Focus_Reset {}
@@ -675,7 +675,7 @@ struct Neck_TurnToPlayerOrScan {
 }
 
 struct Neck_TurnToPoint {
-  1: ThriftVector2D target_point
+  1: RpcVector2D target_point
 }
 
 struct Neck_TurnToRelative {
@@ -815,14 +815,14 @@ struct CoachActions {
 struct DoKickOff {}
 
 struct DoMoveBall {
-  1: ThriftVector2D position,
-  2: optional ThriftVector2D velocity
+  1: RpcVector2D position,
+  2: optional RpcVector2D velocity
 }
 
 struct DoMovePlayer {
   1: bool our_side,
   2: i32 uniform_number,
-  3: ThriftVector2D position,
+  3: RpcVector2D position,
   4: double body_direction
 }
 

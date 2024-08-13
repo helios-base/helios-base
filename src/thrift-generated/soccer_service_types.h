@@ -155,7 +155,7 @@ std::ostream& operator<<(std::ostream& out, const GameModeType::type& val);
 
 std::string to_string(const GameModeType::type& val);
 
-class ThriftVector2D;
+class RpcVector2D;
 
 class Ball;
 
@@ -405,33 +405,33 @@ class RegisterRequest;
 
 class RegisterResponse;
 
-typedef struct _ThriftVector2D__isset {
-  _ThriftVector2D__isset() : x(false), y(false), dist(false), angle(false) {}
+typedef struct _RpcVector2D__isset {
+  _RpcVector2D__isset() : x(false), y(false), dist(false), angle(false) {}
   bool x :1;
   bool y :1;
   bool dist :1;
   bool angle :1;
-} _ThriftVector2D__isset;
+} _RpcVector2D__isset;
 
-class ThriftVector2D : public virtual ::apache::thrift::TBase {
+class RpcVector2D : public virtual ::apache::thrift::TBase {
  public:
 
-  ThriftVector2D(const ThriftVector2D&) noexcept;
-  ThriftVector2D& operator=(const ThriftVector2D&) noexcept;
-  ThriftVector2D() noexcept
-                 : x(0),
-                   y(0),
-                   dist(0),
-                   angle(0) {
+  RpcVector2D(const RpcVector2D&) noexcept;
+  RpcVector2D& operator=(const RpcVector2D&) noexcept;
+  RpcVector2D() noexcept
+              : x(0),
+                y(0),
+                dist(0),
+                angle(0) {
   }
 
-  virtual ~ThriftVector2D() noexcept;
+  virtual ~RpcVector2D() noexcept;
   double x;
   double y;
   double dist;
   double angle;
 
-  _ThriftVector2D__isset __isset;
+  _RpcVector2D__isset __isset;
 
   void __set_x(const double val);
 
@@ -441,7 +441,7 @@ class ThriftVector2D : public virtual ::apache::thrift::TBase {
 
   void __set_angle(const double val);
 
-  bool operator == (const ThriftVector2D & rhs) const
+  bool operator == (const RpcVector2D & rhs) const
   {
     if (!(x == rhs.x))
       return false;
@@ -453,11 +453,11 @@ class ThriftVector2D : public virtual ::apache::thrift::TBase {
       return false;
     return true;
   }
-  bool operator != (const ThriftVector2D &rhs) const {
+  bool operator != (const RpcVector2D &rhs) const {
     return !(*this == rhs);
   }
 
-  bool operator < (const ThriftVector2D & ) const;
+  bool operator < (const RpcVector2D & ) const;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot) override;
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const override;
@@ -465,9 +465,9 @@ class ThriftVector2D : public virtual ::apache::thrift::TBase {
   virtual void printTo(std::ostream& out) const;
 };
 
-void swap(ThriftVector2D &a, ThriftVector2D &b);
+void swap(RpcVector2D &a, RpcVector2D &b);
 
-std::ostream& operator<<(std::ostream& out, const ThriftVector2D& obj);
+std::ostream& operator<<(std::ostream& out, const RpcVector2D& obj);
 
 typedef struct _Ball__isset {
   _Ball__isset() : position(false), relative_position(false), seen_position(false), heard_position(false), velocity(false), seen_velocity(false), heard_velocity(false), pos_count(false), seen_pos_count(false), heard_pos_count(false), vel_count(false), seen_vel_count(false), heard_vel_count(false), lost_count(false), ghost_count(false), dist_from_self(false), angle_from_self(false) {}
@@ -509,13 +509,13 @@ class Ball : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Ball() noexcept;
-  ThriftVector2D position;
-  ThriftVector2D relative_position;
-  ThriftVector2D seen_position;
-  ThriftVector2D heard_position;
-  ThriftVector2D velocity;
-  ThriftVector2D seen_velocity;
-  ThriftVector2D heard_velocity;
+  RpcVector2D position;
+  RpcVector2D relative_position;
+  RpcVector2D seen_position;
+  RpcVector2D heard_position;
+  RpcVector2D velocity;
+  RpcVector2D seen_velocity;
+  RpcVector2D heard_velocity;
   int32_t pos_count;
   int32_t seen_pos_count;
   int32_t heard_pos_count;
@@ -529,19 +529,19 @@ class Ball : public virtual ::apache::thrift::TBase {
 
   _Ball__isset __isset;
 
-  void __set_position(const ThriftVector2D& val);
+  void __set_position(const RpcVector2D& val);
 
-  void __set_relative_position(const ThriftVector2D& val);
+  void __set_relative_position(const RpcVector2D& val);
 
-  void __set_seen_position(const ThriftVector2D& val);
+  void __set_seen_position(const RpcVector2D& val);
 
-  void __set_heard_position(const ThriftVector2D& val);
+  void __set_heard_position(const RpcVector2D& val);
 
-  void __set_velocity(const ThriftVector2D& val);
+  void __set_velocity(const RpcVector2D& val);
 
-  void __set_seen_velocity(const ThriftVector2D& val);
+  void __set_seen_velocity(const RpcVector2D& val);
 
-  void __set_heard_velocity(const ThriftVector2D& val);
+  void __set_heard_velocity(const RpcVector2D& val);
 
   void __set_pos_count(const int32_t val);
 
@@ -685,11 +685,11 @@ class Player : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Player() noexcept;
-  ThriftVector2D position;
-  ThriftVector2D seen_position;
-  ThriftVector2D heard_position;
-  ThriftVector2D velocity;
-  ThriftVector2D seen_velocity;
+  RpcVector2D position;
+  RpcVector2D seen_position;
+  RpcVector2D heard_position;
+  RpcVector2D velocity;
+  RpcVector2D seen_velocity;
   int32_t pos_count;
   int32_t seen_pos_count;
   int32_t heard_pos_count;
@@ -722,15 +722,15 @@ class Player : public virtual ::apache::thrift::TBase {
 
   _Player__isset __isset;
 
-  void __set_position(const ThriftVector2D& val);
+  void __set_position(const RpcVector2D& val);
 
-  void __set_seen_position(const ThriftVector2D& val);
+  void __set_seen_position(const RpcVector2D& val);
 
-  void __set_heard_position(const ThriftVector2D& val);
+  void __set_heard_position(const RpcVector2D& val);
 
-  void __set_velocity(const ThriftVector2D& val);
+  void __set_velocity(const RpcVector2D& val);
 
-  void __set_seen_velocity(const ThriftVector2D& val);
+  void __set_seen_velocity(const RpcVector2D& val);
 
   void __set_pos_count(const int32_t val);
 
@@ -942,11 +942,11 @@ class Self : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Self() noexcept;
-  ThriftVector2D position;
-  ThriftVector2D seen_position;
-  ThriftVector2D heard_position;
-  ThriftVector2D velocity;
-  ThriftVector2D seen_velocity;
+  RpcVector2D position;
+  RpcVector2D seen_position;
+  RpcVector2D heard_position;
+  RpcVector2D velocity;
+  RpcVector2D seen_velocity;
   int32_t pos_count;
   int32_t seen_pos_count;
   int32_t heard_pos_count;
@@ -989,15 +989,15 @@ class Self : public virtual ::apache::thrift::TBase {
 
   _Self__isset __isset;
 
-  void __set_position(const ThriftVector2D& val);
+  void __set_position(const RpcVector2D& val);
 
-  void __set_seen_position(const ThriftVector2D& val);
+  void __set_seen_position(const RpcVector2D& val);
 
-  void __set_heard_position(const ThriftVector2D& val);
+  void __set_heard_position(const RpcVector2D& val);
 
-  void __set_velocity(const ThriftVector2D& val);
+  void __set_velocity(const RpcVector2D& val);
 
-  void __set_seen_velocity(const ThriftVector2D& val);
+  void __set_seen_velocity(const RpcVector2D& val);
 
   void __set_pos_count(const int32_t val);
 
@@ -1195,7 +1195,7 @@ class InterceptInfo : public virtual ::apache::thrift::TBase {
   int32_t dash_steps;
   double dash_power;
   double dash_dir;
-  ThriftVector2D final_self_position;
+  RpcVector2D final_self_position;
   double final_ball_dist;
   double final_stamina;
   double value;
@@ -1214,7 +1214,7 @@ class InterceptInfo : public virtual ::apache::thrift::TBase {
 
   void __set_dash_dir(const double val);
 
-  void __set_final_self_position(const ThriftVector2D& val);
+  void __set_final_self_position(const RpcVector2D& val);
 
   void __set_final_ball_dist(const double val);
 
@@ -1475,7 +1475,7 @@ class WorldModel : public virtual ::apache::thrift::TBase {
   int32_t our_team_score;
   int32_t their_team_score;
   bool is_penalty_kick_mode;
-  std::map<int32_t, ThriftVector2D>  helios_home_positions;
+  std::map<int32_t, RpcVector2D>  helios_home_positions;
 
   _WorldModel__isset __isset;
 
@@ -1539,7 +1539,7 @@ class WorldModel : public virtual ::apache::thrift::TBase {
 
   void __set_is_penalty_kick_mode(const bool val);
 
-  void __set_helios_home_positions(const std::map<int32_t, ThriftVector2D> & val);
+  void __set_helios_home_positions(const std::map<int32_t, RpcVector2D> & val);
 
   bool operator == (const WorldModel & rhs) const
   {
@@ -2115,14 +2115,14 @@ class BallMessage : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~BallMessage() noexcept;
-  ThriftVector2D ball_position;
-  ThriftVector2D ball_velocity;
+  RpcVector2D ball_position;
+  RpcVector2D ball_velocity;
 
   _BallMessage__isset __isset;
 
-  void __set_ball_position(const ThriftVector2D& val);
+  void __set_ball_position(const RpcVector2D& val);
 
-  void __set_ball_velocity(const ThriftVector2D& val);
+  void __set_ball_velocity(const RpcVector2D& val);
 
   bool operator == (const BallMessage & rhs) const
   {
@@ -2167,19 +2167,19 @@ class PassMessage : public virtual ::apache::thrift::TBase {
 
   virtual ~PassMessage() noexcept;
   int32_t receiver_uniform_number;
-  ThriftVector2D receiver_point;
-  ThriftVector2D ball_position;
-  ThriftVector2D ball_velocity;
+  RpcVector2D receiver_point;
+  RpcVector2D ball_position;
+  RpcVector2D ball_velocity;
 
   _PassMessage__isset __isset;
 
   void __set_receiver_uniform_number(const int32_t val);
 
-  void __set_receiver_point(const ThriftVector2D& val);
+  void __set_receiver_point(const RpcVector2D& val);
 
-  void __set_ball_position(const ThriftVector2D& val);
+  void __set_ball_position(const RpcVector2D& val);
 
-  void __set_ball_velocity(const ThriftVector2D& val);
+  void __set_ball_velocity(const RpcVector2D& val);
 
   bool operator == (const PassMessage & rhs) const
   {
@@ -2285,14 +2285,14 @@ class GoalieMessage : public virtual ::apache::thrift::TBase {
 
   virtual ~GoalieMessage() noexcept;
   int32_t goalie_uniform_number;
-  ThriftVector2D goalie_position;
+  RpcVector2D goalie_position;
   double goalie_body_direction;
 
   _GoalieMessage__isset __isset;
 
   void __set_goalie_uniform_number(const int32_t val);
 
-  void __set_goalie_position(const ThriftVector2D& val);
+  void __set_goalie_position(const RpcVector2D& val);
 
   void __set_goalie_body_direction(const double val);
 
@@ -2344,22 +2344,22 @@ class GoalieAndPlayerMessage : public virtual ::apache::thrift::TBase {
 
   virtual ~GoalieAndPlayerMessage() noexcept;
   int32_t goalie_uniform_number;
-  ThriftVector2D goalie_position;
+  RpcVector2D goalie_position;
   double goalie_body_direction;
   int32_t player_uniform_number;
-  ThriftVector2D player_position;
+  RpcVector2D player_position;
 
   _GoalieAndPlayerMessage__isset __isset;
 
   void __set_goalie_uniform_number(const int32_t val);
 
-  void __set_goalie_position(const ThriftVector2D& val);
+  void __set_goalie_position(const RpcVector2D& val);
 
   void __set_goalie_body_direction(const double val);
 
   void __set_player_uniform_number(const int32_t val);
 
-  void __set_player_position(const ThriftVector2D& val);
+  void __set_player_position(const RpcVector2D& val);
 
   bool operator == (const GoalieAndPlayerMessage & rhs) const
   {
@@ -2565,11 +2565,11 @@ class PassRequestMessage : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~PassRequestMessage() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
 
   _PassRequestMessage__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   bool operator == (const PassRequestMessage & rhs) const
   {
@@ -2738,12 +2738,12 @@ class DribbleMessage : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~DribbleMessage() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
   int32_t queue_count;
 
   _DribbleMessage__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   void __set_queue_count(const int32_t val);
 
@@ -2789,18 +2789,18 @@ class BallGoalieMessage : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~BallGoalieMessage() noexcept;
-  ThriftVector2D ball_position;
-  ThriftVector2D ball_velocity;
-  ThriftVector2D goalie_position;
+  RpcVector2D ball_position;
+  RpcVector2D ball_velocity;
+  RpcVector2D goalie_position;
   double goalie_body_direction;
 
   _BallGoalieMessage__isset __isset;
 
-  void __set_ball_position(const ThriftVector2D& val);
+  void __set_ball_position(const RpcVector2D& val);
 
-  void __set_ball_velocity(const ThriftVector2D& val);
+  void __set_ball_velocity(const RpcVector2D& val);
 
-  void __set_goalie_position(const ThriftVector2D& val);
+  void __set_goalie_position(const RpcVector2D& val);
 
   void __set_goalie_body_direction(const double val);
 
@@ -2849,13 +2849,13 @@ class OnePlayerMessage : public virtual ::apache::thrift::TBase {
 
   virtual ~OnePlayerMessage() noexcept;
   int32_t uniform_number;
-  ThriftVector2D position;
+  RpcVector2D position;
 
   _OnePlayerMessage__isset __isset;
 
   void __set_uniform_number(const int32_t val);
 
-  void __set_position(const ThriftVector2D& val);
+  void __set_position(const RpcVector2D& val);
 
   bool operator == (const OnePlayerMessage & rhs) const
   {
@@ -2901,19 +2901,19 @@ class TwoPlayerMessage : public virtual ::apache::thrift::TBase {
 
   virtual ~TwoPlayerMessage() noexcept;
   int32_t first_uniform_number;
-  ThriftVector2D first_position;
+  RpcVector2D first_position;
   int32_t second_uniform_number;
-  ThriftVector2D second_position;
+  RpcVector2D second_position;
 
   _TwoPlayerMessage__isset __isset;
 
   void __set_first_uniform_number(const int32_t val);
 
-  void __set_first_position(const ThriftVector2D& val);
+  void __set_first_position(const RpcVector2D& val);
 
   void __set_second_uniform_number(const int32_t val);
 
-  void __set_second_position(const ThriftVector2D& val);
+  void __set_second_position(const RpcVector2D& val);
 
   bool operator == (const TwoPlayerMessage & rhs) const
   {
@@ -2966,25 +2966,25 @@ class ThreePlayerMessage : public virtual ::apache::thrift::TBase {
 
   virtual ~ThreePlayerMessage() noexcept;
   int32_t first_uniform_number;
-  ThriftVector2D first_position;
+  RpcVector2D first_position;
   int32_t second_uniform_number;
-  ThriftVector2D second_position;
+  RpcVector2D second_position;
   int32_t third_uniform_number;
-  ThriftVector2D third_position;
+  RpcVector2D third_position;
 
   _ThreePlayerMessage__isset __isset;
 
   void __set_first_uniform_number(const int32_t val);
 
-  void __set_first_position(const ThriftVector2D& val);
+  void __set_first_position(const RpcVector2D& val);
 
   void __set_second_uniform_number(const int32_t val);
 
-  void __set_second_position(const ThriftVector2D& val);
+  void __set_second_position(const RpcVector2D& val);
 
   void __set_third_uniform_number(const int32_t val);
 
-  void __set_third_position(const ThriftVector2D& val);
+  void __set_third_position(const RpcVector2D& val);
 
   bool operator == (const ThreePlayerMessage & rhs) const
   {
@@ -3036,13 +3036,13 @@ class SelfMessage : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~SelfMessage() noexcept;
-  ThriftVector2D self_position;
+  RpcVector2D self_position;
   double self_body_direction;
   double self_stamina;
 
   _SelfMessage__isset __isset;
 
-  void __set_self_position(const ThriftVector2D& val);
+  void __set_self_position(const RpcVector2D& val);
 
   void __set_self_body_direction(const double val);
 
@@ -3093,14 +3093,14 @@ class TeammateMessage : public virtual ::apache::thrift::TBase {
 
   virtual ~TeammateMessage() noexcept;
   int32_t uniform_number;
-  ThriftVector2D position;
+  RpcVector2D position;
   double body_direction;
 
   _TeammateMessage__isset __isset;
 
   void __set_uniform_number(const int32_t val);
 
-  void __set_position(const ThriftVector2D& val);
+  void __set_position(const RpcVector2D& val);
 
   void __set_body_direction(const double val);
 
@@ -3149,14 +3149,14 @@ class OpponentMessage : public virtual ::apache::thrift::TBase {
 
   virtual ~OpponentMessage() noexcept;
   int32_t uniform_number;
-  ThriftVector2D position;
+  RpcVector2D position;
   double body_direction;
 
   _OpponentMessage__isset __isset;
 
   void __set_uniform_number(const int32_t val);
 
-  void __set_position(const ThriftVector2D& val);
+  void __set_position(const RpcVector2D& val);
 
   void __set_body_direction(const double val);
 
@@ -3206,21 +3206,21 @@ class BallPlayerMessage : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~BallPlayerMessage() noexcept;
-  ThriftVector2D ball_position;
-  ThriftVector2D ball_velocity;
+  RpcVector2D ball_position;
+  RpcVector2D ball_velocity;
   int32_t uniform_number;
-  ThriftVector2D player_position;
+  RpcVector2D player_position;
   double body_direction;
 
   _BallPlayerMessage__isset __isset;
 
-  void __set_ball_position(const ThriftVector2D& val);
+  void __set_ball_position(const RpcVector2D& val);
 
-  void __set_ball_velocity(const ThriftVector2D& val);
+  void __set_ball_velocity(const RpcVector2D& val);
 
   void __set_uniform_number(const int32_t val);
 
-  void __set_player_position(const ThriftVector2D& val);
+  void __set_player_position(const RpcVector2D& val);
 
   void __set_body_direction(const double val);
 
@@ -3709,14 +3709,14 @@ class AddPoint : public virtual ::apache::thrift::TBase {
    * @see LoggerLevel
    */
   LoggerLevel::type level;
-  ThriftVector2D point;
+  RpcVector2D point;
   std::string color;
 
   _AddPoint__isset __isset;
 
   void __set_level(const LoggerLevel::type val);
 
-  void __set_point(const ThriftVector2D& val);
+  void __set_point(const RpcVector2D& val);
 
   void __set_color(const std::string& val);
 
@@ -3770,17 +3770,17 @@ class AddLine : public virtual ::apache::thrift::TBase {
    * @see LoggerLevel
    */
   LoggerLevel::type level;
-  ThriftVector2D start_point;
-  ThriftVector2D end_point;
+  RpcVector2D start_point;
+  RpcVector2D end_point;
   std::string color;
 
   _AddLine__isset __isset;
 
   void __set_level(const LoggerLevel::type val);
 
-  void __set_start_point(const ThriftVector2D& val);
+  void __set_start_point(const RpcVector2D& val);
 
-  void __set_end_point(const ThriftVector2D& val);
+  void __set_end_point(const RpcVector2D& val);
 
   void __set_color(const std::string& val);
 
@@ -3841,7 +3841,7 @@ class AddArc : public virtual ::apache::thrift::TBase {
    * @see LoggerLevel
    */
   LoggerLevel::type level;
-  ThriftVector2D center;
+  RpcVector2D center;
   double radius;
   double start_angle;
   double span_angel;
@@ -3851,7 +3851,7 @@ class AddArc : public virtual ::apache::thrift::TBase {
 
   void __set_level(const LoggerLevel::type val);
 
-  void __set_center(const ThriftVector2D& val);
+  void __set_center(const RpcVector2D& val);
 
   void __set_radius(const double val);
 
@@ -3920,7 +3920,7 @@ class AddCircle : public virtual ::apache::thrift::TBase {
    * @see LoggerLevel
    */
   LoggerLevel::type level;
-  ThriftVector2D center;
+  RpcVector2D center;
   double radius;
   std::string color;
   bool fill;
@@ -3929,7 +3929,7 @@ class AddCircle : public virtual ::apache::thrift::TBase {
 
   void __set_level(const LoggerLevel::type val);
 
-  void __set_center(const ThriftVector2D& val);
+  void __set_center(const RpcVector2D& val);
 
   void __set_radius(const double val);
 
@@ -3994,9 +3994,9 @@ class AddTriangle : public virtual ::apache::thrift::TBase {
    * @see LoggerLevel
    */
   LoggerLevel::type level;
-  ThriftVector2D point1;
-  ThriftVector2D point2;
-  ThriftVector2D point3;
+  RpcVector2D point1;
+  RpcVector2D point2;
+  RpcVector2D point3;
   std::string color;
   bool fill;
 
@@ -4004,11 +4004,11 @@ class AddTriangle : public virtual ::apache::thrift::TBase {
 
   void __set_level(const LoggerLevel::type val);
 
-  void __set_point1(const ThriftVector2D& val);
+  void __set_point1(const RpcVector2D& val);
 
-  void __set_point2(const ThriftVector2D& val);
+  void __set_point2(const RpcVector2D& val);
 
-  void __set_point3(const ThriftVector2D& val);
+  void __set_point3(const RpcVector2D& val);
 
   void __set_color(const std::string& val);
 
@@ -4168,7 +4168,7 @@ class AddSector : public virtual ::apache::thrift::TBase {
    * @see LoggerLevel
    */
   LoggerLevel::type level;
-  ThriftVector2D center;
+  RpcVector2D center;
   double min_radius;
   double max_radius;
   double start_angle;
@@ -4180,7 +4180,7 @@ class AddSector : public virtual ::apache::thrift::TBase {
 
   void __set_level(const LoggerLevel::type val);
 
-  void __set_center(const ThriftVector2D& val);
+  void __set_center(const RpcVector2D& val);
 
   void __set_min_radius(const double val);
 
@@ -4255,7 +4255,7 @@ class AddMessage : public virtual ::apache::thrift::TBase {
    * @see LoggerLevel
    */
   LoggerLevel::type level;
-  ThriftVector2D position;
+  RpcVector2D position;
   std::string message;
   std::string color;
 
@@ -4263,7 +4263,7 @@ class AddMessage : public virtual ::apache::thrift::TBase {
 
   void __set_level(const LoggerLevel::type val);
 
-  void __set_position(const ThriftVector2D& val);
+  void __set_position(const RpcVector2D& val);
 
   void __set_message(const std::string& val);
 
@@ -4466,13 +4466,13 @@ class Body_GoToPoint : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Body_GoToPoint() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
   double distance_threshold;
   double max_dash_power;
 
   _Body_GoToPoint__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   void __set_distance_threshold(const double val);
 
@@ -4524,14 +4524,14 @@ class Body_SmartKick : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Body_SmartKick() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
   double first_speed;
   double first_speed_threshold;
   int32_t max_steps;
 
   _Body_SmartKick__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   void __set_first_speed(const double val);
 
@@ -4581,11 +4581,11 @@ class Bhv_BeforeKickOff : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Bhv_BeforeKickOff() noexcept;
-  ThriftVector2D point;
+  RpcVector2D point;
 
   _Bhv_BeforeKickOff__isset __isset;
 
-  void __set_point(const ThriftVector2D& val);
+  void __set_point(const RpcVector2D& val);
 
   bool operator == (const Bhv_BeforeKickOff & rhs) const
   {
@@ -4654,11 +4654,11 @@ class Bhv_BodyNeckToPoint : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Bhv_BodyNeckToPoint() noexcept;
-  ThriftVector2D point;
+  RpcVector2D point;
 
   _Bhv_BodyNeckToPoint__isset __isset;
 
-  void __set_point(const ThriftVector2D& val);
+  void __set_point(const RpcVector2D& val);
 
   bool operator == (const Bhv_BodyNeckToPoint & rhs) const
   {
@@ -4731,13 +4731,13 @@ class Bhv_GoToPointLookBall : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Bhv_GoToPointLookBall() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
   double distance_threshold;
   double max_dash_power;
 
   _Bhv_GoToPointLookBall__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   void __set_distance_threshold(const double val);
 
@@ -4828,12 +4828,12 @@ class Bhv_NeckBodyToPoint : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Bhv_NeckBodyToPoint() noexcept;
-  ThriftVector2D point;
+  RpcVector2D point;
   double angle_buf;
 
   _Bhv_NeckBodyToPoint__isset __isset;
 
-  void __set_point(const ThriftVector2D& val);
+  void __set_point(const RpcVector2D& val);
 
   void __set_angle_buf(const double val);
 
@@ -4976,7 +4976,7 @@ class Body_Dribble : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Body_Dribble() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
   double distance_threshold;
   double dash_power;
   int32_t dash_count;
@@ -4984,7 +4984,7 @@ class Body_Dribble : public virtual ::apache::thrift::TBase {
 
   _Body_Dribble__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   void __set_distance_threshold(const double val);
 
@@ -5040,12 +5040,12 @@ class Body_GoToPointDodge : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Body_GoToPointDodge() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
   double dash_power;
 
   _Body_GoToPointDodge__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   void __set_dash_power(const double val);
 
@@ -5091,16 +5091,16 @@ class Body_HoldBall : public virtual ::apache::thrift::TBase {
 
   virtual ~Body_HoldBall() noexcept;
   bool do_turn;
-  ThriftVector2D turn_target_point;
-  ThriftVector2D kick_target_point;
+  RpcVector2D turn_target_point;
+  RpcVector2D kick_target_point;
 
   _Body_HoldBall__isset __isset;
 
   void __set_do_turn(const bool val);
 
-  void __set_turn_target_point(const ThriftVector2D& val);
+  void __set_turn_target_point(const RpcVector2D& val);
 
-  void __set_kick_target_point(const ThriftVector2D& val);
+  void __set_kick_target_point(const RpcVector2D& val);
 
   bool operator == (const Body_HoldBall & rhs) const
   {
@@ -5145,13 +5145,13 @@ class Body_Intercept : public virtual ::apache::thrift::TBase {
 
   virtual ~Body_Intercept() noexcept;
   bool save_recovery;
-  ThriftVector2D face_point;
+  RpcVector2D face_point;
 
   _Body_Intercept__isset __isset;
 
   void __set_save_recovery(const bool val);
 
-  void __set_face_point(const ThriftVector2D& val);
+  void __set_face_point(const RpcVector2D& val);
 
   bool operator == (const Body_Intercept & rhs) const
   {
@@ -5195,13 +5195,13 @@ class Body_KickOneStep : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Body_KickOneStep() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
   double first_speed;
   bool force_mode;
 
   _Body_KickOneStep__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   void __set_first_speed(const double val);
 
@@ -5325,13 +5325,13 @@ class Body_TackleToPoint : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Body_TackleToPoint() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
   double min_probability;
   double min_speed;
 
   _Body_TackleToPoint__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   void __set_min_probability(const double val);
 
@@ -5465,12 +5465,12 @@ class Body_TurnToPoint : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Body_TurnToPoint() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
   int32_t cycle;
 
   _Body_TurnToPoint__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   void __set_cycle(const int32_t val);
 
@@ -5512,11 +5512,11 @@ class Focus_MoveToPoint : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Focus_MoveToPoint() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
 
   _Focus_MoveToPoint__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   bool operator == (const Focus_MoveToPoint & rhs) const
   {
@@ -5917,11 +5917,11 @@ class Neck_TurnToPoint : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~Neck_TurnToPoint() noexcept;
-  ThriftVector2D target_point;
+  RpcVector2D target_point;
 
   _Neck_TurnToPoint__isset __isset;
 
-  void __set_target_point(const ThriftVector2D& val);
+  void __set_target_point(const RpcVector2D& val);
 
   bool operator == (const Neck_TurnToPoint & rhs) const
   {
@@ -7356,14 +7356,14 @@ class DoMoveBall : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~DoMoveBall() noexcept;
-  ThriftVector2D position;
-  ThriftVector2D velocity;
+  RpcVector2D position;
+  RpcVector2D velocity;
 
   _DoMoveBall__isset __isset;
 
-  void __set_position(const ThriftVector2D& val);
+  void __set_position(const RpcVector2D& val);
 
-  void __set_velocity(const ThriftVector2D& val);
+  void __set_velocity(const RpcVector2D& val);
 
   bool operator == (const DoMoveBall & rhs) const
   {
@@ -7413,7 +7413,7 @@ class DoMovePlayer : public virtual ::apache::thrift::TBase {
   virtual ~DoMovePlayer() noexcept;
   bool our_side;
   int32_t uniform_number;
-  ThriftVector2D position;
+  RpcVector2D position;
   double body_direction;
 
   _DoMovePlayer__isset __isset;
@@ -7422,7 +7422,7 @@ class DoMovePlayer : public virtual ::apache::thrift::TBase {
 
   void __set_uniform_number(const int32_t val);
 
-  void __set_position(const ThriftVector2D& val);
+  void __set_position(const RpcVector2D& val);
 
   void __set_body_direction(const double val);
 

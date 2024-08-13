@@ -1,11 +1,14 @@
 add_executable(sample_player
         ../thrift-generated/Game.cpp
         ../thrift-generated/soccer_service_types.cpp
-        ../rpc-client/state_generator.cpp
-#  ../rpc-client/service.pb.cc
-#  ../rpc-client/service.rpc-client.pb.cc
-        ../rpc-client/rpc_agent.cpp
-        ../rpc-client/rpc_agent_player.cpp
+        ../thrift-client/thrift_state_generator.cpp
+        ../grpc-generated/service.pb.cc
+        ../grpc-generated/service.grpc.pb.cc
+        ../grpc-client/state_generator.cpp
+        ../grpc-client/grpc_agent.cpp
+        ../grpc-client/grpc_agent_player.cpp
+        ../thrift-client/thrift_agent.cpp
+        ../thrift-client/thrift_agent_player.cpp
   basic_actions/basic_actions.cpp
   basic_actions/bhv_before_kick_off.cpp
   basic_actions/bhv_emergency.cpp
@@ -117,7 +120,7 @@ add_executable(sample_player
 
 target_include_directories(sample_player
   PRIVATE
-#    ${PROJECT_SOURCE_DIR}/../rpc-client/
+        ${PROJECT_SOURCE_DIR}/../idl/grpc/
     ${PROJECT_SOURCE_DIR}/src/
     ${PROJECT_SOURCE_DIR}/src/player
     ${PROJECT_SOURCE_DIR}/src/player/planner
@@ -132,7 +135,7 @@ target_link_libraries(sample_player
   PRIVATE
     ${THRIFT_LIBRARY}
     pthread
-#    ${_GRPC_GRPCPP}
+    ${_GRPC_GRPCPP}
   PUBLIC
     ${LIBRCSC_LIB}
     Boost::system

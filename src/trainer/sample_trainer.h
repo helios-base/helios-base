@@ -28,12 +28,13 @@
 #define SAMPLE_TRAINER_H
 
 #include <rcsc/trainer/trainer_agent.h>
-#include "rpc-client/rpc_agent_trainer.h"
+#include "thrift-client/thrift_agent_trainer.h"
+#include "rpc-client/rpc-agent.h"
 
 class SampleTrainer
     : public rcsc::TrainerAgent {
 private:
-    RpcAgentTrainer M_grpc_agent = RpcAgentTrainer();
+    IRpcAgent * M_grpc_agent = new ThriftAgentTrainer();
     int M_first_grpc_port;
     bool M_use_same_grpc_port;
     bool M_add_20_to_grpc_port_if_right_side;
