@@ -9,6 +9,7 @@
 #include <rcsc/player/player_agent.h>
 #include <rcsc/coach/coach_agent.h>
 #include <rcsc/trainer/trainer_agent.h>
+#include "rpc-client/rpc-agent.h"
 
 
 
@@ -21,7 +22,7 @@ using protos::PlayerAction;
 using protos::CoachAction;
 using protos::TrainerAction;
 
-class GrpcAgent {
+class GrpcAgent : public IRpcAgent{
 public:
     std::string target;
     std::shared_ptr<Channel> channel;
@@ -41,6 +42,9 @@ public:
     bool getInitMessage() const;
     void sendByeCommand() const;
     bool connectToGrpcServer();
+    bool isConnected() const {
+        return is_connected;
+    }
 
     static rcsc::ViewWidth convertViewWidth(protos::ViewWidth view_width);
     static rcsc::SideID convertSideID(protos::Side side_id);

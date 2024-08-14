@@ -30,6 +30,7 @@ g_ip="localhost"
 g_port=50051
 diff_g_port="false"
 gp20="false"
+rpc_type="thrift"
 coach_port=""
 debug_server_host=""
 debug_server_port=""
@@ -85,6 +86,7 @@ usage()
    echo "  --g-port GRPC PORT           specifies grpc port (default: 50051)"
    echo "  --diff-g-port                specifies different grpc port for each player (default: false)"
    echo "  --gp20                       add 20 to GRPC Port if team run on right side (default: false)"
+   echo "  --rpc-type                   type of rpc framework (default: thrift) or grpc"
    echo "  --goalie                     specifies to run as a goalie"
    echo "  --player                     specifies to run as a player"
    echo "  --coach                      specifies to run as a coach"
@@ -119,7 +121,15 @@ do
       diff_g_port="true"
       ;;
     --gp20)
-      gp2="true"
+      gp20="true"
+      ;;
+    --rpc-type)
+      if [ $# -lt 2 ]; then
+        usage
+        exit 1
+      fi
+      rpc_type="${2}"
+      shift 1
       ;;
     -h|--host)
       if [ $# -lt 2 ]; then
@@ -336,6 +346,7 @@ opt="${opt} ${offline_logging}"
 opt="${opt} ${debugopt}"
 opt="${opt} --g-ip ${g_ip}"
 opt="${opt} --g-port ${g_port}"
+opt="${opt} --rpc-type ${rpc_type}"
 if [ "${same_g_port}" = "true" ]; then
   opt="${opt} --diff-g-port"
 fi
@@ -365,6 +376,7 @@ if [ "${is_coach}" = "true" ]; then
   coachopt="${coachopt} ${debugopt}"
   coachopt="${coachopt} --g-ip ${g_ip}"
   coachopt="${coachopt} --g-port ${g_port}"
+  coachopt="${coachopt} --rpc-type ${rpc_type}"
   if [ "${same_g_port}" = "true" ]; then
     coachopt="${coachopt} --diff-g-port"
   fi

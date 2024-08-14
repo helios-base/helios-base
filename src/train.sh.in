@@ -21,6 +21,7 @@ host="localhost"
 g_port=50051
 diff_g_port="false"
 gp20="false"
+rpc_type="thrift"
 config="${DIR}/player.conf"
 config_dir="${DIR}/formations-dt"
 
@@ -42,6 +43,7 @@ usage()
    echo "  --g_port GRPC PORT           specifies grpc port (default: 50051)"
    echo "  --diff_g_port                specifies different grpc port for each player (default: false)"
    echo "  --gp20                       add 20 to GRPC Port if team run on right side (default: false)"
+   echo "  --rpc-type                   type of rpc framework (default: thrift) or grpc"
    echo "  -t, --teamname TEAMNAME   specifies team name") 1>&2
 }
 
@@ -71,7 +73,36 @@ do
       teamname=$2
       shift 1
       ;;
-
+--g-ip)
+      if [ $# -lt 2 ]; then
+        usage
+        exit 1
+      fi
+      g_ip="${2}"
+      shift 1
+      ;;
+    --g-port)
+      if [ $# -lt 2 ]; then
+        usage
+        exit 1
+      fi
+      g_port="${2}"
+      shift 1
+      ;;
+    --diff-g-port)
+      diff_g_port="true"
+      ;;
+    --gp20)
+      gp20="true"
+      ;;
+    --rpc-type)
+      if [ $# -lt 2 ]; then
+        usage
+        exit 1
+      fi
+      rpc_type="${2}"
+      shift 1
+      ;;
     *)
       usage
       exit 1
@@ -85,6 +116,7 @@ OPT="-h ${host} -t ${teamname}"
 OPT="${OPT} --player-config ${config} --config_dir ${config_dir}"
 OPT="${OPT} ${debugopt}"
 opt="${opt} --g-port ${g_port}"
+opt="${opt} --rpc-type ${rpc_type}"
 if [ "${same_g_port}" = "true" ]; then
   OPT="${OPT} --diff-g-port"
 fi
@@ -105,6 +137,7 @@ fi
 #fi
 trainer_opt="-h $host -t $teamname"
 trainer_opt="${trainer_opt} --g-port ${g_port}"
+trainer_opt="${trainer_opt} --rpc-type ${rpc_type}"
 if [ "${same_g_port}" = "true" ]; then
   trainer_opt="${trainer_opt} --diff-g-port"
 fi
