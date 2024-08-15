@@ -25,7 +25,7 @@ using std::chrono::milliseconds;
 
 ThriftAgentCoach::ThriftAgentCoach()
 {
-    agent_type = soccer::AgentType::CoachT;
+    M_agent_type = soccer::AgentType::CoachT;
 }
 
 void ThriftAgentCoach::init(rcsc::CoachAgent *agent,
@@ -35,8 +35,8 @@ void ThriftAgentCoach::init(rcsc::CoachAgent *agent,
                             bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
-    unum = 12;
-    team_name = agent->world().ourTeamName();
+    M_unum = 12;
+    M_team_name = agent->world().ourTeamName();
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
@@ -46,8 +46,8 @@ void ThriftAgentCoach::init(rcsc::CoachAgent *agent,
         port += 13;
     }
 
-    this->server_host = target;
-    this->server_port = port;
+    this->M_server_host = target;
+    this->M_server_port = port;
 }
 
 void ThriftAgentCoach::getActions() const
@@ -56,9 +56,9 @@ void ThriftAgentCoach::getActions() const
     soccer::State state = generateState();
     state.agent_type = soccer::AgentType::CoachT;
     soccer::CoachActions actions;
-    state.register_response = register_response;
+    state.register_response = M_register_response;
     try{
-        client->GetCoachActions(actions, state);
+        M_client->GetCoachActions(actions, state);
     }
     catch (const std::exception &e)
     {

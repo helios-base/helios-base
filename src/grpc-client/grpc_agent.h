@@ -12,7 +12,6 @@
 #include "rpc-client/rpc-agent.h"
 
 
-
 using grpc::Channel;
 using grpc::ClientContext;
 using grpc::Status;
@@ -22,31 +21,32 @@ using protos::PlayerAction;
 using protos::CoachAction;
 using protos::TrainerAction;
 
+
 class GrpcAgent : public IRpcAgent{
 public:
-    std::string target;
-    std::shared_ptr<Channel> channel;
-    std::unique_ptr<Game::Stub> stub_;
-    bool is_connected = false;
-    bool param_sent = false;
-    protos::AgentType agent_type;
-    int unum;
-    std::string team_name;
-    protos::RegisterResponse * register_response = new protos::RegisterResponse();
+    std::string M_target;
+    std::shared_ptr<Channel> M_channel;
+    std::unique_ptr<Game::Stub> M_stub_;
+    bool M_is_connected = false;
+    bool M_param_sent = false;
+    protos::AgentType M_agent_type;
+    int M_unum;
+    std::string M_team_name;
+    protos::RegisterResponse * M_register_response = new protos::RegisterResponse();
 
     ~GrpcAgent() {}
     
-    void sendParams(bool offline_logging);
+    void sendParams(bool offline_logging) override;
     void addDlog(protos::Log log) const;
     void sendServerParam() const;
     void sendPlayerParams() const;
     void sendPlayerType() const;
     void sendInitMessage(bool offline_logging) const;
     bool Register() const;
-    void sendByeCommand() const;
-    bool connectToGrpcServer();
-    bool isConnected() const {
-        return is_connected;
+    void sendByeCommand() const override;
+    bool connectToGrpcServer() override;
+    bool isConnected() const override{
+        return M_is_connected;
     }
 
     static rcsc::ViewWidth convertViewWidth(protos::ViewWidth view_width);

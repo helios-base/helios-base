@@ -24,7 +24,7 @@ using std::chrono::milliseconds;
 
 ThriftAgentTrainer::ThriftAgentTrainer()
 {
-    agent_type = soccer::AgentType::TrainerT;
+    M_agent_type = soccer::AgentType::TrainerT;
 }
 
 void ThriftAgentTrainer::init(rcsc::TrainerAgent *agent,
@@ -34,8 +34,8 @@ void ThriftAgentTrainer::init(rcsc::TrainerAgent *agent,
                               bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
-    team_name = agent->world().ourTeamName();
-    unum = 13;
+    M_team_name = agent->world().ourTeamName();
+    M_unum = 13;
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
@@ -45,8 +45,8 @@ void ThriftAgentTrainer::init(rcsc::TrainerAgent *agent,
         port += 13;
     }
 
-    this->server_host = target;
-    this->server_port = port;
+    this->M_server_host = target;
+    this->M_server_port = port;
 }
 
 void ThriftAgentTrainer::getActions() const
@@ -56,11 +56,11 @@ void ThriftAgentTrainer::getActions() const
     soccer::State state = generateState();
     std::cout<<"generated state for cycle:"<<agent->world().time().cycle()<<std::endl;
     state.agent_type = soccer::AgentType::TrainerT;
-    state.register_response = register_response;
+    state.register_response = M_register_response;
     soccer::TrainerActions actions;
 
     try{
-        client->GetTrainerActions(actions, state);
+        M_client->GetTrainerActions(actions, state);
     }
     catch(const std::exception& e){
         std::cerr << e.what() << '\n';

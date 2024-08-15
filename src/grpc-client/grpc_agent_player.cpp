@@ -80,7 +80,7 @@ using std::chrono::milliseconds;
 
 GrpcAgentPlayer::GrpcAgentPlayer()
 {
-    agent_type = protos::AgentType::PlayerT;
+    M_agent_type = protos::AgentType::PlayerT;
 }
 
 void GrpcAgentPlayer::init(rcsc::PlayerAgent *agent,
@@ -90,8 +90,8 @@ void GrpcAgentPlayer::init(rcsc::PlayerAgent *agent,
                            bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
-    unum = agent->world().self().unum();
-    team_name = agent->world().ourTeamName();
+    M_unum = agent->world().self().unum();
+    M_team_name = agent->world().ourTeamName();
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
@@ -101,7 +101,7 @@ void GrpcAgentPlayer::init(rcsc::PlayerAgent *agent,
         port += M_agent->world().self().unum();
     }
 
-    this->target = target + ":" + std::to_string(port);
+    this->M_target = target + ":" + std::to_string(port);
     sample_communication = Communication::Ptr(new SampleCommunication());
 }
 
@@ -110,10 +110,10 @@ void GrpcAgentPlayer::getActions() const
     auto agent = M_agent;
     State state = generateState();
     state.set_agent_type(protos::AgentType::PlayerT);
-    state.set_allocated_register_response(register_response);
+    state.set_allocated_register_response(M_register_response);
     protos::PlayerActions actions;
     ClientContext context;
-    Status status = stub_->GetPlayerActions(&context, state, &actions);
+    Status status = M_stub_->GetPlayerActions(&context, state, &actions);
 
     if (!status.ok())
     {

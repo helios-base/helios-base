@@ -23,14 +23,14 @@ using std::chrono::milliseconds;
 
 void ThriftAgent::sendParams(bool offline_logging)
 {
-    if (!param_sent)
+    if (!M_param_sent)
     {
         LOG("sendParams Started");
         sendServerParam();
         sendPlayerParams();
         sendPlayerType();
         sendInitMessage(offline_logging);
-        param_sent = true;
+        M_param_sent = true;
         LOG("sendParams Done");
     }
 }
@@ -281,8 +281,8 @@ void ThriftAgent::sendServerParam() const
 
     try{
         soccer::Empty empty;
-        serverParam.register_response = register_response;
-        client->SendServerParams(empty, serverParam);
+        serverParam.register_response = M_register_response;
+        M_client->SendServerParams(empty, serverParam);
     }
     catch(const std::exception& e){
         std::cout << "SendServerParams rpc failed." << std::endl
@@ -296,7 +296,7 @@ void ThriftAgent::sendPlayerParams() const
     LOG("sendPlayerParams Started");
     soccer::PlayerParam playerParam;
     const rcsc::PlayerParam &PP = rcsc::PlayerParam::i();
-    playerParam.agent_type = this->agent_type;
+    playerParam.agent_type = this->M_agent_type;
     playerParam.player_types = PP.playerTypes();
     playerParam.subs_max = PP.subsMax();
     playerParam.pt_max = PP.ptMax();
@@ -330,8 +330,8 @@ void ThriftAgent::sendPlayerParams() const
     try
     {
         soccer::Empty empty;
-        playerParam.register_response = register_response;
-        client->SendPlayerParams(empty, playerParam);
+        playerParam.register_response = M_register_response;
+        M_client->SendPlayerParams(empty, playerParam);
     }
     catch(const std::exception& e){
         std::cout << "SendPlayerParams rpc failed." << std::endl
@@ -386,9 +386,9 @@ void ThriftAgent::sendPlayerType() const
         playerTypeGrpc.cycles_to_reach_max_speed = playerType->cyclesToReachMaxSpeed();
         try{
             soccer::Empty empty;
-            playerTypeGrpc.agent_type = this->agent_type;
-            playerTypeGrpc.register_response = register_response;
-            client->SendPlayerType(empty, playerTypeGrpc);
+            playerTypeGrpc.agent_type = this->M_agent_type;
+            playerTypeGrpc.register_response = M_register_response;
+            M_client->SendPlayerType(empty, playerTypeGrpc);
         }
         catch(const std::exception& e){
             std::cout << "SendPlayerType rpc failed. id=" << i << std::endl
@@ -403,10 +403,10 @@ void ThriftAgent::sendInitMessage(bool offline_logging) const
     soccer::Empty empty;
     soccer::InitMessage initMessage;
     initMessage.debug_mode = offline_logging;
-    initMessage.agent_type = this->agent_type;
-    initMessage.register_response = register_response;
+    initMessage.agent_type = this->M_agent_type;
+    initMessage.register_response = M_register_response;
     try{
-        client->SendInitMessage(empty, initMessage);
+        M_client->SendInitMessage(empty, initMessage);
     }
     catch(const std::exception& e){
         std::cout << "sendInitMessage rpc failed." << std::endl
@@ -420,11 +420,11 @@ bool ThriftAgent::Register()
     std::cout<<"Getting InitMessage..."<<std::endl;
     soccer::Empty empty;
     soccer::RegisterRequest registerRequest;
-    registerRequest.agent_type = agent_type;
-    registerRequest.uniform_number = unum;
-    registerRequest.team_name = team_name;
+    registerRequest.agent_type = M_agent_type;
+    registerRequest.uniform_number = M_unum;
+    registerRequest.team_name = M_team_name;
     try{
-        client->Register(register_response, registerRequest);
+        M_client->Register(M_register_response, registerRequest);
         LOG("InitMessage received");
         return true;
     }
@@ -441,7 +441,7 @@ void ThriftAgent::sendByeCommand() const
     try{
         soccer::Empty empty;
         soccer::Empty empty2;
-        client->SendByeCommand(empty, register_response);
+        M_client->SendByeCommand(empty, M_register_response);
     }
     catch(const std::exception& e){
         std::cout << "SendByeCommand rpc failed." << std::endl
@@ -453,23 +453,23 @@ void ThriftAgent::sendByeCommand() const
 bool ThriftAgent::connectToGrpcServer()
 {
     std::cout<<"Connecting to server..."<<std::endl;
-    socket = std::make_shared<TSocket>(server_host, server_port);
+    M_socket = std::make_shared<TSocket>(M_server_host, M_server_port);
 
-    // Wrap the socket in a buffered transport
-    transport = std::make_shared<TBufferedTransport>(socket);
+    // Wrap the M_socket in a buffered transport
+    M_transport = std::make_shared<TBufferedTransport>(M_socket);
 
     // Create a binary protocol to use for the transport
-    protocol = std::make_shared<TBinaryProtocol>(transport);
+    M_protocol = std::make_shared<TBinaryProtocol>(M_transport);
 
     // Open the transport
 //    transport->open();
 
     // Create a client to use the protocol encoder
-    client = std::make_shared<soccer::GameClient>(protocol);
-    transport->open();
+    M_client = std::make_shared<soccer::GameClient>(M_protocol);
+    M_transport->open();
     if (Register())
     {
-        is_connected = true;
+        M_is_connected = true;
         std::cout<<"Connected to server."<<std::endl;
         return true;
     }

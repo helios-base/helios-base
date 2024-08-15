@@ -80,7 +80,7 @@ using std::chrono::milliseconds;
 
 ThriftAgentPlayer::ThriftAgentPlayer()
 {
-    agent_type = soccer::AgentType::PlayerT;
+    M_agent_type = soccer::AgentType::PlayerT;
 }
 
 void ThriftAgentPlayer::init(rcsc::PlayerAgent *agent,
@@ -90,8 +90,8 @@ void ThriftAgentPlayer::init(rcsc::PlayerAgent *agent,
                              bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
-    unum = agent->world().self().unum();
-    team_name = agent->world().ourTeamName();
+    M_unum = agent->world().self().unum();
+    M_team_name = agent->world().ourTeamName();
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
@@ -101,8 +101,8 @@ void ThriftAgentPlayer::init(rcsc::PlayerAgent *agent,
         port += M_agent->world().self().unum();
     }
 
-    this->server_host = target;
-    this->server_port = port;
+    this->M_server_host = target;
+    this->M_server_port = port;
     sample_communication = Communication::Ptr(new SampleCommunication());
 }
 
@@ -112,10 +112,10 @@ void ThriftAgentPlayer::getActions() const
     soccer::State state = generateState();
     state.agent_type = soccer::AgentType::PlayerT;
     soccer::PlayerActions actions;
-    state.register_response = register_response;
+    state.register_response = M_register_response;
     try{
         auto start_time = high_resolution_clock::now();
-        client->GetPlayerActions(actions, state);
+        M_client->GetPlayerActions(actions, state);
         auto end_time = high_resolution_clock::now();
         auto duration = duration_cast<milliseconds>(end_time - start_time);
         std::cout<<"get: "<<duration.count()<<"ms"<<std::endl;

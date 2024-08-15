@@ -23,13 +23,13 @@ using std::chrono::milliseconds;
 
 void GrpcAgent::sendParams(bool offline_logging)
 {
-    if (!param_sent)
+    if (!M_param_sent)
     {
         sendServerParam();
         sendPlayerParams();
         sendPlayerType();
         sendInitMessage(offline_logging);
-        param_sent = true;
+        M_param_sent = true;
     }
 }
 void GrpcAgent::sendServerParam() const
@@ -280,9 +280,9 @@ void GrpcAgent::sendServerParam() const
 
     ClientContext context;
     protos::Empty empty;
-    serverParam.set_agent_type(this->agent_type);
-    serverParam.set_allocated_register_response(register_response);
-    Status status = stub_->SendServerParams(&context, serverParam, &empty);
+    serverParam.set_agent_type(this->M_agent_type);
+    serverParam.set_allocated_register_response(M_register_response);
+    Status status = M_stub_->SendServerParams(&context, serverParam, &empty);
     if (!status.ok())
     {
         std::cout << "SendServerParams rpc failed." << std::endl
@@ -328,9 +328,9 @@ void GrpcAgent::sendPlayerParams() const
 
     ClientContext context;
     protos::Empty empty;
-    playerParam.set_agent_type(this->agent_type);
-    playerParam.set_allocated_register_response(register_response);
-    Status status = stub_->SendPlayerParams(&context, playerParam, &empty);
+    playerParam.set_agent_type(this->M_agent_type);
+    playerParam.set_allocated_register_response(M_register_response);
+    Status status = M_stub_->SendPlayerParams(&context, playerParam, &empty);
     if (!status.ok())
     {
         std::cout << "SendPlayerParams rpc failed." << std::endl
@@ -387,9 +387,9 @@ void GrpcAgent::sendPlayerType() const
 
         ClientContext context;
         protos::Empty empty;
-        playerTypeGrpc.set_agent_type(this->agent_type);
-        playerTypeGrpc.set_allocated_register_response(register_response);
-        Status status = stub_->SendPlayerType(&context, playerTypeGrpc, &empty);
+        playerTypeGrpc.set_agent_type(this->M_agent_type);
+        playerTypeGrpc.set_allocated_register_response(M_register_response);
+        Status status = M_stub_->SendPlayerType(&context, playerTypeGrpc, &empty);
         if (!status.ok())
         {
             std::cout << "SendPlayerType rpc failed. id=" << i << std::endl
@@ -406,9 +406,9 @@ void GrpcAgent::sendInitMessage(bool offline_logging) const
     protos::Empty empty;
     protos::InitMessage initMessage;
     initMessage.set_debug_mode(offline_logging);
-    initMessage.set_agent_type(this->agent_type);
-    initMessage.set_allocated_register_response(register_response);
-    Status status = stub_->SendInitMessage(&context, initMessage, &empty);
+    initMessage.set_agent_type(this->M_agent_type);
+    initMessage.set_allocated_register_response(M_register_response);
+    Status status = M_stub_->SendInitMessage(&context, initMessage, &empty);
     if (!status.ok())
     {
         std::cout << "sendInitMessage rpc failed." << std::endl
@@ -421,11 +421,11 @@ bool GrpcAgent::Register() const
 {
     ClientContext context;
     protos::RegisterRequest request;
-    request.set_agent_type(agent_type);
-    request.set_team_name(team_name);
-    request.set_uniform_number(unum);
+    request.set_agent_type(M_agent_type);
+    request.set_team_name(M_team_name);
+    request.set_uniform_number(M_unum);
 
-    Status status = stub_->Register(&context, request, register_response);
+    Status status = M_stub_->Register(&context, request, M_register_response);
     if (!status.ok())
     {
         std::cout << "GetInitMessage rpc failed." << std::endl
@@ -436,7 +436,7 @@ bool GrpcAgent::Register() const
     else
     {
         LOG("InitMessage received");
-        LOGV(register_response->DebugString());
+        LOGV(M_register_response->DebugString());
         return true;
     }
 }
@@ -446,7 +446,7 @@ void GrpcAgent::sendByeCommand() const
     ClientContext context;
     protos::Empty empty;
 
-    Status status = stub_->SendByeCommand(&context, *register_response, &empty);
+    Status status = M_stub_->SendByeCommand(&context, *M_register_response, &empty);
     if (!status.ok())
     {
         std::cout << "SendByeCommand rpc failed." << std::endl
@@ -458,12 +458,12 @@ void GrpcAgent::sendByeCommand() const
 
 bool GrpcAgent::connectToGrpcServer()
 {
-    channel = grpc::CreateChannel(this->target, grpc::InsecureChannelCredentials());
-    stub_ = Game::NewStub(channel);
+    M_channel = grpc::CreateChannel(this->M_target, grpc::InsecureChannelCredentials());
+    M_stub_ = Game::NewStub(M_channel);
 
     if (Register())
     {
-        is_connected = true;
+        M_is_connected = true;
         return true;
     }
     else
