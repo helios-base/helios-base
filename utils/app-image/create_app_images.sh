@@ -2,7 +2,7 @@
 set -e
 
 wget -c "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage" -O linuxdeploy-x86_64.AppImage
-chmod +x linuxdeploy-x86_64.AppImage
+chmod 777 linuxdeploy-x86_64.AppImage
 PLAYER_APP_IMAGE_DIR_NAME="sample-player-x86_64"
 mkdir -p $PLAYER_APP_IMAGE_DIR_NAME
 COACH_APP_IMAGE_DIR_NAME="sample-coach-x86_64"
@@ -25,14 +25,21 @@ LIBSTDCPP_PATH=$(ldd $BUILD_PWD/sample_player | grep libstdc++ | awk '{ print $3
 LIBM_PATH=$(ldd $BUILD_PWD/sample_player | grep libm.so | awk '{ print $3 }')
 LIBGCC_PATH=$(ldd $BUILD_PWD/sample_player | grep libgcc_s.so | awk '{ print $3 }')
 LIBC_PATH=$(ldd $BUILD_PWD/sample_player | grep libc.so | awk '{ print $3 }')
+LIB_THRIFT_PATH=$(ldd $BUILD_PWD/sample_player | grep libthrift-0.16.0.so | awk '{ print $3 }')
+LIB_SSL_PATH=$(ldd $BUILD_PWD/sample_player | grep libssl.so | awk '{ print $3 }')
+LIB_CRYPTO_PATH=$(ldd $BUILD_PWD/sample_player | grep libcrypto.so | awk '{ print $3 }')
 
-echo "LIBRCSC_PATH=" $PLAYER_LIBRCSC_PATH
-echo "LIBZ_PATH=" $PLAYER_LIBZ_PATH
-echo "LIBSTDCPP_PATH=" $PLAYER_LIBSTDCPP_PATH
-echo "LIBM_PATH=" $PLAYER_LIBM_PATH
-echo "LIBGCC_PATH=" $PLAYER_LIBGCC_PATH
-echo "LIBC_PATH=" $PLAYER_LIBC_PATH
+echo "LIBRCSC_PATH=" $LIBRCSC_PATH
+echo "LIBZ_PATH=" $LIBZ_PATH
+echo "LIBSTDCPP_PATH=" $LIBSTDCPP_PATH
+echo "LIBM_PATH=" $LIBM_PATH
+echo "LIBGCC_PATH=" $LIBGCC_PATH
+echo "LIBC_PATH=" $LIBC_PATH
+echo "LIB_THRIFT_PATH=" $LIB_THRIFT_PATH
+echo "LIB_SSL_PATH=" $LIB_SSL_PATH
+echo "LIB_CRYPTO_PATH=" $LIB_CRYPTO_PATH
 
+echo "Start to create app image for player"
 ./linuxdeploy-x86_64.AppImage --appdir ./$PLAYER_APP_IMAGE_DIR_NAME \
                                 -e $BUILD_PWD/sample_player \
                                 -l $LIBRCSC_PATH \
@@ -41,10 +48,14 @@ echo "LIBC_PATH=" $PLAYER_LIBC_PATH
                                 -l $LIBM_PATH \
                                 -l $LIBGCC_PATH \
                                 -l $LIBC_PATH \
+                                -l $LIB_THRIFT_PATH \
+                                -l $LIB_SSL_PATH \
+                                -l $LIB_CRYPTO_PATH \
                                 -d $APP_IMAGE_DIR/sample_player.desktop \
                                 -i $APP_IMAGE_DIR/sample_player.png \
                                 --output appimage 
 
+echo "Start to create app image for coach"
 ./linuxdeploy-x86_64.AppImage --appdir ./$COACH_APP_IMAGE_DIR_NAME \
                                 -e $BUILD_PWD/sample_coach \
                                 -l $LIBRCSC_PATH \
@@ -53,10 +64,14 @@ echo "LIBC_PATH=" $PLAYER_LIBC_PATH
                                 -l $LIBM_PATH \
                                 -l $LIBGCC_PATH \
                                 -l $LIBC_PATH \
+                                -l $LIB_THRIFT_PATH \
+                                -l $LIB_SSL_PATH \
+                                -l $LIB_CRYPTO_PATH \
                                 -d $APP_IMAGE_DIR/sample_coach.desktop \
                                 -i $APP_IMAGE_DIR/sample_coach.png \
                                 --output appimage 
 
+echo "Start to create app image for trainer"
 ./linuxdeploy-x86_64.AppImage --appdir ./$TRAINER_APP_IMAGE_DIR_NAME \
                                 -e $BUILD_PWD/sample_trainer \
                                 -l $LIBRCSC_PATH \
@@ -65,6 +80,9 @@ echo "LIBC_PATH=" $PLAYER_LIBC_PATH
                                 -l $LIBM_PATH \
                                 -l $LIBGCC_PATH \
                                 -l $LIBC_PATH \
+                                -l $LIB_THRIFT_PATH \
+                                -l $LIB_SSL_PATH \
+                                -l $LIB_CRYPTO_PATH \
                                 -d $APP_IMAGE_DIR/sample_trainer.desktop \
                                 -i $APP_IMAGE_DIR/sample_trainer.png \
                                 --output appimage 
@@ -87,13 +105,13 @@ chmod 777 soccer-simulation-proxy/*
 #     7z a bin.7z bin/*
 # fi
 
-tar -czvf soccer-simulation-proxy.tar.gz soccer-simulation-proxy/*
-tar -czvf sample_player.tar.gz sample_player
-tar -czvf sample_coach.tar.gz sample_coach
-tar -czvf sample_trainer.tar.gz sample_trainer
-echo "All in one created."
-
+#tar -czvf soccer-simulation-proxy.tar.gz soccer-simulation-proxy/*
+#tar -czvf sample_player.tar.gz sample_player
+#tar -czvf sample_coach.tar.gz sample_coach
+#tar -czvf sample_trainer.tar.gz sample_trainer
+#echo "All in one created."
+#
 rm -rf $PLAYER_APP_IMAGE_DIR_NAME
 rm -rf $COACH_APP_IMAGE_DIR_NAME
 rm -rf $TRAINER_APP_IMAGE_DIR_NAME
-rm -rf soccer-simulation-proxy
+#rm -rf soccer-simulation-proxy
