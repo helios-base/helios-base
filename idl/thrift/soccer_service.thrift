@@ -20,6 +20,19 @@ struct RpcVector2D {
   4: double angle
 }
 
+struct RegisterRequest {
+  1: AgentType agent_type,
+  2: string team_name,
+  3: i32 uniform_number
+}
+
+struct RegisterResponse {
+  1: i32 client_id
+  2: AgentType agent_type,
+  3: string team_name,
+  4: i32 uniform_number
+}
+
 struct Ball {
   1: RpcVector2D position,
   2: RpcVector2D relative_position,
@@ -247,14 +260,16 @@ struct WorldModel {
 }
 
 struct State {
-  1: AgentType agent_type,
-  2: WorldModel world_model,
-  3: WorldModel full_world_model
+  1: RegisterResponse register_response,
+  2: AgentType agent_type,
+  3: WorldModel world_model,
+  4: WorldModel full_world_model
 }
 
 struct InitMessage {
-  1: AgentType agent_type,
-  2: bool debug_mode
+  1: RegisterResponse register_response,
+  2: AgentType agent_type,
+  3: bool debug_mode
 }
 
 struct Dash {
@@ -1074,7 +1089,9 @@ struct ServerParam {
   219: double their_penalty_area_line_x,
   220: double penalty_area_half_width,
   221: double penalty_area_length,
-  222: double goal_width
+  222: double goal_width,
+
+  223: RegisterResponse register_response
 }
 
 struct PlayerParam {
@@ -1107,7 +1124,9 @@ struct PlayerParam {
    27: double kick_power_rate_delta_max,
   28: double foul_detect_probability_delta_factor,
   29: double catchable_area_l_stretch_min,
-  30: double catchable_area_l_stretch_max
+  30: double catchable_area_l_stretch_max,
+
+  31: RegisterResponse register_response
 }
 
 struct PlayerType {
@@ -1144,29 +1163,21 @@ struct PlayerType {
   31: double player_speed_max2,
   32: double real_speed_max2,
   33: i32 cycles_to_reach_max_speed,
-  34: double player_speed_max
+  34: double player_speed_max,
+
+  35: RegisterResponse register_response
 }
 
 struct Empty {}
 
-struct RegisterRequest {
-  1: AgentType agent_type,
-  2: string team_name,
-  3: i32 uniform_number
-}
-
-struct RegisterResponse {
-    1: i32 client_id
-}
-
 service Game {
-  PlayerActions GetPlayerActions(1: RegisterResponse register_response, 2: State state),
-  CoachActions GetCoachActions(1: RegisterResponse register_response, 2: State state),
-  TrainerActions GetTrainerActions(1: RegisterResponse register_response, 2: State state),
-  Empty SendInitMessage(1: RegisterResponse register_response, 2: InitMessage init_message),
-  Empty SendServerParams(1: RegisterResponse register_response, 2: ServerParam server_param),
-  Empty SendPlayerParams(1: RegisterResponse register_response, 2: PlayerParam player_param),
-  Empty SendPlayerType(1: RegisterResponse register_response, 2: PlayerType player_type),
+  PlayerActions GetPlayerActions(1: State state),
+  CoachActions GetCoachActions(1: State state),
+  TrainerActions GetTrainerActions(1: State state),
+  Empty SendInitMessage(1: InitMessage init_message),
+  Empty SendServerParams(1: ServerParam server_param),
+  Empty SendPlayerParams(1: PlayerParam player_param),
+  Empty SendPlayerType(1: PlayerType player_type),
   RegisterResponse Register(1: RegisterRequest request),
   Empty SendByeCommand(1: RegisterResponse register_response)
 }

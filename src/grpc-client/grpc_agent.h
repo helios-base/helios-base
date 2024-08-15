@@ -30,6 +30,9 @@ public:
     bool is_connected = false;
     bool param_sent = false;
     protos::AgentType agent_type;
+    int unum;
+    std::string team_name;
+    protos::RegisterResponse * register_response = new protos::RegisterResponse();
 
     ~GrpcAgent() {}
     
@@ -39,7 +42,7 @@ public:
     void sendPlayerParams() const;
     void sendPlayerType() const;
     void sendInitMessage(bool offline_logging) const;
-    bool getInitMessage() const;
+    bool Register() const;
     void sendByeCommand() const;
     bool connectToGrpcServer();
     bool isConnected() const {

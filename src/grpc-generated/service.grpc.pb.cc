@@ -29,7 +29,7 @@ static const char* Game_method_names[] = {
   "/protos.Game/SendServerParams",
   "/protos.Game/SendPlayerParams",
   "/protos.Game/SendPlayerType",
-  "/protos.Game/GetInitMessage",
+  "/protos.Game/Register",
   "/protos.Game/SendByeCommand",
 };
 
@@ -47,7 +47,7 @@ Game::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, cons
   , rpcmethod_SendServerParams_(Game_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SendPlayerParams_(Game_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SendPlayerType_(Game_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetInitMessage_(Game_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Register_(Game_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SendByeCommand_(Game_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
@@ -212,46 +212,46 @@ void Game::Stub::async::SendPlayerType(::grpc::ClientContext* context, const ::p
   return result;
 }
 
-::grpc::Status Game::Stub::GetInitMessage(::grpc::ClientContext* context, const ::protos::Empty& request, ::protos::InitMessageFromServer* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::protos::Empty, ::protos::InitMessageFromServer, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetInitMessage_, context, request, response);
+::grpc::Status Game::Stub::Register(::grpc::ClientContext* context, const ::protos::RegisterRequest& request, ::protos::RegisterResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::protos::RegisterRequest, ::protos::RegisterResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Register_, context, request, response);
 }
 
-void Game::Stub::async::GetInitMessage(::grpc::ClientContext* context, const ::protos::Empty* request, ::protos::InitMessageFromServer* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::protos::Empty, ::protos::InitMessageFromServer, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInitMessage_, context, request, response, std::move(f));
+void Game::Stub::async::Register(::grpc::ClientContext* context, const ::protos::RegisterRequest* request, ::protos::RegisterResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::protos::RegisterRequest, ::protos::RegisterResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Register_, context, request, response, std::move(f));
 }
 
-void Game::Stub::async::GetInitMessage(::grpc::ClientContext* context, const ::protos::Empty* request, ::protos::InitMessageFromServer* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInitMessage_, context, request, response, reactor);
+void Game::Stub::async::Register(::grpc::ClientContext* context, const ::protos::RegisterRequest* request, ::protos::RegisterResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Register_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::protos::InitMessageFromServer>* Game::Stub::PrepareAsyncGetInitMessageRaw(::grpc::ClientContext* context, const ::protos::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::protos::InitMessageFromServer, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetInitMessage_, context, request);
+::grpc::ClientAsyncResponseReader< ::protos::RegisterResponse>* Game::Stub::PrepareAsyncRegisterRaw(::grpc::ClientContext* context, const ::protos::RegisterRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::protos::RegisterResponse, ::protos::RegisterRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Register_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::protos::InitMessageFromServer>* Game::Stub::AsyncGetInitMessageRaw(::grpc::ClientContext* context, const ::protos::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::protos::RegisterResponse>* Game::Stub::AsyncRegisterRaw(::grpc::ClientContext* context, const ::protos::RegisterRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncGetInitMessageRaw(context, request, cq);
+    this->PrepareAsyncRegisterRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status Game::Stub::SendByeCommand(::grpc::ClientContext* context, const ::protos::Empty& request, ::protos::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::protos::Empty, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SendByeCommand_, context, request, response);
+::grpc::Status Game::Stub::SendByeCommand(::grpc::ClientContext* context, const ::protos::RegisterResponse& request, ::protos::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::protos::RegisterResponse, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SendByeCommand_, context, request, response);
 }
 
-void Game::Stub::async::SendByeCommand(::grpc::ClientContext* context, const ::protos::Empty* request, ::protos::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::protos::Empty, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendByeCommand_, context, request, response, std::move(f));
+void Game::Stub::async::SendByeCommand(::grpc::ClientContext* context, const ::protos::RegisterResponse* request, ::protos::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::protos::RegisterResponse, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendByeCommand_, context, request, response, std::move(f));
 }
 
-void Game::Stub::async::SendByeCommand(::grpc::ClientContext* context, const ::protos::Empty* request, ::protos::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void Game::Stub::async::SendByeCommand(::grpc::ClientContext* context, const ::protos::RegisterResponse* request, ::protos::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SendByeCommand_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::protos::Empty>* Game::Stub::PrepareAsyncSendByeCommandRaw(::grpc::ClientContext* context, const ::protos::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::protos::Empty, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SendByeCommand_, context, request);
+::grpc::ClientAsyncResponseReader< ::protos::Empty>* Game::Stub::PrepareAsyncSendByeCommandRaw(::grpc::ClientContext* context, const ::protos::RegisterResponse& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::protos::Empty, ::protos::RegisterResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SendByeCommand_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::protos::Empty>* Game::Stub::AsyncSendByeCommandRaw(::grpc::ClientContext* context, const ::protos::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::protos::Empty>* Game::Stub::AsyncSendByeCommandRaw(::grpc::ClientContext* context, const ::protos::RegisterResponse& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncSendByeCommandRaw(context, request, cq);
   result->StartCall();
@@ -332,20 +332,20 @@ Game::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Game_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::Empty, ::protos::InitMessageFromServer, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::RegisterRequest, ::protos::RegisterResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Game::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::protos::Empty* req,
-             ::protos::InitMessageFromServer* resp) {
-               return service->GetInitMessage(ctx, req, resp);
+             const ::protos::RegisterRequest* req,
+             ::protos::RegisterResponse* resp) {
+               return service->Register(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Game_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::Empty, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< Game::Service, ::protos::RegisterResponse, ::protos::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Game::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::protos::Empty* req,
+             const ::protos::RegisterResponse* req,
              ::protos::Empty* resp) {
                return service->SendByeCommand(ctx, req, resp);
              }, this)));
@@ -403,14 +403,14 @@ Game::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Game::Service::GetInitMessage(::grpc::ServerContext* context, const ::protos::Empty* request, ::protos::InitMessageFromServer* response) {
+::grpc::Status Game::Service::Register(::grpc::ServerContext* context, const ::protos::RegisterRequest* request, ::protos::RegisterResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Game::Service::SendByeCommand(::grpc::ServerContext* context, const ::protos::Empty* request, ::protos::Empty* response) {
+::grpc::Status Game::Service::SendByeCommand(::grpc::ServerContext* context, const ::protos::RegisterResponse* request, ::protos::Empty* response) {
   (void) context;
   (void) request;
   (void) response;

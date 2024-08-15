@@ -22,13 +22,13 @@ namespace soccer {
 class GameIf {
  public:
   virtual ~GameIf() {}
-  virtual void GetPlayerActions(PlayerActions& _return, const RegisterResponse& register_response, const State& state) = 0;
-  virtual void GetCoachActions(CoachActions& _return, const RegisterResponse& register_response, const State& state) = 0;
-  virtual void GetTrainerActions(TrainerActions& _return, const RegisterResponse& register_response, const State& state) = 0;
-  virtual void SendInitMessage(Empty& _return, const RegisterResponse& register_response, const InitMessage& init_message) = 0;
-  virtual void SendServerParams(Empty& _return, const RegisterResponse& register_response, const ServerParam& server_param) = 0;
-  virtual void SendPlayerParams(Empty& _return, const RegisterResponse& register_response, const PlayerParam& player_param) = 0;
-  virtual void SendPlayerType(Empty& _return, const RegisterResponse& register_response, const PlayerType& player_type) = 0;
+  virtual void GetPlayerActions(PlayerActions& _return, const State& state) = 0;
+  virtual void GetCoachActions(CoachActions& _return, const State& state) = 0;
+  virtual void GetTrainerActions(TrainerActions& _return, const State& state) = 0;
+  virtual void SendInitMessage(Empty& _return, const InitMessage& init_message) = 0;
+  virtual void SendServerParams(Empty& _return, const ServerParam& server_param) = 0;
+  virtual void SendPlayerParams(Empty& _return, const PlayerParam& player_param) = 0;
+  virtual void SendPlayerType(Empty& _return, const PlayerType& player_type) = 0;
   virtual void Register(RegisterResponse& _return, const RegisterRequest& request) = 0;
   virtual void SendByeCommand(Empty& _return, const RegisterResponse& register_response) = 0;
 };
@@ -60,25 +60,25 @@ class GameIfSingletonFactory : virtual public GameIfFactory {
 class GameNull : virtual public GameIf {
  public:
   virtual ~GameNull() {}
-  void GetPlayerActions(PlayerActions& /* _return */, const RegisterResponse& /* register_response */, const State& /* state */) override {
+  void GetPlayerActions(PlayerActions& /* _return */, const State& /* state */) override {
     return;
   }
-  void GetCoachActions(CoachActions& /* _return */, const RegisterResponse& /* register_response */, const State& /* state */) override {
+  void GetCoachActions(CoachActions& /* _return */, const State& /* state */) override {
     return;
   }
-  void GetTrainerActions(TrainerActions& /* _return */, const RegisterResponse& /* register_response */, const State& /* state */) override {
+  void GetTrainerActions(TrainerActions& /* _return */, const State& /* state */) override {
     return;
   }
-  void SendInitMessage(Empty& /* _return */, const RegisterResponse& /* register_response */, const InitMessage& /* init_message */) override {
+  void SendInitMessage(Empty& /* _return */, const InitMessage& /* init_message */) override {
     return;
   }
-  void SendServerParams(Empty& /* _return */, const RegisterResponse& /* register_response */, const ServerParam& /* server_param */) override {
+  void SendServerParams(Empty& /* _return */, const ServerParam& /* server_param */) override {
     return;
   }
-  void SendPlayerParams(Empty& /* _return */, const RegisterResponse& /* register_response */, const PlayerParam& /* player_param */) override {
+  void SendPlayerParams(Empty& /* _return */, const PlayerParam& /* player_param */) override {
     return;
   }
-  void SendPlayerType(Empty& /* _return */, const RegisterResponse& /* register_response */, const PlayerType& /* player_type */) override {
+  void SendPlayerType(Empty& /* _return */, const PlayerType& /* player_type */) override {
     return;
   }
   void Register(RegisterResponse& /* _return */, const RegisterRequest& /* request */) override {
@@ -90,8 +90,7 @@ class GameNull : virtual public GameIf {
 };
 
 typedef struct _Game_GetPlayerActions_args__isset {
-  _Game_GetPlayerActions_args__isset() : register_response(false), state(false) {}
-  bool register_response :1;
+  _Game_GetPlayerActions_args__isset() : state(false) {}
   bool state :1;
 } _Game_GetPlayerActions_args__isset;
 
@@ -104,19 +103,14 @@ class Game_GetPlayerActions_args {
   }
 
   virtual ~Game_GetPlayerActions_args() noexcept;
-  RegisterResponse register_response;
   State state;
 
   _Game_GetPlayerActions_args__isset __isset;
-
-  void __set_register_response(const RegisterResponse& val);
 
   void __set_state(const State& val);
 
   bool operator == (const Game_GetPlayerActions_args & rhs) const
   {
-    if (!(register_response == rhs.register_response))
-      return false;
     if (!(state == rhs.state))
       return false;
     return true;
@@ -138,7 +132,6 @@ class Game_GetPlayerActions_pargs {
 
 
   virtual ~Game_GetPlayerActions_pargs() noexcept;
-  const RegisterResponse* register_response;
   const State* state;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -201,8 +194,7 @@ class Game_GetPlayerActions_presult {
 };
 
 typedef struct _Game_GetCoachActions_args__isset {
-  _Game_GetCoachActions_args__isset() : register_response(false), state(false) {}
-  bool register_response :1;
+  _Game_GetCoachActions_args__isset() : state(false) {}
   bool state :1;
 } _Game_GetCoachActions_args__isset;
 
@@ -215,19 +207,14 @@ class Game_GetCoachActions_args {
   }
 
   virtual ~Game_GetCoachActions_args() noexcept;
-  RegisterResponse register_response;
   State state;
 
   _Game_GetCoachActions_args__isset __isset;
-
-  void __set_register_response(const RegisterResponse& val);
 
   void __set_state(const State& val);
 
   bool operator == (const Game_GetCoachActions_args & rhs) const
   {
-    if (!(register_response == rhs.register_response))
-      return false;
     if (!(state == rhs.state))
       return false;
     return true;
@@ -249,7 +236,6 @@ class Game_GetCoachActions_pargs {
 
 
   virtual ~Game_GetCoachActions_pargs() noexcept;
-  const RegisterResponse* register_response;
   const State* state;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -312,8 +298,7 @@ class Game_GetCoachActions_presult {
 };
 
 typedef struct _Game_GetTrainerActions_args__isset {
-  _Game_GetTrainerActions_args__isset() : register_response(false), state(false) {}
-  bool register_response :1;
+  _Game_GetTrainerActions_args__isset() : state(false) {}
   bool state :1;
 } _Game_GetTrainerActions_args__isset;
 
@@ -326,19 +311,14 @@ class Game_GetTrainerActions_args {
   }
 
   virtual ~Game_GetTrainerActions_args() noexcept;
-  RegisterResponse register_response;
   State state;
 
   _Game_GetTrainerActions_args__isset __isset;
-
-  void __set_register_response(const RegisterResponse& val);
 
   void __set_state(const State& val);
 
   bool operator == (const Game_GetTrainerActions_args & rhs) const
   {
-    if (!(register_response == rhs.register_response))
-      return false;
     if (!(state == rhs.state))
       return false;
     return true;
@@ -360,7 +340,6 @@ class Game_GetTrainerActions_pargs {
 
 
   virtual ~Game_GetTrainerActions_pargs() noexcept;
-  const RegisterResponse* register_response;
   const State* state;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -423,33 +402,27 @@ class Game_GetTrainerActions_presult {
 };
 
 typedef struct _Game_SendInitMessage_args__isset {
-  _Game_SendInitMessage_args__isset() : register_response(false), init_message(false) {}
-  bool register_response :1;
+  _Game_SendInitMessage_args__isset() : init_message(false) {}
   bool init_message :1;
 } _Game_SendInitMessage_args__isset;
 
 class Game_SendInitMessage_args {
  public:
 
-  Game_SendInitMessage_args(const Game_SendInitMessage_args&) noexcept;
-  Game_SendInitMessage_args& operator=(const Game_SendInitMessage_args&) noexcept;
+  Game_SendInitMessage_args(const Game_SendInitMessage_args&);
+  Game_SendInitMessage_args& operator=(const Game_SendInitMessage_args&);
   Game_SendInitMessage_args() noexcept {
   }
 
   virtual ~Game_SendInitMessage_args() noexcept;
-  RegisterResponse register_response;
   InitMessage init_message;
 
   _Game_SendInitMessage_args__isset __isset;
-
-  void __set_register_response(const RegisterResponse& val);
 
   void __set_init_message(const InitMessage& val);
 
   bool operator == (const Game_SendInitMessage_args & rhs) const
   {
-    if (!(register_response == rhs.register_response))
-      return false;
     if (!(init_message == rhs.init_message))
       return false;
     return true;
@@ -471,7 +444,6 @@ class Game_SendInitMessage_pargs {
 
 
   virtual ~Game_SendInitMessage_pargs() noexcept;
-  const RegisterResponse* register_response;
   const InitMessage* init_message;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -534,8 +506,7 @@ class Game_SendInitMessage_presult {
 };
 
 typedef struct _Game_SendServerParams_args__isset {
-  _Game_SendServerParams_args__isset() : register_response(false), server_param(false) {}
-  bool register_response :1;
+  _Game_SendServerParams_args__isset() : server_param(false) {}
   bool server_param :1;
 } _Game_SendServerParams_args__isset;
 
@@ -548,19 +519,14 @@ class Game_SendServerParams_args {
   }
 
   virtual ~Game_SendServerParams_args() noexcept;
-  RegisterResponse register_response;
   ServerParam server_param;
 
   _Game_SendServerParams_args__isset __isset;
-
-  void __set_register_response(const RegisterResponse& val);
 
   void __set_server_param(const ServerParam& val);
 
   bool operator == (const Game_SendServerParams_args & rhs) const
   {
-    if (!(register_response == rhs.register_response))
-      return false;
     if (!(server_param == rhs.server_param))
       return false;
     return true;
@@ -582,7 +548,6 @@ class Game_SendServerParams_pargs {
 
 
   virtual ~Game_SendServerParams_pargs() noexcept;
-  const RegisterResponse* register_response;
   const ServerParam* server_param;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -645,33 +610,27 @@ class Game_SendServerParams_presult {
 };
 
 typedef struct _Game_SendPlayerParams_args__isset {
-  _Game_SendPlayerParams_args__isset() : register_response(false), player_param(false) {}
-  bool register_response :1;
+  _Game_SendPlayerParams_args__isset() : player_param(false) {}
   bool player_param :1;
 } _Game_SendPlayerParams_args__isset;
 
 class Game_SendPlayerParams_args {
  public:
 
-  Game_SendPlayerParams_args(const Game_SendPlayerParams_args&) noexcept;
-  Game_SendPlayerParams_args& operator=(const Game_SendPlayerParams_args&) noexcept;
+  Game_SendPlayerParams_args(const Game_SendPlayerParams_args&);
+  Game_SendPlayerParams_args& operator=(const Game_SendPlayerParams_args&);
   Game_SendPlayerParams_args() noexcept {
   }
 
   virtual ~Game_SendPlayerParams_args() noexcept;
-  RegisterResponse register_response;
   PlayerParam player_param;
 
   _Game_SendPlayerParams_args__isset __isset;
-
-  void __set_register_response(const RegisterResponse& val);
 
   void __set_player_param(const PlayerParam& val);
 
   bool operator == (const Game_SendPlayerParams_args & rhs) const
   {
-    if (!(register_response == rhs.register_response))
-      return false;
     if (!(player_param == rhs.player_param))
       return false;
     return true;
@@ -693,7 +652,6 @@ class Game_SendPlayerParams_pargs {
 
 
   virtual ~Game_SendPlayerParams_pargs() noexcept;
-  const RegisterResponse* register_response;
   const PlayerParam* player_param;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -756,33 +714,27 @@ class Game_SendPlayerParams_presult {
 };
 
 typedef struct _Game_SendPlayerType_args__isset {
-  _Game_SendPlayerType_args__isset() : register_response(false), player_type(false) {}
-  bool register_response :1;
+  _Game_SendPlayerType_args__isset() : player_type(false) {}
   bool player_type :1;
 } _Game_SendPlayerType_args__isset;
 
 class Game_SendPlayerType_args {
  public:
 
-  Game_SendPlayerType_args(const Game_SendPlayerType_args&) noexcept;
-  Game_SendPlayerType_args& operator=(const Game_SendPlayerType_args&) noexcept;
+  Game_SendPlayerType_args(const Game_SendPlayerType_args&);
+  Game_SendPlayerType_args& operator=(const Game_SendPlayerType_args&);
   Game_SendPlayerType_args() noexcept {
   }
 
   virtual ~Game_SendPlayerType_args() noexcept;
-  RegisterResponse register_response;
   PlayerType player_type;
 
   _Game_SendPlayerType_args__isset __isset;
-
-  void __set_register_response(const RegisterResponse& val);
 
   void __set_player_type(const PlayerType& val);
 
   bool operator == (const Game_SendPlayerType_args & rhs) const
   {
-    if (!(register_response == rhs.register_response))
-      return false;
     if (!(player_type == rhs.player_type))
       return false;
     return true;
@@ -804,7 +756,6 @@ class Game_SendPlayerType_pargs {
 
 
   virtual ~Game_SendPlayerType_pargs() noexcept;
-  const RegisterResponse* register_response;
   const PlayerType* player_type;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -923,8 +874,8 @@ typedef struct _Game_Register_result__isset {
 class Game_Register_result {
  public:
 
-  Game_Register_result(const Game_Register_result&) noexcept;
-  Game_Register_result& operator=(const Game_Register_result&) noexcept;
+  Game_Register_result(const Game_Register_result&);
+  Game_Register_result& operator=(const Game_Register_result&);
   Game_Register_result() noexcept {
   }
 
@@ -978,8 +929,8 @@ typedef struct _Game_SendByeCommand_args__isset {
 class Game_SendByeCommand_args {
  public:
 
-  Game_SendByeCommand_args(const Game_SendByeCommand_args&) noexcept;
-  Game_SendByeCommand_args& operator=(const Game_SendByeCommand_args&) noexcept;
+  Game_SendByeCommand_args(const Game_SendByeCommand_args&);
+  Game_SendByeCommand_args& operator=(const Game_SendByeCommand_args&);
   Game_SendByeCommand_args() noexcept {
   }
 
@@ -1099,26 +1050,26 @@ class GameClient : virtual public GameIf {
   std::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
-  void GetPlayerActions(PlayerActions& _return, const RegisterResponse& register_response, const State& state) override;
-  void send_GetPlayerActions(const RegisterResponse& register_response, const State& state);
+  void GetPlayerActions(PlayerActions& _return, const State& state) override;
+  void send_GetPlayerActions(const State& state);
   void recv_GetPlayerActions(PlayerActions& _return);
-  void GetCoachActions(CoachActions& _return, const RegisterResponse& register_response, const State& state) override;
-  void send_GetCoachActions(const RegisterResponse& register_response, const State& state);
+  void GetCoachActions(CoachActions& _return, const State& state) override;
+  void send_GetCoachActions(const State& state);
   void recv_GetCoachActions(CoachActions& _return);
-  void GetTrainerActions(TrainerActions& _return, const RegisterResponse& register_response, const State& state) override;
-  void send_GetTrainerActions(const RegisterResponse& register_response, const State& state);
+  void GetTrainerActions(TrainerActions& _return, const State& state) override;
+  void send_GetTrainerActions(const State& state);
   void recv_GetTrainerActions(TrainerActions& _return);
-  void SendInitMessage(Empty& _return, const RegisterResponse& register_response, const InitMessage& init_message) override;
-  void send_SendInitMessage(const RegisterResponse& register_response, const InitMessage& init_message);
+  void SendInitMessage(Empty& _return, const InitMessage& init_message) override;
+  void send_SendInitMessage(const InitMessage& init_message);
   void recv_SendInitMessage(Empty& _return);
-  void SendServerParams(Empty& _return, const RegisterResponse& register_response, const ServerParam& server_param) override;
-  void send_SendServerParams(const RegisterResponse& register_response, const ServerParam& server_param);
+  void SendServerParams(Empty& _return, const ServerParam& server_param) override;
+  void send_SendServerParams(const ServerParam& server_param);
   void recv_SendServerParams(Empty& _return);
-  void SendPlayerParams(Empty& _return, const RegisterResponse& register_response, const PlayerParam& player_param) override;
-  void send_SendPlayerParams(const RegisterResponse& register_response, const PlayerParam& player_param);
+  void SendPlayerParams(Empty& _return, const PlayerParam& player_param) override;
+  void send_SendPlayerParams(const PlayerParam& player_param);
   void recv_SendPlayerParams(Empty& _return);
-  void SendPlayerType(Empty& _return, const RegisterResponse& register_response, const PlayerType& player_type) override;
-  void send_SendPlayerType(const RegisterResponse& register_response, const PlayerType& player_type);
+  void SendPlayerType(Empty& _return, const PlayerType& player_type) override;
+  void send_SendPlayerType(const PlayerType& player_type);
   void recv_SendPlayerType(Empty& _return);
   void Register(RegisterResponse& _return, const RegisterRequest& request) override;
   void send_Register(const RegisterRequest& request);
@@ -1190,73 +1141,73 @@ class GameMultiface : virtual public GameIf {
     ifaces_.push_back(iface);
   }
  public:
-  void GetPlayerActions(PlayerActions& _return, const RegisterResponse& register_response, const State& state) override {
+  void GetPlayerActions(PlayerActions& _return, const State& state) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->GetPlayerActions(_return, register_response, state);
+      ifaces_[i]->GetPlayerActions(_return, state);
     }
-    ifaces_[i]->GetPlayerActions(_return, register_response, state);
+    ifaces_[i]->GetPlayerActions(_return, state);
     return;
   }
 
-  void GetCoachActions(CoachActions& _return, const RegisterResponse& register_response, const State& state) override {
+  void GetCoachActions(CoachActions& _return, const State& state) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->GetCoachActions(_return, register_response, state);
+      ifaces_[i]->GetCoachActions(_return, state);
     }
-    ifaces_[i]->GetCoachActions(_return, register_response, state);
+    ifaces_[i]->GetCoachActions(_return, state);
     return;
   }
 
-  void GetTrainerActions(TrainerActions& _return, const RegisterResponse& register_response, const State& state) override {
+  void GetTrainerActions(TrainerActions& _return, const State& state) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->GetTrainerActions(_return, register_response, state);
+      ifaces_[i]->GetTrainerActions(_return, state);
     }
-    ifaces_[i]->GetTrainerActions(_return, register_response, state);
+    ifaces_[i]->GetTrainerActions(_return, state);
     return;
   }
 
-  void SendInitMessage(Empty& _return, const RegisterResponse& register_response, const InitMessage& init_message) override {
+  void SendInitMessage(Empty& _return, const InitMessage& init_message) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->SendInitMessage(_return, register_response, init_message);
+      ifaces_[i]->SendInitMessage(_return, init_message);
     }
-    ifaces_[i]->SendInitMessage(_return, register_response, init_message);
+    ifaces_[i]->SendInitMessage(_return, init_message);
     return;
   }
 
-  void SendServerParams(Empty& _return, const RegisterResponse& register_response, const ServerParam& server_param) override {
+  void SendServerParams(Empty& _return, const ServerParam& server_param) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->SendServerParams(_return, register_response, server_param);
+      ifaces_[i]->SendServerParams(_return, server_param);
     }
-    ifaces_[i]->SendServerParams(_return, register_response, server_param);
+    ifaces_[i]->SendServerParams(_return, server_param);
     return;
   }
 
-  void SendPlayerParams(Empty& _return, const RegisterResponse& register_response, const PlayerParam& player_param) override {
+  void SendPlayerParams(Empty& _return, const PlayerParam& player_param) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->SendPlayerParams(_return, register_response, player_param);
+      ifaces_[i]->SendPlayerParams(_return, player_param);
     }
-    ifaces_[i]->SendPlayerParams(_return, register_response, player_param);
+    ifaces_[i]->SendPlayerParams(_return, player_param);
     return;
   }
 
-  void SendPlayerType(Empty& _return, const RegisterResponse& register_response, const PlayerType& player_type) override {
+  void SendPlayerType(Empty& _return, const PlayerType& player_type) override {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->SendPlayerType(_return, register_response, player_type);
+      ifaces_[i]->SendPlayerType(_return, player_type);
     }
-    ifaces_[i]->SendPlayerType(_return, register_response, player_type);
+    ifaces_[i]->SendPlayerType(_return, player_type);
     return;
   }
 
@@ -1312,26 +1263,26 @@ class GameConcurrentClient : virtual public GameIf {
   std::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
-  void GetPlayerActions(PlayerActions& _return, const RegisterResponse& register_response, const State& state) override;
-  int32_t send_GetPlayerActions(const RegisterResponse& register_response, const State& state);
+  void GetPlayerActions(PlayerActions& _return, const State& state) override;
+  int32_t send_GetPlayerActions(const State& state);
   void recv_GetPlayerActions(PlayerActions& _return, const int32_t seqid);
-  void GetCoachActions(CoachActions& _return, const RegisterResponse& register_response, const State& state) override;
-  int32_t send_GetCoachActions(const RegisterResponse& register_response, const State& state);
+  void GetCoachActions(CoachActions& _return, const State& state) override;
+  int32_t send_GetCoachActions(const State& state);
   void recv_GetCoachActions(CoachActions& _return, const int32_t seqid);
-  void GetTrainerActions(TrainerActions& _return, const RegisterResponse& register_response, const State& state) override;
-  int32_t send_GetTrainerActions(const RegisterResponse& register_response, const State& state);
+  void GetTrainerActions(TrainerActions& _return, const State& state) override;
+  int32_t send_GetTrainerActions(const State& state);
   void recv_GetTrainerActions(TrainerActions& _return, const int32_t seqid);
-  void SendInitMessage(Empty& _return, const RegisterResponse& register_response, const InitMessage& init_message) override;
-  int32_t send_SendInitMessage(const RegisterResponse& register_response, const InitMessage& init_message);
+  void SendInitMessage(Empty& _return, const InitMessage& init_message) override;
+  int32_t send_SendInitMessage(const InitMessage& init_message);
   void recv_SendInitMessage(Empty& _return, const int32_t seqid);
-  void SendServerParams(Empty& _return, const RegisterResponse& register_response, const ServerParam& server_param) override;
-  int32_t send_SendServerParams(const RegisterResponse& register_response, const ServerParam& server_param);
+  void SendServerParams(Empty& _return, const ServerParam& server_param) override;
+  int32_t send_SendServerParams(const ServerParam& server_param);
   void recv_SendServerParams(Empty& _return, const int32_t seqid);
-  void SendPlayerParams(Empty& _return, const RegisterResponse& register_response, const PlayerParam& player_param) override;
-  int32_t send_SendPlayerParams(const RegisterResponse& register_response, const PlayerParam& player_param);
+  void SendPlayerParams(Empty& _return, const PlayerParam& player_param) override;
+  int32_t send_SendPlayerParams(const PlayerParam& player_param);
   void recv_SendPlayerParams(Empty& _return, const int32_t seqid);
-  void SendPlayerType(Empty& _return, const RegisterResponse& register_response, const PlayerType& player_type) override;
-  int32_t send_SendPlayerType(const RegisterResponse& register_response, const PlayerType& player_type);
+  void SendPlayerType(Empty& _return, const PlayerType& player_type) override;
+  int32_t send_SendPlayerType(const PlayerType& player_type);
   void recv_SendPlayerType(Empty& _return, const int32_t seqid);
   void Register(RegisterResponse& _return, const RegisterRequest& request) override;
   int32_t send_Register(const RegisterRequest& request);

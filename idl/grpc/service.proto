@@ -244,10 +244,10 @@ message WorldModel {
 }
 
 message State {
-  AgentType agent_type = 1;
-  WorldModel world_model = 2;
-  WorldModel full_world_model = 3;
-
+  RegisterResponse register_response = 1;
+  AgentType agent_type = 2;
+  WorldModel world_model = 3;
+  WorldModel full_world_model = 4;
 }
 
 enum AgentType {
@@ -257,8 +257,9 @@ enum AgentType {
 }
 
 message InitMessage {
-  AgentType agent_type = 1;
-  bool debug_mode = 2;
+  RegisterResponse register_response = 1;
+  AgentType agent_type = 2;
+  bool debug_mode = 3;
 }
 
 message Dash {
@@ -1116,6 +1117,8 @@ message ServerParam {
   float penalty_area_half_width = 220;
   float penalty_area_length = 221;
   float goal_width = 222;
+
+  RegisterResponse register_response = 223;
 }
 
 message PlayerParam {
@@ -1150,6 +1153,7 @@ message PlayerParam {
   float catchable_area_l_stretch_min = 29;
   float catchable_area_l_stretch_max = 30;
 
+  RegisterResponse register_response = 31;
 }
 
 message PlayerType {
@@ -1187,12 +1191,24 @@ message PlayerType {
   float real_speed_max2 = 32;
   int32 cycles_to_reach_max_speed = 33;
   float player_speed_max = 34;
+
+  RegisterResponse register_response = 35;
+}
+
+message RegisterRequest {
+  AgentType agent_type = 1;
+  string team_name = 2;
+  int32 uniform_number = 3;
 }
 
 message Empty {
 }
 
-message InitMessageFromServer {
+message RegisterResponse {
+  int32 client_id = 1;
+  AgentType agent_type = 2;
+  string team_name = 3;
+  int32 uniform_number = 4;
 }
 
 service Game {
@@ -1203,6 +1219,6 @@ service Game {
   rpc SendServerParams(ServerParam) returns (Empty) {}
   rpc SendPlayerParams(PlayerParam) returns (Empty) {}
   rpc SendPlayerType(PlayerType) returns (Empty) {} //should be PlayerTypes
-  rpc GetInitMessage(Empty) returns (InitMessageFromServer) {}
-  rpc SendByeCommand(Empty) returns (Empty) {}
+  rpc Register(RegisterRequest) returns (RegisterResponse) {}
+  rpc SendByeCommand(RegisterResponse) returns (Empty) {}
 }

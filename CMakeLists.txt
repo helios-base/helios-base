@@ -18,7 +18,7 @@ set(CMAKE_CXX_FLAGS "-W -Wall")
 
 # Define options for selecting the RPC framework
 option(USE_GRPC "Use gRPC as the RPC framework" ON)
-option(USE_THRIFT "Use Thrift as the RPC framework" OFF)
+option(USE_THRIFT "Use Thrift as the RPC framework" ON)
 
 if (USE_GRPC)
   add_compile_definitions(USE_GRPC)

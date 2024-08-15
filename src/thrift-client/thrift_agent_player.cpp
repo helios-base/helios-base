@@ -91,6 +91,7 @@ void ThriftAgentPlayer::init(rcsc::PlayerAgent *agent,
 {
     M_agent = agent;
     unum = agent->world().self().unum();
+    team_name = agent->world().ourTeamName();
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
@@ -111,10 +112,10 @@ void ThriftAgentPlayer::getActions() const
     soccer::State state = generateState();
     state.agent_type = soccer::AgentType::PlayerT;
     soccer::PlayerActions actions;
-    
+    state.register_response = register_response;
     try{
         auto start_time = high_resolution_clock::now();
-        client->GetPlayerActions(actions, register_response, state);
+        client->GetPlayerActions(actions, state);
         auto end_time = high_resolution_clock::now();
         auto duration = duration_cast<milliseconds>(end_time - start_time);
         std::cout<<"get: "<<duration.count()<<"ms"<<std::endl;

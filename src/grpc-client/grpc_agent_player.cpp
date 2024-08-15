@@ -90,6 +90,8 @@ void GrpcAgentPlayer::init(rcsc::PlayerAgent *agent,
                            bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
+    unum = agent->world().self().unum();
+    team_name = agent->world().ourTeamName();
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
@@ -108,6 +110,7 @@ void GrpcAgentPlayer::getActions() const
     auto agent = M_agent;
     State state = generateState();
     state.set_agent_type(protos::AgentType::PlayerT);
+    state.set_allocated_register_response(register_response);
     protos::PlayerActions actions;
     ClientContext context;
     Status status = stub_->GetPlayerActions(&context, state, &actions);

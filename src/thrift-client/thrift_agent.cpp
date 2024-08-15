@@ -281,7 +281,8 @@ void ThriftAgent::sendServerParam() const
 
     try{
         soccer::Empty empty;
-        client->SendServerParams(empty, register_response, serverParam);
+        serverParam.register_response = register_response;
+        client->SendServerParams(empty, serverParam);
     }
     catch(const std::exception& e){
         std::cout << "SendServerParams rpc failed." << std::endl
@@ -329,7 +330,8 @@ void ThriftAgent::sendPlayerParams() const
     try
     {
         soccer::Empty empty;
-        client->SendPlayerParams(empty, register_response, playerParam);
+        playerParam.register_response = register_response;
+        client->SendPlayerParams(empty, playerParam);
     }
     catch(const std::exception& e){
         std::cout << "SendPlayerParams rpc failed." << std::endl
@@ -385,7 +387,8 @@ void ThriftAgent::sendPlayerType() const
         try{
             soccer::Empty empty;
             playerTypeGrpc.agent_type = this->agent_type;
-            client->SendPlayerType(empty, register_response, playerTypeGrpc);
+            playerTypeGrpc.register_response = register_response;
+            client->SendPlayerType(empty, playerTypeGrpc);
         }
         catch(const std::exception& e){
             std::cout << "SendPlayerType rpc failed. id=" << i << std::endl
@@ -401,8 +404,9 @@ void ThriftAgent::sendInitMessage(bool offline_logging) const
     soccer::InitMessage initMessage;
     initMessage.debug_mode = offline_logging;
     initMessage.agent_type = this->agent_type;
+    initMessage.register_response = register_response;
     try{
-        client->SendInitMessage(empty, register_response, initMessage);
+        client->SendInitMessage(empty, initMessage);
     }
     catch(const std::exception& e){
         std::cout << "sendInitMessage rpc failed." << std::endl

@@ -34,6 +34,7 @@ void ThriftAgentTrainer::init(rcsc::TrainerAgent *agent,
                               bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
+    team_name = agent->world().ourTeamName();
     unum = 13;
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
@@ -55,11 +56,11 @@ void ThriftAgentTrainer::getActions() const
     soccer::State state = generateState();
     std::cout<<"generated state for cycle:"<<agent->world().time().cycle()<<std::endl;
     state.agent_type = soccer::AgentType::TrainerT;
-
+    state.register_response = register_response;
     soccer::TrainerActions actions;
 
     try{
-        client->GetTrainerActions(actions, register_response, state);
+        client->GetTrainerActions(actions, state);
     }
     catch(const std::exception& e){
         std::cerr << e.what() << '\n';

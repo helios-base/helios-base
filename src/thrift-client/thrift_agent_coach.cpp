@@ -36,6 +36,7 @@ void ThriftAgentCoach::init(rcsc::CoachAgent *agent,
 {
     M_agent = agent;
     unum = 12;
+    team_name = agent->world().ourTeamName();
     if (add_20_to_grpc_port_if_right_side)
         if (M_agent->world().ourSide() == rcsc::SideID::RIGHT)
             port += 20;
@@ -55,8 +56,9 @@ void ThriftAgentCoach::getActions() const
     soccer::State state = generateState();
     state.agent_type = soccer::AgentType::CoachT;
     soccer::CoachActions actions;
+    state.register_response = register_response;
     try{
-        client->GetCoachActions(actions, register_response, state);
+        client->GetCoachActions(actions, state);
     }
     catch (const std::exception &e)
     {
