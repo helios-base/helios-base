@@ -30,8 +30,12 @@
 #include "action_generator.h"
 #include "field_evaluator.h"
 #include "communication.h"
+#ifdef  USE_THRIFT
 #include "thrift-client/thrift_agent_player.h"
+#endif
+#ifdef USE_GRPC
 #include "grpc-client/grpc_agent_player.h"
+#endif
 #include "rpc-client/rpc-agent.h"
 #include <rcsc/player/player_agent.h>
 #include <vector>
@@ -65,11 +69,15 @@ public:
     void SetRpc(bool use_thrift){
         M_use_thrift = use_thrift;
         if (use_thrift){
+#ifdef  USE_THRIFT
             M_grpc_agent = new ThriftAgentPlayer();
+#endif
         }
         else
         {
+#ifdef USE_GRPC
             M_grpc_agent = new GrpcAgentPlayer();
+#endif
         }
     }
 

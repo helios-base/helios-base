@@ -28,9 +28,15 @@
 #define SAMPLE_TRAINER_H
 
 #include <rcsc/trainer/trainer_agent.h>
+#ifdef USE_THRIFT
 #include "thrift-client/thrift_agent_trainer.h"
-#include "rpc-client/rpc-agent.h"
+#endif
+#ifdef USE_GRPC
 #include "grpc-client/grpc_agent_trainer.h"
+#endif
+
+#include "rpc-client/rpc-agent.h"
+
 
 class SampleTrainer
     : public rcsc::TrainerAgent {
@@ -55,11 +61,15 @@ public:
     void SetRpc(bool use_thrift){
         M_use_thrift = use_thrift;
         if (use_thrift){
+#ifdef USE_THRIFT
             M_grpc_agent = new ThriftAgentTrainer();
+#endif
         }
         else
         {
+#ifdef USE_GRPC
             M_grpc_agent = new GrpcAgentTrainer();
+#endif
         }
     }
 

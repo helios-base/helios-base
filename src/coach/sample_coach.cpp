@@ -207,21 +207,25 @@ SampleCoach::actionImpl()
     // connect to thrift-client server
     if (!M_grpc_agent->isConnected()){
         if (M_use_thrift){
+#ifdef USE_THRIFT
             dynamic_cast<ThriftAgentCoach*>(M_grpc_agent)->init(
                     this,
                     M_grpc_server_address,
                     M_first_grpc_port,
                     M_use_same_grpc_port,
                     M_add_20_to_grpc_port_if_right_side);
+#endif
         }
         else
         {
+#ifdef USE_GRPC
             dynamic_cast<GrpcAgentCoach*>(M_grpc_agent)->init(
                     this,
                     M_grpc_server_address,
                     M_first_grpc_port,
                     M_use_same_grpc_port,
                     M_add_20_to_grpc_port_if_right_side);
+#endif
         }
     }
 

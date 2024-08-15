@@ -114,21 +114,25 @@ SampleTrainer::actionImpl()
     bool connectedToGrpcServer = false;
     if (!M_grpc_agent->isConnected()){
         if (M_use_thrift){
+#ifdef USE_THRIFT
             dynamic_cast<ThriftAgentTrainer*>(M_grpc_agent)->init(
                     this,
                     M_grpc_server_address,
                     M_first_grpc_port,
                     M_use_same_grpc_port,
                     M_add_20_to_grpc_port_if_right_side);
+#endif
         }
         else
         {
+#ifdef USE_GRPC
             dynamic_cast<GrpcAgentTrainer*>(M_grpc_agent)->init(
                     this,
                     M_grpc_server_address,
                     M_first_grpc_port,
                     M_use_same_grpc_port,
                     M_add_20_to_grpc_port_if_right_side);
+#endif
         }
     }
     while (M_grpc_agent->isConnected() == false)

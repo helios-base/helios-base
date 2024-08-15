@@ -108,6 +108,18 @@ main( int argc, char ** argv )
         agent.SetGrpcIp(grpc_ip);
 
         bool use_thrift = rpc_type=="thrift";
+#ifndef USE_GRPC
+        if (!use_thrift) {
+            std::cerr << "This program does not support gRPC. Please build with gRPC support." << std::endl;
+            return EXIT_FAILURE;
+        }
+#endif
+#ifndef USE_THRIFT
+        if (use_thrift) {
+            std::cerr << "This program does not support Thrift. Please build with Thrift support." << std::endl;
+            return EXIT_FAILURE;
+        }
+#endif
         agent.SetRpc(use_thrift);
         
         if ( ! agent.init( cmd_parser ) )

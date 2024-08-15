@@ -29,8 +29,12 @@
 
 #include <rcsc/coach/coach_agent.h>
 #include <rcsc/types.h>
+#ifdef USE_THRIFT
 #include "thrift-client/thrift_agent_coach.h"
+#endif
+#ifdef USE_GRPC
 #include "grpc-client/grpc_agent_coach.h"
+#endif
 #include "rpc-client/rpc-agent.h"
 #include <vector>
 
@@ -71,11 +75,15 @@ public:
     void SetRpc(bool use_thrift){
         M_use_thrift = use_thrift;
         if (use_thrift){
+#ifdef USE_THRIFT
             M_grpc_agent = new ThriftAgentCoach();
+#endif
         }
         else
         {
+#ifdef USE_GRPC
             M_grpc_agent = new GrpcAgentCoach();
+#endif
         }
     }
     
