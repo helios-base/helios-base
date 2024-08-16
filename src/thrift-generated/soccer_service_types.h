@@ -1753,9 +1753,8 @@ void swap(WorldModel &a, WorldModel &b);
 std::ostream& operator<<(std::ostream& out, const WorldModel& obj);
 
 typedef struct _State__isset {
-  _State__isset() : register_response(false), agent_type(false), world_model(false), full_world_model(false) {}
+  _State__isset() : register_response(false), world_model(false), full_world_model(false) {}
   bool register_response :1;
-  bool agent_type :1;
   bool world_model :1;
   bool full_world_model :1;
 } _State__isset;
@@ -1765,25 +1764,17 @@ class State : public virtual ::apache::thrift::TBase {
 
   State(const State&);
   State& operator=(const State&);
-  State() noexcept
-        : agent_type(static_cast<AgentType::type>(0)) {
+  State() noexcept {
   }
 
   virtual ~State() noexcept;
   RegisterResponse register_response;
-  /**
-   * 
-   * @see AgentType
-   */
-  AgentType::type agent_type;
   WorldModel world_model;
   WorldModel full_world_model;
 
   _State__isset __isset;
 
   void __set_register_response(const RegisterResponse& val);
-
-  void __set_agent_type(const AgentType::type val);
 
   void __set_world_model(const WorldModel& val);
 
@@ -1792,8 +1783,6 @@ class State : public virtual ::apache::thrift::TBase {
   bool operator == (const State & rhs) const
   {
     if (!(register_response == rhs.register_response))
-      return false;
-    if (!(agent_type == rhs.agent_type))
       return false;
     if (!(world_model == rhs.world_model))
       return false;
@@ -1818,9 +1807,8 @@ void swap(State &a, State &b);
 std::ostream& operator<<(std::ostream& out, const State& obj);
 
 typedef struct _InitMessage__isset {
-  _InitMessage__isset() : register_response(false), agent_type(false), debug_mode(false) {}
+  _InitMessage__isset() : register_response(false), debug_mode(false) {}
   bool register_response :1;
-  bool agent_type :1;
   bool debug_mode :1;
 } _InitMessage__isset;
 
@@ -1830,32 +1818,22 @@ class InitMessage : public virtual ::apache::thrift::TBase {
   InitMessage(const InitMessage&);
   InitMessage& operator=(const InitMessage&);
   InitMessage() noexcept
-              : agent_type(static_cast<AgentType::type>(0)),
-                debug_mode(0) {
+              : debug_mode(0) {
   }
 
   virtual ~InitMessage() noexcept;
   RegisterResponse register_response;
-  /**
-   * 
-   * @see AgentType
-   */
-  AgentType::type agent_type;
   bool debug_mode;
 
   _InitMessage__isset __isset;
 
   void __set_register_response(const RegisterResponse& val);
 
-  void __set_agent_type(const AgentType::type val);
-
   void __set_debug_mode(const bool val);
 
   bool operator == (const InitMessage & rhs) const
   {
     if (!(register_response == rhs.register_response))
-      return false;
-    if (!(agent_type == rhs.agent_type))
       return false;
     if (!(debug_mode == rhs.debug_mode))
       return false;
@@ -7868,8 +7846,8 @@ void swap(TrainerActions &a, TrainerActions &b);
 std::ostream& operator<<(std::ostream& out, const TrainerActions& obj);
 
 typedef struct _ServerParam__isset {
-  _ServerParam__isset() : agent_type(false), inertia_moment(false), player_size(false), player_decay(false), player_rand(false), player_weight(false), player_speed_max(false), player_accel_max(false), stamina_max(false), stamina_inc_max(false), recover_init(false), recover_dec_thr(false), recover_min(false), recover_dec(false), effort_init(false), effort_dec_thr(false), effort_min(false), effort_dec(false), effort_inc_thr(false), effort_inc(false), kick_rand(false), team_actuator_noise(false), player_rand_factor_l(false), player_rand_factor_r(false), kick_rand_factor_l(false), kick_rand_factor_r(false), ball_size(false), ball_decay(false), ball_rand(false), ball_weight(false), ball_speed_max(false), ball_accel_max(false), dash_power_rate(false), kick_power_rate(false), kickable_margin(false), control_radius(false), control_radius_width(false), max_power(false), min_power(false), max_moment(false), min_moment(false), max_neck_moment(false), min_neck_moment(false), max_neck_angle(false), min_neck_angle(false), visible_angle(false), visible_distance(false), wind_dir(false), wind_force(false), wind_angle(false), wind_rand(false), kickable_area(false), catch_area_l(false), catch_area_w(false), catch_probability(false), goalie_max_moves(false), corner_kick_margin(false), offside_active_area_size(false), wind_none(false), use_wind_random(false), coach_say_count_max(false), coach_say_msg_size(false), clang_win_size(false), clang_define_win(false), clang_meta_win(false), clang_advice_win(false), clang_info_win(false), clang_mess_delay(false), clang_mess_per_cycle(false), half_time(false), simulator_step(false), send_step(false), recv_step(false), sense_body_step(false), lcm_step(false), player_say_msg_size(false), player_hear_max(false), player_hear_inc(false), player_hear_decay(false), catch_ban_cycle(false), slow_down_factor(false), use_offside(false), kickoff_offside(false), offside_kick_margin(false), audio_cut_dist(false), dist_quantize_step(false), landmark_dist_quantize_step(false), dir_quantize_step(false), dist_quantize_step_l(false), dist_quantize_step_r(false), landmark_dist_quantize_step_l(false), landmark_dist_quantize_step_r(false), dir_quantize_step_l(false), dir_quantize_step_r(false), coach_mode(false), coach_with_referee_mode(false), use_old_coach_hear(false), slowness_on_top_for_left_team(false), slowness_on_top_for_right_team(false), start_goal_l(false), start_goal_r(false), fullstate_l(false), fullstate_r(false), drop_ball_time(false), synch_mode(false), synch_offset(false), synch_micro_sleep(false), point_to_ban(false), point_to_duration(false), player_port(false), trainer_port(false), online_coach_port(false), verbose_mode(false), coach_send_vi_step(false), replay_file(false), landmark_file(false), send_comms(false), text_logging(false), game_logging(false), game_log_version(false), text_log_dir(false), game_log_dir(false), text_log_fixed_name(false), game_log_fixed_name(false), use_text_log_fixed(false), use_game_log_fixed(false), use_text_log_dated(false), use_game_log_dated(false), log_date_format(false), log_times(false), record_message(false), text_log_compression(false), game_log_compression(false), use_profile(false), tackle_dist(false), tackle_back_dist(false), tackle_width(false), tackle_exponent(false), tackle_cycles(false), tackle_power_rate(false), freeform_wait_period(false), freeform_send_period(false), free_kick_faults(false), back_passes(false), proper_goal_kicks(false), stopped_ball_vel(false), max_goal_kicks(false), clang_del_win(false), clang_rule_win(false), auto_mode(false), kick_off_wait(false), connect_wait(false), game_over_wait(false), team_l_start(false), team_r_start(false), keepaway_mode(false), keepaway_length(false), keepaway_width(false), keepaway_logging(false), keepaway_log_dir(false), keepaway_log_fixed_name(false), keepaway_log_fixed(false), keepaway_log_dated(false), keepaway_start(false), nr_normal_halfs(false), nr_extra_halfs(false), penalty_shoot_outs(false), pen_before_setup_wait(false), pen_setup_wait(false), pen_ready_wait(false), pen_taken_wait(false), pen_nr_kicks(false), pen_max_extra_kicks(false), pen_dist_x(false), pen_random_winner(false), pen_allow_mult_kicks(false), pen_max_goalie_dist_x(false), pen_coach_moves_players(false), module_dir(false), ball_stuck_area(false), coach_msg_file(false), max_tackle_power(false), max_back_tackle_power(false), player_speed_max_min(false), extra_stamina(false), synch_see_offset(false), extra_half_time(false), stamina_capacity(false), max_dash_angle(false), min_dash_angle(false), dash_angle_step(false), side_dash_rate(false), back_dash_rate(false), max_dash_power(false), min_dash_power(false), tackle_rand_factor(false), foul_detect_probability(false), foul_exponent(false), foul_cycles(false), golden_goal(false), red_card_probability(false), illegal_defense_duration(false), illegal_defense_number(false), illegal_defense_dist_x(false), illegal_defense_width(false), fixed_teamname_l(false), fixed_teamname_r(false), max_catch_angle(false), min_catch_angle(false), random_seed(false), long_kick_power_factor(false), long_kick_delay(false), max_monitors(false), catchable_area(false), real_speed_max(false), pitch_half_length(false), pitch_half_width(false), our_penalty_area_line_x(false), their_penalty_area_line_x(false), penalty_area_half_width(false), penalty_area_length(false), goal_width(false), register_response(false) {}
-  bool agent_type :1;
+  _ServerParam__isset() : register_response(false), inertia_moment(false), player_size(false), player_decay(false), player_rand(false), player_weight(false), player_speed_max(false), player_accel_max(false), stamina_max(false), stamina_inc_max(false), recover_init(false), recover_dec_thr(false), recover_min(false), recover_dec(false), effort_init(false), effort_dec_thr(false), effort_min(false), effort_dec(false), effort_inc_thr(false), effort_inc(false), kick_rand(false), team_actuator_noise(false), player_rand_factor_l(false), player_rand_factor_r(false), kick_rand_factor_l(false), kick_rand_factor_r(false), ball_size(false), ball_decay(false), ball_rand(false), ball_weight(false), ball_speed_max(false), ball_accel_max(false), dash_power_rate(false), kick_power_rate(false), kickable_margin(false), control_radius(false), control_radius_width(false), max_power(false), min_power(false), max_moment(false), min_moment(false), max_neck_moment(false), min_neck_moment(false), max_neck_angle(false), min_neck_angle(false), visible_angle(false), visible_distance(false), wind_dir(false), wind_force(false), wind_angle(false), wind_rand(false), kickable_area(false), catch_area_l(false), catch_area_w(false), catch_probability(false), goalie_max_moves(false), corner_kick_margin(false), offside_active_area_size(false), wind_none(false), use_wind_random(false), coach_say_count_max(false), coach_say_msg_size(false), clang_win_size(false), clang_define_win(false), clang_meta_win(false), clang_advice_win(false), clang_info_win(false), clang_mess_delay(false), clang_mess_per_cycle(false), half_time(false), simulator_step(false), send_step(false), recv_step(false), sense_body_step(false), lcm_step(false), player_say_msg_size(false), player_hear_max(false), player_hear_inc(false), player_hear_decay(false), catch_ban_cycle(false), slow_down_factor(false), use_offside(false), kickoff_offside(false), offside_kick_margin(false), audio_cut_dist(false), dist_quantize_step(false), landmark_dist_quantize_step(false), dir_quantize_step(false), dist_quantize_step_l(false), dist_quantize_step_r(false), landmark_dist_quantize_step_l(false), landmark_dist_quantize_step_r(false), dir_quantize_step_l(false), dir_quantize_step_r(false), coach_mode(false), coach_with_referee_mode(false), use_old_coach_hear(false), slowness_on_top_for_left_team(false), slowness_on_top_for_right_team(false), start_goal_l(false), start_goal_r(false), fullstate_l(false), fullstate_r(false), drop_ball_time(false), synch_mode(false), synch_offset(false), synch_micro_sleep(false), point_to_ban(false), point_to_duration(false), player_port(false), trainer_port(false), online_coach_port(false), verbose_mode(false), coach_send_vi_step(false), replay_file(false), landmark_file(false), send_comms(false), text_logging(false), game_logging(false), game_log_version(false), text_log_dir(false), game_log_dir(false), text_log_fixed_name(false), game_log_fixed_name(false), use_text_log_fixed(false), use_game_log_fixed(false), use_text_log_dated(false), use_game_log_dated(false), log_date_format(false), log_times(false), record_message(false), text_log_compression(false), game_log_compression(false), use_profile(false), tackle_dist(false), tackle_back_dist(false), tackle_width(false), tackle_exponent(false), tackle_cycles(false), tackle_power_rate(false), freeform_wait_period(false), freeform_send_period(false), free_kick_faults(false), back_passes(false), proper_goal_kicks(false), stopped_ball_vel(false), max_goal_kicks(false), clang_del_win(false), clang_rule_win(false), auto_mode(false), kick_off_wait(false), connect_wait(false), game_over_wait(false), team_l_start(false), team_r_start(false), keepaway_mode(false), keepaway_length(false), keepaway_width(false), keepaway_logging(false), keepaway_log_dir(false), keepaway_log_fixed_name(false), keepaway_log_fixed(false), keepaway_log_dated(false), keepaway_start(false), nr_normal_halfs(false), nr_extra_halfs(false), penalty_shoot_outs(false), pen_before_setup_wait(false), pen_setup_wait(false), pen_ready_wait(false), pen_taken_wait(false), pen_nr_kicks(false), pen_max_extra_kicks(false), pen_dist_x(false), pen_random_winner(false), pen_allow_mult_kicks(false), pen_max_goalie_dist_x(false), pen_coach_moves_players(false), module_dir(false), ball_stuck_area(false), coach_msg_file(false), max_tackle_power(false), max_back_tackle_power(false), player_speed_max_min(false), extra_stamina(false), synch_see_offset(false), extra_half_time(false), stamina_capacity(false), max_dash_angle(false), min_dash_angle(false), dash_angle_step(false), side_dash_rate(false), back_dash_rate(false), max_dash_power(false), min_dash_power(false), tackle_rand_factor(false), foul_detect_probability(false), foul_exponent(false), foul_cycles(false), golden_goal(false), red_card_probability(false), illegal_defense_duration(false), illegal_defense_number(false), illegal_defense_dist_x(false), illegal_defense_width(false), fixed_teamname_l(false), fixed_teamname_r(false), max_catch_angle(false), min_catch_angle(false), random_seed(false), long_kick_power_factor(false), long_kick_delay(false), max_monitors(false), catchable_area(false), real_speed_max(false), pitch_half_length(false), pitch_half_width(false), our_penalty_area_line_x(false), their_penalty_area_line_x(false), penalty_area_half_width(false), penalty_area_length(false), goal_width(false) {}
+  bool register_response :1;
   bool inertia_moment :1;
   bool player_size :1;
   bool player_decay :1;
@@ -8091,7 +8069,6 @@ typedef struct _ServerParam__isset {
   bool penalty_area_half_width :1;
   bool penalty_area_length :1;
   bool goal_width :1;
-  bool register_response :1;
 } _ServerParam__isset;
 
 class ServerParam : public virtual ::apache::thrift::TBase {
@@ -8100,8 +8077,7 @@ class ServerParam : public virtual ::apache::thrift::TBase {
   ServerParam(const ServerParam&);
   ServerParam& operator=(const ServerParam&);
   ServerParam() noexcept
-              : agent_type(static_cast<AgentType::type>(0)),
-                inertia_moment(0),
+              : inertia_moment(0),
                 player_size(0),
                 player_decay(0),
                 player_rand(0),
@@ -8325,11 +8301,7 @@ class ServerParam : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~ServerParam() noexcept;
-  /**
-   * 
-   * @see AgentType
-   */
-  AgentType::type agent_type;
+  RegisterResponse register_response;
   double inertia_moment;
   double player_size;
   double player_decay;
@@ -8551,11 +8523,10 @@ class ServerParam : public virtual ::apache::thrift::TBase {
   double penalty_area_half_width;
   double penalty_area_length;
   double goal_width;
-  RegisterResponse register_response;
 
   _ServerParam__isset __isset;
 
-  void __set_agent_type(const AgentType::type val);
+  void __set_register_response(const RegisterResponse& val);
 
   void __set_inertia_moment(const double val);
 
@@ -8999,11 +8970,9 @@ class ServerParam : public virtual ::apache::thrift::TBase {
 
   void __set_goal_width(const double val);
 
-  void __set_register_response(const RegisterResponse& val);
-
   bool operator == (const ServerParam & rhs) const
   {
-    if (!(agent_type == rhs.agent_type))
+    if (!(register_response == rhs.register_response))
       return false;
     if (!(inertia_moment == rhs.inertia_moment))
       return false;
@@ -9447,8 +9416,6 @@ class ServerParam : public virtual ::apache::thrift::TBase {
       return false;
     if (!(goal_width == rhs.goal_width))
       return false;
-    if (!(register_response == rhs.register_response))
-      return false;
     return true;
   }
   bool operator != (const ServerParam &rhs) const {
@@ -9468,8 +9435,8 @@ void swap(ServerParam &a, ServerParam &b);
 std::ostream& operator<<(std::ostream& out, const ServerParam& obj);
 
 typedef struct _PlayerParam__isset {
-  _PlayerParam__isset() : agent_type(false), player_types(false), subs_max(false), pt_max(false), allow_mult_default_type(false), player_speed_max_delta_min(false), player_speed_max_delta_max(false), stamina_inc_max_delta_factor(false), player_decay_delta_min(false), player_decay_delta_max(false), inertia_moment_delta_factor(false), dash_power_rate_delta_min(false), dash_power_rate_delta_max(false), player_size_delta_factor(false), kickable_margin_delta_min(false), kickable_margin_delta_max(false), kick_rand_delta_factor(false), extra_stamina_delta_min(false), extra_stamina_delta_max(false), effort_max_delta_factor(false), effort_min_delta_factor(false), random_seed(false), new_dash_power_rate_delta_min(false), new_dash_power_rate_delta_max(false), new_stamina_inc_max_delta_factor(false), kick_power_rate_delta_min(false), kick_power_rate_delta_max(false), foul_detect_probability_delta_factor(false), catchable_area_l_stretch_min(false), catchable_area_l_stretch_max(false), register_response(false) {}
-  bool agent_type :1;
+  _PlayerParam__isset() : register_response(false), player_types(false), subs_max(false), pt_max(false), allow_mult_default_type(false), player_speed_max_delta_min(false), player_speed_max_delta_max(false), stamina_inc_max_delta_factor(false), player_decay_delta_min(false), player_decay_delta_max(false), inertia_moment_delta_factor(false), dash_power_rate_delta_min(false), dash_power_rate_delta_max(false), player_size_delta_factor(false), kickable_margin_delta_min(false), kickable_margin_delta_max(false), kick_rand_delta_factor(false), extra_stamina_delta_min(false), extra_stamina_delta_max(false), effort_max_delta_factor(false), effort_min_delta_factor(false), random_seed(false), new_dash_power_rate_delta_min(false), new_dash_power_rate_delta_max(false), new_stamina_inc_max_delta_factor(false), kick_power_rate_delta_min(false), kick_power_rate_delta_max(false), foul_detect_probability_delta_factor(false), catchable_area_l_stretch_min(false), catchable_area_l_stretch_max(false) {}
+  bool register_response :1;
   bool player_types :1;
   bool subs_max :1;
   bool pt_max :1;
@@ -9499,7 +9466,6 @@ typedef struct _PlayerParam__isset {
   bool foul_detect_probability_delta_factor :1;
   bool catchable_area_l_stretch_min :1;
   bool catchable_area_l_stretch_max :1;
-  bool register_response :1;
 } _PlayerParam__isset;
 
 class PlayerParam : public virtual ::apache::thrift::TBase {
@@ -9508,8 +9474,7 @@ class PlayerParam : public virtual ::apache::thrift::TBase {
   PlayerParam(const PlayerParam&);
   PlayerParam& operator=(const PlayerParam&);
   PlayerParam() noexcept
-              : agent_type(static_cast<AgentType::type>(0)),
-                player_types(0),
+              : player_types(0),
                 subs_max(0),
                 pt_max(0),
                 allow_mult_default_type(0),
@@ -9541,11 +9506,7 @@ class PlayerParam : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~PlayerParam() noexcept;
-  /**
-   * 
-   * @see AgentType
-   */
-  AgentType::type agent_type;
+  RegisterResponse register_response;
   int32_t player_types;
   int32_t subs_max;
   int32_t pt_max;
@@ -9575,11 +9536,10 @@ class PlayerParam : public virtual ::apache::thrift::TBase {
   double foul_detect_probability_delta_factor;
   double catchable_area_l_stretch_min;
   double catchable_area_l_stretch_max;
-  RegisterResponse register_response;
 
   _PlayerParam__isset __isset;
 
-  void __set_agent_type(const AgentType::type val);
+  void __set_register_response(const RegisterResponse& val);
 
   void __set_player_types(const int32_t val);
 
@@ -9639,11 +9599,9 @@ class PlayerParam : public virtual ::apache::thrift::TBase {
 
   void __set_catchable_area_l_stretch_max(const double val);
 
-  void __set_register_response(const RegisterResponse& val);
-
   bool operator == (const PlayerParam & rhs) const
   {
-    if (!(agent_type == rhs.agent_type))
+    if (!(register_response == rhs.register_response))
       return false;
     if (!(player_types == rhs.player_types))
       return false;
@@ -9703,8 +9661,6 @@ class PlayerParam : public virtual ::apache::thrift::TBase {
       return false;
     if (!(catchable_area_l_stretch_max == rhs.catchable_area_l_stretch_max))
       return false;
-    if (!(register_response == rhs.register_response))
-      return false;
     return true;
   }
   bool operator != (const PlayerParam &rhs) const {
@@ -9724,8 +9680,8 @@ void swap(PlayerParam &a, PlayerParam &b);
 std::ostream& operator<<(std::ostream& out, const PlayerParam& obj);
 
 typedef struct _PlayerType__isset {
-  _PlayerType__isset() : agent_type(false), id(false), stamina_inc_max(false), player_decay(false), inertia_moment(false), dash_power_rate(false), player_size(false), kickable_margin(false), kick_rand(false), extra_stamina(false), effort_max(false), effort_min(false), kick_power_rate(false), foul_detect_probability(false), catchable_area_l_stretch(false), unum_far_length(false), unum_too_far_length(false), team_far_length(false), team_too_far_length(false), player_max_observation_length(false), ball_vel_far_length(false), ball_vel_too_far_length(false), ball_max_observation_length(false), flag_chg_far_length(false), flag_chg_too_far_length(false), flag_max_observation_length(false), kickable_area(false), reliable_catchable_dist(false), max_catchable_dist(false), real_speed_max(false), player_speed_max2(false), real_speed_max2(false), cycles_to_reach_max_speed(false), player_speed_max(false), register_response(false) {}
-  bool agent_type :1;
+  _PlayerType__isset() : register_response(false), id(false), stamina_inc_max(false), player_decay(false), inertia_moment(false), dash_power_rate(false), player_size(false), kickable_margin(false), kick_rand(false), extra_stamina(false), effort_max(false), effort_min(false), kick_power_rate(false), foul_detect_probability(false), catchable_area_l_stretch(false), unum_far_length(false), unum_too_far_length(false), team_far_length(false), team_too_far_length(false), player_max_observation_length(false), ball_vel_far_length(false), ball_vel_too_far_length(false), ball_max_observation_length(false), flag_chg_far_length(false), flag_chg_too_far_length(false), flag_max_observation_length(false), kickable_area(false), reliable_catchable_dist(false), max_catchable_dist(false), real_speed_max(false), player_speed_max2(false), real_speed_max2(false), cycles_to_reach_max_speed(false), player_speed_max(false) {}
+  bool register_response :1;
   bool id :1;
   bool stamina_inc_max :1;
   bool player_decay :1;
@@ -9759,7 +9715,6 @@ typedef struct _PlayerType__isset {
   bool real_speed_max2 :1;
   bool cycles_to_reach_max_speed :1;
   bool player_speed_max :1;
-  bool register_response :1;
 } _PlayerType__isset;
 
 class PlayerType : public virtual ::apache::thrift::TBase {
@@ -9768,8 +9723,7 @@ class PlayerType : public virtual ::apache::thrift::TBase {
   PlayerType(const PlayerType&);
   PlayerType& operator=(const PlayerType&);
   PlayerType() noexcept
-             : agent_type(static_cast<AgentType::type>(0)),
-               id(0),
+             : id(0),
                stamina_inc_max(0),
                player_decay(0),
                inertia_moment(0),
@@ -9805,11 +9759,7 @@ class PlayerType : public virtual ::apache::thrift::TBase {
   }
 
   virtual ~PlayerType() noexcept;
-  /**
-   * 
-   * @see AgentType
-   */
-  AgentType::type agent_type;
+  RegisterResponse register_response;
   int32_t id;
   double stamina_inc_max;
   double player_decay;
@@ -9843,11 +9793,10 @@ class PlayerType : public virtual ::apache::thrift::TBase {
   double real_speed_max2;
   int32_t cycles_to_reach_max_speed;
   double player_speed_max;
-  RegisterResponse register_response;
 
   _PlayerType__isset __isset;
 
-  void __set_agent_type(const AgentType::type val);
+  void __set_register_response(const RegisterResponse& val);
 
   void __set_id(const int32_t val);
 
@@ -9915,11 +9864,9 @@ class PlayerType : public virtual ::apache::thrift::TBase {
 
   void __set_player_speed_max(const double val);
 
-  void __set_register_response(const RegisterResponse& val);
-
   bool operator == (const PlayerType & rhs) const
   {
-    if (!(agent_type == rhs.agent_type))
+    if (!(register_response == rhs.register_response))
       return false;
     if (!(id == rhs.id))
       return false;
@@ -9986,8 +9933,6 @@ class PlayerType : public virtual ::apache::thrift::TBase {
     if (!(cycles_to_reach_max_speed == rhs.cycles_to_reach_max_speed))
       return false;
     if (!(player_speed_max == rhs.player_speed_max))
-      return false;
-    if (!(register_response == rhs.register_response))
       return false;
     return true;
   }

@@ -4026,10 +4026,6 @@ void State::__set_register_response(const RegisterResponse& val) {
   this->register_response = val;
 }
 
-void State::__set_agent_type(const AgentType::type val) {
-  this->agent_type = val;
-}
-
 void State::__set_world_model(const WorldModel& val) {
   this->world_model = val;
 }
@@ -4074,16 +4070,6 @@ uint32_t State::read(::apache::thrift::protocol::TProtocol* iprot) {
         }
         break;
       case 2:
-        if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast75;
-          xfer += iprot->readI32(ecast75);
-          this->agent_type = static_cast<AgentType::type>(ecast75);
-          this->__isset.agent_type = true;
-        } else {
-          xfer += iprot->skip(ftype);
-        }
-        break;
-      case 3:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
           xfer += this->world_model.read(iprot);
           this->__isset.world_model = true;
@@ -4091,7 +4077,7 @@ uint32_t State::read(::apache::thrift::protocol::TProtocol* iprot) {
           xfer += iprot->skip(ftype);
         }
         break;
-      case 4:
+      case 3:
         if (ftype == ::apache::thrift::protocol::T_STRUCT) {
           xfer += this->full_world_model.read(iprot);
           this->__isset.full_world_model = true;
@@ -4120,15 +4106,11 @@ uint32_t State::write(::apache::thrift::protocol::TProtocol* oprot) const {
   xfer += this->register_response.write(oprot);
   xfer += oprot->writeFieldEnd();
 
-  xfer += oprot->writeFieldBegin("agent_type", ::apache::thrift::protocol::T_I32, 2);
-  xfer += oprot->writeI32(static_cast<int32_t>(this->agent_type));
-  xfer += oprot->writeFieldEnd();
-
-  xfer += oprot->writeFieldBegin("world_model", ::apache::thrift::protocol::T_STRUCT, 3);
+  xfer += oprot->writeFieldBegin("world_model", ::apache::thrift::protocol::T_STRUCT, 2);
   xfer += this->world_model.write(oprot);
   xfer += oprot->writeFieldEnd();
 
-  xfer += oprot->writeFieldBegin("full_world_model", ::apache::thrift::protocol::T_STRUCT, 4);
+  xfer += oprot->writeFieldBegin("full_world_model", ::apache::thrift::protocol::T_STRUCT, 3);
   xfer += this->full_world_model.write(oprot);
   xfer += oprot->writeFieldEnd();
 
@@ -4140,32 +4122,28 @@ uint32_t State::write(::apache::thrift::protocol::TProtocol* oprot) const {
 void swap(State &a, State &b) {
   using ::std::swap;
   swap(a.register_response, b.register_response);
-  swap(a.agent_type, b.agent_type);
   swap(a.world_model, b.world_model);
   swap(a.full_world_model, b.full_world_model);
   swap(a.__isset, b.__isset);
 }
 
-State::State(const State& other76) {
+State::State(const State& other75) {
+  register_response = other75.register_response;
+  world_model = other75.world_model;
+  full_world_model = other75.full_world_model;
+  __isset = other75.__isset;
+}
+State& State::operator=(const State& other76) {
   register_response = other76.register_response;
-  agent_type = other76.agent_type;
   world_model = other76.world_model;
   full_world_model = other76.full_world_model;
   __isset = other76.__isset;
-}
-State& State::operator=(const State& other77) {
-  register_response = other77.register_response;
-  agent_type = other77.agent_type;
-  world_model = other77.world_model;
-  full_world_model = other77.full_world_model;
-  __isset = other77.__isset;
   return *this;
 }
 void State::printTo(std::ostream& out) const {
   using ::apache::thrift::to_string;
   out << "State(";
   out << "register_response=" << to_string(register_response);
-  out << ", " << "agent_type=" << to_string(agent_type);
   out << ", " << "world_model=" << to_string(world_model);
   out << ", " << "full_world_model=" << to_string(full_world_model);
   out << ")";
@@ -4178,10 +4156,6 @@ InitMessage::~InitMessage() noexcept {
 
 void InitMessage::__set_register_response(const RegisterResponse& val) {
   this->register_response = val;
-}
-
-void InitMessage::__set_agent_type(const AgentType::type val) {
-  this->agent_type = val;
 }
 
 void InitMessage::__set_debug_mode(const bool val) {
@@ -4224,16 +4198,6 @@ uint32_t InitMessage::read(::apache::thrift::protocol::TProtocol* iprot) {
         }
         break;
       case 2:
-        if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast78;
-          xfer += iprot->readI32(ecast78);
-          this->agent_type = static_cast<AgentType::type>(ecast78);
-          this->__isset.agent_type = true;
-        } else {
-          xfer += iprot->skip(ftype);
-        }
-        break;
-      case 3:
         if (ftype == ::apache::thrift::protocol::T_BOOL) {
           xfer += iprot->readBool(this->debug_mode);
           this->__isset.debug_mode = true;
@@ -4262,11 +4226,7 @@ uint32_t InitMessage::write(::apache::thrift::protocol::TProtocol* oprot) const 
   xfer += this->register_response.write(oprot);
   xfer += oprot->writeFieldEnd();
 
-  xfer += oprot->writeFieldBegin("agent_type", ::apache::thrift::protocol::T_I32, 2);
-  xfer += oprot->writeI32(static_cast<int32_t>(this->agent_type));
-  xfer += oprot->writeFieldEnd();
-
-  xfer += oprot->writeFieldBegin("debug_mode", ::apache::thrift::protocol::T_BOOL, 3);
+  xfer += oprot->writeFieldBegin("debug_mode", ::apache::thrift::protocol::T_BOOL, 2);
   xfer += oprot->writeBool(this->debug_mode);
   xfer += oprot->writeFieldEnd();
 
@@ -4278,29 +4238,25 @@ uint32_t InitMessage::write(::apache::thrift::protocol::TProtocol* oprot) const 
 void swap(InitMessage &a, InitMessage &b) {
   using ::std::swap;
   swap(a.register_response, b.register_response);
-  swap(a.agent_type, b.agent_type);
   swap(a.debug_mode, b.debug_mode);
   swap(a.__isset, b.__isset);
 }
 
-InitMessage::InitMessage(const InitMessage& other79) {
-  register_response = other79.register_response;
-  agent_type = other79.agent_type;
-  debug_mode = other79.debug_mode;
-  __isset = other79.__isset;
+InitMessage::InitMessage(const InitMessage& other77) {
+  register_response = other77.register_response;
+  debug_mode = other77.debug_mode;
+  __isset = other77.__isset;
 }
-InitMessage& InitMessage::operator=(const InitMessage& other80) {
-  register_response = other80.register_response;
-  agent_type = other80.agent_type;
-  debug_mode = other80.debug_mode;
-  __isset = other80.__isset;
+InitMessage& InitMessage::operator=(const InitMessage& other78) {
+  register_response = other78.register_response;
+  debug_mode = other78.debug_mode;
+  __isset = other78.__isset;
   return *this;
 }
 void InitMessage::printTo(std::ostream& out) const {
   using ::apache::thrift::to_string;
   out << "InitMessage(";
   out << "register_response=" << to_string(register_response);
-  out << ", " << "agent_type=" << to_string(agent_type);
   out << ", " << "debug_mode=" << to_string(debug_mode);
   out << ")";
 }
@@ -4398,15 +4354,15 @@ void swap(Dash &a, Dash &b) {
   swap(a.__isset, b.__isset);
 }
 
-Dash::Dash(const Dash& other81) noexcept {
-  power = other81.power;
-  relative_direction = other81.relative_direction;
-  __isset = other81.__isset;
+Dash::Dash(const Dash& other79) noexcept {
+  power = other79.power;
+  relative_direction = other79.relative_direction;
+  __isset = other79.__isset;
 }
-Dash& Dash::operator=(const Dash& other82) noexcept {
-  power = other82.power;
-  relative_direction = other82.relative_direction;
-  __isset = other82.__isset;
+Dash& Dash::operator=(const Dash& other80) noexcept {
+  power = other80.power;
+  relative_direction = other80.relative_direction;
+  __isset = other80.__isset;
   return *this;
 }
 void Dash::printTo(std::ostream& out) const {
@@ -4493,13 +4449,13 @@ void swap(Turn &a, Turn &b) {
   swap(a.__isset, b.__isset);
 }
 
-Turn::Turn(const Turn& other83) noexcept {
-  relative_direction = other83.relative_direction;
-  __isset = other83.__isset;
+Turn::Turn(const Turn& other81) noexcept {
+  relative_direction = other81.relative_direction;
+  __isset = other81.__isset;
 }
-Turn& Turn::operator=(const Turn& other84) noexcept {
-  relative_direction = other84.relative_direction;
-  __isset = other84.__isset;
+Turn& Turn::operator=(const Turn& other82) noexcept {
+  relative_direction = other82.relative_direction;
+  __isset = other82.__isset;
   return *this;
 }
 void Turn::printTo(std::ostream& out) const {
@@ -4602,15 +4558,15 @@ void swap(Kick &a, Kick &b) {
   swap(a.__isset, b.__isset);
 }
 
-Kick::Kick(const Kick& other85) noexcept {
-  power = other85.power;
-  relative_direction = other85.relative_direction;
-  __isset = other85.__isset;
+Kick::Kick(const Kick& other83) noexcept {
+  power = other83.power;
+  relative_direction = other83.relative_direction;
+  __isset = other83.__isset;
 }
-Kick& Kick::operator=(const Kick& other86) noexcept {
-  power = other86.power;
-  relative_direction = other86.relative_direction;
-  __isset = other86.__isset;
+Kick& Kick::operator=(const Kick& other84) noexcept {
+  power = other84.power;
+  relative_direction = other84.relative_direction;
+  __isset = other84.__isset;
   return *this;
 }
 void Kick::printTo(std::ostream& out) const {
@@ -4714,15 +4670,15 @@ void swap(Tackle &a, Tackle &b) {
   swap(a.__isset, b.__isset);
 }
 
-Tackle::Tackle(const Tackle& other87) noexcept {
-  power_or_dir = other87.power_or_dir;
-  foul = other87.foul;
-  __isset = other87.__isset;
+Tackle::Tackle(const Tackle& other85) noexcept {
+  power_or_dir = other85.power_or_dir;
+  foul = other85.foul;
+  __isset = other85.__isset;
 }
-Tackle& Tackle::operator=(const Tackle& other88) noexcept {
-  power_or_dir = other88.power_or_dir;
-  foul = other88.foul;
-  __isset = other88.__isset;
+Tackle& Tackle::operator=(const Tackle& other86) noexcept {
+  power_or_dir = other86.power_or_dir;
+  foul = other86.foul;
+  __isset = other86.__isset;
   return *this;
 }
 void Tackle::printTo(std::ostream& out) const {
@@ -4788,11 +4744,11 @@ void swap(Catch &a, Catch &b) {
   (void) b;
 }
 
-Catch::Catch(const Catch& other89) noexcept {
-  (void) other89;
+Catch::Catch(const Catch& other87) noexcept {
+  (void) other87;
 }
-Catch& Catch::operator=(const Catch& other90) noexcept {
-  (void) other90;
+Catch& Catch::operator=(const Catch& other88) noexcept {
+  (void) other88;
   return *this;
 }
 void Catch::printTo(std::ostream& out) const {
@@ -4894,15 +4850,15 @@ void swap(Move &a, Move &b) {
   swap(a.__isset, b.__isset);
 }
 
-Move::Move(const Move& other91) noexcept {
-  x = other91.x;
-  y = other91.y;
-  __isset = other91.__isset;
+Move::Move(const Move& other89) noexcept {
+  x = other89.x;
+  y = other89.y;
+  __isset = other89.__isset;
 }
-Move& Move::operator=(const Move& other92) noexcept {
-  x = other92.x;
-  y = other92.y;
-  __isset = other92.__isset;
+Move& Move::operator=(const Move& other90) noexcept {
+  x = other90.x;
+  y = other90.y;
+  __isset = other90.__isset;
   return *this;
 }
 void Move::printTo(std::ostream& out) const {
@@ -4989,13 +4945,13 @@ void swap(TurnNeck &a, TurnNeck &b) {
   swap(a.__isset, b.__isset);
 }
 
-TurnNeck::TurnNeck(const TurnNeck& other93) noexcept {
-  moment = other93.moment;
-  __isset = other93.__isset;
+TurnNeck::TurnNeck(const TurnNeck& other91) noexcept {
+  moment = other91.moment;
+  __isset = other91.__isset;
 }
-TurnNeck& TurnNeck::operator=(const TurnNeck& other94) noexcept {
-  moment = other94.moment;
-  __isset = other94.__isset;
+TurnNeck& TurnNeck::operator=(const TurnNeck& other92) noexcept {
+  moment = other92.moment;
+  __isset = other92.__isset;
   return *this;
 }
 void TurnNeck::printTo(std::ostream& out) const {
@@ -5043,9 +4999,9 @@ uint32_t ChangeView::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast95;
-          xfer += iprot->readI32(ecast95);
-          this->view_width = static_cast<ViewWidth::type>(ecast95);
+          int32_t ecast93;
+          xfer += iprot->readI32(ecast93);
+          this->view_width = static_cast<ViewWidth::type>(ecast93);
           this->__isset.view_width = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -5083,13 +5039,13 @@ void swap(ChangeView &a, ChangeView &b) {
   swap(a.__isset, b.__isset);
 }
 
-ChangeView::ChangeView(const ChangeView& other96) noexcept {
-  view_width = other96.view_width;
-  __isset = other96.__isset;
+ChangeView::ChangeView(const ChangeView& other94) noexcept {
+  view_width = other94.view_width;
+  __isset = other94.__isset;
 }
-ChangeView& ChangeView::operator=(const ChangeView& other97) noexcept {
-  view_width = other97.view_width;
-  __isset = other97.__isset;
+ChangeView& ChangeView::operator=(const ChangeView& other95) noexcept {
+  view_width = other95.view_width;
+  __isset = other95.__isset;
   return *this;
 }
 void ChangeView::printTo(std::ostream& out) const {
@@ -5192,15 +5148,15 @@ void swap(BallMessage &a, BallMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-BallMessage::BallMessage(const BallMessage& other98) noexcept {
-  ball_position = other98.ball_position;
-  ball_velocity = other98.ball_velocity;
-  __isset = other98.__isset;
+BallMessage::BallMessage(const BallMessage& other96) noexcept {
+  ball_position = other96.ball_position;
+  ball_velocity = other96.ball_velocity;
+  __isset = other96.__isset;
 }
-BallMessage& BallMessage::operator=(const BallMessage& other99) noexcept {
-  ball_position = other99.ball_position;
-  ball_velocity = other99.ball_velocity;
-  __isset = other99.__isset;
+BallMessage& BallMessage::operator=(const BallMessage& other97) noexcept {
+  ball_position = other97.ball_position;
+  ball_velocity = other97.ball_velocity;
+  __isset = other97.__isset;
   return *this;
 }
 void BallMessage::printTo(std::ostream& out) const {
@@ -5338,19 +5294,19 @@ void swap(PassMessage &a, PassMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-PassMessage::PassMessage(const PassMessage& other100) noexcept {
-  receiver_uniform_number = other100.receiver_uniform_number;
-  receiver_point = other100.receiver_point;
-  ball_position = other100.ball_position;
-  ball_velocity = other100.ball_velocity;
-  __isset = other100.__isset;
+PassMessage::PassMessage(const PassMessage& other98) noexcept {
+  receiver_uniform_number = other98.receiver_uniform_number;
+  receiver_point = other98.receiver_point;
+  ball_position = other98.ball_position;
+  ball_velocity = other98.ball_velocity;
+  __isset = other98.__isset;
 }
-PassMessage& PassMessage::operator=(const PassMessage& other101) noexcept {
-  receiver_uniform_number = other101.receiver_uniform_number;
-  receiver_point = other101.receiver_point;
-  ball_position = other101.ball_position;
-  ball_velocity = other101.ball_velocity;
-  __isset = other101.__isset;
+PassMessage& PassMessage::operator=(const PassMessage& other99) noexcept {
+  receiver_uniform_number = other99.receiver_uniform_number;
+  receiver_point = other99.receiver_point;
+  ball_position = other99.ball_position;
+  ball_velocity = other99.ball_velocity;
+  __isset = other99.__isset;
   return *this;
 }
 void PassMessage::printTo(std::ostream& out) const {
@@ -5473,17 +5429,17 @@ void swap(InterceptMessage &a, InterceptMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-InterceptMessage::InterceptMessage(const InterceptMessage& other102) noexcept {
-  our = other102.our;
-  uniform_number = other102.uniform_number;
-  cycle = other102.cycle;
-  __isset = other102.__isset;
+InterceptMessage::InterceptMessage(const InterceptMessage& other100) noexcept {
+  our = other100.our;
+  uniform_number = other100.uniform_number;
+  cycle = other100.cycle;
+  __isset = other100.__isset;
 }
-InterceptMessage& InterceptMessage::operator=(const InterceptMessage& other103) noexcept {
-  our = other103.our;
-  uniform_number = other103.uniform_number;
-  cycle = other103.cycle;
-  __isset = other103.__isset;
+InterceptMessage& InterceptMessage::operator=(const InterceptMessage& other101) noexcept {
+  our = other101.our;
+  uniform_number = other101.uniform_number;
+  cycle = other101.cycle;
+  __isset = other101.__isset;
   return *this;
 }
 void InterceptMessage::printTo(std::ostream& out) const {
@@ -5605,17 +5561,17 @@ void swap(GoalieMessage &a, GoalieMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-GoalieMessage::GoalieMessage(const GoalieMessage& other104) noexcept {
-  goalie_uniform_number = other104.goalie_uniform_number;
-  goalie_position = other104.goalie_position;
-  goalie_body_direction = other104.goalie_body_direction;
-  __isset = other104.__isset;
+GoalieMessage::GoalieMessage(const GoalieMessage& other102) noexcept {
+  goalie_uniform_number = other102.goalie_uniform_number;
+  goalie_position = other102.goalie_position;
+  goalie_body_direction = other102.goalie_body_direction;
+  __isset = other102.__isset;
 }
-GoalieMessage& GoalieMessage::operator=(const GoalieMessage& other105) noexcept {
-  goalie_uniform_number = other105.goalie_uniform_number;
-  goalie_position = other105.goalie_position;
-  goalie_body_direction = other105.goalie_body_direction;
-  __isset = other105.__isset;
+GoalieMessage& GoalieMessage::operator=(const GoalieMessage& other103) noexcept {
+  goalie_uniform_number = other103.goalie_uniform_number;
+  goalie_position = other103.goalie_position;
+  goalie_body_direction = other103.goalie_body_direction;
+  __isset = other103.__isset;
   return *this;
 }
 void GoalieMessage::printTo(std::ostream& out) const {
@@ -5771,21 +5727,21 @@ void swap(GoalieAndPlayerMessage &a, GoalieAndPlayerMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-GoalieAndPlayerMessage::GoalieAndPlayerMessage(const GoalieAndPlayerMessage& other106) noexcept {
-  goalie_uniform_number = other106.goalie_uniform_number;
-  goalie_position = other106.goalie_position;
-  goalie_body_direction = other106.goalie_body_direction;
-  player_uniform_number = other106.player_uniform_number;
-  player_position = other106.player_position;
-  __isset = other106.__isset;
+GoalieAndPlayerMessage::GoalieAndPlayerMessage(const GoalieAndPlayerMessage& other104) noexcept {
+  goalie_uniform_number = other104.goalie_uniform_number;
+  goalie_position = other104.goalie_position;
+  goalie_body_direction = other104.goalie_body_direction;
+  player_uniform_number = other104.player_uniform_number;
+  player_position = other104.player_position;
+  __isset = other104.__isset;
 }
-GoalieAndPlayerMessage& GoalieAndPlayerMessage::operator=(const GoalieAndPlayerMessage& other107) noexcept {
-  goalie_uniform_number = other107.goalie_uniform_number;
-  goalie_position = other107.goalie_position;
-  goalie_body_direction = other107.goalie_body_direction;
-  player_uniform_number = other107.player_uniform_number;
-  player_position = other107.player_position;
-  __isset = other107.__isset;
+GoalieAndPlayerMessage& GoalieAndPlayerMessage::operator=(const GoalieAndPlayerMessage& other105) noexcept {
+  goalie_uniform_number = other105.goalie_uniform_number;
+  goalie_position = other105.goalie_position;
+  goalie_body_direction = other105.goalie_body_direction;
+  player_uniform_number = other105.player_uniform_number;
+  player_position = other105.player_position;
+  __isset = other105.__isset;
   return *this;
 }
 void GoalieAndPlayerMessage::printTo(std::ostream& out) const {
@@ -5875,13 +5831,13 @@ void swap(OffsideLineMessage &a, OffsideLineMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-OffsideLineMessage::OffsideLineMessage(const OffsideLineMessage& other108) noexcept {
-  offside_line_x = other108.offside_line_x;
-  __isset = other108.__isset;
+OffsideLineMessage::OffsideLineMessage(const OffsideLineMessage& other106) noexcept {
+  offside_line_x = other106.offside_line_x;
+  __isset = other106.__isset;
 }
-OffsideLineMessage& OffsideLineMessage::operator=(const OffsideLineMessage& other109) noexcept {
-  offside_line_x = other109.offside_line_x;
-  __isset = other109.__isset;
+OffsideLineMessage& OffsideLineMessage::operator=(const OffsideLineMessage& other107) noexcept {
+  offside_line_x = other107.offside_line_x;
+  __isset = other107.__isset;
   return *this;
 }
 void OffsideLineMessage::printTo(std::ostream& out) const {
@@ -5967,13 +5923,13 @@ void swap(DefenseLineMessage &a, DefenseLineMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-DefenseLineMessage::DefenseLineMessage(const DefenseLineMessage& other110) noexcept {
-  defense_line_x = other110.defense_line_x;
-  __isset = other110.__isset;
+DefenseLineMessage::DefenseLineMessage(const DefenseLineMessage& other108) noexcept {
+  defense_line_x = other108.defense_line_x;
+  __isset = other108.__isset;
 }
-DefenseLineMessage& DefenseLineMessage::operator=(const DefenseLineMessage& other111) noexcept {
-  defense_line_x = other111.defense_line_x;
-  __isset = other111.__isset;
+DefenseLineMessage& DefenseLineMessage::operator=(const DefenseLineMessage& other109) noexcept {
+  defense_line_x = other109.defense_line_x;
+  __isset = other109.__isset;
   return *this;
 }
 void DefenseLineMessage::printTo(std::ostream& out) const {
@@ -6038,11 +5994,11 @@ void swap(WaitRequestMessage &a, WaitRequestMessage &b) {
   (void) b;
 }
 
-WaitRequestMessage::WaitRequestMessage(const WaitRequestMessage& other112) noexcept {
-  (void) other112;
+WaitRequestMessage::WaitRequestMessage(const WaitRequestMessage& other110) noexcept {
+  (void) other110;
 }
-WaitRequestMessage& WaitRequestMessage::operator=(const WaitRequestMessage& other113) noexcept {
-  (void) other113;
+WaitRequestMessage& WaitRequestMessage::operator=(const WaitRequestMessage& other111) noexcept {
+  (void) other111;
   return *this;
 }
 void WaitRequestMessage::printTo(std::ostream& out) const {
@@ -6127,13 +6083,13 @@ void swap(SetplayMessage &a, SetplayMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-SetplayMessage::SetplayMessage(const SetplayMessage& other114) noexcept {
-  wait_step = other114.wait_step;
-  __isset = other114.__isset;
+SetplayMessage::SetplayMessage(const SetplayMessage& other112) noexcept {
+  wait_step = other112.wait_step;
+  __isset = other112.__isset;
 }
-SetplayMessage& SetplayMessage::operator=(const SetplayMessage& other115) noexcept {
-  wait_step = other115.wait_step;
-  __isset = other115.__isset;
+SetplayMessage& SetplayMessage::operator=(const SetplayMessage& other113) noexcept {
+  wait_step = other113.wait_step;
+  __isset = other113.__isset;
   return *this;
 }
 void SetplayMessage::printTo(std::ostream& out) const {
@@ -6219,13 +6175,13 @@ void swap(PassRequestMessage &a, PassRequestMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-PassRequestMessage::PassRequestMessage(const PassRequestMessage& other116) noexcept {
-  target_point = other116.target_point;
-  __isset = other116.__isset;
+PassRequestMessage::PassRequestMessage(const PassRequestMessage& other114) noexcept {
+  target_point = other114.target_point;
+  __isset = other114.__isset;
 }
-PassRequestMessage& PassRequestMessage::operator=(const PassRequestMessage& other117) noexcept {
-  target_point = other117.target_point;
-  __isset = other117.__isset;
+PassRequestMessage& PassRequestMessage::operator=(const PassRequestMessage& other115) noexcept {
+  target_point = other115.target_point;
+  __isset = other115.__isset;
   return *this;
 }
 void PassRequestMessage::printTo(std::ostream& out) const {
@@ -6311,13 +6267,13 @@ void swap(StaminaMessage &a, StaminaMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-StaminaMessage::StaminaMessage(const StaminaMessage& other118) noexcept {
-  stamina = other118.stamina;
-  __isset = other118.__isset;
+StaminaMessage::StaminaMessage(const StaminaMessage& other116) noexcept {
+  stamina = other116.stamina;
+  __isset = other116.__isset;
 }
-StaminaMessage& StaminaMessage::operator=(const StaminaMessage& other119) noexcept {
-  stamina = other119.stamina;
-  __isset = other119.__isset;
+StaminaMessage& StaminaMessage::operator=(const StaminaMessage& other117) noexcept {
+  stamina = other117.stamina;
+  __isset = other117.__isset;
   return *this;
 }
 void StaminaMessage::printTo(std::ostream& out) const {
@@ -6403,13 +6359,13 @@ void swap(RecoveryMessage &a, RecoveryMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-RecoveryMessage::RecoveryMessage(const RecoveryMessage& other120) noexcept {
-  recovery = other120.recovery;
-  __isset = other120.__isset;
+RecoveryMessage::RecoveryMessage(const RecoveryMessage& other118) noexcept {
+  recovery = other118.recovery;
+  __isset = other118.__isset;
 }
-RecoveryMessage& RecoveryMessage::operator=(const RecoveryMessage& other121) noexcept {
-  recovery = other121.recovery;
-  __isset = other121.__isset;
+RecoveryMessage& RecoveryMessage::operator=(const RecoveryMessage& other119) noexcept {
+  recovery = other119.recovery;
+  __isset = other119.__isset;
   return *this;
 }
 void RecoveryMessage::printTo(std::ostream& out) const {
@@ -6495,13 +6451,13 @@ void swap(StaminaCapacityMessage &a, StaminaCapacityMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-StaminaCapacityMessage::StaminaCapacityMessage(const StaminaCapacityMessage& other122) noexcept {
-  stamina_capacity = other122.stamina_capacity;
-  __isset = other122.__isset;
+StaminaCapacityMessage::StaminaCapacityMessage(const StaminaCapacityMessage& other120) noexcept {
+  stamina_capacity = other120.stamina_capacity;
+  __isset = other120.__isset;
 }
-StaminaCapacityMessage& StaminaCapacityMessage::operator=(const StaminaCapacityMessage& other123) noexcept {
-  stamina_capacity = other123.stamina_capacity;
-  __isset = other123.__isset;
+StaminaCapacityMessage& StaminaCapacityMessage::operator=(const StaminaCapacityMessage& other121) noexcept {
+  stamina_capacity = other121.stamina_capacity;
+  __isset = other121.__isset;
   return *this;
 }
 void StaminaCapacityMessage::printTo(std::ostream& out) const {
@@ -6604,15 +6560,15 @@ void swap(DribbleMessage &a, DribbleMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-DribbleMessage::DribbleMessage(const DribbleMessage& other124) noexcept {
-  target_point = other124.target_point;
-  queue_count = other124.queue_count;
-  __isset = other124.__isset;
+DribbleMessage::DribbleMessage(const DribbleMessage& other122) noexcept {
+  target_point = other122.target_point;
+  queue_count = other122.queue_count;
+  __isset = other122.__isset;
 }
-DribbleMessage& DribbleMessage::operator=(const DribbleMessage& other125) noexcept {
-  target_point = other125.target_point;
-  queue_count = other125.queue_count;
-  __isset = other125.__isset;
+DribbleMessage& DribbleMessage::operator=(const DribbleMessage& other123) noexcept {
+  target_point = other123.target_point;
+  queue_count = other123.queue_count;
+  __isset = other123.__isset;
   return *this;
 }
 void DribbleMessage::printTo(std::ostream& out) const {
@@ -6750,19 +6706,19 @@ void swap(BallGoalieMessage &a, BallGoalieMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-BallGoalieMessage::BallGoalieMessage(const BallGoalieMessage& other126) noexcept {
-  ball_position = other126.ball_position;
-  ball_velocity = other126.ball_velocity;
-  goalie_position = other126.goalie_position;
-  goalie_body_direction = other126.goalie_body_direction;
-  __isset = other126.__isset;
+BallGoalieMessage::BallGoalieMessage(const BallGoalieMessage& other124) noexcept {
+  ball_position = other124.ball_position;
+  ball_velocity = other124.ball_velocity;
+  goalie_position = other124.goalie_position;
+  goalie_body_direction = other124.goalie_body_direction;
+  __isset = other124.__isset;
 }
-BallGoalieMessage& BallGoalieMessage::operator=(const BallGoalieMessage& other127) noexcept {
-  ball_position = other127.ball_position;
-  ball_velocity = other127.ball_velocity;
-  goalie_position = other127.goalie_position;
-  goalie_body_direction = other127.goalie_body_direction;
-  __isset = other127.__isset;
+BallGoalieMessage& BallGoalieMessage::operator=(const BallGoalieMessage& other125) noexcept {
+  ball_position = other125.ball_position;
+  ball_velocity = other125.ball_velocity;
+  goalie_position = other125.goalie_position;
+  goalie_body_direction = other125.goalie_body_direction;
+  __isset = other125.__isset;
   return *this;
 }
 void BallGoalieMessage::printTo(std::ostream& out) const {
@@ -6868,15 +6824,15 @@ void swap(OnePlayerMessage &a, OnePlayerMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-OnePlayerMessage::OnePlayerMessage(const OnePlayerMessage& other128) noexcept {
-  uniform_number = other128.uniform_number;
-  position = other128.position;
-  __isset = other128.__isset;
+OnePlayerMessage::OnePlayerMessage(const OnePlayerMessage& other126) noexcept {
+  uniform_number = other126.uniform_number;
+  position = other126.position;
+  __isset = other126.__isset;
 }
-OnePlayerMessage& OnePlayerMessage::operator=(const OnePlayerMessage& other129) noexcept {
-  uniform_number = other129.uniform_number;
-  position = other129.position;
-  __isset = other129.__isset;
+OnePlayerMessage& OnePlayerMessage::operator=(const OnePlayerMessage& other127) noexcept {
+  uniform_number = other127.uniform_number;
+  position = other127.position;
+  __isset = other127.__isset;
   return *this;
 }
 void OnePlayerMessage::printTo(std::ostream& out) const {
@@ -7014,19 +6970,19 @@ void swap(TwoPlayerMessage &a, TwoPlayerMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-TwoPlayerMessage::TwoPlayerMessage(const TwoPlayerMessage& other130) noexcept {
-  first_uniform_number = other130.first_uniform_number;
-  first_position = other130.first_position;
-  second_uniform_number = other130.second_uniform_number;
-  second_position = other130.second_position;
-  __isset = other130.__isset;
+TwoPlayerMessage::TwoPlayerMessage(const TwoPlayerMessage& other128) noexcept {
+  first_uniform_number = other128.first_uniform_number;
+  first_position = other128.first_position;
+  second_uniform_number = other128.second_uniform_number;
+  second_position = other128.second_position;
+  __isset = other128.__isset;
 }
-TwoPlayerMessage& TwoPlayerMessage::operator=(const TwoPlayerMessage& other131) noexcept {
-  first_uniform_number = other131.first_uniform_number;
-  first_position = other131.first_position;
-  second_uniform_number = other131.second_uniform_number;
-  second_position = other131.second_position;
-  __isset = other131.__isset;
+TwoPlayerMessage& TwoPlayerMessage::operator=(const TwoPlayerMessage& other129) noexcept {
+  first_uniform_number = other129.first_uniform_number;
+  first_position = other129.first_position;
+  second_uniform_number = other129.second_uniform_number;
+  second_position = other129.second_position;
+  __isset = other129.__isset;
   return *this;
 }
 void TwoPlayerMessage::printTo(std::ostream& out) const {
@@ -7200,23 +7156,23 @@ void swap(ThreePlayerMessage &a, ThreePlayerMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-ThreePlayerMessage::ThreePlayerMessage(const ThreePlayerMessage& other132) noexcept {
-  first_uniform_number = other132.first_uniform_number;
-  first_position = other132.first_position;
-  second_uniform_number = other132.second_uniform_number;
-  second_position = other132.second_position;
-  third_uniform_number = other132.third_uniform_number;
-  third_position = other132.third_position;
-  __isset = other132.__isset;
+ThreePlayerMessage::ThreePlayerMessage(const ThreePlayerMessage& other130) noexcept {
+  first_uniform_number = other130.first_uniform_number;
+  first_position = other130.first_position;
+  second_uniform_number = other130.second_uniform_number;
+  second_position = other130.second_position;
+  third_uniform_number = other130.third_uniform_number;
+  third_position = other130.third_position;
+  __isset = other130.__isset;
 }
-ThreePlayerMessage& ThreePlayerMessage::operator=(const ThreePlayerMessage& other133) noexcept {
-  first_uniform_number = other133.first_uniform_number;
-  first_position = other133.first_position;
-  second_uniform_number = other133.second_uniform_number;
-  second_position = other133.second_position;
-  third_uniform_number = other133.third_uniform_number;
-  third_position = other133.third_position;
-  __isset = other133.__isset;
+ThreePlayerMessage& ThreePlayerMessage::operator=(const ThreePlayerMessage& other131) noexcept {
+  first_uniform_number = other131.first_uniform_number;
+  first_position = other131.first_position;
+  second_uniform_number = other131.second_uniform_number;
+  second_position = other131.second_position;
+  third_uniform_number = other131.third_uniform_number;
+  third_position = other131.third_position;
+  __isset = other131.__isset;
   return *this;
 }
 void ThreePlayerMessage::printTo(std::ostream& out) const {
@@ -7341,17 +7297,17 @@ void swap(SelfMessage &a, SelfMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-SelfMessage::SelfMessage(const SelfMessage& other134) noexcept {
-  self_position = other134.self_position;
-  self_body_direction = other134.self_body_direction;
-  self_stamina = other134.self_stamina;
-  __isset = other134.__isset;
+SelfMessage::SelfMessage(const SelfMessage& other132) noexcept {
+  self_position = other132.self_position;
+  self_body_direction = other132.self_body_direction;
+  self_stamina = other132.self_stamina;
+  __isset = other132.__isset;
 }
-SelfMessage& SelfMessage::operator=(const SelfMessage& other135) noexcept {
-  self_position = other135.self_position;
-  self_body_direction = other135.self_body_direction;
-  self_stamina = other135.self_stamina;
-  __isset = other135.__isset;
+SelfMessage& SelfMessage::operator=(const SelfMessage& other133) noexcept {
+  self_position = other133.self_position;
+  self_body_direction = other133.self_body_direction;
+  self_stamina = other133.self_stamina;
+  __isset = other133.__isset;
   return *this;
 }
 void SelfMessage::printTo(std::ostream& out) const {
@@ -7473,17 +7429,17 @@ void swap(TeammateMessage &a, TeammateMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-TeammateMessage::TeammateMessage(const TeammateMessage& other136) noexcept {
-  uniform_number = other136.uniform_number;
-  position = other136.position;
-  body_direction = other136.body_direction;
-  __isset = other136.__isset;
+TeammateMessage::TeammateMessage(const TeammateMessage& other134) noexcept {
+  uniform_number = other134.uniform_number;
+  position = other134.position;
+  body_direction = other134.body_direction;
+  __isset = other134.__isset;
 }
-TeammateMessage& TeammateMessage::operator=(const TeammateMessage& other137) noexcept {
-  uniform_number = other137.uniform_number;
-  position = other137.position;
-  body_direction = other137.body_direction;
-  __isset = other137.__isset;
+TeammateMessage& TeammateMessage::operator=(const TeammateMessage& other135) noexcept {
+  uniform_number = other135.uniform_number;
+  position = other135.position;
+  body_direction = other135.body_direction;
+  __isset = other135.__isset;
   return *this;
 }
 void TeammateMessage::printTo(std::ostream& out) const {
@@ -7605,17 +7561,17 @@ void swap(OpponentMessage &a, OpponentMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-OpponentMessage::OpponentMessage(const OpponentMessage& other138) noexcept {
-  uniform_number = other138.uniform_number;
-  position = other138.position;
-  body_direction = other138.body_direction;
-  __isset = other138.__isset;
+OpponentMessage::OpponentMessage(const OpponentMessage& other136) noexcept {
+  uniform_number = other136.uniform_number;
+  position = other136.position;
+  body_direction = other136.body_direction;
+  __isset = other136.__isset;
 }
-OpponentMessage& OpponentMessage::operator=(const OpponentMessage& other139) noexcept {
-  uniform_number = other139.uniform_number;
-  position = other139.position;
-  body_direction = other139.body_direction;
-  __isset = other139.__isset;
+OpponentMessage& OpponentMessage::operator=(const OpponentMessage& other137) noexcept {
+  uniform_number = other137.uniform_number;
+  position = other137.position;
+  body_direction = other137.body_direction;
+  __isset = other137.__isset;
   return *this;
 }
 void OpponentMessage::printTo(std::ostream& out) const {
@@ -7771,21 +7727,21 @@ void swap(BallPlayerMessage &a, BallPlayerMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-BallPlayerMessage::BallPlayerMessage(const BallPlayerMessage& other140) noexcept {
-  ball_position = other140.ball_position;
-  ball_velocity = other140.ball_velocity;
-  uniform_number = other140.uniform_number;
-  player_position = other140.player_position;
-  body_direction = other140.body_direction;
-  __isset = other140.__isset;
+BallPlayerMessage::BallPlayerMessage(const BallPlayerMessage& other138) noexcept {
+  ball_position = other138.ball_position;
+  ball_velocity = other138.ball_velocity;
+  uniform_number = other138.uniform_number;
+  player_position = other138.player_position;
+  body_direction = other138.body_direction;
+  __isset = other138.__isset;
 }
-BallPlayerMessage& BallPlayerMessage::operator=(const BallPlayerMessage& other141) noexcept {
-  ball_position = other141.ball_position;
-  ball_velocity = other141.ball_velocity;
-  uniform_number = other141.uniform_number;
-  player_position = other141.player_position;
-  body_direction = other141.body_direction;
-  __isset = other141.__isset;
+BallPlayerMessage& BallPlayerMessage::operator=(const BallPlayerMessage& other139) noexcept {
+  ball_position = other139.ball_position;
+  ball_velocity = other139.ball_velocity;
+  uniform_number = other139.uniform_number;
+  player_position = other139.player_position;
+  body_direction = other139.body_direction;
+  __isset = other139.__isset;
   return *this;
 }
 void BallPlayerMessage::printTo(std::ostream& out) const {
@@ -8276,55 +8232,55 @@ void swap(Say &a, Say &b) {
   swap(a.__isset, b.__isset);
 }
 
-Say::Say(const Say& other142) noexcept {
-  ball_message = other142.ball_message;
-  pass_message = other142.pass_message;
-  intercept_message = other142.intercept_message;
-  goalie_message = other142.goalie_message;
-  goalie_and_player_message = other142.goalie_and_player_message;
-  offside_line_message = other142.offside_line_message;
-  defense_line_message = other142.defense_line_message;
-  wait_request_message = other142.wait_request_message;
-  setplay_message = other142.setplay_message;
-  pass_request_message = other142.pass_request_message;
-  stamina_message = other142.stamina_message;
-  recovery_message = other142.recovery_message;
-  stamina_capacity_message = other142.stamina_capacity_message;
-  dribble_message = other142.dribble_message;
-  ball_goalie_message = other142.ball_goalie_message;
-  one_player_message = other142.one_player_message;
-  two_player_message = other142.two_player_message;
-  three_player_message = other142.three_player_message;
-  self_message = other142.self_message;
-  teammate_message = other142.teammate_message;
-  opponent_message = other142.opponent_message;
-  ball_player_message = other142.ball_player_message;
-  __isset = other142.__isset;
+Say::Say(const Say& other140) noexcept {
+  ball_message = other140.ball_message;
+  pass_message = other140.pass_message;
+  intercept_message = other140.intercept_message;
+  goalie_message = other140.goalie_message;
+  goalie_and_player_message = other140.goalie_and_player_message;
+  offside_line_message = other140.offside_line_message;
+  defense_line_message = other140.defense_line_message;
+  wait_request_message = other140.wait_request_message;
+  setplay_message = other140.setplay_message;
+  pass_request_message = other140.pass_request_message;
+  stamina_message = other140.stamina_message;
+  recovery_message = other140.recovery_message;
+  stamina_capacity_message = other140.stamina_capacity_message;
+  dribble_message = other140.dribble_message;
+  ball_goalie_message = other140.ball_goalie_message;
+  one_player_message = other140.one_player_message;
+  two_player_message = other140.two_player_message;
+  three_player_message = other140.three_player_message;
+  self_message = other140.self_message;
+  teammate_message = other140.teammate_message;
+  opponent_message = other140.opponent_message;
+  ball_player_message = other140.ball_player_message;
+  __isset = other140.__isset;
 }
-Say& Say::operator=(const Say& other143) noexcept {
-  ball_message = other143.ball_message;
-  pass_message = other143.pass_message;
-  intercept_message = other143.intercept_message;
-  goalie_message = other143.goalie_message;
-  goalie_and_player_message = other143.goalie_and_player_message;
-  offside_line_message = other143.offside_line_message;
-  defense_line_message = other143.defense_line_message;
-  wait_request_message = other143.wait_request_message;
-  setplay_message = other143.setplay_message;
-  pass_request_message = other143.pass_request_message;
-  stamina_message = other143.stamina_message;
-  recovery_message = other143.recovery_message;
-  stamina_capacity_message = other143.stamina_capacity_message;
-  dribble_message = other143.dribble_message;
-  ball_goalie_message = other143.ball_goalie_message;
-  one_player_message = other143.one_player_message;
-  two_player_message = other143.two_player_message;
-  three_player_message = other143.three_player_message;
-  self_message = other143.self_message;
-  teammate_message = other143.teammate_message;
-  opponent_message = other143.opponent_message;
-  ball_player_message = other143.ball_player_message;
-  __isset = other143.__isset;
+Say& Say::operator=(const Say& other141) noexcept {
+  ball_message = other141.ball_message;
+  pass_message = other141.pass_message;
+  intercept_message = other141.intercept_message;
+  goalie_message = other141.goalie_message;
+  goalie_and_player_message = other141.goalie_and_player_message;
+  offside_line_message = other141.offside_line_message;
+  defense_line_message = other141.defense_line_message;
+  wait_request_message = other141.wait_request_message;
+  setplay_message = other141.setplay_message;
+  pass_request_message = other141.pass_request_message;
+  stamina_message = other141.stamina_message;
+  recovery_message = other141.recovery_message;
+  stamina_capacity_message = other141.stamina_capacity_message;
+  dribble_message = other141.dribble_message;
+  ball_goalie_message = other141.ball_goalie_message;
+  one_player_message = other141.one_player_message;
+  two_player_message = other141.two_player_message;
+  three_player_message = other141.three_player_message;
+  self_message = other141.self_message;
+  teammate_message = other141.teammate_message;
+  opponent_message = other141.opponent_message;
+  ball_player_message = other141.ball_player_message;
+  __isset = other141.__isset;
   return *this;
 }
 void Say::printTo(std::ostream& out) const {
@@ -8448,15 +8404,15 @@ void swap(PointTo &a, PointTo &b) {
   swap(a.__isset, b.__isset);
 }
 
-PointTo::PointTo(const PointTo& other144) noexcept {
-  x = other144.x;
-  y = other144.y;
-  __isset = other144.__isset;
+PointTo::PointTo(const PointTo& other142) noexcept {
+  x = other142.x;
+  y = other142.y;
+  __isset = other142.__isset;
 }
-PointTo& PointTo::operator=(const PointTo& other145) noexcept {
-  x = other145.x;
-  y = other145.y;
-  __isset = other145.__isset;
+PointTo& PointTo::operator=(const PointTo& other143) noexcept {
+  x = other143.x;
+  y = other143.y;
+  __isset = other143.__isset;
   return *this;
 }
 void PointTo::printTo(std::ostream& out) const {
@@ -8522,11 +8478,11 @@ void swap(PointToOf &a, PointToOf &b) {
   (void) b;
 }
 
-PointToOf::PointToOf(const PointToOf& other146) noexcept {
-  (void) other146;
+PointToOf::PointToOf(const PointToOf& other144) noexcept {
+  (void) other144;
 }
-PointToOf& PointToOf::operator=(const PointToOf& other147) noexcept {
-  (void) other147;
+PointToOf& PointToOf::operator=(const PointToOf& other145) noexcept {
+  (void) other145;
   return *this;
 }
 void PointToOf::printTo(std::ostream& out) const {
@@ -8577,9 +8533,9 @@ uint32_t AttentionTo::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast148;
-          xfer += iprot->readI32(ecast148);
-          this->side = static_cast<Side::type>(ecast148);
+          int32_t ecast146;
+          xfer += iprot->readI32(ecast146);
+          this->side = static_cast<Side::type>(ecast146);
           this->__isset.side = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -8630,15 +8586,15 @@ void swap(AttentionTo &a, AttentionTo &b) {
   swap(a.__isset, b.__isset);
 }
 
-AttentionTo::AttentionTo(const AttentionTo& other149) noexcept {
-  side = other149.side;
-  unum = other149.unum;
-  __isset = other149.__isset;
+AttentionTo::AttentionTo(const AttentionTo& other147) noexcept {
+  side = other147.side;
+  unum = other147.unum;
+  __isset = other147.__isset;
 }
-AttentionTo& AttentionTo::operator=(const AttentionTo& other150) noexcept {
-  side = other150.side;
-  unum = other150.unum;
-  __isset = other150.__isset;
+AttentionTo& AttentionTo::operator=(const AttentionTo& other148) noexcept {
+  side = other148.side;
+  unum = other148.unum;
+  __isset = other148.__isset;
   return *this;
 }
 void AttentionTo::printTo(std::ostream& out) const {
@@ -8704,11 +8660,11 @@ void swap(AttentionToOf &a, AttentionToOf &b) {
   (void) b;
 }
 
-AttentionToOf::AttentionToOf(const AttentionToOf& other151) noexcept {
-  (void) other151;
+AttentionToOf::AttentionToOf(const AttentionToOf& other149) noexcept {
+  (void) other149;
 }
-AttentionToOf& AttentionToOf::operator=(const AttentionToOf& other152) noexcept {
-  (void) other152;
+AttentionToOf& AttentionToOf::operator=(const AttentionToOf& other150) noexcept {
+  (void) other150;
   return *this;
 }
 void AttentionToOf::printTo(std::ostream& out) const {
@@ -8759,9 +8715,9 @@ uint32_t AddText::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast153;
-          xfer += iprot->readI32(ecast153);
-          this->level = static_cast<LoggerLevel::type>(ecast153);
+          int32_t ecast151;
+          xfer += iprot->readI32(ecast151);
+          this->level = static_cast<LoggerLevel::type>(ecast151);
           this->__isset.level = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -8812,15 +8768,15 @@ void swap(AddText &a, AddText &b) {
   swap(a.__isset, b.__isset);
 }
 
-AddText::AddText(const AddText& other154) {
-  level = other154.level;
-  message = other154.message;
-  __isset = other154.__isset;
+AddText::AddText(const AddText& other152) {
+  level = other152.level;
+  message = other152.message;
+  __isset = other152.__isset;
 }
-AddText& AddText::operator=(const AddText& other155) {
-  level = other155.level;
-  message = other155.message;
-  __isset = other155.__isset;
+AddText& AddText::operator=(const AddText& other153) {
+  level = other153.level;
+  message = other153.message;
+  __isset = other153.__isset;
   return *this;
 }
 void AddText::printTo(std::ostream& out) const {
@@ -8877,9 +8833,9 @@ uint32_t AddPoint::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast156;
-          xfer += iprot->readI32(ecast156);
-          this->level = static_cast<LoggerLevel::type>(ecast156);
+          int32_t ecast154;
+          xfer += iprot->readI32(ecast154);
+          this->level = static_cast<LoggerLevel::type>(ecast154);
           this->__isset.level = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -8943,17 +8899,17 @@ void swap(AddPoint &a, AddPoint &b) {
   swap(a.__isset, b.__isset);
 }
 
-AddPoint::AddPoint(const AddPoint& other157) {
-  level = other157.level;
-  point = other157.point;
-  color = other157.color;
-  __isset = other157.__isset;
+AddPoint::AddPoint(const AddPoint& other155) {
+  level = other155.level;
+  point = other155.point;
+  color = other155.color;
+  __isset = other155.__isset;
 }
-AddPoint& AddPoint::operator=(const AddPoint& other158) {
-  level = other158.level;
-  point = other158.point;
-  color = other158.color;
-  __isset = other158.__isset;
+AddPoint& AddPoint::operator=(const AddPoint& other156) {
+  level = other156.level;
+  point = other156.point;
+  color = other156.color;
+  __isset = other156.__isset;
   return *this;
 }
 void AddPoint::printTo(std::ostream& out) const {
@@ -9015,9 +8971,9 @@ uint32_t AddLine::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast159;
-          xfer += iprot->readI32(ecast159);
-          this->level = static_cast<LoggerLevel::type>(ecast159);
+          int32_t ecast157;
+          xfer += iprot->readI32(ecast157);
+          this->level = static_cast<LoggerLevel::type>(ecast157);
           this->__isset.level = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -9094,19 +9050,19 @@ void swap(AddLine &a, AddLine &b) {
   swap(a.__isset, b.__isset);
 }
 
-AddLine::AddLine(const AddLine& other160) {
-  level = other160.level;
-  start_point = other160.start_point;
-  end_point = other160.end_point;
-  color = other160.color;
-  __isset = other160.__isset;
+AddLine::AddLine(const AddLine& other158) {
+  level = other158.level;
+  start_point = other158.start_point;
+  end_point = other158.end_point;
+  color = other158.color;
+  __isset = other158.__isset;
 }
-AddLine& AddLine::operator=(const AddLine& other161) {
-  level = other161.level;
-  start_point = other161.start_point;
-  end_point = other161.end_point;
-  color = other161.color;
-  __isset = other161.__isset;
+AddLine& AddLine::operator=(const AddLine& other159) {
+  level = other159.level;
+  start_point = other159.start_point;
+  end_point = other159.end_point;
+  color = other159.color;
+  __isset = other159.__isset;
   return *this;
 }
 void AddLine::printTo(std::ostream& out) const {
@@ -9177,9 +9133,9 @@ uint32_t AddArc::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast162;
-          xfer += iprot->readI32(ecast162);
-          this->level = static_cast<LoggerLevel::type>(ecast162);
+          int32_t ecast160;
+          xfer += iprot->readI32(ecast160);
+          this->level = static_cast<LoggerLevel::type>(ecast160);
           this->__isset.level = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -9282,23 +9238,23 @@ void swap(AddArc &a, AddArc &b) {
   swap(a.__isset, b.__isset);
 }
 
-AddArc::AddArc(const AddArc& other163) {
-  level = other163.level;
-  center = other163.center;
-  radius = other163.radius;
-  start_angle = other163.start_angle;
-  span_angel = other163.span_angel;
-  color = other163.color;
-  __isset = other163.__isset;
+AddArc::AddArc(const AddArc& other161) {
+  level = other161.level;
+  center = other161.center;
+  radius = other161.radius;
+  start_angle = other161.start_angle;
+  span_angel = other161.span_angel;
+  color = other161.color;
+  __isset = other161.__isset;
 }
-AddArc& AddArc::operator=(const AddArc& other164) {
-  level = other164.level;
-  center = other164.center;
-  radius = other164.radius;
-  start_angle = other164.start_angle;
-  span_angel = other164.span_angel;
-  color = other164.color;
-  __isset = other164.__isset;
+AddArc& AddArc::operator=(const AddArc& other162) {
+  level = other162.level;
+  center = other162.center;
+  radius = other162.radius;
+  start_angle = other162.start_angle;
+  span_angel = other162.span_angel;
+  color = other162.color;
+  __isset = other162.__isset;
   return *this;
 }
 void AddArc::printTo(std::ostream& out) const {
@@ -9367,9 +9323,9 @@ uint32_t AddCircle::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast165;
-          xfer += iprot->readI32(ecast165);
-          this->level = static_cast<LoggerLevel::type>(ecast165);
+          int32_t ecast163;
+          xfer += iprot->readI32(ecast163);
+          this->level = static_cast<LoggerLevel::type>(ecast163);
           this->__isset.level = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -9459,21 +9415,21 @@ void swap(AddCircle &a, AddCircle &b) {
   swap(a.__isset, b.__isset);
 }
 
-AddCircle::AddCircle(const AddCircle& other166) {
-  level = other166.level;
-  center = other166.center;
-  radius = other166.radius;
-  color = other166.color;
-  fill = other166.fill;
-  __isset = other166.__isset;
+AddCircle::AddCircle(const AddCircle& other164) {
+  level = other164.level;
+  center = other164.center;
+  radius = other164.radius;
+  color = other164.color;
+  fill = other164.fill;
+  __isset = other164.__isset;
 }
-AddCircle& AddCircle::operator=(const AddCircle& other167) {
-  level = other167.level;
-  center = other167.center;
-  radius = other167.radius;
-  color = other167.color;
-  fill = other167.fill;
-  __isset = other167.__isset;
+AddCircle& AddCircle::operator=(const AddCircle& other165) {
+  level = other165.level;
+  center = other165.center;
+  radius = other165.radius;
+  color = other165.color;
+  fill = other165.fill;
+  __isset = other165.__isset;
   return *this;
 }
 void AddCircle::printTo(std::ostream& out) const {
@@ -9545,9 +9501,9 @@ uint32_t AddTriangle::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast168;
-          xfer += iprot->readI32(ecast168);
-          this->level = static_cast<LoggerLevel::type>(ecast168);
+          int32_t ecast166;
+          xfer += iprot->readI32(ecast166);
+          this->level = static_cast<LoggerLevel::type>(ecast166);
           this->__isset.level = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -9650,23 +9606,23 @@ void swap(AddTriangle &a, AddTriangle &b) {
   swap(a.__isset, b.__isset);
 }
 
-AddTriangle::AddTriangle(const AddTriangle& other169) {
-  level = other169.level;
-  point1 = other169.point1;
-  point2 = other169.point2;
-  point3 = other169.point3;
-  color = other169.color;
-  fill = other169.fill;
-  __isset = other169.__isset;
+AddTriangle::AddTriangle(const AddTriangle& other167) {
+  level = other167.level;
+  point1 = other167.point1;
+  point2 = other167.point2;
+  point3 = other167.point3;
+  color = other167.color;
+  fill = other167.fill;
+  __isset = other167.__isset;
 }
-AddTriangle& AddTriangle::operator=(const AddTriangle& other170) {
-  level = other170.level;
-  point1 = other170.point1;
-  point2 = other170.point2;
-  point3 = other170.point3;
-  color = other170.color;
-  fill = other170.fill;
-  __isset = other170.__isset;
+AddTriangle& AddTriangle::operator=(const AddTriangle& other168) {
+  level = other168.level;
+  point1 = other168.point1;
+  point2 = other168.point2;
+  point3 = other168.point3;
+  color = other168.color;
+  fill = other168.fill;
+  __isset = other168.__isset;
   return *this;
 }
 void AddTriangle::printTo(std::ostream& out) const {
@@ -9743,9 +9699,9 @@ uint32_t AddRectangle::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast171;
-          xfer += iprot->readI32(ecast171);
-          this->level = static_cast<LoggerLevel::type>(ecast171);
+          int32_t ecast169;
+          xfer += iprot->readI32(ecast169);
+          this->level = static_cast<LoggerLevel::type>(ecast169);
           this->__isset.level = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -9861,25 +9817,25 @@ void swap(AddRectangle &a, AddRectangle &b) {
   swap(a.__isset, b.__isset);
 }
 
-AddRectangle::AddRectangle(const AddRectangle& other172) {
-  level = other172.level;
-  left = other172.left;
-  top = other172.top;
-  length = other172.length;
-  width = other172.width;
-  color = other172.color;
-  fill = other172.fill;
-  __isset = other172.__isset;
+AddRectangle::AddRectangle(const AddRectangle& other170) {
+  level = other170.level;
+  left = other170.left;
+  top = other170.top;
+  length = other170.length;
+  width = other170.width;
+  color = other170.color;
+  fill = other170.fill;
+  __isset = other170.__isset;
 }
-AddRectangle& AddRectangle::operator=(const AddRectangle& other173) {
-  level = other173.level;
-  left = other173.left;
-  top = other173.top;
-  length = other173.length;
-  width = other173.width;
-  color = other173.color;
-  fill = other173.fill;
-  __isset = other173.__isset;
+AddRectangle& AddRectangle::operator=(const AddRectangle& other171) {
+  level = other171.level;
+  left = other171.left;
+  top = other171.top;
+  length = other171.length;
+  width = other171.width;
+  color = other171.color;
+  fill = other171.fill;
+  __isset = other171.__isset;
   return *this;
 }
 void AddRectangle::printTo(std::ostream& out) const {
@@ -9961,9 +9917,9 @@ uint32_t AddSector::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast174;
-          xfer += iprot->readI32(ecast174);
-          this->level = static_cast<LoggerLevel::type>(ecast174);
+          int32_t ecast172;
+          xfer += iprot->readI32(ecast172);
+          this->level = static_cast<LoggerLevel::type>(ecast172);
           this->__isset.level = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -10092,27 +10048,27 @@ void swap(AddSector &a, AddSector &b) {
   swap(a.__isset, b.__isset);
 }
 
-AddSector::AddSector(const AddSector& other175) {
-  level = other175.level;
-  center = other175.center;
-  min_radius = other175.min_radius;
-  max_radius = other175.max_radius;
-  start_angle = other175.start_angle;
-  span_angel = other175.span_angel;
-  color = other175.color;
-  fill = other175.fill;
-  __isset = other175.__isset;
+AddSector::AddSector(const AddSector& other173) {
+  level = other173.level;
+  center = other173.center;
+  min_radius = other173.min_radius;
+  max_radius = other173.max_radius;
+  start_angle = other173.start_angle;
+  span_angel = other173.span_angel;
+  color = other173.color;
+  fill = other173.fill;
+  __isset = other173.__isset;
 }
-AddSector& AddSector::operator=(const AddSector& other176) {
-  level = other176.level;
-  center = other176.center;
-  min_radius = other176.min_radius;
-  max_radius = other176.max_radius;
-  start_angle = other176.start_angle;
-  span_angel = other176.span_angel;
-  color = other176.color;
-  fill = other176.fill;
-  __isset = other176.__isset;
+AddSector& AddSector::operator=(const AddSector& other174) {
+  level = other174.level;
+  center = other174.center;
+  min_radius = other174.min_radius;
+  max_radius = other174.max_radius;
+  start_angle = other174.start_angle;
+  span_angel = other174.span_angel;
+  color = other174.color;
+  fill = other174.fill;
+  __isset = other174.__isset;
   return *this;
 }
 void AddSector::printTo(std::ostream& out) const {
@@ -10179,9 +10135,9 @@ uint32_t AddMessage::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast177;
-          xfer += iprot->readI32(ecast177);
-          this->level = static_cast<LoggerLevel::type>(ecast177);
+          int32_t ecast175;
+          xfer += iprot->readI32(ecast175);
+          this->level = static_cast<LoggerLevel::type>(ecast175);
           this->__isset.level = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -10258,19 +10214,19 @@ void swap(AddMessage &a, AddMessage &b) {
   swap(a.__isset, b.__isset);
 }
 
-AddMessage::AddMessage(const AddMessage& other178) {
-  level = other178.level;
-  position = other178.position;
-  message = other178.message;
-  color = other178.color;
-  __isset = other178.__isset;
+AddMessage::AddMessage(const AddMessage& other176) {
+  level = other176.level;
+  position = other176.position;
+  message = other176.message;
+  color = other176.color;
+  __isset = other176.__isset;
 }
-AddMessage& AddMessage::operator=(const AddMessage& other179) {
-  level = other179.level;
-  position = other179.position;
-  message = other179.message;
-  color = other179.color;
-  __isset = other179.__isset;
+AddMessage& AddMessage::operator=(const AddMessage& other177) {
+  level = other177.level;
+  position = other177.position;
+  message = other177.message;
+  color = other177.color;
+  __isset = other177.__isset;
   return *this;
 }
 void AddMessage::printTo(std::ostream& out) const {
@@ -10513,29 +10469,29 @@ void swap(Log &a, Log &b) {
   swap(a.__isset, b.__isset);
 }
 
-Log::Log(const Log& other180) {
-  add_text = other180.add_text;
-  add_point = other180.add_point;
-  add_line = other180.add_line;
-  add_arc = other180.add_arc;
-  add_circle = other180.add_circle;
-  add_triangle = other180.add_triangle;
-  add_rectangle = other180.add_rectangle;
-  add_sector = other180.add_sector;
-  add_message = other180.add_message;
-  __isset = other180.__isset;
+Log::Log(const Log& other178) {
+  add_text = other178.add_text;
+  add_point = other178.add_point;
+  add_line = other178.add_line;
+  add_arc = other178.add_arc;
+  add_circle = other178.add_circle;
+  add_triangle = other178.add_triangle;
+  add_rectangle = other178.add_rectangle;
+  add_sector = other178.add_sector;
+  add_message = other178.add_message;
+  __isset = other178.__isset;
 }
-Log& Log::operator=(const Log& other181) {
-  add_text = other181.add_text;
-  add_point = other181.add_point;
-  add_line = other181.add_line;
-  add_arc = other181.add_arc;
-  add_circle = other181.add_circle;
-  add_triangle = other181.add_triangle;
-  add_rectangle = other181.add_rectangle;
-  add_sector = other181.add_sector;
-  add_message = other181.add_message;
-  __isset = other181.__isset;
+Log& Log::operator=(const Log& other179) {
+  add_text = other179.add_text;
+  add_point = other179.add_point;
+  add_line = other179.add_line;
+  add_arc = other179.add_arc;
+  add_circle = other179.add_circle;
+  add_triangle = other179.add_triangle;
+  add_rectangle = other179.add_rectangle;
+  add_sector = other179.add_sector;
+  add_message = other179.add_message;
+  __isset = other179.__isset;
   return *this;
 }
 void Log::printTo(std::ostream& out) const {
@@ -10629,13 +10585,13 @@ void swap(DebugClient &a, DebugClient &b) {
   swap(a.__isset, b.__isset);
 }
 
-DebugClient::DebugClient(const DebugClient& other182) {
-  message = other182.message;
-  __isset = other182.__isset;
+DebugClient::DebugClient(const DebugClient& other180) {
+  message = other180.message;
+  __isset = other180.__isset;
 }
-DebugClient& DebugClient::operator=(const DebugClient& other183) {
-  message = other183.message;
-  __isset = other183.__isset;
+DebugClient& DebugClient::operator=(const DebugClient& other181) {
+  message = other181.message;
+  __isset = other181.__isset;
   return *this;
 }
 void DebugClient::printTo(std::ostream& out) const {
@@ -10755,17 +10711,17 @@ void swap(Body_GoToPoint &a, Body_GoToPoint &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_GoToPoint::Body_GoToPoint(const Body_GoToPoint& other184) noexcept {
-  target_point = other184.target_point;
-  distance_threshold = other184.distance_threshold;
-  max_dash_power = other184.max_dash_power;
-  __isset = other184.__isset;
+Body_GoToPoint::Body_GoToPoint(const Body_GoToPoint& other182) noexcept {
+  target_point = other182.target_point;
+  distance_threshold = other182.distance_threshold;
+  max_dash_power = other182.max_dash_power;
+  __isset = other182.__isset;
 }
-Body_GoToPoint& Body_GoToPoint::operator=(const Body_GoToPoint& other185) noexcept {
-  target_point = other185.target_point;
-  distance_threshold = other185.distance_threshold;
-  max_dash_power = other185.max_dash_power;
-  __isset = other185.__isset;
+Body_GoToPoint& Body_GoToPoint::operator=(const Body_GoToPoint& other183) noexcept {
+  target_point = other183.target_point;
+  distance_threshold = other183.distance_threshold;
+  max_dash_power = other183.max_dash_power;
+  __isset = other183.__isset;
   return *this;
 }
 void Body_GoToPoint::printTo(std::ostream& out) const {
@@ -10904,19 +10860,19 @@ void swap(Body_SmartKick &a, Body_SmartKick &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_SmartKick::Body_SmartKick(const Body_SmartKick& other186) noexcept {
-  target_point = other186.target_point;
-  first_speed = other186.first_speed;
-  first_speed_threshold = other186.first_speed_threshold;
-  max_steps = other186.max_steps;
-  __isset = other186.__isset;
+Body_SmartKick::Body_SmartKick(const Body_SmartKick& other184) noexcept {
+  target_point = other184.target_point;
+  first_speed = other184.first_speed;
+  first_speed_threshold = other184.first_speed_threshold;
+  max_steps = other184.max_steps;
+  __isset = other184.__isset;
 }
-Body_SmartKick& Body_SmartKick::operator=(const Body_SmartKick& other187) noexcept {
-  target_point = other187.target_point;
-  first_speed = other187.first_speed;
-  first_speed_threshold = other187.first_speed_threshold;
-  max_steps = other187.max_steps;
-  __isset = other187.__isset;
+Body_SmartKick& Body_SmartKick::operator=(const Body_SmartKick& other185) noexcept {
+  target_point = other185.target_point;
+  first_speed = other185.first_speed;
+  first_speed_threshold = other185.first_speed_threshold;
+  max_steps = other185.max_steps;
+  __isset = other185.__isset;
   return *this;
 }
 void Body_SmartKick::printTo(std::ostream& out) const {
@@ -11005,13 +10961,13 @@ void swap(Bhv_BeforeKickOff &a, Bhv_BeforeKickOff &b) {
   swap(a.__isset, b.__isset);
 }
 
-Bhv_BeforeKickOff::Bhv_BeforeKickOff(const Bhv_BeforeKickOff& other188) noexcept {
-  point = other188.point;
-  __isset = other188.__isset;
+Bhv_BeforeKickOff::Bhv_BeforeKickOff(const Bhv_BeforeKickOff& other186) noexcept {
+  point = other186.point;
+  __isset = other186.__isset;
 }
-Bhv_BeforeKickOff& Bhv_BeforeKickOff::operator=(const Bhv_BeforeKickOff& other189) noexcept {
-  point = other189.point;
-  __isset = other189.__isset;
+Bhv_BeforeKickOff& Bhv_BeforeKickOff::operator=(const Bhv_BeforeKickOff& other187) noexcept {
+  point = other187.point;
+  __isset = other187.__isset;
   return *this;
 }
 void Bhv_BeforeKickOff::printTo(std::ostream& out) const {
@@ -11076,11 +11032,11 @@ void swap(Bhv_BodyNeckToBall &a, Bhv_BodyNeckToBall &b) {
   (void) b;
 }
 
-Bhv_BodyNeckToBall::Bhv_BodyNeckToBall(const Bhv_BodyNeckToBall& other190) noexcept {
-  (void) other190;
+Bhv_BodyNeckToBall::Bhv_BodyNeckToBall(const Bhv_BodyNeckToBall& other188) noexcept {
+  (void) other188;
 }
-Bhv_BodyNeckToBall& Bhv_BodyNeckToBall::operator=(const Bhv_BodyNeckToBall& other191) noexcept {
-  (void) other191;
+Bhv_BodyNeckToBall& Bhv_BodyNeckToBall::operator=(const Bhv_BodyNeckToBall& other189) noexcept {
+  (void) other189;
   return *this;
 }
 void Bhv_BodyNeckToBall::printTo(std::ostream& out) const {
@@ -11165,13 +11121,13 @@ void swap(Bhv_BodyNeckToPoint &a, Bhv_BodyNeckToPoint &b) {
   swap(a.__isset, b.__isset);
 }
 
-Bhv_BodyNeckToPoint::Bhv_BodyNeckToPoint(const Bhv_BodyNeckToPoint& other192) noexcept {
-  point = other192.point;
-  __isset = other192.__isset;
+Bhv_BodyNeckToPoint::Bhv_BodyNeckToPoint(const Bhv_BodyNeckToPoint& other190) noexcept {
+  point = other190.point;
+  __isset = other190.__isset;
 }
-Bhv_BodyNeckToPoint& Bhv_BodyNeckToPoint::operator=(const Bhv_BodyNeckToPoint& other193) noexcept {
-  point = other193.point;
-  __isset = other193.__isset;
+Bhv_BodyNeckToPoint& Bhv_BodyNeckToPoint::operator=(const Bhv_BodyNeckToPoint& other191) noexcept {
+  point = other191.point;
+  __isset = other191.__isset;
   return *this;
 }
 void Bhv_BodyNeckToPoint::printTo(std::ostream& out) const {
@@ -11236,11 +11192,11 @@ void swap(Bhv_Emergency &a, Bhv_Emergency &b) {
   (void) b;
 }
 
-Bhv_Emergency::Bhv_Emergency(const Bhv_Emergency& other194) noexcept {
-  (void) other194;
+Bhv_Emergency::Bhv_Emergency(const Bhv_Emergency& other192) noexcept {
+  (void) other192;
 }
-Bhv_Emergency& Bhv_Emergency::operator=(const Bhv_Emergency& other195) noexcept {
-  (void) other195;
+Bhv_Emergency& Bhv_Emergency::operator=(const Bhv_Emergency& other193) noexcept {
+  (void) other193;
   return *this;
 }
 void Bhv_Emergency::printTo(std::ostream& out) const {
@@ -11359,17 +11315,17 @@ void swap(Bhv_GoToPointLookBall &a, Bhv_GoToPointLookBall &b) {
   swap(a.__isset, b.__isset);
 }
 
-Bhv_GoToPointLookBall::Bhv_GoToPointLookBall(const Bhv_GoToPointLookBall& other196) noexcept {
-  target_point = other196.target_point;
-  distance_threshold = other196.distance_threshold;
-  max_dash_power = other196.max_dash_power;
-  __isset = other196.__isset;
+Bhv_GoToPointLookBall::Bhv_GoToPointLookBall(const Bhv_GoToPointLookBall& other194) noexcept {
+  target_point = other194.target_point;
+  distance_threshold = other194.distance_threshold;
+  max_dash_power = other194.max_dash_power;
+  __isset = other194.__isset;
 }
-Bhv_GoToPointLookBall& Bhv_GoToPointLookBall::operator=(const Bhv_GoToPointLookBall& other197) noexcept {
-  target_point = other197.target_point;
-  distance_threshold = other197.distance_threshold;
-  max_dash_power = other197.max_dash_power;
-  __isset = other197.__isset;
+Bhv_GoToPointLookBall& Bhv_GoToPointLookBall::operator=(const Bhv_GoToPointLookBall& other195) noexcept {
+  target_point = other195.target_point;
+  distance_threshold = other195.distance_threshold;
+  max_dash_power = other195.max_dash_power;
+  __isset = other195.__isset;
   return *this;
 }
 void Bhv_GoToPointLookBall::printTo(std::ostream& out) const {
@@ -11457,13 +11413,13 @@ void swap(Bhv_NeckBodyToBall &a, Bhv_NeckBodyToBall &b) {
   swap(a.__isset, b.__isset);
 }
 
-Bhv_NeckBodyToBall::Bhv_NeckBodyToBall(const Bhv_NeckBodyToBall& other198) noexcept {
-  angle_buf = other198.angle_buf;
-  __isset = other198.__isset;
+Bhv_NeckBodyToBall::Bhv_NeckBodyToBall(const Bhv_NeckBodyToBall& other196) noexcept {
+  angle_buf = other196.angle_buf;
+  __isset = other196.__isset;
 }
-Bhv_NeckBodyToBall& Bhv_NeckBodyToBall::operator=(const Bhv_NeckBodyToBall& other199) noexcept {
-  angle_buf = other199.angle_buf;
-  __isset = other199.__isset;
+Bhv_NeckBodyToBall& Bhv_NeckBodyToBall::operator=(const Bhv_NeckBodyToBall& other197) noexcept {
+  angle_buf = other197.angle_buf;
+  __isset = other197.__isset;
   return *this;
 }
 void Bhv_NeckBodyToBall::printTo(std::ostream& out) const {
@@ -11566,15 +11522,15 @@ void swap(Bhv_NeckBodyToPoint &a, Bhv_NeckBodyToPoint &b) {
   swap(a.__isset, b.__isset);
 }
 
-Bhv_NeckBodyToPoint::Bhv_NeckBodyToPoint(const Bhv_NeckBodyToPoint& other200) noexcept {
-  point = other200.point;
-  angle_buf = other200.angle_buf;
-  __isset = other200.__isset;
+Bhv_NeckBodyToPoint::Bhv_NeckBodyToPoint(const Bhv_NeckBodyToPoint& other198) noexcept {
+  point = other198.point;
+  angle_buf = other198.angle_buf;
+  __isset = other198.__isset;
 }
-Bhv_NeckBodyToPoint& Bhv_NeckBodyToPoint::operator=(const Bhv_NeckBodyToPoint& other201) noexcept {
-  point = other201.point;
-  angle_buf = other201.angle_buf;
-  __isset = other201.__isset;
+Bhv_NeckBodyToPoint& Bhv_NeckBodyToPoint::operator=(const Bhv_NeckBodyToPoint& other199) noexcept {
+  point = other199.point;
+  angle_buf = other199.angle_buf;
+  __isset = other199.__isset;
   return *this;
 }
 void Bhv_NeckBodyToPoint::printTo(std::ostream& out) const {
@@ -11640,11 +11596,11 @@ void swap(Bhv_ScanField &a, Bhv_ScanField &b) {
   (void) b;
 }
 
-Bhv_ScanField::Bhv_ScanField(const Bhv_ScanField& other202) noexcept {
-  (void) other202;
+Bhv_ScanField::Bhv_ScanField(const Bhv_ScanField& other200) noexcept {
+  (void) other200;
 }
-Bhv_ScanField& Bhv_ScanField::operator=(const Bhv_ScanField& other203) noexcept {
-  (void) other203;
+Bhv_ScanField& Bhv_ScanField::operator=(const Bhv_ScanField& other201) noexcept {
+  (void) other201;
   return *this;
 }
 void Bhv_ScanField::printTo(std::ostream& out) const {
@@ -11708,11 +11664,11 @@ void swap(Body_AdvanceBall &a, Body_AdvanceBall &b) {
   (void) b;
 }
 
-Body_AdvanceBall::Body_AdvanceBall(const Body_AdvanceBall& other204) noexcept {
-  (void) other204;
+Body_AdvanceBall::Body_AdvanceBall(const Body_AdvanceBall& other202) noexcept {
+  (void) other202;
 }
-Body_AdvanceBall& Body_AdvanceBall::operator=(const Body_AdvanceBall& other205) noexcept {
-  (void) other205;
+Body_AdvanceBall& Body_AdvanceBall::operator=(const Body_AdvanceBall& other203) noexcept {
+  (void) other203;
   return *this;
 }
 void Body_AdvanceBall::printTo(std::ostream& out) const {
@@ -11776,11 +11732,11 @@ void swap(Body_ClearBall &a, Body_ClearBall &b) {
   (void) b;
 }
 
-Body_ClearBall::Body_ClearBall(const Body_ClearBall& other206) noexcept {
-  (void) other206;
+Body_ClearBall::Body_ClearBall(const Body_ClearBall& other204) noexcept {
+  (void) other204;
 }
-Body_ClearBall& Body_ClearBall::operator=(const Body_ClearBall& other207) noexcept {
-  (void) other207;
+Body_ClearBall& Body_ClearBall::operator=(const Body_ClearBall& other205) noexcept {
+  (void) other205;
   return *this;
 }
 void Body_ClearBall::printTo(std::ostream& out) const {
@@ -11933,21 +11889,21 @@ void swap(Body_Dribble &a, Body_Dribble &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_Dribble::Body_Dribble(const Body_Dribble& other208) noexcept {
-  target_point = other208.target_point;
-  distance_threshold = other208.distance_threshold;
-  dash_power = other208.dash_power;
-  dash_count = other208.dash_count;
-  dodge = other208.dodge;
-  __isset = other208.__isset;
+Body_Dribble::Body_Dribble(const Body_Dribble& other206) noexcept {
+  target_point = other206.target_point;
+  distance_threshold = other206.distance_threshold;
+  dash_power = other206.dash_power;
+  dash_count = other206.dash_count;
+  dodge = other206.dodge;
+  __isset = other206.__isset;
 }
-Body_Dribble& Body_Dribble::operator=(const Body_Dribble& other209) noexcept {
-  target_point = other209.target_point;
-  distance_threshold = other209.distance_threshold;
-  dash_power = other209.dash_power;
-  dash_count = other209.dash_count;
-  dodge = other209.dodge;
-  __isset = other209.__isset;
+Body_Dribble& Body_Dribble::operator=(const Body_Dribble& other207) noexcept {
+  target_point = other207.target_point;
+  distance_threshold = other207.distance_threshold;
+  dash_power = other207.dash_power;
+  dash_count = other207.dash_count;
+  dodge = other207.dodge;
+  __isset = other207.__isset;
   return *this;
 }
 void Body_Dribble::printTo(std::ostream& out) const {
@@ -12054,15 +12010,15 @@ void swap(Body_GoToPointDodge &a, Body_GoToPointDodge &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_GoToPointDodge::Body_GoToPointDodge(const Body_GoToPointDodge& other210) noexcept {
-  target_point = other210.target_point;
-  dash_power = other210.dash_power;
-  __isset = other210.__isset;
+Body_GoToPointDodge::Body_GoToPointDodge(const Body_GoToPointDodge& other208) noexcept {
+  target_point = other208.target_point;
+  dash_power = other208.dash_power;
+  __isset = other208.__isset;
 }
-Body_GoToPointDodge& Body_GoToPointDodge::operator=(const Body_GoToPointDodge& other211) noexcept {
-  target_point = other211.target_point;
-  dash_power = other211.dash_power;
-  __isset = other211.__isset;
+Body_GoToPointDodge& Body_GoToPointDodge::operator=(const Body_GoToPointDodge& other209) noexcept {
+  target_point = other209.target_point;
+  dash_power = other209.dash_power;
+  __isset = other209.__isset;
   return *this;
 }
 void Body_GoToPointDodge::printTo(std::ostream& out) const {
@@ -12183,17 +12139,17 @@ void swap(Body_HoldBall &a, Body_HoldBall &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_HoldBall::Body_HoldBall(const Body_HoldBall& other212) noexcept {
-  do_turn = other212.do_turn;
-  turn_target_point = other212.turn_target_point;
-  kick_target_point = other212.kick_target_point;
-  __isset = other212.__isset;
+Body_HoldBall::Body_HoldBall(const Body_HoldBall& other210) noexcept {
+  do_turn = other210.do_turn;
+  turn_target_point = other210.turn_target_point;
+  kick_target_point = other210.kick_target_point;
+  __isset = other210.__isset;
 }
-Body_HoldBall& Body_HoldBall::operator=(const Body_HoldBall& other213) noexcept {
-  do_turn = other213.do_turn;
-  turn_target_point = other213.turn_target_point;
-  kick_target_point = other213.kick_target_point;
-  __isset = other213.__isset;
+Body_HoldBall& Body_HoldBall::operator=(const Body_HoldBall& other211) noexcept {
+  do_turn = other211.do_turn;
+  turn_target_point = other211.turn_target_point;
+  kick_target_point = other211.kick_target_point;
+  __isset = other211.__isset;
   return *this;
 }
 void Body_HoldBall::printTo(std::ostream& out) const {
@@ -12298,15 +12254,15 @@ void swap(Body_Intercept &a, Body_Intercept &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_Intercept::Body_Intercept(const Body_Intercept& other214) noexcept {
-  save_recovery = other214.save_recovery;
-  face_point = other214.face_point;
-  __isset = other214.__isset;
+Body_Intercept::Body_Intercept(const Body_Intercept& other212) noexcept {
+  save_recovery = other212.save_recovery;
+  face_point = other212.face_point;
+  __isset = other212.__isset;
 }
-Body_Intercept& Body_Intercept::operator=(const Body_Intercept& other215) noexcept {
-  save_recovery = other215.save_recovery;
-  face_point = other215.face_point;
-  __isset = other215.__isset;
+Body_Intercept& Body_Intercept::operator=(const Body_Intercept& other213) noexcept {
+  save_recovery = other213.save_recovery;
+  face_point = other213.face_point;
+  __isset = other213.__isset;
   return *this;
 }
 void Body_Intercept::printTo(std::ostream& out) const {
@@ -12427,17 +12383,17 @@ void swap(Body_KickOneStep &a, Body_KickOneStep &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_KickOneStep::Body_KickOneStep(const Body_KickOneStep& other216) noexcept {
-  target_point = other216.target_point;
-  first_speed = other216.first_speed;
-  force_mode = other216.force_mode;
-  __isset = other216.__isset;
+Body_KickOneStep::Body_KickOneStep(const Body_KickOneStep& other214) noexcept {
+  target_point = other214.target_point;
+  first_speed = other214.first_speed;
+  force_mode = other214.force_mode;
+  __isset = other214.__isset;
 }
-Body_KickOneStep& Body_KickOneStep::operator=(const Body_KickOneStep& other217) noexcept {
-  target_point = other217.target_point;
-  first_speed = other217.first_speed;
-  force_mode = other217.force_mode;
-  __isset = other217.__isset;
+Body_KickOneStep& Body_KickOneStep::operator=(const Body_KickOneStep& other215) noexcept {
+  target_point = other215.target_point;
+  first_speed = other215.first_speed;
+  force_mode = other215.force_mode;
+  __isset = other215.__isset;
   return *this;
 }
 void Body_KickOneStep::printTo(std::ostream& out) const {
@@ -12504,11 +12460,11 @@ void swap(Body_StopBall &a, Body_StopBall &b) {
   (void) b;
 }
 
-Body_StopBall::Body_StopBall(const Body_StopBall& other218) noexcept {
-  (void) other218;
+Body_StopBall::Body_StopBall(const Body_StopBall& other216) noexcept {
+  (void) other216;
 }
-Body_StopBall& Body_StopBall::operator=(const Body_StopBall& other219) noexcept {
-  (void) other219;
+Body_StopBall& Body_StopBall::operator=(const Body_StopBall& other217) noexcept {
+  (void) other217;
   return *this;
 }
 void Body_StopBall::printTo(std::ostream& out) const {
@@ -12593,13 +12549,13 @@ void swap(Body_StopDash &a, Body_StopDash &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_StopDash::Body_StopDash(const Body_StopDash& other220) noexcept {
-  save_recovery = other220.save_recovery;
-  __isset = other220.__isset;
+Body_StopDash::Body_StopDash(const Body_StopDash& other218) noexcept {
+  save_recovery = other218.save_recovery;
+  __isset = other218.__isset;
 }
-Body_StopDash& Body_StopDash::operator=(const Body_StopDash& other221) noexcept {
-  save_recovery = other221.save_recovery;
-  __isset = other221.__isset;
+Body_StopDash& Body_StopDash::operator=(const Body_StopDash& other219) noexcept {
+  save_recovery = other219.save_recovery;
+  __isset = other219.__isset;
   return *this;
 }
 void Body_StopDash::printTo(std::ostream& out) const {
@@ -12719,17 +12675,17 @@ void swap(Body_TackleToPoint &a, Body_TackleToPoint &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_TackleToPoint::Body_TackleToPoint(const Body_TackleToPoint& other222) noexcept {
-  target_point = other222.target_point;
-  min_probability = other222.min_probability;
-  min_speed = other222.min_speed;
-  __isset = other222.__isset;
+Body_TackleToPoint::Body_TackleToPoint(const Body_TackleToPoint& other220) noexcept {
+  target_point = other220.target_point;
+  min_probability = other220.min_probability;
+  min_speed = other220.min_speed;
+  __isset = other220.__isset;
 }
-Body_TackleToPoint& Body_TackleToPoint::operator=(const Body_TackleToPoint& other223) noexcept {
-  target_point = other223.target_point;
-  min_probability = other223.min_probability;
-  min_speed = other223.min_speed;
-  __isset = other223.__isset;
+Body_TackleToPoint& Body_TackleToPoint::operator=(const Body_TackleToPoint& other221) noexcept {
+  target_point = other221.target_point;
+  min_probability = other221.min_probability;
+  min_speed = other221.min_speed;
+  __isset = other221.__isset;
   return *this;
 }
 void Body_TackleToPoint::printTo(std::ostream& out) const {
@@ -12817,13 +12773,13 @@ void swap(Body_TurnToAngle &a, Body_TurnToAngle &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_TurnToAngle::Body_TurnToAngle(const Body_TurnToAngle& other224) noexcept {
-  angle = other224.angle;
-  __isset = other224.__isset;
+Body_TurnToAngle::Body_TurnToAngle(const Body_TurnToAngle& other222) noexcept {
+  angle = other222.angle;
+  __isset = other222.__isset;
 }
-Body_TurnToAngle& Body_TurnToAngle::operator=(const Body_TurnToAngle& other225) noexcept {
-  angle = other225.angle;
-  __isset = other225.__isset;
+Body_TurnToAngle& Body_TurnToAngle::operator=(const Body_TurnToAngle& other223) noexcept {
+  angle = other223.angle;
+  __isset = other223.__isset;
   return *this;
 }
 void Body_TurnToAngle::printTo(std::ostream& out) const {
@@ -12909,13 +12865,13 @@ void swap(Body_TurnToBall &a, Body_TurnToBall &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_TurnToBall::Body_TurnToBall(const Body_TurnToBall& other226) noexcept {
-  cycle = other226.cycle;
-  __isset = other226.__isset;
+Body_TurnToBall::Body_TurnToBall(const Body_TurnToBall& other224) noexcept {
+  cycle = other224.cycle;
+  __isset = other224.__isset;
 }
-Body_TurnToBall& Body_TurnToBall::operator=(const Body_TurnToBall& other227) noexcept {
-  cycle = other227.cycle;
-  __isset = other227.__isset;
+Body_TurnToBall& Body_TurnToBall::operator=(const Body_TurnToBall& other225) noexcept {
+  cycle = other225.cycle;
+  __isset = other225.__isset;
   return *this;
 }
 void Body_TurnToBall::printTo(std::ostream& out) const {
@@ -13018,15 +12974,15 @@ void swap(Body_TurnToPoint &a, Body_TurnToPoint &b) {
   swap(a.__isset, b.__isset);
 }
 
-Body_TurnToPoint::Body_TurnToPoint(const Body_TurnToPoint& other228) noexcept {
-  target_point = other228.target_point;
-  cycle = other228.cycle;
-  __isset = other228.__isset;
+Body_TurnToPoint::Body_TurnToPoint(const Body_TurnToPoint& other226) noexcept {
+  target_point = other226.target_point;
+  cycle = other226.cycle;
+  __isset = other226.__isset;
 }
-Body_TurnToPoint& Body_TurnToPoint::operator=(const Body_TurnToPoint& other229) noexcept {
-  target_point = other229.target_point;
-  cycle = other229.cycle;
-  __isset = other229.__isset;
+Body_TurnToPoint& Body_TurnToPoint::operator=(const Body_TurnToPoint& other227) noexcept {
+  target_point = other227.target_point;
+  cycle = other227.cycle;
+  __isset = other227.__isset;
   return *this;
 }
 void Body_TurnToPoint::printTo(std::ostream& out) const {
@@ -13113,13 +13069,13 @@ void swap(Focus_MoveToPoint &a, Focus_MoveToPoint &b) {
   swap(a.__isset, b.__isset);
 }
 
-Focus_MoveToPoint::Focus_MoveToPoint(const Focus_MoveToPoint& other230) noexcept {
-  target_point = other230.target_point;
-  __isset = other230.__isset;
+Focus_MoveToPoint::Focus_MoveToPoint(const Focus_MoveToPoint& other228) noexcept {
+  target_point = other228.target_point;
+  __isset = other228.__isset;
 }
-Focus_MoveToPoint& Focus_MoveToPoint::operator=(const Focus_MoveToPoint& other231) noexcept {
-  target_point = other231.target_point;
-  __isset = other231.__isset;
+Focus_MoveToPoint& Focus_MoveToPoint::operator=(const Focus_MoveToPoint& other229) noexcept {
+  target_point = other229.target_point;
+  __isset = other229.__isset;
   return *this;
 }
 void Focus_MoveToPoint::printTo(std::ostream& out) const {
@@ -13184,11 +13140,11 @@ void swap(Focus_Reset &a, Focus_Reset &b) {
   (void) b;
 }
 
-Focus_Reset::Focus_Reset(const Focus_Reset& other232) noexcept {
-  (void) other232;
+Focus_Reset::Focus_Reset(const Focus_Reset& other230) noexcept {
+  (void) other230;
 }
-Focus_Reset& Focus_Reset::operator=(const Focus_Reset& other233) noexcept {
-  (void) other233;
+Focus_Reset& Focus_Reset::operator=(const Focus_Reset& other231) noexcept {
+  (void) other231;
   return *this;
 }
 void Focus_Reset::printTo(std::ostream& out) const {
@@ -13252,11 +13208,11 @@ void swap(Neck_ScanField &a, Neck_ScanField &b) {
   (void) b;
 }
 
-Neck_ScanField::Neck_ScanField(const Neck_ScanField& other234) noexcept {
-  (void) other234;
+Neck_ScanField::Neck_ScanField(const Neck_ScanField& other232) noexcept {
+  (void) other232;
 }
-Neck_ScanField& Neck_ScanField::operator=(const Neck_ScanField& other235) noexcept {
-  (void) other235;
+Neck_ScanField& Neck_ScanField::operator=(const Neck_ScanField& other233) noexcept {
+  (void) other233;
   return *this;
 }
 void Neck_ScanField::printTo(std::ostream& out) const {
@@ -13320,11 +13276,11 @@ void swap(Neck_ScanPlayers &a, Neck_ScanPlayers &b) {
   (void) b;
 }
 
-Neck_ScanPlayers::Neck_ScanPlayers(const Neck_ScanPlayers& other236) noexcept {
-  (void) other236;
+Neck_ScanPlayers::Neck_ScanPlayers(const Neck_ScanPlayers& other234) noexcept {
+  (void) other234;
 }
-Neck_ScanPlayers& Neck_ScanPlayers::operator=(const Neck_ScanPlayers& other237) noexcept {
-  (void) other237;
+Neck_ScanPlayers& Neck_ScanPlayers::operator=(const Neck_ScanPlayers& other235) noexcept {
+  (void) other235;
   return *this;
 }
 void Neck_ScanPlayers::printTo(std::ostream& out) const {
@@ -13379,9 +13335,9 @@ uint32_t Neck_TurnToBallAndPlayer::read(::apache::thrift::protocol::TProtocol* i
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast238;
-          xfer += iprot->readI32(ecast238);
-          this->side = static_cast<Side::type>(ecast238);
+          int32_t ecast236;
+          xfer += iprot->readI32(ecast236);
+          this->side = static_cast<Side::type>(ecast236);
           this->__isset.side = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -13445,17 +13401,17 @@ void swap(Neck_TurnToBallAndPlayer &a, Neck_TurnToBallAndPlayer &b) {
   swap(a.__isset, b.__isset);
 }
 
-Neck_TurnToBallAndPlayer::Neck_TurnToBallAndPlayer(const Neck_TurnToBallAndPlayer& other239) noexcept {
-  side = other239.side;
-  uniform_number = other239.uniform_number;
-  count_threshold = other239.count_threshold;
-  __isset = other239.__isset;
+Neck_TurnToBallAndPlayer::Neck_TurnToBallAndPlayer(const Neck_TurnToBallAndPlayer& other237) noexcept {
+  side = other237.side;
+  uniform_number = other237.uniform_number;
+  count_threshold = other237.count_threshold;
+  __isset = other237.__isset;
 }
-Neck_TurnToBallAndPlayer& Neck_TurnToBallAndPlayer::operator=(const Neck_TurnToBallAndPlayer& other240) noexcept {
-  side = other240.side;
-  uniform_number = other240.uniform_number;
-  count_threshold = other240.count_threshold;
-  __isset = other240.__isset;
+Neck_TurnToBallAndPlayer& Neck_TurnToBallAndPlayer::operator=(const Neck_TurnToBallAndPlayer& other238) noexcept {
+  side = other238.side;
+  uniform_number = other238.uniform_number;
+  count_threshold = other238.count_threshold;
+  __isset = other238.__isset;
   return *this;
 }
 void Neck_TurnToBallAndPlayer::printTo(std::ostream& out) const {
@@ -13543,13 +13499,13 @@ void swap(Neck_TurnToBallOrScan &a, Neck_TurnToBallOrScan &b) {
   swap(a.__isset, b.__isset);
 }
 
-Neck_TurnToBallOrScan::Neck_TurnToBallOrScan(const Neck_TurnToBallOrScan& other241) noexcept {
-  count_threshold = other241.count_threshold;
-  __isset = other241.__isset;
+Neck_TurnToBallOrScan::Neck_TurnToBallOrScan(const Neck_TurnToBallOrScan& other239) noexcept {
+  count_threshold = other239.count_threshold;
+  __isset = other239.__isset;
 }
-Neck_TurnToBallOrScan& Neck_TurnToBallOrScan::operator=(const Neck_TurnToBallOrScan& other242) noexcept {
-  count_threshold = other242.count_threshold;
-  __isset = other242.__isset;
+Neck_TurnToBallOrScan& Neck_TurnToBallOrScan::operator=(const Neck_TurnToBallOrScan& other240) noexcept {
+  count_threshold = other240.count_threshold;
+  __isset = other240.__isset;
   return *this;
 }
 void Neck_TurnToBallOrScan::printTo(std::ostream& out) const {
@@ -13614,11 +13570,11 @@ void swap(Neck_TurnToBall &a, Neck_TurnToBall &b) {
   (void) b;
 }
 
-Neck_TurnToBall::Neck_TurnToBall(const Neck_TurnToBall& other243) noexcept {
-  (void) other243;
+Neck_TurnToBall::Neck_TurnToBall(const Neck_TurnToBall& other241) noexcept {
+  (void) other241;
 }
-Neck_TurnToBall& Neck_TurnToBall::operator=(const Neck_TurnToBall& other244) noexcept {
-  (void) other244;
+Neck_TurnToBall& Neck_TurnToBall::operator=(const Neck_TurnToBall& other242) noexcept {
+  (void) other242;
   return *this;
 }
 void Neck_TurnToBall::printTo(std::ostream& out) const {
@@ -13703,13 +13659,13 @@ void swap(Neck_TurnToGoalieOrScan &a, Neck_TurnToGoalieOrScan &b) {
   swap(a.__isset, b.__isset);
 }
 
-Neck_TurnToGoalieOrScan::Neck_TurnToGoalieOrScan(const Neck_TurnToGoalieOrScan& other245) noexcept {
-  count_threshold = other245.count_threshold;
-  __isset = other245.__isset;
+Neck_TurnToGoalieOrScan::Neck_TurnToGoalieOrScan(const Neck_TurnToGoalieOrScan& other243) noexcept {
+  count_threshold = other243.count_threshold;
+  __isset = other243.__isset;
 }
-Neck_TurnToGoalieOrScan& Neck_TurnToGoalieOrScan::operator=(const Neck_TurnToGoalieOrScan& other246) noexcept {
-  count_threshold = other246.count_threshold;
-  __isset = other246.__isset;
+Neck_TurnToGoalieOrScan& Neck_TurnToGoalieOrScan::operator=(const Neck_TurnToGoalieOrScan& other244) noexcept {
+  count_threshold = other244.count_threshold;
+  __isset = other244.__isset;
   return *this;
 }
 void Neck_TurnToGoalieOrScan::printTo(std::ostream& out) const {
@@ -13774,11 +13730,11 @@ void swap(Neck_TurnToLowConfTeammate &a, Neck_TurnToLowConfTeammate &b) {
   (void) b;
 }
 
-Neck_TurnToLowConfTeammate::Neck_TurnToLowConfTeammate(const Neck_TurnToLowConfTeammate& other247) noexcept {
-  (void) other247;
+Neck_TurnToLowConfTeammate::Neck_TurnToLowConfTeammate(const Neck_TurnToLowConfTeammate& other245) noexcept {
+  (void) other245;
 }
-Neck_TurnToLowConfTeammate& Neck_TurnToLowConfTeammate::operator=(const Neck_TurnToLowConfTeammate& other248) noexcept {
-  (void) other248;
+Neck_TurnToLowConfTeammate& Neck_TurnToLowConfTeammate::operator=(const Neck_TurnToLowConfTeammate& other246) noexcept {
+  (void) other246;
   return *this;
 }
 void Neck_TurnToLowConfTeammate::printTo(std::ostream& out) const {
@@ -13833,9 +13789,9 @@ uint32_t Neck_TurnToPlayerOrScan::read(::apache::thrift::protocol::TProtocol* ip
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast249;
-          xfer += iprot->readI32(ecast249);
-          this->side = static_cast<Side::type>(ecast249);
+          int32_t ecast247;
+          xfer += iprot->readI32(ecast247);
+          this->side = static_cast<Side::type>(ecast247);
           this->__isset.side = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -13899,17 +13855,17 @@ void swap(Neck_TurnToPlayerOrScan &a, Neck_TurnToPlayerOrScan &b) {
   swap(a.__isset, b.__isset);
 }
 
-Neck_TurnToPlayerOrScan::Neck_TurnToPlayerOrScan(const Neck_TurnToPlayerOrScan& other250) noexcept {
-  side = other250.side;
-  uniform_number = other250.uniform_number;
-  count_threshold = other250.count_threshold;
-  __isset = other250.__isset;
+Neck_TurnToPlayerOrScan::Neck_TurnToPlayerOrScan(const Neck_TurnToPlayerOrScan& other248) noexcept {
+  side = other248.side;
+  uniform_number = other248.uniform_number;
+  count_threshold = other248.count_threshold;
+  __isset = other248.__isset;
 }
-Neck_TurnToPlayerOrScan& Neck_TurnToPlayerOrScan::operator=(const Neck_TurnToPlayerOrScan& other251) noexcept {
-  side = other251.side;
-  uniform_number = other251.uniform_number;
-  count_threshold = other251.count_threshold;
-  __isset = other251.__isset;
+Neck_TurnToPlayerOrScan& Neck_TurnToPlayerOrScan::operator=(const Neck_TurnToPlayerOrScan& other249) noexcept {
+  side = other249.side;
+  uniform_number = other249.uniform_number;
+  count_threshold = other249.count_threshold;
+  __isset = other249.__isset;
   return *this;
 }
 void Neck_TurnToPlayerOrScan::printTo(std::ostream& out) const {
@@ -13997,13 +13953,13 @@ void swap(Neck_TurnToPoint &a, Neck_TurnToPoint &b) {
   swap(a.__isset, b.__isset);
 }
 
-Neck_TurnToPoint::Neck_TurnToPoint(const Neck_TurnToPoint& other252) noexcept {
-  target_point = other252.target_point;
-  __isset = other252.__isset;
+Neck_TurnToPoint::Neck_TurnToPoint(const Neck_TurnToPoint& other250) noexcept {
+  target_point = other250.target_point;
+  __isset = other250.__isset;
 }
-Neck_TurnToPoint& Neck_TurnToPoint::operator=(const Neck_TurnToPoint& other253) noexcept {
-  target_point = other253.target_point;
-  __isset = other253.__isset;
+Neck_TurnToPoint& Neck_TurnToPoint::operator=(const Neck_TurnToPoint& other251) noexcept {
+  target_point = other251.target_point;
+  __isset = other251.__isset;
   return *this;
 }
 void Neck_TurnToPoint::printTo(std::ostream& out) const {
@@ -14089,13 +14045,13 @@ void swap(Neck_TurnToRelative &a, Neck_TurnToRelative &b) {
   swap(a.__isset, b.__isset);
 }
 
-Neck_TurnToRelative::Neck_TurnToRelative(const Neck_TurnToRelative& other254) noexcept {
-  angle = other254.angle;
-  __isset = other254.__isset;
+Neck_TurnToRelative::Neck_TurnToRelative(const Neck_TurnToRelative& other252) noexcept {
+  angle = other252.angle;
+  __isset = other252.__isset;
 }
-Neck_TurnToRelative& Neck_TurnToRelative::operator=(const Neck_TurnToRelative& other255) noexcept {
-  angle = other255.angle;
-  __isset = other255.__isset;
+Neck_TurnToRelative& Neck_TurnToRelative::operator=(const Neck_TurnToRelative& other253) noexcept {
+  angle = other253.angle;
+  __isset = other253.__isset;
   return *this;
 }
 void Neck_TurnToRelative::printTo(std::ostream& out) const {
@@ -14143,9 +14099,9 @@ uint32_t View_ChangeWidth::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast256;
-          xfer += iprot->readI32(ecast256);
-          this->view_width = static_cast<ViewWidth::type>(ecast256);
+          int32_t ecast254;
+          xfer += iprot->readI32(ecast254);
+          this->view_width = static_cast<ViewWidth::type>(ecast254);
           this->__isset.view_width = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -14183,13 +14139,13 @@ void swap(View_ChangeWidth &a, View_ChangeWidth &b) {
   swap(a.__isset, b.__isset);
 }
 
-View_ChangeWidth::View_ChangeWidth(const View_ChangeWidth& other257) noexcept {
-  view_width = other257.view_width;
-  __isset = other257.__isset;
+View_ChangeWidth::View_ChangeWidth(const View_ChangeWidth& other255) noexcept {
+  view_width = other255.view_width;
+  __isset = other255.__isset;
 }
-View_ChangeWidth& View_ChangeWidth::operator=(const View_ChangeWidth& other258) noexcept {
-  view_width = other258.view_width;
-  __isset = other258.__isset;
+View_ChangeWidth& View_ChangeWidth::operator=(const View_ChangeWidth& other256) noexcept {
+  view_width = other256.view_width;
+  __isset = other256.__isset;
   return *this;
 }
 void View_ChangeWidth::printTo(std::ostream& out) const {
@@ -14254,11 +14210,11 @@ void swap(View_Normal &a, View_Normal &b) {
   (void) b;
 }
 
-View_Normal::View_Normal(const View_Normal& other259) noexcept {
-  (void) other259;
+View_Normal::View_Normal(const View_Normal& other257) noexcept {
+  (void) other257;
 }
-View_Normal& View_Normal::operator=(const View_Normal& other260) noexcept {
-  (void) other260;
+View_Normal& View_Normal::operator=(const View_Normal& other258) noexcept {
+  (void) other258;
   return *this;
 }
 void View_Normal::printTo(std::ostream& out) const {
@@ -14322,11 +14278,11 @@ void swap(View_Synch &a, View_Synch &b) {
   (void) b;
 }
 
-View_Synch::View_Synch(const View_Synch& other261) noexcept {
-  (void) other261;
+View_Synch::View_Synch(const View_Synch& other259) noexcept {
+  (void) other259;
 }
-View_Synch& View_Synch::operator=(const View_Synch& other262) noexcept {
-  (void) other262;
+View_Synch& View_Synch::operator=(const View_Synch& other260) noexcept {
+  (void) other260;
   return *this;
 }
 void View_Synch::printTo(std::ostream& out) const {
@@ -14390,11 +14346,11 @@ void swap(View_Wide &a, View_Wide &b) {
   (void) b;
 }
 
-View_Wide::View_Wide(const View_Wide& other263) noexcept {
-  (void) other263;
+View_Wide::View_Wide(const View_Wide& other261) noexcept {
+  (void) other261;
 }
-View_Wide& View_Wide::operator=(const View_Wide& other264) noexcept {
-  (void) other264;
+View_Wide& View_Wide::operator=(const View_Wide& other262) noexcept {
+  (void) other262;
   return *this;
 }
 void View_Wide::printTo(std::ostream& out) const {
@@ -14458,11 +14414,11 @@ void swap(HeliosGoalie &a, HeliosGoalie &b) {
   (void) b;
 }
 
-HeliosGoalie::HeliosGoalie(const HeliosGoalie& other265) noexcept {
-  (void) other265;
+HeliosGoalie::HeliosGoalie(const HeliosGoalie& other263) noexcept {
+  (void) other263;
 }
-HeliosGoalie& HeliosGoalie::operator=(const HeliosGoalie& other266) noexcept {
-  (void) other266;
+HeliosGoalie& HeliosGoalie::operator=(const HeliosGoalie& other264) noexcept {
+  (void) other264;
   return *this;
 }
 void HeliosGoalie::printTo(std::ostream& out) const {
@@ -14526,11 +14482,11 @@ void swap(HeliosGoalieMove &a, HeliosGoalieMove &b) {
   (void) b;
 }
 
-HeliosGoalieMove::HeliosGoalieMove(const HeliosGoalieMove& other267) noexcept {
-  (void) other267;
+HeliosGoalieMove::HeliosGoalieMove(const HeliosGoalieMove& other265) noexcept {
+  (void) other265;
 }
-HeliosGoalieMove& HeliosGoalieMove::operator=(const HeliosGoalieMove& other268) noexcept {
-  (void) other268;
+HeliosGoalieMove& HeliosGoalieMove::operator=(const HeliosGoalieMove& other266) noexcept {
+  (void) other266;
   return *this;
 }
 void HeliosGoalieMove::printTo(std::ostream& out) const {
@@ -14594,11 +14550,11 @@ void swap(HeliosGoalieKick &a, HeliosGoalieKick &b) {
   (void) b;
 }
 
-HeliosGoalieKick::HeliosGoalieKick(const HeliosGoalieKick& other269) noexcept {
-  (void) other269;
+HeliosGoalieKick::HeliosGoalieKick(const HeliosGoalieKick& other267) noexcept {
+  (void) other267;
 }
-HeliosGoalieKick& HeliosGoalieKick::operator=(const HeliosGoalieKick& other270) noexcept {
-  (void) other270;
+HeliosGoalieKick& HeliosGoalieKick::operator=(const HeliosGoalieKick& other268) noexcept {
+  (void) other268;
   return *this;
 }
 void HeliosGoalieKick::printTo(std::ostream& out) const {
@@ -14662,11 +14618,11 @@ void swap(HeliosShoot &a, HeliosShoot &b) {
   (void) b;
 }
 
-HeliosShoot::HeliosShoot(const HeliosShoot& other271) noexcept {
-  (void) other271;
+HeliosShoot::HeliosShoot(const HeliosShoot& other269) noexcept {
+  (void) other269;
 }
-HeliosShoot& HeliosShoot::operator=(const HeliosShoot& other272) noexcept {
-  (void) other272;
+HeliosShoot& HeliosShoot::operator=(const HeliosShoot& other270) noexcept {
+  (void) other270;
   return *this;
 }
 void HeliosShoot::printTo(std::ostream& out) const {
@@ -14887,29 +14843,29 @@ void swap(HeliosChainAction &a, HeliosChainAction &b) {
   swap(a.__isset, b.__isset);
 }
 
-HeliosChainAction::HeliosChainAction(const HeliosChainAction& other273) noexcept {
-  direct_pass = other273.direct_pass;
-  lead_pass = other273.lead_pass;
-  through_pass = other273.through_pass;
-  short_dribble = other273.short_dribble;
-  long_dribble = other273.long_dribble;
-  cross = other273.cross;
-  simple_pass = other273.simple_pass;
-  simple_dribble = other273.simple_dribble;
-  simple_shoot = other273.simple_shoot;
-  __isset = other273.__isset;
+HeliosChainAction::HeliosChainAction(const HeliosChainAction& other271) noexcept {
+  direct_pass = other271.direct_pass;
+  lead_pass = other271.lead_pass;
+  through_pass = other271.through_pass;
+  short_dribble = other271.short_dribble;
+  long_dribble = other271.long_dribble;
+  cross = other271.cross;
+  simple_pass = other271.simple_pass;
+  simple_dribble = other271.simple_dribble;
+  simple_shoot = other271.simple_shoot;
+  __isset = other271.__isset;
 }
-HeliosChainAction& HeliosChainAction::operator=(const HeliosChainAction& other274) noexcept {
-  direct_pass = other274.direct_pass;
-  lead_pass = other274.lead_pass;
-  through_pass = other274.through_pass;
-  short_dribble = other274.short_dribble;
-  long_dribble = other274.long_dribble;
-  cross = other274.cross;
-  simple_pass = other274.simple_pass;
-  simple_dribble = other274.simple_dribble;
-  simple_shoot = other274.simple_shoot;
-  __isset = other274.__isset;
+HeliosChainAction& HeliosChainAction::operator=(const HeliosChainAction& other272) noexcept {
+  direct_pass = other272.direct_pass;
+  lead_pass = other272.lead_pass;
+  through_pass = other272.through_pass;
+  short_dribble = other272.short_dribble;
+  long_dribble = other272.long_dribble;
+  cross = other272.cross;
+  simple_pass = other272.simple_pass;
+  simple_dribble = other272.simple_dribble;
+  simple_shoot = other272.simple_shoot;
+  __isset = other272.__isset;
   return *this;
 }
 void HeliosChainAction::printTo(std::ostream& out) const {
@@ -14982,11 +14938,11 @@ void swap(HeliosBasicOffensive &a, HeliosBasicOffensive &b) {
   (void) b;
 }
 
-HeliosBasicOffensive::HeliosBasicOffensive(const HeliosBasicOffensive& other275) noexcept {
-  (void) other275;
+HeliosBasicOffensive::HeliosBasicOffensive(const HeliosBasicOffensive& other273) noexcept {
+  (void) other273;
 }
-HeliosBasicOffensive& HeliosBasicOffensive::operator=(const HeliosBasicOffensive& other276) noexcept {
-  (void) other276;
+HeliosBasicOffensive& HeliosBasicOffensive::operator=(const HeliosBasicOffensive& other274) noexcept {
+  (void) other274;
   return *this;
 }
 void HeliosBasicOffensive::printTo(std::ostream& out) const {
@@ -15050,11 +15006,11 @@ void swap(HeliosBasicMove &a, HeliosBasicMove &b) {
   (void) b;
 }
 
-HeliosBasicMove::HeliosBasicMove(const HeliosBasicMove& other277) noexcept {
-  (void) other277;
+HeliosBasicMove::HeliosBasicMove(const HeliosBasicMove& other275) noexcept {
+  (void) other275;
 }
-HeliosBasicMove& HeliosBasicMove::operator=(const HeliosBasicMove& other278) noexcept {
-  (void) other278;
+HeliosBasicMove& HeliosBasicMove::operator=(const HeliosBasicMove& other276) noexcept {
+  (void) other276;
   return *this;
 }
 void HeliosBasicMove::printTo(std::ostream& out) const {
@@ -15118,11 +15074,11 @@ void swap(HeliosSetPlay &a, HeliosSetPlay &b) {
   (void) b;
 }
 
-HeliosSetPlay::HeliosSetPlay(const HeliosSetPlay& other279) noexcept {
-  (void) other279;
+HeliosSetPlay::HeliosSetPlay(const HeliosSetPlay& other277) noexcept {
+  (void) other277;
 }
-HeliosSetPlay& HeliosSetPlay::operator=(const HeliosSetPlay& other280) noexcept {
-  (void) other280;
+HeliosSetPlay& HeliosSetPlay::operator=(const HeliosSetPlay& other278) noexcept {
+  (void) other278;
   return *this;
 }
 void HeliosSetPlay::printTo(std::ostream& out) const {
@@ -15186,11 +15142,11 @@ void swap(HeliosPenalty &a, HeliosPenalty &b) {
   (void) b;
 }
 
-HeliosPenalty::HeliosPenalty(const HeliosPenalty& other281) noexcept {
-  (void) other281;
+HeliosPenalty::HeliosPenalty(const HeliosPenalty& other279) noexcept {
+  (void) other279;
 }
-HeliosPenalty& HeliosPenalty::operator=(const HeliosPenalty& other282) noexcept {
-  (void) other282;
+HeliosPenalty& HeliosPenalty::operator=(const HeliosPenalty& other280) noexcept {
+  (void) other280;
   return *this;
 }
 void HeliosPenalty::printTo(std::ostream& out) const {
@@ -15254,11 +15210,11 @@ void swap(HeliosCommunicaion &a, HeliosCommunicaion &b) {
   (void) b;
 }
 
-HeliosCommunicaion::HeliosCommunicaion(const HeliosCommunicaion& other283) noexcept {
-  (void) other283;
+HeliosCommunicaion::HeliosCommunicaion(const HeliosCommunicaion& other281) noexcept {
+  (void) other281;
 }
-HeliosCommunicaion& HeliosCommunicaion::operator=(const HeliosCommunicaion& other284) noexcept {
-  (void) other284;
+HeliosCommunicaion& HeliosCommunicaion::operator=(const HeliosCommunicaion& other282) noexcept {
+  (void) other282;
   return *this;
 }
 void HeliosCommunicaion::printTo(std::ostream& out) const {
@@ -16542,139 +16498,139 @@ void swap(PlayerAction &a, PlayerAction &b) {
   swap(a.__isset, b.__isset);
 }
 
-PlayerAction::PlayerAction(const PlayerAction& other285) {
-  dash = other285.dash;
-  turn = other285.turn;
-  kick = other285.kick;
-  tackle = other285.tackle;
-  catch_action = other285.catch_action;
-  move = other285.move;
-  turn_neck = other285.turn_neck;
-  change_view = other285.change_view;
-  say = other285.say;
-  point_to = other285.point_to;
-  point_to_of = other285.point_to_of;
-  attention_to = other285.attention_to;
-  attention_to_of = other285.attention_to_of;
-  log = other285.log;
-  debug_client = other285.debug_client;
-  body_go_to_point = other285.body_go_to_point;
-  body_smart_kick = other285.body_smart_kick;
-  bhv_before_kick_off = other285.bhv_before_kick_off;
-  bhv_body_neck_to_ball = other285.bhv_body_neck_to_ball;
-  bhv_body_neck_to_point = other285.bhv_body_neck_to_point;
-  bhv_emergency = other285.bhv_emergency;
-  bhv_go_to_point_look_ball = other285.bhv_go_to_point_look_ball;
-  bhv_neck_body_to_ball = other285.bhv_neck_body_to_ball;
-  bhv_neck_body_to_point = other285.bhv_neck_body_to_point;
-  bhv_scan_field = other285.bhv_scan_field;
-  body_advance_ball = other285.body_advance_ball;
-  body_clear_ball = other285.body_clear_ball;
-  body_dribble = other285.body_dribble;
-  body_go_to_point_dodge = other285.body_go_to_point_dodge;
-  body_hold_ball = other285.body_hold_ball;
-  body_intercept = other285.body_intercept;
-  body_kick_one_step = other285.body_kick_one_step;
-  body_stop_ball = other285.body_stop_ball;
-  body_stop_dash = other285.body_stop_dash;
-  body_tackle_to_point = other285.body_tackle_to_point;
-  body_turn_to_angle = other285.body_turn_to_angle;
-  body_turn_to_ball = other285.body_turn_to_ball;
-  body_turn_to_point = other285.body_turn_to_point;
-  focus_move_to_point = other285.focus_move_to_point;
-  focus_reset = other285.focus_reset;
-  neck_scan_field = other285.neck_scan_field;
-  neck_scan_players = other285.neck_scan_players;
-  neck_turn_to_ball_and_player = other285.neck_turn_to_ball_and_player;
-  neck_turn_to_ball_or_scan = other285.neck_turn_to_ball_or_scan;
-  neck_turn_to_ball = other285.neck_turn_to_ball;
-  neck_turn_to_goalie_or_scan = other285.neck_turn_to_goalie_or_scan;
-  neck_turn_to_low_conf_teammate = other285.neck_turn_to_low_conf_teammate;
-  neck_turn_to_player_or_scan = other285.neck_turn_to_player_or_scan;
-  neck_turn_to_point = other285.neck_turn_to_point;
-  neck_turn_to_relative = other285.neck_turn_to_relative;
-  view_change_width = other285.view_change_width;
-  view_normal = other285.view_normal;
-  view_synch = other285.view_synch;
-  view_wide = other285.view_wide;
-  helios_goalie = other285.helios_goalie;
-  helios_goalie_move = other285.helios_goalie_move;
-  helios_goalie_kick = other285.helios_goalie_kick;
-  helios_shoot = other285.helios_shoot;
-  helios_chain_action = other285.helios_chain_action;
-  helios_basic_offensive = other285.helios_basic_offensive;
-  helios_basic_move = other285.helios_basic_move;
-  helios_set_play = other285.helios_set_play;
-  helios_penalty = other285.helios_penalty;
-  helios_communication = other285.helios_communication;
-  __isset = other285.__isset;
+PlayerAction::PlayerAction(const PlayerAction& other283) {
+  dash = other283.dash;
+  turn = other283.turn;
+  kick = other283.kick;
+  tackle = other283.tackle;
+  catch_action = other283.catch_action;
+  move = other283.move;
+  turn_neck = other283.turn_neck;
+  change_view = other283.change_view;
+  say = other283.say;
+  point_to = other283.point_to;
+  point_to_of = other283.point_to_of;
+  attention_to = other283.attention_to;
+  attention_to_of = other283.attention_to_of;
+  log = other283.log;
+  debug_client = other283.debug_client;
+  body_go_to_point = other283.body_go_to_point;
+  body_smart_kick = other283.body_smart_kick;
+  bhv_before_kick_off = other283.bhv_before_kick_off;
+  bhv_body_neck_to_ball = other283.bhv_body_neck_to_ball;
+  bhv_body_neck_to_point = other283.bhv_body_neck_to_point;
+  bhv_emergency = other283.bhv_emergency;
+  bhv_go_to_point_look_ball = other283.bhv_go_to_point_look_ball;
+  bhv_neck_body_to_ball = other283.bhv_neck_body_to_ball;
+  bhv_neck_body_to_point = other283.bhv_neck_body_to_point;
+  bhv_scan_field = other283.bhv_scan_field;
+  body_advance_ball = other283.body_advance_ball;
+  body_clear_ball = other283.body_clear_ball;
+  body_dribble = other283.body_dribble;
+  body_go_to_point_dodge = other283.body_go_to_point_dodge;
+  body_hold_ball = other283.body_hold_ball;
+  body_intercept = other283.body_intercept;
+  body_kick_one_step = other283.body_kick_one_step;
+  body_stop_ball = other283.body_stop_ball;
+  body_stop_dash = other283.body_stop_dash;
+  body_tackle_to_point = other283.body_tackle_to_point;
+  body_turn_to_angle = other283.body_turn_to_angle;
+  body_turn_to_ball = other283.body_turn_to_ball;
+  body_turn_to_point = other283.body_turn_to_point;
+  focus_move_to_point = other283.focus_move_to_point;
+  focus_reset = other283.focus_reset;
+  neck_scan_field = other283.neck_scan_field;
+  neck_scan_players = other283.neck_scan_players;
+  neck_turn_to_ball_and_player = other283.neck_turn_to_ball_and_player;
+  neck_turn_to_ball_or_scan = other283.neck_turn_to_ball_or_scan;
+  neck_turn_to_ball = other283.neck_turn_to_ball;
+  neck_turn_to_goalie_or_scan = other283.neck_turn_to_goalie_or_scan;
+  neck_turn_to_low_conf_teammate = other283.neck_turn_to_low_conf_teammate;
+  neck_turn_to_player_or_scan = other283.neck_turn_to_player_or_scan;
+  neck_turn_to_point = other283.neck_turn_to_point;
+  neck_turn_to_relative = other283.neck_turn_to_relative;
+  view_change_width = other283.view_change_width;
+  view_normal = other283.view_normal;
+  view_synch = other283.view_synch;
+  view_wide = other283.view_wide;
+  helios_goalie = other283.helios_goalie;
+  helios_goalie_move = other283.helios_goalie_move;
+  helios_goalie_kick = other283.helios_goalie_kick;
+  helios_shoot = other283.helios_shoot;
+  helios_chain_action = other283.helios_chain_action;
+  helios_basic_offensive = other283.helios_basic_offensive;
+  helios_basic_move = other283.helios_basic_move;
+  helios_set_play = other283.helios_set_play;
+  helios_penalty = other283.helios_penalty;
+  helios_communication = other283.helios_communication;
+  __isset = other283.__isset;
 }
-PlayerAction& PlayerAction::operator=(const PlayerAction& other286) {
-  dash = other286.dash;
-  turn = other286.turn;
-  kick = other286.kick;
-  tackle = other286.tackle;
-  catch_action = other286.catch_action;
-  move = other286.move;
-  turn_neck = other286.turn_neck;
-  change_view = other286.change_view;
-  say = other286.say;
-  point_to = other286.point_to;
-  point_to_of = other286.point_to_of;
-  attention_to = other286.attention_to;
-  attention_to_of = other286.attention_to_of;
-  log = other286.log;
-  debug_client = other286.debug_client;
-  body_go_to_point = other286.body_go_to_point;
-  body_smart_kick = other286.body_smart_kick;
-  bhv_before_kick_off = other286.bhv_before_kick_off;
-  bhv_body_neck_to_ball = other286.bhv_body_neck_to_ball;
-  bhv_body_neck_to_point = other286.bhv_body_neck_to_point;
-  bhv_emergency = other286.bhv_emergency;
-  bhv_go_to_point_look_ball = other286.bhv_go_to_point_look_ball;
-  bhv_neck_body_to_ball = other286.bhv_neck_body_to_ball;
-  bhv_neck_body_to_point = other286.bhv_neck_body_to_point;
-  bhv_scan_field = other286.bhv_scan_field;
-  body_advance_ball = other286.body_advance_ball;
-  body_clear_ball = other286.body_clear_ball;
-  body_dribble = other286.body_dribble;
-  body_go_to_point_dodge = other286.body_go_to_point_dodge;
-  body_hold_ball = other286.body_hold_ball;
-  body_intercept = other286.body_intercept;
-  body_kick_one_step = other286.body_kick_one_step;
-  body_stop_ball = other286.body_stop_ball;
-  body_stop_dash = other286.body_stop_dash;
-  body_tackle_to_point = other286.body_tackle_to_point;
-  body_turn_to_angle = other286.body_turn_to_angle;
-  body_turn_to_ball = other286.body_turn_to_ball;
-  body_turn_to_point = other286.body_turn_to_point;
-  focus_move_to_point = other286.focus_move_to_point;
-  focus_reset = other286.focus_reset;
-  neck_scan_field = other286.neck_scan_field;
-  neck_scan_players = other286.neck_scan_players;
-  neck_turn_to_ball_and_player = other286.neck_turn_to_ball_and_player;
-  neck_turn_to_ball_or_scan = other286.neck_turn_to_ball_or_scan;
-  neck_turn_to_ball = other286.neck_turn_to_ball;
-  neck_turn_to_goalie_or_scan = other286.neck_turn_to_goalie_or_scan;
-  neck_turn_to_low_conf_teammate = other286.neck_turn_to_low_conf_teammate;
-  neck_turn_to_player_or_scan = other286.neck_turn_to_player_or_scan;
-  neck_turn_to_point = other286.neck_turn_to_point;
-  neck_turn_to_relative = other286.neck_turn_to_relative;
-  view_change_width = other286.view_change_width;
-  view_normal = other286.view_normal;
-  view_synch = other286.view_synch;
-  view_wide = other286.view_wide;
-  helios_goalie = other286.helios_goalie;
-  helios_goalie_move = other286.helios_goalie_move;
-  helios_goalie_kick = other286.helios_goalie_kick;
-  helios_shoot = other286.helios_shoot;
-  helios_chain_action = other286.helios_chain_action;
-  helios_basic_offensive = other286.helios_basic_offensive;
-  helios_basic_move = other286.helios_basic_move;
-  helios_set_play = other286.helios_set_play;
-  helios_penalty = other286.helios_penalty;
-  helios_communication = other286.helios_communication;
-  __isset = other286.__isset;
+PlayerAction& PlayerAction::operator=(const PlayerAction& other284) {
+  dash = other284.dash;
+  turn = other284.turn;
+  kick = other284.kick;
+  tackle = other284.tackle;
+  catch_action = other284.catch_action;
+  move = other284.move;
+  turn_neck = other284.turn_neck;
+  change_view = other284.change_view;
+  say = other284.say;
+  point_to = other284.point_to;
+  point_to_of = other284.point_to_of;
+  attention_to = other284.attention_to;
+  attention_to_of = other284.attention_to_of;
+  log = other284.log;
+  debug_client = other284.debug_client;
+  body_go_to_point = other284.body_go_to_point;
+  body_smart_kick = other284.body_smart_kick;
+  bhv_before_kick_off = other284.bhv_before_kick_off;
+  bhv_body_neck_to_ball = other284.bhv_body_neck_to_ball;
+  bhv_body_neck_to_point = other284.bhv_body_neck_to_point;
+  bhv_emergency = other284.bhv_emergency;
+  bhv_go_to_point_look_ball = other284.bhv_go_to_point_look_ball;
+  bhv_neck_body_to_ball = other284.bhv_neck_body_to_ball;
+  bhv_neck_body_to_point = other284.bhv_neck_body_to_point;
+  bhv_scan_field = other284.bhv_scan_field;
+  body_advance_ball = other284.body_advance_ball;
+  body_clear_ball = other284.body_clear_ball;
+  body_dribble = other284.body_dribble;
+  body_go_to_point_dodge = other284.body_go_to_point_dodge;
+  body_hold_ball = other284.body_hold_ball;
+  body_intercept = other284.body_intercept;
+  body_kick_one_step = other284.body_kick_one_step;
+  body_stop_ball = other284.body_stop_ball;
+  body_stop_dash = other284.body_stop_dash;
+  body_tackle_to_point = other284.body_tackle_to_point;
+  body_turn_to_angle = other284.body_turn_to_angle;
+  body_turn_to_ball = other284.body_turn_to_ball;
+  body_turn_to_point = other284.body_turn_to_point;
+  focus_move_to_point = other284.focus_move_to_point;
+  focus_reset = other284.focus_reset;
+  neck_scan_field = other284.neck_scan_field;
+  neck_scan_players = other284.neck_scan_players;
+  neck_turn_to_ball_and_player = other284.neck_turn_to_ball_and_player;
+  neck_turn_to_ball_or_scan = other284.neck_turn_to_ball_or_scan;
+  neck_turn_to_ball = other284.neck_turn_to_ball;
+  neck_turn_to_goalie_or_scan = other284.neck_turn_to_goalie_or_scan;
+  neck_turn_to_low_conf_teammate = other284.neck_turn_to_low_conf_teammate;
+  neck_turn_to_player_or_scan = other284.neck_turn_to_player_or_scan;
+  neck_turn_to_point = other284.neck_turn_to_point;
+  neck_turn_to_relative = other284.neck_turn_to_relative;
+  view_change_width = other284.view_change_width;
+  view_normal = other284.view_normal;
+  view_synch = other284.view_synch;
+  view_wide = other284.view_wide;
+  helios_goalie = other284.helios_goalie;
+  helios_goalie_move = other284.helios_goalie_move;
+  helios_goalie_kick = other284.helios_goalie_kick;
+  helios_shoot = other284.helios_shoot;
+  helios_chain_action = other284.helios_chain_action;
+  helios_basic_offensive = other284.helios_basic_offensive;
+  helios_basic_move = other284.helios_basic_move;
+  helios_set_play = other284.helios_set_play;
+  helios_penalty = other284.helios_penalty;
+  helios_communication = other284.helios_communication;
+  __isset = other284.__isset;
   return *this;
 }
 void PlayerAction::printTo(std::ostream& out) const {
@@ -16787,14 +16743,14 @@ uint32_t PlayerActions::read(::apache::thrift::protocol::TProtocol* iprot) {
         if (ftype == ::apache::thrift::protocol::T_LIST) {
           {
             this->actions.clear();
-            uint32_t _size287;
-            ::apache::thrift::protocol::TType _etype290;
-            xfer += iprot->readListBegin(_etype290, _size287);
-            this->actions.resize(_size287);
-            uint32_t _i291;
-            for (_i291 = 0; _i291 < _size287; ++_i291)
+            uint32_t _size285;
+            ::apache::thrift::protocol::TType _etype288;
+            xfer += iprot->readListBegin(_etype288, _size285);
+            this->actions.resize(_size285);
+            uint32_t _i289;
+            for (_i289 = 0; _i289 < _size285; ++_i289)
             {
-              xfer += this->actions[_i291].read(iprot);
+              xfer += this->actions[_i289].read(iprot);
             }
             xfer += iprot->readListEnd();
           }
@@ -16823,10 +16779,10 @@ uint32_t PlayerActions::write(::apache::thrift::protocol::TProtocol* oprot) cons
   xfer += oprot->writeFieldBegin("actions", ::apache::thrift::protocol::T_LIST, 1);
   {
     xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->actions.size()));
-    std::vector<PlayerAction> ::const_iterator _iter292;
-    for (_iter292 = this->actions.begin(); _iter292 != this->actions.end(); ++_iter292)
+    std::vector<PlayerAction> ::const_iterator _iter290;
+    for (_iter290 = this->actions.begin(); _iter290 != this->actions.end(); ++_iter290)
     {
-      xfer += (*_iter292).write(oprot);
+      xfer += (*_iter290).write(oprot);
     }
     xfer += oprot->writeListEnd();
   }
@@ -16843,13 +16799,13 @@ void swap(PlayerActions &a, PlayerActions &b) {
   swap(a.__isset, b.__isset);
 }
 
-PlayerActions::PlayerActions(const PlayerActions& other293) {
-  actions = other293.actions;
-  __isset = other293.__isset;
+PlayerActions::PlayerActions(const PlayerActions& other291) {
+  actions = other291.actions;
+  __isset = other291.__isset;
 }
-PlayerActions& PlayerActions::operator=(const PlayerActions& other294) {
-  actions = other294.actions;
-  __isset = other294.__isset;
+PlayerActions& PlayerActions::operator=(const PlayerActions& other292) {
+  actions = other292.actions;
+  __isset = other292.__isset;
   return *this;
 }
 void PlayerActions::printTo(std::ostream& out) const {
@@ -16952,15 +16908,15 @@ void swap(ChangePlayerType &a, ChangePlayerType &b) {
   swap(a.__isset, b.__isset);
 }
 
-ChangePlayerType::ChangePlayerType(const ChangePlayerType& other295) noexcept {
-  uniform_number = other295.uniform_number;
-  type = other295.type;
-  __isset = other295.__isset;
+ChangePlayerType::ChangePlayerType(const ChangePlayerType& other293) noexcept {
+  uniform_number = other293.uniform_number;
+  type = other293.type;
+  __isset = other293.__isset;
 }
-ChangePlayerType& ChangePlayerType::operator=(const ChangePlayerType& other296) noexcept {
-  uniform_number = other296.uniform_number;
-  type = other296.type;
-  __isset = other296.__isset;
+ChangePlayerType& ChangePlayerType::operator=(const ChangePlayerType& other294) noexcept {
+  uniform_number = other294.uniform_number;
+  type = other294.type;
+  __isset = other294.__isset;
   return *this;
 }
 void ChangePlayerType::printTo(std::ostream& out) const {
@@ -17026,11 +16982,11 @@ void swap(DoHeliosSubstitute &a, DoHeliosSubstitute &b) {
   (void) b;
 }
 
-DoHeliosSubstitute::DoHeliosSubstitute(const DoHeliosSubstitute& other297) noexcept {
-  (void) other297;
+DoHeliosSubstitute::DoHeliosSubstitute(const DoHeliosSubstitute& other295) noexcept {
+  (void) other295;
 }
-DoHeliosSubstitute& DoHeliosSubstitute::operator=(const DoHeliosSubstitute& other298) noexcept {
-  (void) other298;
+DoHeliosSubstitute& DoHeliosSubstitute::operator=(const DoHeliosSubstitute& other296) noexcept {
+  (void) other296;
   return *this;
 }
 void DoHeliosSubstitute::printTo(std::ostream& out) const {
@@ -17094,11 +17050,11 @@ void swap(DoHeliosSayPlayerTypes &a, DoHeliosSayPlayerTypes &b) {
   (void) b;
 }
 
-DoHeliosSayPlayerTypes::DoHeliosSayPlayerTypes(const DoHeliosSayPlayerTypes& other299) noexcept {
-  (void) other299;
+DoHeliosSayPlayerTypes::DoHeliosSayPlayerTypes(const DoHeliosSayPlayerTypes& other297) noexcept {
+  (void) other297;
 }
-DoHeliosSayPlayerTypes& DoHeliosSayPlayerTypes::operator=(const DoHeliosSayPlayerTypes& other300) noexcept {
-  (void) other300;
+DoHeliosSayPlayerTypes& DoHeliosSayPlayerTypes::operator=(const DoHeliosSayPlayerTypes& other298) noexcept {
+  (void) other298;
   return *this;
 }
 void DoHeliosSayPlayerTypes::printTo(std::ostream& out) const {
@@ -17223,17 +17179,17 @@ void swap(CoachAction &a, CoachAction &b) {
   swap(a.__isset, b.__isset);
 }
 
-CoachAction::CoachAction(const CoachAction& other301) noexcept {
-  change_player_types = other301.change_player_types;
-  do_helios_substitute = other301.do_helios_substitute;
-  do_helios_say_player_types = other301.do_helios_say_player_types;
-  __isset = other301.__isset;
+CoachAction::CoachAction(const CoachAction& other299) noexcept {
+  change_player_types = other299.change_player_types;
+  do_helios_substitute = other299.do_helios_substitute;
+  do_helios_say_player_types = other299.do_helios_say_player_types;
+  __isset = other299.__isset;
 }
-CoachAction& CoachAction::operator=(const CoachAction& other302) noexcept {
-  change_player_types = other302.change_player_types;
-  do_helios_substitute = other302.do_helios_substitute;
-  do_helios_say_player_types = other302.do_helios_say_player_types;
-  __isset = other302.__isset;
+CoachAction& CoachAction::operator=(const CoachAction& other300) noexcept {
+  change_player_types = other300.change_player_types;
+  do_helios_substitute = other300.do_helios_substitute;
+  do_helios_say_player_types = other300.do_helios_say_player_types;
+  __isset = other300.__isset;
   return *this;
 }
 void CoachAction::printTo(std::ostream& out) const {
@@ -17285,14 +17241,14 @@ uint32_t CoachActions::read(::apache::thrift::protocol::TProtocol* iprot) {
         if (ftype == ::apache::thrift::protocol::T_LIST) {
           {
             this->actions.clear();
-            uint32_t _size303;
-            ::apache::thrift::protocol::TType _etype306;
-            xfer += iprot->readListBegin(_etype306, _size303);
-            this->actions.resize(_size303);
-            uint32_t _i307;
-            for (_i307 = 0; _i307 < _size303; ++_i307)
+            uint32_t _size301;
+            ::apache::thrift::protocol::TType _etype304;
+            xfer += iprot->readListBegin(_etype304, _size301);
+            this->actions.resize(_size301);
+            uint32_t _i305;
+            for (_i305 = 0; _i305 < _size301; ++_i305)
             {
-              xfer += this->actions[_i307].read(iprot);
+              xfer += this->actions[_i305].read(iprot);
             }
             xfer += iprot->readListEnd();
           }
@@ -17321,10 +17277,10 @@ uint32_t CoachActions::write(::apache::thrift::protocol::TProtocol* oprot) const
   xfer += oprot->writeFieldBegin("actions", ::apache::thrift::protocol::T_LIST, 1);
   {
     xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->actions.size()));
-    std::vector<CoachAction> ::const_iterator _iter308;
-    for (_iter308 = this->actions.begin(); _iter308 != this->actions.end(); ++_iter308)
+    std::vector<CoachAction> ::const_iterator _iter306;
+    for (_iter306 = this->actions.begin(); _iter306 != this->actions.end(); ++_iter306)
     {
-      xfer += (*_iter308).write(oprot);
+      xfer += (*_iter306).write(oprot);
     }
     xfer += oprot->writeListEnd();
   }
@@ -17341,13 +17297,13 @@ void swap(CoachActions &a, CoachActions &b) {
   swap(a.__isset, b.__isset);
 }
 
-CoachActions::CoachActions(const CoachActions& other309) {
-  actions = other309.actions;
-  __isset = other309.__isset;
+CoachActions::CoachActions(const CoachActions& other307) {
+  actions = other307.actions;
+  __isset = other307.__isset;
 }
-CoachActions& CoachActions::operator=(const CoachActions& other310) {
-  actions = other310.actions;
-  __isset = other310.__isset;
+CoachActions& CoachActions::operator=(const CoachActions& other308) {
+  actions = other308.actions;
+  __isset = other308.__isset;
   return *this;
 }
 void CoachActions::printTo(std::ostream& out) const {
@@ -17412,11 +17368,11 @@ void swap(DoKickOff &a, DoKickOff &b) {
   (void) b;
 }
 
-DoKickOff::DoKickOff(const DoKickOff& other311) noexcept {
-  (void) other311;
+DoKickOff::DoKickOff(const DoKickOff& other309) noexcept {
+  (void) other309;
 }
-DoKickOff& DoKickOff::operator=(const DoKickOff& other312) noexcept {
-  (void) other312;
+DoKickOff& DoKickOff::operator=(const DoKickOff& other310) noexcept {
+  (void) other310;
   return *this;
 }
 void DoKickOff::printTo(std::ostream& out) const {
@@ -17520,15 +17476,15 @@ void swap(DoMoveBall &a, DoMoveBall &b) {
   swap(a.__isset, b.__isset);
 }
 
-DoMoveBall::DoMoveBall(const DoMoveBall& other313) noexcept {
-  position = other313.position;
-  velocity = other313.velocity;
-  __isset = other313.__isset;
+DoMoveBall::DoMoveBall(const DoMoveBall& other311) noexcept {
+  position = other311.position;
+  velocity = other311.velocity;
+  __isset = other311.__isset;
 }
-DoMoveBall& DoMoveBall::operator=(const DoMoveBall& other314) noexcept {
-  position = other314.position;
-  velocity = other314.velocity;
-  __isset = other314.__isset;
+DoMoveBall& DoMoveBall::operator=(const DoMoveBall& other312) noexcept {
+  position = other312.position;
+  velocity = other312.velocity;
+  __isset = other312.__isset;
   return *this;
 }
 void DoMoveBall::printTo(std::ostream& out) const {
@@ -17666,19 +17622,19 @@ void swap(DoMovePlayer &a, DoMovePlayer &b) {
   swap(a.__isset, b.__isset);
 }
 
-DoMovePlayer::DoMovePlayer(const DoMovePlayer& other315) noexcept {
-  our_side = other315.our_side;
-  uniform_number = other315.uniform_number;
-  position = other315.position;
-  body_direction = other315.body_direction;
-  __isset = other315.__isset;
+DoMovePlayer::DoMovePlayer(const DoMovePlayer& other313) noexcept {
+  our_side = other313.our_side;
+  uniform_number = other313.uniform_number;
+  position = other313.position;
+  body_direction = other313.body_direction;
+  __isset = other313.__isset;
 }
-DoMovePlayer& DoMovePlayer::operator=(const DoMovePlayer& other316) noexcept {
-  our_side = other316.our_side;
-  uniform_number = other316.uniform_number;
-  position = other316.position;
-  body_direction = other316.body_direction;
-  __isset = other316.__isset;
+DoMovePlayer& DoMovePlayer::operator=(const DoMovePlayer& other314) noexcept {
+  our_side = other314.our_side;
+  uniform_number = other314.uniform_number;
+  position = other314.position;
+  body_direction = other314.body_direction;
+  __isset = other314.__isset;
   return *this;
 }
 void DoMovePlayer::printTo(std::ostream& out) const {
@@ -17746,11 +17702,11 @@ void swap(DoRecover &a, DoRecover &b) {
   (void) b;
 }
 
-DoRecover::DoRecover(const DoRecover& other317) noexcept {
-  (void) other317;
+DoRecover::DoRecover(const DoRecover& other315) noexcept {
+  (void) other315;
 }
-DoRecover& DoRecover::operator=(const DoRecover& other318) noexcept {
-  (void) other318;
+DoRecover& DoRecover::operator=(const DoRecover& other316) noexcept {
+  (void) other316;
   return *this;
 }
 void DoRecover::printTo(std::ostream& out) const {
@@ -17801,9 +17757,9 @@ uint32_t DoChangeMode::read(::apache::thrift::protocol::TProtocol* iprot) {
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast319;
-          xfer += iprot->readI32(ecast319);
-          this->game_mode_type = static_cast<GameModeType::type>(ecast319);
+          int32_t ecast317;
+          xfer += iprot->readI32(ecast317);
+          this->game_mode_type = static_cast<GameModeType::type>(ecast317);
           this->__isset.game_mode_type = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -17811,9 +17767,9 @@ uint32_t DoChangeMode::read(::apache::thrift::protocol::TProtocol* iprot) {
         break;
       case 2:
         if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast320;
-          xfer += iprot->readI32(ecast320);
-          this->side = static_cast<Side::type>(ecast320);
+          int32_t ecast318;
+          xfer += iprot->readI32(ecast318);
+          this->side = static_cast<Side::type>(ecast318);
           this->__isset.side = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -17856,15 +17812,15 @@ void swap(DoChangeMode &a, DoChangeMode &b) {
   swap(a.__isset, b.__isset);
 }
 
-DoChangeMode::DoChangeMode(const DoChangeMode& other321) noexcept {
-  game_mode_type = other321.game_mode_type;
-  side = other321.side;
-  __isset = other321.__isset;
+DoChangeMode::DoChangeMode(const DoChangeMode& other319) noexcept {
+  game_mode_type = other319.game_mode_type;
+  side = other319.side;
+  __isset = other319.__isset;
 }
-DoChangeMode& DoChangeMode::operator=(const DoChangeMode& other322) noexcept {
-  game_mode_type = other322.game_mode_type;
-  side = other322.side;
-  __isset = other322.__isset;
+DoChangeMode& DoChangeMode::operator=(const DoChangeMode& other320) noexcept {
+  game_mode_type = other320.game_mode_type;
+  side = other320.side;
+  __isset = other320.__isset;
   return *this;
 }
 void DoChangeMode::printTo(std::ostream& out) const {
@@ -17985,17 +17941,17 @@ void swap(DoChangePlayerType &a, DoChangePlayerType &b) {
   swap(a.__isset, b.__isset);
 }
 
-DoChangePlayerType::DoChangePlayerType(const DoChangePlayerType& other323) noexcept {
-  our_side = other323.our_side;
-  uniform_number = other323.uniform_number;
-  type = other323.type;
-  __isset = other323.__isset;
+DoChangePlayerType::DoChangePlayerType(const DoChangePlayerType& other321) noexcept {
+  our_side = other321.our_side;
+  uniform_number = other321.uniform_number;
+  type = other321.type;
+  __isset = other321.__isset;
 }
-DoChangePlayerType& DoChangePlayerType::operator=(const DoChangePlayerType& other324) noexcept {
-  our_side = other324.our_side;
-  uniform_number = other324.uniform_number;
-  type = other324.type;
-  __isset = other324.__isset;
+DoChangePlayerType& DoChangePlayerType::operator=(const DoChangePlayerType& other322) noexcept {
+  our_side = other322.our_side;
+  uniform_number = other322.uniform_number;
+  type = other322.type;
+  __isset = other322.__isset;
   return *this;
 }
 void DoChangePlayerType::printTo(std::ostream& out) const {
@@ -18180,23 +18136,23 @@ void swap(TrainerAction &a, TrainerAction &b) {
   swap(a.__isset, b.__isset);
 }
 
-TrainerAction::TrainerAction(const TrainerAction& other325) noexcept {
-  do_kick_off = other325.do_kick_off;
-  do_move_ball = other325.do_move_ball;
-  do_move_player = other325.do_move_player;
-  do_recover = other325.do_recover;
-  do_change_mode = other325.do_change_mode;
-  do_change_player_type = other325.do_change_player_type;
-  __isset = other325.__isset;
+TrainerAction::TrainerAction(const TrainerAction& other323) noexcept {
+  do_kick_off = other323.do_kick_off;
+  do_move_ball = other323.do_move_ball;
+  do_move_player = other323.do_move_player;
+  do_recover = other323.do_recover;
+  do_change_mode = other323.do_change_mode;
+  do_change_player_type = other323.do_change_player_type;
+  __isset = other323.__isset;
 }
-TrainerAction& TrainerAction::operator=(const TrainerAction& other326) noexcept {
-  do_kick_off = other326.do_kick_off;
-  do_move_ball = other326.do_move_ball;
-  do_move_player = other326.do_move_player;
-  do_recover = other326.do_recover;
-  do_change_mode = other326.do_change_mode;
-  do_change_player_type = other326.do_change_player_type;
-  __isset = other326.__isset;
+TrainerAction& TrainerAction::operator=(const TrainerAction& other324) noexcept {
+  do_kick_off = other324.do_kick_off;
+  do_move_ball = other324.do_move_ball;
+  do_move_player = other324.do_move_player;
+  do_recover = other324.do_recover;
+  do_change_mode = other324.do_change_mode;
+  do_change_player_type = other324.do_change_player_type;
+  __isset = other324.__isset;
   return *this;
 }
 void TrainerAction::printTo(std::ostream& out) const {
@@ -18251,14 +18207,14 @@ uint32_t TrainerActions::read(::apache::thrift::protocol::TProtocol* iprot) {
         if (ftype == ::apache::thrift::protocol::T_LIST) {
           {
             this->actions.clear();
-            uint32_t _size327;
-            ::apache::thrift::protocol::TType _etype330;
-            xfer += iprot->readListBegin(_etype330, _size327);
-            this->actions.resize(_size327);
-            uint32_t _i331;
-            for (_i331 = 0; _i331 < _size327; ++_i331)
+            uint32_t _size325;
+            ::apache::thrift::protocol::TType _etype328;
+            xfer += iprot->readListBegin(_etype328, _size325);
+            this->actions.resize(_size325);
+            uint32_t _i329;
+            for (_i329 = 0; _i329 < _size325; ++_i329)
             {
-              xfer += this->actions[_i331].read(iprot);
+              xfer += this->actions[_i329].read(iprot);
             }
             xfer += iprot->readListEnd();
           }
@@ -18287,10 +18243,10 @@ uint32_t TrainerActions::write(::apache::thrift::protocol::TProtocol* oprot) con
   xfer += oprot->writeFieldBegin("actions", ::apache::thrift::protocol::T_LIST, 1);
   {
     xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->actions.size()));
-    std::vector<TrainerAction> ::const_iterator _iter332;
-    for (_iter332 = this->actions.begin(); _iter332 != this->actions.end(); ++_iter332)
+    std::vector<TrainerAction> ::const_iterator _iter330;
+    for (_iter330 = this->actions.begin(); _iter330 != this->actions.end(); ++_iter330)
     {
-      xfer += (*_iter332).write(oprot);
+      xfer += (*_iter330).write(oprot);
     }
     xfer += oprot->writeListEnd();
   }
@@ -18307,13 +18263,13 @@ void swap(TrainerActions &a, TrainerActions &b) {
   swap(a.__isset, b.__isset);
 }
 
-TrainerActions::TrainerActions(const TrainerActions& other333) {
-  actions = other333.actions;
-  __isset = other333.__isset;
+TrainerActions::TrainerActions(const TrainerActions& other331) {
+  actions = other331.actions;
+  __isset = other331.__isset;
 }
-TrainerActions& TrainerActions::operator=(const TrainerActions& other334) {
-  actions = other334.actions;
-  __isset = other334.__isset;
+TrainerActions& TrainerActions::operator=(const TrainerActions& other332) {
+  actions = other332.actions;
+  __isset = other332.__isset;
   return *this;
 }
 void TrainerActions::printTo(std::ostream& out) const {
@@ -18328,8 +18284,8 @@ ServerParam::~ServerParam() noexcept {
 }
 
 
-void ServerParam::__set_agent_type(const AgentType::type val) {
-  this->agent_type = val;
+void ServerParam::__set_register_response(const RegisterResponse& val) {
+  this->register_response = val;
 }
 
 void ServerParam::__set_inertia_moment(const double val) {
@@ -19215,10 +19171,6 @@ void ServerParam::__set_penalty_area_length(const double val) {
 void ServerParam::__set_goal_width(const double val) {
   this->goal_width = val;
 }
-
-void ServerParam::__set_register_response(const RegisterResponse& val) {
-  this->register_response = val;
-}
 std::ostream& operator<<(std::ostream& out, const ServerParam& obj)
 {
   obj.printTo(out);
@@ -19248,11 +19200,9 @@ uint32_t ServerParam::read(::apache::thrift::protocol::TProtocol* iprot) {
     switch (fid)
     {
       case 1:
-        if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast335;
-          xfer += iprot->readI32(ecast335);
-          this->agent_type = static_cast<AgentType::type>(ecast335);
-          this->__isset.agent_type = true;
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
         } else {
           xfer += iprot->skip(ftype);
         }
@@ -21025,14 +20975,6 @@ uint32_t ServerParam::read(::apache::thrift::protocol::TProtocol* iprot) {
           xfer += iprot->skip(ftype);
         }
         break;
-      case 223:
-        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
-          xfer += this->register_response.read(iprot);
-          this->__isset.register_response = true;
-        } else {
-          xfer += iprot->skip(ftype);
-        }
-        break;
       default:
         xfer += iprot->skip(ftype);
         break;
@@ -21050,8 +20992,8 @@ uint32_t ServerParam::write(::apache::thrift::protocol::TProtocol* oprot) const 
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("ServerParam");
 
-  xfer += oprot->writeFieldBegin("agent_type", ::apache::thrift::protocol::T_I32, 1);
-  xfer += oprot->writeI32(static_cast<int32_t>(this->agent_type));
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldBegin("inertia_moment", ::apache::thrift::protocol::T_DOUBLE, 2);
@@ -21938,10 +21880,6 @@ uint32_t ServerParam::write(::apache::thrift::protocol::TProtocol* oprot) const 
   xfer += oprot->writeDouble(this->goal_width);
   xfer += oprot->writeFieldEnd();
 
-  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 223);
-  xfer += this->register_response.write(oprot);
-  xfer += oprot->writeFieldEnd();
-
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -21949,7 +21887,7 @@ uint32_t ServerParam::write(::apache::thrift::protocol::TProtocol* oprot) const 
 
 void swap(ServerParam &a, ServerParam &b) {
   using ::std::swap;
-  swap(a.agent_type, b.agent_type);
+  swap(a.register_response, b.register_response);
   swap(a.inertia_moment, b.inertia_moment);
   swap(a.player_size, b.player_size);
   swap(a.player_decay, b.player_decay);
@@ -22171,467 +22109,464 @@ void swap(ServerParam &a, ServerParam &b) {
   swap(a.penalty_area_half_width, b.penalty_area_half_width);
   swap(a.penalty_area_length, b.penalty_area_length);
   swap(a.goal_width, b.goal_width);
-  swap(a.register_response, b.register_response);
   swap(a.__isset, b.__isset);
 }
 
-ServerParam::ServerParam(const ServerParam& other336) {
-  agent_type = other336.agent_type;
-  inertia_moment = other336.inertia_moment;
-  player_size = other336.player_size;
-  player_decay = other336.player_decay;
-  player_rand = other336.player_rand;
-  player_weight = other336.player_weight;
-  player_speed_max = other336.player_speed_max;
-  player_accel_max = other336.player_accel_max;
-  stamina_max = other336.stamina_max;
-  stamina_inc_max = other336.stamina_inc_max;
-  recover_init = other336.recover_init;
-  recover_dec_thr = other336.recover_dec_thr;
-  recover_min = other336.recover_min;
-  recover_dec = other336.recover_dec;
-  effort_init = other336.effort_init;
-  effort_dec_thr = other336.effort_dec_thr;
-  effort_min = other336.effort_min;
-  effort_dec = other336.effort_dec;
-  effort_inc_thr = other336.effort_inc_thr;
-  effort_inc = other336.effort_inc;
-  kick_rand = other336.kick_rand;
-  team_actuator_noise = other336.team_actuator_noise;
-  player_rand_factor_l = other336.player_rand_factor_l;
-  player_rand_factor_r = other336.player_rand_factor_r;
-  kick_rand_factor_l = other336.kick_rand_factor_l;
-  kick_rand_factor_r = other336.kick_rand_factor_r;
-  ball_size = other336.ball_size;
-  ball_decay = other336.ball_decay;
-  ball_rand = other336.ball_rand;
-  ball_weight = other336.ball_weight;
-  ball_speed_max = other336.ball_speed_max;
-  ball_accel_max = other336.ball_accel_max;
-  dash_power_rate = other336.dash_power_rate;
-  kick_power_rate = other336.kick_power_rate;
-  kickable_margin = other336.kickable_margin;
-  control_radius = other336.control_radius;
-  control_radius_width = other336.control_radius_width;
-  max_power = other336.max_power;
-  min_power = other336.min_power;
-  max_moment = other336.max_moment;
-  min_moment = other336.min_moment;
-  max_neck_moment = other336.max_neck_moment;
-  min_neck_moment = other336.min_neck_moment;
-  max_neck_angle = other336.max_neck_angle;
-  min_neck_angle = other336.min_neck_angle;
-  visible_angle = other336.visible_angle;
-  visible_distance = other336.visible_distance;
-  wind_dir = other336.wind_dir;
-  wind_force = other336.wind_force;
-  wind_angle = other336.wind_angle;
-  wind_rand = other336.wind_rand;
-  kickable_area = other336.kickable_area;
-  catch_area_l = other336.catch_area_l;
-  catch_area_w = other336.catch_area_w;
-  catch_probability = other336.catch_probability;
-  goalie_max_moves = other336.goalie_max_moves;
-  corner_kick_margin = other336.corner_kick_margin;
-  offside_active_area_size = other336.offside_active_area_size;
-  wind_none = other336.wind_none;
-  use_wind_random = other336.use_wind_random;
-  coach_say_count_max = other336.coach_say_count_max;
-  coach_say_msg_size = other336.coach_say_msg_size;
-  clang_win_size = other336.clang_win_size;
-  clang_define_win = other336.clang_define_win;
-  clang_meta_win = other336.clang_meta_win;
-  clang_advice_win = other336.clang_advice_win;
-  clang_info_win = other336.clang_info_win;
-  clang_mess_delay = other336.clang_mess_delay;
-  clang_mess_per_cycle = other336.clang_mess_per_cycle;
-  half_time = other336.half_time;
-  simulator_step = other336.simulator_step;
-  send_step = other336.send_step;
-  recv_step = other336.recv_step;
-  sense_body_step = other336.sense_body_step;
-  lcm_step = other336.lcm_step;
-  player_say_msg_size = other336.player_say_msg_size;
-  player_hear_max = other336.player_hear_max;
-  player_hear_inc = other336.player_hear_inc;
-  player_hear_decay = other336.player_hear_decay;
-  catch_ban_cycle = other336.catch_ban_cycle;
-  slow_down_factor = other336.slow_down_factor;
-  use_offside = other336.use_offside;
-  kickoff_offside = other336.kickoff_offside;
-  offside_kick_margin = other336.offside_kick_margin;
-  audio_cut_dist = other336.audio_cut_dist;
-  dist_quantize_step = other336.dist_quantize_step;
-  landmark_dist_quantize_step = other336.landmark_dist_quantize_step;
-  dir_quantize_step = other336.dir_quantize_step;
-  dist_quantize_step_l = other336.dist_quantize_step_l;
-  dist_quantize_step_r = other336.dist_quantize_step_r;
-  landmark_dist_quantize_step_l = other336.landmark_dist_quantize_step_l;
-  landmark_dist_quantize_step_r = other336.landmark_dist_quantize_step_r;
-  dir_quantize_step_l = other336.dir_quantize_step_l;
-  dir_quantize_step_r = other336.dir_quantize_step_r;
-  coach_mode = other336.coach_mode;
-  coach_with_referee_mode = other336.coach_with_referee_mode;
-  use_old_coach_hear = other336.use_old_coach_hear;
-  slowness_on_top_for_left_team = other336.slowness_on_top_for_left_team;
-  slowness_on_top_for_right_team = other336.slowness_on_top_for_right_team;
-  start_goal_l = other336.start_goal_l;
-  start_goal_r = other336.start_goal_r;
-  fullstate_l = other336.fullstate_l;
-  fullstate_r = other336.fullstate_r;
-  drop_ball_time = other336.drop_ball_time;
-  synch_mode = other336.synch_mode;
-  synch_offset = other336.synch_offset;
-  synch_micro_sleep = other336.synch_micro_sleep;
-  point_to_ban = other336.point_to_ban;
-  point_to_duration = other336.point_to_duration;
-  player_port = other336.player_port;
-  trainer_port = other336.trainer_port;
-  online_coach_port = other336.online_coach_port;
-  verbose_mode = other336.verbose_mode;
-  coach_send_vi_step = other336.coach_send_vi_step;
-  replay_file = other336.replay_file;
-  landmark_file = other336.landmark_file;
-  send_comms = other336.send_comms;
-  text_logging = other336.text_logging;
-  game_logging = other336.game_logging;
-  game_log_version = other336.game_log_version;
-  text_log_dir = other336.text_log_dir;
-  game_log_dir = other336.game_log_dir;
-  text_log_fixed_name = other336.text_log_fixed_name;
-  game_log_fixed_name = other336.game_log_fixed_name;
-  use_text_log_fixed = other336.use_text_log_fixed;
-  use_game_log_fixed = other336.use_game_log_fixed;
-  use_text_log_dated = other336.use_text_log_dated;
-  use_game_log_dated = other336.use_game_log_dated;
-  log_date_format = other336.log_date_format;
-  log_times = other336.log_times;
-  record_message = other336.record_message;
-  text_log_compression = other336.text_log_compression;
-  game_log_compression = other336.game_log_compression;
-  use_profile = other336.use_profile;
-  tackle_dist = other336.tackle_dist;
-  tackle_back_dist = other336.tackle_back_dist;
-  tackle_width = other336.tackle_width;
-  tackle_exponent = other336.tackle_exponent;
-  tackle_cycles = other336.tackle_cycles;
-  tackle_power_rate = other336.tackle_power_rate;
-  freeform_wait_period = other336.freeform_wait_period;
-  freeform_send_period = other336.freeform_send_period;
-  free_kick_faults = other336.free_kick_faults;
-  back_passes = other336.back_passes;
-  proper_goal_kicks = other336.proper_goal_kicks;
-  stopped_ball_vel = other336.stopped_ball_vel;
-  max_goal_kicks = other336.max_goal_kicks;
-  clang_del_win = other336.clang_del_win;
-  clang_rule_win = other336.clang_rule_win;
-  auto_mode = other336.auto_mode;
-  kick_off_wait = other336.kick_off_wait;
-  connect_wait = other336.connect_wait;
-  game_over_wait = other336.game_over_wait;
-  team_l_start = other336.team_l_start;
-  team_r_start = other336.team_r_start;
-  keepaway_mode = other336.keepaway_mode;
-  keepaway_length = other336.keepaway_length;
-  keepaway_width = other336.keepaway_width;
-  keepaway_logging = other336.keepaway_logging;
-  keepaway_log_dir = other336.keepaway_log_dir;
-  keepaway_log_fixed_name = other336.keepaway_log_fixed_name;
-  keepaway_log_fixed = other336.keepaway_log_fixed;
-  keepaway_log_dated = other336.keepaway_log_dated;
-  keepaway_start = other336.keepaway_start;
-  nr_normal_halfs = other336.nr_normal_halfs;
-  nr_extra_halfs = other336.nr_extra_halfs;
-  penalty_shoot_outs = other336.penalty_shoot_outs;
-  pen_before_setup_wait = other336.pen_before_setup_wait;
-  pen_setup_wait = other336.pen_setup_wait;
-  pen_ready_wait = other336.pen_ready_wait;
-  pen_taken_wait = other336.pen_taken_wait;
-  pen_nr_kicks = other336.pen_nr_kicks;
-  pen_max_extra_kicks = other336.pen_max_extra_kicks;
-  pen_dist_x = other336.pen_dist_x;
-  pen_random_winner = other336.pen_random_winner;
-  pen_allow_mult_kicks = other336.pen_allow_mult_kicks;
-  pen_max_goalie_dist_x = other336.pen_max_goalie_dist_x;
-  pen_coach_moves_players = other336.pen_coach_moves_players;
-  module_dir = other336.module_dir;
-  ball_stuck_area = other336.ball_stuck_area;
-  coach_msg_file = other336.coach_msg_file;
-  max_tackle_power = other336.max_tackle_power;
-  max_back_tackle_power = other336.max_back_tackle_power;
-  player_speed_max_min = other336.player_speed_max_min;
-  extra_stamina = other336.extra_stamina;
-  synch_see_offset = other336.synch_see_offset;
-  extra_half_time = other336.extra_half_time;
-  stamina_capacity = other336.stamina_capacity;
-  max_dash_angle = other336.max_dash_angle;
-  min_dash_angle = other336.min_dash_angle;
-  dash_angle_step = other336.dash_angle_step;
-  side_dash_rate = other336.side_dash_rate;
-  back_dash_rate = other336.back_dash_rate;
-  max_dash_power = other336.max_dash_power;
-  min_dash_power = other336.min_dash_power;
-  tackle_rand_factor = other336.tackle_rand_factor;
-  foul_detect_probability = other336.foul_detect_probability;
-  foul_exponent = other336.foul_exponent;
-  foul_cycles = other336.foul_cycles;
-  golden_goal = other336.golden_goal;
-  red_card_probability = other336.red_card_probability;
-  illegal_defense_duration = other336.illegal_defense_duration;
-  illegal_defense_number = other336.illegal_defense_number;
-  illegal_defense_dist_x = other336.illegal_defense_dist_x;
-  illegal_defense_width = other336.illegal_defense_width;
-  fixed_teamname_l = other336.fixed_teamname_l;
-  fixed_teamname_r = other336.fixed_teamname_r;
-  max_catch_angle = other336.max_catch_angle;
-  min_catch_angle = other336.min_catch_angle;
-  random_seed = other336.random_seed;
-  long_kick_power_factor = other336.long_kick_power_factor;
-  long_kick_delay = other336.long_kick_delay;
-  max_monitors = other336.max_monitors;
-  catchable_area = other336.catchable_area;
-  real_speed_max = other336.real_speed_max;
-  pitch_half_length = other336.pitch_half_length;
-  pitch_half_width = other336.pitch_half_width;
-  our_penalty_area_line_x = other336.our_penalty_area_line_x;
-  their_penalty_area_line_x = other336.their_penalty_area_line_x;
-  penalty_area_half_width = other336.penalty_area_half_width;
-  penalty_area_length = other336.penalty_area_length;
-  goal_width = other336.goal_width;
-  register_response = other336.register_response;
-  __isset = other336.__isset;
+ServerParam::ServerParam(const ServerParam& other333) {
+  register_response = other333.register_response;
+  inertia_moment = other333.inertia_moment;
+  player_size = other333.player_size;
+  player_decay = other333.player_decay;
+  player_rand = other333.player_rand;
+  player_weight = other333.player_weight;
+  player_speed_max = other333.player_speed_max;
+  player_accel_max = other333.player_accel_max;
+  stamina_max = other333.stamina_max;
+  stamina_inc_max = other333.stamina_inc_max;
+  recover_init = other333.recover_init;
+  recover_dec_thr = other333.recover_dec_thr;
+  recover_min = other333.recover_min;
+  recover_dec = other333.recover_dec;
+  effort_init = other333.effort_init;
+  effort_dec_thr = other333.effort_dec_thr;
+  effort_min = other333.effort_min;
+  effort_dec = other333.effort_dec;
+  effort_inc_thr = other333.effort_inc_thr;
+  effort_inc = other333.effort_inc;
+  kick_rand = other333.kick_rand;
+  team_actuator_noise = other333.team_actuator_noise;
+  player_rand_factor_l = other333.player_rand_factor_l;
+  player_rand_factor_r = other333.player_rand_factor_r;
+  kick_rand_factor_l = other333.kick_rand_factor_l;
+  kick_rand_factor_r = other333.kick_rand_factor_r;
+  ball_size = other333.ball_size;
+  ball_decay = other333.ball_decay;
+  ball_rand = other333.ball_rand;
+  ball_weight = other333.ball_weight;
+  ball_speed_max = other333.ball_speed_max;
+  ball_accel_max = other333.ball_accel_max;
+  dash_power_rate = other333.dash_power_rate;
+  kick_power_rate = other333.kick_power_rate;
+  kickable_margin = other333.kickable_margin;
+  control_radius = other333.control_radius;
+  control_radius_width = other333.control_radius_width;
+  max_power = other333.max_power;
+  min_power = other333.min_power;
+  max_moment = other333.max_moment;
+  min_moment = other333.min_moment;
+  max_neck_moment = other333.max_neck_moment;
+  min_neck_moment = other333.min_neck_moment;
+  max_neck_angle = other333.max_neck_angle;
+  min_neck_angle = other333.min_neck_angle;
+  visible_angle = other333.visible_angle;
+  visible_distance = other333.visible_distance;
+  wind_dir = other333.wind_dir;
+  wind_force = other333.wind_force;
+  wind_angle = other333.wind_angle;
+  wind_rand = other333.wind_rand;
+  kickable_area = other333.kickable_area;
+  catch_area_l = other333.catch_area_l;
+  catch_area_w = other333.catch_area_w;
+  catch_probability = other333.catch_probability;
+  goalie_max_moves = other333.goalie_max_moves;
+  corner_kick_margin = other333.corner_kick_margin;
+  offside_active_area_size = other333.offside_active_area_size;
+  wind_none = other333.wind_none;
+  use_wind_random = other333.use_wind_random;
+  coach_say_count_max = other333.coach_say_count_max;
+  coach_say_msg_size = other333.coach_say_msg_size;
+  clang_win_size = other333.clang_win_size;
+  clang_define_win = other333.clang_define_win;
+  clang_meta_win = other333.clang_meta_win;
+  clang_advice_win = other333.clang_advice_win;
+  clang_info_win = other333.clang_info_win;
+  clang_mess_delay = other333.clang_mess_delay;
+  clang_mess_per_cycle = other333.clang_mess_per_cycle;
+  half_time = other333.half_time;
+  simulator_step = other333.simulator_step;
+  send_step = other333.send_step;
+  recv_step = other333.recv_step;
+  sense_body_step = other333.sense_body_step;
+  lcm_step = other333.lcm_step;
+  player_say_msg_size = other333.player_say_msg_size;
+  player_hear_max = other333.player_hear_max;
+  player_hear_inc = other333.player_hear_inc;
+  player_hear_decay = other333.player_hear_decay;
+  catch_ban_cycle = other333.catch_ban_cycle;
+  slow_down_factor = other333.slow_down_factor;
+  use_offside = other333.use_offside;
+  kickoff_offside = other333.kickoff_offside;
+  offside_kick_margin = other333.offside_kick_margin;
+  audio_cut_dist = other333.audio_cut_dist;
+  dist_quantize_step = other333.dist_quantize_step;
+  landmark_dist_quantize_step = other333.landmark_dist_quantize_step;
+  dir_quantize_step = other333.dir_quantize_step;
+  dist_quantize_step_l = other333.dist_quantize_step_l;
+  dist_quantize_step_r = other333.dist_quantize_step_r;
+  landmark_dist_quantize_step_l = other333.landmark_dist_quantize_step_l;
+  landmark_dist_quantize_step_r = other333.landmark_dist_quantize_step_r;
+  dir_quantize_step_l = other333.dir_quantize_step_l;
+  dir_quantize_step_r = other333.dir_quantize_step_r;
+  coach_mode = other333.coach_mode;
+  coach_with_referee_mode = other333.coach_with_referee_mode;
+  use_old_coach_hear = other333.use_old_coach_hear;
+  slowness_on_top_for_left_team = other333.slowness_on_top_for_left_team;
+  slowness_on_top_for_right_team = other333.slowness_on_top_for_right_team;
+  start_goal_l = other333.start_goal_l;
+  start_goal_r = other333.start_goal_r;
+  fullstate_l = other333.fullstate_l;
+  fullstate_r = other333.fullstate_r;
+  drop_ball_time = other333.drop_ball_time;
+  synch_mode = other333.synch_mode;
+  synch_offset = other333.synch_offset;
+  synch_micro_sleep = other333.synch_micro_sleep;
+  point_to_ban = other333.point_to_ban;
+  point_to_duration = other333.point_to_duration;
+  player_port = other333.player_port;
+  trainer_port = other333.trainer_port;
+  online_coach_port = other333.online_coach_port;
+  verbose_mode = other333.verbose_mode;
+  coach_send_vi_step = other333.coach_send_vi_step;
+  replay_file = other333.replay_file;
+  landmark_file = other333.landmark_file;
+  send_comms = other333.send_comms;
+  text_logging = other333.text_logging;
+  game_logging = other333.game_logging;
+  game_log_version = other333.game_log_version;
+  text_log_dir = other333.text_log_dir;
+  game_log_dir = other333.game_log_dir;
+  text_log_fixed_name = other333.text_log_fixed_name;
+  game_log_fixed_name = other333.game_log_fixed_name;
+  use_text_log_fixed = other333.use_text_log_fixed;
+  use_game_log_fixed = other333.use_game_log_fixed;
+  use_text_log_dated = other333.use_text_log_dated;
+  use_game_log_dated = other333.use_game_log_dated;
+  log_date_format = other333.log_date_format;
+  log_times = other333.log_times;
+  record_message = other333.record_message;
+  text_log_compression = other333.text_log_compression;
+  game_log_compression = other333.game_log_compression;
+  use_profile = other333.use_profile;
+  tackle_dist = other333.tackle_dist;
+  tackle_back_dist = other333.tackle_back_dist;
+  tackle_width = other333.tackle_width;
+  tackle_exponent = other333.tackle_exponent;
+  tackle_cycles = other333.tackle_cycles;
+  tackle_power_rate = other333.tackle_power_rate;
+  freeform_wait_period = other333.freeform_wait_period;
+  freeform_send_period = other333.freeform_send_period;
+  free_kick_faults = other333.free_kick_faults;
+  back_passes = other333.back_passes;
+  proper_goal_kicks = other333.proper_goal_kicks;
+  stopped_ball_vel = other333.stopped_ball_vel;
+  max_goal_kicks = other333.max_goal_kicks;
+  clang_del_win = other333.clang_del_win;
+  clang_rule_win = other333.clang_rule_win;
+  auto_mode = other333.auto_mode;
+  kick_off_wait = other333.kick_off_wait;
+  connect_wait = other333.connect_wait;
+  game_over_wait = other333.game_over_wait;
+  team_l_start = other333.team_l_start;
+  team_r_start = other333.team_r_start;
+  keepaway_mode = other333.keepaway_mode;
+  keepaway_length = other333.keepaway_length;
+  keepaway_width = other333.keepaway_width;
+  keepaway_logging = other333.keepaway_logging;
+  keepaway_log_dir = other333.keepaway_log_dir;
+  keepaway_log_fixed_name = other333.keepaway_log_fixed_name;
+  keepaway_log_fixed = other333.keepaway_log_fixed;
+  keepaway_log_dated = other333.keepaway_log_dated;
+  keepaway_start = other333.keepaway_start;
+  nr_normal_halfs = other333.nr_normal_halfs;
+  nr_extra_halfs = other333.nr_extra_halfs;
+  penalty_shoot_outs = other333.penalty_shoot_outs;
+  pen_before_setup_wait = other333.pen_before_setup_wait;
+  pen_setup_wait = other333.pen_setup_wait;
+  pen_ready_wait = other333.pen_ready_wait;
+  pen_taken_wait = other333.pen_taken_wait;
+  pen_nr_kicks = other333.pen_nr_kicks;
+  pen_max_extra_kicks = other333.pen_max_extra_kicks;
+  pen_dist_x = other333.pen_dist_x;
+  pen_random_winner = other333.pen_random_winner;
+  pen_allow_mult_kicks = other333.pen_allow_mult_kicks;
+  pen_max_goalie_dist_x = other333.pen_max_goalie_dist_x;
+  pen_coach_moves_players = other333.pen_coach_moves_players;
+  module_dir = other333.module_dir;
+  ball_stuck_area = other333.ball_stuck_area;
+  coach_msg_file = other333.coach_msg_file;
+  max_tackle_power = other333.max_tackle_power;
+  max_back_tackle_power = other333.max_back_tackle_power;
+  player_speed_max_min = other333.player_speed_max_min;
+  extra_stamina = other333.extra_stamina;
+  synch_see_offset = other333.synch_see_offset;
+  extra_half_time = other333.extra_half_time;
+  stamina_capacity = other333.stamina_capacity;
+  max_dash_angle = other333.max_dash_angle;
+  min_dash_angle = other333.min_dash_angle;
+  dash_angle_step = other333.dash_angle_step;
+  side_dash_rate = other333.side_dash_rate;
+  back_dash_rate = other333.back_dash_rate;
+  max_dash_power = other333.max_dash_power;
+  min_dash_power = other333.min_dash_power;
+  tackle_rand_factor = other333.tackle_rand_factor;
+  foul_detect_probability = other333.foul_detect_probability;
+  foul_exponent = other333.foul_exponent;
+  foul_cycles = other333.foul_cycles;
+  golden_goal = other333.golden_goal;
+  red_card_probability = other333.red_card_probability;
+  illegal_defense_duration = other333.illegal_defense_duration;
+  illegal_defense_number = other333.illegal_defense_number;
+  illegal_defense_dist_x = other333.illegal_defense_dist_x;
+  illegal_defense_width = other333.illegal_defense_width;
+  fixed_teamname_l = other333.fixed_teamname_l;
+  fixed_teamname_r = other333.fixed_teamname_r;
+  max_catch_angle = other333.max_catch_angle;
+  min_catch_angle = other333.min_catch_angle;
+  random_seed = other333.random_seed;
+  long_kick_power_factor = other333.long_kick_power_factor;
+  long_kick_delay = other333.long_kick_delay;
+  max_monitors = other333.max_monitors;
+  catchable_area = other333.catchable_area;
+  real_speed_max = other333.real_speed_max;
+  pitch_half_length = other333.pitch_half_length;
+  pitch_half_width = other333.pitch_half_width;
+  our_penalty_area_line_x = other333.our_penalty_area_line_x;
+  their_penalty_area_line_x = other333.their_penalty_area_line_x;
+  penalty_area_half_width = other333.penalty_area_half_width;
+  penalty_area_length = other333.penalty_area_length;
+  goal_width = other333.goal_width;
+  __isset = other333.__isset;
 }
-ServerParam& ServerParam::operator=(const ServerParam& other337) {
-  agent_type = other337.agent_type;
-  inertia_moment = other337.inertia_moment;
-  player_size = other337.player_size;
-  player_decay = other337.player_decay;
-  player_rand = other337.player_rand;
-  player_weight = other337.player_weight;
-  player_speed_max = other337.player_speed_max;
-  player_accel_max = other337.player_accel_max;
-  stamina_max = other337.stamina_max;
-  stamina_inc_max = other337.stamina_inc_max;
-  recover_init = other337.recover_init;
-  recover_dec_thr = other337.recover_dec_thr;
-  recover_min = other337.recover_min;
-  recover_dec = other337.recover_dec;
-  effort_init = other337.effort_init;
-  effort_dec_thr = other337.effort_dec_thr;
-  effort_min = other337.effort_min;
-  effort_dec = other337.effort_dec;
-  effort_inc_thr = other337.effort_inc_thr;
-  effort_inc = other337.effort_inc;
-  kick_rand = other337.kick_rand;
-  team_actuator_noise = other337.team_actuator_noise;
-  player_rand_factor_l = other337.player_rand_factor_l;
-  player_rand_factor_r = other337.player_rand_factor_r;
-  kick_rand_factor_l = other337.kick_rand_factor_l;
-  kick_rand_factor_r = other337.kick_rand_factor_r;
-  ball_size = other337.ball_size;
-  ball_decay = other337.ball_decay;
-  ball_rand = other337.ball_rand;
-  ball_weight = other337.ball_weight;
-  ball_speed_max = other337.ball_speed_max;
-  ball_accel_max = other337.ball_accel_max;
-  dash_power_rate = other337.dash_power_rate;
-  kick_power_rate = other337.kick_power_rate;
-  kickable_margin = other337.kickable_margin;
-  control_radius = other337.control_radius;
-  control_radius_width = other337.control_radius_width;
-  max_power = other337.max_power;
-  min_power = other337.min_power;
-  max_moment = other337.max_moment;
-  min_moment = other337.min_moment;
-  max_neck_moment = other337.max_neck_moment;
-  min_neck_moment = other337.min_neck_moment;
-  max_neck_angle = other337.max_neck_angle;
-  min_neck_angle = other337.min_neck_angle;
-  visible_angle = other337.visible_angle;
-  visible_distance = other337.visible_distance;
-  wind_dir = other337.wind_dir;
-  wind_force = other337.wind_force;
-  wind_angle = other337.wind_angle;
-  wind_rand = other337.wind_rand;
-  kickable_area = other337.kickable_area;
-  catch_area_l = other337.catch_area_l;
-  catch_area_w = other337.catch_area_w;
-  catch_probability = other337.catch_probability;
-  goalie_max_moves = other337.goalie_max_moves;
-  corner_kick_margin = other337.corner_kick_margin;
-  offside_active_area_size = other337.offside_active_area_size;
-  wind_none = other337.wind_none;
-  use_wind_random = other337.use_wind_random;
-  coach_say_count_max = other337.coach_say_count_max;
-  coach_say_msg_size = other337.coach_say_msg_size;
-  clang_win_size = other337.clang_win_size;
-  clang_define_win = other337.clang_define_win;
-  clang_meta_win = other337.clang_meta_win;
-  clang_advice_win = other337.clang_advice_win;
-  clang_info_win = other337.clang_info_win;
-  clang_mess_delay = other337.clang_mess_delay;
-  clang_mess_per_cycle = other337.clang_mess_per_cycle;
-  half_time = other337.half_time;
-  simulator_step = other337.simulator_step;
-  send_step = other337.send_step;
-  recv_step = other337.recv_step;
-  sense_body_step = other337.sense_body_step;
-  lcm_step = other337.lcm_step;
-  player_say_msg_size = other337.player_say_msg_size;
-  player_hear_max = other337.player_hear_max;
-  player_hear_inc = other337.player_hear_inc;
-  player_hear_decay = other337.player_hear_decay;
-  catch_ban_cycle = other337.catch_ban_cycle;
-  slow_down_factor = other337.slow_down_factor;
-  use_offside = other337.use_offside;
-  kickoff_offside = other337.kickoff_offside;
-  offside_kick_margin = other337.offside_kick_margin;
-  audio_cut_dist = other337.audio_cut_dist;
-  dist_quantize_step = other337.dist_quantize_step;
-  landmark_dist_quantize_step = other337.landmark_dist_quantize_step;
-  dir_quantize_step = other337.dir_quantize_step;
-  dist_quantize_step_l = other337.dist_quantize_step_l;
-  dist_quantize_step_r = other337.dist_quantize_step_r;
-  landmark_dist_quantize_step_l = other337.landmark_dist_quantize_step_l;
-  landmark_dist_quantize_step_r = other337.landmark_dist_quantize_step_r;
-  dir_quantize_step_l = other337.dir_quantize_step_l;
-  dir_quantize_step_r = other337.dir_quantize_step_r;
-  coach_mode = other337.coach_mode;
-  coach_with_referee_mode = other337.coach_with_referee_mode;
-  use_old_coach_hear = other337.use_old_coach_hear;
-  slowness_on_top_for_left_team = other337.slowness_on_top_for_left_team;
-  slowness_on_top_for_right_team = other337.slowness_on_top_for_right_team;
-  start_goal_l = other337.start_goal_l;
-  start_goal_r = other337.start_goal_r;
-  fullstate_l = other337.fullstate_l;
-  fullstate_r = other337.fullstate_r;
-  drop_ball_time = other337.drop_ball_time;
-  synch_mode = other337.synch_mode;
-  synch_offset = other337.synch_offset;
-  synch_micro_sleep = other337.synch_micro_sleep;
-  point_to_ban = other337.point_to_ban;
-  point_to_duration = other337.point_to_duration;
-  player_port = other337.player_port;
-  trainer_port = other337.trainer_port;
-  online_coach_port = other337.online_coach_port;
-  verbose_mode = other337.verbose_mode;
-  coach_send_vi_step = other337.coach_send_vi_step;
-  replay_file = other337.replay_file;
-  landmark_file = other337.landmark_file;
-  send_comms = other337.send_comms;
-  text_logging = other337.text_logging;
-  game_logging = other337.game_logging;
-  game_log_version = other337.game_log_version;
-  text_log_dir = other337.text_log_dir;
-  game_log_dir = other337.game_log_dir;
-  text_log_fixed_name = other337.text_log_fixed_name;
-  game_log_fixed_name = other337.game_log_fixed_name;
-  use_text_log_fixed = other337.use_text_log_fixed;
-  use_game_log_fixed = other337.use_game_log_fixed;
-  use_text_log_dated = other337.use_text_log_dated;
-  use_game_log_dated = other337.use_game_log_dated;
-  log_date_format = other337.log_date_format;
-  log_times = other337.log_times;
-  record_message = other337.record_message;
-  text_log_compression = other337.text_log_compression;
-  game_log_compression = other337.game_log_compression;
-  use_profile = other337.use_profile;
-  tackle_dist = other337.tackle_dist;
-  tackle_back_dist = other337.tackle_back_dist;
-  tackle_width = other337.tackle_width;
-  tackle_exponent = other337.tackle_exponent;
-  tackle_cycles = other337.tackle_cycles;
-  tackle_power_rate = other337.tackle_power_rate;
-  freeform_wait_period = other337.freeform_wait_period;
-  freeform_send_period = other337.freeform_send_period;
-  free_kick_faults = other337.free_kick_faults;
-  back_passes = other337.back_passes;
-  proper_goal_kicks = other337.proper_goal_kicks;
-  stopped_ball_vel = other337.stopped_ball_vel;
-  max_goal_kicks = other337.max_goal_kicks;
-  clang_del_win = other337.clang_del_win;
-  clang_rule_win = other337.clang_rule_win;
-  auto_mode = other337.auto_mode;
-  kick_off_wait = other337.kick_off_wait;
-  connect_wait = other337.connect_wait;
-  game_over_wait = other337.game_over_wait;
-  team_l_start = other337.team_l_start;
-  team_r_start = other337.team_r_start;
-  keepaway_mode = other337.keepaway_mode;
-  keepaway_length = other337.keepaway_length;
-  keepaway_width = other337.keepaway_width;
-  keepaway_logging = other337.keepaway_logging;
-  keepaway_log_dir = other337.keepaway_log_dir;
-  keepaway_log_fixed_name = other337.keepaway_log_fixed_name;
-  keepaway_log_fixed = other337.keepaway_log_fixed;
-  keepaway_log_dated = other337.keepaway_log_dated;
-  keepaway_start = other337.keepaway_start;
-  nr_normal_halfs = other337.nr_normal_halfs;
-  nr_extra_halfs = other337.nr_extra_halfs;
-  penalty_shoot_outs = other337.penalty_shoot_outs;
-  pen_before_setup_wait = other337.pen_before_setup_wait;
-  pen_setup_wait = other337.pen_setup_wait;
-  pen_ready_wait = other337.pen_ready_wait;
-  pen_taken_wait = other337.pen_taken_wait;
-  pen_nr_kicks = other337.pen_nr_kicks;
-  pen_max_extra_kicks = other337.pen_max_extra_kicks;
-  pen_dist_x = other337.pen_dist_x;
-  pen_random_winner = other337.pen_random_winner;
-  pen_allow_mult_kicks = other337.pen_allow_mult_kicks;
-  pen_max_goalie_dist_x = other337.pen_max_goalie_dist_x;
-  pen_coach_moves_players = other337.pen_coach_moves_players;
-  module_dir = other337.module_dir;
-  ball_stuck_area = other337.ball_stuck_area;
-  coach_msg_file = other337.coach_msg_file;
-  max_tackle_power = other337.max_tackle_power;
-  max_back_tackle_power = other337.max_back_tackle_power;
-  player_speed_max_min = other337.player_speed_max_min;
-  extra_stamina = other337.extra_stamina;
-  synch_see_offset = other337.synch_see_offset;
-  extra_half_time = other337.extra_half_time;
-  stamina_capacity = other337.stamina_capacity;
-  max_dash_angle = other337.max_dash_angle;
-  min_dash_angle = other337.min_dash_angle;
-  dash_angle_step = other337.dash_angle_step;
-  side_dash_rate = other337.side_dash_rate;
-  back_dash_rate = other337.back_dash_rate;
-  max_dash_power = other337.max_dash_power;
-  min_dash_power = other337.min_dash_power;
-  tackle_rand_factor = other337.tackle_rand_factor;
-  foul_detect_probability = other337.foul_detect_probability;
-  foul_exponent = other337.foul_exponent;
-  foul_cycles = other337.foul_cycles;
-  golden_goal = other337.golden_goal;
-  red_card_probability = other337.red_card_probability;
-  illegal_defense_duration = other337.illegal_defense_duration;
-  illegal_defense_number = other337.illegal_defense_number;
-  illegal_defense_dist_x = other337.illegal_defense_dist_x;
-  illegal_defense_width = other337.illegal_defense_width;
-  fixed_teamname_l = other337.fixed_teamname_l;
-  fixed_teamname_r = other337.fixed_teamname_r;
-  max_catch_angle = other337.max_catch_angle;
-  min_catch_angle = other337.min_catch_angle;
-  random_seed = other337.random_seed;
-  long_kick_power_factor = other337.long_kick_power_factor;
-  long_kick_delay = other337.long_kick_delay;
-  max_monitors = other337.max_monitors;
-  catchable_area = other337.catchable_area;
-  real_speed_max = other337.real_speed_max;
-  pitch_half_length = other337.pitch_half_length;
-  pitch_half_width = other337.pitch_half_width;
-  our_penalty_area_line_x = other337.our_penalty_area_line_x;
-  their_penalty_area_line_x = other337.their_penalty_area_line_x;
-  penalty_area_half_width = other337.penalty_area_half_width;
-  penalty_area_length = other337.penalty_area_length;
-  goal_width = other337.goal_width;
-  register_response = other337.register_response;
-  __isset = other337.__isset;
+ServerParam& ServerParam::operator=(const ServerParam& other334) {
+  register_response = other334.register_response;
+  inertia_moment = other334.inertia_moment;
+  player_size = other334.player_size;
+  player_decay = other334.player_decay;
+  player_rand = other334.player_rand;
+  player_weight = other334.player_weight;
+  player_speed_max = other334.player_speed_max;
+  player_accel_max = other334.player_accel_max;
+  stamina_max = other334.stamina_max;
+  stamina_inc_max = other334.stamina_inc_max;
+  recover_init = other334.recover_init;
+  recover_dec_thr = other334.recover_dec_thr;
+  recover_min = other334.recover_min;
+  recover_dec = other334.recover_dec;
+  effort_init = other334.effort_init;
+  effort_dec_thr = other334.effort_dec_thr;
+  effort_min = other334.effort_min;
+  effort_dec = other334.effort_dec;
+  effort_inc_thr = other334.effort_inc_thr;
+  effort_inc = other334.effort_inc;
+  kick_rand = other334.kick_rand;
+  team_actuator_noise = other334.team_actuator_noise;
+  player_rand_factor_l = other334.player_rand_factor_l;
+  player_rand_factor_r = other334.player_rand_factor_r;
+  kick_rand_factor_l = other334.kick_rand_factor_l;
+  kick_rand_factor_r = other334.kick_rand_factor_r;
+  ball_size = other334.ball_size;
+  ball_decay = other334.ball_decay;
+  ball_rand = other334.ball_rand;
+  ball_weight = other334.ball_weight;
+  ball_speed_max = other334.ball_speed_max;
+  ball_accel_max = other334.ball_accel_max;
+  dash_power_rate = other334.dash_power_rate;
+  kick_power_rate = other334.kick_power_rate;
+  kickable_margin = other334.kickable_margin;
+  control_radius = other334.control_radius;
+  control_radius_width = other334.control_radius_width;
+  max_power = other334.max_power;
+  min_power = other334.min_power;
+  max_moment = other334.max_moment;
+  min_moment = other334.min_moment;
+  max_neck_moment = other334.max_neck_moment;
+  min_neck_moment = other334.min_neck_moment;
+  max_neck_angle = other334.max_neck_angle;
+  min_neck_angle = other334.min_neck_angle;
+  visible_angle = other334.visible_angle;
+  visible_distance = other334.visible_distance;
+  wind_dir = other334.wind_dir;
+  wind_force = other334.wind_force;
+  wind_angle = other334.wind_angle;
+  wind_rand = other334.wind_rand;
+  kickable_area = other334.kickable_area;
+  catch_area_l = other334.catch_area_l;
+  catch_area_w = other334.catch_area_w;
+  catch_probability = other334.catch_probability;
+  goalie_max_moves = other334.goalie_max_moves;
+  corner_kick_margin = other334.corner_kick_margin;
+  offside_active_area_size = other334.offside_active_area_size;
+  wind_none = other334.wind_none;
+  use_wind_random = other334.use_wind_random;
+  coach_say_count_max = other334.coach_say_count_max;
+  coach_say_msg_size = other334.coach_say_msg_size;
+  clang_win_size = other334.clang_win_size;
+  clang_define_win = other334.clang_define_win;
+  clang_meta_win = other334.clang_meta_win;
+  clang_advice_win = other334.clang_advice_win;
+  clang_info_win = other334.clang_info_win;
+  clang_mess_delay = other334.clang_mess_delay;
+  clang_mess_per_cycle = other334.clang_mess_per_cycle;
+  half_time = other334.half_time;
+  simulator_step = other334.simulator_step;
+  send_step = other334.send_step;
+  recv_step = other334.recv_step;
+  sense_body_step = other334.sense_body_step;
+  lcm_step = other334.lcm_step;
+  player_say_msg_size = other334.player_say_msg_size;
+  player_hear_max = other334.player_hear_max;
+  player_hear_inc = other334.player_hear_inc;
+  player_hear_decay = other334.player_hear_decay;
+  catch_ban_cycle = other334.catch_ban_cycle;
+  slow_down_factor = other334.slow_down_factor;
+  use_offside = other334.use_offside;
+  kickoff_offside = other334.kickoff_offside;
+  offside_kick_margin = other334.offside_kick_margin;
+  audio_cut_dist = other334.audio_cut_dist;
+  dist_quantize_step = other334.dist_quantize_step;
+  landmark_dist_quantize_step = other334.landmark_dist_quantize_step;
+  dir_quantize_step = other334.dir_quantize_step;
+  dist_quantize_step_l = other334.dist_quantize_step_l;
+  dist_quantize_step_r = other334.dist_quantize_step_r;
+  landmark_dist_quantize_step_l = other334.landmark_dist_quantize_step_l;
+  landmark_dist_quantize_step_r = other334.landmark_dist_quantize_step_r;
+  dir_quantize_step_l = other334.dir_quantize_step_l;
+  dir_quantize_step_r = other334.dir_quantize_step_r;
+  coach_mode = other334.coach_mode;
+  coach_with_referee_mode = other334.coach_with_referee_mode;
+  use_old_coach_hear = other334.use_old_coach_hear;
+  slowness_on_top_for_left_team = other334.slowness_on_top_for_left_team;
+  slowness_on_top_for_right_team = other334.slowness_on_top_for_right_team;
+  start_goal_l = other334.start_goal_l;
+  start_goal_r = other334.start_goal_r;
+  fullstate_l = other334.fullstate_l;
+  fullstate_r = other334.fullstate_r;
+  drop_ball_time = other334.drop_ball_time;
+  synch_mode = other334.synch_mode;
+  synch_offset = other334.synch_offset;
+  synch_micro_sleep = other334.synch_micro_sleep;
+  point_to_ban = other334.point_to_ban;
+  point_to_duration = other334.point_to_duration;
+  player_port = other334.player_port;
+  trainer_port = other334.trainer_port;
+  online_coach_port = other334.online_coach_port;
+  verbose_mode = other334.verbose_mode;
+  coach_send_vi_step = other334.coach_send_vi_step;
+  replay_file = other334.replay_file;
+  landmark_file = other334.landmark_file;
+  send_comms = other334.send_comms;
+  text_logging = other334.text_logging;
+  game_logging = other334.game_logging;
+  game_log_version = other334.game_log_version;
+  text_log_dir = other334.text_log_dir;
+  game_log_dir = other334.game_log_dir;
+  text_log_fixed_name = other334.text_log_fixed_name;
+  game_log_fixed_name = other334.game_log_fixed_name;
+  use_text_log_fixed = other334.use_text_log_fixed;
+  use_game_log_fixed = other334.use_game_log_fixed;
+  use_text_log_dated = other334.use_text_log_dated;
+  use_game_log_dated = other334.use_game_log_dated;
+  log_date_format = other334.log_date_format;
+  log_times = other334.log_times;
+  record_message = other334.record_message;
+  text_log_compression = other334.text_log_compression;
+  game_log_compression = other334.game_log_compression;
+  use_profile = other334.use_profile;
+  tackle_dist = other334.tackle_dist;
+  tackle_back_dist = other334.tackle_back_dist;
+  tackle_width = other334.tackle_width;
+  tackle_exponent = other334.tackle_exponent;
+  tackle_cycles = other334.tackle_cycles;
+  tackle_power_rate = other334.tackle_power_rate;
+  freeform_wait_period = other334.freeform_wait_period;
+  freeform_send_period = other334.freeform_send_period;
+  free_kick_faults = other334.free_kick_faults;
+  back_passes = other334.back_passes;
+  proper_goal_kicks = other334.proper_goal_kicks;
+  stopped_ball_vel = other334.stopped_ball_vel;
+  max_goal_kicks = other334.max_goal_kicks;
+  clang_del_win = other334.clang_del_win;
+  clang_rule_win = other334.clang_rule_win;
+  auto_mode = other334.auto_mode;
+  kick_off_wait = other334.kick_off_wait;
+  connect_wait = other334.connect_wait;
+  game_over_wait = other334.game_over_wait;
+  team_l_start = other334.team_l_start;
+  team_r_start = other334.team_r_start;
+  keepaway_mode = other334.keepaway_mode;
+  keepaway_length = other334.keepaway_length;
+  keepaway_width = other334.keepaway_width;
+  keepaway_logging = other334.keepaway_logging;
+  keepaway_log_dir = other334.keepaway_log_dir;
+  keepaway_log_fixed_name = other334.keepaway_log_fixed_name;
+  keepaway_log_fixed = other334.keepaway_log_fixed;
+  keepaway_log_dated = other334.keepaway_log_dated;
+  keepaway_start = other334.keepaway_start;
+  nr_normal_halfs = other334.nr_normal_halfs;
+  nr_extra_halfs = other334.nr_extra_halfs;
+  penalty_shoot_outs = other334.penalty_shoot_outs;
+  pen_before_setup_wait = other334.pen_before_setup_wait;
+  pen_setup_wait = other334.pen_setup_wait;
+  pen_ready_wait = other334.pen_ready_wait;
+  pen_taken_wait = other334.pen_taken_wait;
+  pen_nr_kicks = other334.pen_nr_kicks;
+  pen_max_extra_kicks = other334.pen_max_extra_kicks;
+  pen_dist_x = other334.pen_dist_x;
+  pen_random_winner = other334.pen_random_winner;
+  pen_allow_mult_kicks = other334.pen_allow_mult_kicks;
+  pen_max_goalie_dist_x = other334.pen_max_goalie_dist_x;
+  pen_coach_moves_players = other334.pen_coach_moves_players;
+  module_dir = other334.module_dir;
+  ball_stuck_area = other334.ball_stuck_area;
+  coach_msg_file = other334.coach_msg_file;
+  max_tackle_power = other334.max_tackle_power;
+  max_back_tackle_power = other334.max_back_tackle_power;
+  player_speed_max_min = other334.player_speed_max_min;
+  extra_stamina = other334.extra_stamina;
+  synch_see_offset = other334.synch_see_offset;
+  extra_half_time = other334.extra_half_time;
+  stamina_capacity = other334.stamina_capacity;
+  max_dash_angle = other334.max_dash_angle;
+  min_dash_angle = other334.min_dash_angle;
+  dash_angle_step = other334.dash_angle_step;
+  side_dash_rate = other334.side_dash_rate;
+  back_dash_rate = other334.back_dash_rate;
+  max_dash_power = other334.max_dash_power;
+  min_dash_power = other334.min_dash_power;
+  tackle_rand_factor = other334.tackle_rand_factor;
+  foul_detect_probability = other334.foul_detect_probability;
+  foul_exponent = other334.foul_exponent;
+  foul_cycles = other334.foul_cycles;
+  golden_goal = other334.golden_goal;
+  red_card_probability = other334.red_card_probability;
+  illegal_defense_duration = other334.illegal_defense_duration;
+  illegal_defense_number = other334.illegal_defense_number;
+  illegal_defense_dist_x = other334.illegal_defense_dist_x;
+  illegal_defense_width = other334.illegal_defense_width;
+  fixed_teamname_l = other334.fixed_teamname_l;
+  fixed_teamname_r = other334.fixed_teamname_r;
+  max_catch_angle = other334.max_catch_angle;
+  min_catch_angle = other334.min_catch_angle;
+  random_seed = other334.random_seed;
+  long_kick_power_factor = other334.long_kick_power_factor;
+  long_kick_delay = other334.long_kick_delay;
+  max_monitors = other334.max_monitors;
+  catchable_area = other334.catchable_area;
+  real_speed_max = other334.real_speed_max;
+  pitch_half_length = other334.pitch_half_length;
+  pitch_half_width = other334.pitch_half_width;
+  our_penalty_area_line_x = other334.our_penalty_area_line_x;
+  their_penalty_area_line_x = other334.their_penalty_area_line_x;
+  penalty_area_half_width = other334.penalty_area_half_width;
+  penalty_area_length = other334.penalty_area_length;
+  goal_width = other334.goal_width;
+  __isset = other334.__isset;
   return *this;
 }
 void ServerParam::printTo(std::ostream& out) const {
   using ::apache::thrift::to_string;
   out << "ServerParam(";
-  out << "agent_type=" << to_string(agent_type);
+  out << "register_response=" << to_string(register_response);
   out << ", " << "inertia_moment=" << to_string(inertia_moment);
   out << ", " << "player_size=" << to_string(player_size);
   out << ", " << "player_decay=" << to_string(player_decay);
@@ -22853,7 +22788,6 @@ void ServerParam::printTo(std::ostream& out) const {
   out << ", " << "penalty_area_half_width=" << to_string(penalty_area_half_width);
   out << ", " << "penalty_area_length=" << to_string(penalty_area_length);
   out << ", " << "goal_width=" << to_string(goal_width);
-  out << ", " << "register_response=" << to_string(register_response);
   out << ")";
 }
 
@@ -22862,8 +22796,8 @@ PlayerParam::~PlayerParam() noexcept {
 }
 
 
-void PlayerParam::__set_agent_type(const AgentType::type val) {
-  this->agent_type = val;
+void PlayerParam::__set_register_response(const RegisterResponse& val) {
+  this->register_response = val;
 }
 
 void PlayerParam::__set_player_types(const int32_t val) {
@@ -22981,10 +22915,6 @@ void PlayerParam::__set_catchable_area_l_stretch_min(const double val) {
 void PlayerParam::__set_catchable_area_l_stretch_max(const double val) {
   this->catchable_area_l_stretch_max = val;
 }
-
-void PlayerParam::__set_register_response(const RegisterResponse& val) {
-  this->register_response = val;
-}
 std::ostream& operator<<(std::ostream& out, const PlayerParam& obj)
 {
   obj.printTo(out);
@@ -23014,11 +22944,9 @@ uint32_t PlayerParam::read(::apache::thrift::protocol::TProtocol* iprot) {
     switch (fid)
     {
       case 1:
-        if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast338;
-          xfer += iprot->readI32(ecast338);
-          this->agent_type = static_cast<AgentType::type>(ecast338);
-          this->__isset.agent_type = true;
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
         } else {
           xfer += iprot->skip(ftype);
         }
@@ -23255,14 +23183,6 @@ uint32_t PlayerParam::read(::apache::thrift::protocol::TProtocol* iprot) {
           xfer += iprot->skip(ftype);
         }
         break;
-      case 31:
-        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
-          xfer += this->register_response.read(iprot);
-          this->__isset.register_response = true;
-        } else {
-          xfer += iprot->skip(ftype);
-        }
-        break;
       default:
         xfer += iprot->skip(ftype);
         break;
@@ -23280,8 +23200,8 @@ uint32_t PlayerParam::write(::apache::thrift::protocol::TProtocol* oprot) const 
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("PlayerParam");
 
-  xfer += oprot->writeFieldBegin("agent_type", ::apache::thrift::protocol::T_I32, 1);
-  xfer += oprot->writeI32(static_cast<int32_t>(this->agent_type));
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldBegin("player_types", ::apache::thrift::protocol::T_I32, 2);
@@ -23400,10 +23320,6 @@ uint32_t PlayerParam::write(::apache::thrift::protocol::TProtocol* oprot) const 
   xfer += oprot->writeDouble(this->catchable_area_l_stretch_max);
   xfer += oprot->writeFieldEnd();
 
-  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 31);
-  xfer += this->register_response.write(oprot);
-  xfer += oprot->writeFieldEnd();
-
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -23411,7 +23327,7 @@ uint32_t PlayerParam::write(::apache::thrift::protocol::TProtocol* oprot) const 
 
 void swap(PlayerParam &a, PlayerParam &b) {
   using ::std::swap;
-  swap(a.agent_type, b.agent_type);
+  swap(a.register_response, b.register_response);
   swap(a.player_types, b.player_types);
   swap(a.subs_max, b.subs_max);
   swap(a.pt_max, b.pt_max);
@@ -23441,83 +23357,80 @@ void swap(PlayerParam &a, PlayerParam &b) {
   swap(a.foul_detect_probability_delta_factor, b.foul_detect_probability_delta_factor);
   swap(a.catchable_area_l_stretch_min, b.catchable_area_l_stretch_min);
   swap(a.catchable_area_l_stretch_max, b.catchable_area_l_stretch_max);
-  swap(a.register_response, b.register_response);
   swap(a.__isset, b.__isset);
 }
 
-PlayerParam::PlayerParam(const PlayerParam& other339) {
-  agent_type = other339.agent_type;
-  player_types = other339.player_types;
-  subs_max = other339.subs_max;
-  pt_max = other339.pt_max;
-  allow_mult_default_type = other339.allow_mult_default_type;
-  player_speed_max_delta_min = other339.player_speed_max_delta_min;
-  player_speed_max_delta_max = other339.player_speed_max_delta_max;
-  stamina_inc_max_delta_factor = other339.stamina_inc_max_delta_factor;
-  player_decay_delta_min = other339.player_decay_delta_min;
-  player_decay_delta_max = other339.player_decay_delta_max;
-  inertia_moment_delta_factor = other339.inertia_moment_delta_factor;
-  dash_power_rate_delta_min = other339.dash_power_rate_delta_min;
-  dash_power_rate_delta_max = other339.dash_power_rate_delta_max;
-  player_size_delta_factor = other339.player_size_delta_factor;
-  kickable_margin_delta_min = other339.kickable_margin_delta_min;
-  kickable_margin_delta_max = other339.kickable_margin_delta_max;
-  kick_rand_delta_factor = other339.kick_rand_delta_factor;
-  extra_stamina_delta_min = other339.extra_stamina_delta_min;
-  extra_stamina_delta_max = other339.extra_stamina_delta_max;
-  effort_max_delta_factor = other339.effort_max_delta_factor;
-  effort_min_delta_factor = other339.effort_min_delta_factor;
-  random_seed = other339.random_seed;
-  new_dash_power_rate_delta_min = other339.new_dash_power_rate_delta_min;
-  new_dash_power_rate_delta_max = other339.new_dash_power_rate_delta_max;
-  new_stamina_inc_max_delta_factor = other339.new_stamina_inc_max_delta_factor;
-  kick_power_rate_delta_min = other339.kick_power_rate_delta_min;
-  kick_power_rate_delta_max = other339.kick_power_rate_delta_max;
-  foul_detect_probability_delta_factor = other339.foul_detect_probability_delta_factor;
-  catchable_area_l_stretch_min = other339.catchable_area_l_stretch_min;
-  catchable_area_l_stretch_max = other339.catchable_area_l_stretch_max;
-  register_response = other339.register_response;
-  __isset = other339.__isset;
+PlayerParam::PlayerParam(const PlayerParam& other335) {
+  register_response = other335.register_response;
+  player_types = other335.player_types;
+  subs_max = other335.subs_max;
+  pt_max = other335.pt_max;
+  allow_mult_default_type = other335.allow_mult_default_type;
+  player_speed_max_delta_min = other335.player_speed_max_delta_min;
+  player_speed_max_delta_max = other335.player_speed_max_delta_max;
+  stamina_inc_max_delta_factor = other335.stamina_inc_max_delta_factor;
+  player_decay_delta_min = other335.player_decay_delta_min;
+  player_decay_delta_max = other335.player_decay_delta_max;
+  inertia_moment_delta_factor = other335.inertia_moment_delta_factor;
+  dash_power_rate_delta_min = other335.dash_power_rate_delta_min;
+  dash_power_rate_delta_max = other335.dash_power_rate_delta_max;
+  player_size_delta_factor = other335.player_size_delta_factor;
+  kickable_margin_delta_min = other335.kickable_margin_delta_min;
+  kickable_margin_delta_max = other335.kickable_margin_delta_max;
+  kick_rand_delta_factor = other335.kick_rand_delta_factor;
+  extra_stamina_delta_min = other335.extra_stamina_delta_min;
+  extra_stamina_delta_max = other335.extra_stamina_delta_max;
+  effort_max_delta_factor = other335.effort_max_delta_factor;
+  effort_min_delta_factor = other335.effort_min_delta_factor;
+  random_seed = other335.random_seed;
+  new_dash_power_rate_delta_min = other335.new_dash_power_rate_delta_min;
+  new_dash_power_rate_delta_max = other335.new_dash_power_rate_delta_max;
+  new_stamina_inc_max_delta_factor = other335.new_stamina_inc_max_delta_factor;
+  kick_power_rate_delta_min = other335.kick_power_rate_delta_min;
+  kick_power_rate_delta_max = other335.kick_power_rate_delta_max;
+  foul_detect_probability_delta_factor = other335.foul_detect_probability_delta_factor;
+  catchable_area_l_stretch_min = other335.catchable_area_l_stretch_min;
+  catchable_area_l_stretch_max = other335.catchable_area_l_stretch_max;
+  __isset = other335.__isset;
 }
-PlayerParam& PlayerParam::operator=(const PlayerParam& other340) {
-  agent_type = other340.agent_type;
-  player_types = other340.player_types;
-  subs_max = other340.subs_max;
-  pt_max = other340.pt_max;
-  allow_mult_default_type = other340.allow_mult_default_type;
-  player_speed_max_delta_min = other340.player_speed_max_delta_min;
-  player_speed_max_delta_max = other340.player_speed_max_delta_max;
-  stamina_inc_max_delta_factor = other340.stamina_inc_max_delta_factor;
-  player_decay_delta_min = other340.player_decay_delta_min;
-  player_decay_delta_max = other340.player_decay_delta_max;
-  inertia_moment_delta_factor = other340.inertia_moment_delta_factor;
-  dash_power_rate_delta_min = other340.dash_power_rate_delta_min;
-  dash_power_rate_delta_max = other340.dash_power_rate_delta_max;
-  player_size_delta_factor = other340.player_size_delta_factor;
-  kickable_margin_delta_min = other340.kickable_margin_delta_min;
-  kickable_margin_delta_max = other340.kickable_margin_delta_max;
-  kick_rand_delta_factor = other340.kick_rand_delta_factor;
-  extra_stamina_delta_min = other340.extra_stamina_delta_min;
-  extra_stamina_delta_max = other340.extra_stamina_delta_max;
-  effort_max_delta_factor = other340.effort_max_delta_factor;
-  effort_min_delta_factor = other340.effort_min_delta_factor;
-  random_seed = other340.random_seed;
-  new_dash_power_rate_delta_min = other340.new_dash_power_rate_delta_min;
-  new_dash_power_rate_delta_max = other340.new_dash_power_rate_delta_max;
-  new_stamina_inc_max_delta_factor = other340.new_stamina_inc_max_delta_factor;
-  kick_power_rate_delta_min = other340.kick_power_rate_delta_min;
-  kick_power_rate_delta_max = other340.kick_power_rate_delta_max;
-  foul_detect_probability_delta_factor = other340.foul_detect_probability_delta_factor;
-  catchable_area_l_stretch_min = other340.catchable_area_l_stretch_min;
-  catchable_area_l_stretch_max = other340.catchable_area_l_stretch_max;
-  register_response = other340.register_response;
-  __isset = other340.__isset;
+PlayerParam& PlayerParam::operator=(const PlayerParam& other336) {
+  register_response = other336.register_response;
+  player_types = other336.player_types;
+  subs_max = other336.subs_max;
+  pt_max = other336.pt_max;
+  allow_mult_default_type = other336.allow_mult_default_type;
+  player_speed_max_delta_min = other336.player_speed_max_delta_min;
+  player_speed_max_delta_max = other336.player_speed_max_delta_max;
+  stamina_inc_max_delta_factor = other336.stamina_inc_max_delta_factor;
+  player_decay_delta_min = other336.player_decay_delta_min;
+  player_decay_delta_max = other336.player_decay_delta_max;
+  inertia_moment_delta_factor = other336.inertia_moment_delta_factor;
+  dash_power_rate_delta_min = other336.dash_power_rate_delta_min;
+  dash_power_rate_delta_max = other336.dash_power_rate_delta_max;
+  player_size_delta_factor = other336.player_size_delta_factor;
+  kickable_margin_delta_min = other336.kickable_margin_delta_min;
+  kickable_margin_delta_max = other336.kickable_margin_delta_max;
+  kick_rand_delta_factor = other336.kick_rand_delta_factor;
+  extra_stamina_delta_min = other336.extra_stamina_delta_min;
+  extra_stamina_delta_max = other336.extra_stamina_delta_max;
+  effort_max_delta_factor = other336.effort_max_delta_factor;
+  effort_min_delta_factor = other336.effort_min_delta_factor;
+  random_seed = other336.random_seed;
+  new_dash_power_rate_delta_min = other336.new_dash_power_rate_delta_min;
+  new_dash_power_rate_delta_max = other336.new_dash_power_rate_delta_max;
+  new_stamina_inc_max_delta_factor = other336.new_stamina_inc_max_delta_factor;
+  kick_power_rate_delta_min = other336.kick_power_rate_delta_min;
+  kick_power_rate_delta_max = other336.kick_power_rate_delta_max;
+  foul_detect_probability_delta_factor = other336.foul_detect_probability_delta_factor;
+  catchable_area_l_stretch_min = other336.catchable_area_l_stretch_min;
+  catchable_area_l_stretch_max = other336.catchable_area_l_stretch_max;
+  __isset = other336.__isset;
   return *this;
 }
 void PlayerParam::printTo(std::ostream& out) const {
   using ::apache::thrift::to_string;
   out << "PlayerParam(";
-  out << "agent_type=" << to_string(agent_type);
+  out << "register_response=" << to_string(register_response);
   out << ", " << "player_types=" << to_string(player_types);
   out << ", " << "subs_max=" << to_string(subs_max);
   out << ", " << "pt_max=" << to_string(pt_max);
@@ -23547,7 +23460,6 @@ void PlayerParam::printTo(std::ostream& out) const {
   out << ", " << "foul_detect_probability_delta_factor=" << to_string(foul_detect_probability_delta_factor);
   out << ", " << "catchable_area_l_stretch_min=" << to_string(catchable_area_l_stretch_min);
   out << ", " << "catchable_area_l_stretch_max=" << to_string(catchable_area_l_stretch_max);
-  out << ", " << "register_response=" << to_string(register_response);
   out << ")";
 }
 
@@ -23556,8 +23468,8 @@ PlayerType::~PlayerType() noexcept {
 }
 
 
-void PlayerType::__set_agent_type(const AgentType::type val) {
-  this->agent_type = val;
+void PlayerType::__set_register_response(const RegisterResponse& val) {
+  this->register_response = val;
 }
 
 void PlayerType::__set_id(const int32_t val) {
@@ -23691,10 +23603,6 @@ void PlayerType::__set_cycles_to_reach_max_speed(const int32_t val) {
 void PlayerType::__set_player_speed_max(const double val) {
   this->player_speed_max = val;
 }
-
-void PlayerType::__set_register_response(const RegisterResponse& val) {
-  this->register_response = val;
-}
 std::ostream& operator<<(std::ostream& out, const PlayerType& obj)
 {
   obj.printTo(out);
@@ -23724,11 +23632,9 @@ uint32_t PlayerType::read(::apache::thrift::protocol::TProtocol* iprot) {
     switch (fid)
     {
       case 1:
-        if (ftype == ::apache::thrift::protocol::T_I32) {
-          int32_t ecast341;
-          xfer += iprot->readI32(ecast341);
-          this->agent_type = static_cast<AgentType::type>(ecast341);
-          this->__isset.agent_type = true;
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->register_response.read(iprot);
+          this->__isset.register_response = true;
         } else {
           xfer += iprot->skip(ftype);
         }
@@ -23997,14 +23903,6 @@ uint32_t PlayerType::read(::apache::thrift::protocol::TProtocol* iprot) {
           xfer += iprot->skip(ftype);
         }
         break;
-      case 35:
-        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
-          xfer += this->register_response.read(iprot);
-          this->__isset.register_response = true;
-        } else {
-          xfer += iprot->skip(ftype);
-        }
-        break;
       default:
         xfer += iprot->skip(ftype);
         break;
@@ -24022,8 +23920,8 @@ uint32_t PlayerType::write(::apache::thrift::protocol::TProtocol* oprot) const {
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("PlayerType");
 
-  xfer += oprot->writeFieldBegin("agent_type", ::apache::thrift::protocol::T_I32, 1);
-  xfer += oprot->writeI32(static_cast<int32_t>(this->agent_type));
+  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 1);
+  xfer += this->register_response.write(oprot);
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldBegin("id", ::apache::thrift::protocol::T_I32, 2);
@@ -24158,10 +24056,6 @@ uint32_t PlayerType::write(::apache::thrift::protocol::TProtocol* oprot) const {
   xfer += oprot->writeDouble(this->player_speed_max);
   xfer += oprot->writeFieldEnd();
 
-  xfer += oprot->writeFieldBegin("register_response", ::apache::thrift::protocol::T_STRUCT, 35);
-  xfer += this->register_response.write(oprot);
-  xfer += oprot->writeFieldEnd();
-
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -24169,7 +24063,7 @@ uint32_t PlayerType::write(::apache::thrift::protocol::TProtocol* oprot) const {
 
 void swap(PlayerType &a, PlayerType &b) {
   using ::std::swap;
-  swap(a.agent_type, b.agent_type);
+  swap(a.register_response, b.register_response);
   swap(a.id, b.id);
   swap(a.stamina_inc_max, b.stamina_inc_max);
   swap(a.player_decay, b.player_decay);
@@ -24203,91 +24097,88 @@ void swap(PlayerType &a, PlayerType &b) {
   swap(a.real_speed_max2, b.real_speed_max2);
   swap(a.cycles_to_reach_max_speed, b.cycles_to_reach_max_speed);
   swap(a.player_speed_max, b.player_speed_max);
-  swap(a.register_response, b.register_response);
   swap(a.__isset, b.__isset);
 }
 
-PlayerType::PlayerType(const PlayerType& other342) {
-  agent_type = other342.agent_type;
-  id = other342.id;
-  stamina_inc_max = other342.stamina_inc_max;
-  player_decay = other342.player_decay;
-  inertia_moment = other342.inertia_moment;
-  dash_power_rate = other342.dash_power_rate;
-  player_size = other342.player_size;
-  kickable_margin = other342.kickable_margin;
-  kick_rand = other342.kick_rand;
-  extra_stamina = other342.extra_stamina;
-  effort_max = other342.effort_max;
-  effort_min = other342.effort_min;
-  kick_power_rate = other342.kick_power_rate;
-  foul_detect_probability = other342.foul_detect_probability;
-  catchable_area_l_stretch = other342.catchable_area_l_stretch;
-  unum_far_length = other342.unum_far_length;
-  unum_too_far_length = other342.unum_too_far_length;
-  team_far_length = other342.team_far_length;
-  team_too_far_length = other342.team_too_far_length;
-  player_max_observation_length = other342.player_max_observation_length;
-  ball_vel_far_length = other342.ball_vel_far_length;
-  ball_vel_too_far_length = other342.ball_vel_too_far_length;
-  ball_max_observation_length = other342.ball_max_observation_length;
-  flag_chg_far_length = other342.flag_chg_far_length;
-  flag_chg_too_far_length = other342.flag_chg_too_far_length;
-  flag_max_observation_length = other342.flag_max_observation_length;
-  kickable_area = other342.kickable_area;
-  reliable_catchable_dist = other342.reliable_catchable_dist;
-  max_catchable_dist = other342.max_catchable_dist;
-  real_speed_max = other342.real_speed_max;
-  player_speed_max2 = other342.player_speed_max2;
-  real_speed_max2 = other342.real_speed_max2;
-  cycles_to_reach_max_speed = other342.cycles_to_reach_max_speed;
-  player_speed_max = other342.player_speed_max;
-  register_response = other342.register_response;
-  __isset = other342.__isset;
+PlayerType::PlayerType(const PlayerType& other337) {
+  register_response = other337.register_response;
+  id = other337.id;
+  stamina_inc_max = other337.stamina_inc_max;
+  player_decay = other337.player_decay;
+  inertia_moment = other337.inertia_moment;
+  dash_power_rate = other337.dash_power_rate;
+  player_size = other337.player_size;
+  kickable_margin = other337.kickable_margin;
+  kick_rand = other337.kick_rand;
+  extra_stamina = other337.extra_stamina;
+  effort_max = other337.effort_max;
+  effort_min = other337.effort_min;
+  kick_power_rate = other337.kick_power_rate;
+  foul_detect_probability = other337.foul_detect_probability;
+  catchable_area_l_stretch = other337.catchable_area_l_stretch;
+  unum_far_length = other337.unum_far_length;
+  unum_too_far_length = other337.unum_too_far_length;
+  team_far_length = other337.team_far_length;
+  team_too_far_length = other337.team_too_far_length;
+  player_max_observation_length = other337.player_max_observation_length;
+  ball_vel_far_length = other337.ball_vel_far_length;
+  ball_vel_too_far_length = other337.ball_vel_too_far_length;
+  ball_max_observation_length = other337.ball_max_observation_length;
+  flag_chg_far_length = other337.flag_chg_far_length;
+  flag_chg_too_far_length = other337.flag_chg_too_far_length;
+  flag_max_observation_length = other337.flag_max_observation_length;
+  kickable_area = other337.kickable_area;
+  reliable_catchable_dist = other337.reliable_catchable_dist;
+  max_catchable_dist = other337.max_catchable_dist;
+  real_speed_max = other337.real_speed_max;
+  player_speed_max2 = other337.player_speed_max2;
+  real_speed_max2 = other337.real_speed_max2;
+  cycles_to_reach_max_speed = other337.cycles_to_reach_max_speed;
+  player_speed_max = other337.player_speed_max;
+  __isset = other337.__isset;
 }
-PlayerType& PlayerType::operator=(const PlayerType& other343) {
-  agent_type = other343.agent_type;
-  id = other343.id;
-  stamina_inc_max = other343.stamina_inc_max;
-  player_decay = other343.player_decay;
-  inertia_moment = other343.inertia_moment;
-  dash_power_rate = other343.dash_power_rate;
-  player_size = other343.player_size;
-  kickable_margin = other343.kickable_margin;
-  kick_rand = other343.kick_rand;
-  extra_stamina = other343.extra_stamina;
-  effort_max = other343.effort_max;
-  effort_min = other343.effort_min;
-  kick_power_rate = other343.kick_power_rate;
-  foul_detect_probability = other343.foul_detect_probability;
-  catchable_area_l_stretch = other343.catchable_area_l_stretch;
-  unum_far_length = other343.unum_far_length;
-  unum_too_far_length = other343.unum_too_far_length;
-  team_far_length = other343.team_far_length;
-  team_too_far_length = other343.team_too_far_length;
-  player_max_observation_length = other343.player_max_observation_length;
-  ball_vel_far_length = other343.ball_vel_far_length;
-  ball_vel_too_far_length = other343.ball_vel_too_far_length;
-  ball_max_observation_length = other343.ball_max_observation_length;
-  flag_chg_far_length = other343.flag_chg_far_length;
-  flag_chg_too_far_length = other343.flag_chg_too_far_length;
-  flag_max_observation_length = other343.flag_max_observation_length;
-  kickable_area = other343.kickable_area;
-  reliable_catchable_dist = other343.reliable_catchable_dist;
-  max_catchable_dist = other343.max_catchable_dist;
-  real_speed_max = other343.real_speed_max;
-  player_speed_max2 = other343.player_speed_max2;
-  real_speed_max2 = other343.real_speed_max2;
-  cycles_to_reach_max_speed = other343.cycles_to_reach_max_speed;
-  player_speed_max = other343.player_speed_max;
-  register_response = other343.register_response;
-  __isset = other343.__isset;
+PlayerType& PlayerType::operator=(const PlayerType& other338) {
+  register_response = other338.register_response;
+  id = other338.id;
+  stamina_inc_max = other338.stamina_inc_max;
+  player_decay = other338.player_decay;
+  inertia_moment = other338.inertia_moment;
+  dash_power_rate = other338.dash_power_rate;
+  player_size = other338.player_size;
+  kickable_margin = other338.kickable_margin;
+  kick_rand = other338.kick_rand;
+  extra_stamina = other338.extra_stamina;
+  effort_max = other338.effort_max;
+  effort_min = other338.effort_min;
+  kick_power_rate = other338.kick_power_rate;
+  foul_detect_probability = other338.foul_detect_probability;
+  catchable_area_l_stretch = other338.catchable_area_l_stretch;
+  unum_far_length = other338.unum_far_length;
+  unum_too_far_length = other338.unum_too_far_length;
+  team_far_length = other338.team_far_length;
+  team_too_far_length = other338.team_too_far_length;
+  player_max_observation_length = other338.player_max_observation_length;
+  ball_vel_far_length = other338.ball_vel_far_length;
+  ball_vel_too_far_length = other338.ball_vel_too_far_length;
+  ball_max_observation_length = other338.ball_max_observation_length;
+  flag_chg_far_length = other338.flag_chg_far_length;
+  flag_chg_too_far_length = other338.flag_chg_too_far_length;
+  flag_max_observation_length = other338.flag_max_observation_length;
+  kickable_area = other338.kickable_area;
+  reliable_catchable_dist = other338.reliable_catchable_dist;
+  max_catchable_dist = other338.max_catchable_dist;
+  real_speed_max = other338.real_speed_max;
+  player_speed_max2 = other338.player_speed_max2;
+  real_speed_max2 = other338.real_speed_max2;
+  cycles_to_reach_max_speed = other338.cycles_to_reach_max_speed;
+  player_speed_max = other338.player_speed_max;
+  __isset = other338.__isset;
   return *this;
 }
 void PlayerType::printTo(std::ostream& out) const {
   using ::apache::thrift::to_string;
   out << "PlayerType(";
-  out << "agent_type=" << to_string(agent_type);
+  out << "register_response=" << to_string(register_response);
   out << ", " << "id=" << to_string(id);
   out << ", " << "stamina_inc_max=" << to_string(stamina_inc_max);
   out << ", " << "player_decay=" << to_string(player_decay);
@@ -24321,7 +24212,6 @@ void PlayerType::printTo(std::ostream& out) const {
   out << ", " << "real_speed_max2=" << to_string(real_speed_max2);
   out << ", " << "cycles_to_reach_max_speed=" << to_string(cycles_to_reach_max_speed);
   out << ", " << "player_speed_max=" << to_string(player_speed_max);
-  out << ", " << "register_response=" << to_string(register_response);
   out << ")";
 }
 
@@ -24380,11 +24270,11 @@ void swap(Empty &a, Empty &b) {
   (void) b;
 }
 
-Empty::Empty(const Empty& other344) noexcept {
-  (void) other344;
+Empty::Empty(const Empty& other339) noexcept {
+  (void) other339;
 }
-Empty& Empty::operator=(const Empty& other345) noexcept {
-  (void) other345;
+Empty& Empty::operator=(const Empty& other340) noexcept {
+  (void) other340;
   return *this;
 }
 void Empty::printTo(std::ostream& out) const {

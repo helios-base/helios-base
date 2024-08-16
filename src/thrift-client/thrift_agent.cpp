@@ -276,7 +276,6 @@ void ThriftAgent::sendPlayerParams() const
     LOG("sendPlayerParams Started");
     soccer::PlayerParam playerParam;
     const rcsc::PlayerParam &PP = rcsc::PlayerParam::i();
-    playerParam.agent_type = this->M_agent_type;
     playerParam.player_types = PP.playerTypes();
     playerParam.subs_max = PP.subsMax();
     playerParam.pt_max = PP.ptMax();
@@ -306,11 +305,10 @@ void ThriftAgent::sendPlayerParams() const
     playerParam.foul_detect_probability_delta_factor = PP.foulDetectProbabilityDeltaFactor();
     playerParam.catchable_area_l_stretch_min = PP.catchAreaLengthStretchMin();
     playerParam.catchable_area_l_stretch_max = PP.catchAreaLengthStretchMax();
-
+    playerParam.register_response = M_register_response;
     try
     {
         soccer::Empty empty;
-        playerParam.register_response = M_register_response;
         M_client->SendPlayerParams(empty, playerParam);
     }
     catch(const std::exception& e){
@@ -364,10 +362,11 @@ void ThriftAgent::sendPlayerType() const
         playerTypeGrpc.player_speed_max2 = playerType->playerSpeedMax2();
         playerTypeGrpc.real_speed_max2 = playerType->realSpeedMax2();
         playerTypeGrpc.cycles_to_reach_max_speed = playerType->cyclesToReachMaxSpeed();
-        try{
+        playerTypeGrpc.register_response = M_register_response;
+        try
+        {
             soccer::Empty empty;
-            playerTypeGrpc.agent_type = this->M_agent_type;
-            playerTypeGrpc.register_response = M_register_response;
+
             M_client->SendPlayerType(empty, playerTypeGrpc);
         }
         catch(const std::exception& e){
@@ -383,9 +382,9 @@ void ThriftAgent::sendInitMessage(bool offline_logging) const
     soccer::Empty empty;
     soccer::InitMessage initMessage;
     initMessage.debug_mode = offline_logging;
-    initMessage.agent_type = this->M_agent_type;
     initMessage.register_response = M_register_response;
-    try{
+    try
+    {
         M_client->SendInitMessage(empty, initMessage);
     }
     catch(const std::exception& e){

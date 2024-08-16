@@ -280,7 +280,6 @@ void GrpcAgent::sendServerParam() const
 
     ClientContext context;
     protos::Empty empty;
-    serverParam.set_agent_type(this->M_agent_type);
     serverParam.set_allocated_register_response(M_register_response);
     Status status = M_stub_->SendServerParams(&context, serverParam, &empty);
     if (!status.ok())
@@ -328,7 +327,6 @@ void GrpcAgent::sendPlayerParams() const
 
     ClientContext context;
     protos::Empty empty;
-    playerParam.set_agent_type(this->M_agent_type);
     playerParam.set_allocated_register_response(M_register_response);
     Status status = M_stub_->SendPlayerParams(&context, playerParam, &empty);
     if (!status.ok())
@@ -387,7 +385,6 @@ void GrpcAgent::sendPlayerType() const
 
         ClientContext context;
         protos::Empty empty;
-        playerTypeGrpc.set_agent_type(this->M_agent_type);
         playerTypeGrpc.set_allocated_register_response(M_register_response);
         Status status = M_stub_->SendPlayerType(&context, playerTypeGrpc, &empty);
         if (!status.ok())
@@ -406,7 +403,6 @@ void GrpcAgent::sendInitMessage(bool offline_logging) const
     protos::Empty empty;
     protos::InitMessage initMessage;
     initMessage.set_debug_mode(offline_logging);
-    initMessage.set_agent_type(this->M_agent_type);
     initMessage.set_allocated_register_response(M_register_response);
     Status status = M_stub_->SendInitMessage(&context, initMessage, &empty);
     if (!status.ok())

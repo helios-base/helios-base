@@ -52,10 +52,7 @@ void ThriftAgentTrainer::init(rcsc::TrainerAgent *agent,
 void ThriftAgentTrainer::getActions()
 {
     auto agent = M_agent;
-    std::cout<<"generating state for cycle:"<<agent->world().time().cycle()<<std::endl;
     soccer::State state = generateState();
-    std::cout<<"generated state for cycle:"<<agent->world().time().cycle()<<std::endl;
-    state.agent_type = soccer::AgentType::TrainerT;
     state.register_response = M_register_response;
     soccer::TrainerActions actions;
 

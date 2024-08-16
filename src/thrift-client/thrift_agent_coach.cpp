@@ -54,10 +54,10 @@ void ThriftAgentCoach::getActions()
 {
     auto agent = M_agent;
     soccer::State state = generateState();
-    state.agent_type = soccer::AgentType::CoachT;
     soccer::CoachActions actions;
     state.register_response = M_register_response;
-    try{
+    try
+    {
         M_client->GetCoachActions(actions, state);
     }
     catch (const std::exception &e)

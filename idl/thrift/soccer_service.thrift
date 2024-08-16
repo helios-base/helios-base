@@ -261,15 +261,13 @@ struct WorldModel {
 
 struct State {
   1: RegisterResponse register_response,
-  2: AgentType agent_type,
-  3: WorldModel world_model,
-  4: WorldModel full_world_model
+  2: WorldModel world_model,
+  3: WorldModel full_world_model
 }
 
 struct InitMessage {
   1: RegisterResponse register_response,
-  2: AgentType agent_type,
-  3: bool debug_mode
+  2: bool debug_mode
 }
 
 struct Dash {
@@ -868,7 +866,7 @@ struct TrainerActions {
 }
 
 struct ServerParam {
-  1: AgentType agent_type,
+  1: RegisterResponse register_response,
   2: double inertia_moment,
   3: double player_size,
   4: double player_decay,
@@ -1089,13 +1087,11 @@ struct ServerParam {
   219: double their_penalty_area_line_x,
   220: double penalty_area_half_width,
   221: double penalty_area_length,
-  222: double goal_width,
-
-  223: RegisterResponse register_response
+  222: double goal_width
 }
 
 struct PlayerParam {
-  1: AgentType agent_type,
+  1: RegisterResponse register_response
   2: i32 player_types,
   3: i32 subs_max,
   4: i32 pt_max,
@@ -1125,12 +1121,10 @@ struct PlayerParam {
   28: double foul_detect_probability_delta_factor,
   29: double catchable_area_l_stretch_min,
   30: double catchable_area_l_stretch_max,
-
-  31: RegisterResponse register_response
 }
 
 struct PlayerType {
-  1: AgentType agent_type,
+  1: RegisterResponse register_response
   2: i32 id,
   3: double stamina_inc_max,
   4: double player_decay,
@@ -1164,8 +1158,6 @@ struct PlayerType {
   32: double real_speed_max2,
   33: i32 cycles_to_reach_max_speed,
   34: double player_speed_max,
-
-  35: RegisterResponse register_response
 }
 
 struct Empty {}

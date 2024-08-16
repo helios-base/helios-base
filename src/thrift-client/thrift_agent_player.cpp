@@ -110,7 +110,6 @@ void ThriftAgentPlayer::getActions()
 {
     auto agent = M_agent;
     soccer::State state = generateState();
-    state.agent_type = soccer::AgentType::PlayerT;
     soccer::PlayerActions actions;
     state.register_response = M_register_response;
     try

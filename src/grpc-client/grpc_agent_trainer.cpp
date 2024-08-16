@@ -51,7 +51,6 @@ void GrpcAgentTrainer::getActions()
 {
     auto agent = M_agent;
     State state = generateState();
-    state.set_agent_type(protos::AgentType::TrainerT);
     state.set_allocated_register_response(M_register_response);
     protos::TrainerActions actions;
     ClientContext context;

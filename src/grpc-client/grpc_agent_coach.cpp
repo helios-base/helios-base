@@ -53,7 +53,6 @@ void GrpcAgentCoach::getActions()
 {
     auto agent = M_agent;
     State state = generateState();
-    state.set_agent_type(protos::AgentType::CoachT);
     state.set_allocated_register_response(M_register_response);
     protos::CoachActions actions;
     ClientContext context;

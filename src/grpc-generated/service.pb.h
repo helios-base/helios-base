@@ -1140,6 +1140,396 @@ class RpcVector2D final :
   friend struct ::TableStruct_service_2eproto;
 };// -------------------------------------------------------------------
 
+class RegisterRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.RegisterRequest) */ {
+ public:
+  inline RegisterRequest() : RegisterRequest(nullptr) {}
+  ~RegisterRequest() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR RegisterRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RegisterRequest(const RegisterRequest& from);
+  RegisterRequest(RegisterRequest&& from) noexcept
+    : RegisterRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline RegisterRequest& operator=(const RegisterRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RegisterRequest& operator=(RegisterRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RegisterRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RegisterRequest* internal_default_instance() {
+    return reinterpret_cast<const RegisterRequest*>(
+               &_RegisterRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(RegisterRequest& a, RegisterRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RegisterRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RegisterRequest* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  RegisterRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<RegisterRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const RegisterRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const RegisterRequest& from) {
+    RegisterRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RegisterRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.RegisterRequest";
+  }
+  protected:
+  explicit RegisterRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTeamNameFieldNumber = 2,
+    kAgentTypeFieldNumber = 1,
+    kUniformNumberFieldNumber = 3,
+  };
+  // string team_name = 2;
+  void clear_team_name() ;
+  const std::string& team_name() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_team_name(Arg_&& arg, Args_... args);
+  std::string* mutable_team_name();
+  PROTOBUF_NODISCARD std::string* release_team_name();
+  void set_allocated_team_name(std::string* ptr);
+
+  private:
+  const std::string& _internal_team_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_team_name(
+      const std::string& value);
+  std::string* _internal_mutable_team_name();
+
+  public:
+  // .protos.AgentType agent_type = 1;
+  void clear_agent_type() ;
+  ::protos::AgentType agent_type() const;
+  void set_agent_type(::protos::AgentType value);
+
+  private:
+  ::protos::AgentType _internal_agent_type() const;
+  void _internal_set_agent_type(::protos::AgentType value);
+
+  public:
+  // int32 uniform_number = 3;
+  void clear_uniform_number() ;
+  ::int32_t uniform_number() const;
+  void set_uniform_number(::int32_t value);
+
+  private:
+  ::int32_t _internal_uniform_number() const;
+  void _internal_set_uniform_number(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:protos.RegisterRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr team_name_;
+    int agent_type_;
+    ::int32_t uniform_number_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
+class RegisterResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.RegisterResponse) */ {
+ public:
+  inline RegisterResponse() : RegisterResponse(nullptr) {}
+  ~RegisterResponse() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR RegisterResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RegisterResponse(const RegisterResponse& from);
+  RegisterResponse(RegisterResponse&& from) noexcept
+    : RegisterResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline RegisterResponse& operator=(const RegisterResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RegisterResponse& operator=(RegisterResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RegisterResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RegisterResponse* internal_default_instance() {
+    return reinterpret_cast<const RegisterResponse*>(
+               &_RegisterResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(RegisterResponse& a, RegisterResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RegisterResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RegisterResponse* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  RegisterResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<RegisterResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const RegisterResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const RegisterResponse& from) {
+    RegisterResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RegisterResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "protos.RegisterResponse";
+  }
+  protected:
+  explicit RegisterResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTeamNameFieldNumber = 3,
+    kClientIdFieldNumber = 1,
+    kAgentTypeFieldNumber = 2,
+    kUniformNumberFieldNumber = 4,
+  };
+  // string team_name = 3;
+  void clear_team_name() ;
+  const std::string& team_name() const;
+
+
+
+
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_team_name(Arg_&& arg, Args_... args);
+  std::string* mutable_team_name();
+  PROTOBUF_NODISCARD std::string* release_team_name();
+  void set_allocated_team_name(std::string* ptr);
+
+  private:
+  const std::string& _internal_team_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_team_name(
+      const std::string& value);
+  std::string* _internal_mutable_team_name();
+
+  public:
+  // int32 client_id = 1;
+  void clear_client_id() ;
+  ::int32_t client_id() const;
+  void set_client_id(::int32_t value);
+
+  private:
+  ::int32_t _internal_client_id() const;
+  void _internal_set_client_id(::int32_t value);
+
+  public:
+  // .protos.AgentType agent_type = 2;
+  void clear_agent_type() ;
+  ::protos::AgentType agent_type() const;
+  void set_agent_type(::protos::AgentType value);
+
+  private:
+  ::protos::AgentType _internal_agent_type() const;
+  void _internal_set_agent_type(::protos::AgentType value);
+
+  public:
+  // int32 uniform_number = 4;
+  void clear_uniform_number() ;
+  ::int32_t uniform_number() const;
+  void set_uniform_number(::int32_t value);
+
+  private:
+  ::int32_t _internal_uniform_number() const;
+  void _internal_set_uniform_number(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:protos.RegisterResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr team_name_;
+    ::int32_t client_id_;
+    int agent_type_;
+    ::int32_t uniform_number_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_service_2eproto;
+};// -------------------------------------------------------------------
+
 class Ball final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.Ball) */ {
  public:
@@ -1196,7 +1586,7 @@ class Ball final :
                &_Ball_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(Ball& a, Ball& b) {
     a.Swap(&b);
@@ -1572,7 +1962,7 @@ class Player final :
                &_Player_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(Player& a, Player& b) {
     a.Swap(&b);
@@ -2096,7 +2486,7 @@ class Self final :
                &_Self_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(Self& a, Self& b) {
     a.Swap(&b);
@@ -2692,7 +3082,7 @@ class InterceptInfo final :
                &_InterceptInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(InterceptInfo& a, InterceptInfo& b) {
     a.Swap(&b);
@@ -2960,7 +3350,7 @@ class InterceptTable final :
                &_InterceptTable_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(InterceptTable& a, InterceptTable& b) {
     a.Swap(&b);
@@ -3305,7 +3695,7 @@ class WorldModel final :
                &_WorldModel_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(WorldModel& a, WorldModel& b) {
     a.Swap(&b);
@@ -3917,7 +4307,7 @@ class State final :
                &_State_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(State& a, State& b) {
     a.Swap(&b);
@@ -3990,9 +4380,8 @@ class State final :
 
   enum : int {
     kRegisterResponseFieldNumber = 1,
-    kWorldModelFieldNumber = 3,
-    kFullWorldModelFieldNumber = 4,
-    kAgentTypeFieldNumber = 2,
+    kWorldModelFieldNumber = 2,
+    kFullWorldModelFieldNumber = 3,
   };
   // .protos.RegisterResponse register_response = 1;
   bool has_register_response() const;
@@ -4008,7 +4397,7 @@ class State final :
   void unsafe_arena_set_allocated_register_response(
       ::protos::RegisterResponse* register_response);
   ::protos::RegisterResponse* unsafe_arena_release_register_response();
-  // .protos.WorldModel world_model = 3;
+  // .protos.WorldModel world_model = 2;
   bool has_world_model() const;
   void clear_world_model() ;
   const ::protos::WorldModel& world_model() const;
@@ -4022,7 +4411,7 @@ class State final :
   void unsafe_arena_set_allocated_world_model(
       ::protos::WorldModel* world_model);
   ::protos::WorldModel* unsafe_arena_release_world_model();
-  // .protos.WorldModel full_world_model = 4;
+  // .protos.WorldModel full_world_model = 3;
   bool has_full_world_model() const;
   void clear_full_world_model() ;
   const ::protos::WorldModel& full_world_model() const;
@@ -4036,16 +4425,6 @@ class State final :
   void unsafe_arena_set_allocated_full_world_model(
       ::protos::WorldModel* full_world_model);
   ::protos::WorldModel* unsafe_arena_release_full_world_model();
-  // .protos.AgentType agent_type = 2;
-  void clear_agent_type() ;
-  ::protos::AgentType agent_type() const;
-  void set_agent_type(::protos::AgentType value);
-
-  private:
-  ::protos::AgentType _internal_agent_type() const;
-  void _internal_set_agent_type(::protos::AgentType value);
-
-  public:
   // @@protoc_insertion_point(class_scope:protos.State)
  private:
   class _Internal;
@@ -4059,7 +4438,6 @@ class State final :
     ::protos::RegisterResponse* register_response_;
     ::protos::WorldModel* world_model_;
     ::protos::WorldModel* full_world_model_;
-    int agent_type_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_service_2eproto;
@@ -4121,7 +4499,7 @@ class InitMessage final :
                &_InitMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(InitMessage& a, InitMessage& b) {
     a.Swap(&b);
@@ -4194,8 +4572,7 @@ class InitMessage final :
 
   enum : int {
     kRegisterResponseFieldNumber = 1,
-    kAgentTypeFieldNumber = 2,
-    kDebugModeFieldNumber = 3,
+    kDebugModeFieldNumber = 2,
   };
   // .protos.RegisterResponse register_response = 1;
   bool has_register_response() const;
@@ -4211,17 +4588,7 @@ class InitMessage final :
   void unsafe_arena_set_allocated_register_response(
       ::protos::RegisterResponse* register_response);
   ::protos::RegisterResponse* unsafe_arena_release_register_response();
-  // .protos.AgentType agent_type = 2;
-  void clear_agent_type() ;
-  ::protos::AgentType agent_type() const;
-  void set_agent_type(::protos::AgentType value);
-
-  private:
-  ::protos::AgentType _internal_agent_type() const;
-  void _internal_set_agent_type(::protos::AgentType value);
-
-  public:
-  // bool debug_mode = 3;
+  // bool debug_mode = 2;
   void clear_debug_mode() ;
   bool debug_mode() const;
   void set_debug_mode(bool value);
@@ -4242,7 +4609,6 @@ class InitMessage final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::protos::RegisterResponse* register_response_;
-    int agent_type_;
     bool debug_mode_;
   };
   union { Impl_ _impl_; };
@@ -4305,7 +4671,7 @@ class Dash final :
                &_Dash_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(Dash& a, Dash& b) {
     a.Swap(&b);
@@ -4472,7 +4838,7 @@ class Turn final :
                &_Turn_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(Turn& a, Turn& b) {
     a.Swap(&b);
@@ -4627,7 +4993,7 @@ class Kick final :
                &_Kick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(Kick& a, Kick& b) {
     a.Swap(&b);
@@ -4794,7 +5160,7 @@ class Tackle final :
                &_Tackle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(Tackle& a, Tackle& b) {
     a.Swap(&b);
@@ -4960,7 +5326,7 @@ class Catch final :
                &_Catch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(Catch& a, Catch& b) {
     a.Swap(&b);
@@ -5085,7 +5451,7 @@ class Move final :
                &_Move_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(Move& a, Move& b) {
     a.Swap(&b);
@@ -5252,7 +5618,7 @@ class TurnNeck final :
                &_TurnNeck_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(TurnNeck& a, TurnNeck& b) {
     a.Swap(&b);
@@ -5407,7 +5773,7 @@ class ChangeView final :
                &_ChangeView_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(ChangeView& a, ChangeView& b) {
     a.Swap(&b);
@@ -5562,7 +5928,7 @@ class BallMessage final :
                &_BallMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(BallMessage& a, BallMessage& b) {
     a.Swap(&b);
@@ -5738,7 +6104,7 @@ class PassMessage final :
                &_PassMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(PassMessage& a, PassMessage& b) {
     a.Swap(&b);
@@ -5942,7 +6308,7 @@ class InterceptMessage final :
                &_InterceptMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(InterceptMessage& a, InterceptMessage& b) {
     a.Swap(&b);
@@ -6121,7 +6487,7 @@ class GoalieMessage final :
                &_GoalieMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(GoalieMessage& a, GoalieMessage& b) {
     a.Swap(&b);
@@ -6305,7 +6671,7 @@ class GoalieAndPlayerMessage final :
                &_GoalieAndPlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(GoalieAndPlayerMessage& a, GoalieAndPlayerMessage& b) {
     a.Swap(&b);
@@ -6517,7 +6883,7 @@ class OffsideLineMessage final :
                &_OffsideLineMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(OffsideLineMessage& a, OffsideLineMessage& b) {
     a.Swap(&b);
@@ -6672,7 +7038,7 @@ class DefenseLineMessage final :
                &_DefenseLineMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(DefenseLineMessage& a, DefenseLineMessage& b) {
     a.Swap(&b);
@@ -6826,7 +7192,7 @@ class WaitRequestMessage final :
                &_WaitRequestMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(WaitRequestMessage& a, WaitRequestMessage& b) {
     a.Swap(&b);
@@ -6951,7 +7317,7 @@ class SetplayMessage final :
                &_SetplayMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(SetplayMessage& a, SetplayMessage& b) {
     a.Swap(&b);
@@ -7106,7 +7472,7 @@ class PassRequestMessage final :
                &_PassRequestMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(PassRequestMessage& a, PassRequestMessage& b) {
     a.Swap(&b);
@@ -7266,7 +7632,7 @@ class StaminaMessage final :
                &_StaminaMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(StaminaMessage& a, StaminaMessage& b) {
     a.Swap(&b);
@@ -7421,7 +7787,7 @@ class RecoveryMessage final :
                &_RecoveryMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(RecoveryMessage& a, RecoveryMessage& b) {
     a.Swap(&b);
@@ -7576,7 +7942,7 @@ class StaminaCapacityMessage final :
                &_StaminaCapacityMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(StaminaCapacityMessage& a, StaminaCapacityMessage& b) {
     a.Swap(&b);
@@ -7731,7 +8097,7 @@ class DribbleMessage final :
                &_DribbleMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(DribbleMessage& a, DribbleMessage& b) {
     a.Swap(&b);
@@ -7903,7 +8269,7 @@ class BallGoalieMessage final :
                &_BallGoalieMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(BallGoalieMessage& a, BallGoalieMessage& b) {
     a.Swap(&b);
@@ -8107,7 +8473,7 @@ class OnePlayerMessage final :
                &_OnePlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(OnePlayerMessage& a, OnePlayerMessage& b) {
     a.Swap(&b);
@@ -8279,7 +8645,7 @@ class TwoPlayerMessage final :
                &_TwoPlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(TwoPlayerMessage& a, TwoPlayerMessage& b) {
     a.Swap(&b);
@@ -8479,7 +8845,7 @@ class ThreePlayerMessage final :
                &_ThreePlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(ThreePlayerMessage& a, ThreePlayerMessage& b) {
     a.Swap(&b);
@@ -8707,7 +9073,7 @@ class SelfMessage final :
                &_SelfMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(SelfMessage& a, SelfMessage& b) {
     a.Swap(&b);
@@ -8891,7 +9257,7 @@ class TeammateMessage final :
                &_TeammateMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(TeammateMessage& a, TeammateMessage& b) {
     a.Swap(&b);
@@ -9075,7 +9441,7 @@ class OpponentMessage final :
                &_OpponentMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(OpponentMessage& a, OpponentMessage& b) {
     a.Swap(&b);
@@ -9259,7 +9625,7 @@ class BallPlayerMessage final :
                &_BallPlayerMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(BallPlayerMessage& a, BallPlayerMessage& b) {
     a.Swap(&b);
@@ -9501,7 +9867,7 @@ class Say final :
                &_Say_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   friend void swap(Say& a, Say& b) {
     a.Swap(&b);
@@ -10117,7 +10483,7 @@ class PointTo final :
                &_PointTo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   friend void swap(PointTo& a, PointTo& b) {
     a.Swap(&b);
@@ -10283,7 +10649,7 @@ class PointToOf final :
                &_PointToOf_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   friend void swap(PointToOf& a, PointToOf& b) {
     a.Swap(&b);
@@ -10408,7 +10774,7 @@ class AttentionTo final :
                &_AttentionTo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   friend void swap(AttentionTo& a, AttentionTo& b) {
     a.Swap(&b);
@@ -10574,7 +10940,7 @@ class AttentionToOf final :
                &_AttentionToOf_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    48;
 
   friend void swap(AttentionToOf& a, AttentionToOf& b) {
     a.Swap(&b);
@@ -10699,7 +11065,7 @@ class AddText final :
                &_AddText_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   friend void swap(AddText& a, AddText& b) {
     a.Swap(&b);
@@ -10876,7 +11242,7 @@ class AddPoint final :
                &_AddPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    50;
 
   friend void swap(AddPoint& a, AddPoint& b) {
     a.Swap(&b);
@@ -11070,7 +11436,7 @@ class AddLine final :
                &_AddLine_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    51;
 
   friend void swap(AddLine& a, AddLine& b) {
     a.Swap(&b);
@@ -11280,7 +11646,7 @@ class AddArc final :
                &_AddArc_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    52;
 
   friend void swap(AddArc& a, AddArc& b) {
     a.Swap(&b);
@@ -11510,7 +11876,7 @@ class AddCircle final :
                &_AddCircle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    53;
 
   friend void swap(AddCircle& a, AddCircle& b) {
     a.Swap(&b);
@@ -11728,7 +12094,7 @@ class AddTriangle final :
                &_AddTriangle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    54;
 
   friend void swap(AddTriangle& a, AddTriangle& b) {
     a.Swap(&b);
@@ -11966,7 +12332,7 @@ class AddRectangle final :
                &_AddRectangle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    55;
 
   friend void swap(AddRectangle& a, AddRectangle& b) {
     a.Swap(&b);
@@ -12203,7 +12569,7 @@ class AddSector final :
                &_AddSector_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    56;
 
   friend void swap(AddSector& a, AddSector& b) {
     a.Swap(&b);
@@ -12457,7 +12823,7 @@ class AddMessage final :
                &_AddMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    57;
 
   friend void swap(AddMessage& a, AddMessage& b) {
     a.Swap(&b);
@@ -12686,7 +13052,7 @@ class Log final :
                &_Log_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    58;
 
   friend void swap(Log& a, Log& b) {
     a.Swap(&b);
@@ -13029,7 +13395,7 @@ class DebugClient final :
                &_DebugClient_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    59;
 
   friend void swap(DebugClient& a, DebugClient& b) {
     a.Swap(&b);
@@ -13194,7 +13560,7 @@ class Body_GoToPoint final :
                &_Body_GoToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    60;
 
   friend void swap(Body_GoToPoint& a, Body_GoToPoint& b) {
     a.Swap(&b);
@@ -13378,7 +13744,7 @@ class Body_SmartKick final :
                &_Body_SmartKick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    61;
 
   friend void swap(Body_SmartKick& a, Body_SmartKick& b) {
     a.Swap(&b);
@@ -13574,7 +13940,7 @@ class Bhv_BeforeKickOff final :
                &_Bhv_BeforeKickOff_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    62;
 
   friend void swap(Bhv_BeforeKickOff& a, Bhv_BeforeKickOff& b) {
     a.Swap(&b);
@@ -13733,7 +14099,7 @@ class Bhv_BodyNeckToBall final :
                &_Bhv_BodyNeckToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    63;
 
   friend void swap(Bhv_BodyNeckToBall& a, Bhv_BodyNeckToBall& b) {
     a.Swap(&b);
@@ -13858,7 +14224,7 @@ class Bhv_BodyNeckToPoint final :
                &_Bhv_BodyNeckToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    64;
 
   friend void swap(Bhv_BodyNeckToPoint& a, Bhv_BodyNeckToPoint& b) {
     a.Swap(&b);
@@ -14017,7 +14383,7 @@ class Bhv_Emergency final :
                &_Bhv_Emergency_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    65;
 
   friend void swap(Bhv_Emergency& a, Bhv_Emergency& b) {
     a.Swap(&b);
@@ -14142,7 +14508,7 @@ class Bhv_GoToPointLookBall final :
                &_Bhv_GoToPointLookBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    66;
 
   friend void swap(Bhv_GoToPointLookBall& a, Bhv_GoToPointLookBall& b) {
     a.Swap(&b);
@@ -14326,7 +14692,7 @@ class Bhv_NeckBodyToBall final :
                &_Bhv_NeckBodyToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    67;
 
   friend void swap(Bhv_NeckBodyToBall& a, Bhv_NeckBodyToBall& b) {
     a.Swap(&b);
@@ -14481,7 +14847,7 @@ class Bhv_NeckBodyToPoint final :
                &_Bhv_NeckBodyToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    68;
 
   friend void swap(Bhv_NeckBodyToPoint& a, Bhv_NeckBodyToPoint& b) {
     a.Swap(&b);
@@ -14652,7 +15018,7 @@ class Bhv_ScanField final :
                &_Bhv_ScanField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    69;
 
   friend void swap(Bhv_ScanField& a, Bhv_ScanField& b) {
     a.Swap(&b);
@@ -14776,7 +15142,7 @@ class Body_AdvanceBall final :
                &_Body_AdvanceBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    70;
 
   friend void swap(Body_AdvanceBall& a, Body_AdvanceBall& b) {
     a.Swap(&b);
@@ -14900,7 +15266,7 @@ class Body_ClearBall final :
                &_Body_ClearBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    71;
 
   friend void swap(Body_ClearBall& a, Body_ClearBall& b) {
     a.Swap(&b);
@@ -15025,7 +15391,7 @@ class Body_Dribble final :
                &_Body_Dribble_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    72;
 
   friend void swap(Body_Dribble& a, Body_Dribble& b) {
     a.Swap(&b);
@@ -15233,7 +15599,7 @@ class Body_GoToPointDodge final :
                &_Body_GoToPointDodge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    73;
 
   friend void swap(Body_GoToPointDodge& a, Body_GoToPointDodge& b) {
     a.Swap(&b);
@@ -15405,7 +15771,7 @@ class Body_HoldBall final :
                &_Body_HoldBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    74;
 
   friend void swap(Body_HoldBall& a, Body_HoldBall& b) {
     a.Swap(&b);
@@ -15593,7 +15959,7 @@ class Body_Intercept final :
                &_Body_Intercept_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    75;
 
   friend void swap(Body_Intercept& a, Body_Intercept& b) {
     a.Swap(&b);
@@ -15765,7 +16131,7 @@ class Body_KickOneStep final :
                &_Body_KickOneStep_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    76;
 
   friend void swap(Body_KickOneStep& a, Body_KickOneStep& b) {
     a.Swap(&b);
@@ -15948,7 +16314,7 @@ class Body_StopBall final :
                &_Body_StopBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    77;
 
   friend void swap(Body_StopBall& a, Body_StopBall& b) {
     a.Swap(&b);
@@ -16073,7 +16439,7 @@ class Body_StopDash final :
                &_Body_StopDash_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    78;
 
   friend void swap(Body_StopDash& a, Body_StopDash& b) {
     a.Swap(&b);
@@ -16228,7 +16594,7 @@ class Body_TackleToPoint final :
                &_Body_TackleToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    79;
 
   friend void swap(Body_TackleToPoint& a, Body_TackleToPoint& b) {
     a.Swap(&b);
@@ -16412,7 +16778,7 @@ class Body_TurnToAngle final :
                &_Body_TurnToAngle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    80;
 
   friend void swap(Body_TurnToAngle& a, Body_TurnToAngle& b) {
     a.Swap(&b);
@@ -16567,7 +16933,7 @@ class Body_TurnToBall final :
                &_Body_TurnToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    81;
 
   friend void swap(Body_TurnToBall& a, Body_TurnToBall& b) {
     a.Swap(&b);
@@ -16722,7 +17088,7 @@ class Body_TurnToPoint final :
                &_Body_TurnToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    82;
 
   friend void swap(Body_TurnToPoint& a, Body_TurnToPoint& b) {
     a.Swap(&b);
@@ -16894,7 +17260,7 @@ class Focus_MoveToPoint final :
                &_Focus_MoveToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    83;
 
   friend void swap(Focus_MoveToPoint& a, Focus_MoveToPoint& b) {
     a.Swap(&b);
@@ -17053,7 +17419,7 @@ class Focus_Reset final :
                &_Focus_Reset_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    84;
 
   friend void swap(Focus_Reset& a, Focus_Reset& b) {
     a.Swap(&b);
@@ -17177,7 +17543,7 @@ class Neck_ScanField final :
                &_Neck_ScanField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    85;
 
   friend void swap(Neck_ScanField& a, Neck_ScanField& b) {
     a.Swap(&b);
@@ -17301,7 +17667,7 @@ class Neck_ScanPlayers final :
                &_Neck_ScanPlayers_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    86;
 
   friend void swap(Neck_ScanPlayers& a, Neck_ScanPlayers& b) {
     a.Swap(&b);
@@ -17426,7 +17792,7 @@ class Neck_TurnToBallAndPlayer final :
                &_Neck_TurnToBallAndPlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    87;
 
   friend void swap(Neck_TurnToBallAndPlayer& a, Neck_TurnToBallAndPlayer& b) {
     a.Swap(&b);
@@ -17605,7 +17971,7 @@ class Neck_TurnToBallOrScan final :
                &_Neck_TurnToBallOrScan_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    88;
 
   friend void swap(Neck_TurnToBallOrScan& a, Neck_TurnToBallOrScan& b) {
     a.Swap(&b);
@@ -17759,7 +18125,7 @@ class Neck_TurnToBall final :
                &_Neck_TurnToBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    89;
 
   friend void swap(Neck_TurnToBall& a, Neck_TurnToBall& b) {
     a.Swap(&b);
@@ -17884,7 +18250,7 @@ class Neck_TurnToGoalieOrScan final :
                &_Neck_TurnToGoalieOrScan_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    90;
 
   friend void swap(Neck_TurnToGoalieOrScan& a, Neck_TurnToGoalieOrScan& b) {
     a.Swap(&b);
@@ -18038,7 +18404,7 @@ class Neck_TurnToLowConfTeammate final :
                &_Neck_TurnToLowConfTeammate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    91;
 
   friend void swap(Neck_TurnToLowConfTeammate& a, Neck_TurnToLowConfTeammate& b) {
     a.Swap(&b);
@@ -18163,7 +18529,7 @@ class Neck_TurnToPlayerOrScan final :
                &_Neck_TurnToPlayerOrScan_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    92;
 
   friend void swap(Neck_TurnToPlayerOrScan& a, Neck_TurnToPlayerOrScan& b) {
     a.Swap(&b);
@@ -18342,7 +18708,7 @@ class Neck_TurnToPoint final :
                &_Neck_TurnToPoint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    93;
 
   friend void swap(Neck_TurnToPoint& a, Neck_TurnToPoint& b) {
     a.Swap(&b);
@@ -18502,7 +18868,7 @@ class Neck_TurnToRelative final :
                &_Neck_TurnToRelative_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    94;
 
   friend void swap(Neck_TurnToRelative& a, Neck_TurnToRelative& b) {
     a.Swap(&b);
@@ -18657,7 +19023,7 @@ class View_ChangeWidth final :
                &_View_ChangeWidth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    95;
 
   friend void swap(View_ChangeWidth& a, View_ChangeWidth& b) {
     a.Swap(&b);
@@ -18811,7 +19177,7 @@ class View_Normal final :
                &_View_Normal_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    96;
 
   friend void swap(View_Normal& a, View_Normal& b) {
     a.Swap(&b);
@@ -18935,7 +19301,7 @@ class View_Synch final :
                &_View_Synch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    97;
 
   friend void swap(View_Synch& a, View_Synch& b) {
     a.Swap(&b);
@@ -19059,7 +19425,7 @@ class View_Wide final :
                &_View_Wide_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    98;
 
   friend void swap(View_Wide& a, View_Wide& b) {
     a.Swap(&b);
@@ -19183,7 +19549,7 @@ class HeliosGoalie final :
                &_HeliosGoalie_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    99;
 
   friend void swap(HeliosGoalie& a, HeliosGoalie& b) {
     a.Swap(&b);
@@ -19307,7 +19673,7 @@ class HeliosGoalieMove final :
                &_HeliosGoalieMove_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    100;
 
   friend void swap(HeliosGoalieMove& a, HeliosGoalieMove& b) {
     a.Swap(&b);
@@ -19431,7 +19797,7 @@ class HeliosGoalieKick final :
                &_HeliosGoalieKick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    99;
+    101;
 
   friend void swap(HeliosGoalieKick& a, HeliosGoalieKick& b) {
     a.Swap(&b);
@@ -19555,7 +19921,7 @@ class HeliosShoot final :
                &_HeliosShoot_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    102;
 
   friend void swap(HeliosShoot& a, HeliosShoot& b) {
     a.Swap(&b);
@@ -19680,7 +20046,7 @@ class HeliosChainAction final :
                &_HeliosChainAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    101;
+    103;
 
   friend void swap(HeliosChainAction& a, HeliosChainAction& b) {
     a.Swap(&b);
@@ -19930,7 +20296,7 @@ class HeliosBasicOffensive final :
                &_HeliosBasicOffensive_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    102;
+    104;
 
   friend void swap(HeliosBasicOffensive& a, HeliosBasicOffensive& b) {
     a.Swap(&b);
@@ -20054,7 +20420,7 @@ class HeliosBasicMove final :
                &_HeliosBasicMove_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    103;
+    105;
 
   friend void swap(HeliosBasicMove& a, HeliosBasicMove& b) {
     a.Swap(&b);
@@ -20178,7 +20544,7 @@ class HeliosSetPlay final :
                &_HeliosSetPlay_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    104;
+    106;
 
   friend void swap(HeliosSetPlay& a, HeliosSetPlay& b) {
     a.Swap(&b);
@@ -20302,7 +20668,7 @@ class HeliosPenalty final :
                &_HeliosPenalty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    105;
+    107;
 
   friend void swap(HeliosPenalty& a, HeliosPenalty& b) {
     a.Swap(&b);
@@ -20426,7 +20792,7 @@ class HeliosCommunicaion final :
                &_HeliosCommunicaion_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    106;
+    108;
 
   friend void swap(HeliosCommunicaion& a, HeliosCommunicaion& b) {
     a.Swap(&b);
@@ -20619,7 +20985,7 @@ class PlayerAction final :
                &_PlayerAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    107;
+    109;
 
   friend void swap(PlayerAction& a, PlayerAction& b) {
     a.Swap(&b);
@@ -22117,7 +22483,7 @@ class PlayerActions final :
                &_PlayerActions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    108;
+    110;
 
   friend void swap(PlayerActions& a, PlayerActions& b) {
     a.Swap(&b);
@@ -22282,7 +22648,7 @@ class ChangePlayerType final :
                &_ChangePlayerType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    109;
+    111;
 
   friend void swap(ChangePlayerType& a, ChangePlayerType& b) {
     a.Swap(&b);
@@ -22448,7 +22814,7 @@ class DoHeliosSubstitute final :
                &_DoHeliosSubstitute_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    110;
+    112;
 
   friend void swap(DoHeliosSubstitute& a, DoHeliosSubstitute& b) {
     a.Swap(&b);
@@ -22572,7 +22938,7 @@ class DoHeliosSayPlayerTypes final :
                &_DoHeliosSayPlayerTypes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    111;
+    113;
 
   friend void swap(DoHeliosSayPlayerTypes& a, DoHeliosSayPlayerTypes& b) {
     a.Swap(&b);
@@ -22704,7 +23070,7 @@ class CoachAction final :
                &_CoachAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    112;
+    114;
 
   friend void swap(CoachAction& a, CoachAction& b) {
     a.Swap(&b);
@@ -22921,7 +23287,7 @@ class CoachActions final :
                &_CoachActions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    113;
+    115;
 
   friend void swap(CoachActions& a, CoachActions& b) {
     a.Swap(&b);
@@ -23085,7 +23451,7 @@ class DoKickOff final :
                &_DoKickOff_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    114;
+    116;
 
   friend void swap(DoKickOff& a, DoKickOff& b) {
     a.Swap(&b);
@@ -23210,7 +23576,7 @@ class DoMoveBall final :
                &_DoMoveBall_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    115;
+    117;
 
   friend void swap(DoMoveBall& a, DoMoveBall& b) {
     a.Swap(&b);
@@ -23386,7 +23752,7 @@ class DoMovePlayer final :
                &_DoMovePlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    116;
+    118;
 
   friend void swap(DoMovePlayer& a, DoMovePlayer& b) {
     a.Swap(&b);
@@ -23581,7 +23947,7 @@ class DoRecover final :
                &_DoRecover_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    117;
+    119;
 
   friend void swap(DoRecover& a, DoRecover& b) {
     a.Swap(&b);
@@ -23706,7 +24072,7 @@ class DoChangeMode final :
                &_DoChangeMode_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    118;
+    120;
 
   friend void swap(DoChangeMode& a, DoChangeMode& b) {
     a.Swap(&b);
@@ -23873,7 +24239,7 @@ class DoChangePlayerType final :
                &_DoChangePlayerType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    119;
+    121;
 
   friend void swap(DoChangePlayerType& a, DoChangePlayerType& b) {
     a.Swap(&b);
@@ -24062,7 +24428,7 @@ class TrainerAction final :
                &_TrainerAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    120;
+    122;
 
   friend void swap(TrainerAction& a, TrainerAction& b) {
     a.Swap(&b);
@@ -24342,7 +24708,7 @@ class TrainerActions final :
                &_TrainerActions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    121;
+    123;
 
   friend void swap(TrainerActions& a, TrainerActions& b) {
     a.Swap(&b);
@@ -24507,7 +24873,7 @@ class ServerParam final :
                &_ServerParam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    122;
+    124;
 
   friend void swap(ServerParam& a, ServerParam& b) {
     a.Swap(&b);
@@ -24594,8 +24960,7 @@ class ServerParam final :
     kCoachMsgFileFieldNumber = 181,
     kFixedTeamnameLFieldNumber = 206,
     kFixedTeamnameRFieldNumber = 207,
-    kRegisterResponseFieldNumber = 223,
-    kAgentTypeFieldNumber = 1,
+    kRegisterResponseFieldNumber = 1,
     kInertiaMomentFieldNumber = 2,
     kPlayerSizeFieldNumber = 3,
     kPlayerDecayFieldNumber = 4,
@@ -25103,7 +25468,7 @@ class ServerParam final :
   std::string* _internal_mutable_fixed_teamname_r();
 
   public:
-  // .protos.RegisterResponse register_response = 223;
+  // .protos.RegisterResponse register_response = 1;
   bool has_register_response() const;
   void clear_register_response() ;
   const ::protos::RegisterResponse& register_response() const;
@@ -25117,16 +25482,6 @@ class ServerParam final :
   void unsafe_arena_set_allocated_register_response(
       ::protos::RegisterResponse* register_response);
   ::protos::RegisterResponse* unsafe_arena_release_register_response();
-  // .protos.AgentType agent_type = 1;
-  void clear_agent_type() ;
-  ::protos::AgentType agent_type() const;
-  void set_agent_type(::protos::AgentType value);
-
-  private:
-  ::protos::AgentType _internal_agent_type() const;
-  void _internal_set_agent_type(::protos::AgentType value);
-
-  public:
   // float inertia_moment = 2;
   void clear_inertia_moment() ;
   float inertia_moment() const;
@@ -27213,7 +27568,6 @@ class ServerParam final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fixed_teamname_l_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fixed_teamname_r_;
     ::protos::RegisterResponse* register_response_;
-    int agent_type_;
     float inertia_moment_;
     float player_size_;
     float player_decay_;
@@ -27481,7 +27835,7 @@ class PlayerParam final :
                &_PlayerParam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    123;
+    125;
 
   friend void swap(PlayerParam& a, PlayerParam& b) {
     a.Swap(&b);
@@ -27553,8 +27907,7 @@ class PlayerParam final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRegisterResponseFieldNumber = 31,
-    kAgentTypeFieldNumber = 1,
+    kRegisterResponseFieldNumber = 1,
     kPlayerTypesFieldNumber = 2,
     kSubsMaxFieldNumber = 3,
     kPtMaxFieldNumber = 4,
@@ -27585,7 +27938,7 @@ class PlayerParam final :
     kCatchableAreaLStretchMinFieldNumber = 29,
     kCatchableAreaLStretchMaxFieldNumber = 30,
   };
-  // .protos.RegisterResponse register_response = 31;
+  // .protos.RegisterResponse register_response = 1;
   bool has_register_response() const;
   void clear_register_response() ;
   const ::protos::RegisterResponse& register_response() const;
@@ -27599,16 +27952,6 @@ class PlayerParam final :
   void unsafe_arena_set_allocated_register_response(
       ::protos::RegisterResponse* register_response);
   ::protos::RegisterResponse* unsafe_arena_release_register_response();
-  // .protos.AgentType agent_type = 1;
-  void clear_agent_type() ;
-  ::protos::AgentType agent_type() const;
-  void set_agent_type(::protos::AgentType value);
-
-  private:
-  ::protos::AgentType _internal_agent_type() const;
-  void _internal_set_agent_type(::protos::AgentType value);
-
-  public:
   // int32 player_types = 2;
   void clear_player_types() ;
   ::int32_t player_types() const;
@@ -27910,7 +28253,6 @@ class PlayerParam final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::protos::RegisterResponse* register_response_;
-    int agent_type_;
     ::int32_t player_types_;
     ::int32_t subs_max_;
     ::int32_t pt_max_;
@@ -28001,7 +28343,7 @@ class PlayerType final :
                &_PlayerType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    124;
+    126;
 
   friend void swap(PlayerType& a, PlayerType& b) {
     a.Swap(&b);
@@ -28073,8 +28415,7 @@ class PlayerType final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRegisterResponseFieldNumber = 35,
-    kAgentTypeFieldNumber = 1,
+    kRegisterResponseFieldNumber = 1,
     kIdFieldNumber = 2,
     kStaminaIncMaxFieldNumber = 3,
     kPlayerDecayFieldNumber = 4,
@@ -28109,7 +28450,7 @@ class PlayerType final :
     kCyclesToReachMaxSpeedFieldNumber = 33,
     kPlayerSpeedMaxFieldNumber = 34,
   };
-  // .protos.RegisterResponse register_response = 35;
+  // .protos.RegisterResponse register_response = 1;
   bool has_register_response() const;
   void clear_register_response() ;
   const ::protos::RegisterResponse& register_response() const;
@@ -28123,16 +28464,6 @@ class PlayerType final :
   void unsafe_arena_set_allocated_register_response(
       ::protos::RegisterResponse* register_response);
   ::protos::RegisterResponse* unsafe_arena_release_register_response();
-  // .protos.AgentType agent_type = 1;
-  void clear_agent_type() ;
-  ::protos::AgentType agent_type() const;
-  void set_agent_type(::protos::AgentType value);
-
-  private:
-  ::protos::AgentType _internal_agent_type() const;
-  void _internal_set_agent_type(::protos::AgentType value);
-
-  public:
   // int32 id = 2;
   void clear_id() ;
   ::int32_t id() const;
@@ -28474,7 +28805,6 @@ class PlayerType final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::protos::RegisterResponse* register_response_;
-    int agent_type_;
     ::int32_t id_;
     float stamina_inc_max_;
     float player_decay_;
@@ -28508,195 +28838,6 @@ class PlayerType final :
     float real_speed_max2_;
     ::int32_t cycles_to_reach_max_speed_;
     float player_speed_max_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_service_2eproto;
-};// -------------------------------------------------------------------
-
-class RegisterRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.RegisterRequest) */ {
- public:
-  inline RegisterRequest() : RegisterRequest(nullptr) {}
-  ~RegisterRequest() override;
-  template<typename = void>
-  explicit PROTOBUF_CONSTEXPR RegisterRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  RegisterRequest(const RegisterRequest& from);
-  RegisterRequest(RegisterRequest&& from) noexcept
-    : RegisterRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline RegisterRequest& operator=(const RegisterRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline RegisterRequest& operator=(RegisterRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const RegisterRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const RegisterRequest* internal_default_instance() {
-    return reinterpret_cast<const RegisterRequest*>(
-               &_RegisterRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    125;
-
-  friend void swap(RegisterRequest& a, RegisterRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(RegisterRequest* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(RegisterRequest* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  RegisterRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<RegisterRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const RegisterRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const RegisterRequest& from) {
-    RegisterRequest::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(RegisterRequest* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() {
-    return "protos.RegisterRequest";
-  }
-  protected:
-  explicit RegisterRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kTeamNameFieldNumber = 2,
-    kAgentTypeFieldNumber = 1,
-    kUniformNumberFieldNumber = 3,
-  };
-  // string team_name = 2;
-  void clear_team_name() ;
-  const std::string& team_name() const;
-
-
-
-
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_team_name(Arg_&& arg, Args_... args);
-  std::string* mutable_team_name();
-  PROTOBUF_NODISCARD std::string* release_team_name();
-  void set_allocated_team_name(std::string* ptr);
-
-  private:
-  const std::string& _internal_team_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_team_name(
-      const std::string& value);
-  std::string* _internal_mutable_team_name();
-
-  public:
-  // .protos.AgentType agent_type = 1;
-  void clear_agent_type() ;
-  ::protos::AgentType agent_type() const;
-  void set_agent_type(::protos::AgentType value);
-
-  private:
-  ::protos::AgentType _internal_agent_type() const;
-  void _internal_set_agent_type(::protos::AgentType value);
-
-  public:
-  // int32 uniform_number = 3;
-  void clear_uniform_number() ;
-  ::int32_t uniform_number() const;
-  void set_uniform_number(::int32_t value);
-
-  private:
-  ::int32_t _internal_uniform_number() const;
-  void _internal_set_uniform_number(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:protos.RegisterRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr team_name_;
-    int agent_type_;
-    ::int32_t uniform_number_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_service_2eproto;
@@ -28757,7 +28898,7 @@ class Empty final :
                &_Empty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    126;
+    127;
 
   friend void swap(Empty& a, Empty& b) {
     a.Swap(&b);
@@ -28823,207 +28964,6 @@ class Empty final :
   typedef void DestructorSkippable_;
   struct Impl_ {
   };
-  friend struct ::TableStruct_service_2eproto;
-};// -------------------------------------------------------------------
-
-class RegisterResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:protos.RegisterResponse) */ {
- public:
-  inline RegisterResponse() : RegisterResponse(nullptr) {}
-  ~RegisterResponse() override;
-  template<typename = void>
-  explicit PROTOBUF_CONSTEXPR RegisterResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  RegisterResponse(const RegisterResponse& from);
-  RegisterResponse(RegisterResponse&& from) noexcept
-    : RegisterResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline RegisterResponse& operator=(const RegisterResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline RegisterResponse& operator=(RegisterResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const RegisterResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const RegisterResponse* internal_default_instance() {
-    return reinterpret_cast<const RegisterResponse*>(
-               &_RegisterResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    127;
-
-  friend void swap(RegisterResponse& a, RegisterResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(RegisterResponse* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(RegisterResponse* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  RegisterResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<RegisterResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const RegisterResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const RegisterResponse& from) {
-    RegisterResponse::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(RegisterResponse* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() {
-    return "protos.RegisterResponse";
-  }
-  protected:
-  explicit RegisterResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kTeamNameFieldNumber = 3,
-    kClientIdFieldNumber = 1,
-    kAgentTypeFieldNumber = 2,
-    kUniformNumberFieldNumber = 4,
-  };
-  // string team_name = 3;
-  void clear_team_name() ;
-  const std::string& team_name() const;
-
-
-
-
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_team_name(Arg_&& arg, Args_... args);
-  std::string* mutable_team_name();
-  PROTOBUF_NODISCARD std::string* release_team_name();
-  void set_allocated_team_name(std::string* ptr);
-
-  private:
-  const std::string& _internal_team_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_team_name(
-      const std::string& value);
-  std::string* _internal_mutable_team_name();
-
-  public:
-  // int32 client_id = 1;
-  void clear_client_id() ;
-  ::int32_t client_id() const;
-  void set_client_id(::int32_t value);
-
-  private:
-  ::int32_t _internal_client_id() const;
-  void _internal_set_client_id(::int32_t value);
-
-  public:
-  // .protos.AgentType agent_type = 2;
-  void clear_agent_type() ;
-  ::protos::AgentType agent_type() const;
-  void set_agent_type(::protos::AgentType value);
-
-  private:
-  ::protos::AgentType _internal_agent_type() const;
-  void _internal_set_agent_type(::protos::AgentType value);
-
-  public:
-  // int32 uniform_number = 4;
-  void clear_uniform_number() ;
-  ::int32_t uniform_number() const;
-  void set_uniform_number(::int32_t value);
-
-  private:
-  ::int32_t _internal_uniform_number() const;
-  void _internal_set_uniform_number(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:protos.RegisterResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr team_name_;
-    ::int32_t client_id_;
-    int agent_type_;
-    ::int32_t uniform_number_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
   friend struct ::TableStruct_service_2eproto;
 };
 
@@ -29121,6 +29061,208 @@ inline float RpcVector2D::_internal_angle() const {
 inline void RpcVector2D::_internal_set_angle(float value) {
   ;
   _impl_.angle_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// RegisterRequest
+
+// .protos.AgentType agent_type = 1;
+inline void RegisterRequest::clear_agent_type() {
+  _impl_.agent_type_ = 0;
+}
+inline ::protos::AgentType RegisterRequest::agent_type() const {
+  // @@protoc_insertion_point(field_get:protos.RegisterRequest.agent_type)
+  return _internal_agent_type();
+}
+inline void RegisterRequest::set_agent_type(::protos::AgentType value) {
+   _internal_set_agent_type(value);
+  // @@protoc_insertion_point(field_set:protos.RegisterRequest.agent_type)
+}
+inline ::protos::AgentType RegisterRequest::_internal_agent_type() const {
+  return static_cast<::protos::AgentType>(_impl_.agent_type_);
+}
+inline void RegisterRequest::_internal_set_agent_type(::protos::AgentType value) {
+  ;
+  _impl_.agent_type_ = value;
+}
+
+// string team_name = 2;
+inline void RegisterRequest::clear_team_name() {
+  _impl_.team_name_.ClearToEmpty();
+}
+inline const std::string& RegisterRequest::team_name() const {
+  // @@protoc_insertion_point(field_get:protos.RegisterRequest.team_name)
+  return _internal_team_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void RegisterRequest::set_team_name(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.team_name_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.RegisterRequest.team_name)
+}
+inline std::string* RegisterRequest::mutable_team_name() {
+  std::string* _s = _internal_mutable_team_name();
+  // @@protoc_insertion_point(field_mutable:protos.RegisterRequest.team_name)
+  return _s;
+}
+inline const std::string& RegisterRequest::_internal_team_name() const {
+  return _impl_.team_name_.Get();
+}
+inline void RegisterRequest::_internal_set_team_name(const std::string& value) {
+  ;
+
+
+  _impl_.team_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* RegisterRequest::_internal_mutable_team_name() {
+  ;
+  return _impl_.team_name_.Mutable( GetArenaForAllocation());
+}
+inline std::string* RegisterRequest::release_team_name() {
+  // @@protoc_insertion_point(field_release:protos.RegisterRequest.team_name)
+  return _impl_.team_name_.Release();
+}
+inline void RegisterRequest::set_allocated_team_name(std::string* value) {
+  _impl_.team_name_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.team_name_.IsDefault()) {
+          _impl_.team_name_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.RegisterRequest.team_name)
+}
+
+// int32 uniform_number = 3;
+inline void RegisterRequest::clear_uniform_number() {
+  _impl_.uniform_number_ = 0;
+}
+inline ::int32_t RegisterRequest::uniform_number() const {
+  // @@protoc_insertion_point(field_get:protos.RegisterRequest.uniform_number)
+  return _internal_uniform_number();
+}
+inline void RegisterRequest::set_uniform_number(::int32_t value) {
+  _internal_set_uniform_number(value);
+  // @@protoc_insertion_point(field_set:protos.RegisterRequest.uniform_number)
+}
+inline ::int32_t RegisterRequest::_internal_uniform_number() const {
+  return _impl_.uniform_number_;
+}
+inline void RegisterRequest::_internal_set_uniform_number(::int32_t value) {
+  ;
+  _impl_.uniform_number_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// RegisterResponse
+
+// int32 client_id = 1;
+inline void RegisterResponse::clear_client_id() {
+  _impl_.client_id_ = 0;
+}
+inline ::int32_t RegisterResponse::client_id() const {
+  // @@protoc_insertion_point(field_get:protos.RegisterResponse.client_id)
+  return _internal_client_id();
+}
+inline void RegisterResponse::set_client_id(::int32_t value) {
+  _internal_set_client_id(value);
+  // @@protoc_insertion_point(field_set:protos.RegisterResponse.client_id)
+}
+inline ::int32_t RegisterResponse::_internal_client_id() const {
+  return _impl_.client_id_;
+}
+inline void RegisterResponse::_internal_set_client_id(::int32_t value) {
+  ;
+  _impl_.client_id_ = value;
+}
+
+// .protos.AgentType agent_type = 2;
+inline void RegisterResponse::clear_agent_type() {
+  _impl_.agent_type_ = 0;
+}
+inline ::protos::AgentType RegisterResponse::agent_type() const {
+  // @@protoc_insertion_point(field_get:protos.RegisterResponse.agent_type)
+  return _internal_agent_type();
+}
+inline void RegisterResponse::set_agent_type(::protos::AgentType value) {
+   _internal_set_agent_type(value);
+  // @@protoc_insertion_point(field_set:protos.RegisterResponse.agent_type)
+}
+inline ::protos::AgentType RegisterResponse::_internal_agent_type() const {
+  return static_cast<::protos::AgentType>(_impl_.agent_type_);
+}
+inline void RegisterResponse::_internal_set_agent_type(::protos::AgentType value) {
+  ;
+  _impl_.agent_type_ = value;
+}
+
+// string team_name = 3;
+inline void RegisterResponse::clear_team_name() {
+  _impl_.team_name_.ClearToEmpty();
+}
+inline const std::string& RegisterResponse::team_name() const {
+  // @@protoc_insertion_point(field_get:protos.RegisterResponse.team_name)
+  return _internal_team_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void RegisterResponse::set_team_name(Arg_&& arg,
+                                                     Args_... args) {
+  ;
+  _impl_.team_name_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:protos.RegisterResponse.team_name)
+}
+inline std::string* RegisterResponse::mutable_team_name() {
+  std::string* _s = _internal_mutable_team_name();
+  // @@protoc_insertion_point(field_mutable:protos.RegisterResponse.team_name)
+  return _s;
+}
+inline const std::string& RegisterResponse::_internal_team_name() const {
+  return _impl_.team_name_.Get();
+}
+inline void RegisterResponse::_internal_set_team_name(const std::string& value) {
+  ;
+
+
+  _impl_.team_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* RegisterResponse::_internal_mutable_team_name() {
+  ;
+  return _impl_.team_name_.Mutable( GetArenaForAllocation());
+}
+inline std::string* RegisterResponse::release_team_name() {
+  // @@protoc_insertion_point(field_release:protos.RegisterResponse.team_name)
+  return _impl_.team_name_.Release();
+}
+inline void RegisterResponse::set_allocated_team_name(std::string* value) {
+  _impl_.team_name_.SetAllocated(value, GetArenaForAllocation());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.team_name_.IsDefault()) {
+          _impl_.team_name_.Set("", GetArenaForAllocation());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:protos.RegisterResponse.team_name)
+}
+
+// int32 uniform_number = 4;
+inline void RegisterResponse::clear_uniform_number() {
+  _impl_.uniform_number_ = 0;
+}
+inline ::int32_t RegisterResponse::uniform_number() const {
+  // @@protoc_insertion_point(field_get:protos.RegisterResponse.uniform_number)
+  return _internal_uniform_number();
+}
+inline void RegisterResponse::set_uniform_number(::int32_t value) {
+  _internal_set_uniform_number(value);
+  // @@protoc_insertion_point(field_set:protos.RegisterResponse.uniform_number)
+}
+inline ::int32_t RegisterResponse::_internal_uniform_number() const {
+  return _impl_.uniform_number_;
+}
+inline void RegisterResponse::_internal_set_uniform_number(::int32_t value) {
+  ;
+  _impl_.uniform_number_ = value;
 }
 
 // -------------------------------------------------------------------
@@ -33524,27 +33666,7 @@ inline void State::set_allocated_register_response(::protos::RegisterResponse* r
   // @@protoc_insertion_point(field_set_allocated:protos.State.register_response)
 }
 
-// .protos.AgentType agent_type = 2;
-inline void State::clear_agent_type() {
-  _impl_.agent_type_ = 0;
-}
-inline ::protos::AgentType State::agent_type() const {
-  // @@protoc_insertion_point(field_get:protos.State.agent_type)
-  return _internal_agent_type();
-}
-inline void State::set_agent_type(::protos::AgentType value) {
-   _internal_set_agent_type(value);
-  // @@protoc_insertion_point(field_set:protos.State.agent_type)
-}
-inline ::protos::AgentType State::_internal_agent_type() const {
-  return static_cast<::protos::AgentType>(_impl_.agent_type_);
-}
-inline void State::_internal_set_agent_type(::protos::AgentType value) {
-  ;
-  _impl_.agent_type_ = value;
-}
-
-// .protos.WorldModel world_model = 3;
+// .protos.WorldModel world_model = 2;
 inline bool State::has_world_model() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.world_model_ != nullptr);
@@ -33631,7 +33753,7 @@ inline void State::set_allocated_world_model(::protos::WorldModel* world_model) 
   // @@protoc_insertion_point(field_set_allocated:protos.State.world_model)
 }
 
-// .protos.WorldModel full_world_model = 4;
+// .protos.WorldModel full_world_model = 3;
 inline bool State::has_full_world_model() const {
   bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.full_world_model_ != nullptr);
@@ -33809,27 +33931,7 @@ inline void InitMessage::set_allocated_register_response(::protos::RegisterRespo
   // @@protoc_insertion_point(field_set_allocated:protos.InitMessage.register_response)
 }
 
-// .protos.AgentType agent_type = 2;
-inline void InitMessage::clear_agent_type() {
-  _impl_.agent_type_ = 0;
-}
-inline ::protos::AgentType InitMessage::agent_type() const {
-  // @@protoc_insertion_point(field_get:protos.InitMessage.agent_type)
-  return _internal_agent_type();
-}
-inline void InitMessage::set_agent_type(::protos::AgentType value) {
-   _internal_set_agent_type(value);
-  // @@protoc_insertion_point(field_set:protos.InitMessage.agent_type)
-}
-inline ::protos::AgentType InitMessage::_internal_agent_type() const {
-  return static_cast<::protos::AgentType>(_impl_.agent_type_);
-}
-inline void InitMessage::_internal_set_agent_type(::protos::AgentType value) {
-  ;
-  _impl_.agent_type_ = value;
-}
-
-// bool debug_mode = 3;
+// bool debug_mode = 2;
 inline void InitMessage::clear_debug_mode() {
   _impl_.debug_mode_ = false;
 }
@@ -49873,24 +49975,91 @@ TrainerActions::_internal_mutable_actions() {
 
 // ServerParam
 
-// .protos.AgentType agent_type = 1;
-inline void ServerParam::clear_agent_type() {
-  _impl_.agent_type_ = 0;
+// .protos.RegisterResponse register_response = 1;
+inline bool ServerParam::has_register_response() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.register_response_ != nullptr);
+  return value;
 }
-inline ::protos::AgentType ServerParam::agent_type() const {
-  // @@protoc_insertion_point(field_get:protos.ServerParam.agent_type)
-  return _internal_agent_type();
+inline void ServerParam::clear_register_response() {
+  if (_impl_.register_response_ != nullptr) _impl_.register_response_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline void ServerParam::set_agent_type(::protos::AgentType value) {
-   _internal_set_agent_type(value);
-  // @@protoc_insertion_point(field_set:protos.ServerParam.agent_type)
+inline const ::protos::RegisterResponse& ServerParam::_internal_register_response() const {
+  const ::protos::RegisterResponse* p = _impl_.register_response_;
+  return p != nullptr ? *p : reinterpret_cast<const ::protos::RegisterResponse&>(
+      ::protos::_RegisterResponse_default_instance_);
 }
-inline ::protos::AgentType ServerParam::_internal_agent_type() const {
-  return static_cast<::protos::AgentType>(_impl_.agent_type_);
+inline const ::protos::RegisterResponse& ServerParam::register_response() const {
+  // @@protoc_insertion_point(field_get:protos.ServerParam.register_response)
+  return _internal_register_response();
 }
-inline void ServerParam::_internal_set_agent_type(::protos::AgentType value) {
-  ;
-  _impl_.agent_type_ = value;
+inline void ServerParam::unsafe_arena_set_allocated_register_response(
+    ::protos::RegisterResponse* register_response) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.register_response_);
+  }
+  _impl_.register_response_ = register_response;
+  if (register_response) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.ServerParam.register_response)
+}
+inline ::protos::RegisterResponse* ServerParam::release_register_response() {
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::protos::RegisterResponse* temp = _impl_.register_response_;
+  _impl_.register_response_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::protos::RegisterResponse* ServerParam::unsafe_arena_release_register_response() {
+  // @@protoc_insertion_point(field_release:protos.ServerParam.register_response)
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::protos::RegisterResponse* temp = _impl_.register_response_;
+  _impl_.register_response_ = nullptr;
+  return temp;
+}
+inline ::protos::RegisterResponse* ServerParam::_internal_mutable_register_response() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  if (_impl_.register_response_ == nullptr) {
+    auto* p = CreateMaybeMessage<::protos::RegisterResponse>(GetArenaForAllocation());
+    _impl_.register_response_ = p;
+  }
+  return _impl_.register_response_;
+}
+inline ::protos::RegisterResponse* ServerParam::mutable_register_response() {
+  ::protos::RegisterResponse* _msg = _internal_mutable_register_response();
+  // @@protoc_insertion_point(field_mutable:protos.ServerParam.register_response)
+  return _msg;
+}
+inline void ServerParam::set_allocated_register_response(::protos::RegisterResponse* register_response) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.register_response_;
+  }
+  if (register_response) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(register_response);
+    if (message_arena != submessage_arena) {
+      register_response = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, register_response, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.register_response_ = register_response;
+  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.register_response)
 }
 
 // float inertia_moment = 2;
@@ -54718,26 +54887,30 @@ inline void ServerParam::_internal_set_goal_width(float value) {
   _impl_.goal_width_ = value;
 }
 
-// .protos.RegisterResponse register_response = 223;
-inline bool ServerParam::has_register_response() const {
+// -------------------------------------------------------------------
+
+// PlayerParam
+
+// .protos.RegisterResponse register_response = 1;
+inline bool PlayerParam::has_register_response() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.register_response_ != nullptr);
   return value;
 }
-inline void ServerParam::clear_register_response() {
+inline void PlayerParam::clear_register_response() {
   if (_impl_.register_response_ != nullptr) _impl_.register_response_->Clear();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::protos::RegisterResponse& ServerParam::_internal_register_response() const {
+inline const ::protos::RegisterResponse& PlayerParam::_internal_register_response() const {
   const ::protos::RegisterResponse* p = _impl_.register_response_;
   return p != nullptr ? *p : reinterpret_cast<const ::protos::RegisterResponse&>(
       ::protos::_RegisterResponse_default_instance_);
 }
-inline const ::protos::RegisterResponse& ServerParam::register_response() const {
-  // @@protoc_insertion_point(field_get:protos.ServerParam.register_response)
+inline const ::protos::RegisterResponse& PlayerParam::register_response() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerParam.register_response)
   return _internal_register_response();
 }
-inline void ServerParam::unsafe_arena_set_allocated_register_response(
+inline void PlayerParam::unsafe_arena_set_allocated_register_response(
     ::protos::RegisterResponse* register_response) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.register_response_);
@@ -54748,9 +54921,9 @@ inline void ServerParam::unsafe_arena_set_allocated_register_response(
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.ServerParam.register_response)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerParam.register_response)
 }
-inline ::protos::RegisterResponse* ServerParam::release_register_response() {
+inline ::protos::RegisterResponse* PlayerParam::release_register_response() {
   _impl_._has_bits_[0] &= ~0x00000001u;
   ::protos::RegisterResponse* temp = _impl_.register_response_;
   _impl_.register_response_ = nullptr;
@@ -54765,14 +54938,14 @@ inline ::protos::RegisterResponse* ServerParam::release_register_response() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::protos::RegisterResponse* ServerParam::unsafe_arena_release_register_response() {
-  // @@protoc_insertion_point(field_release:protos.ServerParam.register_response)
+inline ::protos::RegisterResponse* PlayerParam::unsafe_arena_release_register_response() {
+  // @@protoc_insertion_point(field_release:protos.PlayerParam.register_response)
   _impl_._has_bits_[0] &= ~0x00000001u;
   ::protos::RegisterResponse* temp = _impl_.register_response_;
   _impl_.register_response_ = nullptr;
   return temp;
 }
-inline ::protos::RegisterResponse* ServerParam::_internal_mutable_register_response() {
+inline ::protos::RegisterResponse* PlayerParam::_internal_mutable_register_response() {
   _impl_._has_bits_[0] |= 0x00000001u;
   if (_impl_.register_response_ == nullptr) {
     auto* p = CreateMaybeMessage<::protos::RegisterResponse>(GetArenaForAllocation());
@@ -54780,12 +54953,12 @@ inline ::protos::RegisterResponse* ServerParam::_internal_mutable_register_respo
   }
   return _impl_.register_response_;
 }
-inline ::protos::RegisterResponse* ServerParam::mutable_register_response() {
+inline ::protos::RegisterResponse* PlayerParam::mutable_register_response() {
   ::protos::RegisterResponse* _msg = _internal_mutable_register_response();
-  // @@protoc_insertion_point(field_mutable:protos.ServerParam.register_response)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerParam.register_response)
   return _msg;
 }
-inline void ServerParam::set_allocated_register_response(::protos::RegisterResponse* register_response) {
+inline void PlayerParam::set_allocated_register_response(::protos::RegisterResponse* register_response) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete _impl_.register_response_;
@@ -54802,31 +54975,7 @@ inline void ServerParam::set_allocated_register_response(::protos::RegisterRespo
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.register_response_ = register_response;
-  // @@protoc_insertion_point(field_set_allocated:protos.ServerParam.register_response)
-}
-
-// -------------------------------------------------------------------
-
-// PlayerParam
-
-// .protos.AgentType agent_type = 1;
-inline void PlayerParam::clear_agent_type() {
-  _impl_.agent_type_ = 0;
-}
-inline ::protos::AgentType PlayerParam::agent_type() const {
-  // @@protoc_insertion_point(field_get:protos.PlayerParam.agent_type)
-  return _internal_agent_type();
-}
-inline void PlayerParam::set_agent_type(::protos::AgentType value) {
-   _internal_set_agent_type(value);
-  // @@protoc_insertion_point(field_set:protos.PlayerParam.agent_type)
-}
-inline ::protos::AgentType PlayerParam::_internal_agent_type() const {
-  return static_cast<::protos::AgentType>(_impl_.agent_type_);
-}
-inline void PlayerParam::_internal_set_agent_type(::protos::AgentType value) {
-  ;
-  _impl_.agent_type_ = value;
+  // @@protoc_insertion_point(field_set_allocated:protos.PlayerParam.register_response)
 }
 
 // int32 player_types = 2;
@@ -55409,26 +55558,30 @@ inline void PlayerParam::_internal_set_catchable_area_l_stretch_max(float value)
   _impl_.catchable_area_l_stretch_max_ = value;
 }
 
-// .protos.RegisterResponse register_response = 31;
-inline bool PlayerParam::has_register_response() const {
+// -------------------------------------------------------------------
+
+// PlayerType
+
+// .protos.RegisterResponse register_response = 1;
+inline bool PlayerType::has_register_response() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.register_response_ != nullptr);
   return value;
 }
-inline void PlayerParam::clear_register_response() {
+inline void PlayerType::clear_register_response() {
   if (_impl_.register_response_ != nullptr) _impl_.register_response_->Clear();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::protos::RegisterResponse& PlayerParam::_internal_register_response() const {
+inline const ::protos::RegisterResponse& PlayerType::_internal_register_response() const {
   const ::protos::RegisterResponse* p = _impl_.register_response_;
   return p != nullptr ? *p : reinterpret_cast<const ::protos::RegisterResponse&>(
       ::protos::_RegisterResponse_default_instance_);
 }
-inline const ::protos::RegisterResponse& PlayerParam::register_response() const {
-  // @@protoc_insertion_point(field_get:protos.PlayerParam.register_response)
+inline const ::protos::RegisterResponse& PlayerType::register_response() const {
+  // @@protoc_insertion_point(field_get:protos.PlayerType.register_response)
   return _internal_register_response();
 }
-inline void PlayerParam::unsafe_arena_set_allocated_register_response(
+inline void PlayerType::unsafe_arena_set_allocated_register_response(
     ::protos::RegisterResponse* register_response) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.register_response_);
@@ -55439,9 +55592,9 @@ inline void PlayerParam::unsafe_arena_set_allocated_register_response(
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerParam.register_response)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerType.register_response)
 }
-inline ::protos::RegisterResponse* PlayerParam::release_register_response() {
+inline ::protos::RegisterResponse* PlayerType::release_register_response() {
   _impl_._has_bits_[0] &= ~0x00000001u;
   ::protos::RegisterResponse* temp = _impl_.register_response_;
   _impl_.register_response_ = nullptr;
@@ -55456,14 +55609,14 @@ inline ::protos::RegisterResponse* PlayerParam::release_register_response() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::protos::RegisterResponse* PlayerParam::unsafe_arena_release_register_response() {
-  // @@protoc_insertion_point(field_release:protos.PlayerParam.register_response)
+inline ::protos::RegisterResponse* PlayerType::unsafe_arena_release_register_response() {
+  // @@protoc_insertion_point(field_release:protos.PlayerType.register_response)
   _impl_._has_bits_[0] &= ~0x00000001u;
   ::protos::RegisterResponse* temp = _impl_.register_response_;
   _impl_.register_response_ = nullptr;
   return temp;
 }
-inline ::protos::RegisterResponse* PlayerParam::_internal_mutable_register_response() {
+inline ::protos::RegisterResponse* PlayerType::_internal_mutable_register_response() {
   _impl_._has_bits_[0] |= 0x00000001u;
   if (_impl_.register_response_ == nullptr) {
     auto* p = CreateMaybeMessage<::protos::RegisterResponse>(GetArenaForAllocation());
@@ -55471,12 +55624,12 @@ inline ::protos::RegisterResponse* PlayerParam::_internal_mutable_register_respo
   }
   return _impl_.register_response_;
 }
-inline ::protos::RegisterResponse* PlayerParam::mutable_register_response() {
+inline ::protos::RegisterResponse* PlayerType::mutable_register_response() {
   ::protos::RegisterResponse* _msg = _internal_mutable_register_response();
-  // @@protoc_insertion_point(field_mutable:protos.PlayerParam.register_response)
+  // @@protoc_insertion_point(field_mutable:protos.PlayerType.register_response)
   return _msg;
 }
-inline void PlayerParam::set_allocated_register_response(::protos::RegisterResponse* register_response) {
+inline void PlayerType::set_allocated_register_response(::protos::RegisterResponse* register_response) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete _impl_.register_response_;
@@ -55493,31 +55646,7 @@ inline void PlayerParam::set_allocated_register_response(::protos::RegisterRespo
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.register_response_ = register_response;
-  // @@protoc_insertion_point(field_set_allocated:protos.PlayerParam.register_response)
-}
-
-// -------------------------------------------------------------------
-
-// PlayerType
-
-// .protos.AgentType agent_type = 1;
-inline void PlayerType::clear_agent_type() {
-  _impl_.agent_type_ = 0;
-}
-inline ::protos::AgentType PlayerType::agent_type() const {
-  // @@protoc_insertion_point(field_get:protos.PlayerType.agent_type)
-  return _internal_agent_type();
-}
-inline void PlayerType::set_agent_type(::protos::AgentType value) {
-   _internal_set_agent_type(value);
-  // @@protoc_insertion_point(field_set:protos.PlayerType.agent_type)
-}
-inline ::protos::AgentType PlayerType::_internal_agent_type() const {
-  return static_cast<::protos::AgentType>(_impl_.agent_type_);
-}
-inline void PlayerType::_internal_set_agent_type(::protos::AgentType value) {
-  ;
-  _impl_.agent_type_ = value;
+  // @@protoc_insertion_point(field_set_allocated:protos.PlayerType.register_response)
 }
 
 // int32 id = 2;
@@ -56180,298 +56309,9 @@ inline void PlayerType::_internal_set_player_speed_max(float value) {
   _impl_.player_speed_max_ = value;
 }
 
-// .protos.RegisterResponse register_response = 35;
-inline bool PlayerType::has_register_response() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.register_response_ != nullptr);
-  return value;
-}
-inline void PlayerType::clear_register_response() {
-  if (_impl_.register_response_ != nullptr) _impl_.register_response_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline const ::protos::RegisterResponse& PlayerType::_internal_register_response() const {
-  const ::protos::RegisterResponse* p = _impl_.register_response_;
-  return p != nullptr ? *p : reinterpret_cast<const ::protos::RegisterResponse&>(
-      ::protos::_RegisterResponse_default_instance_);
-}
-inline const ::protos::RegisterResponse& PlayerType::register_response() const {
-  // @@protoc_insertion_point(field_get:protos.PlayerType.register_response)
-  return _internal_register_response();
-}
-inline void PlayerType::unsafe_arena_set_allocated_register_response(
-    ::protos::RegisterResponse* register_response) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.register_response_);
-  }
-  _impl_.register_response_ = register_response;
-  if (register_response) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:protos.PlayerType.register_response)
-}
-inline ::protos::RegisterResponse* PlayerType::release_register_response() {
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::protos::RegisterResponse* temp = _impl_.register_response_;
-  _impl_.register_response_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::protos::RegisterResponse* PlayerType::unsafe_arena_release_register_response() {
-  // @@protoc_insertion_point(field_release:protos.PlayerType.register_response)
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::protos::RegisterResponse* temp = _impl_.register_response_;
-  _impl_.register_response_ = nullptr;
-  return temp;
-}
-inline ::protos::RegisterResponse* PlayerType::_internal_mutable_register_response() {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  if (_impl_.register_response_ == nullptr) {
-    auto* p = CreateMaybeMessage<::protos::RegisterResponse>(GetArenaForAllocation());
-    _impl_.register_response_ = p;
-  }
-  return _impl_.register_response_;
-}
-inline ::protos::RegisterResponse* PlayerType::mutable_register_response() {
-  ::protos::RegisterResponse* _msg = _internal_mutable_register_response();
-  // @@protoc_insertion_point(field_mutable:protos.PlayerType.register_response)
-  return _msg;
-}
-inline void PlayerType::set_allocated_register_response(::protos::RegisterResponse* register_response) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.register_response_;
-  }
-  if (register_response) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(register_response);
-    if (message_arena != submessage_arena) {
-      register_response = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, register_response, submessage_arena);
-    }
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.register_response_ = register_response;
-  // @@protoc_insertion_point(field_set_allocated:protos.PlayerType.register_response)
-}
-
-// -------------------------------------------------------------------
-
-// RegisterRequest
-
-// .protos.AgentType agent_type = 1;
-inline void RegisterRequest::clear_agent_type() {
-  _impl_.agent_type_ = 0;
-}
-inline ::protos::AgentType RegisterRequest::agent_type() const {
-  // @@protoc_insertion_point(field_get:protos.RegisterRequest.agent_type)
-  return _internal_agent_type();
-}
-inline void RegisterRequest::set_agent_type(::protos::AgentType value) {
-   _internal_set_agent_type(value);
-  // @@protoc_insertion_point(field_set:protos.RegisterRequest.agent_type)
-}
-inline ::protos::AgentType RegisterRequest::_internal_agent_type() const {
-  return static_cast<::protos::AgentType>(_impl_.agent_type_);
-}
-inline void RegisterRequest::_internal_set_agent_type(::protos::AgentType value) {
-  ;
-  _impl_.agent_type_ = value;
-}
-
-// string team_name = 2;
-inline void RegisterRequest::clear_team_name() {
-  _impl_.team_name_.ClearToEmpty();
-}
-inline const std::string& RegisterRequest::team_name() const {
-  // @@protoc_insertion_point(field_get:protos.RegisterRequest.team_name)
-  return _internal_team_name();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void RegisterRequest::set_team_name(Arg_&& arg,
-                                                     Args_... args) {
-  ;
-  _impl_.team_name_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:protos.RegisterRequest.team_name)
-}
-inline std::string* RegisterRequest::mutable_team_name() {
-  std::string* _s = _internal_mutable_team_name();
-  // @@protoc_insertion_point(field_mutable:protos.RegisterRequest.team_name)
-  return _s;
-}
-inline const std::string& RegisterRequest::_internal_team_name() const {
-  return _impl_.team_name_.Get();
-}
-inline void RegisterRequest::_internal_set_team_name(const std::string& value) {
-  ;
-
-
-  _impl_.team_name_.Set(value, GetArenaForAllocation());
-}
-inline std::string* RegisterRequest::_internal_mutable_team_name() {
-  ;
-  return _impl_.team_name_.Mutable( GetArenaForAllocation());
-}
-inline std::string* RegisterRequest::release_team_name() {
-  // @@protoc_insertion_point(field_release:protos.RegisterRequest.team_name)
-  return _impl_.team_name_.Release();
-}
-inline void RegisterRequest::set_allocated_team_name(std::string* value) {
-  _impl_.team_name_.SetAllocated(value, GetArenaForAllocation());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.team_name_.IsDefault()) {
-          _impl_.team_name_.Set("", GetArenaForAllocation());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:protos.RegisterRequest.team_name)
-}
-
-// int32 uniform_number = 3;
-inline void RegisterRequest::clear_uniform_number() {
-  _impl_.uniform_number_ = 0;
-}
-inline ::int32_t RegisterRequest::uniform_number() const {
-  // @@protoc_insertion_point(field_get:protos.RegisterRequest.uniform_number)
-  return _internal_uniform_number();
-}
-inline void RegisterRequest::set_uniform_number(::int32_t value) {
-  _internal_set_uniform_number(value);
-  // @@protoc_insertion_point(field_set:protos.RegisterRequest.uniform_number)
-}
-inline ::int32_t RegisterRequest::_internal_uniform_number() const {
-  return _impl_.uniform_number_;
-}
-inline void RegisterRequest::_internal_set_uniform_number(::int32_t value) {
-  ;
-  _impl_.uniform_number_ = value;
-}
-
 // -------------------------------------------------------------------
 
 // Empty
-
-// -------------------------------------------------------------------
-
-// RegisterResponse
-
-// int32 client_id = 1;
-inline void RegisterResponse::clear_client_id() {
-  _impl_.client_id_ = 0;
-}
-inline ::int32_t RegisterResponse::client_id() const {
-  // @@protoc_insertion_point(field_get:protos.RegisterResponse.client_id)
-  return _internal_client_id();
-}
-inline void RegisterResponse::set_client_id(::int32_t value) {
-  _internal_set_client_id(value);
-  // @@protoc_insertion_point(field_set:protos.RegisterResponse.client_id)
-}
-inline ::int32_t RegisterResponse::_internal_client_id() const {
-  return _impl_.client_id_;
-}
-inline void RegisterResponse::_internal_set_client_id(::int32_t value) {
-  ;
-  _impl_.client_id_ = value;
-}
-
-// .protos.AgentType agent_type = 2;
-inline void RegisterResponse::clear_agent_type() {
-  _impl_.agent_type_ = 0;
-}
-inline ::protos::AgentType RegisterResponse::agent_type() const {
-  // @@protoc_insertion_point(field_get:protos.RegisterResponse.agent_type)
-  return _internal_agent_type();
-}
-inline void RegisterResponse::set_agent_type(::protos::AgentType value) {
-   _internal_set_agent_type(value);
-  // @@protoc_insertion_point(field_set:protos.RegisterResponse.agent_type)
-}
-inline ::protos::AgentType RegisterResponse::_internal_agent_type() const {
-  return static_cast<::protos::AgentType>(_impl_.agent_type_);
-}
-inline void RegisterResponse::_internal_set_agent_type(::protos::AgentType value) {
-  ;
-  _impl_.agent_type_ = value;
-}
-
-// string team_name = 3;
-inline void RegisterResponse::clear_team_name() {
-  _impl_.team_name_.ClearToEmpty();
-}
-inline const std::string& RegisterResponse::team_name() const {
-  // @@protoc_insertion_point(field_get:protos.RegisterResponse.team_name)
-  return _internal_team_name();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void RegisterResponse::set_team_name(Arg_&& arg,
-                                                     Args_... args) {
-  ;
-  _impl_.team_name_.Set(static_cast<Arg_&&>(arg), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:protos.RegisterResponse.team_name)
-}
-inline std::string* RegisterResponse::mutable_team_name() {
-  std::string* _s = _internal_mutable_team_name();
-  // @@protoc_insertion_point(field_mutable:protos.RegisterResponse.team_name)
-  return _s;
-}
-inline const std::string& RegisterResponse::_internal_team_name() const {
-  return _impl_.team_name_.Get();
-}
-inline void RegisterResponse::_internal_set_team_name(const std::string& value) {
-  ;
-
-
-  _impl_.team_name_.Set(value, GetArenaForAllocation());
-}
-inline std::string* RegisterResponse::_internal_mutable_team_name() {
-  ;
-  return _impl_.team_name_.Mutable( GetArenaForAllocation());
-}
-inline std::string* RegisterResponse::release_team_name() {
-  // @@protoc_insertion_point(field_release:protos.RegisterResponse.team_name)
-  return _impl_.team_name_.Release();
-}
-inline void RegisterResponse::set_allocated_team_name(std::string* value) {
-  _impl_.team_name_.SetAllocated(value, GetArenaForAllocation());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.team_name_.IsDefault()) {
-          _impl_.team_name_.Set("", GetArenaForAllocation());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:protos.RegisterResponse.team_name)
-}
-
-// int32 uniform_number = 4;
-inline void RegisterResponse::clear_uniform_number() {
-  _impl_.uniform_number_ = 0;
-}
-inline ::int32_t RegisterResponse::uniform_number() const {
-  // @@protoc_insertion_point(field_get:protos.RegisterResponse.uniform_number)
-  return _internal_uniform_number();
-}
-inline void RegisterResponse::set_uniform_number(::int32_t value) {
-  _internal_set_uniform_number(value);
-  // @@protoc_insertion_point(field_set:protos.RegisterResponse.uniform_number)
-}
-inline ::int32_t RegisterResponse::_internal_uniform_number() const {
-  return _impl_.uniform_number_;
-}
-inline void RegisterResponse::_internal_set_uniform_number(::int32_t value) {
-  ;
-  _impl_.uniform_number_ = value;
-}
 
 #ifdef __GNUC__
 #pragma GCC diagnostic pop

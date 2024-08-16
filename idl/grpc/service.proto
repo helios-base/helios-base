@@ -15,6 +15,19 @@ message RpcVector2D  {
   float angle = 4;
 }
 
+message RegisterRequest {
+  AgentType agent_type = 1;
+  string team_name = 2;
+  int32 uniform_number = 3;
+}
+
+message RegisterResponse {
+  int32 client_id = 1;
+  AgentType agent_type = 2;
+  string team_name = 3;
+  int32 uniform_number = 4;
+}
+
 message Ball {
   RpcVector2D  position = 1;
   RpcVector2D  relative_position = 2;
@@ -245,9 +258,8 @@ message WorldModel {
 
 message State {
   RegisterResponse register_response = 1;
-  AgentType agent_type = 2;
-  WorldModel world_model = 3;
-  WorldModel full_world_model = 4;
+  WorldModel world_model = 2;
+  WorldModel full_world_model = 3;
 }
 
 enum AgentType {
@@ -258,8 +270,7 @@ enum AgentType {
 
 message InitMessage {
   RegisterResponse register_response = 1;
-  AgentType agent_type = 2;
-  bool debug_mode = 3;
+  bool debug_mode = 2;
 }
 
 message Dash {
@@ -895,7 +906,7 @@ message TrainerActions {
 }
 
 message ServerParam {
-  AgentType agent_type = 1;
+  RegisterResponse register_response = 1;
   float inertia_moment = 2;
   float player_size = 3;
   float player_decay = 4;
@@ -1117,12 +1128,10 @@ message ServerParam {
   float penalty_area_half_width = 220;
   float penalty_area_length = 221;
   float goal_width = 222;
-
-  RegisterResponse register_response = 223;
 }
 
 message PlayerParam {
-  AgentType agent_type = 1;
+  RegisterResponse register_response = 1;
   int32 player_types = 2;
   int32 subs_max = 3;
   int32 pt_max = 4;
@@ -1152,12 +1161,10 @@ message PlayerParam {
   float foul_detect_probability_delta_factor = 28;
   float catchable_area_l_stretch_min = 29;
   float catchable_area_l_stretch_max = 30;
-
-  RegisterResponse register_response = 31;
 }
 
 message PlayerType {
-  AgentType agent_type = 1;
+  RegisterResponse register_response = 1;
   int32 id = 2;
   float stamina_inc_max = 3;
   float player_decay = 4;
@@ -1191,24 +1198,9 @@ message PlayerType {
   float real_speed_max2 = 32;
   int32 cycles_to_reach_max_speed = 33;
   float player_speed_max = 34;
-
-  RegisterResponse register_response = 35;
-}
-
-message RegisterRequest {
-  AgentType agent_type = 1;
-  string team_name = 2;
-  int32 uniform_number = 3;
 }
 
 message Empty {
-}
-
-message RegisterResponse {
-  int32 client_id = 1;
-  AgentType agent_type = 2;
-  string team_name = 3;
-  int32 uniform_number = 4;
 }
 
 service Game {
