@@ -37,23 +37,18 @@
 #include "grpc-client/grpc_client_player.h"
 #endif
 #include "rpc-client/rpc-client.h"
+#include "rpc-client/rpc-agent.h"
 #include <rcsc/player/player_agent.h>
 #include <vector>
 
 class SamplePlayer
-    : public rcsc::PlayerAgent {
+    : public rcsc::PlayerAgent, public RpcAgent {
 private:
 
     Communication::Ptr M_communication;
 
     FieldEvaluator::ConstPtr M_field_evaluator;
     ActionGenerator::ConstPtr M_action_generator;
-    IRpcClient * M_rpc_client;
-    int M_first_rpc_port;
-    bool M_use_same_rpc_port;
-    bool M_add_20_to_rpc_port_if_right_side;
-    std::string M_rpc_server_address;
-    bool M_use_thrift;
 
 public:
 
@@ -62,10 +57,6 @@ public:
     virtual
     ~SamplePlayer();
 
-    void SetFirstRpcPort(int port) { M_first_rpc_port = port; }
-    void SetUseSameRpcPort(bool use_same_grpc_port) { M_use_same_rpc_port = use_same_grpc_port; }
-    void SetAdd20ToRpcPortIfRightSide(bool add_20_to_grpc_port_if_right_side) { M_add_20_to_rpc_port_if_right_side = add_20_to_grpc_port_if_right_side; }
-    void SetRpcIp(std::string grpc_server_address) { M_rpc_server_address = grpc_server_address; }
     void SetRpcType(bool use_thrift){
         M_use_thrift = use_thrift;
         if (use_thrift){
