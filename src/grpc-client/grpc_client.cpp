@@ -280,7 +280,8 @@ void GrpcClient::sendServerParam() const
 
     ClientContext context;
     protos::Empty empty;
-    serverParam.set_allocated_register_response(M_register_response);
+    protos::RegisterResponse* response = new protos::RegisterResponse(*M_register_response);
+    serverParam.set_allocated_register_response(response);
     Status status = M_stub_->SendServerParams(&context, serverParam, &empty);
     if (!status.ok())
     {
@@ -327,7 +328,8 @@ void GrpcClient::sendPlayerParams() const
 
     ClientContext context;
     protos::Empty empty;
-    playerParam.set_allocated_register_response(M_register_response);
+    protos::RegisterResponse* response = new protos::RegisterResponse(*M_register_response);
+    playerParam.set_allocated_register_response(response);
     Status status = M_stub_->SendPlayerParams(&context, playerParam, &empty);
     if (!status.ok())
     {
@@ -385,7 +387,8 @@ void GrpcClient::sendPlayerType() const
 
         ClientContext context;
         protos::Empty empty;
-        playerTypeGrpc.set_allocated_register_response(M_register_response);
+        protos::RegisterResponse* response = new protos::RegisterResponse(*M_register_response);
+        playerTypeGrpc.set_allocated_register_response(response);
         Status status = M_stub_->SendPlayerType(&context, playerTypeGrpc, &empty);
         if (!status.ok())
         {
@@ -403,7 +406,8 @@ void GrpcClient::sendInitMessage(bool offline_logging) const
     protos::Empty empty;
     protos::InitMessage initMessage;
     initMessage.set_debug_mode(offline_logging);
-    initMessage.set_allocated_register_response(M_register_response);
+    protos::RegisterResponse* response = new protos::RegisterResponse(*M_register_response);
+    initMessage.set_allocated_register_response(response);
     Status status = M_stub_->SendInitMessage(&context, initMessage, &empty);
     if (!status.ok())
     {

@@ -109,7 +109,8 @@ void GrpcClientPlayer::getActions()
 {
     auto agent = M_agent;
     State state = generateState();
-    state.set_allocated_register_response(M_register_response);
+    protos::RegisterResponse* response = new protos::RegisterResponse(*M_register_response);
+    state.set_allocated_register_response(response);
     protos::PlayerActions actions;
     ClientContext context;
     Status status = M_stub_->GetPlayerActions(&context, state, &actions);
