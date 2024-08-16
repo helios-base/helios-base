@@ -1,4 +1,4 @@
-#include "thrift_agent.h"
+#include "thrift_client.h"
 #include "thrift_state_generator.h"
 
 #include <rcsc/player/say_message_builder.h>

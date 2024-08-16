@@ -9,7 +9,7 @@
 #include <rcsc/player/player_agent.h>
 #include <rcsc/coach/coach_agent.h>
 #include <rcsc/trainer/trainer_agent.h>
-#include "rpc-client/rpc-agent.h"
+#include "rpc-client/rpc-client.h"
 
 
 using grpc::Channel;
@@ -22,7 +22,7 @@ using protos::CoachAction;
 using protos::TrainerAction;
 
 
-class GrpcAgent : public IRpcAgent{
+class GrpcClient : public IRpcClient{
 public:
     std::string M_target;
     std::shared_ptr<Channel> M_channel;
@@ -34,7 +34,7 @@ public:
     std::string M_team_name;
     protos::RegisterResponse * M_register_response = new protos::RegisterResponse();
 
-    ~GrpcAgent() {}
+    ~GrpcClient() {}
     
     void sendParams(bool offline_logging) override;
     void addDlog(protos::Log log) const;

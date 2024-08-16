@@ -1,4 +1,4 @@
-#include "thrift_agent_coach.h"
+#include "thrift_client_coach.h"
 // #include "state_generator.h"
 
 #include <rcsc/player/say_message_builder.h>
@@ -23,12 +23,12 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-ThriftAgentCoach::ThriftAgentCoach()
+ThriftClientCoach::ThriftClientCoach()
 {
     M_agent_type = soccer::AgentType::CoachT;
 }
 
-void ThriftAgentCoach::init(rcsc::CoachAgent *agent,
+void ThriftClientCoach::init(rcsc::CoachAgent *agent,
                             std::string target,
                             int port,
                             bool use_same_grpc_port,
@@ -50,7 +50,7 @@ void ThriftAgentCoach::init(rcsc::CoachAgent *agent,
     this->M_server_port = port;
 }
 
-void ThriftAgentCoach::getActions()
+void ThriftClientCoach::getActions()
 {
     auto agent = M_agent;
     soccer::State state = generateState();
@@ -94,7 +94,7 @@ void ThriftAgentCoach::getActions()
     }
 }
 
-soccer::State ThriftAgentCoach::generateState() const
+soccer::State ThriftClientCoach::generateState() const
 {
     auto &wm = M_agent->world();
     soccer::WorldModel worldModel = ThriftStateGenerator::convertCoachWorldModel(wm);

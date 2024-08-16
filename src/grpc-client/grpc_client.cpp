@@ -1,4 +1,4 @@
-#include "grpc_agent.h"
+#include "grpc_client.h"
 #include "state_generator.h"
 
 #include <rcsc/player/say_message_builder.h>
@@ -21,7 +21,7 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-void GrpcAgent::sendParams(bool offline_logging)
+void GrpcClient::sendParams(bool offline_logging)
 {
     if (!M_param_sent)
     {
@@ -32,7 +32,7 @@ void GrpcAgent::sendParams(bool offline_logging)
         M_param_sent = true;
     }
 }
-void GrpcAgent::sendServerParam() const
+void GrpcClient::sendServerParam() const
 {
     LOG("sendServerParam Started");
 
@@ -290,7 +290,7 @@ void GrpcAgent::sendServerParam() const
     }
 }
 
-void GrpcAgent::sendPlayerParams() const
+void GrpcClient::sendPlayerParams() const
 {
     protos::PlayerParam playerParam;
     const rcsc::PlayerParam &PP = rcsc::PlayerParam::i();
@@ -337,7 +337,7 @@ void GrpcAgent::sendPlayerParams() const
     }
 }
 
-void GrpcAgent::sendPlayerType() const
+void GrpcClient::sendPlayerType() const
 {
     const rcsc::PlayerParam &PP = rcsc::PlayerParam::i();
     const rcsc::PlayerTypeSet &PT = rcsc::PlayerTypeSet::i();
@@ -396,7 +396,7 @@ void GrpcAgent::sendPlayerType() const
     }
 }
 
-void GrpcAgent::sendInitMessage(bool offline_logging) const
+void GrpcClient::sendInitMessage(bool offline_logging) const
 {
 
     ClientContext context;
@@ -413,7 +413,7 @@ void GrpcAgent::sendInitMessage(bool offline_logging) const
     }
 }
 
-bool GrpcAgent::Register() const
+bool GrpcClient::Register() const
 {
     ClientContext context;
     protos::RegisterRequest request;
@@ -437,7 +437,7 @@ bool GrpcAgent::Register() const
     }
 }
 
-void GrpcAgent::sendByeCommand() const
+void GrpcClient::sendByeCommand() const
 {
     ClientContext context;
     protos::Empty empty;
@@ -452,7 +452,7 @@ void GrpcAgent::sendByeCommand() const
 
 }
 
-bool GrpcAgent::connectToGrpcServer()
+bool GrpcClient::connectToGrpcServer()
 {
     M_channel = grpc::CreateChannel(this->M_target, grpc::InsecureChannelCredentials());
     M_stub_ = Game::NewStub(M_channel);
@@ -468,7 +468,7 @@ bool GrpcAgent::connectToGrpcServer()
     }
 }
 
-void GrpcAgent::addDlog(protos::Log log) const
+void GrpcClient::addDlog(protos::Log log) const
 {
     switch (log.log_case())
     {
@@ -481,38 +481,38 @@ void GrpcAgent::addDlog(protos::Log log) const
     case protos::Log::kAddPoint:
     {
         const auto &addPoint = log.add_point();
-        const auto &point = GrpcAgent::convertVector2D(addPoint.point());
+        const auto &point = GrpcClient::convertVector2D(addPoint.point());
         rcsc::dlog.addPoint(addPoint.level(), point, addPoint.color().c_str());
         break;
     }
     case protos::Log::kAddLine:
     {
         const auto &addLine = log.add_line();
-        const auto &point1 = GrpcAgent::convertVector2D(addLine.start());
-        const auto &point2 = GrpcAgent::convertVector2D(addLine.end());
+        const auto &point1 = GrpcClient::convertVector2D(addLine.start());
+        const auto &point2 = GrpcClient::convertVector2D(addLine.end());
         rcsc::dlog.addLine(addLine.level(), point1, point2, addLine.color().c_str());
         break;
     }
     case protos::Log::kAddArc:
     {
         const auto &addArc = log.add_arc();
-        const auto &center = GrpcAgent::convertVector2D(addArc.center());
+        const auto &center = GrpcClient::convertVector2D(addArc.center());
         rcsc::dlog.addArc(addArc.level(), center, addArc.radius(), addArc.start_angle(), addArc.span_angel(), addArc.color().c_str());
         break;
     }
     case protos::Log::kAddCircle:
     {
         const auto &addCircle = log.add_circle();
-        const auto &center = GrpcAgent::convertVector2D(addCircle.center());
+        const auto &center = GrpcClient::convertVector2D(addCircle.center());
         rcsc::dlog.addCircle(addCircle.level(), center, addCircle.radius(), addCircle.color().c_str(), addCircle.fill());
         break;
     }
     case protos::Log::kAddTriangle:
     {
         const auto &addTriangle = log.add_triangle();
-        const auto &point1 = GrpcAgent::convertVector2D(addTriangle.point1());
-        const auto &point2 = GrpcAgent::convertVector2D(addTriangle.point2());
-        const auto &point3 = GrpcAgent::convertVector2D(addTriangle.point3());
+        const auto &point1 = GrpcClient::convertVector2D(addTriangle.point1());
+        const auto &point2 = GrpcClient::convertVector2D(addTriangle.point2());
+        const auto &point3 = GrpcClient::convertVector2D(addTriangle.point3());
         rcsc::dlog.addTriangle(addTriangle.level(), point1, point2, point3, addTriangle.color().c_str(), addTriangle.fill());
         break;
     }
@@ -525,21 +525,21 @@ void GrpcAgent::addDlog(protos::Log log) const
     case protos::Log::kAddSector:
     {
         const auto &addSector = log.add_sector();
-        const auto &center = GrpcAgent::convertVector2D(addSector.center());
+        const auto &center = GrpcClient::convertVector2D(addSector.center());
         rcsc::dlog.addSector(addSector.level(), center, addSector.min_radius(), addSector.max_radius(), addSector.start_angle(), addSector.span_angel(), addSector.color().c_str(), addSector.fill());
         break;
     }
     case protos::Log::kAddMessage:
     {
         const auto &addMessage = log.add_message();
-        const auto &position = GrpcAgent::convertVector2D(addMessage.position());
+        const auto &position = GrpcClient::convertVector2D(addMessage.position());
         rcsc::dlog.addMessage(addMessage.level(), position, addMessage.message().c_str(), addMessage.color().c_str());
         break;
     }
     }
 }
 
-rcsc::ViewWidth GrpcAgent::convertViewWidth(protos::ViewWidth view_width)
+rcsc::ViewWidth GrpcClient::convertViewWidth(protos::ViewWidth view_width)
 {
     switch (view_width)
     {
@@ -554,7 +554,7 @@ rcsc::ViewWidth GrpcAgent::convertViewWidth(protos::ViewWidth view_width)
     }
 }
 
-rcsc::SideID GrpcAgent::convertSideID(protos::Side side)
+rcsc::SideID GrpcClient::convertSideID(protos::Side side)
 {
     switch (side)
     {
@@ -567,7 +567,7 @@ rcsc::SideID GrpcAgent::convertSideID(protos::Side side)
     }
 }
 
-rcsc::Vector2D GrpcAgent::convertVector2D(protos::RpcVector2D vector2d)
+rcsc::Vector2D GrpcClient::convertVector2D(protos::RpcVector2D vector2d)
 {
     return rcsc::Vector2D(vector2d.x(), vector2d.y());
 }

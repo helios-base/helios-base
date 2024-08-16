@@ -1,12 +1,12 @@
-#include "thrift_agent.h"
+#include "thrift_client.h"
 
-#ifndef THRIFTAgentCoach_H
-#define THRIFTAgentCoach_H
+#ifndef ThriftClientCoach_H
+#define ThriftClientCoach_H
 
-class ThriftAgentCoach : public ThriftAgent {
+class ThriftClientCoach : public ThriftAgent {
     rcsc::CoachAgent * M_agent;
     public:
-    ThriftAgentCoach() ;
+    ThriftClientCoach() ;
 
     void init(rcsc::CoachAgent * agent,
               std::string target="localhost",

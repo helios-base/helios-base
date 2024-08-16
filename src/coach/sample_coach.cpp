@@ -205,35 +205,35 @@ SampleCoach::actionImpl()
     debugClient().addMessage( "Cycle=%ld", world().time().cycle() );
 
     // connect to thrift-client server
-    if (!M_grpc_agent->isConnected()){
+    if (!M_rpc_client->isConnected()){
         if (M_use_thrift){
 #ifdef USE_THRIFT
-            dynamic_cast<ThriftAgentCoach*>(M_grpc_agent)->init(
+            dynamic_cast<ThriftClientCoach*>(M_rpc_client)->init(
                     this,
-                    M_grpc_server_address,
-                    M_first_grpc_port,
-                    M_use_same_grpc_port,
-                    M_add_20_to_grpc_port_if_right_side);
+                    M_rpc_server_address,
+                    M_first_rpc_port,
+                    M_use_same_rpc_port,
+                    M_add_20_to_rpc_port_if_right_side);
 #endif
         }
         else
         {
 #ifdef USE_GRPC
-            dynamic_cast<GrpcAgentCoach*>(M_grpc_agent)->init(
+            dynamic_cast<GrpcClientCoach*>(M_rpc_client)->init(
                     this,
-                    M_grpc_server_address,
-                    M_first_grpc_port,
-                    M_use_same_grpc_port,
-                    M_add_20_to_grpc_port_if_right_side);
+                    M_rpc_server_address,
+                    M_first_rpc_port,
+                    M_use_same_rpc_port,
+                    M_add_20_to_rpc_port_if_right_side);
 #endif
         }
     }
 
     bool connectedToGrpcServer = false;
-    while (M_grpc_agent->isConnected() == false)
+    while (M_rpc_client->isConnected() == false)
     {
         std::cout<<"Connecting to GRPC server..."<<std::endl;
-        connectedToGrpcServer = M_grpc_agent->connectToGrpcServer();
+        connectedToGrpcServer = M_rpc_client->connectToGrpcServer();
         if (connectedToGrpcServer == false) {
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
@@ -246,8 +246,8 @@ SampleCoach::actionImpl()
         sendTeamGraphic();
     }
 
-    M_grpc_agent->sendParams(this->config().offlineLogging());
-    M_grpc_agent->getActions();
+    M_rpc_client->sendParams(this->config().offlineLogging());
+    M_rpc_client->getActions();
     return;
     doSubstitute();
     sayPlayerTypes();
@@ -256,7 +256,7 @@ SampleCoach::actionImpl()
 void
 SampleCoach::handleExit()
 {
-    M_grpc_agent->sendByeCommand();
+    M_rpc_client->sendByeCommand();
     CoachAgent::handleExit();
 }
 

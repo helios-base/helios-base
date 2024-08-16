@@ -232,34 +232,34 @@ SamplePlayer::actionImpl()
 
     // connect to thrift-client server
     bool connectedToGrpcServer = false;
-    if (!M_grpc_agent->isConnected()){
+    if (!M_rpc_client->isConnected()){
         if (M_use_thrift){
 #ifdef USE_THRIFT
-            dynamic_cast<ThriftAgentPlayer*>(M_grpc_agent)->init(
+            dynamic_cast<ThriftClientPlayer*>(M_rpc_client)->init(
                     this,
-                    M_grpc_server_address,
-                    M_first_grpc_port,
-                    M_use_same_grpc_port,
-                    M_add_20_to_grpc_port_if_right_side);
+                    M_rpc_server_address,
+                    M_first_rpc_port,
+                    M_use_same_rpc_port,
+                    M_add_20_to_rpc_port_if_right_side);
 #endif
         }
         else
         {
 #ifdef USE_GRPC
-            dynamic_cast<GrpcAgentPlayer*>(M_grpc_agent)->init(
+            dynamic_cast<GrpcClientPlayer*>(M_rpc_client)->init(
                     this,
-                    M_grpc_server_address,
-                    M_first_grpc_port,
-                    M_use_same_grpc_port,
-                    M_add_20_to_grpc_port_if_right_side);
+                    M_rpc_server_address,
+                    M_first_rpc_port,
+                    M_use_same_rpc_port,
+                    M_add_20_to_rpc_port_if_right_side);
 #endif
         }
     }
-    while (M_grpc_agent->isConnected() == false)
+    while (M_rpc_client->isConnected() == false)
     {
         std::cout<<"Connecting to GRPC server..."<<std::endl;
         try{
-            connectedToGrpcServer = M_grpc_agent->connectToGrpcServer();
+            connectedToGrpcServer = M_rpc_client->connectToGrpcServer();
             if (connectedToGrpcServer == false) {
                 std::this_thread::sleep_for(std::chrono::seconds(1));
             }
@@ -295,8 +295,8 @@ SamplePlayer::actionImpl()
                 return;
     }
     // ActionChainHolder::instance().update( world() );
-    M_grpc_agent->sendParams(this->config().offlineLogging());
-    M_grpc_agent->getActions();
+    M_rpc_client->sendParams(this->config().offlineLogging());
+    M_rpc_client->getActions();
         
     return;
     //
@@ -365,7 +365,7 @@ void
 SamplePlayer::handleExit()
 {
     std::cout << "BYE BYE BYE BYE BYE" << std::endl;
-    M_grpc_agent->sendByeCommand();
+    M_rpc_client->sendByeCommand();
     // call super class method
     PlayerAgent::handleExit();
 }

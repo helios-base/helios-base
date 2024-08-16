@@ -1,10 +1,10 @@
-#include "thrift_agent.h"
+#include "thrift_client.h"
 
-class ThriftAgentTrainer : public ThriftAgent {
+class ThriftClientTrainer : public ThriftAgent {
     rcsc::TrainerAgent * M_agent;
     
     public:
-    ThriftAgentTrainer() ;
+    ThriftClientTrainer() ;
 
     void init(rcsc::TrainerAgent * agent,
               std::string target="localhost",

@@ -1,4 +1,4 @@
-#include "grpc_agent_coach.h"
+#include "grpc_client_coach.h"
 // #include "state_generator.h"
 
 #include <rcsc/player/say_message_builder.h>
@@ -23,16 +23,16 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-GrpcAgentCoach::GrpcAgentCoach()
+GrpcClientCoach::GrpcClientCoach()
 {
     M_agent_type = protos::AgentType::CoachT;
 }
 
-void GrpcAgentCoach::init(rcsc::CoachAgent *agent,
-                          std::string target,
-                          int port,
-                          bool use_same_grpc_port,
-                          bool add_20_to_grpc_port_if_right_side)
+void GrpcClientCoach::init(rcsc::CoachAgent *agent,
+                           std::string target,
+                           int port,
+                           bool use_same_grpc_port,
+                           bool add_20_to_grpc_port_if_right_side)
 {
     M_agent = agent;
     M_unum = 12;
@@ -49,7 +49,7 @@ void GrpcAgentCoach::init(rcsc::CoachAgent *agent,
     this->M_target = target + ":" + std::to_string(port);
 }
 
-void GrpcAgentCoach::getActions()
+void GrpcClientCoach::getActions()
 {
     auto agent = M_agent;
     State state = generateState();
@@ -99,7 +99,7 @@ void GrpcAgentCoach::getActions()
     }
 }
 
-State GrpcAgentCoach::generateState() const
+State GrpcClientCoach::generateState() const
 {
     auto &wm = M_agent->world();
     protos::WorldModel *worldModel = StateGenerator::convertCoachWorldModel(wm);

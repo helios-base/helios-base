@@ -3,8 +3,8 @@ set(THRIFT_SOURCES
         ../thrift-generated/Game.cpp
         ../thrift-generated/soccer_service_types.cpp
         ../thrift-client/thrift_state_generator.cpp
-        ../thrift-client/thrift_agent.cpp
-        ../thrift-client/thrift_agent_player.cpp
+        ../thrift-client/thrift_client.cpp
+        ../thrift-client/thrift_client_player.cpp
 )
 
 # List of gRPC source files
@@ -12,8 +12,8 @@ set(GRPC_SOURCES
         ../grpc-generated/service.pb.cc
         ../grpc-generated/service.grpc.pb.cc
         ../grpc-client/state_generator.cpp
-        ../grpc-client/grpc_agent.cpp
-        ../grpc-client/grpc_agent_player.cpp
+        ../grpc-client/grpc_client.cpp
+        ../grpc-client/grpc_client_player.cpp
 )
 
 set (COMMON_SOURCES

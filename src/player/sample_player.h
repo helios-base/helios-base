@@ -31,12 +31,12 @@
 #include "field_evaluator.h"
 #include "communication.h"
 #ifdef  USE_THRIFT
-#include "thrift-client/thrift_agent_player.h"
+#include "thrift-client/thrift_client_player.h"
 #endif
 #ifdef USE_GRPC
-#include "grpc-client/grpc_agent_player.h"
+#include "grpc-client/grpc_client_player.h"
 #endif
-#include "rpc-client/rpc-agent.h"
+#include "rpc-client/rpc-client.h"
 #include <rcsc/player/player_agent.h>
 #include <vector>
 
@@ -48,11 +48,11 @@ private:
 
     FieldEvaluator::ConstPtr M_field_evaluator;
     ActionGenerator::ConstPtr M_action_generator;
-    IRpcAgent * M_grpc_agent;
-    int M_first_grpc_port;
-    bool M_use_same_grpc_port;
-    bool M_add_20_to_grpc_port_if_right_side;
-    std::string M_grpc_server_address;
+    IRpcClient * M_rpc_client;
+    int M_first_rpc_port;
+    bool M_use_same_rpc_port;
+    bool M_add_20_to_rpc_port_if_right_side;
+    std::string M_rpc_server_address;
     bool M_use_thrift;
 
 public:
@@ -62,21 +62,21 @@ public:
     virtual
     ~SamplePlayer();
 
-    void SetFirstGrpcPort(int port) { M_first_grpc_port = port; }
-    void SetUseSameGrpcPort(bool use_same_grpc_port) { M_use_same_grpc_port = use_same_grpc_port; }
-    void SetAdd20ToGrpcPortIfRightSide(bool add_20_to_grpc_port_if_right_side) { M_add_20_to_grpc_port_if_right_side = add_20_to_grpc_port_if_right_side; }
-    void SetGrpcIp(std::string grpc_server_address) { M_grpc_server_address = grpc_server_address; }
-    void SetRpc(bool use_thrift){
+    void SetFirstRpcPort(int port) { M_first_rpc_port = port; }
+    void SetUseSameRpcPort(bool use_same_grpc_port) { M_use_same_rpc_port = use_same_grpc_port; }
+    void SetAdd20ToRpcPortIfRightSide(bool add_20_to_grpc_port_if_right_side) { M_add_20_to_rpc_port_if_right_side = add_20_to_grpc_port_if_right_side; }
+    void SetRpcIp(std::string grpc_server_address) { M_rpc_server_address = grpc_server_address; }
+    void SetRpcType(bool use_thrift){
         M_use_thrift = use_thrift;
         if (use_thrift){
 #ifdef  USE_THRIFT
-            M_grpc_agent = new ThriftAgentPlayer();
+            M_rpc_client = new ThriftClientPlayer();
 #endif
         }
         else
         {
 #ifdef USE_GRPC
-            M_grpc_agent = new GrpcAgentPlayer();
+            M_rpc_client = new GrpcClientPlayer();
 #endif
         }
     }

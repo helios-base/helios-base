@@ -1,12 +1,14 @@
-#include "grpc_agent.h"
+#include "grpc_client.h"
 
-class GrpcAgentTrainer : public GrpcAgent {
-    rcsc::TrainerAgent * M_agent;
-    
+#ifndef GrpcAgentCoach_H
+#define GrpcAgentCoach_H
+
+class GrpcClientCoach : public GrpcClient {
+    rcsc::CoachAgent * M_agent;
     public:
-    GrpcAgentTrainer() ;
+    GrpcClientCoach() ;
 
-    void init(rcsc::TrainerAgent * agent,
+    void init(rcsc::CoachAgent * agent,
               std::string target="localhost",
               int port=50051,
               bool use_same_grpc_port=true,
@@ -15,3 +17,4 @@ class GrpcAgentTrainer : public GrpcAgent {
     void getActions();
     State generateState() const;
 };
+#endif

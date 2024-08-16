@@ -1,4 +1,4 @@
-#include "thrift_agent_player.h"
+#include "thrift_client_player.h"
 #include "thrift_state_generator.h"
 #include "player/basic_actions/body_go_to_point.h"
 #include "player/basic_actions/body_smart_kick.h"
@@ -78,12 +78,12 @@ using std::chrono::milliseconds;
 #define LOGV(x)
 #endif
 
-ThriftAgentPlayer::ThriftAgentPlayer()
+ThriftClientPlayer::ThriftClientPlayer()
 {
     M_agent_type = soccer::AgentType::PlayerT;
 }
 
-void ThriftAgentPlayer::init(rcsc::PlayerAgent *agent,
+void ThriftClientPlayer::init(rcsc::PlayerAgent *agent,
                              std::string target,
                              int port,
                              bool use_same_grpc_port,
@@ -106,7 +106,7 @@ void ThriftAgentPlayer::init(rcsc::PlayerAgent *agent,
     sample_communication = Communication::Ptr(new SampleCommunication());
 }
 
-void ThriftAgentPlayer::getActions()
+void ThriftClientPlayer::getActions()
 {
     auto agent = M_agent;
     soccer::State state = generateState();
@@ -632,7 +632,7 @@ void ThriftAgentPlayer::getActions()
     }
 }
 
-void ThriftAgentPlayer::addSayMessage(soccer::Say sayMessage) const
+void ThriftClientPlayer::addSayMessage(soccer::Say sayMessage) const
 {
     auto agent = M_agent;
 
@@ -792,7 +792,7 @@ void ThriftAgentPlayer::addSayMessage(soccer::Say sayMessage) const
     }
 }
 //
-soccer::State ThriftAgentPlayer::generateState() const
+soccer::State ThriftClientPlayer::generateState() const
 {
     const rcsc::WorldModel &wm = M_agent->world();
     soccer::WorldModel worldModel = ThriftStateGenerator::convertWorldModel(wm);
@@ -802,7 +802,7 @@ soccer::State ThriftAgentPlayer::generateState() const
     return state;
 }
 
-void ThriftAgentPlayer::addHomePosition(soccer::WorldModel *res) const
+void ThriftClientPlayer::addHomePosition(soccer::WorldModel *res) const
 {
     for (int i = 1; i < 12; i++)
     {

@@ -1,11 +1,11 @@
-#include "thrift_agent.h"
+#include "thrift_client.h"
 #include "player/sample_communication.h"
 
-class ThriftAgentPlayer : public ThriftAgent {
+class ThriftClientPlayer : public ThriftAgent {
     rcsc::PlayerAgent * M_agent;
     Communication::Ptr sample_communication;
     public:
-    ThriftAgentPlayer();
+    ThriftClientPlayer();
 
     void init(rcsc::PlayerAgent * agent,
               std::string target="localhost",

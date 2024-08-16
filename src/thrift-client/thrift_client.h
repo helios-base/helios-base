@@ -9,7 +9,7 @@
 #include <thrift/protocol/TBinaryProtocol.h>
 #include "thrift-generated/Game.h"
 #include "thrift-generated/soccer_service_types.h"
-#include "rpc-client/rpc-agent.h"
+#include "rpc-client/rpc-client.h"
 
 
 using namespace apache::thrift;
@@ -17,7 +17,7 @@ using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;
 
 
-class ThriftAgent : public IRpcAgent{
+class ThriftAgent : public IRpcClient{
 public:
     std::string M_server_host;
     int M_server_port;

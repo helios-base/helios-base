@@ -102,10 +102,10 @@ main( int argc, char **argv )
             }
         }
 
-        agent.SetFirstGrpcPort(grpc_port);
-        agent.SetUseSameGrpcPort(use_same_grpc_port);
-        agent.SetAdd20ToGrpcPortIfRightSide(add_20_to_grpc_port_if_right_side);
-        agent.SetGrpcIp(grpc_ip);
+        agent.SetFirstRpcPort(grpc_port);
+        agent.SetUseSameRpcPort(use_same_grpc_port);
+        agent.SetAdd20ToRpcPortIfRightSide(add_20_to_grpc_port_if_right_side);
+        agent.SetRpcIp(grpc_ip);
 
         bool use_thrift = rpc_type=="thrift";
 #ifndef USE_GRPC
@@ -120,7 +120,7 @@ main( int argc, char **argv )
             return EXIT_FAILURE;
         }
 #endif
-        agent.SetRpc(use_thrift);
+        agent.SetRpcType(use_thrift);
         
         if ( ! agent.init( cmd_parser ) )
         {
