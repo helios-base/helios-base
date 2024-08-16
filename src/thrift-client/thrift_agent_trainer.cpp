@@ -49,7 +49,7 @@ void ThriftAgentTrainer::init(rcsc::TrainerAgent *agent,
     this->M_server_port = port;
 }
 
-void ThriftAgentTrainer::getActions() const
+void ThriftAgentTrainer::getActions()
 {
     auto agent = M_agent;
     std::cout<<"generating state for cycle:"<<agent->world().time().cycle()<<std::endl;
@@ -64,6 +64,7 @@ void ThriftAgentTrainer::getActions() const
     }
     catch(const std::exception& e){
         std::cerr << e.what() << '\n';
+        M_is_connected = false;
         return;
     }
     std::cout<<"actions:"<<actions.actions.size()<<std::endl;

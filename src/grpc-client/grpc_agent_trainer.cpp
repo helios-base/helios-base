@@ -47,7 +47,7 @@ void GrpcAgentTrainer::init(rcsc::TrainerAgent *agent,
     this->M_target = target + ":" + std::to_string(port);
 }
 
-void GrpcAgentTrainer::getActions() const
+void GrpcAgentTrainer::getActions()
 {
     auto agent = M_agent;
     State state = generateState();

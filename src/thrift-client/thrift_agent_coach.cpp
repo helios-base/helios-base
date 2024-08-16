@@ -50,7 +50,7 @@ void ThriftAgentCoach::init(rcsc::CoachAgent *agent,
     this->M_server_port = port;
 }
 
-void ThriftAgentCoach::getActions() const
+void ThriftAgentCoach::getActions()
 {
     auto agent = M_agent;
     soccer::State state = generateState();
@@ -63,6 +63,7 @@ void ThriftAgentCoach::getActions() const
     catch (const std::exception &e)
     {
         std::cerr << e.what() << std::endl;
+        M_is_connected = false;
         return;
     }
 

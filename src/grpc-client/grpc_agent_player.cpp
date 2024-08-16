@@ -105,7 +105,7 @@ void GrpcAgentPlayer::init(rcsc::PlayerAgent *agent,
     sample_communication = Communication::Ptr(new SampleCommunication());
 }
 
-void GrpcAgentPlayer::getActions() const
+void GrpcAgentPlayer::getActions()
 {
     auto agent = M_agent;
     State state = generateState();

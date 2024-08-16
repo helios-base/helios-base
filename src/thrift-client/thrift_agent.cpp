@@ -25,52 +25,32 @@ void ThriftAgent::sendParams(bool offline_logging)
 {
     if (!M_param_sent)
     {
-        LOG("sendParams Started");
-        sendServerParam();
-        sendPlayerParams();
-        sendPlayerType();
-        sendInitMessage(offline_logging);
-        M_param_sent = true;
+        try
+        {
+            LOG("sendParams Started");
+            sendServerParam();
+            sendPlayerParams();
+            sendPlayerType();
+            sendInitMessage(offline_logging);
+            M_param_sent = true;
+        }
+        catch (const std::exception &e)
+        {
+            std::cout << "sendParams rpc failed." << std::endl
+                      << e.what()
+                      << std::endl;
+            M_is_connected = false;
+        }
         LOG("sendParams Done");
     }
 }
+
 void ThriftAgent::sendServerParam() const
 {
     LOG("sendServerParam Started");
 
     soccer::ServerParam serverParam;
     const rcsc::ServerParam &SP = rcsc::ServerParam::i();
-
-    //    std::string replayFile = SP.replayFile();
-    //    serverParam.set_allocated_replay_file(&replayFile);
-    //    std::string landmarkFile = SP.landmarkFile();
-    //    serverParam.set_allocated_landmark_file(&landmarkFile);
-    //    std::string textLogDir = SP.textLogDir();
-    //    serverParam.set_allocated_text_log_dir(&textLogDir);
-    //    std::string gameLogDir = SP.gameLogDir();
-    //    serverParam.set_allocated_game_log_dir(&gameLogDir);
-    //    std::string textLogFixedName = SP.textLogFixedName();
-    //    serverParam.set_allocated_text_log_fixed_name(&textLogFixedName);
-    //    std::string gameLogFixedName = SP.gameLogFixedName();
-    //    serverParam.set_allocated_game_log_fixed_name(&gameLogFixedName);
-    //    std::string logDateFormat = SP.logDateFormat();
-    //    serverParam.set_allocated_log_date_format(&logDateFormat);
-    //    std::string teamLeftStartCommand = SP.teamLeftStartCommand();
-    //    serverParam.set_allocated_team_l_start(&teamLeftStartCommand);
-    //    std::string teamRightStartCommand = SP.teamRightStartCommand();
-    //    serverParam.set_allocated_team_r_start(&teamRightStartCommand);
-    //    std::string keepawayLogDir = SP.keepawayLogDir();
-    //    serverParam.set_allocated_keepaway_log_dir(&keepawayLogDir);
-    //    std::string keepawayLogFixedName = SP.keepawayLogFixedName();
-    //    serverParam.set_allocated_keepaway_log_fixed_name(&keepawayLogFixedName);
-    //    std::string moduleDir = SP.moduleDir();
-    //    serverParam.set_allocated_module_dir(&moduleDir);
-    //    std::string coachMsgFile = SP.coachMsgFile();
-    //    serverParam.set_allocated_coach_msg_file(&coachMsgFile);
-    //    std::string fixedTeamNameLeft = SP.fixedTeamNameLeft();
-    //    serverParam.set_allocated_fixed_teamname_l(&fixedTeamNameLeft);
-    //    std::string fixedTeamNameRight = SP.fixedTeamNameRight();
-    //    serverParam.set_allocated_fixed_teamname_r(&fixedTeamNameRight);
 
     serverParam.goal_width = SP.goalWidth();
     serverParam.inertia_moment = SP.defaultInertiaMoment();

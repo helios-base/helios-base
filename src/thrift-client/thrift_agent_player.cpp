@@ -106,22 +106,20 @@ void ThriftAgentPlayer::init(rcsc::PlayerAgent *agent,
     sample_communication = Communication::Ptr(new SampleCommunication());
 }
 
-void ThriftAgentPlayer::getActions() const
+void ThriftAgentPlayer::getActions()
 {
     auto agent = M_agent;
     soccer::State state = generateState();
     state.agent_type = soccer::AgentType::PlayerT;
     soccer::PlayerActions actions;
     state.register_response = M_register_response;
-    try{
-        auto start_time = high_resolution_clock::now();
+    try
+    {
         M_client->GetPlayerActions(actions, state);
-        auto end_time = high_resolution_clock::now();
-        auto duration = duration_cast<milliseconds>(end_time - start_time);
-        std::cout<<"get: "<<duration.count()<<"ms"<<std::endl;
     }
     catch(const std::exception& e){
         std::cout << e.what() << '\n';
+        M_is_connected = false;
         return;
     }
     std::cout<<"action size:"<<actions.actions.size()<<std::endl;

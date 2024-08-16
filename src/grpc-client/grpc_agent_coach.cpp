@@ -49,7 +49,7 @@ void GrpcAgentCoach::init(rcsc::CoachAgent *agent,
     this->M_target = target + ":" + std::to_string(port);
 }
 
-void GrpcAgentCoach::getActions() const
+void GrpcAgentCoach::getActions()
 {
     auto agent = M_agent;
     State state = generateState();

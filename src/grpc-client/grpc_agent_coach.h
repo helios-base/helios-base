@@ -14,7 +14,7 @@ class GrpcAgentCoach : public GrpcAgent {
               bool use_same_grpc_port=true,
               bool add_20_to_grpc_port_if_right_side=false);
 
-    void getActions() const;
+    void getActions();
     State generateState() const;
 };
 #endif
