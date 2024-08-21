@@ -135,6 +135,8 @@ fi
 #if [ "${usecoach}" = "true" ]; then
 #  $coach -h $host -t $teamname &
 #fi
+$player ${OPT} -n 1 --rpc-type ${rpc_type} &
+$sleepprog $sleeptime
 trainer_opt="-h $host -t $teamname"
 trainer_opt="${trainer_opt} --g-port ${g_port}"
 trainer_opt="${trainer_opt} --rpc-type ${rpc_type}"

@@ -272,7 +272,10 @@ void StateGenerator::updatePlayerObject(protos::Player *p, const rcsc::CoachPlay
     p->set_is_kicking(player->isKicking());
     p->set_ball_reach_steps(player->ballReachStep());
     p->set_is_tackling(player->isTackling());
-    p->set_type_id(player->playerTypePtr()->id());
+    if (player->playerTypePtr() != nullptr)
+        p->set_type_id(player->playerTypePtr()->id());
+    else
+        p->set_type_id(0);
 }
 
 /**
@@ -475,7 +478,7 @@ protos::WorldModel *StateGenerator::convertWorldModel(const rcsc::WorldModel &wm
  */
 protos::WorldModel *StateGenerator::convertCoachWorldModel(const rcsc::CoachWorldModel &wm)
 {
-    auto *res = new WorldModel();
+    auto *res = new protos::WorldModel();
     res->set_allocated_our_team_name(new std::string(wm.ourTeamName()));
     res->set_allocated_their_team_name(new std::string(wm.theirTeamName()));
     res->set_our_side(convertSide(wm.ourSide()));
@@ -483,11 +486,15 @@ protos::WorldModel *StateGenerator::convertCoachWorldModel(const rcsc::CoachWorl
     res->set_allocated_ball(convertBall(wm.ball()));
     for (auto player : wm.teammates())
     {
+        if (player == nullptr)
+            continue;
         auto p = res->add_teammates();
         updatePlayerObject(p, player);
     }
     for (auto player : wm.opponents())
     {
+        if (player == nullptr)
+            continue;
         auto p = res->add_opponents();
         updatePlayerObject(p, player);
     }

@@ -3,6 +3,7 @@
 
 #include <rcsc/player/say_message_builder.h>
 #include <rcsc/common/player_param.h>
+#include "grpc-client/state_generator.h"
 
 #include <chrono>
 #include <rcsc/common/logger.h>
@@ -14,8 +15,8 @@ using std::chrono::milliseconds;
 #define DEBUG
 
 #ifdef DEBUG
-#define LOG(x) std::cout << x << std::endl
-#define LOGV(x) std::cout << #x << ": " << x << std::endl
+#define LOG(x) std::cout << "Trainer: " << x << std::endl
+#define LOGV(x) std::cout << "Trainer: " << #x << ": " << x << std::endl
 #else
 #define LOG(x)
 #define LOGV(x)
@@ -277,8 +278,8 @@ void GrpcClientTrainer::getActions()
 State GrpcClientTrainer::generateState() const
 {
     auto &wm = M_agent->world();
-    // WorldModel * worldModel = StateGenerator::convertCoachWorldModel(wm);
+    protos::WorldModel * worldModel = StateGenerator::convertCoachWorldModel(wm);
     State state;
-    // state.set_allocated_world_model(worldModel);
+    state.set_allocated_world_model(worldModel);
     return state;
 }
