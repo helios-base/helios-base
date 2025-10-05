@@ -71,13 +71,13 @@ bool
 Bhv_PenaltyKick::execute( PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
-    const PenaltyKickState * state = wm.penaltyKickState();
+    const PenaltyKickState & state = wm.penaltyKickState();
 
     switch ( wm.gameMode().type() ) {
     case GameMode::PenaltySetup_:
-        if ( state->currentTakerSide() == wm.ourSide() )
+        if ( state.currentTakerSide() == wm.ourSide() )
         {
-            if ( state->isKickTaker( wm.ourSide(), wm.self().unum() ) )
+            if ( state.isKickTaker( wm.ourSide(), wm.self().unum() ) )
             {
                 return doKickerSetup( agent );
             }
@@ -92,9 +92,9 @@ Bhv_PenaltyKick::execute( PlayerAgent * agent )
         }
         break;
     case GameMode::PenaltyReady_:
-        if ( state->currentTakerSide() == wm.ourSide() )
+        if ( state.currentTakerSide() == wm.ourSide() )
         {
-            if ( state->isKickTaker( wm.ourSide(), wm.self().unum() ) )
+            if ( state.isKickTaker( wm.ourSide(), wm.self().unum() ) )
             {
                 return doKickerReady( agent );
             }
@@ -109,9 +109,9 @@ Bhv_PenaltyKick::execute( PlayerAgent * agent )
         }
         break;
     case GameMode::PenaltyTaken_:
-        if ( state->currentTakerSide() == agent->world().ourSide() )
+        if ( state.currentTakerSide() == agent->world().ourSide() )
         {
-            if ( state->isKickTaker( wm.ourSide(), wm.self().unum() ) )
+            if ( state.isKickTaker( wm.ourSide(), wm.self().unum() ) )
             {
                 return doKicker( agent );
             }
@@ -127,7 +127,7 @@ Bhv_PenaltyKick::execute( PlayerAgent * agent )
         break;
     case GameMode::PenaltyScore_:
     case GameMode::PenaltyMiss_:
-        if ( state->currentTakerSide() == wm.ourSide() )
+        if ( state.currentTakerSide() == wm.ourSide() )
         {
             if ( wm.self().goalie() )
             {
@@ -188,9 +188,9 @@ Bhv_PenaltyKick::doKickerWait( PlayerAgent * agent )
     }
 #else
     const WorldModel & wm = agent->world();
-    const PenaltyKickState * state = wm.penaltyKickState();
+    const PenaltyKickState & state = wm.penaltyKickState();
 
-    const int taker_unum = 11 - ( ( state->ourTakerCounter() - 1 ) % 11 );
+    const int taker_unum = 11 - ( ( state.ourTakerCounter() - 1 ) % 11 );
     const double circle_r = ServerParam::i().centerCircleR() - 1.0;
     const double dir_step = 360.0 / 9.0;
     //const AngleDeg base_angle = ( wm.time().cycle() % 360 ) * 4;
@@ -280,11 +280,11 @@ bool
 Bhv_PenaltyKick::doKickerReady( PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
-    const PenaltyKickState * state = wm.penaltyKickState();
+    const PenaltyKickState & state = wm.penaltyKickState();
 
     // stamina recovering...
     if ( wm.self().stamina() < ServerParam::i().staminaMax() - 10.0
-         && ( wm.time().cycle() - state->time().cycle() > ServerParam::i().penReadyWait() - 3 ) )
+         && ( wm.time().cycle() - state.time().cycle() > ServerParam::i().penReadyWait() - 3 ) )
     {
         return doKickerSetup( agent );
     }
@@ -442,14 +442,14 @@ bool
 Bhv_PenaltyKick::doShoot( PlayerAgent * agent )
 {
     const WorldModel & wm = agent->world();
-    const PenaltyKickState * state = wm.penaltyKickState();
+    const PenaltyKickState & state = wm.penaltyKickState();
 
-    if ( wm.time().cycle() - state->time().cycle() > ServerParam::i().penTakenWait() - 25 )
+    if ( wm.time().cycle() - state.time().cycle() > ServerParam::i().penTakenWait() - 25 )
     {
         dlog.addText( Logger::TEAM,
                       __FILE__" (doShoot) time limit. stateTime=%d spentTime=%d timeThr=%d force shoot.",
-                      state->time().cycle(),
-                      wm.time().cycle() - state->time().cycle(),
+                      state.time().cycle(),
+                      wm.time().cycle() - state.time().cycle(),
                       ServerParam::i().penTakenWait() - 25 );
         return doOneKickShoot( agent );
     }
