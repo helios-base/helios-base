@@ -59,13 +59,9 @@
 using namespace rcsc;
 
 
-struct RealSpeedMaxCmp
-    : public std::binary_function< const PlayerType *,
-                                   const PlayerType *,
-                                   bool > {
-
-    result_type operator()( first_argument_type lhs,
-                            second_argument_type rhs ) const
+struct RealSpeedMaxCmp {
+    bool operator()( const PlayerType * lhs,
+                     const PlayerType * rhs ) const
       {
           if ( std::fabs( lhs->realSpeedMax() - rhs->realSpeedMax() ) < 0.005 )
           {
@@ -182,7 +178,7 @@ SampleCoach::initImpl( CmdLineParser & cmd_parser )
     {
         if ( config().teamGraphicFile().empty() )
         {
-            M_team_graphic.createXpmTiles( team_logo_xpm );
+            M_team_graphic.fromRawXpm( team_logo_xpm );
         }
         else
         {
