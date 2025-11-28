@@ -1,0 +1,12 @@
+#!/bin/bash
+
+player="sample_player"
+coach="sample_coach"
+
+killall -TERM ${player}
+killall -TERM ${coach}
+
+sleep 2
+
+killall -KILL ${player}
+killall -KILL ${coach}

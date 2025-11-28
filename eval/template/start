@@ -1,0 +1,57 @@
+#!/bin/sh
+HOST=$1
+DIR=$2
+NUM=$3
+teamname="@TEAM_NAME@"
+
+echo "******************************************************************"
+echo " ${teamname}"
+echo "******************************************************************"
+
+LIBPATH=${DIR}/lib
+if [ x"$LIBPATH" != x ]; then
+  if [ x"$LD_LIBRARY_PATH" = x ]; then
+    LD_LIBRARY_PATH=$LIBPATH
+  else
+    LD_LIBRARY_PATH=$LIBPATH:$LD_LIBRARY_PATH
+  fi
+  export LD_LIBRARY_PATH
+fi
+
+player="${DIR}/sample_player"
+coach="${DIR}/sample_coach"
+teamname="HELIOS_base"
+host="localhost"
+port=6000
+coach_port=""
+debug_server_host=""
+debug_server_port=""
+
+player_conf="${DIR}/player.conf"
+config_dir="${DIR}/formations-dt"
+
+coach_conf="${DIR}/coach.conf"
+team_graphic="--use_team_graphic off"
+
+
+player_opt="-h ${host} -p ${port} -t ${teamname}"
+player_opt="${player_opt} --player-config ${player_conf} --config_dir ${config_dir}"
+
+coach_opt="-h ${host} -p ${coach_port} -t ${teamname}"
+coach_opt="${coach_opt} --coach-config ${coach_conf}"
+coach_opt="${coach_opt} ${team_graphic}"
+
+case $NUM in
+    1)
+		echo "$player ${player_opt} -g"
+		$player ${player_opt} -g
+		;;
+    12)
+		echo "$coach ${coach_opt}"
+		$coach ${coach_opt}
+		;;
+    *)
+		echo "$player ${player_opt}"
+		$player ${player_opt}
+		;;
+esac

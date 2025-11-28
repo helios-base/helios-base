@@ -1,0 +1,7 @@
+#!/bin/sh
+
+LIBDIR=$HOME/local/lib/
+
+TEAMDIR=../
+PACKAGEDIR="helios-base"
+TEAM_NAME="HELIOS_base"
