@@ -45,7 +45,7 @@ sleepprog=sleep
 goaliesleep=1
 sleeptime=0
 
-debugopt=""
+debug_opt=""
 coachdebug=""
 
 offline_logging=""
@@ -176,7 +176,7 @@ do
       ;;
 
     --debug)
-      debugopt="${debugopt} --debug"
+      debug_opt="${debug_opt} --debug"
       coachdebug="${coachdebug} --debug"
       ;;
 
@@ -203,7 +203,7 @@ do
 	  ;;
 
     --debug-server-connect)
-      debugopt="${debugopt} --debug_server_connect"
+      debug_opt="${debug_opt} --debug_server_connect"
       ;;
 
     --debug-server-host)
@@ -225,7 +225,7 @@ do
       ;;
 
     --debug-server-logging)
-      debugopt="${debugopt} --debug_server_logging"
+      debug_opt="${debug_opt} --debug_server_logging"
       ;;
 
     --log-dir)
@@ -233,7 +233,7 @@ do
         usage
         exit 1
       fi
-      debugopt="${debugopt} --log_dir ${2}"
+      debug_opt="${debug_opt} --log_dir ${2}"
       shift 1
       ;;
 
@@ -242,7 +242,7 @@ do
         usage
         exit 1
       fi
-      debugopt="${debugopt} --debug_log_ext ${2}"
+      debug_opt="${debug_opt} --debug_log_ext ${2}"
       shift 1
       ;;
 
@@ -311,7 +311,7 @@ opt="${opt} ${fullstateopt}"
 opt="${opt} --debug_server_host ${debug_server_host}"
 opt="${opt} --debug_server_port ${debug_server_port}"
 opt="${opt} ${offline_logging}"
-opt="${opt} ${debugopt}"
+opt="${opt} ${debug_opt}"
 
 ping -c 1 $host
 
@@ -359,7 +359,7 @@ if [ "${usecoach}" = "true" ]; then
   coachopt="${coachopt} --debug_server_host ${debug_server_host}"
   coachopt="${coachopt} --debug_server_port ${debug_server_port}"
   coachopt="${coachopt} ${offline_logging}"
-  coachopt="${coachopt} ${debugopt}"
+  coachopt="${coachopt} ${debug_opt}"
 
 
   if  [ X"${offline_mode}" != X'' ]; then
